@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<window>
+    <defaultcontrol always="true">10</defaultcontrol>
+	<views>10</views>
+    <menucontrol>9000</menucontrol>
+    <onunload>ClearProperty(pvrGuideOnFullscreenVideo,Home)</onunload>
+    <controls>
+		<include>Defs_TMDbHelper_Loader</include>
+		<!--Global Background-->
+		<include>GlobalBackground</include>
+		<!-- Now Playing -->
+		<include>NowPlayingBackground</include>
+		<!-- clearlogo -->
+        <include condition="Skin.String(ClearLogoLocation) + ![!String.IsEmpty(Window(Home).Property(pvrGuideOnFullscreenVideo))]">ClearLogo</include>
+        <!--PVR Views-->
+        <control type="group" id="5000">
+			<include>animation_window_open_close</include>
+			<posx>10</posx>
+			<posy>-70</posy>
+			<animation effect="slide" end="0,-40" time="0" condition="Skin.HasSetting(GuideShowInfo)">Conditional</animation>
+            <control type="group">
+                <!--Panel-->
+                <include>animation_view_change_pvr</include>
+                <!-- background panel EPG when active as half guide on top of video -->
+                <control type="image">
+					<posy>770</posy>
+					<posx>-10</posx>
+					<width>1920</width>
+					<height>500</height>
+					<texture border="15">diffuse/panel2.png</texture>
+					<colordiffuse>$INFO[Skin.String(OSDPanelColor)]</colordiffuse>
+					<aspectratio>stretch</aspectratio>
+					<visible>!String.IsEmpty(Window(Home).Property(pvrGuideOnFullscreenVideo))</visible>
+				</control>				
+				<control type="image">
+					<!--Seperator-->
+					<posy>304</posy>
+					<posx>50</posx>
+					<width>1800</width>
+					<height>10</height>
+					<align>left</align>
+					<texture border="10">common/menu-separator2.png</texture>
+                    <visible>String.IsEmpty(Window(Home).Property(pvrGuideOnFullscreenVideo))</visible>
+				</control>
+				<control type="image">
+					<!--Seperator-->
+					<posy>940</posy>
+					<posx>50</posx>
+					<width>1800</width>
+					<height>10</height>
+					<align>left</align>
+					<texture border="10">common/menu-separator2.png</texture>
+                    <visible>String.IsEmpty(Window(Home).Property(pvrGuideOnFullscreenVideo))</visible>
+				</control>				
+				<!-- info panel -->
+				<control type="group">
+					<posx>50</posx>
+					<posy>965</posy>
+					<visible>Skin.HasSetting(GuideShowInfo) + String.IsEmpty(Window(Home).Property(pvrGuideOnFullscreenVideo))</visible>
+					<control type="image">
+						<!--Icon-->
+						<right>60</right>
+						<posy>14</posy>
+						<width>316</width>
+						<height>178</height>
+						<texture fallback="DefaultAddonTvInfo.png">$VAR[PVRThumb]</texture>
+						<aspectratio align="right" aligny="center">keep</aspectratio>
+						<fadetime>350</fadetime>
+					</control>
+					<control type="grouplist">
+						<visible>!String.IsEmpty(ListItem.Label)</visible>
+						<posy>6</posy>
+						<width>1460</width>
+						<height>190</height>
+						<orientation>vertical</orientation>
+						<usecontrolcoords>true</usecontrolcoords>
+						<itemgap>20</itemgap>
+					<control type="label">
+						<!--title-->
+						<width>1460</width>
+						<height>20</height>
+						<font>Reg28</font>
+						<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+						<label>[B]$INFO[ListItem.Label]$INFO[ListItem.EpisodeName, (,)][/B]$VAR[GetPVRTimings, (,)]</label>
+						<aligny>top</aligny>
+                        <wrapmultiline>false</wrapmultiline>
+					</control>
+					<control type="label">
+						<!--genre-->
+						<visible>!String.IsEmpty(Container(99950).ListItem.Genre)</visible>
+						<width>1460</width>
+						<height>20</height>
+						<font>Reg28</font>
+						<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+						<label>$INFO[Container(99950).ListItem.Genre]</label>
+						<aligny>top</aligny>
+					</control>
+					<control type="textbox">
+						<!--Info Plot-->
+						<height>auto</height>
+						<width>1455</width>
+						<font>Reg28</font>
+						<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+						<label fallback="161">$VAR[BingiePlot]</label>
+					</control>
+					</control>
+				</control>
+			</control>
+            <control type="group">
+                <!-- timeline view ID=10-->
+                <control type="epggrid" id="10">
+                    <viewtype label="19032">list</viewtype>
+                    <description>EPG Grid</description>
+                    <include>animation_view_change_pvr</include>
+                    <include condition="!String.IsEmpty(Window(Home).Property(pvrGuideOnFullscreenVideo)) + Skin.string(GuideRows, 7)">altEpgOnScreen7</include>
+                    <include condition="!String.IsEmpty(Window(Home).Property(pvrGuideOnFullscreenVideo)) + Skin.string(GuideRows, 9)">altEpgOnScreen9</include>
+                    <top>276</top>
+                    <height>665</height>
+                    <left>50</left>
+                    <width>1800</width>
+                    <pagecontrol>10</pagecontrol>
+                    <timeblocks>40</timeblocks>
+                    <rulerunit>6</rulerunit>
+                    <onleft>9000</onleft>
+                    <scrolltime tween="quadratic">300</scrolltime>
+                    <onback>9000</onback>
+                    <include condition="!Skin.HasSetting(UseAltEpgProgress)">EpgProgressIndicatorNormal</include>
+                    <include condition="Skin.HasSetting(UseAltEpgProgress)">EpgProgressIndicatorAlt</include>
+                    <onleft>31</onleft>
+                    <onright>31</onright>
+                    <onup>10</onup>
+                    <ondown>10</ondown>
+                    <rulerlayout height="35" width="60">
+                        <!--Date, Time Top Line-->
+                        <control type="label" id="2">
+                            <!--Date, Time-->
+                            <posx>-1</posx>
+							<posy>-5</posy>
+                            <width>60</width>
+                            <height>30</height>
+                            <align>left</align>
+                            <font>Reg24</font>
+                            <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                    </rulerlayout>                                     
+                    
+                    <!-- guide 7 rows -->
+                    <channellayout height="90" width="500" condition="Skin.String(GuideRows, 7)">
+                        <include content="PVRGuideChannelItemLayout">
+                            <param name="panelcolor" value="$VAR[PVRGuideItemColor]" />
+                            <param name="textcolor" value="$INFO[Skin.String(PVRGuideItemTextColorUnfocus)]" />
+                            <param name="font" value="Reg31" />
+                        </include>
+                    </channellayout>
+                    <focusedchannellayout height="90" width="500" condition="Skin.String(GuideRows, 7)">
+                        <include name="PVRGuideChannelItemLayout" content="PVRGuideChannelItemLayout">
+                            <param name="panelcolor" value="$INFO[Skin.String(PVRGuideItemColorFocus)]" />
+                            <param name="textcolor" value="$INFO[Skin.String(PVRGuideItemTextColorFocus)]" />
+                            <param name="font" value="Reg31" />
+                        </include>
+                    </focusedchannellayout>
+                    <itemlayout height="90" width="60" condition="Skin.String(GuideRows, 7)">
+                        <include>PVRGuideItemLayout</include>
+                    </itemlayout>
+                    <focusedlayout height="90" width="60" condition="Skin.String(GuideRows, 7)">
+                        <include>PVRGuideItemLayoutFocus</include>
+                    </focusedlayout>
+                    
+                    <!-- guide 8 rows -->
+                    <channellayout height="79" width="500" condition="Skin.String(GuideRows, 8)">
+                        <include content="PVRGuideChannelItemLayout">
+                            <param name="panelcolor" value="$VAR[PVRGuideItemColor]" />
+                            <param name="textcolor" value="$INFO[Skin.String(PVRGuideItemTextColorUnfocus)]" />
+                            <param name="font" value="Reg26" />
+                        </include>
+                    </channellayout>
+                    <focusedchannellayout height="79" width="500" condition="Skin.String(GuideRows, 8)">
+                        <include name="PVRGuideChannelItemLayout" content="PVRGuideChannelItemLayout">
+                            <param name="panelcolor" value="$INFO[Skin.String(PVRGuideItemColorFocus)]" />
+                            <param name="textcolor" value="$INFO[Skin.String(PVRGuideItemTextColorFocus)]" />
+                            <param name="font" value="Reg26" />
+                        </include>
+                    </focusedchannellayout>
+                    <itemlayout height="79" width="60" condition="Skin.String(GuideRows, 8)">
+                        <include>PVRGuideItemLayout</include>
+                    </itemlayout>
+                    <focusedlayout height="79" width="60" condition="Skin.String(GuideRows, 8)">
+                        <include>PVRGuideItemLayoutFocus</include>
+                    </focusedlayout>
+                    
+                    <!-- guide 9 rows -->
+                    <channellayout height="70" width="400" condition="Skin.String(GuideRows, 9)">
+                        <include content="PVRGuideChannelItemLayout">
+                            <param name="panelcolor" value="$VAR[PVRGuideItemColor]" />
+                            <param name="textcolor" value="$INFO[Skin.String(PVRGuideItemTextColorUnfocus)]" />
+                            <param name="font" value="Reg26" />
+                        </include>
+                    </channellayout>
+                    <focusedchannellayout height="70" width="400" condition="Skin.String(GuideRows, 9)">
+                        <include name="PVRGuideChannelItemLayout" content="PVRGuideChannelItemLayout">
+                            <param name="panelcolor" value="$INFO[Skin.String(PVRGuideItemColorFocus)]" />
+                            <param name="textcolor" value="$INFO[Skin.String(PVRGuideItemTextColorFocus)]" />
+                            <param name="font" value="Reg26" />
+                        </include>
+                    </focusedchannellayout>
+                    <itemlayout height="70" width="60" condition="Skin.String(GuideRows, 9)">
+                        <include>PVRGuideItemLayout</include>
+                    </itemlayout>
+                    <focusedlayout height="70" width="60" condition="Skin.String(GuideRows, 9)">
+                        <include>PVRGuideItemLayoutFocus</include>
+                    </focusedlayout>                  
+                </control>
+			</control>
+	   </control>
+    
+		<include condition="String.IsEmpty(Window(Home).Property(pvrGuideOnFullscreenVideo))">PVRsideblade</include>		
+        
+        <include condition="Skin.HasSetting(DebugGrid) | Skin.HasSetting(DebugInfo)">DebugInfo</include>
+	</controls>
+</window>

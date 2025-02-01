@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<includes>
+    <include name="View_56_BannerPlex">
+        <!--Panel-->
+        <control type="group">
+            <visible>Control.IsVisible(56)</visible>
+            <include>animation_view_change</include>
+            <!-- ID="52" -->
+            <control type="panel" id="56">
+                <posx>51</posx>
+                <bottom>142</bottom>
+                <width>1818</width>
+                <height>756</height>
+                <onup>56</onup>
+                <ondown>56</ondown>
+                <onleft>9000</onleft>
+                <onright condition="Skin.HasSetting(EnableQuickJump)">6000</onright>
+				<onright condition="!Skin.HasSetting(EnableQuickJump)">60</onright>
+                <pagecontrol>60</pagecontrol>
+                <viewtype label="31425">bigwide</viewtype>
+                <include content="View_Forced">
+                    <param name="viewtype" value="$LOCALIZE[31425]" />
+                </include>
+                <scrolltime tween="quadratic">400</scrolltime>
+                <focusposition>0</focusposition>
+                <orientation>vertical</orientation>
+                <preloaditems>2</preloaditems>
+                <itemlayout height="126" width="606">
+                    <control type="group">
+                        <width>606</width>
+                        <height>126</height>
+                        <include>BannerLayout</include>
+					</control>
+                </itemlayout>
+                <focusedlayout height="126" width="606">
+                    <control type="group">
+                        <width>606</width>
+                        <height>126</height>
+                        <control type="image">
+                            <texture>diffuse/banner.png</texture>
+                            <colordiffuse>$INFO[Skin.String(ViewDetailsBorderFocusColor)]</colordiffuse>
+                            <aspectratio scalediffuse="false" align="left">stretch</aspectratio>
+                            <include>thumbsborder_focused</include>
+                        </control>
+                        <include>BannerLayout</include>
+					</control>
+                </focusedlayout>
+			</control>
+ 			<!--vertical Scollbar-->
+			<control type="scrollbar" id="60">
+				<visible>Control.IsVisible(56) + Integer.IsGreater(Container.NumItems,0)</visible>
+				<right>15</right>
+				<bottom>150</bottom>
+				<height>740</height>
+				<onup>60</onup>
+				<ondown>6000</ondown>
+				<onleft>56</onleft>
+				<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] + !Control.IsVisible(6002)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] | Control.IsVisible(6002)">Conditional</animation>
+			</control>	
+		</control>
+   </include>
+</includes>

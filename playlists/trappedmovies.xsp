@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Trapped Movies</name>
+    <match>all</match>
+    <rule field="tag" operator="is">
+        <value>trapped</value>
+        <value>trapped in a game</value>
+        <value>trapped in a house</value>
+        <value>trapped in an elevator</value>
+        <value>trapped in building</value>
+        <value>trapped in car</value>
+        <value>trapped in space</value>
+        <value>trapped underground</value>
+        <value>trapped underwater </value>
+        <value>captive</value>
+    </rule>
+    <order direction="descending">year</order>
+</smartplaylist>

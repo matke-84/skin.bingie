@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<includes>
+
+    <!-- Startup window -->
+    <variable name="StartUpWindow">
+        <value condition="!Skin.HasSetting(BingieFirstStartupDone)">1101</value>
+        <value condition="!Skin.HasSetting(BingieSecondStartupDone)">1102</value>
+        <value>$INFO[System.StartupWindow]</value>
+    </variable>
+
+    <!-- Focus Override for menu entries -->
+    <variable name="MenuEntryOverrideFocus">
+        <value condition="Integer.IsGreater(Container(77777).NumItems,0)">77777</value>
+        <value condition="Window.IsActive(1109) | Window.IsActive(1119)">9000</value>
+    </variable>
+    <!-- ====== -->
+    <!-- Header -->
+    <!-- ====== -->
+    
+    <variable name="value_header_skinsettings">
+		<value condition="String.IsEqual(Window(Home).Property(SkinSettingSection),12)">$LOCALIZE[31121]</value>
+        <value condition="String.IsEqual(Window(Home).Property(SkinSettingSection),9)">$LOCALIZE[31013]</value>
+        <value condition="String.IsEqual(Window(Home).Property(SkinSettingSection),8)">$LOCALIZE[31022]</value>
+        <value condition="String.IsEqual(Window(Home).Property(SkinSettingSection),17)">$LOCALIZE[31221]</value>
+        <value condition="String.IsEqual(Window(Home).Property(SkinSettingSection),7)">$LOCALIZE[31518]</value>
+        <value condition="String.IsEqual(Window(Home).Property(SkinSettingSection),16)">$LOCALIZE[31668]</value>
+        <value condition="String.IsEqual(Window(Home).Property(SkinSettingSection),18)">$LOCALIZE[31088]</value>
+        <value condition="String.IsEqual(Window(Home).Property(SkinSettingSection),6)">$LOCALIZE[31005]</value>
+        <value condition="String.IsEqual(Window(Home).Property(SkinSettingSection),14)">$LOCALIZE[31271]</value>
+        <value condition="String.IsEqual(Window(Home).Property(SkinSettingSection),15)">$LOCALIZE[31462]</value>
+        <value condition="String.IsEqual(Window(Home).Property(SkinSettingSection),20)">$LOCALIZE[31667]</value>
+        <value condition="String.IsEqual(Window(Home).Property(SkinSettingSection),31)">$LOCALIZE[31696]</value>
+    </variable>
+	
+	<variable name="mediatitle">
+		<value condition="Container.Content(episodes) + !String.IsEmpty(ListItem.Episode)">$INFO[ListItem.Episode]. $INFO[ListItem.Title]</value>		
+		<value condition="!String.IsEmpty(ListItem.Title) + !String.IsEqual(ListItem.Title,..)">$INFO[ListItem.Title]</value>
+		<value condition="Container.Content(tvshows) + !String.IsEmpty(ListItem.Title) + !String.IsEqual(ListItem.Title,..)">$INFO[ListItem.Title]</value>
+		<value>$INFO[ListItem.Label]</value>
+	</variable>
+	
+	<variable name="DetailsFanArtImage">
+		<value condition="!Control.IsVisible(512) + [Container.Content(episodes) | String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.Property(DBTYPE),episode)] + !String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+		<value condition="Control.IsVisible(512) + [Container.Content(episodes) | String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.Property(DBTYPE),episode)] + !String.IsEmpty(ListItem.Art(season.landscape))">$INFO[ListItem.Art(season.landscape)]</value>
+		<value condition="Control.IsVisible(512) + Container.Content(Seasons) + !String.IsEmpty(ListItem.Art(tvshow.landscape)) + !String.StartsWith(Container.FolderPath,plugin://plugin.video)">$INFO[ListItem.Art(tvshow.landscape)]</value>
+        <value condition="!String.IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
+        <value condition="!String.IsEmpty(ListItem.Art(tvshow.landscape))">$INFO[ListItem.Art(tvshow.landscape)]</value>
+        <value condition="Container.Content(Seasons) + !String.IsEmpty(ListItem.Art(season.fanart)) + !String.StartsWith(Container.FolderPath,plugin://plugin.video)">$INFO[ListItem.Art(season.fanart)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(tvshow.fanart))">$INFO[ListItem.Art(tvshow.fanart)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container.ListItem.Art(fanart))">$INFO[Container.ListItem.Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container.ListItem.Art(tvshow.fanart))">$INFO[Container.ListItem.Art(tvshow.fanart)]</value>
+        <value condition="String.IsEqual(ListItem.Label,..)">dialogs/filebrowser/DefaultFolderBack2.png</value>
+		<value condition="Window.IsActive(tvrecordings) + !String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Container(99950).ListItem.Art(landscape)) + !Control.IsVisible(512)">$INFO[Container(99950).ListItem.Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(99950).ListItem.Art(fanart))">$INFO[Container(99950).ListItem.Art(fanart)]</value>
+		<value condition="String.StartsWith(Container.FolderPath,pvr://)">special://skin/extras/media/backgrounds/pvr.jpg</value>
+		<value condition="Container.Content(addons)">addon.png</value>
+        <value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+        <value condition="Container.Content(artists)">artist.png</value>
+        <value condition="[Container.Content(genres) | String.IsEqual(ListItem.DBTYPE,genre)]">genre.png</value>
+        <value condition="Container.Content(studios)">resource://resource.images.studios.white/$INFO[ListItem.Label,,.png]</value>
+		<value condition="Container.Content(actors) + String.IsEmpty(ListItem.Art(thumb))">defaultactorposter.png</value>
+		<value condition="Container.Content(directors) + String.IsEmpty(ListItem.Art(thumb))">defaultactorposter.png</value>
+		<value condition="Container.Content(years)">year.png</value>
+		<value condition="Container.Content(countries)">country.png</value>
+		<value condition="Container.Content(tags)">tags.png</value>
+    </variable>
+
+	<variable name="VideoInfoPosterImage">
+		<value condition="[Container.Content(episodes) | String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.Property(DBTYPE),episode)] + !String.IsEmpty(ListItem.Art(season.poster))">$INFO[ListItem.Art(season.poster)]</value>
+		<value condition="Container.Content(episodes) + !String.IsEmpty(ListItem.Art(season.poster))">$INFO[ListItem.Art(season.poster)]</value>
+		<value condition="!String.IsEmpty(ListItem.Property(TVShowThumb))">$INFO[ListItem.Property(TVShowThumb)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
+        <value condition="!String.IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
+		<value>$INFO[ListItem.Icon]</value>
+	 </variable>
+     
+	<variable name="ListItemClearLogo">
+		<value condition="Skin.HasSetting(NoClearLogoBingie)">colors/color_transparent.png</value>
+		<value condition="Control.IsVisible(503)"/>
+		<value condition="!String.IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(artist.clearlogo))">$INFO[ListItem.Art(artist.clearlogo)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(albumartist.clearlogo))">$INFO[ListItem.Art(albumartist.clearlogo)]</value>
+        <value condition="!String.IsEmpty(Container(999).ListItem.Art(clearlogo))">$INFO[Container(999).ListItem.Art(clearlogo)]</value>
+		<value condition="Control.IsVisible(200) + !String.IsEmpty(Container(200).ListItem.Property(Art(clearlogo)))">$INFO[Container(200).ListItem.Property(Art(clearlogo))]</value>
+		<value condition="Control.IsVisible(201) + !String.IsEmpty(Container(201).ListItem.Property(Art(clearlogo)))">$INFO[Container(201).ListItem.Property(Art(clearlogo))]</value>
+		<value condition="Control.IsVisible(202) + !String.IsEmpty(Container(202).ListItem.Property(Art(clearlogo)))">$INFO[Container(202).ListItem.Property(Art(clearlogo))]</value>
+		<value condition="Control.IsVisible(203) + !String.IsEmpty(Container(203).ListItem.Property(Art(clearlogo)))">$INFO[Container(203).ListItem.Property(Art(clearlogo))]</value>
+		<value condition="Control.IsVisible(204) + !String.IsEmpty(Container(204).ListItem.Property(Art(clearlogo)))">$INFO[Container(204).ListItem.Property(Art(clearlogo))]</value>
+		<value condition="Control.IsVisible(205) + !String.IsEmpty(Container(205).ListItem.Property(Art(clearlogo)))">$INFO[Container(205).ListItem.Property(Art(clearlogo))]</value>
+		<value condition="Control.IsVisible(206) + !String.IsEmpty(Container(206).ListItem.Property(Art(clearlogo)))">$INFO[Container(206).ListItem.Property(Art(clearlogo))]</value>
+		<value condition="Control.IsVisible(207) + !String.IsEmpty(Container(207).ListItem.Property(Art(clearlogo)))">$INFO[Container(207).ListItem.Property(Art(clearlogo))]</value>
+		<value condition="Control.IsVisible(208) + !String.IsEmpty(Container(208).ListItem.Property(Art(clearlogo)))">$INFO[Container(208).ListItem.Property(Art(clearlogo))]</value>
+		<value condition="Control.IsVisible(209) + !String.IsEmpty(Container(209).ListItem.Property(Art(clearlogo)))">$INFO[Container(209).ListItem.Property(Art(clearlogo))]</value>
+		<value condition="Control.IsVisible(210) + !String.IsEmpty(Container(210).ListItem.Property(Art(clearlogo)))">$INFO[Container(210).ListItem.Property(Art(clearlogo))]</value>
+		<value condition="Control.IsVisible(211) + !String.IsEmpty(Container(211).ListItem.Property(Art(clearlogo)))">$INFO[Container(211).ListItem.Property(Art(clearlogo))]</value>
+		<value condition="Control.IsVisible(212) + !String.IsEmpty(Container(212).ListItem.Property(Art(clearlogo)))">$INFO[Container(212).ListItem.Property(Art(clearlogo))]</value>
+		<value condition="Control.IsVisible(213) + !String.IsEmpty(Container(213).ListItem.Property(Art(clearlogo)))">$INFO[Container(213).ListItem.Property(Art(clearlogo))]</value>
+		<value condition="Control.IsVisible(214) + !String.IsEmpty(Container(214).ListItem.Property(Art(clearlogo)))">$INFO[Container(214).ListItem.Property(Art(clearlogo))]</value>
+		<value condition="Control.IsVisible(215) + !String.IsEmpty(Container(215).ListItem.Property(Art(clearlogo)))">$INFO[Container(215).ListItem.Property(Art(clearlogo))]</value>
+		<value condition="!String.IsEmpty(Container(99950).ListItem.Art(clearlogo)) + [Window.IsActive(tvchannels) |  Window.IsActive(tvguide) | Window.IsActive(tvrecordings) | Window.IsActive(tvtimers) | Window.IsActive(tvsearch)]">$INFO[Container(99950).ListItem.Art(clearlogo)]</value>
+    </variable>
+	
+	<variable name="MusicPlayerClearLogo">
+		<value condition="!String.IsEmpty(Player.Art(artist.clearlogo))">$INFO[Player.Art(artist.clearlogo)]</value>
+		<value condition="!String.IsEmpty(Player.Art(albumartist.clearlogo))">$INFO[Player.Art(albumartist.clearlogo)]</value>		
+	</variable>
+		
+	<variable name="View_Item_Header">
+		<value condition="[Container.Content(episodes) | String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.Property(DBTYPE),episode)]">$INFO[ListItem.Episode,,.] $INFO[ListItem.Title]</value>
+		<value condition="Container.Content(songs)">$INFO[ListItem.TrackNumber,,.] $INFO[ListItem.Title]</value>
+		<value>$INFO[ListItem.Label]</value>
+	</variable>	
+
+	<variable name="BannerImage">
+        <value condition="!String.IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
+        <value condition="!String.IsEmpty(ListItem.Art(tvshow.banner))">$INFO[ListItem.Art(tvshow.banner)]</value>
+		<value condition="!String.IsEmpty(ListItem.Property(banner))">$INFO[ListItem.Property(banner)]</value>
+    </variable>
+	
+	<variable name="BannerImageFallback">
+        <value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(tvshow.fanart))">$INFO[ListItem.Art(tvshow.fanart)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+		<value condition="!String.IsEmpty(ListItem.Icon)">$INFO[ListItem.Icon]</value>
+    </variable>
+	
+	<variable name="NowPlayingTitle">
+		<value condition="!String.IsEmpty(MusicPlayer.Artist) + Player.HasAudio + !Player.IsInternetStream">$INFO[MusicPlayer.Artist] - $INFO[MusicPlayer.Title]</value>
+		<value condition="!String.IsEmpty(VideoPlayer.TVShowTitle)">$INFO[VideoPlayer.TVShowTitle] - S$INFO[VideoPlayer.Season]E$INFO[VideoPlayer.Episode] - $INFO[VideoPlayer.Title]</value>
+		<value condition="!String.IsEmpty(MusicPlayer.Title) + Player.HasAudio + Player.IsInternetStream">$INFO[MusicPlayer.Title]</value>
+        <value>$INFO[Player.Title]</value>
+    </variable>
+	
+	<variable name="NowPlayingLabel">
+        <value condition="Player.IsInternetStream">[B]$LOCALIZE[31040][/B]</value>
+        <value>[B]$LOCALIZE[31040][/B]  ($INFO[Player.Time] / $INFO[Player.Duration])</value>
+    </variable>
+
+    <variable name="PVRThumb">
+        <!-- use pvr provided thumb at episode level in pvr recordings -->
+        <value condition="String.StartsWith(Container.FolderPath,pvr://recordings/active/) + !String.IsEqual(Container.FolderPath,pvr://recordings/active/) + !String.IsEmpty(ListItem.Art(thumb)) + !String.Contains(Pvr.BackendName, headend)">$INFO[ListItem.Art(thumb)]</value>
+        <!-- use rich artwork at main level -->
+		<value condition="!String.IsEmpty(Container(99950).ListItem.Art(landscape))">$INFO[Container(99950).ListItem.Art(landscape)]</value>
+        <value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+        <value condition="!String.IsEmpty(ListItem.Icon)">$INFO[ListItem.Icon]</value>
+        <value>special://skin/extras/media/backgrounds/pvr.jpg</value>
+    </variable>
+    
+    <variable name="PVRInfoThumb">
+        <value condition="!String.IsEmpty(Container(99950).ListItem.Art(clearlogo))">$INFO[Container(99950).ListItem.Art(clearlogo)]</value>
+		<value condition="!String.IsEmpty(Container(99950).ListItem.Art(clearart))">$INFO[Container(99950).ListItem.Art(clearart)]</value>
+		<value condition="!String.IsEmpty(Container(99950).ListItem.Art(landscape))">$INFO[Container(99950).ListItem.Art(landscape)]</value>
+		<value condition="!String.IsEmpty(Container(99950).ListItem.Art(fanart))">$INFO[Container(99950).ListItem.Art(fanart)]</value>
+    </variable>
+	
+	<variable name="ListItemDuration">
+		<value condition="![Container.Content(Songs) | Container.Content(Musicvideos)] + Integer.IsGreater(ListItem.Duration(h),0)">$INFO[ListItem.Duration(h),,h ]$INFO[ListItem.Duration(m),,m]</value>
+        <value condition="![Container.Content(Songs) | Container.Content(Musicvideos)] + !String.IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration(mins),,m]</value>
+        <value condition="[Container.Content(Songs) | Container.Content(Musicvideos)] + Integer.IsGreater(ListItem.Duration(m),0) + ![String.IsEmpty(ListItem.Duration(m)) + String.IsEmpty(ListItem.Duration(ss))]">$INFO[ListItem.Duration(m),,m ]$INFO[ListItem.Duration(ss),,s]</value>
+        <value condition="[Container.Content(Songs) | Container.Content(Musicvideos)] + Integer.IsEqual(ListItem.Duration(m),0) + !String.IsEmpty(ListItem.Duration(ss))">$INFO[ListItem.Duration(ss),, s]</value>
+        <value condition="[Container.Content(Songs) | Container.Content(Musicvideos)] + !String.IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration,, min]</value>
+        <value condition="[Container.Content(LiveTV) + PVR.HasEpg] + Integer.IsGreater(PVR.EpgEventDuration(h),0)">$INFO[PVR.EpgEventDuration,, min]</value>
+        <value condition="[Container.Content(LiveTV) + PVR.HasEpg] + !String.IsEmpty(PVR.EpgEventDuration)">$INFO[PVR.EpgEventDuration(mins),, min]</value>
+    </variable>
+
+    <variable name="ListItemDurationWithEndTime">
+        <value condition="!String.IsEmpty(ListItem.Duration) + !String.IsEmpty(ListItem.EndTimeResume)">$VAR[ListItemDuration] $INFO[ListItem.EndTimeResume,- $LOCALIZE[31112]: ,]</value>
+		<value condition="!String.IsEmpty(ListItem.Duration) + !String.IsEmpty(ListItem.EndTime)">$VAR[ListItemDuration,,- ]$INFO[ListItem.EndTime,$LOCALIZE[31112]: ,]</value>
+		<value>$VAR[ListItemDuration]</value>
+    </variable>
+	
+	<variable name="Details">
+		<value condition="Window.IsActive(Music) + Integer.IsLessOrEqual(System.Time(ss),10) + !String.IsEmpty(ListItem.Property(Artist_Disambiguation))">$VAR[MusicDisambiguation,[CAPITALIZE],[/CAPITALIZE]]</value>		
+		<value condition="Window.IsActive(Music) + Integer.IsLessOrEqual(System.Time(ss),20) + [!String.IsEmpty(ListItem.Property(Artist_Formed)) | !String.IsEmpty(ListItem.Property(Artist_Disbanded)) | !String.IsEmpty(ListItem.Property(Artist_Born)) | !String.IsEmpty(ListItem.Property(Artist_Died))]">$VAR[MusicArtistYear]</value>	
+		<value condition="Window.IsActive(Music) + Integer.IsLessOrEqual(System.Time(ss),30) + !String.IsEmpty(ListItem.Property(Artist_YearsActive))">$INFO[ListItem.Property(Artist_YearsActive)]</value>
+		<value condition="Window.IsActive(Music) + Integer.IsLessOrEqual(System.Time(ss),30) + !String.IsEmpty(ListItem.Property(Album_Label))">$INFO[ListItem.Property(Album_Label)]</value>
+		<value condition="!Window.IsActive(Music) + Integer.IsLessOrEqual(System.Time(ss),10) + !String.IsEmpty(ListItem.Tagline)">$INFO[ListItem.Tagline]</value>	
+		<value condition="!Window.IsActive(Music) + Integer.IsLessOrEqual(System.Time(ss),20) + !String.IsEmpty(Container(99950).ListItem.Property(Creator)) + [$EXP[IsTvShowDBType] | $EXP[IsSeasonDBType] | $EXP[IsEpisodeDBType]]">$INFO[Container(99950).ListItem.Property(Creator),$LOCALIZE[31531] ]</value>
+        <value condition="!Window.IsActive(Music) + Integer.IsLessOrEqual(System.Time(ss),30) + !String.IsEmpty(ListItem.Director) + [$EXP[IsMovieDBType] | $EXP[IsEpisodeDBType]]">$INFO[ListItem.Director,$LOCALIZE[31541] ]</value>
+        <value condition="!Window.IsActive(Music) + Integer.IsLessOrEqual(System.Time(ss),40) + !String.IsEmpty(ListItem.Writer) + $EXP[IsMovieDBType]">$INFO[ListItem.Writer,$LOCALIZE[31111] ]</value>		
+		<value condition="!Window.IsActive(Music) + Integer.IsLessOrEqual(System.Time(ss),50) + !String.IsEmpty(ListItem.Studio)">$INFO[ListItem.Studio]</value>
+		<value condition="[!String.IsEmpty(ListItem.Genre) | !String.IsEmpty(Container(99950).ListItem.Property(Set.Genres))] + Integer.IsLessOrEqual(System.Time(ss),60) + !String.Contains(ListItem.Genre,unknown)">$VAR[GetGenres]</value>
+		<value condition="Container.Content(Addons)">$INFO[ListItem.AddonSummary]</value>
+	</variable>
+	
+    <variable name="ListTitle">
+        <value condition="Container.Content(addons) + String.Contains(ListItem.Label2,%)">$INFO[ListItem.Label]$INFO[ListItem.Label2, (,)]</value>
+        <value condition="Container.Content(albums) + !String.IsEmpty(ListItem.Label2)">$INFO[ListItem.Label2] - $INFO[ListItem.Label]</value>
+        <value condition="Container.Content(albums) + !String.IsEmpty(ListItem.Artist)">$INFO[ListItem.Artist] - $INFO[ListItem.Title]</value>
+        <value>$INFO[ListItem.Label]</value>
+    </variable>
+    
+    <variable name="ListTitlePVR">
+        <value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
+        <value condition="!String.IsEmpty(ListItem.Label)">$INFO[ListItem.Label]</value>
+        <value condition="!String.IsEmpty(Container(1510).ListItem.Title)">$INFO[Container(1510).ListItem.Title]</value>
+        <value condition="!String.IsEmpty(Container(1510).ListItem.Label)">$INFO[Container(1510).ListItem.Label]</value>
+    </variable>
+    
+    <variable name="ListDatePVR">
+        <value condition="Window.IsActive(tvrecordings) | Window.IsActive(tvtimers) | Window.IsActive(tvsearch)">$INFO[ListItem.StartDate] $INFO[ListItem.StartTime]</value>
+        <value condition="[Window.IsActive(tvchannels) | Window.IsActive(tvguide)] + !String.IsEmpty(ListItem.StartTime) + [String.IsEqual(System.Language,Arabic) | String.IsEqual(System.Language,Hebrew)]">$INFO[ListItem.EndTime] - $INFO[ListItem.StartTime]</value>
+        <value condition="[Window.IsActive(tvchannels) | Window.IsActive(tvguide)] + !String.IsEmpty(ListItem.StartTime)">$INFO[ListItem.StartTime] - $INFO[ListItem.EndTime]</value>
+        <value>$INFO[ListItem.StartDate] - $INFO[ListItem.StartTime]</value>
+    </variable>
+    
+    <variable name="ListDateInfoPVR">
+        <value condition="Window.IsActive(tvrecordings) | Window.IsActive(tvtimers) | Window.IsActive(tvsearch)">$INFO[ListItem.Date]</value>
+        <value condition="[Window.IsActive(tvchannels) | Window.IsActive(tvguide)] + !String.IsEmpty(ListItem.StartTime)">$INFO[ListItem.StartTime] - $INFO[ListItem.EndTime]</value>
+        <value condition="!String.IsEmpty(ListItem.Date)">$INFO[ListItem.Date]</value>
+    </variable>
+    
+    <variable name="ListChannelNumberPVR">
+        <value condition="!String.IsEmpty(ListItem.ChannelNumberLabel)">$INFO[ListItem.ChannelNumberLabel]</value>
+    </variable>  
+    
+    <variable name="ThumbListDetails">
+        <!-- specials used in widgets -->
+		<value condition="String.IsEmpty(ListItem.Property(submenuVisibility)) + String.Contains(Container(900).ListItem.Property(widgetPath), plugin.video.youtube) | String.IsEqual(Container(900).ListItem.Property(widget), music)">$INFO[ListItem.label][CR]$INFO[ListItem.label2]</value>
+		<value condition="String.IsEmpty(ListItem.Property(submenuVisibility)) + String.IsEqual(ListItem.Property(DBTYPE), systeminfo)">[B]$INFO[ListItem.label][/B] $INFO[ListItem.label2]</value>
+        <value condition="String.IsEmpty(ListItem.Property(submenuVisibility)) + [String.IsEqual(ListItem.Property(DBTYPE), tvchannel) | String.IsEqual(ListItem.Property(DBTYPE), tvrecording)]">$INFO[ListItem.Title][CR]$INFO[ListItem.label]</value>
+        <value condition="String.IsEmpty(ListItem.Property(submenuVisibility)) + String.Contains(ListItem.FolderPath, pvr)">$INFO[ListItem.Title][CR]$INFO[ListItem.label]</value>
+		<value condition="String.IsEmpty(ListItem.Property(submenuVisibility)) + [String.IsEqual(ListItem.Property(DBTYPE),weather) | String.Contains(Container(900).ListItem.Property(widgetPath), weather)]">$INFO[ListItem.label]$INFO[ListItem.label2, ,]</value>
+		<!-- normal items-->
+        <value condition="$EXP[IsTvShowDBType]">$INFO[ListItem.label]</value>
+        <value condition="Container.Content(seasons)">$INFO[ListItem.label]</value>
+		<value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Episode) + Integer.IsGreater(ListItem.Episode,9) + Integer.IsGreater(ListItem.Season,9)">$INFO[ListItem.Title][CR]$INFO[ListItem.TvShowTitle] • [UPPERCASE]S$INFO[ListItem.Season]E$INFO[ListItem.Episode][/UPPERCASE]</value>
+        <value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Episode) + Integer.IsGreater(ListItem.Episode,9)">$INFO[ListItem.Title][CR]$INFO[ListItem.TvShowTitle] • [UPPERCASE]S0$INFO[ListItem.Season]E$INFO[ListItem.Episode][/UPPERCASE]</value>
+        <value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Episode) + Integer.IsGreater(ListItem.Season,9)">$INFO[ListItem.Title][CR]$INFO[ListItem.TvShowTitle] • [UPPERCASE]S$INFO[ListItem.Season]E0$INFO[ListItem.Episode][/UPPERCASE]</value>
+        <value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Episode)">$INFO[ListItem.Title][CR]$INFO[ListItem.TvShowTitle] • [UPPERCASE]S0$INFO[ListItem.Season]E0$INFO[ListItem.Episode][/UPPERCASE]</value>
+		
+        <value condition="Window.IsActive(tvchannels)">$INFO[ListItem.Title,[B],[/B]]$VAR[ListDatePVR,[CR]]</value>
+        <value condition="[Window.IsActive(tvchannels) | Window.IsActive(tvguide) | Window.IsActive(tvtimers) | Window.IsActive(tvsearch) | Window.IsActive(tvrecordings)]">$INFO[ListItem.ChannelName,, • ]$VAR[ListDatePVR]</value>
+		<value condition="String.IsEmpty(ListItem.Property(submenuVisibility)) + !String.IsEmpty(ListItem.Year)">$INFO[ListItem.label][CR]$INFO[ListItem.Year]</value>
+        <value condition="String.IsEmpty(ListItem.Property(submenuVisibility))">$INFO[ListItem.label]</value>
+		<value>$INFO[ListItem.label]</value>
+    </variable>
+    
+    <variable name="ThumbListDetailsPoster">
+        <!-- specials used in widgets -->
+		<value condition="String.IsEmpty(ListItem.Property(submenuVisibility)) + String.Contains(Container(900).ListItem.Property(widgetPath), plugin.video.youtube) | String.IsEqual(Container(900).ListItem.Property(widget), music)">$INFO[ListItem.label] $INFO[ListItem.label2]</value>
+		<value condition="String.IsEmpty(ListItem.Property(submenuVisibility)) + String.IsEqual(ListItem.Property(DBTYPE), systeminfo)">[B]$INFO[ListItem.label][/B] $INFO[ListItem.label2]</value>
+        <value condition="String.IsEmpty(ListItem.Property(submenuVisibility)) + String.IsEqual(Container(900).ListItem.Property(widget), smart-pvr) + String.IsEqual(ListItem.Property(type),livechannel)">$INFO[ListItem.Property(title)] $INFO[ListItem.label]</value>
+		<value condition="String.IsEmpty(ListItem.Property(submenuVisibility)) + String.IsEqual(Container(900).ListItem.Property(widget), smart-pvr) + String.IsEqual(ListItem.Property(type),recorded)">$INFO[ListItem.label]</value>
+		<value condition="String.IsEmpty(ListItem.Property(submenuVisibility)) + [String.IsEqual(ListItem.Property(DBTYPE),weather) | String.Contains(Container(900).ListItem.Property(widgetPath), weather)]">$INFO[ListItem.label]$INFO[ListItem.label2, ,]</value>
+		<!-- normal items-->
+        <value condition="$EXP[IsTvShowDBType]">$INFO[ListItem.label]</value>
+        <value condition="Container.Content(seasons)">$INFO[ListItem.label]</value>
+		<value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Episode) + Integer.IsGreater(ListItem.Episode,9) + Integer.IsGreater(ListItem.Season,9)">$INFO[ListItem.TvShowTitle] [UPPERCASE]S$INFO[ListItem.Season]E$INFO[ListItem.Episode][/UPPERCASE]</value>
+        <value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Episode) + Integer.IsGreater(ListItem.Episode,9)">$INFO[ListItem.TvShowTitle] [UPPERCASE]S0$INFO[ListItem.Season]E$INFO[ListItem.Episode][/UPPERCASE]</value>
+        <value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Episode) + Integer.IsGreater(ListItem.Season,9)">$INFO[ListItem.TvShowTitle] [UPPERCASE]S$INFO[ListItem.Season]E0$INFO[ListItem.Episode][/UPPERCASE]</value>
+        <value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Episode)">$INFO[ListItem.TvShowTitle] [UPPERCASE]S0$INFO[ListItem.Season]E0$INFO[ListItem.Episode][/UPPERCASE]</value>
+		
+        <value condition="Window.IsActive(tvchannels)">$INFO[ListItem.Title,[B],[/B]] $VAR[ListDatePVR]</value>
+        <value condition="[Window.IsActive(tvchannels) | Window.IsActive(tvguide) | Window.IsActive(tvtimers) | Window.IsActive(tvsearch) | Window.IsActive(tvrecordings)]">$INFO[ListItem.ChannelName] $VAR[ListDatePVR]</value>
+        <value condition="!String.IsEmpty(ListItem.Property(character))">$INFO[ListItem.label] $INFO[ListItem.Property(character),(,)]</value>
+        <value condition="!String.IsEmpty(ListItem.Property(job))">$INFO[ListItem.label] $INFO[ListItem.Property(job),(,)]</value>
+        <value condition="String.IsEmpty(ListItem.Property(submenuVisibility))">$INFO[ListItem.label]</value>
+		<value>$INFO[ListItem.Label]</value>
+    </variable>
+    
+    <variable name="ThumbListDetailsSquare">
+        <!-- specials used in widgets -->
+		<value condition="String.IsEmpty(ListItem.Property(submenuVisibility)) + String.Contains(Container(900).ListItem.Property(widgetPath), plugin.video.youtube) | String.IsEqual(Container(900).ListItem.Property(widget), music)">$INFO[ListItem.label] $INFO[ListItem.label2]</value>
+		<value condition="String.IsEmpty(ListItem.Property(submenuVisibility)) + String.IsEqual(ListItem.Property(DBTYPE), systeminfo)">[B]$INFO[ListItem.label][/B] $INFO[ListItem.label2]</value>
+        <value condition="String.IsEmpty(ListItem.Property(submenuVisibility)) + String.IsEqual(Container(900).ListItem.Property(widget), smart-pvr) + String.IsEqual(ListItem.Property(type),livechannel)">$INFO[ListItem.Property(title)] $INFO[ListItem.label]</value>
+		<value condition="String.IsEmpty(ListItem.Property(submenuVisibility)) + String.IsEqual(Container(900).ListItem.Property(widget), smart-pvr) + String.IsEqual(ListItem.Property(type),recorded)">$INFO[ListItem.label]</value>
+		<value condition="String.IsEmpty(ListItem.Property(submenuVisibility)) + [String.IsEqual(ListItem.Property(DBTYPE),weather) | String.Contains(Container(900).ListItem.Property(widgetPath), weather)]">$INFO[ListItem.label]$INFO[ListItem.label2, ,]</value>
+		<!-- normal items-->
+        <value condition="$EXP[IsTvShowDBType]">$INFO[ListItem.label]</value>
+        <value condition="Container.Content(seasons)">$INFO[ListItem.label]</value>
+		<value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Episode) + Integer.IsGreater(ListItem.Episode,9) + Integer.IsGreater(ListItem.Season,9)">$INFO[ListItem.TvShowTitle] [UPPERCASE]S$INFO[ListItem.Season]E$INFO[ListItem.Episode][/UPPERCASE]</value>
+        <value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Episode) + Integer.IsGreater(ListItem.Episode,9)">$INFO[ListItem.TvShowTitle] [UPPERCASE]S0$INFO[ListItem.Season]E$INFO[ListItem.Episode][/UPPERCASE]</value>
+        <value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Episode) + Integer.IsGreater(ListItem.Season,9)">$INFO[ListItem.TvShowTitle] [UPPERCASE]S$INFO[ListItem.Season]E0$INFO[ListItem.Episode][/UPPERCASE]</value>
+        <value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Episode)">$INFO[ListItem.TvShowTitle] [UPPERCASE]S0$INFO[ListItem.Season]E0$INFO[ListItem.Episode][/UPPERCASE]</value>
+		
+        <value condition="Window.IsActive(tvchannels)">$INFO[ListItem.Title,[B],[/B]] $VAR[ListDatePVR]</value>
+        <value condition="[Window.IsActive(tvchannels) | Window.IsActive(tvguide) | Window.IsActive(tvtimers) | Window.IsActive(tvsearch) | Window.IsActive(tvrecordings)]">$INFO[ListItem.ChannelName] $VAR[ListDatePVR]</value>
+        <value condition="!String.IsEmpty(ListItem.Property(character))">$INFO[ListItem.label] $INFO[ListItem.Property(character),(,)]</value>
+        <value condition="!String.IsEmpty(ListItem.Property(job))">$INFO[ListItem.label] $INFO[ListItem.Property(job),(,)]</value>
+        <value condition="!String.IsEmpty(ListItem.Year)">$INFO[ListItem.label] $INFO[ListItem.Year,(,)]</value>
+        <value condition="String.IsEmpty(ListItem.Property(submenuVisibility))">$INFO[ListItem.label]</value>
+        <value condition="String.IsEmpty(ListItem.AddonName)">$INFO[ListItem.AddonName]</value>
+		<value>$INFO[ListItem.Label]</value>
+    </variable>
+    
+	<variable name="ListDetails">
+		<value condition="!Container.content(Addons) + Window.IsActive(pictures )">$INFO[ListItem.Date,, • ]$INFO[ListItem.Size]</value>
+		<value condition="Container.content(Albums) + !String.IsEmpty(ListItem.Property(Album_Duration))">$INFO[ListItem.Year,, • ]$INFO[ListItem.Property(Album_Duration)]</value>
+		<value condition="$EXP[IsMovieDBType] | $EXP[IsTvShowDBType] | $EXP[IsSeasonDBType] | $EXP[IsEpisodeDBType]">$VAR[RatingDecimalToPercentage,,% $LOCALIZE[31192] • ]$VAR[YearOrPremiered,, • ]$VAR[GetMPAA,, • ]$VAR[DurationOrTotalSECount]</value>
+		<value condition="Container.Content(addons) + !String.IsEmpty(ListItem.AddonVersion) + String.IsEmpty(ListItem.Label2)">$LOCALIZE[24051] $INFO[ListItem.AddonVersion]  •  $LOCALIZE[21863]: $INFO[ListItem.AddonCreator]</value>
+        <value condition="Container.Content(addons) + !String.IsEmpty(ListItem.AddonVersion) + !String.IsEmpty(ListItem.Label2)">$LOCALIZE[24051] $INFO[ListItem.AddonVersion]  •  $LOCALIZE[21863]: $INFO[ListItem.AddonCreator]  •  $INFO[ListItem.Label2]</value>
+		<value condition="Container.Content(songs)">$INFO[ListItem.Year,, • ]$INFO[ListItem.Genre,, • ]$INFO[ListItem.Album,, • ]$INFO[ListItem.Duration]</value>
+		<value condition="Container.Content(Artists) + !String.IsEmpty(ListItem.Property(artist_style))">$INFO[ListItem.Property(artist_style)]</value>
+		<value condition="Container.Content(Artists) + !String.IsEmpty(ListItem.Property(artist_genre))">$INFO[ListItem.Property(artist_genre)]</value>
+		<value condition="Container.Content(MusicVideos) + [!String.IsEmpty(ListItem.Duration) | !String.IsEmpty(ListItem.Year)]">$INFO[ListItem.Year,, • ]$INFO[ListItem.Duration]</value>
+		<value condition="Container.Content(Sets)">$INFO[ListItem.Year]</value>
+        <value condition="Container.Content(artists) + !String.IsEmpty(ListItem.Property(Artist_YearsActive))">$INFO[ListItem.Property(Artist_YearsActive),$LOCALIZE[21898]: ]</value>
+        <value condition="!String.IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration,, min]</value>
+		<value condition="!String.IsEmpty(ListItem.Label2)">$INFO[ListItem.Label2]</value>
+ 	</variable>
+  
+	<variable name="Plots">
+		<value condition="Container.Content(Seasons) + !String.IsEmpty(ListItem.Plot) + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.Plot]</value>
+		<value condition="Container.Content(Seasons) + !String.IsEmpty(Container.ShowPlot) + !String.IsEmpty(ListItem.Title)">$INFO[Container.ShowPlot]</value>
+		<value condition="Container.Content(albums) + !String.IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
+		<value condition="Container.Content(artists) + !String.IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
+		<value condition="Container.Content(songs) + !String.IsEmpty(ListItem.Comment)">$INFO[ListItem.Comment]</value>
+		<value condition="Container.Content(songs) + !String.IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
+		<value condition="Container.Content(songs) + !String.IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
+		<value condition="Window.IsActive(tvchannels) + !String.IsEmpty(ListItem.Plot)">$INFO[ListItem.Season,S,]$INFO[ListItem.Episode,E, - ]$INFO[ListItem.EpisodeName,,[CR]]$INFO[ListItem.Plot]$INFO[Container.ListItem.NextTitle,[CR][CR][B]$LOCALIZE[19031]: [/B]]</value>
+		<value condition="Window.IsActive(pictures ) + !String.IsEmpty(ListItem.PictureDesc)">$INFO[ListItem.PictureDesc]</value>
+		<value condition="Window.IsActive(pictures ) + !String.IsEmpty(ListItem.PictureComment)">$INFO[ListItem.PictureComment]</value>
+		<value condition="Window.IsActive(pictures ) + !String.IsEmpty(ListItem.PictureKeywords)">$INFO[ListItem.PictureKeywords]</value>
+		<value condition="!String.IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
+		<value condition="!String.IsEmpty(ListItem.Property(Plot))">$INFO[ListItem.Property(Plot)]</value>
+		<value condition="!String.IsEmpty(ListItem.Comment)">$INFO[ListItem.Comment]</value>
+		<value condition="!String.IsEmpty(Container(99950).ListItem.Plot) + $EXP[EXP_TMDBHelper_Metadata]">$INFO[Container(99950).ListItem.Plot]</value>
+		<value condition="Container.Content(Addons)">$INFO[ListItem.AddonDescription]</value>
+	</variable>
+   
+   <variable name="ViewDetailsFocusColor">
+        <value condition="$EXP[IsBingieViewsActive]">$INFO[Skin.String(HomeViewDetailsFocusColor)]</value>
+        <value>$INFO[Skin.String(ViewDetailsFocusColor)]</value>
+   </variable>
+
+    <variable name="ViewDetailsBorderFocusColor">
+        <value condition="$EXP[IsBingieViewsActive]">$INFO[Skin.String(HomeViewDetailsBorderFocusColor)]</value>
+        <value>$INFO[Skin.String(ViewDetailsBorderFocusColor)]</value>
+    </variable>
+   
+   <variable name="ViewDetailsTextColor">
+        <value condition="$EXP[IsBingieViewsActive]">$INFO[Skin.String(GeneralTextColor)]</value>
+        <value>$INFO[Skin.String(ViewDetailsTextColor)]</value>
+   </variable>
+   
+   <variable name="VideoPlayerPoster">
+		<value condition="!String.IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
+		<value condition="!String.IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
+		<value>$INFO[Player.Art(thumb)]</value>
+   </variable>
+	 
+	 <variable name="OSDInfoImage">
+         <value condition="!String.IsEmpty(Player.Art(clearart))">$INFO[Player.Art(clearart)]</value>
+         <value condition="!String.IsEmpty(Player.Art(clearlogo))">$INFO[Player.Art(clearlogo)]</value>
+         <value condition="!String.IsEmpty(Player.Art(tvshow.clearart))">$INFO[Player.Art(tvshow.clearart)]</value>
+         <value condition="!String.IsEmpty(Player.Art(tvshow.clearlogo))">$INFO[Player.Art(tvshow.clearlogo)]</value>
+		 <value condition="!String.IsEmpty(Window(home).Property(TMDbHelper.Player.clearart))">$INFO[Window(home).Property(TMDbHelper.Player.clearart)]</value>
+		 <value condition="!String.IsEmpty(Window(home).Property(TMDbHelper.Player.clearlogo))">$INFO[Window(home).Property(TMDbHelper.Player.clearlogo)]</value>
+	 </variable>
+	 
+	 <variable name="VideoPlayerClearLogo">
+		<value condition="!String.IsEmpty(Player.Art(tvshow.clearlogo))">$INFO[Player.Art(tvshow.clearlogo)]</value>
+		<value condition="!String.IsEmpty(Player.Art(clearlogo))">$INFO[Player.Art(clearlogo)]</value>
+		<value condition="!String.IsEmpty(Window(home).Property(TMDbHelper.Player.clearlogo))">$INFO[Window(home).Property(TMDbHelper.Player.clearlogo)]</value>
+	 </variable>
+	      
+     <variable name="AudioPlayerCoverImage">
+        <value condition="String.EndsWith(MusicPlayer.Cover,.tbn)">$INFO[MusicPlayer.Cover]</value>
+        <value condition="!String.IsEmpty(MusicPlayer.Cover) + !String.StartsWith(MusicPlayer.Cover,Default) + Player.HasDuration">$INFO[MusicPlayer.Cover]</value>
+        <value>$INFO[MusicPlayer.Cover]</value>
+	 </variable>
+     
+     <variable name="MusicCoverImage">
+        <value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+        <value condition="!String.IsEmpty(Listitem.Art(artist.thumb))">$INFO[Listitem.Art(artist.thumb)]</value>
+		<value condition="!String.IsEmpty(Listitem.Art(albumartist.thumb))">$INFO[Listitem.Art(albumartist.thumb)]</value>
+        <value>$INFO[ListItem.Icon]</value>
+	 </variable>
+	 
+	 <variable name="DiscArtImage">
+        <value condition="!String.IsEmpty(ListItem.Art(discart))">$INFO[ListItem.Art(discart)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(album.discart))">$INFO[ListItem.Art(album.discart)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(landscape)) + Skin.HasSetting(EnableFakeDiscArt)">$INFO[ListItem.Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(99950).ListItem.Art(landscape)) + Skin.HasSetting(EnableFakeDiscArt)">$INFO[Container(99950).ListItem.Art(landscape)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(fanart)) + Skin.HasSetting(EnableFakeDiscArt)">$INFO[ListItem.Art(fanart)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(poster)) + Skin.HasSetting(EnableFakeDiscArt)">$INFO[ListItem.Art(poster)]</value>
+		<value condition="!String.IsEmpty(Container(99950).ListItem.Art(fanart)) + Skin.HasSetting(EnableFakeDiscArt)">$INFO[Container(99950).ListItem.Art(fanart)]</value>
+	 </variable>
+     
+     <variable name="PlayerDiscArtImage">
+        <value condition="!String.IsEmpty(Player.Art(discart))">$INFO[Player.Art(discart)]</value>
+		<value condition="!String.IsEmpty(Player.Art(album.discart))">$INFO[Player.Art(album.discart)]</value>
+		<value condition="!String.IsEmpty(Player.Art(landscape)) + Skin.HasSetting(EnableFakeDiscArt)">$INFO[Player.Art(landscape)]</value>
+		<value condition="!String.IsEmpty(Player.Art(fanart)) + Skin.HasSetting(EnableFakeDiscArt)">$INFO[Player.Art(fanart)]</value>
+		<value condition="!String.IsEmpty(Player.Art(poster)) + Skin.HasSetting(EnableFakeDiscArt)">$INFO[Player.Art(poster)]</value>
+		<value condition="!String.IsEmpty(Player.Art(tvshow.poster)) + Skin.HasSetting(EnableFakeDiscArt)">$INFO[Player.Art(tvshow.poster)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(poster)) + !String.Contains(ListItem.Art(poster),Default) + Skin.HasSetting(EnableFakeDiscArt)">$INFO[ListItem.Art(poster)]</value>
+	 </variable>
+
+    <!-- unused -->
+	 <variable name="showHiddenPVRLabel">
+		<value condition="Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)">$LOCALIZE[19184]</value>
+		<value>$LOCALIZE[19051]</value>
+	 </variable>
+	 
+	 <variable name="OSDProgressBarBackgroundColor">
+		<value condition="Skin.String(OSDProgressBarBackgroundColor,None)">00ffffff</value>
+		<value>$INFO[Skin.String(OSDProgressBarBackgroundColor)]</value>
+	 </variable>
+     
+     <variable name="PVRGuideListItemTextColor">
+		<value condition="Skin.HasSetting(ShowEpgGenreColors)">$INFO[Skin.String(ViewDetailsTextColor)]</value>
+		<value>$INFO[Skin.String(ButtonTextColor)]</value>
+	 </variable>   
+     
+     <variable name="MovieGenreIconVar">
+       <value condition="String.Contains(Skin.String(MovieGenreIconPack.ext), png)">$INFO[Skin.String(MovieGenreIconPack.path)]$INFO[ListItem.Label,,.png]</value>
+       <value condition="Skin.String(MovieGenreIconPack.path)">$INFO[Skin.String(MovieGenreIconPack.path)]$INFO[ListItem.Label,,.jpg]</value>
+       <value>DefaultGenre.png</value>
+     </variable>
+     
+     <variable name="MovieGenreIconVarList">
+       <!-- infolabels are not supported within a container item layout so we define all known resource addons manually-->
+         <value condition="Skin.String(MovieGenreIconPack.path,resource://resource.images.moviegenreicons.bingie/)">resource://resource.images.moviegenreicons.bingie/$INFO[ListItem.Label].jpg</value>
+         <value condition="Skin.String(MovieGenreIconPack.path,resource://resource.images.moviegenreicons.poster/)">resource://resource.images.moviegenreicons.poster/$INFO[ListItem.Label].jpg</value>
+         <value condition="Skin.String(MovieGenreIconPack.path,resource://resource.images.moviegenreicons.coloured/)">resource://resource.images.moviegenreicons.coloured/$INFO[ListItem.Label].jpg</value>
+         <value condition="Skin.String(MovieGenreIconPack.path,resource://resource.images.moviegenreicons.white/)">resource://resource.images.moviegenreicons.white/$INFO[ListItem.Label].jpg</value>
+         <value condition="Skin.String(MovieGenreIconPack.path,resource://resource.images.moviegenreicons.transparent/)">resource://resource.images.moviegenreicons.transparent/$INFO[ListItem.Label].jpg</value>
+         <value condition="Skin.String(MovieGenreIconPack.path,resource://resource.images.moviegenreicons.grey/)">resource://resource.images.moviegenreicons.grey/$INFO[ListItem.Label].jpg</value>
+         <value condition="Skin.String(MovieGenreIconPack.path,resource://resource.images.moviegenreicons.filmstrip/)">resource://resource.images.moviegenreicons.filmstrip/$INFO[ListItem.Label].jpg</value>
+		 <value condition="Skin.String(MovieGenreIconPack.path,resource://resource.images.moviegenreicons.filmstrip-hd.bw/)">resource://resource.images.moviegenreicons.filmstrip-hd.bw/$INFO[ListItem.Label].jpg</value>
+		 <value condition="Skin.String(MovieGenreIconPack.path,resource://resource.images.moviegenreicons.filmstrip-hd.colour/)">resource://resource.images.moviegenreicons.filmstrip-hd.colour/$INFO[ListItem.Label].jpg</value>
+         <value condition="Skin.String(MovieGenreIconPack.path,resource://resource.images.moviegenreicons.arctic.zephyr/)">resource://resource.images.moviegenreicons.arctic.zephyr/$INFO[ListItem.Label].png</value>
+         <value condition="Skin.String(MovieGenreIconPack.path,resource://resource.images.moviegenreicons.xzener-flat/)">resource://resource.images.moviegenreicons.xzener-flat/$INFO[ListItem.Label].png</value>
+         <value condition="Skin.String(MovieGenreIconPack.path,resource://resource.images.moviegenreicons.xzener-reflection/)">resource://resource.images.moviegenreicons.xzener-reflection/$INFO[ListItem.Label].png</value>
+         <value condition="Skin.String(MovieGenreIconPack.path,resource://resource.images.moviegenreicons.arctic.zephyr/)">resource://resource.images.moviegenreicons.arctic.zephyr/$INFO[ListItem.Label].png</value>
+         <value>DefaultGenre.png</value>
+     </variable>  
+     
+     <variable name="channellogo">
+		<value condition="Window.IsActive(tvchannels) | Window.IsActive(tvguide)">$INFO[ListItem.Icon]</value>
+     </variable>
+     
+     <variable name="DialogKeyboardAutoComplete">
+        <value condition="System.HasAddon(plugin.program.autocompletion)">plugin://plugin.program.autocompletion?info=autocomplete&amp;&amp;id=$INFO[Control.GetLabel(312).index(1)]</value>
+     </variable>
+
+	 <variable name="VideoHWDecoder">
+ 		<value condition="Player.Process(videohwdecoder)">$LOCALIZE[13281]</value>
+ 		<value>$LOCALIZE[31746]</value>
+ 	 </variable>
+    
+    <variable name="musicrating_stars">
+        <value condition="!String.IsEmpty(ListItem.UserRating)">$INFO[ListItem.UserRating,ratings/star_rating/,.png]</value>
+        <value condition="!String.IsEmpty(ListItem.Rating)">$INFO[ListItem.Rating,ratings/star_rating/,.png]</value>
+    </variable>
+    <variable name="musicrating_stars_player">
+        <value condition="String.Contains(MusicPlayer.Rating,5)">ratings/star_rating_simple/rating5.png</value>
+        <value condition="String.Contains(MusicPlayer.Rating,4)">ratings/star_rating_simple/rating4.png</value>
+        <value condition="String.Contains(MusicPlayer.Rating,3)">ratings/star_rating_simple/rating3.png</value>
+        <value condition="String.Contains(MusicPlayer.Rating,2)">ratings/star_rating_simple/rating2.png</value>
+        <value condition="String.Contains(MusicPlayer.Rating,1)">ratings/star_rating_simple/rating1.png</value>
+        <value condition="!String.IsEmpty(MusicPlayer.Rating)">$INFO[MusicPlayer.Rating,ratings/star_rating/,.png]</value>
+        <value condition="!String.IsEmpty(MusicPlayer.StarRating)">$INFO[MusicPlayer.StarRating,ratings/star_rating_simple/]</value>
+        <value condition="!String.IsEmpty(MusicPlayer.UserRating)">$INFO[MusicPlayer.UserRating,ratings/star_rating/,.png]</value>
+    </variable>
+
+    <!-- home vars -->	
+	<variable name="CategoriesColors">
+		<value condition="String.IsEqual(Container.ListItem.Label,$LOCALIZE[31456]) | String.IsEqual(Container.ListItem.Label,$LOCALIZE[31448]) | String.IsEqual(Container.ListItem.Label,$LOCALIZE[31428]) | String.IsEqual(Container.ListItem.Label,$LOCALIZE[31381]) | String.IsEqual(Container.ListItem.Label,$LOCALIZE[31372])">FFFFA10B</value>
+		<value condition="String.IsEqual(Container.ListItem.Label,$LOCALIZE[31457]) | String.IsEqual(Container.ListItem.Label,$LOCALIZE[31414]) | String.IsEqual(Container.ListItem.Label,$LOCALIZE[31352]) | String.IsEqual(Container.ListItem.Label,$LOCALIZE[31382])">FFCE3A00</value>
+		<value condition="String.IsEqual(Container.ListItem.Label,$LOCALIZE[31469]) | String.IsEqual(Container.ListItem.Label,$LOCALIZE[31446]) | String.IsEqual(Container.ListItem.Label,$LOCALIZE[31398]) | String.IsEqual(Container.ListItem.Label,$LOCALIZE[31386]) | String.IsEqual(Container.ListItem.Label,$LOCALIZE[31373])">FFA60A5E</value>
+		<value condition="String.IsEqual(Container.ListItem.Label,$LOCALIZE[31451]) | String.IsEqual(Container.ListItem.Label,$LOCALIZE[31442]) | String.IsEqual(Container.ListItem.Label,$LOCALIZE[31374]) | String.IsEqual(Container.ListItem.Label,$LOCALIZE[31376])">FFE50914</value>
+		<value condition="String.IsEqual(Container.ListItem.Label,$LOCALIZE[31452]) | String.IsEqual(Container.ListItem.Label,$LOCALIZE[31049])">FF7D2889</value>
+		<value condition="String.IsEqual(Container.ListItem.Label,$LOCALIZE[31159]) | String.IsEqual(Container.ListItem.Label,$LOCALIZE[31435]) | String.IsEqual(Container.ListItem.Label,$LOCALIZE[31377]) | String.IsEqual(Container.ListItem.Label,$LOCALIZE[31364])">FF3F54FF</value>
+		<value condition="String.IsEqual(Container.ListItem.Label,$LOCALIZE[31046]) | String.IsEqual(Container.ListItem.Label,$LOCALIZE[31399]) | String.IsEqual(Container.ListItem.Label,$LOCALIZE[31427]) | String.IsEqual(Container.ListItem.Label,$LOCALIZE[31353])">FF007A63</value>
+    </variable>
+	
+	<variable name="DetailsTextColor">
+        <value condition="!Window.IsActive(1118)">$INFO[Skin.String(BingieDeatailsTextColor)]</value>
+        <value condition="Window.IsActive(1118)">$INFO[Skin.String(BingieSubLabelTextColor)]</value>
+    </variable>
+	
+	<variable name="PVRItemColor">
+        <value condition="Skin.HasSetting(View10_DisableFanArt)">$INFO[Skin.String(PVRGuideItemColorUnfocus)]</value>
+        <value condition="!Skin.HasSetting(View10_DisableFanArt)">2effffff</value>
+    </variable>
+	
+	<variable name="PVRGuideItemColor">
+        <value condition="Skin.HasSetting(View10_DisableFanArt)">$INFO[Skin.String(PVRGuideItemColorUnfocus)]</value>
+        <value condition="!Skin.HasSetting(View10_DisableFanArt)">2effffff</value>
+    </variable>
+	
+	<variable name="PVRScrollBarColor">
+        <value condition="Skin.HasSetting(View10_DisableFanArt)">$INFO[Skin.String(ScrollbarBackgroundColor)]</value>
+        <value condition="!Skin.HasSetting(View10_DisableFanArt)">2effffff</value>
+    </variable>
+	
+	<variable name="IMDBTop250SubLabel">
+        <value condition="!String.IsEmpty(ListItem.Top250)">$INFO[ListItem.Top250]</value>
+        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Top250)) + $EXP[EXP_TMDBHelper_Metadata]">$INFO[Container(99950).ListItem.Property(Top250)]</value>
+    </variable>
+	
+	<variable name="IMDBTop250IconColor">
+        <value condition="!Skin.HasSetting(EnableTop250WhiteLabel)">bingie/top250.png</value>
+        <value condition="Skin.HasSetting(EnableTop250WhiteLabel)">bingie/top250white.png</value>
+    </variable>
+	
+	<variable name="MyListLabel">
+        <value condition="!Skin.HasSetting(AddToWatchlist) + [Library.HasContent(Movies) | Library.HasContent(TVShows)]">$LOCALIZE[31371]</value>
+        <value condition="Skin.HasSetting(AddToWatchlist) | !Library.HasContent(Movies) + !Library.HasContent(TVShows)">$LOCALIZE[31699]</value>
+    </variable>
+	
+	<variable name="VideoResolutionTypeVar">
+		<value condition="String.IsEqual(ListItem.VideoResolution,480)">SD</value>
+		<value condition="String.IsEqual(ListItem.VideoResolution,540)">SD</value>
+		<value condition="String.IsEqual(ListItem.VideoResolution,576)">SD</value>
+		<value condition="String.IsEqual(ListItem.VideoResolution,720)">HD</value>
+		<value condition="String.IsEqual(ListItem.VideoResolution,1080)">HD</value>			
+		<value condition="String.IsEqual(ListItem.VideoResolution,4K)">UHD</value>
+		<value condition="String.IsEqual(ListItem.VideoResolution,8K)">UHD</value>	
+	</variable>
+	
+	<variable name="VideoHDRVar">
+		<value condition="String.IsEqual(ListItem.HdrType,dolbyvision)">Dolby Vision</value>
+		<value condition="String.IsEqual(ListItem.HdrType,hdr10)">HDR10</value>
+		<value condition="String.IsEqual(ListItem.HdrType,hlg)">HLG</value>
+		<value>$INFO[ListItem.HdrType]</value>
+	</variable>
+	
+	<variable name="VideoListPosterVar">
+		<value condition="!String.IsEmpty(Container(6).ListItem.Art(poster))">$INFO[Container(6).ListItem.Art(poster)]</value>
+		<value condition="!String.IsEmpty(Container(6).ListItem.Art(thumb))">$INFO[Container(6).ListItem.Art(thumb)]</value>
+		<value condition="!String.IsEmpty(Container(50).ListItem.Art(poster))">$INFO[Container(50).ListItem.Art(poster)]</value>
+		<value condition="!String.IsEmpty(Container(50).ListItem.Art(thumb))">$INFO[Container(50).ListItem.Art(thumb)]</value>
+		<value condition="!String.IsEmpty(Listitem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
+		<value>$INFO[ListItem.Art(thumb)]</value>
+	</variable>
+	
+	<variable name="VideoListThumbVar">
+		<value condition="!String.IsEmpty(Container(6).ListItem.Art(fanart))">$INFO[Container(6).ListItem.Art(fanart)]</value>
+		<value condition="!String.IsEmpty(Container(6).ListItem.Art(thumb))">$INFO[Container(6).ListItem.Art(thumb)]</value>
+		<value condition="!String.IsEmpty(Container(50).ListItem.Art(fanart))">$INFO[Container(50).ListItem.Art(fanart)]</value>
+		<value condition="!String.IsEmpty(Container(50).ListItem.Art(thumb))">$INFO[Container(50).ListItem.Art(thumb)]</value>
+		<value>$INFO[ListItem.Art(thumb)]</value>	
+	</variable>
+	
+	<variable name="MediaInfoListLabelVar">
+		<value condition="Window.IsVisible(selectvideoversion)">$INFO[ListItem.VideoVersionName]</value>
+		<value>$INFO[ListItem.Label]</value>
+	</variable>
+	
+	<variable name="MediaInfoListLabel2Var">
+		<value condition="ListItem.IsStereoscopic">$INFO[ListItem.Duration,$LOCALIZE[180]: ][CR]$VAR[VideoCodecVar,, ]$INFO[ListItem.VideoResolution,| , ]$VAR[VideoResolutionTypeVar,, ]$VAR[VideoHDRVar,| , ]| 3D $INFO[ListItem.VideoAspect,| ,:1 ]$VAR[AudioCodecVar,| , ]$VAR[AudioChannelsVar]</value>
+		<value>$INFO[ListItem.Duration,$LOCALIZE[180]: ][CR]$VAR[VideoCodecVar,, ]$INFO[ListItem.VideoResolution,| , ]$VAR[VideoResolutionTypeVar,, ]$VAR[VideoHDRVar,| , ]$INFO[ListItem.VideoAspect,| ,:1 ]$VAR[AudioCodecVar,| , ]$VAR[AudioChannelsVar]</value>
+	</variable>
+	
+	<variable name="RemoveRatingLabel">
+		<value condition="$EXP[IsMovieDBType]">$LOCALIZE[31711]</value>
+		<value condition="$EXP[IsTvShowDBType]">$LOCALIZE[31710]</value>
+	</variable>
+	
+	<variable name="SettingsButton">
+		<value condition="ControlGroup(5).HasFocus() | ControlGroup(9000).HasFocus()">$INFO[Skin.String(ButtonTextColor)]</value>
+		<value condition="!ControlGroup(5).HasFocus() | ControlGroup(9000).HasFocus()">$INFO[Skin.String(ButtonFocusTextColor)]</value>
+	</variable>
+	
+	<variable name="CustomPlotHeader">	
+		<value condition="Skin.HasSetting(EnableOSDInfo)">$INFO[Window.Property(osdheader)]</value>
+		<value>$INFO[Window.Property(header)]</value>
+	</variable>
+	
+	<variable name="CustomPlotTextbox">
+		<value condition="Skin.HasSetting(EnableOSDInfo)">$INFO[Window.Property(osdtextbox)]</value>
+		<value>$INFO[Window.Property(textbox)]</value>
+	</variable>
+	
+	<variable name="TMDbSearchContentLabel">
+		<value condition="Skin.HasSetting(EnableBingieSearchAuto)">$LOCALIZE[31010]</value>
+		<value condition="!Skin.HasSetting(EnableBingieSearchAuto)">      $LOCALIZE[31010]</value>
+	</variable>
+	
+</includes>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timers>
+    <timer>
+        <name>spotlightanimation</name>
+        <description>Spotlight animation</description>
+        <start reset="true">Control.HasFocus(1508)</start>
+        <reset>!Control.HasFocus(1508)</reset>
+    </timer>
+</timers>

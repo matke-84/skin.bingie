@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<window>
+    <defaultcontrol always="true">3012</defaultcontrol>
+    <zorder>1</zorder>
+    <onload>Dialog.Close(videoosd,true)</onload>
+    <onload>Dialog.Close(seekbar,true)</onload>
+    <animation type="WindowOpen" condition="!Skin.HasSetting(NextUpNotificationSlim)">
+        <effect type="slide" start="0,400" end="0,0" tween="cubic" easing="out" delay="0" time="450" reversible="false"/>
+        <effect type="fade" start="0" end="100" delay="0" time="350" reversible="false"/>
+    </animation>
+    <animation type="WindowClose" condition="!Skin.HasSetting(NextUpNotificationSlim)">
+        <effect type="slide" start="0,0" end="0,400" tween="cubic" easing="out" delay="0" time="450" reversible="false"/>
+        <effect type="fade" start="100" end="0" delay="0" time="350" reversible="false"/>
+    </animation>
+    <controls>
+        <!-- Hidden Buttons section -->
+        <control type="grouplist">
+            <include>HiddenObject</include>
+            <!-- Watch now -->
+            <control type="button" id="3012">
+                <onfocus condition="Control.IsVisible(500397)">SetFocus(3097)</onfocus>
+                <onback>SendClick(3013)</onback>
+            </control>
+            <!-- Cancel - onback -->
+            <control type="button" id="3013">
+                <visible allowhidden="true">false</visible>
+            </control>
+        </control>
+
+        <!-- OSD -->
+        <!-- Buttons Notification -->
+        <control type="group" id="500397">
+            <visible>!Skin.HasSetting(NextUpNotificationSlim)</visible>
+            <control type="grouplist">
+                <align>right</align>
+                <bottom>100</bottom>
+                <right>40</right>
+                <orientation>horizontal</orientation>
+                <itemgap>15</itemgap>
+                <height>64</height>
+                <width>1000</width>
+                <control type="button" id="3096">
+                    <width>auto</width>
+                    <height>64</height>
+                    <aligny>center</aligny>
+                    <align>center</align>
+                    <font>Reg30</font>
+					<textoffsetx>30</textoffsetx>
+                    <focusedcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</focusedcolor>
+                    <label>31021</label>
+                    <texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+					<texturenofocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderUnfocusColor)]">bingie/border/default_button_focus.png</texturenofocus>
+                    <onclick>SendClick(3013)</onclick>
+					<scroll>false</scroll>
+                </control>
+                <control type="radiobutton" id="3097">
+                    <width>341</width>
+                    <height>64</height>
+                    <aligny>center</aligny>
+                    <align>left</align>
+                    <textwidth>270</textwidth>
+                    <font>Reg30</font>
+					<focusedcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</focusedcolor>
+                    <label>$INFO[Player.TimeRemaining(ss),  $LOCALIZE[31212] ,]</label>
+                    <texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+					<texturenofocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderUnfocusColor)]">bingie/border/default_button_focus.png</texturenofocus>
+                    <textureradioonfocus colordiffuse="$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]">dialogs/videoinfo/info/play2.png</textureradioonfocus>
+                    <textureradioofffocus colordiffuse="$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]">dialogs/videoinfo/info/play2.png</textureradioofffocus>
+                    <textureradioonnofocus>dialogs/videoinfo/info/play2.png</textureradioonnofocus>
+                    <textureradiooffnofocus>dialogs/videoinfo/info/play2.png</textureradiooffnofocus>
+                    <radioposx>29</radioposx>
+					<radioposy>22</radioposy>
+                    <radiowidth>22</radiowidth>
+                    <radioheight>22</radioheight>
+                    <onclick>SendClick(3012)</onclick>
+					<scroll>false</scroll>
+                </control>
+            </control>
+        </control>
+
+            <!-- Full Info Notification -->
+            <control type="group">
+                <visible>Skin.HasSetting(NextUpNotificationSlim)</visible>
+                <!-- gradient overlay, cornered would be better -->
+                <control type="image">
+                    <bottom>0</bottom>
+                    <width>100%</width>
+                    <height>100%</height>
+                    <texture colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]">diffuse/panel2.png</texture>
+                </control>
+                <!-- NextUp Info -->
+                <control type="grouplist">
+                    <bottom>20</bottom>
+                    <right>50</right>
+                    <orientation>vertical</orientation>
+                    <height>615</height>
+                    <width>750</width>
+                    <!-- TVshow Title -->
+                    <control type="label">
+                        <width>500</width>
+                        <height>36</height>
+                        <font>Bold36</font>
+                        <textcolor>$INFO[Skin.String(BingieOSDLabelTextColor)]</textcolor>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[Window.Property(tvshowtitle)]</label>
+                    </control>
+                    <!-- Starting in ... -->
+                    <control type="label">
+                        <width>auto</width>
+                        <height>38</height>
+                        <font>Bold32</font>
+                        <aligny>center</aligny>
+                        <textcolor>$INFO[Skin.String(BingieOSDSubLabelTextColor)]</textcolor>
+                        <label>[LIGHT]$INFO[Player.TimeRemaining(ss),$LOCALIZE[31191] , $LOCALIZE[31231,,...]][/LIGHT]</label>
+                    </control>
+                    <!-- Thumb/Fanart -->
+                    <control type="group">
+                        <visible>!String.IsEmpty(Window.Property(fanart)) | !String.IsEmpty(Window.Property(thumb))</visible>
+                        <width>550</width>
+                        <height>315</height>
+                        <control type="image">
+                            <width>550</width>
+                            <height>315</height>
+                            <bordersize>4</bordersize>
+                            <bordertexture colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">diffuse/panel2.png</bordertexture>
+                            <texture background="true">$VAR[NextUpThumb]</texture>
+                            <aspectratio scalediffuse="false" align="center" aligny="center">scale</aspectratio>
+                        </control>
+						<control type="image">
+							<bottom>4</bottom>
+							<left>4</left>
+                            <width>542</width>
+                            <height>307</height>
+                            <texture>overlays/gradient_upnext.png</texture>
+                        </control>
+                        <control type="image">
+                            <left>207</left>
+                            <top>90</top>
+                            <width>135</width>
+                            <height>135</height>
+                            <aspectratio>keep</aspectratio>
+                            <texture colordiffuse="$INFO[Skin.String(OSDProgressBarColor)]">$INFO[Player.TimeRemaining(ss),dialogs/nextup/,.png]</texture>
+                            <visible>!Integer.IsGreater(Player.TimeRemaining(ss),30)</visible>
+                        </control>
+                        <!-- Sxx: Exx -->
+                        <control type="label">
+                            <bottom>25</bottom>
+                            <left>25</left>
+                            <height>20</height>
+                            <width>auto</width>
+                            <textcolor>$INFO[Skin.String(BingieProgressBarBackgroundColor)]</textcolor>
+                            <font>Bold26</font>
+                            <label>$INFO[Window.Property(season),S,: ]$INFO[Window.Property(episode),E,]</label>
+                        </control>
+                    </control>
+                    <!-- Episode Name -->
+                    <control type="label">
+                        <width>auto</width>
+                        <height>30</height>
+                        <aligny>center</aligny>
+                        <font>Bold28</font>
+                        <textcolor>$INFO[Skin.String(BingieOSDSubLabelTextColor)]</textcolor>
+                        <label>$INFO[Window.Property(title)]</label>
+                        <visible>!String.IsEmpty(Window.Property(title))</visible>
+                    </control>
+                    <!-- Details Row -->
+                    <control type="grouplist">
+                        <orientation>horizontal</orientation>
+                        <usecontrolcoords>true</usecontrolcoords>
+                        <height>40</height>
+                        <itemgap>15</itemgap>
+
+                        <!-- Premiered year -->
+                        <control type="label">
+                            <posy>2</posy>
+                            <width>auto</width>
+                            <height>40</height>
+                            <aligny>center</aligny>
+                            <font>Reg24</font>
+                            <textcolor>$INFO[Skin.String(BingieOSDDeatailsTextColor)]</textcolor>
+                            <label>$INFO[Window.Property(year)]</label>
+                            <visible>!String.IsEmpty(Window.Property(year))</visible>
+                        </control>
+
+                        <!-- MPAA -->
+                        <control type="group" id="3098">
+                            <visible>!String.IsEmpty(Control.GetLabel(30981))</visible>
+                            <width>auto</width>
+                            <height>44</height>
+                            <control type="label" id="30981">
+                                <height>100%</height>
+                                <width>100%</width>
+                                <font>Reg24</font>
+                                <textcolor>$INFO[Skin.String(BingieOSDDeatailsTextColor)]</textcolor>
+                                <align>center</align>
+                                <aligny>center</aligny>
+                                <scroll>false</scroll>
+                                <label>$INFO[VideoPlayer.MPAA]</label>
+                            </control>
+                        </control>                       
+                    </control>
+                    <!-- Plot -->
+                    <control type="textbox">
+                        <width>auto</width>
+                        <height max="110">auto</height>
+                        <align>justify</align>
+                        <textcolor>$INFO[Skin.String(BingieOSDPlotTextColor)]</textcolor>
+                        <label>$INFO[Window.Property(plot)]</label>
+                    </control>
+					<control type="progress" id="3014">
+						<visible>false</visible>
+					</control>
+                </control>
+            </control>
+    </controls>
+</window>

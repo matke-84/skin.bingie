@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Zombies Movies</name>
+    <match>all</match>
+    <rule field="tag" operator="is">
+        <value>zombie</value>
+        <value>zombie apocalypse</value>
+        <value>night of the living dead</value>
+        <value>day of the dead</value>
+        <value>world war z</value>
+    </rule>
+    <rule field="tag" operator="isnot">
+        <value>vampire</value>
+    </rule>
+    <order direction="descending">year</order>
+</smartplaylist>

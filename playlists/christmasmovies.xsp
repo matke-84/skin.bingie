@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Christmas Movies</name>
+    <match>all</match>
+    <rule field="tag" operator="is">
+        <value>christmas</value>
+        <value>holiday</value>
+	    <value>santa</value>
+	    <value>santa clause</value>
+	    <value>krampus</value>
+	    <value>prancer</value>
+	</rule>
+    <order direction="descending">year</order>
+</smartplaylist>

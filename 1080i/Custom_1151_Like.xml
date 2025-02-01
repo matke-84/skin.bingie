@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- BINGIE -->
+<window type="dialog" id="1151">
+    <onload>ClearProperty(ratelike,Home)</onload>
+    <onunload>AlarmClock(clear,ClearProperty(showrateoptions,Home),00:00,silent)</onunload>
+    <onunload>AlarmClock(clear2,ClearProperty(ratebuttonposition,Home),00:00,silent)</onunload>
+    <visible>!String.IsEmpty(Window(Home).Property(ratelike))</visible>
+    <animation effect="fade" start="100" end="0" time="400">WindowClose</animation>
+    <controls />
+</window>

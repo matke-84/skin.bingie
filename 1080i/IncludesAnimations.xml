@@ -1,0 +1,1371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<includes>
+
+    <!--Animation-->
+    <include name="animation_view_change">
+        <!--View Change -->
+        <animation time="200" effect="fade">Visible</animation>
+        <animation time="200" effect="fade">Hidden</animation>
+    </include>
+    <include name="animation_view_change_pvr">
+        <!--View Change PVR-->
+        <animation time="200" effect="fade">Visible</animation>
+        <animation time="200" effect="fade">Hidden</animation>
+    </include>
+
+    <include name="Startup_Dialog_OpenClose">
+        <animation type="WindowOpen" reversible="false">
+            <effect type="zoom" start="80" end="100" center="960,540" delay="160" tween="circle" easing="out" time="240" />
+            <effect type="fade" delay="160" end="100" time="240" />
+        </animation>
+        <animation type="WindowClose" reversible="false">
+            <effect type="zoom" start="100" end="80" center="960,540" easing="in" tween="circle" time="240" />
+            <effect type="fade" start="100" end="0" time="240" />
+        </animation>
+    </include>
+
+    <include name="Visible_Fade">
+        <animation effect="fade" end="100" time="200">WindowOpen</animation>
+        <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+        <animation effect="fade" end="100" time="200">Visible</animation>
+        <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+    </include>
+
+    <include name="animation_window_open_close">
+        <!--Fade Open/Close normal-->
+        <animation type="WindowOpen" reversible="false" condition="![Control.IsVisible(525) | Control.IsVisible(523) | Control.IsVisible(526) | Control.IsVisible(527)]">
+            <effect type="zoom" start="80" end="100" center="960,540" easing="out" tween="back" time="200"/>
+            <effect type="fade" start="0" end="100" time="200"/>
+        </animation>
+        <animation type="WindowClose" reversible="false" condition="![Control.IsVisible(525) | Control.IsVisible(523) | Control.IsVisible(526) | Control.IsVisible(527)]">
+            <effect type="zoom" start="100" end="80" center="960,540" easing="in" tween="back" time="200"/>
+            <effect type="fade" start="100" end="0" time="200"/>
+        </animation>
+
+        <!--Fade Open/Close slow systems-->
+        <animation type="WindowOpen" reversible="false" condition="[Control.IsVisible(525) | Control.IsVisible(527)]">
+            <effect type="fade" start="0" end="100" time="150"/>
+        </animation>
+        <animation type="WindowClose" reversible="false" condition="[Control.IsVisible(525) | Control.IsVisible(527)]">
+            <effect type="fade" start="100" end="0" time="150"/>
+        </animation>
+
+        <animation time="150" effect="fade" reversible="true" easing="inout">Visible</animation>
+    </include>
+	
+	<include name="animation_textviewer_open_close">
+        <animation type="Visible" reversible="false">
+            <effect type="zoom" start="80" end="100" center="960,540" easing="out" tween="back" time="200"/>
+            <effect type="fade" start="0" end="100" time="200"/>
+        </animation>
+        <animation type="Hidden" reversible="false">
+            <effect type="zoom" start="100" end="80" center="960,540" easing="in" tween="back" time="200"/>
+            <effect type="fade" start="100" end="0" time="200"/>
+        </animation>
+    </include>
+
+    <include name="BingieViews_WindowOpen_Fade">
+        <animation type="WindowOpen" reversible="false">
+            <effect type="fade" start="0" end="100" time="600"/>
+        </animation>
+    </include>
+
+    <!-- Background Animation -->
+    <include name="BackgroundAnimation">
+        <animation effect="zoom" start="110" end="130" center="auto" time="12000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(BackgroundAnimation)">Conditional</animation>
+        <animation effect="slide" start="-10,-10" end="10,10" time="8000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(BackgroundAnimation)">Conditional</animation>
+    </include>
+
+    <!-- Menu Animations -->	
+    <include name="No_Circular_Menu_Animations">
+        <animation effect="slide" start="0" end="420" time="325" delay="0" tween="cubic" easing="inout" condition="$EXP[IsMainMenuOpened] + [[$EXP[IsBingieListsActive] | Window.IsActive(1109) | Window.IsActive(1119)] | [[Window.IsActive(Home) | $EXP[IsBingieHubsActive]] + [!String.IsEmpty(Window(Home).Property(LastFocusWidgetPos)) + String.IsEqual(Window(Home).Property(LastFocusWidgetPos), 1)] | String.IsEmpty(Window(Home).Property(LastFocusWidgetPos))]]">Conditional</animation>
+        <animation effect="slide" start="0" end="420" time="325" delay="0" tween="cubic" easing="inout" condition="$EXP[IsMainMenuOpened] + [Window.IsActive(Home) | $EXP[IsBingieHubsActive]] + !String.IsEmpty(Window(Home).Property(LastFocusWidgetPos)) + !String.IsEqual(Window(Home).Property(LastFocusWidgetPos), 1)">Conditional</animation>
+	<!-- Side Menu Icons Static Position -->
+		<animation effect="slide" start="0" end="0" time="200" delay="0" tween="sine" easing="inout" condition="[Window.IsActive(Home) | $EXP[IsBingieHubsActive]] + !String.IsEmpty(Window(Home).Property(LastFocusWidgetPos)) + !String.IsEqual(Window(Home).Property(LastFocusWidgetPos), 1)">Conditional</animation>
+    </include>
+	
+	<include name="No_Circular_Menu_AnimationsOriginal">
+        <animation effect="slide" start="0" end="420" time="325" delay="0" tween="cubic" easing="inout" condition="$EXP[IsMainMenuOpened] + [[$EXP[IsBingieListsActive] | Window.IsActive(1109) | Window.IsActive(1119)] | [[Window.IsActive(Home) | $EXP[IsBingieHubsActive]] + [!String.IsEmpty(Window(Home).Property(LastFocusWidgetPos)) + String.IsEqual(Window(Home).Property(LastFocusWidgetPos), 1)] | String.IsEmpty(Window(Home).Property(LastFocusWidgetPos))]]">Conditional</animation>
+        <animation effect="slide" start="0" end="520" time="325" delay="0" tween="cubic" easing="inout" condition="$EXP[IsMainMenuOpened] + [Window.IsActive(Home) | $EXP[IsBingieHubsActive]] + !String.IsEmpty(Window(Home).Property(LastFocusWidgetPos)) + !String.IsEqual(Window(Home).Property(LastFocusWidgetPos), 1)">Conditional</animation>
+        <animation effect="slide" start="0" end="-100" time="200" delay="0" tween="sine" easing="inout" condition="[Window.IsActive(Home) | $EXP[IsBingieHubsActive]] + !String.IsEmpty(Window(Home).Property(LastFocusWidgetPos)) + !String.IsEqual(Window(Home).Property(LastFocusWidgetPos), 1)">Conditional</animation>
+    </include>
+	
+	<include name="Hide_Menu_Animations">	
+		<animation type="Hidden">
+            <effect type="slide" start="0" end="-100" time="200" tween="sine" easing="inout"/>
+            <effect type="fade" start="100" end="0" time="300"/>
+        </animation>
+    </include>	
+
+    <!-- Title Animations -->
+    <include name="Bingie_TextTitle_Adjust_Genre_Anim">
+        <animation type="Conditional" condition="$EXP[IsCategoryDBType] | [Container.Content(genres) | String.IsEqual(ListItem.DBTYPE,genre)]">
+            <effect type="slide" start="0,0" end="0,170" time="0"/>
+            <effect type="zoom" end="150" time="0"/>
+        </animation>
+    </include>
+    <!-- Spotlight Transition on Down -->
+    <include name="WidgetsDisplaySpotlightTransition">
+        <animation effect="slide" start="0,250" end="0,0" time="300" reversible="false" condition="Control.IsVisible(1508) + String.IsEqual(Window(Home).Property(PrevWidgetPos),1) + String.IsEqual(Window(Home).Property(CurrentWidgetPos),2) + String.IsEmpty(Window(Home).Property(DelayTransition))">Conditional</animation>
+        <animation effect="slide" start="0,-250" end="0,0" time="300" reversible="false" condition="Control.IsVisible(1508) + String.IsEqual(Window(Home).Property(PrevWidgetPos),1) + String.IsEqual(Window(Home).Property(CurrentWidgetPos),Container(77777).NumItems) + String.IsEmpty(Window(Home).Property(DelayTransition))">Conditional</animation>
+    </include>
+    <!-- Spotlight Transition on Up -->
+    <include name="SpotlightDisplayWidgetsTransition">
+        <animation effect="slide" end="0,-250" time="300" condition="String.IsEqual(Container(77777).CurrentItem,2)">Conditional</animation>
+        <animation effect="slide" end="0,250" time="300" condition="Integer.IsGreater(Container(77777).NumItems,1) + String.IsEqual(Container(77777).CurrentItem,Container(77777).NumItems)">Conditional</animation>
+    </include>
+
+    <include name="animation_fade_visible_hidden">
+        <!--Visible/Hidden Aniamtion-->
+        <animation time="125" effect="fade" delay="0">Visible</animation>
+        <animation time="125" effect="fade" delay="0">Hidden</animation>
+        <animation type="WindowOpen" reversible="false">
+            <effect type="fade" start="0" end="100" time="200"/>
+        </animation>
+        <animation type="WindowClose" reversible="false">
+            <effect type="fade" start="100" end="0" time="200"/>
+        </animation>
+    </include>
+
+    <include name="animation_fade_visible">
+        <!--Visible/Hidden Aniamtion-->
+        <animation time="250" effect="fade" delay="350">Visible</animation>
+        <animation time="0" effect="fade" delay="0">Hidden</animation>
+        <animation type="WindowOpen" reversible="false">
+            <effect type="fade" start="0" end="100" time="200"/>
+        </animation>
+        <animation type="WindowClose" reversible="false">
+            <effect type="fade" start="100" end="0" time="0"/>
+        </animation>
+    </include>
+
+    <include name="animation_fade_visible_hidden_delayed">
+        <!--Visible/Hidden Aniamtion-->
+        <animation time="350" effect="fade" delay="0">Visible</animation>
+        <animation time="350" effect="fade" delay="0">Hidden</animation>
+    </include>
+
+    <include name="animation_dialog_button">
+        <!--Shutdown Menu Open/Close-->
+        <animation type="WindowOpen">
+            <effect type="slide" start="0,200" end="0,-490" tween="cubic" easing="inout" time="550" />
+            <effect type="fade" start="0" end="100" tween="sine" easing="inout" time="400" />
+        </animation>
+        <animation type="WindowClose">
+            <effect type="slide" start="0,-490" end="0,200" tween="cubic" easing="inout" time="550" />
+            <effect type="fade" start="100" end="0" tween="sine" easing="out" time="350" />
+        </animation>
+    </include>
+    <include name="animation_dialog_button_modern">
+        <!--Shutdown Menu Open/Close-->
+        <animation type="WindowOpen">
+            <effect type="slide" start="0,110" end="0,0" tween="cubic" easing="inout" time="550" />
+            <effect type="fade" start="0" end="100" tween="sine" easing="inout" time="400" />
+        </animation>
+        <animation type="WindowClose">
+            <effect type="slide" start="0,0" end="0,110" tween="cubic" easing="inout" time="550" />
+            <effect type="fade" start="100" end="0" tween="sine" easing="out" time="300" />
+        </animation>
+    </include>
+
+    <include name="Bottom_OSD_Button_Zoom_Anim">
+        <animation effect="zoom" start="100" end="145" center="auto">Focus</animation>
+    </include>
+    <include name="Top_OSD_Button_Zoom_Anim">
+        <animation effect="zoom" start="100" end="130" center="auto">Focus</animation>
+    </include>
+
+    <!-- unfocused widget fade on bingie layout -->
+    <include name="BingieUnfocusedWidgetFade">
+        <animation effect="fade" start="100" end="50" time="100" condition="!Control.HasFocus($PARAM[widgetid]) + !Control.HasFocus(1508)">Conditional</animation>
+    </include>
+
+    <include name="BingieNoCircularWidgetHeaderAnim">
+        <animation effect="slide" time="0" delay="0" start="0" end="70" condition="true">Conditional</animation>
+    </include>
+
+    <!-- hide on info-dialog transition / startup-mask -->
+    <include name="HideWindowOnStartupAndDialogInfoLoad">
+        <animation time="0" effect="fade" start="100" end="0" condition="System.HasAlarm(loadinfo) | !String.IsEmpty(Window(Home).Property(CloseInfoDialog)) | System.HasAlarm(startup)">Conditional</animation>
+		<animation time="1000" effect="fade" start="0" end="100">Visible</animation>
+    </include>
+
+    <include name="No_Circular_Slide_Animation">
+        <animation effect="slide" time="0" delay="0" start="0" end="bingie_no_circular_left_diff" condition="true">Conditional</animation>
+    </include>
+
+    <include name="animation_sub_menu">
+        <!--Sub Menu Slide Animation-->
+        <animation type="Conditional" condition="[ControlGroup(9001).HasFocus() + Window.IsActive(Home)] | ControlGroup(9000).HasFocus() | String.IsEqual(Window(Home).Property(ShowViewSubMenu),show) | Control.HasFocus(9000)">
+            <effect type="slide" start="0" end="660" time="300" delay="0" tween="cubic" easing="inout" />
+        </animation>
+    </include>
+
+    <include name="SettingsFadeEffect">
+        <animation effect="fade" time="100" delay="200">Visible</animation>
+        <animation effect="fade" time="50">Hidden</animation>
+    </include>
+
+    <include name="backgroundfade">
+        <animation effect="fade" time="150">Visible</animation>
+        <animation effect="fade" time="150">Hidden</animation>
+    </include>
+
+    <include name="Frame_Scrolling_Fade">
+        <animation effect="fade" start="100" end="80" time="200" condition="Container.Scrolling | Container.OnScrollNext | Container.OnScrollPrevious">Conditional</animation>
+    </include>
+
+    <!-- default fade animation -->
+    <include name="Default_Visible_Fade">
+        <animation effect="fade" time="350">Visible</animation>
+    </include>
+
+    <include name="SearchSuggestionsAnim">
+        <animation effect="slide" start="0" end="0,-514" time="450" tween="sine" easing="inout" condition="Control.HasFocus(1007) | Control.IsVisible(500)">Conditional</animation>
+    </include>
+
+    <include name="WidgetsBaseAnimation">
+        <animation time="100" effect="fade" start="0" end="100" reversible="false" easing="inout">Visible</animation>
+    </include>
+
+    <include name="snow">
+        <control type="group">
+            <visible>String.IsEqual(Skin.String(season_greetings),snow_animation)</visible>
+            <control type="group">
+                <posx>-100</posx>
+                <animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>40</posx>
+                    <posy>-180</posy>
+                    <width>50</width>
+                    <height>50</height>
+                    <texture>special://skin/extras/media/snow/snow.png</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                    <animation effect="slide" start="0,0" end="0,820" time="11000" delay="1600" reversible="false" loop="true" condition="true">Conditional</animation>
+                    <animation effect="slide" start="40,0" end="-40,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+                    <colordiffuse>C2FFFFFF</colordiffuse>
+                </control>
+                <control type="image">
+                    <posx>100</posx>
+                    <posy>-100</posy>
+                    <width>42</width>
+                    <height>42</height>
+                    <texture>special://skin/extras/media/snow/snow1.png</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                    <animation effect="slide" start="0,0" end="0,1020" time="8000" delay="0" reversible="false" loop="true" condition="true">Conditional</animation>
+                    <animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+                </control>
+                <control type="image">
+                    <posx>1000</posx>
+                    <posy>-0</posy>
+                    <width>40</width>
+                    <height>40</height>
+                    <texture>special://skin/extras/media/snow/snow2.png</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                    <animation effect="slide" start="0,0" end="0,1020" time="8000" delay="0" reversible="false" loop="true" condition="true">Conditional</animation>
+                    <animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+                </control>
+                <control type="image">
+                    <posx>200</posx>
+                    <posy>-40</posy>
+                    <width>30</width>
+                    <height>30</height>
+                    <texture>special://skin/extras/media/snow/snow2.png</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                    <animation effect="slide" start="0,0" end="0,1120" time="12000" delay="1300" reversible="false" loop="true" condition="true">Conditional</animation>
+                    <animation effect="slide" start="50,0" end="-10,0" time="4300" delay="220" reversible="false" condition="true">Conditional</animation>
+                </control>
+                <control type="image">
+                    <posx>260</posx>
+                    <posy>-80</posy>
+                    <width>60</width>
+                    <height>60</height>
+                    <texture>special://skin/extras/media/snow/snow.png</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                    <animation effect="slide" start="0,0" end="0,1020" time="13000" delay="2200" reversible="false" loop="true" condition="true">Conditional</animation>
+                    <animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+                </control>
+                <control type="image">
+                    <posx>390</posx>
+                    <posy>-210</posy>
+                    <width>50</width>
+                    <height>50</height>
+                    <texture>special://skin/extras/media/snow/snow2.png</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                    <animation effect="slide" start="0,0" end="0,1120" time="13000" delay="600" reversible="false" loop="true" condition="true">Conditional</animation>
+                    <animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+                    <colordiffuse>C2FFFFFF</colordiffuse>
+                </control>
+            </control>
+            <control type="group">
+                <posx>100</posx>
+                <animation effect="rotate" start="20" end="40" time="9000" delay="800" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>80</posx>
+                    <posy>-100</posy>
+                    <width>30</width>
+                    <height>30</height>
+                    <texture>special://skin/extras/media/snow/snow3.png</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                    <animation effect="slide" start="0,0" end="0,820" time="8000" delay="1000" reversible="false" loop="true" condition="true">Conditional</animation>
+                    <animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+                </control>
+                <control type="image">
+                    <posx>240</posx>
+                    <posy>-40</posy>
+                    <width>60</width>
+                    <height>60</height>
+                    <texture>special://skin/extras/media/snow/snow5.png</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                    <animation effect="slide" start="0,0" end="0,1020" time="8000" delay="1800" reversible="false" loop="true" condition="true">Conditional</animation>
+                    <animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+                </control>
+                <control type="image">
+                    <posx>390</posx>
+                    <posy>-210</posy>
+                    <width>40</width>
+                    <height>40</height>
+                    <texture>special://skin/extras/media/snow/snow4.png</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                    <animation effect="slide" start="0,0" end="0,1120" time="12000" delay="1500" reversible="false" loop="true" condition="true">Conditional</animation>
+                    <animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+                    <colordiffuse>C2FFFFFF</colordiffuse>
+                </control>
+            </control>
+            <control type="group">
+                <posx>600</posx>
+                <posy>-200</posy>
+                <animation effect="rotate" end="15" time="7000" delay="500" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>20</posx>
+                    <posy>-60</posy>
+                    <width>50</width>
+                    <height>50</height>
+                    <texture>special://skin/extras/media/snow/snow3.png</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                    <animation effect="slide" start="0,0" end="0,1120" time="12000" delay="1300" reversible="false" loop="true" condition="true">Conditional</animation>
+                    <animation effect="slide" start="50,0" end="-10,0" time="4300" delay="220" reversible="false" condition="true">Conditional</animation>
+                </control>
+                <control type="image">
+                    <posx>100</posx>
+                    <posy>-190</posy>
+                    <width>42</width>
+                    <height>42</height>
+                    <texture>special://skin/extras/media/snow/snow3.png</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                    <animation effect="slide" start="0,0" end="0,1020" time="9000" delay="2000" reversible="false" loop="true" condition="true">Conditional</animation>
+                    <animation effect="slide" start="40,0" end="-50,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+                </control>
+                <control type="image">
+                    <posx>260</posx>
+                    <posy>-80</posy>
+                    <width>60</width>
+                    <height>60</height>
+                    <texture>special://skin/extras/media/snow/snow.png</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                    <animation effect="slide" start="0,0" end="0,1120" time="8000" delay="2300" reversible="false" loop="true" condition="true">Conditional</animation>
+                    <animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+                </control>
+                <control type="image">
+                    <posx>660</posx>
+                    <posy>-10</posy>
+                    <width>42</width>
+                    <height>42</height>
+                    <texture>special://skin/extras/media/snow/snow5.png</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                    <animation effect="slide" start="0,0" end="0,1120" time="8000" delay="2300" reversible="false" loop="true" condition="true">Conditional</animation>
+                    <animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+                </control>
+                <control type="image">
+                    <posx>330</posx>
+                    <posy>-110</posy>
+                    <width>50</width>
+                    <height>50</height>
+                    <texture>special://skin/extras/media/snow/snow.png</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                    <animation effect="slide" start="0,0" end="0,1020" time="11000" delay="1600" reversible="false" loop="true" condition="true">Conditional</animation>
+                    <animation effect="slide" start="40,0" end="-40,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+                    <colordiffuse>C2FFFFFF</colordiffuse>
+                </control>
+                <control type="image">
+                    <posx>390</posx>
+                    <posy>-110</posy>
+                    <width>40</width>
+                    <height>40</height>
+                    <texture>special://skin/extras/media/snow/snow4.png</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                    <animation effect="slide" start="0,0" end="0,820" time="12000" delay="2200" reversible="false" loop="true" condition="true">Conditional</animation>
+                    <animation effect="slide" start="-20,0" end="50,0" time="3300" delay="300" reversible="false" condition="true">Conditional</animation>
+                    <colordiffuse>C2FFFFFF</colordiffuse>
+                </control>
+            </control>
+            <control type="group">
+                <posx>900</posx>
+                <animation effect="rotate" start="15" end="30" time="12000" delay="300" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>100</posx>
+                    <posy>-200</posy>
+                    <width>30</width>
+                    <height>30</height>
+                    <texture>special://skin/extras/media/snow/snow.png</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                    <animation effect="slide" start="0,0" end="0,1020" time="8000" delay="3000" reversible="false" loop="true" condition="true">Conditional</animation>
+                    <animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+                </control>
+                <control type="image">
+                    <posx>1100</posx>
+                    <posy>-40</posy>
+                    <width>50</width>
+                    <height>50</height>
+                    <texture>special://skin/extras/media/snow/snow2.png</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                    <animation effect="slide" start="0,0" end="0,1120" time="13000" delay="1300" reversible="false" loop="true" condition="true">Conditional</animation>
+                    <animation effect="slide" start="50,0" end="-10,0" time="4300" delay="220" reversible="false" condition="true">Conditional</animation>
+                </control>
+                <control type="image">
+                    <posx>260</posx>
+                    <posy>-80</posy>
+                    <width>60</width>
+                    <height>60</height>
+                    <texture>special://skin/extras/media/snow/snow5.png</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                    <animation effect="slide" start="0,0" end="0,820" time="8000" delay="3300" reversible="false" loop="true" condition="true">Conditional</animation>
+                    <animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+                </control>
+                <control type="image">
+                    <posx>390</posx>
+                    <posy>-110</posy>
+                    <width>30</width>
+                    <height>30</height>
+                    <texture>special://skin/extras/media/snow/snow2.png</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                    <animation effect="slide" start="0,0" end="0,1020" time="12000" delay="3500" reversible="false" loop="true" condition="true">Conditional</animation>
+                    <animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+                    <colordiffuse>C2FFFFFF</colordiffuse>
+                </control>
+            </control>
+
+            <control type="group">
+                <posx>700</posx>
+                <posy>80</posy>
+
+                <control type="group">
+                    <posx>-100</posx>
+                    <animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+                    <control type="image">
+                        <posx>40</posx>
+                        <posy>-180</posy>
+                        <width>50</width>
+                        <height>50</height>
+                        <texture>special://skin/extras/media/snow/snow.png</texture>
+                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <animation effect="slide" start="0,0" end="0,820" time="11000" delay="1600" reversible="false" loop="true" condition="true">Conditional</animation>
+                        <animation effect="slide" start="40,0" end="-40,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+                        <colordiffuse>C2FFFFFF</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <posx>100</posx>
+                        <posy>-100</posy>
+                        <width>42</width>
+                        <height>42</height>
+                        <texture>special://skin/extras/media/snow/snow1.png</texture>
+                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <animation effect="slide" start="0,0" end="0,1020" time="8000" delay="0" reversible="false" loop="true" condition="true">Conditional</animation>
+                        <animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+                    </control>
+                    <control type="image">
+                        <posx>200</posx>
+                        <posy>-40</posy>
+                        <width>50</width>
+                        <height>50</height>
+                        <texture>special://skin/extras/media/snow/snow5.png</texture>
+                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <animation effect="slide" start="0,0" end="0,1120" time="12000" delay="1300" reversible="false" loop="true" condition="true">Conditional</animation>
+                        <animation effect="slide" start="50,0" end="-10,0" time="4300" delay="220" reversible="false" condition="true">Conditional</animation>
+                    </control>
+                    <control type="image">
+                        <posx>260</posx>
+                        <posy>-80</posy>
+                        <width>60</width>
+                        <height>60</height>
+                        <texture>special://skin/extras/media/snow/snow3.png</texture>
+                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <animation effect="slide" start="0,0" end="0,1020" time="13000" delay="2200" reversible="false" loop="true" condition="true">Conditional</animation>
+                        <animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+                    </control>
+                    <control type="image">
+                        <posx>390</posx>
+                        <posy>-210</posy>
+                        <width>50</width>
+                        <height>50</height>
+                        <texture>special://skin/extras/media/snow/snow.png</texture>
+                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <animation effect="slide" start="0,0" end="0,1120" time="13000" delay="600" reversible="false" loop="true" condition="true">Conditional</animation>
+                        <animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+                        <colordiffuse>C2FFFFFF</colordiffuse>
+                    </control>
+                </control>
+                <control type="group">
+                    <posx>100</posx>
+                    <animation effect="rotate" start="20" end="40" time="9000" delay="800" condition="true">Conditional</animation>
+                    <control type="image">
+                        <posx>80</posx>
+                        <posy>-100</posy>
+                        <width>30</width>
+                        <height>30</height>
+                        <texture>special://skin/extras/media/snow/snow4.png</texture>
+                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <animation effect="slide" start="0,0" end="0,820" time="8000" delay="1000" reversible="false" loop="true" condition="true">Conditional</animation>
+                        <animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+                    </control>
+                    <control type="image">
+                        <posx>240</posx>
+                        <posy>-40</posy>
+                        <width>60</width>
+                        <height>60</height>
+                        <texture>special://skin/extras/media/snow/snow4.png</texture>
+                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <animation effect="slide" start="0,0" end="0,1020" time="8000" delay="1800" reversible="false" loop="true" condition="true">Conditional</animation>
+                        <animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+                    </control>
+                    <control type="image">
+                        <posx>390</posx>
+                        <posy>-210</posy>
+                        <width>40</width>
+                        <height>40</height>
+                        <texture>special://skin/extras/media/snow/snow.png</texture>
+                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <animation effect="slide" start="0,0" end="0,1120" time="12000" delay="1500" reversible="false" loop="true" condition="true">Conditional</animation>
+                        <animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+                        <colordiffuse>C2FFFFFF</colordiffuse>
+                    </control>
+                </control>
+                <control type="group">
+                    <posx>600</posx>
+                    <posy>-200</posy>
+                    <animation effect="rotate" end="15" time="7000" delay="500" condition="true">Conditional</animation>
+                    <control type="image">
+                        <posx>20</posx>
+                        <posy>-60</posy>
+                        <width>34</width>
+                        <height>34</height>
+                        <texture>special://skin/extras/media/snow/snow1.png</texture>
+                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <animation effect="slide" start="0,0" end="0,1120" time="12000" delay="1300" reversible="false" loop="true" condition="true">Conditional</animation>
+                        <animation effect="slide" start="50,0" end="-10,0" time="4300" delay="220" reversible="false" condition="true">Conditional</animation>
+                    </control>
+                    <control type="image">
+                        <posx>100</posx>
+                        <posy>-190</posy>
+                        <width>42</width>
+                        <height>42</height>
+                        <texture>special://skin/extras/media/snow/snow5.png</texture>
+                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <animation effect="slide" start="0,0" end="0,1020" time="9000" delay="2000" reversible="false" loop="true" condition="true">Conditional</animation>
+                        <animation effect="slide" start="40,0" end="-50,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+                    </control>
+                    <control type="image">
+                        <posx>260</posx>
+                        <posy>-80</posy>
+                        <width>60</width>
+                        <height>60</height>
+                        <texture>special://skin/extras/media/snow/snow3.png</texture>
+                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <animation effect="slide" start="0,0" end="0,1120" time="8000" delay="2300" reversible="false" loop="true" condition="true">Conditional</animation>
+                        <animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+                    </control>
+                    <control type="image">
+                        <posx>330</posx>
+                        <posy>-110</posy>
+                        <width>50</width>
+                        <height>50</height>
+                        <texture>special://skin/extras/media/snow/snow3.png</texture>
+                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <animation effect="slide" start="0,0" end="0,1020" time="11000" delay="1600" reversible="false" loop="true" condition="true">Conditional</animation>
+                        <animation effect="slide" start="40,0" end="-40,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+                        <colordiffuse>C2FFFFFF</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <posx>390</posx>
+                        <posy>-110</posy>
+                        <width>42</width>
+                        <height>42</height>
+                        <texture>special://skin/extras/media/snow/snow2.png</texture>
+                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <animation effect="slide" start="0,0" end="0,820" time="12000" delay="2200" reversible="false" loop="true" condition="true">Conditional</animation>
+                        <animation effect="slide" start="-20,0" end="50,0" time="3300" delay="300" reversible="false" condition="true">Conditional</animation>
+                        <colordiffuse>C2FFFFFF</colordiffuse>
+                    </control>
+                </control>
+                <control type="group">
+                    <posx>900</posx>
+                    <animation effect="rotate" start="15" end="30" time="12000" delay="300" condition="true">Conditional</animation>
+                    <control type="image">
+                        <posx>100</posx>
+                        <posy>-200</posy>
+                        <width>30</width>
+                        <height>30</height>
+                        <texture>special://skin/extras/media/snow/snow.png</texture>
+                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <animation effect="slide" start="0,0" end="0,1020" time="8000" delay="3000" reversible="false" loop="true" condition="true">Conditional</animation>
+                        <animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+                    </control>
+                    <control type="image">
+                        <posx>200</posx>
+                        <posy>-40</posy>
+                        <width>50</width>
+                        <height>50</height>
+                        <texture>special://skin/extras/media/snow/snow.png</texture>
+                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <animation effect="slide" start="0,0" end="0,1120" time="13000" delay="1300" reversible="false" loop="true" condition="true">Conditional</animation>
+                        <animation effect="slide" start="50,0" end="-10,0" time="4300" delay="220" reversible="false" condition="true">Conditional</animation>
+                    </control>
+                    <control type="image">
+                        <posx>260</posx>
+                        <posy>-80</posy>
+                        <width>60</width>
+                        <height>60</height>
+                        <texture>special://skin/extras/media/snow/snow1.png</texture>
+                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <animation effect="slide" start="0,0" end="0,920" time="8000" delay="3300" reversible="false" loop="true" condition="true">Conditional</animation>
+                        <animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+                    </control>
+                    <control type="image">
+                        <posx>390</posx>
+                        <posy>-110</posy>
+                        <width>42</width>
+                        <height>42</height>
+                        <texture>special://skin/extras/media/snow/snow2.png</texture>
+                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <animation effect="slide" start="0,0" end="0,1020" time="12000" delay="3500" reversible="false" loop="true" condition="true">Conditional</animation>
+                        <animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+                        <colordiffuse>C2FFFFFF</colordiffuse>
+                    </control>
+                </control>
+            </control>
+        </control>
+    </include>
+
+
+ <include name="pumpkin"> 
+         <control type="group"> 
+             <visible>String.IsEqual(Skin.String(season_greetings),halloween_animation)</visible> 
+             <control type="group"> 
+                 <posx>-100</posx> 
+                 <animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation> 
+                 <control type="image"> 
+                     <posx>40</posx> 
+                     <posy>-180</posy> 
+                     <width>60</width> 
+                     <height>60</height> 
+                     <texture>special://skin/extras/media/pumpkin/pumpkin.png</texture> 
+                     <aspectratio scalediffuse="false">keep</aspectratio> 
+                     <animation effect="slide" start="0,0" end="0,820" time="11000" delay="1600" reversible="false" loop="true" condition="true">Conditional</animation> 
+                     <animation effect="slide" start="40,0" end="-40,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation> 
+                 </control> 
+                 <control type="image"> 
+                     <posx>100</posx> 
+                     <posy>-100</posy> 
+                     <width>82</width> 
+                     <height>82</height> 
+                     <texture>special://skin/extras/media/pumpkin/pumpkin1.png</texture> 
+                     <aspectratio scalediffuse="false">keep</aspectratio> 
+                     <animation effect="slide" start="0,0" end="0,1020" time="8000" delay="0" reversible="false" loop="true" condition="true">Conditional</animation> 
+                     <animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation> 
+                 </control> 
+                 <control type="image"> 
+                     <posx>1000</posx> 
+                     <posy>-0</posy> 
+                     <width>50</width> 
+                     <height>50</height> 
+                     <texture>special://skin/extras/media/pumpkin/pumpkin2.png</texture> 
+                     <aspectratio scalediffuse="false">keep</aspectratio> 
+                     <animation effect="slide" start="0,0" end="0,1020" time="8000" delay="0" reversible="false" loop="true" condition="true">Conditional</animation> 
+                     <animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation> 
+                 </control> 
+                 <control type="image"> 
+                     <posx>200</posx> 
+                     <posy>-40</posy> 
+                     <width>40</width> 
+                     <height>40</height> 
+                     <texture>special://skin/extras/media/pumpkin/pumpkin2.png</texture> 
+                     <aspectratio scalediffuse="false">keep</aspectratio> 
+                     <animation effect="slide" start="0,0" end="0,1120" time="12000" delay="1300" reversible="false" loop="true" condition="true">Conditional</animation> 
+                     <animation effect="slide" start="50,0" end="-10,0" time="4300" delay="220" reversible="false" condition="true">Conditional</animation> 
+                 </control> 
+                 <control type="image"> 
+                     <posx>260</posx> 
+                     <posy>-80</posy> 
+                     <width>70</width> 
+                     <height>70</height> 
+                     <texture>special://skin/extras/media/pumpkin/pumpkin.png</texture> 
+                     <aspectratio scalediffuse="false">keep</aspectratio> 
+                     <animation effect="slide" start="0,0" end="0,1020" time="13000" delay="2200" reversible="false" loop="true" condition="true">Conditional</animation> 
+                     <animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation> 
+                 </control> 
+                 <control type="image"> 
+                     <posx>390</posx> 
+                     <posy>-210</posy> 
+                     <width>60</width> 
+                     <height>60</height> 
+                     <texture>special://skin/extras/media/pumpkin/pumpkin2.png</texture> 
+                     <aspectratio scalediffuse="false">keep</aspectratio> 
+                     <animation effect="slide" start="0,0" end="0,1120" time="13000" delay="600" reversible="false" loop="true" condition="true">Conditional</animation> 
+                     <animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation> 
+                 </control> 
+             </control> 
+             <control type="group"> 
+                 <posx>100</posx> 
+                 <animation effect="rotate" start="10" end="20" time="9000" delay="800" condition="true">Conditional</animation> 
+                 <control type="image"> 
+                     <posx>80</posx> 
+                     <posy>-100</posy> 
+                     <width>40</width> 
+                     <height>40</height> 
+                     <texture>special://skin/extras/media/pumpkin/pumpkin3.png</texture> 
+                     <aspectratio scalediffuse="false">keep</aspectratio> 
+                     <animation effect="slide" start="0,0" end="0,820" time="8000" delay="1000" reversible="false" loop="true" condition="true">Conditional</animation> 
+                     <animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation> 
+                 </control> 
+                 <control type="image"> 
+                     <posx>240</posx> 
+                     <posy>-40</posy> 
+                     <width>70</width> 
+                     <height>70</height> 
+                     <texture>special://skin/extras/media/pumpkin/pumpkin5.png</texture> 
+                     <aspectratio scalediffuse="false">keep</aspectratio> 
+                     <animation effect="slide" start="0,0" end="0,1020" time="8000" delay="1800" reversible="false" loop="true" condition="true">Conditional</animation> 
+                     <animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation> 
+                 </control> 
+                 <control type="image"> 
+                     <posx>390</posx> 
+                     <posy>-210</posy> 
+                     <width>100</width> 
+                     <height>100</height> 
+                     <texture>special://skin/extras/media/pumpkin/pumpkin4.png</texture> 
+                     <aspectratio scalediffuse="false">keep</aspectratio> 
+                     <animation effect="slide" start="0,0" end="0,1120" time="12000" delay="1500" reversible="false" loop="true" condition="true">Conditional</animation> 
+                     <animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation> 
+                 </control> 
+             </control> 
+             <control type="group"> 
+                 <posx>600</posx> 
+                 <posy>-200</posy> 
+                 <animation effect="rotate" end="15" time="7000" delay="500" condition="true">Conditional</animation> 
+                 <control type="image"> 
+                     <posx>20</posx> 
+                     <posy>-60</posy> 
+                     <width>60</width> 
+                     <height>60</height> 
+                     <texture>special://skin/extras/media/pumpkin/pumpkin3.png</texture> 
+                     <aspectratio scalediffuse="false">keep</aspectratio> 
+                     <animation effect="slide" start="0,0" end="0,1120" time="12000" delay="1300" reversible="false" loop="true" condition="true">Conditional</animation> 
+                     <animation effect="slide" start="50,0" end="-10,0" time="4300" delay="220" reversible="false" condition="true">Conditional</animation> 
+                 </control> 
+                 <control type="image"> 
+                     <posx>100</posx> 
+                     <posy>-190</posy> 
+                     <width>52</width> 
+                     <height>52</height> 
+                     <texture>special://skin/extras/media/pumpkin/pumpkin3.png</texture> 
+                     <aspectratio scalediffuse="false">keep</aspectratio> 
+                     <animation effect="slide" start="0,0" end="0,1020" time="9000" delay="2000" reversible="false" loop="true" condition="true">Conditional</animation> 
+                     <animation effect="slide" start="40,0" end="-50,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation> 
+                 </control> 
+                 <control type="image"> 
+                     <posx>260</posx> 
+                     <posy>-80</posy> 
+                     <width>70</width> 
+                     <height>70</height> 
+                     <texture>special://skin/extras/media/pumpkin/pumpkin.png</texture> 
+                     <aspectratio scalediffuse="false">keep</aspectratio> 
+                     <animation effect="slide" start="0,0" end="0,1120" time="8000" delay="2300" reversible="false" loop="true" condition="true">Conditional</animation> 
+                     <animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation> 
+                 </control> 
+                 <control type="image"> 
+                     <posx>660</posx> 
+                     <posy>-10</posy> 
+                     <width>52</width> 
+                     <height>52</height> 
+                     <texture>special://skin/extras/media/pumpkin/pumpkin5.png</texture> 
+                     <aspectratio scalediffuse="false">keep</aspectratio> 
+                     <animation effect="slide" start="0,0" end="0,1120" time="8000" delay="2300" reversible="false" loop="true" condition="true">Conditional</animation> 
+                     <animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation> 
+                 </control> 
+                 <control type="image"> 
+                     <posx>330</posx> 
+                     <posy>-110</posy> 
+                     <width>60</width> 
+                     <height>60</height> 
+                     <texture>special://skin/extras/media/pumpkin/pumpkin.png</texture> 
+                     <aspectratio scalediffuse="false">keep</aspectratio> 
+                     <animation effect="slide" start="0,0" end="0,1020" time="11000" delay="1600" reversible="false" loop="true" condition="true">Conditional</animation> 
+                     <animation effect="slide" start="40,0" end="-40,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation> 
+                 </control> 
+                 <control type="image"> 
+                     <posx>390</posx> 
+                     <posy>-110</posy> 
+                     <width>80</width> 
+                     <height>80</height> 
+                     <texture>special://skin/extras/media/pumpkin/pumpkin4.png</texture> 
+                     <aspectratio scalediffuse="false">keep</aspectratio> 
+                     <animation effect="slide" start="0,0" end="0,820" time="12000" delay="2200" reversible="false" loop="true" condition="true">Conditional</animation> 
+                     <animation effect="slide" start="-20,0" end="50,0" time="3300" delay="300" reversible="false" condition="true">Conditional</animation> 
+                 </control> 
+             </control> 
+             <control type="group"> 
+                 <posx>900</posx> 
+                 <animation effect="rotate" start="15" end="30" time="12000" delay="300" condition="true">Conditional</animation> 
+                 <control type="image"> 
+                     <posx>100</posx> 
+                     <posy>-200</posy> 
+                     <width>40</width> 
+                     <height>40</height> 
+                     <texture>special://skin/extras/media/pumpkin/pumpkin.png</texture> 
+                     <aspectratio scalediffuse="false">keep</aspectratio> 
+                     <animation effect="slide" start="0,0" end="0,1020" time="8000" delay="3000" reversible="false" loop="true" condition="true">Conditional</animation> 
+                     <animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation> 
+                 </control> 
+                 <control type="image"> 
+                     <posx>1100</posx> 
+                     <posy>-40</posy> 
+                     <width>50</width> 
+                     <height>50</height> 
+                     <texture>special://skin/extras/media/pumpkin/pumpkin2.png</texture> 
+                     <aspectratio scalediffuse="false">keep</aspectratio> 
+                     <animation effect="slide" start="0,0" end="0,1120" time="13000" delay="1300" reversible="false" loop="true" condition="true">Conditional</animation> 
+                     <animation effect="slide" start="50,0" end="-10,0" time="4300" delay="220" reversible="false" condition="true">Conditional</animation> 
+                 </control> 
+                 <control type="image"> 
+                     <posx>260</posx> 
+                     <posy>-80</posy> 
+                     <width>70</width> 
+                     <height>70</height> 
+                     <texture>special://skin/extras/media/pumpkin/pumpkin5.png</texture> 
+                     <aspectratio scalediffuse="false">keep</aspectratio> 
+                     <animation effect="slide" start="0,0" end="0,820" time="8000" delay="3300" reversible="false" loop="true" condition="true">Conditional</animation> 
+                     <animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation> 
+                 </control> 
+                 <control type="image"> 
+                     <posx>390</posx> 
+                     <posy>-110</posy> 
+                     <width>40</width> 
+                     <height>40</height> 
+                     <texture>special://skin/extras/media/pumpkin/pumpkin2.png</texture> 
+                     <aspectratio scalediffuse="false">keep</aspectratio> 
+                     <animation effect="slide" start="0,0" end="0,1020" time="12000" delay="3500" reversible="false" loop="true" condition="true">Conditional</animation> 
+                     <animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation> 
+                 </control> 
+             </control> 
+             <control type="group"> 
+                 <posx>700</posx> 
+                 <posy>80</posy> 
+                  <control type="group"> 
+                     <posx>-100</posx> 
+                     <animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation> 
+                     <control type="image"> 
+                         <posx>40</posx> 
+                         <posy>-180</posy> 
+                         <width>60</width> 
+                         <height>60</height> 
+                         <texture>special://skin/extras/media/pumpkin/pumpkin.png</texture> 
+                         <aspectratio scalediffuse="false">keep</aspectratio> 
+                         <animation effect="slide" start="0,0" end="0,820" time="11000" delay="1600" reversible="false" loop="true" condition="true">Conditional</animation> 
+                         <animation effect="slide" start="40,0" end="-40,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation> 
+                     </control> 
+                     <control type="image"> 
+                         <posx>100</posx> 
+                         <posy>-100</posy> 
+                         <width>82</width> 
+                         <height>82</height> 
+                         <texture>special://skin/extras/media/pumpkin/pumpkin1.png</texture> 
+                         <aspectratio scalediffuse="false">keep</aspectratio> 
+                         <animation effect="slide" start="0,0" end="0,1020" time="8000" delay="0" reversible="false" loop="true" condition="true">Conditional</animation> 
+                         <animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation> 
+                     </control> 
+                     <control type="image"> 
+                         <posx>200</posx> 
+                         <posy>-40</posy> 
+                         <width>60</width> 
+                         <height>60</height> 
+                         <texture>special://skin/extras/media/pumpkin/pumpkin5.png</texture> 
+                         <aspectratio scalediffuse="false">keep</aspectratio> 
+                         <animation effect="slide" start="0,0" end="0,1120" time="12000" delay="1300" reversible="false" loop="true" condition="true">Conditional</animation> 
+                         <animation effect="slide" start="50,0" end="-10,0" time="4300" delay="220" reversible="false" condition="true">Conditional</animation> 
+                     </control> 
+                     <control type="image"> 
+                         <posx>260</posx> 
+                         <posy>-80</posy> 
+                         <width>70</width> 
+                         <height>70</height> 
+                         <texture>special://skin/extras/media/pumpkin/pumpkin3.png</texture> 
+                         <aspectratio scalediffuse="false">keep</aspectratio> 
+                         <animation effect="slide" start="0,0" end="0,1020" time="13000" delay="2200" reversible="false" loop="true" condition="true">Conditional</animation> 
+                         <animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation> 
+                     </control> 
+                     <control type="image"> 
+                         <posx>390</posx> 
+                         <posy>-210</posy> 
+                         <width>60</width> 
+                         <height>60</height> 
+                         <texture>special://skin/extras/media/pumpkin/pumpkin.png</texture> 
+                         <aspectratio scalediffuse="false">keep</aspectratio> 
+                         <animation effect="slide" start="0,0" end="0,1120" time="13000" delay="600" reversible="false" loop="true" condition="true">Conditional</animation> 
+                         <animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation> 
+                     </control> 
+                 </control> 
+                 <control type="group"> 
+                     <posx>100</posx> 
+                     <animation effect="rotate" start="10" end="20" time="9000" delay="800" condition="true">Conditional</animation> 
+                     <control type="image"> 
+                         <posx>80</posx> 
+                         <posy>-100</posy> 
+                         <width>70</width> 
+                         <height>70</height> 
+                         <texture>special://skin/extras/media/pumpkin/pumpkin4.png</texture> 
+                         <aspectratio scalediffuse="false">keep</aspectratio> 
+                         <animation effect="slide" start="0,0" end="0,820" time="8000" delay="1000" reversible="false" loop="true" condition="true">Conditional</animation> 
+                         <animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation> 
+                     </control> 
+                     <control type="image"> 
+                         <posx>240</posx> 
+                         <posy>-40</posy> 
+                         <width>100</width> 
+                         <height>100</height> 
+                         <texture>special://skin/extras/media/pumpkin/pumpkin4.png</texture> 
+                         <aspectratio scalediffuse="false">keep</aspectratio> 
+                         <animation effect="slide" start="0,0" end="0,1020" time="8000" delay="1800" reversible="false" loop="true" condition="true">Conditional</animation> 
+                         <animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation> 
+                     </control> 
+                     <control type="image"> 
+                         <posx>390</posx> 
+                         <posy>-210</posy> 
+                         <width>50</width> 
+                         <height>50</height> 
+                         <texture>special://skin/extras/media/pumpkin/pumpkin.png</texture> 
+                         <aspectratio scalediffuse="false">keep</aspectratio> 
+                         <animation effect="slide" start="0,0" end="0,1120" time="12000" delay="1500" reversible="false" loop="true" condition="true">Conditional</animation> 
+                         <animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation> 
+                     </control> 
+                 </control> 
+                 <control type="group"> 
+                     <posx>600</posx> 
+                     <posy>-200</posy> 
+                     <animation effect="rotate" end="15" time="7000" delay="500" condition="true">Conditional</animation> 
+                     <control type="image"> 
+                         <posx>20</posx> 
+                         <posy>-60</posy> 
+                         <width>74</width> 
+                         <height>74</height> 
+                         <texture>special://skin/extras/media/pumpkin/pumpkin1.png</texture> 
+                         <aspectratio scalediffuse="false">keep</aspectratio> 
+                         <animation effect="slide" start="0,0" end="0,1120" time="12000" delay="1300" reversible="false" loop="true" condition="true">Conditional</animation> 
+                         <animation effect="slide" start="50,0" end="-10,0" time="4300" delay="220" reversible="false" condition="true">Conditional</animation> 
+                     </control> 
+                     <control type="image"> 
+                         <posx>100</posx> 
+                         <posy>-190</posy> 
+                         <width>52</width> 
+                         <height>52</height> 
+                         <texture>special://skin/extras/media/pumpkin/pumpkin5.png</texture> 
+                         <aspectratio scalediffuse="false">keep</aspectratio> 
+                         <animation effect="slide" start="0,0" end="0,1020" time="9000" delay="2000" reversible="false" loop="true" condition="true">Conditional</animation> 
+                         <animation effect="slide" start="40,0" end="-50,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation> 
+                     </control> 
+                     <control type="image"> 
+                         <posx>260</posx> 
+                         <posy>-80</posy> 
+                         <width>70</width> 
+                         <height>70</height> 
+                         <texture>special://skin/extras/media/pumpkin/pumpkin3.png</texture> 
+                         <aspectratio scalediffuse="false">keep</aspectratio> 
+                         <animation effect="slide" start="0,0" end="0,1120" time="8000" delay="2300" reversible="false" loop="true" condition="true">Conditional</animation> 
+                         <animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation> 
+                     </control> 
+                     <control type="image"> 
+                         <posx>330</posx> 
+                         <posy>-110</posy> 
+                         <width>60</width> 
+                         <height>60</height> 
+                         <texture>special://skin/extras/media/pumpkin/pumpkin3.png</texture> 
+                         <aspectratio scalediffuse="false">keep</aspectratio> 
+                         <animation effect="slide" start="0,0" end="0,1020" time="11000" delay="1600" reversible="false" loop="true" condition="true">Conditional</animation> 
+                         <animation effect="slide" start="40,0" end="-40,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation> 
+                     </control> 
+                     <control type="image"> 
+                         <posx>390</posx> 
+                         <posy>-110</posy> 
+                         <width>52</width> 
+                         <height>52</height> 
+                         <texture>special://skin/extras/media/pumpkin/pumpkin2.png</texture> 
+                         <aspectratio scalediffuse="false">keep</aspectratio> 
+                         <animation effect="slide" start="0,0" end="0,820" time="12000" delay="2200" reversible="false" loop="true" condition="true">Conditional</animation> 
+                         <animation effect="slide" start="-20,0" end="50,0" time="3300" delay="300" reversible="false" condition="true">Conditional</animation> 
+                     </control> 
+                 </control> 
+                 <control type="group"> 
+                     <posx>900</posx> 
+                     <animation effect="rotate" start="15" end="30" time="12000" delay="300" condition="true">Conditional</animation> 
+                     <control type="image"> 
+                         <posx>100</posx> 
+                         <posy>-200</posy> 
+                         <width>40</width> 
+                         <height>40</height> 
+                         <texture>special://skin/extras/media/pumpkin/pumpkin.png</texture> 
+                         <aspectratio scalediffuse="false">keep</aspectratio> 
+                         <animation effect="slide" start="0,0" end="0,1020" time="8000" delay="3000" reversible="false" loop="true" condition="true">Conditional</animation> 
+                         <animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation> 
+                     </control> 
+                     <control type="image"> 
+                         <posx>200</posx> 
+                         <posy>-40</posy> 
+                         <width>60</width> 
+                         <height>60</height> 
+                         <texture>special://skin/extras/media/pumpkin/pumpkin.png</texture> 
+                         <aspectratio scalediffuse="false">keep</aspectratio> 
+                         <animation effect="slide" start="0,0" end="0,1120" time="13000" delay="1300" reversible="false" loop="true" condition="true">Conditional</animation> 
+                         <animation effect="slide" start="50,0" end="-10,0" time="4300" delay="220" reversible="false" condition="true">Conditional</animation> 
+                     </control> 
+                     <control type="image"> 
+                         <posx>260</posx> 
+                         <posy>-80</posy> 
+                         <width>100</width> 
+                         <height>100</height> 
+                         <texture>special://skin/extras/media/pumpkin/pumpkin1.png</texture> 
+                         <aspectratio scalediffuse="false">keep</aspectratio> 
+                         <animation effect="slide" start="0,0" end="0,920" time="8000" delay="3300" reversible="false" loop="true" condition="true">Conditional</animation> 
+                         <animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation> 
+                     </control> 
+                     <control type="image"> 
+                         <posx>390</posx> 
+                         <posy>-110</posy> 
+                         <width>52</width> 
+                         <height>52</height> 
+                         <texture>special://skin/extras/media/pumpkin/pumpkin2.png</texture> 
+                         <aspectratio scalediffuse="false">keep</aspectratio> 
+                         <animation effect="slide" start="0,0" end="0,1020" time="12000" delay="3500" reversible="false" loop="true" condition="true">Conditional</animation> 
+                         <animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation> 
+                     </control> 
+                 </control> 
+             </control> 
+         </control> 
+     </include> 
+
+    <include name="Fade10">
+        <animation effect="fade" end="10" time="0" condition="true">Conditional</animation>
+    </include>
+    <include name="Fade20">
+        <animation effect="fade" end="20" time="0" condition="true">Conditional</animation>
+    </include>
+    <include name="Fade30">
+        <animation effect="fade" end="30" time="0" condition="true">Conditional</animation>
+    </include>
+    <include name="Fade40">
+        <animation effect="fade" end="40" time="0" condition="true">Conditional</animation>
+    </include>
+    <include name="Fade50">
+        <animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
+    </include>
+    <include name="Fade60">
+        <animation effect="fade" end="60" time="0" condition="true">Conditional</animation>
+    </include>
+    <include name="Fade70">
+        <animation effect="fade" end="70" time="0" condition="true">Conditional</animation>
+    </include>
+    <include name="Fade80">
+        <animation effect="fade" end="80" time="0" condition="true">Conditional</animation>
+    </include>
+    <include name="Fade90">
+        <animation effect="fade" end="90" time="0" condition="true">Conditional</animation>
+    </include>
+    <include name="Fade100">
+        <animation effect="fade" end="100" time="0" condition="true">Conditional</animation>
+    </include>
+	
+	<include name="Animation_Right_Delay">
+		<animation type="WindowOpen" reversible="false" condition="!String.IsEmpty(Window(Home).Property(AnimationRight))">
+		  <effect type="fade" start="0" end="100" time="500" delay="300" tween="sine" easing="out" />
+		  <effect type="slide" start="-150" end="0" time="500" delay="300" tween="cubic" easing="out" />
+		</animation>
+		<animation type="WindowClose" reversible="false" condition="!String.IsEmpty(Window(Home).Property(AnimationRight))">
+		  <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+		  <effect type="slide" start="0" end="-150" time="300" tween="cubic" easing="out" />
+		</animation>
+		<animation type="WindowOpen" reversible="false">
+		  <effect type="fade" start="0" end="100" time="500" delay="300" tween="sine" easing="out" />
+		  <effect type="slide" start="150" end="0" time="500" delay="300" tween="cubic" easing="out" />
+		</animation>
+		<animation type="WindowClose" reversible="false">
+		  <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+		  <effect type="slide" start="0" end="150" time="300" tween="cubic" easing="out" />
+		</animation>
+	</include>
+	
+	<include name="Animation_Right_Delay_2">
+		<animation type="WindowOpen" reversible="false" condition="!String.IsEmpty(Window(Home).Property(AnimationRight)) + [!String.IsEmpty(Window(Home).Property(CloseInfoDialog)) | !String.IsEmpty(Window(Home).Property(FullImage)) | !String.IsEmpty(Window(Home).Property(Animation)) | Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1) | Window.IsActive(Custom_1190_TMDbHelperCast.xml) | Window.IsActive(Custom_1109_BingieSearch.xml) | Window.IsActive(Custom_1108_BingieMovieSearch.xml)]">
+		  <effect type="fade" start="0" end="100" time="500" delay="200" tween="sine" easing="out" />
+		  <effect type="slide" start="-150" end="0" time="500" delay="200" tween="cubic" easing="out" />
+		</animation>
+		<animation type="WindowClose" reversible="false" condition="!String.IsEmpty(Window(Home).Property(AnimationRight)) + [!String.IsEmpty(Window(Home).Property(CloseInfoDialog)) | !String.IsEmpty(Window(Home).Property(FullImage)) | !String.IsEmpty(Window(Home).Property(Animation)) | Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1) | Window.IsActive(Custom_1109_BingieSearch.xml) | Window.IsActive(Custom_1108_BingieMovieSearch.xml)]">
+		  <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+		  <effect type="slide" start="0" end="-150" time="300" tween="cubic" easing="out" />
+		</animation>
+		<animation type="WindowOpen" reversible="false" condition="!String.IsEmpty(Window(Home).Property(CloseInfoDialog)) | !String.IsEmpty(Window(Home).Property(FullImage)) | !String.IsEmpty(Window(Home).Property(Animation)) | Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1) | Window.IsActive(Custom_1190_TMDbHelperCast.xml) | Window.IsActive(Custom_1109_BingieSearch.xml) | Window.IsActive(Custom_1108_BingieMovieSearch.xml)">
+		  <effect type="fade" start="0" end="100" time="500" delay="200" tween="sine" easing="out" />
+		  <effect type="slide" start="150" end="0" time="500" delay="200" tween="cubic" easing="out" />
+		</animation>
+		<animation type="WindowClose" reversible="false" condition="!String.IsEmpty(Window(Home).Property(CloseInfoDialog)) | !String.IsEmpty(Window(Home).Property(FullImage)) | !String.IsEmpty(Window(Home).Property(Animation)) | Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1) | Window.IsActive(Custom_1109_BingieSearch.xml) | Window.IsActive(Custom_1108_BingieMovieSearch.xml)">
+		  <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+		  <effect type="slide" start="0" end="150" time="300" tween="cubic" easing="out" />
+		</animation>
+	</include>
+	
+	<include name="Animation_Right_Delay_3">
+		<animation type="WindowOpen" reversible="false" condition="!String.IsEmpty(Window(Home).Property(AnimationRight))">
+		  <effect type="fade" start="0" end="100" time="500" delay="300" tween="sine" easing="out" />
+		  <effect type="slide" start="-150" end="0" time="500" delay="300" tween="cubic" easing="out" />
+		</animation>
+		<animation type="WindowClose" reversible="false" condition="!String.IsEmpty(Window(Home).Property(AnimationRight)) + String.IsEmpty(Window(Home).Property(NoFadeOut))">
+		  <effect type="fade" start="100" end="0" time="0" tween="sine" easing="out" />
+		  <effect type="slide" start="0" end="-150" time="300" tween="cubic" easing="out" />
+		</animation>
+		<animation type="WindowClose" reversible="false" condition="!String.IsEmpty(Window(Home).Property(AnimationRight)) + !String.IsEmpty(Window(Home).Property(NoFadeOut))">
+		  <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+		  <effect type="slide" start="0" end="-150" time="300" tween="cubic" easing="out" />
+		</animation>
+		<animation type="WindowOpen" reversible="false">
+		  <effect type="fade" start="0" end="100" time="500" delay="300" tween="sine" easing="out" />
+		  <effect type="slide" start="150" end="0" time="500" delay="300" tween="cubic" easing="out" />
+		</animation>
+		<animation type="WindowClose" reversible="false" condition="String.IsEmpty(Window(Home).Property(NoFadeOut))">
+		  <effect type="fade" start="100" end="0" time="0" tween="sine" easing="out" />
+		  <effect type="slide" start="0" end="150" time="300" tween="cubic" easing="out" />
+		</animation>
+		<animation type="WindowClose" reversible="false" condition="!String.IsEmpty(Window(Home).Property(NoFadeOut))">
+		  <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+		  <effect type="slide" start="0" end="150" time="300" tween="cubic" easing="out" />
+		</animation>
+	</include>
+	
+	<include name="Animation_Right_Bingie">
+		<animation type="WindowOpen" reversible="false">
+		  <effect type="fade" start="0" end="100" time="500" delay="300" tween="sine" easing="out" />
+		  <effect type="slide" start="150" end="0" time="500" delay="300" tween="cubic" easing="out" />
+		</animation>
+		<animation type="WindowClose" reversible="false">
+		  <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+		  <effect type="slide" start="0" end="150" time="300" tween="cubic" easing="out" />
+		</animation>
+	</include>
+	
+	<include name="Animation_Right_Bingie_2">
+		<animation type="WindowOpen" reversible="false">
+		  <effect type="fade" start="0" end="100" time="500" tween="sine" easing="out" />
+		  <effect type="slide" start="-150" end="0" time="500" tween="cubic" easing="out" />
+		</animation>
+		<animation type="WindowClose" reversible="false">
+		  <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+		  <effect type="slide" start="0" end="-150" time="300" tween="cubic" easing="out" />
+		</animation>
+	</include>
+	
+	<include name="Animation_Right_Home">
+		<animation type="Visible" reversible="false">
+		  <effect type="fade" start="0" end="100" time="500" delay="200" tween="sine" easing="out" />
+		  <effect type="slide" start="-150" end="0" time="500" delay="200" tween="cubic" easing="out" />
+		</animation>
+	</include>
+	
+	<include name="Animation_Right_Home_2">
+		<animation type="Visible" reversible="false">
+		  <effect type="fade" start="0" end="100" time="500" delay="400" tween="sine" easing="out" />
+		  <effect type="slide" start="-150" end="0" time="500" delay="200" tween="cubic" easing="out" />
+		</animation>
+	</include>
+	
+	<include name="Animation_Right_DialogInfo">
+		<animation type="Visible" reversible="false">
+			<effect type="fade" start="0" end="100" time="500" delay="300" tween="sine" easing="out" />
+			<effect type="slide" start="150" end="0" time="500" delay="300" tween="cubic" easing="out" />
+		</animation>	
+		<animation type="Hidden" reversible="false">
+			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+			<effect type="slide" start="0" end="150" time="300" tween="cubic" easing="out" />
+		</animation>
+		<animation type="WindowOpen" reversible="false">
+			<effect type="fade" start="0" end="100" time="500" delay="300" tween="sine" easing="out" />
+			<effect type="slide" start="150" end="0" time="500" delay="300" tween="cubic" easing="out" />
+		</animation>	
+		<animation type="WindowClose" reversible="false">
+			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+			<effect type="slide" start="0" end="150" time="300" tween="cubic" easing="out" />
+		</animation>
+	</include>
+	
+	<include name="Animation_Recommendations_Window_2">
+	    <animation type="WindowOpen" reversible="false">
+            <effect type="fade" start="0" end="100" delay="400" time="500" tween="sine" easing="out"/>
+            <effect type="slide" start="-150,0" end="0" delay="400" time="500" tween="cubic" easing="out" />
+        </animation>
+        <animation type="WindowOpen" reversible="false" condition="String.IsEmpty(Window(Home).Property(TMDbHelper.Recommendations.HideInfo))">
+            <effect type="fade" start="0" end="100" delay="400" time="500" tween="sine" easing="out"/>
+            <effect type="slide" start="150,0" end="0" delay="400" time="500" tween="cubic" easing="out" />
+        </animation>
+        <animation type="WindowOpen" reversible="false" condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.Recommendations.HideInfo))">
+            <effect type="fade" start="0" end="100" delay="400" time="500" tween="sine" easing="out"/>
+            <effect type="slide" start="150,0" end="0" delay="400" time="500" tween="cubic" easing="out" />
+        </animation>
+        <animation type="WindowClose" reversible="false">
+            <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out"/>
+            <effect type="slide" start="0" end="-150" time="300" tween="cubic" easing="out" />
+        </animation>
+		<animation type="WindowClose" reversible="false" condition="String.IsEmpty(Window(Home).Property(TMDbHelper.Recommendations.HideRecs))">
+            <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out"/>
+            <effect type="slide" start="0" end="150" time="300" tween="cubic" easing="out" />
+        </animation>
+        <animation type="WindowClose" reversible="false" condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.Recommendations.HideRecs))">
+            <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out"/>
+            <effect type="slide" start="0" end="150" time="300" tween="cubic" easing="out" />
+        </animation>
+    </include>
+	
+	<include name="Animation_Wikipedia">
+		<animation type="WindowClose" reversible="false">
+			<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+			<effect type="slide" start="0" end="150" time="300" tween="cubic" easing="out" />
+		</animation>
+		<animation type="Visible" reversible="false">
+			<effect type="fade" start="0" end="100" time="500" tween="sine" easing="out" />
+			<effect type="slide" start="150" end="0" time="500" tween="cubic" easing="out" />
+		</animation>
+	</include>
+	
+	<include name="OSD_Animation">
+		<animation type="WindowOpen">
+			<effect type="slide" start="0,-400" end="0,0" tween="cubic" easing="out" delay="0" time="450" reversible="false"/>
+			<effect type="fade" start="0" end="100" delay="0" time="350" reversible="false"/>
+		</animation>
+		<animation type="Visible">
+			<effect type="slide" start="0,-400" end="0,0" tween="cubic" easing="out" delay="0" time="450" reversible="false"/>
+			<effect type="fade" start="0" end="100" delay="0" time="350" reversible="false"/>
+		</animation>
+		<animation type="Hidden">
+			<effect type="slide" start="0,0" end="0,-300" tween="cubic" easing="out" delay="0" time="800" reversible="false"/>
+			<effect type="fade" start="100" end="0" delay="0" time="700" reversible="false"/>
+		</animation>
+	</include>
+	
+	<include name="DialogInfoFanart_Animation">
+		<animation type="WindowOpen" condition="Window.IsActive(1106) | Window.IsActive(1108) | Window.IsActive(1109)">
+			<effect type="fade" start="0" end="50" time="500" reversible="false"/>
+		</animation>
+		<animation type="WindowClose" condition="Window.IsActive(1106) | Window.IsActive(1108) | Window.IsActive(1109)">
+			<effect type="fade" start="50" end="0" time="300" reversible="false"/>
+		</animation>
+		<animation type="WindowOpen" condition="String.IsEmpty(Window(Home).Property(CloseInfoDialog)) + String.IsEmpty(Window(Home).Property(FullImage)) + String.IsEmpty(Window(Home).Property(FadeFanart))">
+			<effect type="fade" start="100" end="50"  time="500" reversible="false"/>
+		</animation>
+		<animation type="WindowOpen" condition="!String.IsEmpty(Window(Home).Property(CloseInfoDialog)) + String.IsEmpty(Window(Home).Property(FullImage))">
+			<effect type="fade" start="0" end="50" time="500" reversible="false"/>
+		</animation>
+		<animation type="WindowClose" condition="!String.IsEmpty(Window(Home).Property(CloseInfoDialog)) + String.IsEmpty(Window(Home).Property(FullImage))">
+			<effect type="fade" start="50" end="0" time="300" reversible="false"/>
+		</animation>
+		<animation type="WindowOpen" condition="!String.IsEmpty(Window(Home).Property(FullImage))">
+			<effect type="fade" start="0" end="0" time="0" reversible="false"/>
+		</animation>
+		<animation type="WindowClose" condition="!String.IsEmpty(Window(Home).Property(FullImage))">
+			<effect type="fade" start="0" end="0" time="0" reversible="false"/>
+		</animation>
+		<animation type="WindowClose" condition="!String.IsEmpty(Window(Home).Property(FadeFanart))">
+			<effect type="fade" start="50" end="0" time="300" reversible="false"/>
+		</animation>
+		<animation type="WindowOpen" condition="String.IsEmpty(Window(Home).Property(CloseInfoDialog)) + String.IsEmpty(Window(Home).Property(FullImage)) + !String.IsEmpty(Window(Home).Property(FadeFanart))">
+			<effect type="fade" start="0" end="50" time="500" reversible="false"/>
+		</animation>
+	</include>
+	
+	<include name="DialogInfoFanart_Animation_2">
+		<animation type="WindowOpen" condition="String.IsEmpty(Window(Home).Property(CloseInfoDialog)) + !String.IsEmpty(Window(Home).Property(FullImage)) + String.IsEmpty(Window(Home).Property(FadeFanart))">
+			<effect type="fade" start="100" end="50"  time="500" reversible="false"/>
+		</animation>
+		<animation type="WindowOpen" condition="!String.IsEmpty(Window(Home).Property(CloseInfoDialog)) + !String.IsEmpty(Window(Home).Property(FullImage))">
+			<effect type="fade" start="0" end="50" time="500" reversible="false"/>
+		</animation>
+		<animation type="WindowClose" condition="!String.IsEmpty(Window(Home).Property(CloseInfoDialog)) + !String.IsEmpty(Window(Home).Property(FullImage))">
+			<effect type="fade" start="50" end="0" time="300" reversible="false"/>
+		</animation>
+		<animation type="WindowClose" condition="!String.IsEmpty(Window(Home).Property(FadeFanart))">
+			<effect type="fade" start="50" end="0" time="300" reversible="false"/>
+		</animation>
+		<animation type="WindowOpen" condition="String.IsEmpty(Window(Home).Property(CloseInfoDialog)) + !String.IsEmpty(Window(Home).Property(FullImage)) + !String.IsEmpty(Window(Home).Property(FadeFanart))">
+			<effect type="fade" start="0" end="50" time="500" reversible="false"/>
+		</animation>
+	</include>
+	
+	<include name="DialogInfoFanart_Animation_3">
+		<animation type="WindowOpen" condition="String.IsEmpty(Window(Home).Property(CloseInfoDialog)) + !String.IsEmpty(Window(Home).Property(FullImage))">
+			<effect type="fade" start="0" end="15"  time="500" reversible="false"/>
+		</animation>
+		<animation type="WindowClose" condition="String.IsEmpty(Window(Home).Property(CloseInfoDialog)) + !String.IsEmpty(Window(Home).Property(FullImage))">
+			<effect type="fade" start="15" end="0"  time="300" reversible="false"/>
+		</animation>
+		<animation type="WindowOpen" condition="!String.IsEmpty(Window(Home).Property(CloseInfoDialog)) + !String.IsEmpty(Window(Home).Property(FullImage))">
+			<effect type="fade" start="0" end="15" time="500" reversible="false"/>
+		</animation>
+		<animation type="WindowClose" condition="!String.IsEmpty(Window(Home).Property(CloseInfoDialog)) + !String.IsEmpty(Window(Home).Property(FullImage))">
+			<effect type="fade" start="15" end="0" time="300" reversible="false"/>
+		</animation>
+		<animation type="WindowOpen" condition="String.IsEmpty(Window(Home).Property(CloseInfoDialog)) + String.IsEmpty(Window(Home).Property(FullImage))">
+			<effect type="fade" start="0" end="15"  time="500" reversible="false"/>
+		</animation>
+		<animation type="WindowClose" condition="String.IsEmpty(Window(Home).Property(CloseInfoDialog)) + String.IsEmpty(Window(Home).Property(FullImage))">
+			<effect type="fade" start="15" end="0"  time="300" reversible="false"/>
+		</animation>
+		<animation type="WindowOpen" condition="!String.IsEmpty(Window(Home).Property(CloseInfoDialog)) + String.IsEmpty(Window(Home).Property(FullImage))">
+			<effect type="fade" start="0" end="15" time="500" reversible="false"/>
+		</animation>
+		<animation type="WindowClose" condition="!String.IsEmpty(Window(Home).Property(CloseInfoDialog)) + String.IsEmpty(Window(Home).Property(FullImage))">
+			<effect type="fade" start="15" end="0" time="300" reversible="false"/>
+		</animation>
+	</include>
+	
+	<include name="DialogInfoFanart_Animation_4">
+		<animation type="WindowOpen">
+			<effect type="fade" start="0" end="20" time="500" reversible="false"/>
+		</animation>
+		<animation type="WindowClose">
+			<effect type="fade" start="20" end="0" time="300" reversible="false"/>
+		</animation>
+		<animation type="Visible">
+			<effect type="fade" start="0" end="20" time="500" reversible="false"/>
+		</animation>
+		<animation type="Hidden">
+			<effect type="fade" start="20" end="0" time="300" reversible="false"/>
+		</animation>
+	</include>
+	
+	<include name="Animation.TestIn">
+        <visible>!String.IsEmpty(Window(Home).Property(ListAnimation)) + !Container().OnNext + !Container().OnPrevious</visible>
+        <animation type="VisibleChange" reversible="false">
+            <effect type="fade" start="0" end="100" time="400" delay="2300"/>
+        </animation>
+        <animation type="Conditional" condition="true" reversible="false">
+            <effect type="fade" start="0" end="100" time="400" delay="2300"/>
+        </animation>
+    </include>
+
+    <include name="Animation.TestOut">
+        <animation type="Conditional" condition="!String.IsEmpty(Window(Home).Property(ListAnimation)) + !Container().OnNext + !Container().OnPrevious" reversible="false">
+            <effect type="fade" start="100" end="0" time="400" delay="2000"/>
+        </animation>
+    </include>
+	
+	<include name="HeaderChangeAnimation">
+        <animation type="VisibleChange" reversible="false">
+            <effect type="fade" start="0" end="100" time="400"/>
+        </animation>
+    </include>
+
+</includes>

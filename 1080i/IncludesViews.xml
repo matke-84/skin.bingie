@@ -1,0 +1,1764 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<includes>
+
+    <include name="allViewIds">
+        <views>10,50,51,52,501,502,503,53,54,55,56,57,507,509,510,511,512,513,514,523,524,525,526,527,528</views>
+        <menucontrol>9000</menucontrol>
+    </include>
+
+    <include name="playlistViewId">
+        <views>5000</views>
+    </include>
+
+    <include name="altEpgOnScreen7">
+        <top>780</top>
+        <height>395</height>
+    </include>
+    <include name="altEpgOnScreen9">
+        <top>800</top>
+        <height>385</height>
+    </include>
+
+    <include name="allViews">
+    <control type="group">
+		<include>HideWindowOnStartupAndDialogInfoLoad</include>
+        <!--Views-->
+        <control type="group" id="5000">
+            <visible>!Window.IsActive(virtualkeyboard)</visible>
+            <include>animation_window_open_close</include>           
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.50)">View_50_List</include>
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.10) + [Window.IsActive(MyPVRChannels.xml) | Window.IsActive(MyPVRRecordings.xml) | Window.IsActive(MyPVRSearch.xml) | Window.IsActive(MyPVRTimers.xml)]">View_10_SimplePVR</include>
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.51)">View_51_ListDetails</include>      
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.52)">View_52_HorizontalPanel</include>
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.53)">View_53_PanelDetails</include>
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.54)">View_54_Panel</include>
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.57)">View_57_BigPanel</include>  
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.501)">View_501_Landscape</include>
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.502)">View_502_LandscapeSingle</include>
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.511)">View_511_Thumbs</include>
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.512)">View_512_ThumbsDetails</include>            
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.509)">View_509_PanelSquare</include>
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.510)">View_510_PanelSquareDetails</include>            
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.513) + Window.IsActive(MyVideoNav.xml)">View_513_PosterRow</include>
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.514) + Window.IsActive(MyVideoNav.xml)">View_514_PosterShift</include>                
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.507) + [Window.IsActive(MyVideoNav.xml) | Window.IsActive(MyPics.xml)]">View_507_FanArt</include>           
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.524) + Window.IsActive(MyVideoNav.xml)">View_524_Showcase</include>
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.56) + Window.IsActive(MyVideoNav.xml)">View_56_BannerPlex</include>
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.55) + Window.IsActive(MyVideoNav.xml)">View_55_BannerList</include>
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.503) + Window.IsActive(MyVideoNav.xml)">View_503_Logos</include>
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.523) + Window.IsActive(MyVideoNav.xml)">View_523_Bingie_Main_Landscape</include>
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.526) + Window.IsActive(MyVideoNav.xml)">View_526_Bingie_Main_Poster</include>
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.525) + Window.IsActive(MyVideoNav.xml)">View_525_Episodes</include>
+			<include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.527) + Window.IsActive(MyVideoNav.xml)">View_527_Seasons</include>
+			<include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.528) + Window.IsActive(MyMusicNav.xml)">View_528_Bingie_Main_Square</include>
+        </control>
+        
+        <!-- footer bar -->
+        <control type="group">
+            <visible>Control.IsVisible(52) | Control.IsVisible(507) | Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(53) | Control.IsVisible(57) | 
+			Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(56) | Control.IsVisible(501) |
+			Control.IsVisible(502) | Control.IsVisible(509) | Control.IsVisible(510) | Control.IsVisible(511) | 
+			Control.IsVisible(512) | Control.IsVisible(524) | Control.IsVisible(51) |
+			Control.IsVisible(503) | Control.IsVisible(50) | ![Control.IsVisible(523) | Control.IsVisible(525) | Control.IsVisible(526) | Control.IsVisible(527) | Control.IsVisible(528)]</visible>
+            <include condition="!Skin.HasSetting(DisableFooterBarOnViews)">Footer</include>
+        </control>
+		
+		<!-- footer bar -->
+        <control type="group">
+			<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
+			<include>Animation_Right_Home</include>
+            <include condition="!Skin.HasSetting(DisableFooterBarOnViews)">Footer2</include>
+        </control>
+            
+        <!-- clearlogo -->
+        <control type="group">
+            <visible>![Control.IsVisible(10) | Control.IsVisible(523) | Control.IsVisible(526) | Control.IsVisible(525) | Control.IsVisible(527) | Control.IsVisible(528)]</visible>
+            <include condition="Skin.String(ClearLogoLocation)">ClearLogo</include>
+        </control>
+            
+        <!--Scrolling Letter-->
+        <control type="group">
+            <visible>!Skin.HasSetting(DisableScrollingLetters)</visible>
+            <visible>Integer.IsGreater(Container.NumItems,0)</visible>
+            <visible>Container.Scrolling + [String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556])]</visible>
+            <animation effect="fade" start="0" end="100" time="400" delay="30">Visible</animation>
+            <animation effect="fade" start="100" end="0" time="400" delay="150">Hidden</animation>
+            <control type="image">
+                <posx>910</posx>
+                <posy>480</posy>
+                <width>100</width>
+                <height>100</height>
+                <texture border="10">diffuse/panel.png</texture>
+                <colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+            </control>
+            <control type="image">
+                <posx>910</posx>
+                <posy>480</posy>
+                <width>100</width>
+                <height>100</height>
+                <texture border="10">diffuse/panel.png</texture>
+                <bordersize>8</bordersize>
+                <colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+            </control>
+            <control type="label">
+                <posx>910</posx>
+                <posy>480</posy>
+                <width>100</width>
+                <height>100</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <font>Bold55</font>
+                <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                <label>$INFO[ListItem.SortLetter]</label>
+            </control>
+        </control>
+        <!-- alphabet scrollbar -->
+        <include condition="Skin.HasSetting(EnableQuickJump)">AlphabetScrollbar</include>
+		
+		<!-- Snow Effect -->
+        <control type="group">
+            <include condition="String.IsEqual(Skin.String(season_greetings),snow_animation)">snow</include>
+        </control>
+		<!-- Halloween Effect -->
+        <control type="group">
+            <include condition="String.IsEqual(Skin.String(season_greetings),halloween_animation)">pumpkin</include>
+        </control>
+    </control>
+    </include>
+    
+    <include name="AlphabetScrollbar">
+        
+        <!-- scrollbar vertical -->
+        <control type="group" id="6000">
+            <visible>![Control.IsVisible(52) | Control.IsVisible(502) | Control.IsVisible(503) | Control.IsVisible(507) | Control.IsVisible(513) | Control.IsVisible(514) | [Control.IsVisible(526) + Skin.HasSetting(View_526_HorizontalNavigation)] | Control.IsVisible(524)]</visible>
+            <control type="button" id="6001">
+                <width>1</width>
+                <right>-1</right>
+                <bottom>0</bottom>
+                <height>1</height>
+                <onfocus>SetFocus(60)</onfocus>
+                <visible>!Control.IsVisible(6002)</visible>
+            </control>
+            
+            <control type="image">
+                <texture>colors/color_white.png</texture>
+                <colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+                <width>40</width>
+                <right>0</right>
+                <visible>Control.IsVisible(6002) + !Control.HasFocus(60)</visible>
+                <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(6002) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+                <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(6002) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+            </control>
+            
+            <control type="panel" id="6002">
+                <width>40</width>
+                <right>0</right>
+                <bottom>0</bottom>
+                <height>100%</height>
+                <onleft>5000</onleft>
+                <onright>60</onright>
+                <onup>6002</onup>
+                <ondown>6002</ondown>
+                <onback>5000</onback>
+                <orientation>vertical</orientation>
+                <itemlayout height="40" width="40">
+                    <control type="label">
+                        <width>100%</width>
+                        <height>100%</height>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label]</label>
+                        <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
+                        <font>Reg26</font>
+                        <animation effect="fade" start="100" end="20" time="0" condition="!String.IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
+                    </control>
+                    <control type="label">
+                        <width>100%</width>
+                        <height>100%</height>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label]</label>
+                        <textcolor>$INFO[Skin.String(ButtonFocusColor)]</textcolor>
+                        <font>Reg26</font>
+                        <visible>String.IsEqual(ListItem.Label,Container.ListItem.SortLetter)</visible>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="40" width="40">
+                    <control type="image">
+                        <texture>colors/color_white.png</texture>
+                        <colordiffuse>$INFO[Skin.String(ButtonFocusColor)]</colordiffuse>
+                        <animation effect="fade" start="100" end="20" time="0" condition="!String.IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
+                    </control>
+                    <control type="label">
+                        <width>100%</width>
+                        <height>100%</height>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label]</label>
+                        <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
+                        <animation effect="fade" start="100" end="20" time="0" condition="!String.IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
+                        <font>Reg26</font>
+                    </control>
+                    <control type="button">
+                        <visible>false</visible>
+                        <onfocus condition="!String.IsEmpty(Container(6002).ListItem.Property(NotAvailable)) + Container(6002).OnNext">Control.Move(6002,1)</onfocus>
+                        <onfocus condition="!String.IsEmpty(Container(6002).ListItem.Property(NotAvailable)) + Container(6002).OnPrevious">Control.Move(6002,-1)</onfocus>
+                    </control>
+                </focusedlayout>
+                <content>plugin://script.bingie.toolbox/?action=alphabet&amp;reload=$INFO[Container.NumItems]</content>
+                <visible>Skin.HasSetting(EnableQuickJump) + Integer.IsGreater(Container.NumPages,1) + !Control.HasFocus(60)</visible>
+                <visible>String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556])</visible>
+                <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(6002) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+                <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(6002) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+            </control>
+        </control>
+    
+        <!-- scrollbar horizontal -->
+        <control type="group" id="7000">
+            <visible>[Control.IsVisible(52) | Control.IsVisible(502) | Control.IsVisible(503) | Control.IsVisible(507) | Control.IsVisible(513) | Control.IsVisible(514) | [Control.IsVisible(526) + Skin.HasSetting(View_526_HorizontalNavigation)] | Control.IsVisible(524)]</visible>
+            <control type="button" id="7001">
+                <width>1</width>
+                <right>-1</right>
+                <bottom>0</bottom>
+                <height>1</height>
+                <onfocus>SetFocus(60)</onfocus>
+                <visible>!Control.IsVisible(7002)</visible>
+            </control>
+            
+            <control type="image">
+                <texture>colors/color_white.png</texture>
+                <colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+                <left>0</left>
+                <width>100%</width>
+                <bottom>0</bottom>
+                <height>40</height>
+                <visible>Control.IsVisible(7002) + !Control.HasFocus(60)</visible>
+                <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(7002) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+                <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(7002) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+            </control>
+            <control type="image">
+                <texture>colors/color_white.png</texture>
+                <colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+                <left>0</left>
+                <width>100%</width>
+                <bottom>0</bottom>
+                <height>40</height>
+                <visible>Control.IsVisible(7002) + !Control.HasFocus(60)</visible>
+                <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(7002) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+                <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(7002) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+            </control>
+            
+            <control type="panel" id="7002">
+                <left>60</left>
+                <width>1800</width>
+                <bottom>0</bottom>
+                <height>40</height>
+                <onleft>7002</onleft>
+                <onright>7002</onright>
+                <onup>5000</onup>
+                <ondown>60</ondown>
+                <onback>5000</onback>
+                <orientation>horizontal</orientation>
+                <itemlayout height="40" width="66">
+                    <control type="label">
+                        <width>100%</width>
+                        <height>100%</height>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label]</label>
+                        <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
+                        <font>Reg26</font>
+                        <animation effect="fade" start="100" end="20" time="0" condition="!String.IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
+                    </control>
+                    <control type="label">
+                        <width>100%</width>
+                        <height>100%</height>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label]</label>
+                        <textcolor>$INFO[Skin.String(ButtonFocusColor)]</textcolor>
+                        <font>Reg26</font>
+                        <visible>String.IsEqual(ListItem.Label,Container.ListItem.SortLetter)</visible>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="40" width="66">
+                    <control type="image">
+                        <texture>colors/color_white.png</texture>
+                        <colordiffuse>$INFO[Skin.String(ButtonFocusColor)]</colordiffuse>
+                        <animation effect="fade" start="100" end="20" time="0" condition="!String.IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
+                    </control>
+                    <control type="label">
+                        <width>100%</width>
+                        <height>100%</height>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label]</label>
+                        <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
+                        <animation effect="fade" start="100" end="20" time="0" condition="!String.IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
+                        <font>Reg26</font>
+                    </control>
+                </focusedlayout>
+                <content>plugin://script.bingie.toolbox/?action=alphabet&amp;reload=$INFO[Container.NumItems]</content>
+                <visible>Skin.HasSetting(EnableQuickJump) + Integer.IsGreater(Container.NumPages,1) + !Control.HasFocus(60)</visible>
+                <visible>String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556])</visible>
+                <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(7002) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+                <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(7002) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+            </control>       
+        </control>   
+    </include>
+
+    <include name="EpgProgressIndicatorNormal">
+        <progresstexture colordiffuse="$INFO[Skin.String(ViewDetailsHighlightTextColor)]" border="0,48,18,15">pvr/PVR-EpgProgressIndicator.png</progresstexture>
+    </include>
+   
+    <include name="EpgProgressIndicatorAlt">
+        <progresstexture border="0,37,6,0">pvr/guide_diffuse.png</progresstexture>
+    </include>
+
+    <include name="panelPosModern">
+        <posx>-80</posx>
+        <width>2137</width>
+    </include>
+    
+     <include name="MovieDetailsTop">
+        <!-- movie details TOP -->
+        <control type="group" id="888">
+            <include>animation_view_change</include>
+            <visible>Integer.IsGreater(Container.NumItems,0)</visible>
+            <animation effect="slide" start="0,-100" end="0" time="0" condition="Control.IsVisible(513)">Conditional</animation>
+            <height>765</height>
+			<bottom>13%</bottom>			
+            <!--Info-->
+            <control type="grouplist">
+                <posx>60</posx>
+                <posy>10</posy>
+                <width>1200</width>
+                <height>700</height>
+                <orientation>vertical</orientation>
+				<!-- title -->
+				<control type="group">
+					 <height>40</height>
+					<control type="label">
+						<posx>7</posx>
+						<posy>0</posy>
+						<width>920</width>
+						<align>left</align>
+						<label>[UPPERCASE]$VAR[mediatitle][/UPPERCASE]</label>						
+						<textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
+						<scroll>true</scroll>
+						<font>Bold30</font>
+					</control>
+				</control>
+                <control type="group">
+                    <!--Year: Movies-->
+                    <width>800</width>
+                    <height>40</height>
+                    <visible>!String.IsEmpty(ListItem.Year) | !String.IsEmpty(Container(99950).ListItem.Year) | !String.IsEmpty(Container(99950).ListItem.Property(Set.Years)) | !String.IsEmpty(ListItem.Premiered) | !String.IsEmpty(Container(99950).ListItem.Property(Premiered))</visible>
+                    <control type="image">
+                        <posx>9</posx>
+                        <posy>14</posy>
+                        <width>28</width>
+                        <height>30</height>
+                        <texture>dialogs/videoinfo/calendar.png</texture>
+                        <colordiffuse>$INFO[Skin.String(ViewDetailsTextColor)]</colordiffuse>
+                    </control>
+                    <control type="label">
+                        <posx>60</posx>
+                        <posy>0</posy>
+                        <width>600</width>
+                        <align>left</align>
+                        <label>$VAR[YearOrPremiered]</label>
+						<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                        <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                        <scroll>false</scroll>
+                    </control>
+                </control>
+                <control type="group">
+                    <!--Runtime: Movie, Episodes-->
+                    <width>600</width>
+                    <height>40</height>
+                    <visible>![Container.Content(tvshows) | Container.Content(seasons)] + !String.IsEmpty(ListItem.Duration)</visible>
+                    <control type="image">
+                        <posx>9</posx>
+                        <posy>17</posy>
+                        <width>28</width>
+                        <height>28</height>
+                        <texture>dialogs/videoinfo/time.png</texture>
+                        <colordiffuse>$INFO[Skin.String(ViewDetailsTextColor)]</colordiffuse>
+                    </control>
+                    <control type="label">
+                        <posx>60</posx>
+                        <posy>0</posy>
+                        <width>600</width>
+                        <label>$VAR[ListItemDuration]</label>
+						<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                        <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                        <scroll>false</scroll>
+                    </control>
+                </control>
+                <control type="group">
+                    <!--Genre-->
+                    <width>800</width>
+                    <height>40</height>
+                    <visible>!String.IsEmpty(ListItem.Genre) | !String.IsEmpty(Container(99950).ListItem.Property(Genre)) | !String.IsEmpty(Container(99950).ListItem.Property(Set.Genres))</visible>
+                    <control type="image">
+                        <posx>7</posx>
+						<posy>14</posy>
+						<width>32</width>
+						<height>32</height>
+                        <texture>dialogs/videoinfo/genre-icon2.png</texture>
+                        <colordiffuse>$INFO[Skin.String(ViewDetailsTextColor)]</colordiffuse>
+                    </control>
+                    <control type="label">
+                        <posx>60</posx>
+                        <posy>0</posy>
+                        <width>800</width>
+                        <align>left</align>
+                        <label>$VAR[GetGenres]</label>
+						<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                        <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                        <scroll>false</scroll>
+                    </control>
+                </control>
+                <control type="group">
+                    <!--Director: Movies, Episodes-->
+                    <width>800</width>
+                    <height>40</height>
+                    <visible>[Container.Content(Movies) | Container.Content(episodes)] + [!String.IsEmpty(ListItem.Director) | !String.IsEmpty(Container(99950).ListItem.Property(Director))]</visible>
+                    <control type="image">
+                        <posx>8</posx>
+                        <posy>16</posy>
+                        <width>31</width>
+                        <height>31</height>
+                        <texture>dialogs/videoinfo/director.png</texture>
+                        <colordiffuse>$INFO[Skin.String(ViewDetailsTextColor)]</colordiffuse>
+                    </control>
+                    <control type="label">
+                        <posx>60</posx>
+                        <posy>0</posy>
+                        <width>800</width>
+                        <align>left</align>
+                        <label>$VAR[BingieInfoDirector]</label>
+						<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                        <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                        <scroll>false</scroll>
+                    </control>
+                </control>
+                <control type="group">
+                    <!--Writer: Movies, Episodes-->
+                    <width>800</width>
+                    <height>40</height>
+					<visible>Container.Content(Movies) + [!String.IsEmpty(ListItem.Writer) | !String.IsEmpty(Container(99950).ListItem.Writer)]</visible>      
+                    <control type="image">
+                        <posx>3</posx>
+                        <posy>10</posy>
+                        <width>40</width>
+                        <height>40</height>
+                        <texture>dialogs/videoinfo/writer-icon.png</texture>
+                        <colordiffuse>$INFO[Skin.String(ViewDetailsTextColor)]</colordiffuse>
+                    </control>
+                    <control type="label">
+                        <posx>60</posx>
+                        <posy>0</posy>
+                        <width>800</width>
+                        <align>left</align>
+                        <label>$VAR[BingieInfoWriter]</label>
+						<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                        <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                        <scroll>false</scroll>
+                    </control>
+                </control>
+				<control type="group">
+                    <!--Creator-->
+                    <width>800</width>
+                    <height>40</height>
+                    <visible>!Container.Content(Movies) + !String.IsEmpty(Container(99950).ListItem.Property(Creator))</visible>  
+                    <control type="image">
+                        <posx>3</posx>
+                        <posy>10</posy>
+                        <width>40</width>
+                        <height>40</height>
+                        <texture>dialogs/videoinfo/writer-icon.png</texture>
+                        <colordiffuse>$INFO[Skin.String(ViewDetailsTextColor)]</colordiffuse>
+                    </control>
+                    <control type="label">
+                        <posx>60</posx>
+                        <posy>0</posy>
+                        <width>800</width>
+                        <align>left</align>
+                        <label>$INFO[Container(99950).ListItem.Property(Creator)]</label>
+						<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                        <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                        <scroll>false</scroll>
+                    </control>
+                </control>
+                <control type="group">
+					<!--Studio: TV-Shows-->
+					<width>1200</width>
+					<height>40</height>
+					<visible>!String.IsEmpty(ListItem.Studio) | !String.IsEmpty(Container(99950).ListItem.Studio)</visible>					
+					<control type="image">
+                        <posx>8</posx>
+                        <posy>10</posy>
+                        <width>30</width>
+                        <height>30</height>
+                        <texture>dialogs/videoinfo/studio.png</texture>
+                        <colordiffuse>$INFO[Skin.String(ViewDetailsTextColor)]</colordiffuse>
+                    </control>
+                    <control type="label">
+                        <posx>60</posx>
+                        <posy>0</posy>
+                        <width>800</width>
+                        <align>left</align>
+                        <label>$VAR[BingieInfoStudio]</label>
+						<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                        <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                        <scroll>false</scroll>
+                    </control>
+				</control>
+			</control>
+     			
+			
+			
+            <control type="group">
+                <right>68</right>
+                <posy>22</posy>
+                <width>830</width>
+                <height>530</height>
+				<control type="label">
+					<visible>!String.IsEmpty(ListItem.Tagline)</visible>
+					<height>38</height>
+					<posy>0</posy>
+					<posx>0</posx>
+					<label>$INFO[ListItem.Tagline]</label>
+					<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+					<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+					<font>Bold28</font>
+					<scroll>false</scroll>
+				</control>
+                <control type="textbox">
+                    <posx>0</posx>
+                    <posy>44</posy>
+                    <width>830</width>
+                    <height>260</height>
+                    <label>$VAR[Plots]</label>
+                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+					<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                    <align>justify</align>
+                </control>
+            </control>
+        </control>
+    </include>
+	
+    <include name="MovieDetailsTop2">
+        <!-- movie details TOP -->
+        <control type="group" id="9888">
+            <include>animation_view_change</include>
+            <visible>Integer.IsGreater(Container.NumItems,0)</visible>
+            <height>270</height>
+			<top>20</top>
+            
+            <control type="grouplist">
+                <right>60</right>
+                <top>10</top>
+                <left>60</left>
+                <height>233</height>
+				<itemgap>4</itemgap>
+				<orientation>vertical</orientation>
+                
+                <!-- Title -->
+                <control type="label">
+                    <width>100%</width>
+                    <height>55</height>
+                    <align>left</align>
+                    <label>[UPPERCASE]$VAR[mediatitle][/UPPERCASE]</label>
+                    <textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
+                    <scroll>true</scroll>
+                    <font>Bold30</font>
+                </control>
+				<control type="group">
+					<height>35</height>
+					<control type="label">
+						<width>100%</width>
+						<height>35</height>
+						<align>left</align>
+						<label>$VAR[ListDetails]</label>
+						<include>Animation.TestOut</include>
+						<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+						<font>Bold28</font>
+					</control>
+				
+					<control type="label">
+						<width>100%</width>
+						<height>35</height>
+						<align>left</align>
+						<label>$VAR[Details]</label>
+						<include>Animation.TestIn</include>
+						<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+						<font>Bold28</font>
+					</control>
+                </control>
+                <!-- Plot -->
+                <control type="textbox">
+                    <width>100%</width>
+                    <height>110</height>
+                    <posy>50</posy>
+                    <label>$VAR[Plots]</label>
+                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+					<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                    <align>justify</align>
+					<font>Reg28</font>
+                </control>
+            </control>
+			
+        </control>
+    </include>
+  
+  <include name="MovieDetailsLeft">
+    <control type="group">
+        <visible>Control.IsVisible(53) | Control.IsVisible(55) | Control.IsVisible(510) | Control.IsVisible(512) | Control.IsVisible(51)</visible>
+        <visible>Integer.IsGreater(Container.NumItems,0)</visible>
+        <width>675</width>
+        <animation effect="slide" end="1193" time="0" condition="Skin.HasSetting(View512_ShowInfoRight) + Control.IsVisible(512)">Conditional</animation>
+        <animation effect="slide" end="1193" time="0" condition="Skin.HasSetting(View53_ShowInfoRight) + Control.IsVisible(53)">Conditional</animation>
+        <animation effect="slide" end="1193" time="0" condition="Skin.HasSetting(View55_ShowInfoRight) + Control.IsVisible(55)">Conditional</animation>
+        <animation effect="slide" end="1193" time="0" condition="Skin.HasSetting(View510_ShowInfoRight) + Control.IsVisible(510)">Conditional</animation>
+        <animation effect="slide" end="1193" time="0" condition="Skin.HasSetting(View51_ShowInfoRight) + Control.IsVisible(51)">Conditional</animation>
+        <include>MovieDetailsLeft_Layout</include>
+    </control>
+  </include>
+
+  <include name="MovieDetailsLeft_Layout">
+    <control type="group">
+      <visible>
+        [Control.IsVisible(512) + Skin.HasSetting(View512_DetailsShowInfo)] |
+        [Control.IsVisible(510) + Skin.HasSetting(View510_DetailsShowInfo)] |
+        [Control.IsVisible(51) + Skin.HasSetting(View51_DetailsShowInfo)] |
+        [Control.IsVisible(55) + Skin.HasSetting(View55_DetailsShowInfo)] |
+        [Control.IsVisible(53) + Skin.HasSetting(View53_DetailsShowInfo)]
+        </visible>       
+        <posx>45</posx>
+        <top>207</top>
+		<animation effect="slide" end="0,19" time="0" condition="Control.IsVisible(51)">Conditional</animation>
+        <height>736</height>
+		<width>637</width>
+        <control type="grouplist">
+            <left>8</left>
+            <top>-4</top>
+            <width>610</width>
+            <height>700</height>
+			<itemgap>3</itemgap>
+            <orientation>vertical</orientation>
+            <!-- title -->
+            <control type="group">
+                <height>40</height>
+                <control type="label">
+                    <posx>7</posx>
+                    <posy>-7</posy>
+                    <align>left</align>
+                    <label>[UPPERCASE]$VAR[mediatitle][/UPPERCASE]</label>
+                    <textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
+                    <scroll>false</scroll>
+                    <font>Bold30</font>
+                </control>
+            </control>
+            <control type="group">
+                <!--Year: Movies-->
+                <height>40</height>
+				<visible>!String.IsEmpty(ListItem.Year) | !String.IsEmpty(Container(99950).ListItem.Year) | !String.IsEmpty(Container(99950).ListItem.Property(Set.Years)) | !String.IsEmpty(ListItem.Premiered) | !String.IsEmpty(Container(99950).ListItem.Property(Premiered))</visible>
+                <control type="image">
+                    <posx>9</posx>
+                    <posy>14</posy>
+                    <width>28</width>
+                    <height>30</height>
+                    <texture>dialogs/videoinfo/calendar.png</texture>
+                    <colordiffuse>$INFO[Skin.String(ViewDetailsTextColor)]</colordiffuse>
+                </control>
+                <control type="label">
+                    <posx>60</posx>
+                    <posy>0</posy>
+                    <align>left</align>
+                    <label>$VAR[YearOrPremiered]</label>
+                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                    <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                    <scroll>false</scroll>
+                </control>
+            </control>
+            <control type="group">
+                <!--Runtime: Movie, Episodes-->
+                <height>40</height>
+                <visible>![Container.Content(tvshows) | Container.Content(seasons)] + !String.IsEmpty(ListItem.Duration)</visible>
+                <control type="image">
+                    <posx>9</posx>
+                    <posy>17</posy>
+                    <width>28</width>
+                    <height>28</height>
+                    <texture>dialogs/videoinfo/time.png</texture>
+                    <colordiffuse>$INFO[Skin.String(ViewDetailsTextColor)]</colordiffuse>
+                </control>
+                <control type="label">
+                    <posx>60</posx>
+                    <posy>0</posy>
+                    <align>left</align>
+                    <label>$VAR[ListItemDuration]</label>
+                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                    <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                    <scroll>false</scroll>
+                </control>
+            </control>
+            <control type="group">
+                <!--Genre-->
+                <width>100%</width>
+                <height>40</height>
+                <visible>!String.IsEmpty(ListItem.Genre) | !String.IsEmpty(Container(99950).ListItem.Property(Genre)) | !String.IsEmpty(Container(99950).ListItem.Property(Set.Genres))</visible>
+                <control type="image">
+                    <posx>7</posx>
+                    <posy>14</posy>
+                    <width>32</width>
+                    <height>32</height>
+                    <texture>dialogs/videoinfo/genre-icon2.png</texture>
+                    <colordiffuse>$INFO[Skin.String(ViewDetailsTextColor)]</colordiffuse>
+                </control>
+                <control type="label">
+                    <posx>60</posx>
+                    <posy>0</posy>
+                    <align>left</align>
+                    <label>$VAR[GetGenres]</label>
+                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                    <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                    <scroll>false</scroll>
+                </control>
+            </control>
+            <control type="group">
+                <!--Director: Movies, Episodes-->
+                <width>100%</width>
+                <height>40</height>
+                <visible>[Container.Content(Movies) | Container.Content(episodes)] + [!String.IsEmpty(ListItem.Director) | !String.IsEmpty(Container(99950).ListItem.Property(Director))]</visible>
+				<control type="image">
+                    <posx>8</posx>
+                    <posy>16</posy>
+                    <width>31</width>
+                    <height>31</height>
+                    <texture>dialogs/videoinfo/director.png</texture>
+                    <colordiffuse>$INFO[Skin.String(ViewDetailsTextColor)]</colordiffuse>
+                </control>
+                <control type="label">
+                    <posx>60</posx>
+                    <posy>0</posy>
+                    <align>left</align>
+                    <label>$VAR[BingieInfoDirector]</label>
+                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                    <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                    <scroll>false</scroll>
+                </control>
+            </control>
+            <control type="group">
+                <!--Writer: Movies, Episodes-->
+                <width>100%</width>
+                <height>40</height>
+                <visible>Container.Content(Movies) + [!String.IsEmpty(ListItem.Writer) | !String.IsEmpty(Container(99950).ListItem.Writer)]</visible>              
+				<control type="image">
+                    <posx>3</posx>
+                    <posy>10</posy>
+                    <width>40</width>
+                    <height>40</height>
+                    <texture>dialogs/videoinfo/writer-icon.png</texture>
+                    <colordiffuse>$INFO[Skin.String(ViewDetailsTextColor)]</colordiffuse>
+                </control>
+                <control type="label">
+                    <posx>60</posx>
+                    <posy>0</posy>
+                    <align>left</align>
+                    <label>$VAR[BingieInfoWriter]</label>
+                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                    <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                    <scroll>false</scroll>
+                </control>
+            </control>
+			<control type="group">
+                <!--Creator-->
+                <width>100%</width>
+                <height>40</height>
+                <visible>![Container.Content(Movies) | Container.Content(sets) | String.IsEqual(Container.Folderpath,videodb://movies/sets/)] + !String.IsEmpty(Container(99950).ListItem.Property(Creator))</visible>              
+				<control type="image">
+                    <posx>3</posx>
+                    <posy>10</posy>
+                    <width>40</width>
+                    <height>40</height>
+                    <texture>dialogs/videoinfo/writer-icon.png</texture>
+                    <colordiffuse>$INFO[Skin.String(ViewDetailsTextColor)]</colordiffuse>
+                </control>
+                <control type="label">
+                    <posx>60</posx>
+                    <posy>0</posy>
+                    <align>left</align>
+                    <label>$INFO[Container(99950).ListItem.Property(Creator)]</label>
+                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                    <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                    <scroll>false</scroll>
+                </control>
+            </control>
+            <control type="group">
+                <!--Studio: TV-Shows-->
+                <width>100%</width>
+                <height>40</height>
+                <visible>!String.IsEmpty(ListItem.Studio) | !String.IsEmpty(Container(99950).ListItem.Studio)</visible>
+                <control type="image">
+                    <posx>8</posx>
+                    <posy>10</posy>
+                    <width>30</width>
+                    <height>30</height>
+                    <texture>dialogs/videoinfo/studio.png</texture>
+                    <colordiffuse>$INFO[Skin.String(ViewDetailsTextColor)]</colordiffuse>
+                </control>
+                <control type="label">
+                    <posx>60</posx>
+                    <posy>0</posy>
+                    <align>left</align>
+                    <label>$VAR[BingieInfoStudio]</label>
+                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                    <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                    <scroll>false</scroll>
+                </control>
+            </control>
+			<control type="group">
+                <!--Addons: type-->
+                <width>100%</width>
+                <height>40</height>
+                <visible>Container.Content(Addons)</visible>
+                <control type="label">
+                    <posx>5</posx>
+                    <posy>0</posy>
+                    <align>left</align>
+                    <label>$LOCALIZE[146]</label>
+                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                    <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                    <scroll>false</scroll>
+                </control>
+                <control type="label">
+                    <right>10</right>
+                    <posy>0</posy>
+                    <align>right</align>
+                    <width>350</width>
+                    <label>$INFO[ListItem.AddonType]</label>
+                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                    <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                    <scroll>false</scroll>
+                </control>
+            </control>
+            <control type="group">
+                <!--Addons: author-->
+                <width>100%</width>
+                <height>40</height>
+                <visible>Container.Content(Addons)</visible>
+                <control type="label">
+                    <posx>5</posx>
+                    <posy>0</posy>
+                    <align>left</align>
+                    <label>$LOCALIZE[21863]:</label>
+                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                    <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                    <scroll>false</scroll>
+                </control>
+                <control type="label">
+                    <right>10</right>
+                    <posy>0</posy>
+                    <align>right</align>
+                    <width>350</width>
+                    <label>$INFO[ListItem.AddonCreator]</label>
+                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                    <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                    <scroll>false</scroll>
+                </control>
+            </control>
+            <control type="group">
+                <!--Addons: version-->
+                <width>100%</width>
+                <height>40</height>
+                <visible>Container.Content(Addons)</visible>
+                <control type="label">
+                    <posx>5</posx>
+                    <posy>0</posy>
+                    <align>left</align>
+                    <label>$LOCALIZE[24051]</label>
+                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                    <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                    <scroll>false</scroll>
+                </control>
+                <control type="label">
+                    <right>10</right>
+                    <posy>0</posy>
+                    <align>right</align>
+                    <width>350</width>
+                    <label>$INFO[ListItem.AddonVersion]</label>
+                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                    <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                    <scroll>false</scroll>
+                </control>
+            </control>
+			<control type="group">
+                <!--Addons: status-->
+                <width>100%</width>
+                <height>40</height>
+                <visible>Container.Content(Addons)</visible>
+                <control type="label">
+                    <posx>5</posx>
+                    <posy>0</posy>
+                    <align>left</align>
+                    <label>$LOCALIZE[126]:</label>
+                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                    <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                    <scroll>false</scroll>
+                </control>
+                <control type="label">
+                    <right>10</right>
+                    <posy>0</posy>
+                    <align>right</align>
+                    <width>350</width>
+                    <label>$INFO[ListItem.Label2]</label>
+                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                    <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                    <scroll>false</scroll>
+                </control>
+            </control>
+			<control type="group">				
+                <width>607</width>
+                <height>400</height>
+				<visible>!String.IsEmpty(ListItem.Plot) | !String.IsEmpty(ListItem.Property(Album_Description)) | !String.IsEmpty(ListItem.Property(Artist_Description)) | !String.IsEmpty(ListItem.Comment) | !String.IsEmpty(ListItem.PictureDesc) | !String.IsEmpty(ListItem.PictureComment) | !String.IsEmpty(ListItem.PictureKeywords) | !String.IsEmpty(ListItem.Property(Plot)) | !String.IsEmpty(Container(99950).ListItem.Plot) | Container.Content(Addons)</visible>
+			<!-- horizontal line -->
+			<control type="image">
+				<posy>20</posy>
+				<posx>7</posx>
+				<height>1</height>
+				<texture>diffuse/panel2.png</texture>
+				<colordiffuse>white</colordiffuse>				
+			</control>
+			<control type="grouplist">
+				<left>7</left>
+				<top>30</top>
+				<width>607</width>
+				<height>449</height>
+				<itemgap>7</itemgap>
+				<orientation>vertical</orientation>
+			<control type="label">
+				<visible>Container.Content(Addons)</visible>
+				<height>38</height>
+				<posy>33</posy>
+				<posx>7</posx>
+                <label>$INFO[ListItem.AddonSummary]</label>
+                <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+				<font>Bold28</font>
+                <scroll>false</scroll>
+            </control>
+			<control type="label">
+				<visible>!String.IsEmpty(ListItem.Tagline)</visible>
+				<height>38</height>
+				<posy>33</posy>
+				<posx>7</posx>
+                <label>$INFO[ListItem.Tagline]</label>
+                <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+				<font>Bold28</font>
+                <scroll>false</scroll>
+            </control>
+			<!-- plot -->
+			<control type="textbox">
+				<visible>Container.Content(Movies)</visible>
+				<height>330</height>
+				<posy>33</posy>
+				<posx>7</posx>
+				<label>$VAR[Plots]</label>
+				<font>Reg28</font>
+				<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+				<align>justify</align>
+			</control>
+			<control type="textbox">
+				<visible>!Container.Content(Movies)</visible>
+				<height>400</height>
+				<posy>33</posy>
+				<posx>7</posx>
+				<label>$VAR[Plots]</label>
+				<font>Reg28</font>
+				<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+				<align>justify</align>
+			</control>
+			</control>
+			</control>
+        </control>
+
+    </control>
+    <control type="group">
+        <visible>
+        ![[Control.IsVisible(512) + Skin.HasSetting(View512_DetailsShowInfo)] |
+        [Control.IsVisible(510) + Skin.HasSetting(View510_DetailsShowInfo)] |
+        [Control.IsVisible(51) + Skin.HasSetting(View51_DetailsShowInfo)] |
+        [Control.IsVisible(55) + Skin.HasSetting(View55_DetailsShowInfo)] |
+        [Control.IsVisible(53) + Skin.HasSetting(View53_DetailsShowInfo)]]
+        </visible>
+        <posx>52</posx>
+        <top>207</top>
+        <height>736</height>
+		<control type="group">
+		<visible>!Window.IsActive(Music)</visible>
+        <control type="image">
+            <height>360</height>
+            <bordersize>8</bordersize>
+            <aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+            <texture background="true" diffuse="home/home_matte2.png" fallback="video.png">$VAR[DetailsFanArtImage]</texture>           
+			<fadetime>350</fadetime>
+        </control>
+		<control type="image">
+            <!--fallback logo image-->
+			<height>360</height>
+			<top>95</top>
+			<left>0</left>
+            <bordersize>107</bordersize>
+            <texture background="true">$VAR[ClearLogoFallback]</texture>
+            <aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
+            <visible>String.IsEmpty(Listitem.Art(landscape)) + String.IsEmpty(ListItem.Property(landscape)) + !String.IsEqual(ListItem.DBTYPE,episode) + !String.IsEqual(ListItem.Property(DBTYPE),episode) + !Container.Content(episodes) + !String.IsEqual(ListItem.DBTYPE,season) + !String.IsEqual(ListItem.Property(DBTYPE),season)</visible>
+            <visible>String.IsEmpty(ListItem.Property(defaultID))</visible>
+        </control>
+		<control type="group">
+            <right>8</right>
+            <posy>8</posy>
+        <include>WatchedIndicatorNormal</include>
+        </control>
+		</control>
+		<control type="group">		    
+            <visible>Window.IsActive(Music)</visible>
+         <control type="image">
+            <!--cdart image music-->
+            <width>440</width>
+            <height>440</height>
+            <left>185</left>
+			<top>5</top>
+            <bordersize>10</bordersize>
+            <texture background="true" diffuse="diffuse/cdmask_new.png" fallback="defaultcovers/cd_medium.png">$VAR[DiscArtImage]</texture>
+            <aspectratio scalediffuse="false" align="center" aligny="center">scale</aspectratio>
+            <animation effect="rotate" end="-360" center="auto" time="20000" loop="true" reversible="false" condition="Skin.HasSetting(AnimateDiscArt)">Conditional</animation>
+        </control>
+        <!-- music cover with cd art -->
+        <control type="image">
+            <height>450</height>
+            <width>450</width>
+            <bordersize>8</bordersize>
+            <aspectratio align="center" aligny="center" scalediffuse="true">scale</aspectratio>
+            <texture background="true" diffuse="diffuse/music_cover_cd.png" fallback="DefaultAddonArtistInfo.png">$VAR[MusicCoverImage]</texture>
+        </control>
+		<control type="group">
+            <right>181</right>
+            <posy>8</posy>
+        <include>WatchedIndicatorNormal</include>
+        </control>
+		</control>
+		<control type="group">
+		<animation effect="slide" end="0,90" time="0" condition="Window.IsActive(Music)">Conditional</animation>
+        <!--Video Window -->
+        <control type="group">
+            <posx>8</posx>
+            <posy>8</posy>
+            <width>609</width>
+            <height>344</height>
+            <visible>[$EXP[IsPlayingUnrecognizedContent] + [Skin.HasSetting(View51_DetailsAutoTrailer) | Skin.HasSetting(View53_DetailsAutoTrailer) | Skin.HasSetting(View55_DetailsAutoTrailer) | Skin.HasSetting(View510_DetailsAutoTrailer) | Skin.HasSetting(View512_DetailsAutoTrailer) | Skin.HasSetting(View523_DetailsAutoTrailer) | Skin.HasSetting(View526_DetailsAutoTrailer)]] + [!Window.IsActive(DialogVideoInfo.xml) | !Window.IsActive(Custom_1190_TMDbHelperCast.xml)]</visible>
+            <control type="image">
+                <texture>colors/color_black.png</texture>
+            </control>
+            <control type="videowindow">
+            </control>
+        </control>
+		<control type="grouplist">
+				<width>607</width>
+				<include condition="Window.IsActive(Music)">MusicHeight</include>
+				<include condition="!Window.IsActive(Music)">VideoHeight</include>
+				<posy>365</posy>
+				<posx>8</posx>
+				<itemgap>7</itemgap>
+                <orientation>vertical</orientation>
+			<control type="label" id="51050">
+				<visible>!String.IsEmpty(Control.GetLabel(51050))</visible>
+				<height>33</height>
+				<width>607</width>
+				<font>Bold28</font>
+				<textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
+				<label>[UPPERCASE]$VAR[mediatitle][/UPPERCASE]</label>
+				<scroll>false</scroll>
+			</control>
+			<control type="group">
+				<height>33</height>
+				<width>607</width>
+				<visible>!String.IsEmpty(Control.GetLabel(51051)) + !String.IsEmpty(Control.GetLabel(51052)) + !String.IsEmpty(Control.GetLabel(51053))</visible>
+			<control type="label" id="51051">
+				<visible>!Control.IsVisible(51)</visible>
+				<height>33</height>
+				<width>607</width>
+				<font>Bold26</font>
+				<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+				<label>$VAR[ListDetails]</label>
+				<include>Animation.TestOut</include>
+			</control>
+			<control type="label" id="51052">
+				<visible>Control.IsVisible(51)</visible>
+				<height>33</height>
+				<width>607</width>
+				<font>Bold26</font>
+				<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+				<label>$VAR[Details]</label>
+			</control>
+			<control type="label" id="51053">
+				<visible>!Control.IsVisible(51)</visible>
+				<height>33</height>
+				<width>607</width>
+				<font>Bold26</font>
+				<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+				<label>$VAR[Details]</label>
+				<include>Animation.TestIn</include>
+			</control>
+			</control>
+			<control type="textbox">
+			  <left>8</left>
+			  <right>8</right>
+			  <width>607</width>
+			  <include condition="Window.IsActive(Music)">MusicPlotHeight</include>
+			  <include condition="!Window.IsActive(Music)">VideoPlotHeight</include>
+			  <align>justify</align>
+			  <font>Reg24</font>
+			  <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+			  <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+			  <label>$VAR[Plots]</label>
+			</control>
+		</control>
+		</control>
+     </control>
+  </include>
+  
+	<!-- Plot height -->
+	<include name="MusicHeight">
+		<height>240</height>
+	</include>
+		
+	<include name="VideoHeight">
+		<height>330</height>
+	</include>
+	
+	<include name="MusicPlotHeight">
+		<height>160</height>
+	</include>
+		
+	<include name="VideoPlotHeight">
+		<height>250</height>
+	</include>
+
+    <include name="thumbsborder_focused">
+        <include condition="String.IsEqual(Skin.String(thumbsborder_focused),4)">thumbborder_4</include>
+        <include condition="String.IsEqual(Skin.String(thumbsborder_focused),5)">thumbborder_5</include>
+        <include condition="String.IsEqual(Skin.String(thumbsborder_focused),6)">thumbborder_6</include>
+    </include>
+
+    <include name="thumbborder_4">
+        <bordersize>4</bordersize>   
+    </include>
+	<include name="thumbborder_5">
+        <bordersize>3</bordersize>   
+    </include>
+    <include name="thumbborder_6">
+        <bordersize>2</bordersize>   
+    </include>
+    
+    <include name="poster_shadow">
+        <bordertexture border="20" colordiffuse="black">diffuse/poster_shadow.png</bordertexture>
+    </include>
+    
+	<include name="WatchedIndicatorLayout">
+        <control type="group">
+            <visible>!String.IsEqual(ListItem$PARAM[listitem].Label,..)</visible>
+            <width>$PARAM[width]</width>
+            <height>$PARAM[height]</height>
+            <right>0</right>
+            <top>0</top>
+            <control type="group">
+                <description>Watched Overlay</description>
+                <visible>Integer.IsGreater(ListItem$PARAM[listitem].PlayCount,0) + Skin.HasSetting(WatchedIndicator.Watched) + !ListItem$PARAM[listitem].IsResumable</visible>
+                <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
+                <visible>![String.IsEqual(ListItem.DBTYPE, song) | String.IsEqual(ListItem.Property(DBTYPE), song) | Container.Content(songs)]</visible>
+                <visible>![String.IsEqual(ListItem.DBTYPE, album) | String.IsEqual(ListItem.Property(DBTYPE), album) | Container.Content(albums)]</visible>
+                <control type="image">
+                    <texture background="true">$PARAM[overlay_texture]</texture>
+                    <colordiffuse>$INFO[Skin.String(WatchedIndicator.Watched.Color)]</colordiffuse>
+                </control>
+                <control type="image">
+                    <texture>overlays/$PARAM[overlay]/watched.png</texture>
+                    <colordiffuse>$INFO[Skin.String(WatchedIndicator.Watched.TextColor)]</colordiffuse>
+                </control>
+            </control>
+            <control type="group">
+                <description>Unwatched Overlay</description>
+                <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
+                <visible>String.IsEqual(ListItem$PARAM[listitem].Overlay,OverlayUnWatched.png) + Skin.HasSetting(WatchedIndicator.UnWatched) + !ListItem$PARAM[listitem].IsResumable</visible>
+                <visible>![String.IsEqual(ListItem.DBTYPE, song) | String.IsEqual(ListItem.Property(DBTYPE), song) | Container.Content(songs) | [$EXP[IsTvShowDBType] + Skin.HasSetting(WatchedIndicator.Episodes)]]</visible>
+                <control type="image">
+                    <texture background="true">$PARAM[overlay_texture]</texture>
+                    <colordiffuse>$INFO[Skin.String(WatchedIndicator.UnWatched.Color)]</colordiffuse>
+                </control>
+                <control type="image">
+                    <texture>overlays/$PARAM[overlay]/unwatched.png</texture>
+                    <colordiffuse>$INFO[Skin.String(WatchedIndicator.UnWatched.TextColor)]</colordiffuse>
+                </control>
+            </control>
+            <control type="group">
+                <description>In progress Overlay</description>
+				<visible>!Skin.HasSetting(MovieDetailsHome) | 
+				[Control.IsVisible(10) + Skin.HasSetting(MovieDetailsHome)] | [Control.IsVisible(50) + Skin.HasSetting(MovieDetailsHome)] | [Control.IsVisible(51) + Skin.HasSetting(MovieDetailsHome)] |
+				[Control.IsVisible(52) + Skin.HasSetting(MovieDetailsHome)] | [Control.IsVisible(53) + Skin.HasSetting(MovieDetailsHome)] | [Control.IsVisible(54) + Skin.HasSetting(MovieDetailsHome)] |
+				[Control.IsVisible(55) + Skin.HasSetting(MovieDetailsHome)] | [Control.IsVisible(56) + Skin.HasSetting(MovieDetailsHome)] | [Control.IsVisible(57) + Skin.HasSetting(MovieDetailsHome)] |
+				[Control.IsVisible(501) + Skin.HasSetting(MovieDetailsHome)] | [Control.IsVisible(502) + Skin.HasSetting(MovieDetailsHome)] |
+				[Control.IsVisible(503) + Skin.HasSetting(MovieDetailsHome)] |
+				[Control.IsVisible(507) + Skin.HasSetting(MovieDetailsHome)] | [Control.IsVisible(509) + Skin.HasSetting(MovieDetailsHome)] |
+				[Control.IsVisible(510) + Skin.HasSetting(MovieDetailsHome)] | [Control.IsVisible(511) + Skin.HasSetting(MovieDetailsHome)] | [Control.IsVisible(512) + Skin.HasSetting(MovieDetailsHome)] |
+				[Control.IsVisible(513) + Skin.HasSetting(MovieDetailsHome)] | [Control.IsVisible(514) + Skin.HasSetting(MovieDetailsHome)] |
+				[Control.IsVisible(524) + Skin.HasSetting(MovieDetailsHome)] | 
+				[Window.IsActive(1108) + Skin.HasSetting(MovieDetailsHome)] | [Window.IsActive(1109) + Skin.HasSetting(MovieDetailsHome)] |
+				[Window.IsActive(1106) + Skin.HasSetting(MovieDetailsHome)]
+				</visible>
+                <visible>ListItem$PARAM[listitem].IsResumable + Skin.HasSetting(WatchedIndicator.Progress)</visible>
+                <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
+				<visible>!$EXP[IsTvShowDBType]</visible>
+                <control type="image">
+                    <texture background="true">$PARAM[overlay_texture]</texture>
+                    <colordiffuse>$INFO[Skin.String(WatchedIndicator.Progress.Color)]</colordiffuse>
+                </control>
+                <control type="label">
+                    <right>0</right>
+                    <top>0</top>
+                    <align>center</align>
+                    <font>$PARAM[font]</font>
+                    <width>65%</width>
+                    <height>45%</height>
+                    <label>$INFO[ListItem$PARAM[listitem].PercentPlayed]%</label>
+                    <textcolor>$INFO[Skin.String(WatchedIndicator.Progress.TextColor)]</textcolor>
+                </control>
+            </control>
+            <control type="group">
+                <description>Episodes count Overlay</description>
+                <visible>Integer.IsGreater(ListItem$PARAM[listitem].Property(UnWatchedEpisodes),0) + Skin.HasSetting(WatchedIndicator.Episodes)</visible>
+                <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
+                <control type="image">
+                    <texture background="true">$PARAM[overlay_texture]</texture>
+                    <colordiffuse>$INFO[Skin.String(WatchedIndicator.Episodes.Color)]</colordiffuse>
+                </control>
+                <control type="label">
+                    <right>0</right>
+                    <top>0</top>
+                    <align>center</align>
+                    <font>$PARAM[font]</font>
+                    <width>65%</width>
+                    <height>45%</height>
+                    <label>$INFO[ListItem$PARAM[listitem].Property(UnWatchedEpisodes)]</label>
+                    <textcolor>$INFO[Skin.String(WatchedIndicator.Episodes.TextColor)]</textcolor>
+                </control>
+            </control>
+            <control type="group">
+                <description>Movieset Overlay</description>
+                <visible>[ListItem$PARAM[listitem].IsCollection | String.Contains(ListItem$PARAM[listitem].Path,videodb://movies/sets/)] + Skin.HasSetting(WatchedIndicator.Sets)</visible>
+                <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
+                <control type="image">
+                    <texture background="true">$PARAM[overlay_texture]</texture>
+                    <colordiffuse>$INFO[Skin.String(WatchedIndicator.Sets.Color)]</colordiffuse>
+                </control>
+                <control type="image">
+                    <texture>overlays/$PARAM[overlay]/discset.png</texture>
+                    <colordiffuse>$INFO[Skin.String(WatchedIndicator.Sets.TextColor)]</colordiffuse>
+                </control>
+            </control>
+            
+            <control type="group">
+                <description>Is Playing</description>
+                <visible>Skin.HasSetting(WatchedIndicator.Playing)</visible>
+                <visible>ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
+                <control type="image">
+                    <texture background="true">$PARAM[overlay_texture]</texture>
+                    <colordiffuse>$INFO[Skin.String(WatchedIndicator.Playing.Color)]</colordiffuse>
+                </control>
+                <control type="image">
+                    <texture>osd/slim/Play.png</texture>
+                    <left>36%</left>
+                    <top>-10%</top>
+                    <width>74%</width>
+                    <height>74%</height>
+                    <colordiffuse>$INFO[Skin.String(WatchedIndicator.Playing.TextColor)]</colordiffuse>
+                </control>
+            </control>
+            <control type="group">
+                <description>Is Recording</description>
+                <visible>Skin.HasSetting(WatchedIndicator.Playing)</visible>
+                <visible>!ListItem$PARAM[listitem].IsPlaying + ListItem$PARAM[listitem].IsRecording</visible>
+                <control type="image">
+                    <texture background="true">$PARAM[overlay_texture]</texture>
+                    <colordiffuse>$INFO[Skin.String(WatchedIndicator.Playing.Color)]</colordiffuse>
+                </control>
+                <control type="image">
+                    <left>36%</left>
+                    <top>-8%</top>
+                    <width>72%</width>
+                    <height>72%</height>
+                    <texture>pvr/icons/pvr_record.png</texture>
+                </control>
+            </control>
+            <control type="group">
+                <description>Is single timer</description>
+                <visible>Skin.HasSetting(WatchedIndicator.Playing)</visible>
+                <visible>String.IsEqual(ListItem.Comment,$LOCALIZE[305]) | String.IsEmpty(ListItem.Comment)</visible>
+                <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
+                <visible>[ListItem$PARAM[listitem].HasTimer + !ListItem$PARAM[listitem].HasTimerSchedule] | [!String.IsEmpty(ListItem$PARAM[listitem].TimerType) + !ListItem$PARAM[listitem].IsFolder]</visible>
+                <control type="image">
+                    <texture background="true">$PARAM[overlay_texture]</texture>
+                    <colordiffuse>$INFO[Skin.String(WatchedIndicator.Playing.Color)]</colordiffuse>
+                </control>
+                <control type="image">
+                    <left>36%</left>
+                    <top>-8%</top>
+                    <width>72%</width>
+                    <height>72%</height>
+                    <texture>pvr/icons/pvr_timer.png</texture>
+                </control>
+            </control>
+            <control type="group">
+                <description>PVR recurring timer</description>
+                <visible>Skin.HasSetting(WatchedIndicator.Playing)</visible>
+                <visible>String.IsEqual(ListItem.Comment,$LOCALIZE[305]) | String.IsEmpty(ListItem.Comment)</visible>
+                <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
+                <visible>[ListItem$PARAM[listitem].HasTimer + ListItem$PARAM[listitem].HasTimerSchedule] | [!String.IsEmpty(ListItem$PARAM[listitem].TimerType) + ListItem$PARAM[listitem].IsFolder]</visible>
+                <control type="image">
+                    <texture background="true">$PARAM[overlay_texture]</texture>
+                    <colordiffuse>$INFO[Skin.String(WatchedIndicator.Watched.Color)]</colordiffuse>
+                </control>
+                <control type="image">
+                    <right>-11</right>
+                    <top>-5</top>
+                    <width>73%</width>
+                    <height>70%</height>
+                    <texture>pvr/icons/pvr_record.png</texture>
+                    <animation effect="fade" start="100" end="60" time="0" condition="true">Conditional</animation>
+                </control>
+                <control type="image">
+                    <right>-3</right>
+                    <top>-5</top>
+                    <width>73%</width>
+                    <height>70%</height>
+                    <texture>pvr/icons/pvr_record.png</texture>
+                    <animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
+                </control>
+                <control type="image">
+                    <right>5</right>
+                    <top>-5</top>
+                    <width>73%</width>
+                    <height>70%</height>
+                    <texture>pvr/icons/pvr_record.png</texture>
+                </control>
+            </control>
+        </control>
+    </include>
+            
+    <include name="WatchedIndicatorNormal">
+        <include content="WatchedIndicatorLayout">
+            <param name="width" value="80" />
+            <param name="height" value="80" />
+            <param name="font" value="indicator_normal" />
+            <param name="overlay" value="normal" />
+            <param name="overlay_texture" value="diffuse/icon_overlay.png" />
+        </include>
+    </include>
+    
+	<include name="WatchedIndicatorSmall">
+        <include content="WatchedIndicatorLayout">
+            <param name="width" value="60" />
+            <param name="height" value="60" />
+            <param name="font" value="indicator_small" />
+            <param name="overlay" value="normal" />
+            <param name="overlay_texture" value="diffuse/icon_overlay.png" />
+        </include>
+	</include>
+	
+	<include name="WatchedIndicatorLarge">
+		<include content="WatchedIndicatorLayout">
+            <param name="width" value="120" />
+            <param name="height" value="120" />
+            <param name="font" value="indicator_big" />
+            <param name="overlay" value="big" />
+            <param name="overlay_texture" value="diffuse/icon_overlay_large.png" />
+        </include>
+	</include>
+
+	<variable name="WatchedLabel">
+        <value condition="[Container.Content(TVShows) | Container.Content(Seasons) | ListItem.IsFolder] + [Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + !Skin.HasSetting(HideWatchedCounts)]">$INFO[ListItem.Property(UnWatchedEpisodes)]</value>
+		<value condition="ListItem.IsResumable + !String.IsEmpty(ListItem.Property(complete_percentage))">$INFO[ListItem.Property(complete_percentage)]%</value>
+		<value condition="ListItem.IsResumable">$INFO[ListItem.PercentPlayed]%</value>
+		<value>??</value>
+    </variable>
+    
+    <include name="Font_Reg24">
+        <font>Reg24</font>
+    </include>
+    <include name="Font_Reg31">
+        <font>Reg31</font>
+    </include>
+    
+    <include name="PVRWatchedIndicator">
+        <control type="group">
+            <visible>!String.StartsWith(ListItem.Label,..)</visible>
+            <width>65</width>
+            <height>65</height>
+			<animation effect="slide" start="0" end="0,9" time="0" condition="Skin.String(GuideRows, 7)">Conditional</animation>
+			<animation effect="slide" start="0" end="0,4" time="0" condition="Skin.String(GuideRows, 8)">Conditional</animation>
+            <control type="image">
+                <description>PVR is recording</description>
+                <right>1</right>
+                <top>0</top>
+                <width>64</width>
+                <height>64</height>
+                <texture>pvr/icons/pvr_record.png</texture>
+                <visible>ListItem.IsRecording</visible>
+            </control>
+            <control type="image">
+                <description>PVR single timer</description>
+                <right>1</right>
+                <top>0</top>
+                <width>64</width>
+                <height>64</height>
+                <texture>pvr/icons/pvr_timer.png</texture>
+                <visible>!ListItem.IsRecording + ListItem.HasTimer + !ListItem.HasTimerSchedule</visible>
+            </control>
+            <control type="image">
+                <description>Is Playing</description>
+                <right>5</right>
+                <top>2</top>
+                <width>60</width>
+                <height>60</height>
+                <texture>pvr/icons/pvr_play.png</texture>
+                <visible>ListItem.IsPlaying + !ListItem.IsRecording</visible>
+            </control>
+            <control type="group">
+                <description>PVR recurring timer</description>
+                <visible>ListItem.HasTimerSchedule</visible>
+                <control type="image">
+                    <right>1</right>
+                    <top>0</top>
+                    <width>64</width>
+                    <height>64</height>
+                    <texture>pvr/icons/pvr_record.png</texture>
+                    <animation effect="fade" start="100" end="60" time="0" condition="true">Conditional</animation>
+                </control>
+                <control type="image">
+                    <right>1</right>
+                    <top>0</top>
+                    <width>64</width>
+                    <height>64</height>
+                    <texture>pvr/icons/pvr_record.png</texture>
+                    <animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
+                </control>
+                <control type="image">
+                    <right>1</right>
+                    <top>0</top>
+                    <width>64</width>
+                    <height>64</height>
+                    <texture>pvr/icons/pvr_record.png</texture>
+                </control>
+            </control>
+        </control>
+    </include>
+    
+    <include name="PVRGuideItemLayout">
+        <!--EPG UNFOCUS-->
+        <control type="image" id="14">
+            <!--Button NF-->
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>54</width>
+            <height>92%</height>
+            <texture colordiffuse="$VAR[PVRGuideItemColor]" border="10">diffuse/panel.png</texture>
+            <visible>!Skin.HasSetting(ShowEpgGenreColors)</visible>
+        </control>
+        <control type="image" id="14">
+            <!--Button NF epg genre-->
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>54</width>
+            <height>92%</height>
+            <visible>Skin.HasSetting(ShowEpgGenreColors)</visible>
+            <texture border="10" fallback="epg-genres/0.png">epg-genres/$INFO[ListItem.Property(GenreType)].png</texture>
+        </control>
+		
+		<control type="image">
+			<left>-4</left>
+			<top>-4</top>
+			<width>28</width>
+			<height>28</height>
+			<texture>dialogs/keyboard/radio-on.png</texture>
+			<visible>ListItem.IsPlayable</visible>
+		</control>
+        
+        <!--Watched Overlay-->
+        <include>PVRWatchedIndicator</include>
+        
+        <control type="label" id="1">
+            <!--Channel Now Playing (with recording or timer active)-->
+            <visible>[ListItem.IsRecording | ListItem.HasTimer | ListItem.IsPlaying]</visible>
+            <left>42</left>
+            <right>63</right>
+			<textoffsetx>20</textoffsetx>
+            <width>0</width>
+            <height>92%</height>
+            <include condition="!String.IsEqual(Skin.String(GuideRows),7)">Font_Reg24</include>
+            <include condition="Skin.String(GuideRows, 7)">Font_Reg31</include>
+            <aligny>center</aligny>
+            <textcolor>$INFO[Skin.String(PVRGuideItemTextColorUnfocus)]</textcolor>
+            <label>$INFO[ListItem.Label]</label>
+        </control>
+        
+        <control type="label" id="1">
+            <!--Channel Now Playing-->
+            <visible>![ListItem.IsRecording | ListItem.HasTimer | ListItem.IsPlaying]</visible>
+			<left>23</left>
+            <right>23</right>
+            <width>0</width>
+            <height>92%</height>
+            <include condition="!String.IsEqual(Skin.String(GuideRows),7)">Font_Reg24</include>
+            <include condition="Skin.String(GuideRows, 7)">Font_Reg31</include>
+            <aligny>center</aligny>
+            <textcolor>$INFO[Skin.String(PVRGuideItemTextColorUnfocus)]</textcolor>
+            <label>$INFO[ListItem.Label]</label>
+        </control>
+    </include>
+    
+    <include name="PVRGuideItemLayoutFocus">
+        <!--EPG FOCUS-->
+        <control type="image" id="14">
+            <!--Button FO-->
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>54</width>
+            <height>92%</height>
+            <texture border="10" colordiffuse="$INFO[Skin.String(PVRGuideItemColorFocus)]">diffuse/panel.png</texture>
+        </control>
+		
+		<control type="image">
+			<left>-4</left>
+			<top>-4</top>
+			<width>28</width>
+			<height>28</height>
+			<texture>dialogs/keyboard/radio-on.png</texture>
+			<visible>ListItem.IsPlayable</visible>
+		</control>
+        
+        <include>PVRWatchedIndicator</include>
+        
+        <control type="label" id="1">
+            <!--Channel Now Playing (with recording or timer active)-->
+            <visible>[ListItem.IsRecording | ListItem.HasTimer | ListItem.IsPlaying]</visible>
+            <left>42</left>
+            <right>63</right>
+			<textoffsetx>20</textoffsetx>
+            <width>0</width>
+            <height>92%</height>
+            <include condition="!String.IsEqual(Skin.String(GuideRows),7)">Font_Reg24</include>
+            <include condition="Skin.String(GuideRows, 7)">Font_Reg31</include>
+            <aligny>center</aligny>
+            <textcolor>$INFO[Skin.String(PVRGuideItemTextColorFocus)]</textcolor>
+            <label>$INFO[ListItem.Label]</label>
+            <scroll>true</scroll>
+        </control>
+        
+        <control type="label" id="1">
+            <!--Channel Now Playing-->
+            <visible>![ListItem.IsRecording | ListItem.HasTimer | ListItem.IsPlaying]</visible>
+            <left>23</left>
+            <right>23</right>
+            <width>0</width>
+            <height>92%</height>
+            <include condition="!String.IsEqual(Skin.String(GuideRows),7)">Font_Reg24</include>
+            <include condition="Skin.String(GuideRows, 7)">Font_Reg31</include>
+            <aligny>center</aligny>
+            <textcolor>$INFO[Skin.String(PVRGuideItemTextColorFocus)]</textcolor>
+            <label>$INFO[ListItem.Label]</label>
+            <scroll>true</scroll>
+        </control>
+    </include>
+    
+    <include name="PVRGuideChannelItemLayout">
+        <animation effect="fade" end="100" time="200">OnFocus</animation>
+        <animation effect="fade" end="80" time="200">UnFocus</animation>
+        <control type="group">
+            <width>98%</width>
+            <height>92%</height>
+            
+            <control type="image">
+                <width>100%</width>
+                <height>100%</height>
+                <texture colordiffuse="$PARAM[panelcolor]" border="10">diffuse/panel.png</texture>
+            </control> 
+            <control type="image">
+                <description>Channel Icon with channel name or number present</description>
+                <left>2%</left>
+                <width>20%</width>
+                <height>100%</height>
+                <texture background="true" fallback="defaultaddonpvrclient.png">$INFO[ListItem.Icon]</texture>
+                <aspectratio align="center" aligny="center">keep</aspectratio>
+                <visible>!Skin.HasSetting(HideChannelLogosInGuide)</visible>
+            </control>			
+            <control type="label">
+                <description>Channel Nummber with logo and channelname present</description>
+                <left>24%</left>
+                <width>20%</width>
+                <height>100%</height>
+                <font>$PARAM[font]</font>
+                <align>center</align>
+                <textcolor>$PARAM[textcolor]</textcolor>
+                <selectedcolor>$PARAM[textcolor]</selectedcolor>
+                <info>ListItem.ChannelNumberLabel</info>
+                <visible>!Skin.HasSetting(HideChannelLogosInGuide)</visible>
+            </control>
+            <control type="label">
+                <description>Channel Number with logo disabled and channelname present</description>
+                <left>5%</left>
+                <width>20%</width>
+                <height>100%</height>
+                <font>$PARAM[font]</font>
+                <align>center</align>
+                <textcolor>$PARAM[textcolor]</textcolor>
+                <selectedcolor>$PARAM[textcolor]</selectedcolor>
+                <info>ListItem.ChannelNumberLabel</info>
+                <visible>Skin.HasSetting(HideChannelLogosInGuide)</visible>
+            </control>
+            <control type="label">
+                <description>Channel Name with logo and channel number enabled</description>
+                <left>46%</left>
+                <width>53%</width>
+                <height>100%</height>
+                <font>$PARAM[font]</font>
+                <textcolor>$PARAM[textcolor]</textcolor>
+                <selectedcolor>$PARAM[textcolor]</selectedcolor>
+                <label>$INFO[ListItem.ChannelName]</label>
+                <visible>!Skin.HasSetting(HideChannelLogosInGuide)</visible>
+            </control>
+            <control type="label">
+                <description>Channel Name with logo disabled and channel number enabled</description>
+                <left>27%</left>
+                <width>70%</width>
+                <height>100%</height>
+                <font>$PARAM[font]</font>
+                <textcolor>$PARAM[textcolor]</textcolor>
+                <selectedcolor>$PARAM[textcolor]</selectedcolor>
+                <label>$INFO[ListItem.ChannelName]</label>
+                <visible>Skin.HasSetting(HideChannelLogosInGuide)</visible>
+            </control>
+        </control>
+    </include>
+
+    <include name="View_Forced">
+        <visible>
+            [Container.Content(games) + [String.IsEqual(Skin.String(Skin.ForcedView.games),$PARAM[viewtype]) | String.IsEmpty(Skin.String(Skin.ForcedView.games))]] |
+            [Container.Content(movies) + [String.IsEqual(Skin.String(Skin.ForcedView.movies),$PARAM[viewtype]) | String.IsEmpty(Skin.String(Skin.ForcedView.movies))]] |
+            [Container.Content(sets) + [String.IsEqual(Skin.String(Skin.ForcedView.sets),$PARAM[viewtype]) | String.IsEmpty(Skin.String(Skin.ForcedView.sets))]] |
+            [Container.Content(tvshows) + [String.IsEqual(Skin.String(Skin.ForcedView.tvshows),$PARAM[viewtype]) | String.IsEmpty(Skin.String(Skin.ForcedView.tvshows))]] |
+            [Container.Content(seasons) + [String.IsEqual(Skin.String(Skin.ForcedView.seasons),$PARAM[viewtype]) | String.IsEmpty(Skin.String(Skin.ForcedView.seasons))]] |
+            [Container.Content(episodes) + [String.IsEqual(Skin.String(Skin.ForcedView.episodes),$PARAM[viewtype]) | String.IsEmpty(Skin.String(Skin.ForcedView.episodes))]] |
+            [Container.Content(actors) + [String.IsEqual(Skin.String(Skin.ForcedView.actors),$PARAM[viewtype]) | String.IsEmpty(Skin.String(Skin.ForcedView.actors))]] |
+            [Container.Content(artists) + [String.IsEqual(Skin.String(Skin.ForcedView.artists),$PARAM[viewtype]) | String.IsEmpty(Skin.String(Skin.ForcedView.artists))]] |
+            [Container.Content(albums) + [String.IsEqual(Skin.String(Skin.ForcedView.albums),$PARAM[viewtype]) | String.IsEmpty(Skin.String(Skin.ForcedView.albums))]] |
+            [Container.Content(songs) + [String.IsEqual(Skin.String(Skin.ForcedView.songs),$PARAM[viewtype]) | String.IsEmpty(Skin.String(Skin.ForcedView.songs))]] |
+            [Container.Content(addons) + [String.IsEqual(Skin.String(Skin.ForcedView.addons),$PARAM[viewtype]) | String.IsEmpty(Skin.String(Skin.ForcedView.addons))]] |
+            [Container.Content(genres) + [String.IsEqual(Skin.String(Skin.ForcedView.genres),$PARAM[viewtype]) | String.IsEmpty(Skin.String(Skin.ForcedView.genres))]] |
+            [Container.Content(images) + [String.IsEqual(Skin.String(Skin.ForcedView.images),$PARAM[viewtype]) | String.IsEmpty(Skin.String(Skin.ForcedView.images))]] |
+            [Container.Content(videos) + [String.IsEqual(Skin.String(Skin.ForcedView.videos),$PARAM[viewtype]) | String.IsEmpty(Skin.String(Skin.ForcedView.videos))]] |
+            [Container.Content() + [String.IsEqual(Skin.String(Skin.ForcedView.),$PARAM[viewtype]) | String.IsEmpty(Skin.String(Skin.ForcedView.))]] |
+            [Container.Content(tags) + [String.IsEqual(Skin.String(Skin.ForcedView.tags),$PARAM[viewtype]) | String.IsEmpty(Skin.String(Skin.ForcedView.tags))]] |
+            [Container.Content(years) + [String.IsEqual(Skin.String(Skin.ForcedView.years),$PARAM[viewtype]) | String.IsEmpty(Skin.String(Skin.ForcedView.years))]] |
+            [Container.Content(countries) + [String.IsEqual(Skin.String(Skin.ForcedView.countries),$PARAM[viewtype]) | String.IsEmpty(Skin.String(Skin.ForcedView.countries))]] |
+            [Container.Content(studios) + [String.IsEqual(Skin.String(Skin.ForcedView.studios),$PARAM[viewtype]) | String.IsEmpty(Skin.String(Skin.ForcedView.studios))]] |
+            [Container.Content(playlists) + [String.IsEqual(Skin.String(Skin.ForcedView.playlists),$PARAM[viewtype]) | String.IsEmpty(Skin.String(Skin.ForcedView.playlists))]] |
+            [Container.Content(musicvideos) + [String.IsEqual(Skin.String(Skin.ForcedView.musicvideos),$PARAM[viewtype]) | String.IsEmpty(Skin.String(Skin.ForcedView.musicvideos))]] |
+            [Container.Content(directors) + [String.IsEqual(Skin.String(Skin.ForcedView.directors),$PARAM[viewtype]) | String.IsEmpty(Skin.String(Skin.ForcedView.directors))]] |
+            [Container.Content(files) + [String.IsEqual(Skin.String(Skin.ForcedView.files),$PARAM[viewtype]) | String.IsEmpty(Skin.String(Skin.ForcedView.files))]] |
+            [Container.Content(mixed) + [String.IsEqual(Skin.String(Skin.ForcedView.mixed),$PARAM[viewtype]) | String.IsEmpty(Skin.String(Skin.ForcedView.mixed))]] |
+            [Container.Content(unknown) + [String.IsEqual(Skin.String(Skin.ForcedView.unknown),$PARAM[viewtype]) | String.IsEmpty(Skin.String(Skin.ForcedView.unknown))]] |
+            [!Container.Content(games) + !Container.Content(movies) + !Container.Content(sets) + !Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes) + !Container.Content(actors) + !Container.Content(artists) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(addons) + !Container.Content(genres) + !Container.Content(images) + !Container.Content(videos) + !Container.Content() + !Container.Content(tags) + !Container.Content(years) + !Container.Content(countries) + !Container.Content(studios) + !Container.Content(playlists) + !Container.Content(musicvideos) + !Container.Content(directors) + !Container.Content(files) + !Container.Content(mixed) + !Container.Content(unknown)]
+            | Window.IsVisible(MyPlaylist.xml)
+        </visible>
+    </include>
+
+    <include name="Items_LockUnlock">
+        <onclick condition="[Container.Content() + !String.IsEmpty(Skin.String(Skin.ForcedView.))]">Skin.Reset(Skin.ForcedView.)</onclick>
+        <onclick condition="[Container.Content(tags) + !String.IsEmpty(Skin.String(Skin.ForcedView.tags))]">Skin.Reset(Skin.ForcedView.tags)</onclick>
+        <onclick condition="[Container.Content(years) + !String.IsEmpty(Skin.String(Skin.ForcedView.years))]">Skin.Reset(Skin.ForcedView.years)</onclick>
+        <onclick condition="[Container.Content(genres) + !String.IsEmpty(Skin.String(Skin.ForcedView.genres))]">Skin.Reset(Skin.ForcedView.genres)</onclick>
+        <onclick condition="[Container.Content(countries) + !String.IsEmpty(Skin.String(Skin.ForcedView.countries))]">Skin.Reset(Skin.ForcedView.countries)</onclick>
+        <onclick condition="[Container.Content(studios) + !String.IsEmpty(Skin.String(Skin.ForcedView.studios))]">Skin.Reset(Skin.ForcedView.studios)</onclick>
+        <onclick condition="[Container.Content(playlists) + !String.IsEmpty(Skin.String(Skin.ForcedView.playlists))]">Skin.Reset(Skin.ForcedView.playlists)</onclick>
+        <onclick condition="[Container.Content(movies) + !String.IsEmpty(Skin.String(Skin.ForcedView.movies))]">Skin.Reset(Skin.ForcedView.movies)</onclick>
+        <onclick condition="[Container.Content(sets) + !String.IsEmpty(Skin.String(Skin.ForcedView.sets))]">Skin.Reset(Skin.ForcedView.sets)</onclick>
+        <onclick condition="[Container.Content(tvshows) + !String.IsEmpty(Skin.String(Skin.ForcedView.tvshows))]">Skin.Reset(Skin.ForcedView.tvshows)</onclick>
+        <onclick condition="[Container.Content(seasons) + !String.IsEmpty(Skin.String(Skin.ForcedView.seasons))]">Skin.Reset(Skin.ForcedView.seasons)</onclick>
+        <onclick condition="[Container.Content(episodes) + !String.IsEmpty(Skin.String(Skin.ForcedView.episodes))]">Skin.Reset(Skin.ForcedView.episodes)</onclick>
+        <onclick condition="[Container.Content(artists) + !String.IsEmpty(Skin.String(Skin.ForcedView.artists))]">Skin.Reset(Skin.ForcedView.artists)</onclick>
+        <onclick condition="[Container.Content(albums) + !String.IsEmpty(Skin.String(Skin.ForcedView.albums))]">Skin.Reset(Skin.ForcedView.albums)</onclick>
+        <onclick condition="[Container.Content(songs) + !String.IsEmpty(Skin.String(Skin.ForcedView.songs))]">Skin.Reset(Skin.ForcedView.songs)</onclick>
+        <onclick condition="[Container.Content(musicvideos) + !String.IsEmpty(Skin.String(Skin.ForcedView.musicvideos))]">Skin.Reset(Skin.ForcedView.musicvideos)</onclick>
+        <onclick condition="[Container.Content(addons) + !String.IsEmpty(Skin.String(Skin.ForcedView.addons))]">Skin.Reset(Skin.ForcedView.addons)</onclick>
+        <onclick condition="[Container.Content(actors) + !String.IsEmpty(Skin.String(Skin.ForcedView.actors))]">Skin.Reset(Skin.ForcedView.actors)</onclick>
+        <onclick condition="[Container.Content(directors) + !String.IsEmpty(Skin.String(Skin.ForcedView.directors))]">Skin.Reset(Skin.ForcedView.directors)</onclick>
+        <onclick condition="[Container.Content(files) + !String.IsEmpty(Skin.String(Skin.ForcedView.files))]">Skin.Reset(Skin.ForcedView.files)</onclick>
+        <onclick condition="[Container.Content(mixed) + !String.IsEmpty(Skin.String(Skin.ForcedView.mixed))]">Skin.Reset(Skin.ForcedView.mixed)</onclick>
+        <onclick condition="[Container.Content(images) + !String.IsEmpty(Skin.String(Skin.ForcedView.images))]">Skin.Reset(Skin.ForcedView.images)</onclick>
+        <onclick condition="[Container.Content(games) + !String.IsEmpty(Skin.String(Skin.ForcedView.games))]">Skin.Reset(Skin.ForcedView.games)</onclick>
+        <onclick condition="[Container.Content(unknown) + !String.IsEmpty(Skin.String(Skin.ForcedView.unknown))]">Skin.Reset(Skin.ForcedView.unknown)</onclick>
+        <onclick condition="[Container.Content(videos) + !String.IsEmpty(Skin.String(Skin.ForcedView.videos))]">Skin.Reset(Skin.ForcedView.videos)</onclick>
+    </include>
+
+    <include name="Items_LockView">
+        <onclick condition="[Container.Content() + String.IsEmpty(Skin.String(Skin.ForcedView.))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+        <onclick condition="[Container.Content(tags) + String.IsEmpty(Skin.String(Skin.ForcedView.tags))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+        <onclick condition="[Container.Content(years) + String.IsEmpty(Skin.String(Skin.ForcedView.years))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+        <onclick condition="[Container.Content(genres) + String.IsEmpty(Skin.String(Skin.ForcedView.genres))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+        <onclick condition="[Container.Content(countries) + String.IsEmpty(Skin.String(Skin.ForcedView.countries))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+        <onclick condition="[Container.Content(studios) + String.IsEmpty(Skin.String(Skin.ForcedView.studios))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+        <onclick condition="[Container.Content(playlists) + String.IsEmpty(Skin.String(Skin.ForcedView.playlists))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+        <onclick condition="[Container.Content(movies) + String.IsEmpty(Skin.String(Skin.ForcedView.movies))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+        <onclick condition="[Container.Content(sets) + String.IsEmpty(Skin.String(Skin.ForcedView.sets))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+        <onclick condition="[Container.Content(tvshows) + String.IsEmpty(Skin.String(Skin.ForcedView.tvshows))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+        <onclick condition="[Container.Content(seasons) + String.IsEmpty(Skin.String(Skin.ForcedView.seasons))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+        <onclick condition="[Container.Content(episodes) + String.IsEmpty(Skin.String(Skin.ForcedView.episodes))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+        <onclick condition="[Container.Content(artists) + String.IsEmpty(Skin.String(Skin.ForcedView.artists))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+        <onclick condition="[Container.Content(albums) + String.IsEmpty(Skin.String(Skin.ForcedView.albums))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+        <onclick condition="[Container.Content(songs) + String.IsEmpty(Skin.String(Skin.ForcedView.songs))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+        <onclick condition="[Container.Content(musicvideos) + String.IsEmpty(Skin.String(Skin.ForcedView.musicvideos))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+        <onclick condition="[Container.Content(addons) + String.IsEmpty(Skin.String(Skin.ForcedView.addons))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+        <onclick condition="[Container.Content(actors) + String.IsEmpty(Skin.String(Skin.ForcedView.actors))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+        <onclick condition="[Container.Content(directors) + String.IsEmpty(Skin.String(Skin.ForcedView.directors))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+        <onclick condition="[Container.Content(files) + String.IsEmpty(Skin.String(Skin.ForcedView.files))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+        <onclick condition="[Container.Content(mixed) + String.IsEmpty(Skin.String(Skin.ForcedView.mixed))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+        <onclick condition="[Container.Content(images) + String.IsEmpty(Skin.String(Skin.ForcedView.images))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+        <onclick condition="[Container.Content(games) + String.IsEmpty(Skin.String(Skin.ForcedView.games))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+        <onclick condition="[Container.Content(unknown) + String.IsEmpty(Skin.String(Skin.ForcedView.unknown))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+        <onclick condition="[Container.Content(videos) + String.IsEmpty(Skin.String(Skin.ForcedView.videos))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
+    </include>
+	
+	<!--Top 250 Indicator-->
+	<include name="Top250Indicator">
+		<control type="image">
+		<visible>!$EXP[IsEpisodeDBType] + [!String.IsEmpty(Control.GetLabel(8231)) | Control.IsVisible(1719)] + !Skin.HasSetting(DisableTop250Indicator) + Skin.HasSetting(EnableRatings) + !$EXP[IsCategoryDBType]</visible>
+		<posy>8</posy>
+		<left>8</left>
+        <height>60</height>
+        <width>50</width>
+        <aspectratio>keep</aspectratio>
+        <texture>bingie/top250p.png</texture>
+		</control>
+    </include>
+
+</includes>

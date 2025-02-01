@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<includes>	
+	<include name="View_51_ListDetails">	
+		<control type="group">
+			<defaultcontrol always="true">51</defaultcontrol>
+			<visible>Control.IsVisible(51)</visible>
+			<include>animation_view_change</include>           		
+			<control type="list" id="51">
+				<animation effect="slide" end="-637" time="0" condition="Skin.HasSetting(View51_ShowInfoRight)">Conditional</animation>
+				<bottom>144</bottom>
+                <height>721</height>	
+				<left>697</left>
+				<width>1290</width>
+				<onup>51</onup>
+				<ondown>51</ondown>
+				<onleft>9000</onleft>
+				<onright condition="Skin.HasSetting(EnableQuickJump)">6000</onright>
+                <onright condition="!Skin.HasSetting(EnableQuickJump)">60</onright>
+				<onleft>CancelAlarm(preview_delay,silent)</onleft>
+				<onleft condition="[!String.IsEmpty(ListItem.Trailer) + [String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | !String.Contains(ListItem.Trailer,plugin)] | String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | String.IsEmpty(ListItem.Trailer) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)] + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)] + Skin.HasSetting(View51_DetailsAutoTrailer)">PlayerControl(Stop)</onleft>
+				<onback>CancelAlarm(preview_delay,silent)</onback>
+				<onback condition="[!String.IsEmpty(ListItem.Trailer) + [String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | !String.Contains(ListItem.Trailer,plugin)] | String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | String.IsEmpty(ListItem.Trailer) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)] + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)] + Skin.HasSetting(View51_DetailsAutoTrailer)">PlayerControl(Stop)</onback>
+				<viewtype label="31444">list</viewtype>
+				<include content="View_Forced">
+					<param name="viewtype" value="$LOCALIZE[31444]" />
+				</include>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime tween="quadratic">400</scrolltime>
+				<itemlayout width="1163" height="63">
+                    <control type="label">
+                        <!--Label 1-->
+                        <posx>14</posx>
+						<posy>0</posy>
+                        <width>1141</width>
+                        <font>Reg28</font>
+                        <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
+                        <label>$VAR[ListTitle]</label>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="1163" height="90">
+                    <control type="image">
+						<posy>0</posy>
+						<height>90</height>
+						<width>1163</width>
+						<texture border="10">diffuse/panel.png</texture>
+						<colordiffuse>$INFO[Skin.String(ViewDetailsFocusColor)]</colordiffuse>
+					</control>
+                    <control type="label">
+                        <!--Label 1-->
+                        <posx>14</posx>
+						<posy>-2</posy>
+                        <width>1141</width>
+                        <height>55</height>
+                        <font>Reg36</font>
+						<scroll>true</scroll>
+                        <textcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</textcolor>
+                        <label>$VAR[ListTitle]</label>
+                    </control>
+                    <control type="label">
+                        <!--Label 2-->
+                        <posx>14</posx>
+                        <posy>49</posy>
+                        <width>1141</width>
+                        <height>30</height>
+                        <font>Reg28</font>
+						<scroll>true</scroll>
+                        <textcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</textcolor>
+                        <label>$VAR[ListDetails]</label>
+                        <visible>!String.IsEqual(ListItem.Label,..)</visible>
+                    </control>
+					<include condition="Skin.HasSetting(View51_DetailsAutoTrailer)">LibraryAutoTrailerStopButton</include>
+					<include content="LibraryAutoTrailerStartButton" condition="Skin.HasSetting(View51_DetailsAutoTrailer)">
+						<param name="interval" value="$INFO[Skin.String(details_auto_trailer_interval)]" />
+					</include>					
+                </focusedlayout>
+			</control>
+            <!-- info panel -->
+            <include>MovieDetailsLeft</include>           
+            <!--vertical Scollbar-->
+			<control type="scrollbar" id="60">
+				<visible>Control.IsVisible(51) + Integer.IsGreater(Container.NumItems,0)</visible>
+				<right>15</right>
+				<bottom>145</bottom>
+				<height>720</height>
+				<onup>60</onup>
+				<ondown>6000</ondown>
+				<onleft>51</onleft>
+				<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] + !Control.IsVisible(6002)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] | Control.IsVisible(6002)">Conditional</animation>
+			</control>   
+		</control>		
+	</include>
+</includes>

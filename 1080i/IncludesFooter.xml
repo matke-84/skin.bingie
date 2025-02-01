@@ -1,0 +1,1650 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<includes>
+	
+	<!-- Footer -->
+	<include name="Footer">
+		<control type="group">
+            <visible>$EXP[EXP_TMDBHelper_Metadata] | Window.IsActive(MyMusicNav.xml)</visible>
+			<include>animation_window_open_close</include>		
+           
+            <!-- codec info normal-->
+			<control type="group">
+				<posx>20</posx>
+				<height>60</height>
+				<bottom>20</bottom>
+				<include condition="Window.IsActive(Videos) | Window.IsActive(videoplaylist)">mediaflags</include>
+            </control>
+			
+			<!--Rating normal-->
+            <include condition="Window.IsActive(Videos) | Window.IsActive(videoplaylist)">Footer_RatingAndStudio_Hor</include>
+			<include condition="Window.IsActive(MyMusicNav.xml)">StarRatingMusicFooter</include>
+		</control>
+	</include>
+	
+	<!-- Footer -->
+	<include name="Footer2">
+		<control type="group">
+			<visible>$EXP[EXP_TMDBHelper_Metadata]</visible>			
+			<include>animation_window_open_close</include>
+            <animation effect="fade" start="100" end="0" time="300" condition="$EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(HideMediaFlagsTrailer)">Conditional</animation>
+            <top>490</top>
+            <width>100%</width>
+			<right>14</right>
+            <include condition="[Window.IsActive(Videos) | Window.IsActive(videoplaylist)]">new_footer</include>
+			<visible>Control.IsVisible(523) | Control.IsVisible(526) | ![Control.IsVisible(52) | Control.IsVisible(507) | Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(53) | Control.IsVisible(57) | 
+			Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(56) | Control.IsVisible(501) |
+			Control.IsVisible(502) | Control.IsVisible(509) | Control.IsVisible(510) | Control.IsVisible(511) | 
+			Control.IsVisible(512) | Control.IsVisible(524) | Control.IsVisible(51) | 
+			Control.IsVisible(503) | Control.IsVisible(50) | Control.IsVisible(527) | Control.IsVisible(525)]</visible>
+		</control>
+	</include>
+	
+    <include name="FooterContentPVR">
+        <!--Progress (PVR)-->
+        <control type="group">
+			<animation effect="slide" end="27,0" time="0" condition="String.EndsWith(system.time,PM) | String.EndsWith(system.time,AM)">Conditional</animation>
+            <visible>Window.IsActive(tvchannels)</visible>
+            <bottom>30</bottom>
+            <height>65</height>
+			<align>left</align>
+			<left>-7</left>
+            <control type="label">
+                <!--Start-->
+                <posx>143</posx>
+                <posy>4</posy>
+                <width>400</width>
+				<align>right</align>
+                <font>flags</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+                <shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <info>ListItem.StartTime</info>
+            </control>
+            <control type="progress">
+                <!--Progress Bar-->
+                <posx>151</posx>
+                <posy>25</posy>
+                <width>158</width>
+                <height>20</height>
+                <info>ListItem.Progress</info>
+				<texturebg border="10" colordiffuse="$VAR[PVRItemColor]">diffuse/osd_panel.png</texturebg>
+				<visible>!String.IsEmpty(ListItem.StartTime) + !String.IsEmpty(ListItem.EndTime)</visible>
+            </control>
+            <control type="label">
+                <!--End-->
+                <posx>316</posx>
+                <posy>4</posy>
+                <width>400</width>
+                <font>flags</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+                <shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <info>ListItem.EndTime</info>
+            </control>
+        </control>
+        <!-- Programname etc -->
+        <control type="group">
+            <bottom>45</bottom>
+            <height>65</height>
+            <control type="label">
+                <!--live tv channel-->
+				<visible>Window.IsActive(tvchannels)</visible>
+                <visible>String.IsEmpty(Control.Getlabel(44123))</visible>
+                <right>70</right>
+                <posy>17</posy>
+                <width>500</width>
+                <align>right</align>
+                <font>Reg30</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+                <shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <label>$INFO[ListItem.ChannelName]</label>
+            </control>
+            <control type="label">
+				<visible>Window.IsActive(tvchannels) | Window.IsActive(tvrecordings) | Window.IsActive(tvtimers) | Window.IsActive(tvsearch)</visible>
+				<visible>String.EndsWith(Control.GetLabel(883),color_transparent.png)</visible>
+                <!--live tv programname-->
+                <posx>610</posx>
+                <posy>17</posy>
+                <width>700</width>
+                <align>center</align>
+                <font>Bold30</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+                <shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <label>$INFO[ListItem.Title]</label>
+            </control>
+			<!--clearlogo bottom center-->
+			<control type="image" id="883">
+				<visible>Window.IsActive(tvchannels) | Window.IsActive(tvrecordings) | Window.IsActive(tvtimers) | Window.IsActive(tvsearch)</visible>
+				<left>792</left>
+				<posy>-5</posy>
+				<width>284</width>
+				<height>110</height>
+				<fadetime>350</fadetime>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<texture background="true" fallback="colors/color_transparent.png">$VAR[ListItemClearLogo]</texture>
+			</control>	
+            <control type="image" id="44123">
+				<visible>Window.IsActive(tvchannels)</visible>
+                <right>70</right>
+                <posy>0</posy>
+                <width>260</width>
+                <height>100</height>
+				<fadetime>350</fadetime>
+                <texture background="true">$VAR[channellogo]</texture>
+                <aspectratio align="right" aligny="center">keep</aspectratio>
+            </control>
+        </control>
+    </include>  
+
+    <!-- Power button -->
+	<include name="PowerButton">
+		<control type="button" id="2">
+            <description>powerbutton</description>
+            <width>60</width>
+            <height>60</height>
+            <onup>900</onup>
+            <onright>900</onright>
+            <onleft>900</onleft>
+            <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">common/shutdown2.png</texturefocus>
+            <texturenofocus colordiffuse="white">common/shutdown2.png</texturenofocus>
+            <onclick>ActivateWindow(111)</onclick>
+            <onfocus>ActivateWindow(111)</onfocus>
+            <include>animation_fade_visible_hidden</include>
+            <visible allowhiddenfocus="true">$PARAM[visibility]</visible>
+        </control>
+	</include>
+	  		
+    <include name="StarRatingMusicFooter">
+        <control type="group">
+            <bottom>20</bottom>
+            <height>80</height>
+            <right>60</right>
+            <control type="image">
+                <!--Stars modern-->
+                <right>0</right>
+                <posy>20</posy>
+                <width>220</width>
+                <height>55</height>
+                <colordiffuse>$INFO[Skin.String(FooterTextColor)]</colordiffuse>
+                <texture>$VAR[musicrating_stars]</texture>
+                <aspectratio>keep</aspectratio>
+            </control>
+        </control>
+    </include>
+
+    <!-- BINGIE FOOTER -->
+
+    <!-- Horizontal Rating Flags Definitions -->
+
+    <!-- MetaCritic Flag Horizontal -->
+    <include name="MetaCritic_Hor">
+        <control type="group">
+            <visible>!String.IsEmpty(Control.GetLabel(699705))</visible>
+			<visible>Skin.HasSetting(ratings_Metacritic) + Skin.HasSetting(EnableRatings)</visible>
+            <width>42</width>
+            <height>74</height>
+            <right>0</right>
+            <bottom>0</bottom>
+            <include>Default_Visible_Fade</include>
+            <control type="image">
+				<visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+                <width>42</width>
+                <height>42</height>
+				<bottom>20</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/metacritic.png</texture>
+		    </control>
+			<control type="image">
+				<visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+                <width>42</width>
+                <height>42</height>
+				<bottom>20</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/metacriticwhite.png</texture>
+		    </control>				
+		</control>
+            <control type="label" id="699705">
+				<visible>!String.IsEmpty(Container(99950).ListItem.Property(Metacritic_Rating))</visible>
+				<visible>Skin.HasSetting(ratings_Metacritic) + Skin.HasSetting(EnableRatings)</visible>
+                <posy>2</posy>
+				<width>auto</width>
+				<height></height>
+                <fadetime>300</fadetime>
+                <font>footer</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <label>$INFO[Container(99950).ListItem.Property(Metacritic_Rating),,%  ]</label>
+			</control>
+	</include>
+	
+	<!-- Trakt Flag Horizontal -->
+    <include name="Trakt_Hor">
+        <control type="group">
+            <visible>!String.IsEmpty(Control.GetLabel(699707)) + !String.IsEqual(Container(99950).ListItem.Property(Trakt_Rating),0.0)</visible>
+			<visible>Skin.HasSetting(ratings_Trakt) + Skin.HasSetting(EnableRatings)</visible>
+            <width>42</width>
+            <height>74</height>
+            <right>0</right>
+            <bottom>0</bottom>
+            <include>Default_Visible_Fade</include>
+            <control type="image">
+				<visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+                <width>42</width>
+                <height>42</height>
+				<bottom>20</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/trakt.png</texture>
+		    </control>
+			<control type="image">
+				<visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+                <width>42</width>
+                <height>42</height>
+				<bottom>20</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/traktwhite.png</texture>
+		    </control>				
+		</control>
+            <control type="label" id="699707">
+				<visible>!String.IsEmpty(Container(99950).ListItem.Property(Trakt_Rating)) + !String.IsEqual(Container(99950).ListItem.Property(Trakt_Rating),0.0)</visible>
+				<visible>Skin.HasSetting(ratings_Trakt) + Skin.HasSetting(EnableRatings)</visible>
+                <posy>2</posy>
+				<width>auto</width>
+				<height></height>
+                <fadetime>300</fadetime>
+                <font>footer</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <label>$INFO[Container(99950).ListItem.Property(Trakt_Rating),,  ]</label>
+			</control>
+    </include>
+
+    <!-- TMDB Flag Horizontal -->
+    <include name="TMDB_Hor">
+        <control type="group">
+            <visible>!String.IsEmpty(Control.GetLabel(699703)) + !String.IsEqual(Container(99950).ListItem.Property(TMDb_Rating),0.0)</visible>
+			<visible>Skin.HasSetting(ratings_TMdb) + Skin.HasSetting(EnableRatings)</visible>
+            <width>88</width>
+            <height>74</height>
+            <right>0</right>
+            <bottom>0</bottom>
+            <include>Default_Visible_Fade</include>
+            <control type="image">
+				<visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<bottom>20</bottom>
+                <width>88</width>
+                <height>42</height>
+				<aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/tmdb.png</texture>
+			</control>
+            <control type="image">
+				<visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<bottom>20</bottom>
+                <width>88</width>
+                <height>42</height>
+				<aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/tmdbwhite.png</texture>
+			</control>				
+		</control>	
+            <control type="label" id="699703">
+				<visible>!String.IsEmpty(Container(99950).ListItem.Property(TMDb_Rating)) + !String.IsEqual(Container(99950).ListItem.Property(TMDb_Rating),0.0)</visible>
+				<visible>Skin.HasSetting(ratings_TMdb) + Skin.HasSetting(EnableRatings)</visible>
+                <posy>2</posy>
+				<width>auto</width>
+				<height></height>
+                <aligny>center</aligny>
+				<fadetime>300</fadetime>
+                <font>footer</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <label>$INFO[Container(99950).ListItem.Property(TMDb_Rating),,  ]</label>
+			</control>
+    </include>
+
+    <!-- IMDB Flag Horizontal -->
+    <include name="IMDB_Hor">
+        <control type="group">
+                <visible>!String.IsEmpty(Control.GetLabel(699702))</visible>
+				<visible>Skin.HasSetting(ratings_IMDB) + Skin.HasSetting(EnableRatings)</visible>
+                <width>78</width>
+                <height>74</height>
+                <right>0</right>
+                <bottom>0</bottom>
+                <include>Default_Visible_Fade</include>
+			<control type="image">
+				<visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<width>78</width>
+                <height>42</height>
+				<bottom>20</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/imdb.png</texture>
+			</control>
+			<control type="image">
+				<visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<width>78</width>
+                <height>42</height>
+				<bottom>20</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/imdbwhite.png</texture>
+			</control>
+		</control>
+				<control type="label" id="699702">
+				<visible>!String.IsEmpty(Container(99950).ListItem.Property(IMDb_Rating))</visible>
+				<visible>Skin.HasSetting(ratings_IMDB) + Skin.HasSetting(EnableRatings)</visible>
+                <posy>2</posy>
+				<width>auto</width>
+				<height></height>
+                <fadetime>300</fadetime>
+                <font>footer</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <label>$INFO[Container(99950).ListItem.Property(IMDb_Rating),,  ]</label>
+			</control>
+    </include>
+
+    <!-- IMDB TOP250 Flag Horizontal -->
+    <include name="IMDB_Top250_Hor">
+            <control type="group">
+                <visible>!String.IsEmpty(Control.GetLabel(699701))</visible>
+				<visible>Skin.HasSetting(ratings_Top250) + Skin.HasSetting(EnableRatings)</visible>
+                <width>78</width>
+                <height>74</height>
+                <right>0</right>
+                <bottom>0</bottom>
+                <include>Default_Visible_Fade</include>
+			<control type="image">
+				<visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<width>78</width>
+                <height>42</height>
+				<bottom>20</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture>bingie/ratings/top250.png</texture>
+		    </control>	
+			<control type="image">
+				<visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<width>78</width>
+                <height>42</height>
+				<bottom>20</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture>bingie/ratings/top250white.png</texture>
+		    </control>	
+			</control>
+			<control type="label" id="699701">
+				<visible>!String.IsEmpty(Control.GetLabel(699701))</visible>
+				<visible>Skin.HasSetting(ratings_Top250) + Skin.HasSetting(EnableRatings)</visible>
+                <posy>2</posy>
+				<width>auto</width>
+				<height></height>
+                <fadetime>300</fadetime>
+                <font>footer</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <label>$VAR[IMDBTop250RatingValue,#,  ]</label>
+			</control>
+    </include>
+	
+	<!-- Oscar Flag Horizontal -->
+    <include name="Oscar_Hor">
+        <control type="group">
+				<visible>!String.IsEmpty(Container(99950).ListItem.Property(Oscar_Wins))</visible>
+				<visible>Skin.HasSetting(ratings_Oscar) + Skin.HasSetting(EnableRatings)</visible>
+                <width>19</width>
+                <height>74</height>
+                <right>0</right>
+                <bottom>0</bottom>
+                <include>Default_Visible_Fade</include>
+			<control type="image">
+				<visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<width>19</width>
+                <height>52</height>
+				<bottom>15</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture>bingie/ratings/oscar.png</texture>
+			</control>
+			<control type="image">
+				<visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<width>19</width>
+                <height>52</height>
+				<bottom>15</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture>bingie/ratings/oscarwhite.png</texture>
+			</control>
+		</control>
+			<control type="label" id="2777126">
+				<visible>!String.IsEmpty(Container(99950).ListItem.Property(Oscar_Wins))</visible>
+				<visible>Skin.HasSetting(ratings_Oscar) + Skin.HasSetting(EnableRatings)</visible>
+                <posx></posx>
+				<posy>2</posy>
+				<width>auto</width>
+				<height></height>
+                <aligny>center</aligny>
+				<fadetime>300</fadetime>
+                <font>footer</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <label>$INFO[Container(99950).ListItem.Property(Oscar_Wins),x,  ]</label>
+			</control>
+    </include>
+	
+	<!-- Golden Globe Flag Horizontal -->
+    <include name="Golden_Globe_Hor">
+        <control type="group">
+				<visible>!String.IsEmpty(Container(99950).ListItem.Property(goldenglobe_awards_won))</visible>
+				<visible>Skin.HasSetting(ratings_GoldenGlobe) + Skin.HasSetting(EnableRatings)</visible>
+                <width>17</width>
+                <height>74</height>
+                <right>0</right>
+                <bottom>0</bottom>
+                <include>Default_Visible_Fade</include>
+			<control type="image">
+				<visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<width>17</width>
+                <height>52</height>
+				<bottom>15</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture>bingie/ratings/goldenglobe.png</texture>
+			</control>
+			<control type="image">
+				<visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<width>17</width>
+                <height>52</height>
+				<bottom>15</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture>bingie/ratings/goldenglobewhite.png</texture>
+			</control>
+		</control>
+			<control type="label" id="2777126">
+				<visible>!String.IsEmpty(Container(99950).ListItem.Property(goldenglobe_awards_won))</visible>
+				<visible>Skin.HasSetting(ratings_GoldenGlobe) + Skin.HasSetting(EnableRatings)</visible>
+                <posx></posx>
+				<posy>2</posy>
+				<width>auto</width>
+				<height></height>
+                <aligny>center</aligny>
+				<fadetime>300</fadetime>
+                <font>footer</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <label>$INFO[Container(99950).ListItem.Property(goldenglobe_awards_won),x,  ]</label>
+			</control>
+    </include>
+	
+	<!-- Emmy Flag Horizontal -->
+    <include name="Emmy_Hor">
+        <control type="group">
+				<visible>!String.IsEmpty(Container(99950).ListItem.Property(Emmy_Wins))</visible>
+				<visible>Skin.HasSetting(ratings_Emmy) + Skin.HasSetting(EnableRatings)</visible>
+                <width>27</width>
+                <height>74</height>
+                <right>0</right>
+                <bottom>0</bottom>
+                <include>Default_Visible_Fade</include>
+			<control type="image">
+				<visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<width>27</width>
+                <height>52</height>
+				<bottom>15</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture>bingie/ratings/emmy.png</texture>
+			</control>
+			<control type="image">
+				<visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<width>27</width>
+                <height>52</height>
+				<bottom>15</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture>bingie/ratings/emmywhite.png</texture>
+			</control>
+		</control>
+			<control type="label" id="2777126">
+				<visible>!String.IsEmpty(Container(99950).ListItem.Property(Emmy_Wins))</visible>
+				<visible>Skin.HasSetting(ratings_Emmy) + Skin.HasSetting(EnableRatings)</visible>
+                <posx></posx>
+				<posy>2</posy>
+				<width>auto</width>
+				<height></height>
+                <aligny>center</aligny>
+				<fadetime>300</fadetime>
+                <font>footer</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <label>$INFO[Container(99950).ListItem.Property(Emmy_Wins),x,  ]</label>
+			</control>
+    </include>
+	
+	<!-- RottenTomatoe Flag Horizontal -->
+    <include name="RottenTomatoe_Hor">
+				<!--RT Critics Fresh Color-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(2777121)) + Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_Rating),59) + !Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_Rating),74)</visible>
+				<visible>Skin.HasSetting(ratings_RT) + Skin.HasSetting(EnableRatings)</visible>
+				<visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<width>46</width>
+                <height>59</height>
+				<bottom>0</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/fresh.png</texture>
+				</control>
+				
+				<!--RT Critics Certified Fresh Color-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(2777121)) + Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_Rating),74) + !Integer.IsLess(Container(99950).ListItem.Property(RottenTomatoes_Rating),74)</visible>
+                <visible>Skin.HasSetting(ratings_RT) + Skin.HasSetting(EnableRatings)</visible>
+				<visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<width>48</width>
+                <height>59</height>
+				<bottom>0</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/cf.png</texture>
+				</control>
+				
+				<!--RT Critics Rotten Color-->
+				<control type="image">
+				<visible>!String.IsEmpty(Control.GetLabel(2777121)) + !Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_Rating),59)</visible>
+                <visible>Skin.HasSetting(ratings_RT) + Skin.HasSetting(EnableRatings)</visible>
+				<visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<width>46</width>
+                <height>62</height>
+				<bottom>0</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/rotten.png</texture>
+				</control>	
+
+				<!--RT Critics Fresh White-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(2777121)) + Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_Rating),59) + !Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_Rating),74)</visible>
+				<visible>Skin.HasSetting(ratings_RT) + Skin.HasSetting(EnableRatings)</visible>
+				<visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<width>46</width>
+                <height>59</height>
+				<bottom>0</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/freshwhite.png</texture>
+				</control>	
+				
+				<!--RT Critics Certified Fresh White-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(2777121)) + Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_Rating),74) + !Integer.IsLess(Container(99950).ListItem.Property(RottenTomatoes_Rating),74)</visible>
+                <visible>Skin.HasSetting(ratings_RT) + Skin.HasSetting(EnableRatings)</visible>
+				<visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<width>48</width>
+                <height>59</height>
+				<bottom>0</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/cfwhite.png</texture>
+				</control>
+				
+				<!--RT Critics Rotten White-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(2777121)) + !Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_Rating),59)</visible>
+                <visible>Skin.HasSetting(ratings_RT) + Skin.HasSetting(EnableRatings)</visible>
+				<visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<width>46</width>
+                <height>62</height>
+				<bottom>0</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/rottenwhite.png</texture>
+				</control>					
+							
+				<!-- RT critics label -->
+				<control type="label" id="2777121">
+				<visible>!String.IsEmpty(Container(99950).ListItem.Property(RottenTomatoes_Rating))</visible>
+                <visible>Skin.HasSetting(ratings_RT) + Skin.HasSetting(EnableRatings)</visible>
+				<posy>2</posy>
+				<width>auto</width>
+				<height></height>
+                <height></height>
+                <aligny>center</aligny>
+                <fadetime>300</fadetime>
+                <font>footer</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <label>$INFO[Container(99950).ListItem.Property(RottenTomatoes_Rating),,%  ]</label>
+				</control>
+    </include>
+	
+	<!-- RT Audience Flag Horizontal -->
+    <include name="RTAudience_Hor">
+				<!--RT Audience Fresh Color-->
+				<control type="image">
+				<visible>!String.IsEmpty(Control.GetLabel(3777122)) + Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_UserMeter),59)</visible>
+                <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_RTAudience) + Skin.HasSetting(EnableRatings)</visible>
+				<visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<width>37</width>
+                <height>57</height>
+				<bottom>0</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/audiencefresh.png</texture>
+				</control>	
+				
+				<!--RT Audience Rotten Color-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(3777122)) + !Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_UserMeter),59)</visible>
+                <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_RTAudience) + Skin.HasSetting(EnableRatings)</visible>
+				<visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<width>56</width>
+                <height>64</height>
+				<bottom>0</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/audiencerotten.png</texture>
+				</control>	
+				
+				<!--RT Audience Fresh White-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(3777122)) + Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_UserMeter),59)</visible>
+				<visible>Skin.HasSetting(ratings_RTAudience) + Skin.HasSetting(EnableRatings)</visible>
+				<visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<width>37</width>
+                <height>57</height>
+				<bottom>0</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/audiencefreshwhite.png</texture>
+				</control>	
+				
+				<!--RT Audience Rotten White-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(3777122)) + !Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_UserMeter),59)</visible>
+				<visible>Skin.HasSetting(ratings_RTAudience) + Skin.HasSetting(EnableRatings)</visible>
+				<visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<width>56</width>
+                <height>64</height>
+				<bottom>0</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/audiencerottenwhite.png</texture>
+				</control>	
+				
+				<!-- RT Audience label-->
+				<control type="label" id="3777122">
+				<visible>!String.IsEmpty(Container(99950).ListItem.Property(RottenTomatoes_UserMeter))</visible>
+                <visible>Skin.HasSetting(ratings_RTAudience) + Skin.HasSetting(EnableRatings)</visible>				
+				<posy>2</posy>
+				<width>auto</width>
+				<height></height>
+                <aligny>center</aligny>
+				<fadetime>300</fadetime>
+                <font>footer</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <label>$INFO[Container(99950).ListItem.Property(RottenTomatoes_UserMeter),,%  ]</label>
+				</control>							
+    </include>
+
+    <!-- Studio Logo Image -->
+    <include name="StudioLogo">
+			<control type="image" id="69901">
+				<visible>!String.IsEmpty(Control.GetLabel(69901))</visible>
+				<visible>Skin.HasSetting(EnableStudioLogo)</visible>
+                <width>102</width>
+                <height>66</height>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">$VAR[ViewsStudioLogoImg3]</texture>
+            </control>
+            <control type="image" id="6990">
+                <visible>!String.IsEmpty(Control.GetLabel(6990)) + String.IsEmpty(Control.GetLabel(69901))</visible>
+				<visible>Skin.HasSetting(EnableStudioLogo)</visible>
+                <width>102</width>
+                <height>66</height>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">$VAR[ViewsStudioLogoImg]</texture>
+            </control>
+			<control type="image" id="69900">
+                <visible>!String.IsEmpty(Control.GetLabel(69900)) + String.IsEmpty(Control.GetLabel(6990)) + String.IsEmpty(Control.GetLabel(69901))</visible>
+				<visible>Skin.HasSetting(EnableStudioLogo)</visible>
+                <width>102</width>
+                <height>66</height>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">$VAR[ViewsStudioLogoImg2]</texture>
+            </control>
+    </include>
+
+    <include name="Footer_RatingAndStudio_Hor">
+        <control type="group">
+            <bottom>23</bottom>
+            <right>21</right>
+            <height>66</height>
+            <width>1220</width>
+            <control type="grouplist">
+                <orientation>horizontal</orientation>
+                <height>66</height>
+                <itemgap>10</itemgap>
+                <align>right</align>
+                <include>Rating_Hor</include>
+                <include>StudioLogo</include>
+            </control>
+        </control>
+    </include>
+
+    <include name="Rating_Hor">
+	    <include>Oscar_Hor</include>
+		<include>Golden_Globe_Hor</include>
+		<include>Emmy_Hor</include>
+        <include>IMDB_Top250_Hor</include>
+        <include>IMDB_Hor</include>
+		<include>RottenTomatoe_Hor</include>
+		<include>RTAudience_Hor</include>																					
+        <include>TMDB_Hor</include>
+		<include>Trakt_Hor</include>
+        <include>MetaCritic_Hor</include>
+    </include>
+
+	<!-- New Footer -->
+	<include name="new_footer">
+			<control type="grouplist">
+				<orientation>horizontal</orientation>
+				<height>120</height>
+				<itemgap>10</itemgap>
+				<align>right</align>
+				<right></right>
+				<usecontrolcoords>true</usecontrolcoords>
+				
+				<!-- Oscars color-->
+				<control type="image">
+                <visible>!String.IsEmpty(Container(99950).ListItem.Property(Oscar_Wins))</visible>
+                <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_Oscar) + Skin.HasSetting(EnableRatings)</visible>
+				<width>19</width>
+                <height>52</height>
+				<bottom>15</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <colordiffuse></colordiffuse>
+                <texture background="true">bingie/ratings/oscar.png</texture>
+				</control>	
+				
+				<!-- Oscars white -->
+				<control type="image">
+                <visible>!String.IsEmpty(Container(99950).ListItem.Property(Oscar_Wins))</visible>
+                <visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_Oscar) + Skin.HasSetting(EnableRatings)</visible>
+				<width>19</width>
+                <height>52</height>
+				<bottom>15</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <colordiffuse></colordiffuse>
+                <texture background="true">bingie/ratings/oscarwhite.png</texture>
+				</control>	
+				
+				<control type="label" id="2777126">
+				<visible>!String.IsEmpty(Container(99950).ListItem.Property(Oscar_Wins))</visible>
+				<visible>Skin.HasSetting(ratings_Oscar) + Skin.HasSetting(EnableRatings)</visible>
+                <posx></posx>
+				<posy>37</posy>
+				<width>auto</width>
+				<height></height>
+                <aligny>center</aligny>
+				<fadetime>300</fadetime>
+                <font>footer</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <label>$INFO[Container(99950).ListItem.Property(Oscar_Wins),x,  ]</label>
+				</control>
+				
+				<!-- Golden globe color-->
+				<control type="image">
+                <visible>!String.IsEmpty(Container(99950).ListItem.Property(goldenglobe_awards_won))</visible>
+                <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_GoldenGlobe) + Skin.HasSetting(EnableRatings)</visible>
+				<width>17</width>
+                <height>52</height>
+				<bottom>15</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <colordiffuse></colordiffuse>
+                <texture background="true">bingie/ratings/goldenglobe.png</texture>
+				</control>	
+				
+				<!-- Golden globe white -->
+				<control type="image">
+                <visible>!String.IsEmpty(Container(99950).ListItem.Property(goldenglobe_awards_won))</visible>
+                <visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_GoldenGlobe) + Skin.HasSetting(EnableRatings)</visible>
+				<width>17</width>
+                <height>52</height>
+				<bottom>15</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <colordiffuse></colordiffuse>
+                <texture background="true">bingie/ratings/goldenglobewhite.png</texture>
+				</control>	
+				
+				<control type="label" id="2777126">
+				<visible>!String.IsEmpty(Container(99950).ListItem.Property(goldenglobe_awards_won))</visible>
+				<visible>Skin.HasSetting(ratings_GoldenGlobe) + Skin.HasSetting(EnableRatings)</visible>
+                <posx></posx>
+				<posy>37</posy>
+				<width>auto</width>
+				<height></height>
+                <aligny>center</aligny>
+				<fadetime>300</fadetime>
+                <font>footer</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <label>$INFO[Container(99950).ListItem.Property(goldenglobe_awards_won),x,  ]</label>
+				</control>
+				
+				<!-- Emmy color-->
+				<control type="image">
+                <visible>!String.IsEmpty(Container(99950).ListItem.Property(Emmy_Wins))</visible>
+                <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_Emmy) + Skin.HasSetting(EnableRatings)</visible>
+				<width>27</width>
+                <height>52</height>
+				<bottom>15</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <colordiffuse></colordiffuse>
+                <texture background="true">bingie/ratings/emmy.png</texture>
+				</control>	
+				
+				<!-- Emmy white -->
+				<control type="image">
+                <visible>!String.IsEmpty(Container(99950).ListItem.Property(Emmy_Wins))</visible>
+                <visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_Emmy) + Skin.HasSetting(EnableRatings)</visible>
+				<width>27</width>
+                <height>52</height>
+				<bottom>15</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <colordiffuse></colordiffuse>
+                <texture background="true">bingie/ratings/emmywhite.png</texture>
+				</control>	
+				
+				<control type="label" id="2777126">
+				<visible>!String.IsEmpty(Container(99950).ListItem.Property(Emmy_Wins))</visible>
+				<visible>Skin.HasSetting(ratings_Emmy) + Skin.HasSetting(EnableRatings)</visible>
+                <posx></posx>
+				<posy>37</posy>
+				<width>auto</width>
+				<height></height>
+                <aligny>center</aligny>
+				<fadetime>300</fadetime>
+                <font>footer</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <label>$INFO[Container(99950).ListItem.Property(Emmy_Wins),x,  ]</label>
+				</control>
+								
+				<!--Top250 Color-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(2777119))</visible>
+				<visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_Top250) + Skin.HasSetting(EnableRatings)</visible>
+				<width>78</width>
+                <height>42</height>
+				<bottom>20</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/top250.png</texture>
+				</control>	
+				
+				<!--Top250 White-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(2777119))</visible>
+				<visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_Top250) + Skin.HasSetting(EnableRatings)</visible>
+				<width>78</width>
+                <height>42</height>
+				<bottom>20</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/top250white.png</texture>
+				</control>	
+				
+				<control type="label" id="2777119">
+				<visible>!String.IsEmpty(Control.GetLabel(2777119))</visible>
+				<visible>Skin.HasSetting(ratings_Top250) + Skin.HasSetting(EnableRatings)</visible>
+                <posy>37</posy>
+				<width>auto</width>
+				<height></height>
+                <fadetime>300</fadetime>
+                <font>footer</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <label>$VAR[IMDBTop250RatingValue,#,  ]</label>
+				</control>
+				
+				<!--imdb Color-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(2777120))</visible>
+                <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_IMDB) + Skin.HasSetting(EnableRatings)</visible>
+				<width>78</width>
+                <height>42</height>
+				<bottom>20</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/imdb.png</texture>
+				</control>	
+				
+				<!--imdb White-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(2777120))</visible>
+                <visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_IMDB) + Skin.HasSetting(EnableRatings)</visible>
+				<width>78</width>
+                <height>42</height>
+				<bottom>20</bottom>
+				<aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/imdbwhite.png</texture>
+				</control>	
+				
+				<control type="label" id="2777120">
+				<visible>!String.IsEmpty(Container(99950).ListItem.Property(IMDb_Rating))</visible>
+				<visible>Skin.HasSetting(ratings_IMDB) + Skin.HasSetting(EnableRatings)</visible>
+                <posy>37</posy>
+				<width>auto</width>
+				<height></height>
+                <fadetime>300</fadetime>
+                <font>footer</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <label>$INFO[Container(99950).ListItem.Property(IMDb_Rating),,  ]</label>
+				</control>
+				
+				<!--RT Critics Fresh Color-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(2777121)) + Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_Rating),59) + !Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_Rating),74)</visible>
+                <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_RT) + Skin.HasSetting(EnableRatings)</visible>
+				<width>46</width>
+                <height>47</height>
+				<bottom>21</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/fresh.png</texture>
+				</control>
+				
+				<!--RT Critics Certified Fresh Color-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(2777121)) + Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_Rating),74) + !Integer.IsLess(Container(99950).ListItem.Property(RottenTomatoes_Rating),74)</visible>
+                <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_RT) + Skin.HasSetting(EnableRatings)</visible>
+				<width>48</width>
+                <height>48</height>
+				<bottom>20</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/cf.png</texture>
+				</control>
+				
+				<!--RT Critics Rotten Color-->
+				<control type="image">
+                <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>!String.IsEmpty(Control.GetLabel(2777121)) + !Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_Rating),59)</visible>
+				<visible>Skin.HasSetting(ratings_RT) + Skin.HasSetting(EnableRatings)</visible>
+				<width>46</width>
+                <height>44</height>
+				<bottom>21</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/rotten.png</texture>
+				</control>	
+				
+				<!--RT Critics Fresh White-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(2777121)) + Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_Rating),59) + !Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_Rating),74)</visible>
+                <visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_RT) + Skin.HasSetting(EnableRatings)</visible>
+				<width>46</width>
+                <height>47</height>
+				<bottom>21</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/freshwhite.png</texture>
+				</control>	
+				
+				<!--RT Critics Certified Fresh White-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(2777121)) + Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_Rating),74) + !Integer.IsLess(Container(99950).ListItem.Property(RottenTomatoes_Rating),74)</visible>
+                <visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_RT) + Skin.HasSetting(EnableRatings)</visible>
+				<width>48</width>
+                <height>48</height>
+				<bottom>20</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/cfwhite.png</texture>
+				</control>
+				
+				<!--RT Critics Rotten White-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(2777121)) + !Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_Rating),59)</visible>
+                <visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_RT) + Skin.HasSetting(EnableRatings)</visible>
+				<width>46</width>
+                <height>44</height>
+				<bottom>21</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/rottenwhite.png</texture>
+				</control>	
+				
+				<!-- RT critics label -->
+				<control type="label" id="2777121">
+				<visible>!String.IsEmpty(Container(99950).ListItem.Property(RottenTomatoes_Rating))</visible>
+				<visible>Skin.HasSetting(ratings_RT) + Skin.HasSetting(EnableRatings)</visible>
+				<posy>37</posy>
+				<width>auto</width>
+				<height></height>
+                <height></height>
+                <aligny>center</aligny>
+                <fadetime>300</fadetime>
+                <font>footer</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <label>$INFO[Container(99950).ListItem.Property(RottenTomatoes_Rating),,%  ]</label>
+				</control>
+												
+				<!--RT Audience Fresh Color-->
+				<control type="image">
+				<visible>!String.IsEmpty(Control.GetLabel(3777122)) + Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_UserMeter),59)</visible>
+                <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_RTAudience) + Skin.HasSetting(EnableRatings)</visible>
+				<width>37</width>
+                <height>49</height>
+				<bottom>20</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/audiencefresh.png</texture>
+				</control>	
+				
+				<!--RT Audience Rotten Color-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(3777122)) + !Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_UserMeter),59)</visible>
+                <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_RTAudience) + Skin.HasSetting(EnableRatings)</visible>
+				<width>56</width>
+                <height>42</height>
+				<bottom>19</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/audiencerotten.png</texture>
+				</control>	
+				
+				<!--RT Audience Fresh White-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(3777122)) + Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_UserMeter),59)</visible>
+                <visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_RTAudience) + Skin.HasSetting(EnableRatings)</visible>
+				<width>37</width>
+                <height>49</height>
+				<bottom>20</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/audiencefreshwhite.png</texture>
+				</control>	
+				
+				<!--RT Audience Rotten White-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(3777122)) + !Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_UserMeter),59)</visible>
+                <visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_RTAudience) + Skin.HasSetting(EnableRatings)</visible>
+				<width>56</width>
+                <height>42</height>
+				<bottom>19</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/audiencerottenwhite.png</texture>
+				</control>	
+				
+				<!-- RT Audience label-->
+				<control type="label" id="3777122">
+				<visible>!String.IsEmpty(Container(99950).ListItem.Property(RottenTomatoes_UserMeter))</visible>
+                <visible>Skin.HasSetting(ratings_RTAudience) + Skin.HasSetting(EnableRatings)</visible>				
+				<posy>37</posy>
+				<width>auto</width>
+				<height></height>
+                <aligny>center</aligny>
+				<fadetime>300</fadetime>
+                <font>footer</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <label>$INFO[Container(99950).ListItem.Property(RottenTomatoes_UserMeter),,%  ]</label>
+				</control>							
+				
+				<!--TMDB Color-->
+				<control type="image">				
+                <visible>!String.IsEmpty(Control.GetLabel(2777123)) + !String.IsEqual(Container(99950).ListItem.Property(TMDb_Rating),0.0)</visible>
+                <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_TMdb) + Skin.HasSetting(EnableRatings)</visible>
+				<bottom>20</bottom>
+                <width>88</width>
+                <height>42</height>
+				<aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/tmdb.png</texture>
+				</control>	
+				
+				<!--TMDB White-->
+				<control type="image">				
+                <visible>!String.IsEmpty(Control.GetLabel(2777123)) + !String.IsEqual(Container(99950).ListItem.Property(TMDb_Rating),0.0)</visible>
+                <visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_TMdb) + Skin.HasSetting(EnableRatings)</visible>
+				<bottom>20</bottom>
+                <width>88</width>
+                <height>42</height>
+				<aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/tmdbwhite.png</texture>
+				</control>	
+				
+				<control type="label" id="2777123">
+				<visible>!String.IsEmpty(Container(99950).ListItem.Property(TMDb_Rating)) + !String.IsEqual(Container(99950).ListItem.Property(TMDb_Rating),0.0)</visible>
+				<visible>Skin.HasSetting(ratings_TMdb) + Skin.HasSetting(EnableRatings)</visible>
+                <posy>37</posy>
+				<width>auto</width>
+				<height></height>
+                <aligny>center</aligny>
+				<fadetime>300</fadetime>
+                <font>footer</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <label>$INFO[Container(99950).ListItem.Property(TMDb_Rating),,  ]</label>
+				</control>
+				
+				<!--Trakt Color-->
+				<control type="image">
+                <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>!String.IsEmpty(Control.GetLabel(2777125)) + !String.IsEqual(Container(99950).ListItem.Property(Trakt_Rating),0.0)</visible>
+				<visible>Skin.HasSetting(ratings_Trakt) + Skin.HasSetting(EnableRatings)</visible>
+                <width>42</width>
+                <height>42</height>
+				<bottom>20</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/trakt.png</texture>
+				</control>	
+				
+				<!--Trakt White-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(2777125)) + !String.IsEqual(Container(99950).ListItem.Property(Trakt_Rating),0.0)</visible>
+                <visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_Trakt) + Skin.HasSetting(EnableRatings)</visible>
+                <width>42</width>
+                <height>42</height>
+				<bottom>20</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/traktwhite.png</texture>
+				</control>	
+				
+				<control type="label" id="2777125">
+				<visible>!String.IsEmpty(Container(99950).ListItem.Property(Trakt_Rating)) + !String.IsEqual(Container(99950).ListItem.Property(Trakt_Rating),0.0)</visible>
+				<visible>Skin.HasSetting(ratings_Trakt) + Skin.HasSetting(EnableRatings)</visible>
+                <posy>37</posy>
+				<width>auto</width>
+				<height></height>
+                <fadetime>300</fadetime>
+                <font>footer</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <label>$INFO[Container(99950).ListItem.Property(Trakt_Rating),,  ]</label>
+				</control>
+								
+				<!--Metacritic Color-->
+				<control type="image">
+                <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>!String.IsEmpty(Control.GetLabel(2777124))</visible>
+				<visible>Skin.HasSetting(ratings_Metacritic) + Skin.HasSetting(EnableRatings)</visible>
+                <width>42</width>
+                <height>42</height>
+				<bottom>20</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/metacritic.png</texture>
+				</control>	
+				
+				<!--Metacritic White-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(2777124))</visible>
+                <visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_Metacritic) + Skin.HasSetting(EnableRatings)</visible>
+                <width>42</width>
+                <height>42</height>
+				<bottom>20</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/metacriticwhite.png</texture>
+				</control>	
+				
+				<control type="label" id="2777124">
+				<visible>!String.IsEmpty(Container(99950).ListItem.Property(Metacritic_Rating))</visible>
+				<visible>Skin.HasSetting(ratings_Metacritic) + Skin.HasSetting(EnableRatings)</visible>
+                <posy>37</posy>
+				<width>auto</width>
+				<height></height>
+                <fadetime>300</fadetime>
+                <font>footer</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <label>$INFO[Container(99950).ListItem.Property(Metacritic_Rating),,%  ]</label>
+				</control>
+										
+				<!-- Studio Logo Image on Home -->
+				<control type="image" id="7771234">
+				<visible>!String.IsEmpty(Control.GetLabel(7771234))</visible>
+				<visible>Skin.HasSetting(EnableStudioLogo)</visible>
+				<top>46</top>
+				<left>-7</left>
+                <width>102</width>
+                <height>66</height>
+				<aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+				<texture background="true">$VAR[StudioLogoImg]</texture>
+				</control>
+				<control type="image" id="7774321">
+				<visible>!String.IsEmpty(Control.GetLabel(7774321)) + String.IsEmpty(Control.GetLabel(7771234))</visible>
+				<visible>Skin.HasSetting(EnableStudioLogo)</visible>
+				<top>46</top>
+				<left>-7</left>
+                <width>102</width>
+                <height>66</height>
+				<aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+				<texture background="true">$VAR[StudioLogoImg2]</texture>
+				</control>					
+				
+			</control>
+	</include>	
+
+	<!-- New Footer Video Dialogue -->
+	<include name="new_footer_VD">
+			<control type="grouplist">
+				<orientation>horizontal</orientation>
+				<height>120</height>
+				<itemgap>10</itemgap>
+				<align>left</align>
+				<right></right>
+				<usecontrolcoords>true</usecontrolcoords>
+				
+				<!--Metacritic Color logo VD-->
+				<control type="image">
+                <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>!String.IsEmpty(Control.GetLabel(2777124))</visible>
+				<visible>Skin.HasSetting(ratings_Metacritic)</visible>
+                <width>42</width>
+                <height>42</height>
+				<bottom>20</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/metacritic.png</texture>
+				</control>	
+				
+				<!--Metacritic White logo VD-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(2777124))</visible>
+                <visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_Metacritic)</visible>
+				<width>42</width>
+                <height>42</height>
+				<bottom>20</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/metacriticwhite.png</texture>
+				</control>	
+				
+				<!-- Metacritic VD label -->
+				<control type="label" id="2777124">
+				<visible>!String.IsEmpty(Container(99950).ListItem.Property(Metacritic_Rating))</visible>
+				<visible>Skin.HasSetting(ratings_Metacritic)</visible>
+                <posy>37</posy>
+				<width>auto</width>
+				<height></height>
+                <fadetime>300</fadetime>
+                <font>footer</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <label>$INFO[Container(99950).ListItem.Property(Metacritic_Rating),,%  ]</label>
+				</control>
+				
+				<!--Trakt Color logo VD-->
+				<control type="image">
+                <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>!String.IsEmpty(Control.GetLabel(2777125)) + !String.IsEqual(Container(99950).ListItem.Property(Trakt_Rating),0.0)</visible>
+				<visible>Skin.HasSetting(ratings_Trakt)</visible>
+                <width>42</width>
+                <height>42</height>
+				<bottom>20</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/trakt.png</texture>
+				</control>	
+				
+				<!--Trakt White logo VD-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(2777125)) + !String.IsEqual(Container(99950).ListItem.Property(Trakt_Rating),0.0)</visible>
+                <visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_Trakt)</visible>
+				<width>42</width>
+                <height>42</height>
+				<bottom>20</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/traktwhite.png</texture>
+				</control>	
+				
+				<!-- Trakt VD label -->
+				<control type="label" id="2777125">
+				<visible>!String.IsEmpty(Container(99950).ListItem.Property(Trakt_Rating)) + !String.IsEqual(Container(99950).ListItem.Property(Trakt_Rating),0.0)</visible>
+				<visible>Skin.HasSetting(ratings_Trakt)</visible>
+                <posy>37</posy>
+				<width>auto</width>
+				<height></height>
+                <fadetime>300</fadetime>
+                <font>footer</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <label>$INFO[Container(99950).ListItem.Property(Trakt_Rating),,]$INFO[Container(99950).ListItem.Property(Trakt_Votes), (, $LOCALIZE[205])  ,,]</label>
+				</control>
+				
+				<!--TMDB Color logo VD-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(2777123)) + !String.IsEqual(Container(99950).ListItem.Property(TMDb_Rating),0.0)</visible>
+                <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_TMdb)</visible>
+				<bottom>20</bottom>
+                <width>88</width>
+                <height>42</height>
+				<aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/tmdb.png</texture>
+				</control>	
+				
+				<!--TMDB White logo VD-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(2777123)) + !String.IsEqual(Container(99950).ListItem.Property(TMDb_Rating),0.0)</visible>
+                <visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_TMdb)</visible>
+				<bottom>20</bottom>
+                <width>88</width>
+                <height>42</height>
+				<aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/tmdbwhite.png</texture>
+				</control>	
+				
+				<!-- TMDB Label logo VD -->
+				<control type="label" id="2777123">
+				<visible>!String.IsEmpty(Container(99950).ListItem.Property(TMDb_Rating)) + !String.IsEqual(Container(99950).ListItem.Property(TMDb_Rating),0.0)</visible>
+				<visible>Skin.HasSetting(ratings_TMdb)</visible>
+                <posy>37</posy>
+				<width>auto</width>
+				<height></height>
+                <aligny>center</aligny>
+				<fadetime>300</fadetime>
+                <font>footer</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <label>$INFO[Container(99950).ListItem.Property(TMDb_Rating),,]$INFO[Container(99950).ListItem.Property(TMDb_Votes), (, $LOCALIZE[205])  ,,]</label>
+				</control>				
+
+				<!--RT Critics Fresh logo Color VD-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(2777121)) + Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_Rating),59) + !Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_Rating),74)</visible>
+                <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_RT)</visible>
+				<width>46</width>
+                <height>47</height>
+				<bottom>21</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/fresh.png</texture>
+				</control>
+				
+				<!--RT Critics Certified Fresh logo Color VD-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(2777121)) + Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_Rating),74) + !Integer.IsLess(Container(99950).ListItem.Property(RottenTomatoes_Rating),74)</visible>
+                <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_RT)</visible>
+				<width>48</width>
+                <height>48</height>
+				<bottom>20</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/cf.png</texture>
+				</control>
+				
+				<!--RT Critics Rotten logo Color VD-->
+				<control type="image">
+                <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>!String.IsEmpty(Control.GetLabel(2777121)) + !Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_Rating),59)</visible>
+				<visible>Skin.HasSetting(ratings_RT)</visible>
+				<width>46</width>
+                <height>44</height>
+				<bottom>21</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/rotten.png</texture>
+				</control>	
+				
+				<!--RT Critics Fresh logo White VD-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(2777121)) + Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_Rating),59) + !Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_Rating),74)</visible>
+                <visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_RT)</visible>
+				<width>46</width>
+                <height>47</height>
+				<bottom>21</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/freshwhite.png</texture>
+				</control>
+
+				<!--RT Critics Certified Fresh logo White VD-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(2777121)) + Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_Rating),74) + !Integer.IsLess(Container(99950).ListItem.Property(RottenTomatoes_Rating),74)</visible>
+                <visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_RT)</visible>
+				<width>48</width>
+                <height>48</height>
+				<bottom>20</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/cfwhite.png</texture>
+				</control>
+				
+				<!--RT Critics Rotten logo White VD-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(2777121)) + !Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_Rating),59)</visible>
+                <visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_RT)</visible>
+				<width>46</width>
+                <height>44</height>
+				<bottom>21</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/rottenwhite.png</texture>
+				</control>	
+				
+				<!-- RT critics label VD -->
+				<control type="label" id="2777121">
+				<visible>!String.IsEmpty(Container(99950).ListItem.Property(RottenTomatoes_Rating))</visible>
+				<visible>Skin.HasSetting(ratings_RT) + String.IsEmpty(ListItem.RatingAndVotes(tomatometerallcritics))</visible>
+                <posy>37</posy>
+				<width>auto</width>
+				<height></height>
+                <aligny>center</aligny>
+                <fadetime>300</fadetime>
+                <font>footer</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <label>$INFO[Container(99950).ListItem.Property(RottenTomatoes_Rating),,%  ]</label>
+				</control>			
+				
+				<!--RT Audience Fresh Color VD -->
+				<control type="image">
+				<visible>!String.IsEmpty(Control.GetLabel(3777122)) + Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_UserMeter),59)</visible>
+                <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_RTAudience)</visible>
+				<width>37</width>
+                <height>49</height>
+				<bottom>20</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/audiencefresh.png</texture>
+				</control>	
+				
+				<!--RT Audience Rotten Color VD-->
+				<control type="image">
+				<visible>!String.IsEmpty(Control.GetLabel(3777122)) + !Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_UserMeter),59)</visible>
+                <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_RTAudience)</visible>
+				<width>56</width>
+                <height>42</height>
+				<bottom>19</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/audiencerotten.png</texture>
+				</control>	
+				
+				<!--RT Audience Fresh White VD -->
+				<control type="image">
+				<visible>!String.IsEmpty(Control.GetLabel(3777122)) + Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_UserMeter),59)</visible>
+                <visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_RTAudience)</visible>
+				<width>37</width>
+                <height>49</height>
+				<bottom>20</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+				<texture background="true">bingie/ratings/audiencefreshwhite.png</texture>
+				</control>	
+				
+				<!--RT Audience Rotten White VD -->
+				<control type="image">
+				<visible>!String.IsEmpty(Control.GetLabel(3777122)) + !Integer.IsGreater(Container(99950).ListItem.Property(RottenTomatoes_UserMeter),59)</visible>
+                <visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_RTAudience)</visible>
+				<width>56</width>
+                <height>42</height>
+				<bottom>19</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+				<texture background="true">bingie/ratings/audiencerottenwhite.png</texture>
+				</control>	
+							
+				<!-- RT Audience label VD-->
+				<control type="label" id="3777122">
+				<visible>!String.IsEmpty(Container(99950).ListItem.Property(RottenTomatoes_UserMeter))</visible>
+				<visible>Skin.HasSetting(ratings_RTAudience)</visible>
+                <posy>37</posy>
+				<width>auto</width>
+				<height></height>
+                <aligny>center</aligny>
+				<fadetime>300</fadetime>
+                <font>footer</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <label>$INFO[Container(99950).ListItem.Property(RottenTomatoes_UserMeter),,%  ]</label>
+				</control>			
+				
+				<!--imdb logo Color VD-->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(2777120))</visible>
+                <visible>!Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_IMDB)</visible>
+				<width>78</width>
+                <height>42</height>
+				<bottom>20</bottom>
+                <aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/imdb.png</texture>
+				</control>	
+				
+				<!--imdb logo White VD -->
+				<control type="image">
+                <visible>!String.IsEmpty(Control.GetLabel(2777120))</visible>
+                <visible>Skin.HasSetting(PreferWhiteFooter)</visible>
+				<visible>Skin.HasSetting(ratings_IMDB)</visible>
+				<bottom>20</bottom>
+                <width>78</width>
+                <height>42</height>
+				<aspectratio>keep</aspectratio>
+                <fadetime>300</fadetime>
+                <texture background="true">bingie/ratings/imdbwhite.png</texture>
+				</control>	
+				
+				<!-- IMDB label VD -->
+				<control type="label" id="2777120">
+				<visible>!String.IsEmpty(Container(99950).ListItem.Property(IMDb_Rating))</visible>
+				<visible>Skin.HasSetting(ratings_IMDB)</visible>
+                <posy>37</posy>
+				<width>auto</width>
+				<height></height>
+                <fadetime>300</fadetime>
+                <font>footer</font>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                <label>$INFO[Container(99950).ListItem.Property(IMDb_Rating),,]$INFO[Container(99950).ListItem.Property(IMDb_Votes), (, $LOCALIZE[205])  ,,]</label>
+				</control>				
+			</control>
+	</include>	
+
+    <variable name="IMDBTop250RatingValue">
+        <value condition="!String.IsEmpty(ListItem.Top250)">$INFO[ListItem.Top250]</value>
+        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Top250))">$INFO[Container(99950).ListItem.Property(Top250)]</value>
+    </variable>
+
+    <variable name="StudioLogoImg">
+        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Network.1.Name)) + !Skin.HasSetting(PreferWhiteFooter) + !$EXP[IsMovieDBType]">$INFO[Container(99950).ListItem.Property(Network.1.Name),resource://resource.images.studios.coloured/,.png]</value>
+        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Studio.1.Name)) + !Skin.HasSetting(PreferWhiteFooter) + $EXP[IsMovieDBType]">$INFO[Container(99950).ListItem.Property(Studio.1.Name),resource://resource.images.studios.coloured/,.png]</value>
+		<value condition="!String.IsEmpty(Container(99950).ListItem.Property(Network.1.Name)) + Skin.HasSetting(PreferWhiteFooter) + !$EXP[IsMovieDBType]">$INFO[Container(99950).ListItem.Property(Network.1.Name),resource://resource.images.studios.white/,.png]</value>
+        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Studio.1.Name)) + Skin.HasSetting(PreferWhiteFooter) + $EXP[IsMovieDBType]">$INFO[Container(99950).ListItem.Property(Studio.1.Name),resource://resource.images.studios.white/,.png]</value>
+    </variable>
+	
+	<variable name="StudioLogoImg2">
+        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Network.2.Name)) + !Skin.HasSetting(PreferWhiteFooter) + !$EXP[IsMovieDBType]">$INFO[Container(99950).ListItem.Property(Network.2.Name),resource://resource.images.studios.coloured/,.png]</value>
+        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Studio.2.Name)) + !Skin.HasSetting(PreferWhiteFooter) + $EXP[IsMovieDBType]">$INFO[Container(99950).ListItem.Property(Studio.2.Name),resource://resource.images.studios.coloured/,.png]</value>
+		<value condition="!String.IsEmpty(Container(99950).ListItem.Property(Network.2.Name)) + Skin.HasSetting(PreferWhiteFooter) + !$EXP[IsMovieDBType]">$INFO[Container(99950).ListItem.Property(Network.2.Name),resource://resource.images.studios.white/,.png]</value>
+        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Studio.2.Name)) + Skin.HasSetting(PreferWhiteFooter) + $EXP[IsMovieDBType]">$INFO[Container(99950).ListItem.Property(Studio.2.Name),resource://resource.images.studios.white/,.png]</value>
+    </variable>
+	
+	<variable name="ViewsStudioLogoImg">
+        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Network.1.Name)) + !Skin.HasSetting(PreferWhiteFooter) + !$EXP[IsMovieDBType]">$INFO[Container(99950).ListItem.Property(Network.1.Name),resource://resource.images.studios.coloured/,.png]</value>
+        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Studio.1.Name)) + !Skin.HasSetting(PreferWhiteFooter) + $EXP[IsMovieDBType]">$INFO[Container(99950).ListItem.Property(Studio.1.Name),resource://resource.images.studios.coloured/,.png]</value>
+		<value condition="!String.IsEmpty(Container(99950).ListItem.Property(Network.1.Name)) + Skin.HasSetting(PreferWhiteFooter) + !$EXP[IsMovieDBType]">$INFO[Container(99950).ListItem.Property(Network.1.Name),resource://resource.images.studios.white/,.png]</value>
+        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Studio.1.Name)) + Skin.HasSetting(PreferWhiteFooter) + $EXP[IsMovieDBType]">$INFO[Container(99950).ListItem.Property(Studio.1.Name),resource://resource.images.studios.white/,.png]</value>
+    </variable>
+	<variable name="ViewsStudioLogoImg2">
+        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Network.2.Name)) + !Skin.HasSetting(PreferWhiteFooter) + !$EXP[IsMovieDBType]">$INFO[Container(99950).ListItem.Property(Network.2.Name),resource://resource.images.studios.coloured/,.png]</value>
+        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Studio.2.Name)) + !Skin.HasSetting(PreferWhiteFooter) + $EXP[IsMovieDBType]">$INFO[Container(99950).ListItem.Property(Studio.2.Name),resource://resource.images.studios.coloured/,.png]</value>
+		<value condition="!String.IsEmpty(Container(99950).ListItem.Property(Network.2.Name)) + Skin.HasSetting(PreferWhiteFooter) + !$EXP[IsMovieDBType]">$INFO[Container(99950).ListItem.Property(Network.2.Name),resource://resource.images.studios.white/,.png]</value>
+        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Studio.2.Name)) + Skin.HasSetting(PreferWhiteFooter) + $EXP[IsMovieDBType]">$INFO[Container(99950).ListItem.Property(Studio.2.Name),resource://resource.images.studios.white/,.png]</value>
+    </variable>
+	<variable name="ViewsStudioLogoImg3">
+        <value condition="!String.IsEmpty(ListItem.Studio) + !Skin.HasSetting(PreferWhiteFooter)">resource://resource.images.studios.coloured/$INFO[ListItem.Studio].png</value>
+		<value condition="!String.IsEmpty(ListItem.Studio) + Skin.HasSetting(PreferWhiteFooter)">resource://resource.images.studios.white/$INFO[ListItem.Studio].png]</value>
+    </variable>
+</includes>

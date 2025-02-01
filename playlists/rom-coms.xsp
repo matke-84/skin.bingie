@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Rom-Coms</name>
+    <match>all</match>
+    <rule field="genre" operator="is">
+        <value>Romance</value>
+    </rule>
+    <rule field="genre" operator="is">
+        <value>Comedy</value>
+    </rule>
+    <rule field="rating" operator="greaterthan">
+        <value>6.4</value>
+    </rule>
+    <rule field="genre" operator="isnot">
+        <value>horror</value>
+    </rule>
+    <rule field="genre" operator="isnot">
+        <value>thriller</value>
+    </rule>
+    <rule field="genre" operator="isnot">
+        <value>animation</value>
+    </rule>
+    <rule field="genre" operator="isnot">
+        <value>action</value>
+    </rule>
+    <rule field="votes" operator="greaterthan">
+        <value>100</value>
+    </rule>
+    <order direction="descending">year</order>
+</smartplaylist>

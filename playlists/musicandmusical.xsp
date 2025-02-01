@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- BINGIE -->
+<smartplaylist type="movies">
+    <name>Music &amp; Musicals</name>
+    <match>all</match>
+    <rule field="genre" operator="contains">
+        <value>music</value>
+        <value>musical</value>
+    </rule>
+    <order direction="ascending">random</order>
+    <limit>200</limit>
+</smartplaylist>

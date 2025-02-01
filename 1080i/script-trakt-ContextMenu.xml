@@ -1,0 +1,113 @@
+<window>
+<controls>	
+	<include>DialogOverlayExtra</include>
+	<defaultcontrol always="true">111</defaultcontrol>
+	<control type="group">
+        <posx>705</posx>
+        <posy>378</posy>
+		<control type="group">
+			<control type="image">
+				<posx>-10</posx>
+				<posy>-10</posy>
+				<width>510</width>
+				<height>330</height>
+				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+				<texture border="10">diffuse/panel.png</texture>
+			</control>
+			<control type="image" id="2">
+				<description>background image</description>
+				<posx>0</posx>
+				<posy>0</posy>
+	            <width>490</width>
+                <height>310</height>
+				<include>Fade80</include>
+				<texture border="10">dialogs/trakt/trakt-context-bg.png</texture>
+			</control>
+			<control type="list" id="111">
+				<posx>20</posx>
+				<posy>20</posy>
+                <width>450</width>
+                <height>483</height>
+				<onup>111</onup>
+				<ondown>111</ondown>
+				<onleft>111</onleft>
+				<onright>111</onright>
+				<scrolltime>200</scrolltime>
+				<itemlayout height="70" width="450">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>450</width>
+						<height>60</height>
+						<texture border="10" colordiffuse="$INFO[Skin.String(ButtonColor)]">diffuse/panel.png</texture>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>450</width>
+						<height>60</height>
+						<font>Reg30</font>
+						<textcolor fallback="white">$INFO[Skin.String(ButtonTextColor)]</textcolor>
+						<selectedcolor>FFFFFF33</selectedcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<info>ListItem.Label</info>
+					</control>
+				</itemlayout>
+				<focusedlayout height="70" width="450">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>450</width>
+						<height>60</height>
+						<texture border="10" colordiffuse="$INFO[Skin.String(ButtonColor)]">diffuse/panel.png</texture>
+						<visible>!Control.HasFocus(111)</visible>
+						<animation effect="fade" time="300">Visible</animation>
+						<animation effect="fade" time="300">Hidden</animation>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>450</width>
+						<height>60</height>
+						<texture border="10" colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">diffuse/panel.png</texture>
+						<visible>Control.HasFocus(111)</visible>
+						<animation effect="fade" time="300">Visible</animation>
+						<animation effect="fade" time="300">Hidden</animation>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>450</width>
+						<height>60</height>
+						<font>Reg30</font>
+						<textcolor fallback="white">$INFO[Skin.String(ButtonTextColor)]</textcolor>
+						<selectedcolor>FFFFFF33</selectedcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<visible>!Control.HasFocus(111)</visible>
+						<info>ListItem.Label</info>
+						<animation effect="fade" time="300">Visible</animation>
+						<animation effect="fade" time="300">Hidden</animation>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>450</width>
+						<height>60</height>
+						<font>Reg30</font>
+						<textcolor fallback="white">$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
+						<selectedcolor>FFFFFF33</selectedcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<visible>Control.HasFocus(111)</visible>
+						<info>ListItem.Label</info>
+						<animation effect="fade" time="300">Visible</animation>
+						<animation effect="fade" time="300">Hidden</animation>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</control>
+</controls>
+</window>

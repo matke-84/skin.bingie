@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Post-Apocalyptic Future</name>
+    <match>all</match>
+    <rule field="tag" operator="is">
+        <value>post-apocalyptic future</value>
+    </rule>
+    <order direction="descending">year</order>
+</smartplaylist>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- BINGIE -->
+<window id="1157" type="dialog">
+	<visible>!String.IsEmpty(Window(home).Property(flushWidgetProps))</visible>
+	<onload>ClearProperty(ListItem.Plot,Home)</onload>
+	<onload>ClearProperty(ListItem.Title,Home)</onload>
+	<onload>ClearProperty(ListItem.Year,Home)</onload>
+	<onload>ClearProperty(ListItem.Genre,Home)</onload>
+	<onload>ClearProperty(ListItem.Label,Home)</onload>
+	<onload>ClearProperty(ListItem.Duration,Home)</onload>
+	<onload>ClearProperty(ListItem.Duration.Mins,Home)</onload>
+	<onload>ClearProperty(ListItem.Duration.M,Home)</onload>
+	<onload>ClearProperty(ListItem.Duration.Hours,Home)</onload>
+	<onload>ClearProperty(ListItem.Label2,Home)</onload>
+	<onload>ClearProperty(ListItem.DBTYPE,Home)</onload>
+	<onload>ClearProperty(ListItem.TvShowTitle,Home)</onload>
+	<onload>ClearProperty(ListItem.Premiered,Home)</onload>
+	<onload>ClearProperty(ListItem.VideoResolution,Home)</onload>
+	<onload>ClearProperty(ListItem.AudioChannels,Home)</onload>
+	<onload>ClearProperty(ListItem.Art.fanart,Home)</onload>
+	<onload>ClearProperty(ListItem.Art.ClearLogo,Home)</onload>
+	<onload>ClearProperty(ListItem.TotalEpisodes,Home)</onload>
+	<onload>ClearProperty(ListItem.TotalSeasons,Home)</onload>
+	<onload>ClearProperty(ListItem.UnWatchedEpisodes,Home)</onload>
+	<onload>ClearProperty(ListItem.VideoCodec,Home)</onload>
+	<onload>ClearProperty(ListItem.VideoAspect,Home)</onload>
+	<onload>ClearProperty(ListItem.SubtitleLanguage,Home)</onload>
+	<onload>ClearProperty(ListItem.AudioCodec,Home)</onload>
+	<onload>ClearProperty(ListItem.AudioLanguage,Home)</onload>
+	<onload>ClearProperty(ListItem.MPAA,Home)</onload>
+	<onload>ClearProperty(ListItem.IsStereoScopic,Home)</onload>
+	<onload>ClearProperty(ListItem.TagLine,Home)</onload>
+	<onload>ClearProperty(ListItem.Rating,Home)</onload>
+	<onload>ClearProperty(ListItem.UserRating,Home)</onload>
+	<onload>ClearProperty(ListItem.Season,Home)</onload>
+	<onload>ClearProperty(ListItem.Episode,Home)</onload>
+	<onload>ClearProperty(ListItem.Artist,Home)</onload>
+	<onload>ClearProperty(ListItem.Album,Home)</onload>
+	<onload>ClearProperty(ListItem.StartTime,Home)</onload>
+	<onload>ClearProperty(ListItem.StartDate,Home)</onload>
+	<onload>ClearProperty(ListItem.Art.Poster,Home)</onload>
+	<onload>ClearProperty(ListItem.Art.tvshow.clearlogo,Home)</onload>
+	<onload>ClearProperty(ListItem.Art.landscape,Home)</onload>
+	<onload>ClearProperty(ListItem.Thumb,Home)</onload>
+	<onload>ClearProperty(ListItem.Icon,Home)</onload>
+	<onload>ClearProperty(ListItem.PercentPlayed,Home)</onload>
+	<onload>ClearProperty(ListItem.ChannelName,Home)</onload>
+	<onload>ClearProperty(ListItem.ChannelNumberLabel,Home)</onload>
+	<onload>ClearProperty(ListItem.Trailer,Home)</onload>
+
+	<onload>AlarmClock(finishPropsFlush,ClearProperty(flushWidgetProps,home),00:00,silent)</onload>
+	<controls/>
+</window>

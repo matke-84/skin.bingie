@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<controls>
+		<!--Dialog Overlay-->
+        <include>DialogOverlayExtra</include>
+		<control type="group">
+			<include>animation_window_open_close</include>
+			<posy>58</posy>
+			<control type="image">
+                <!--Panel-->
+                <posx>95</posx>
+                <posy>90</posy>
+                <width>1730</width>
+                <height>784</height>
+				<texture border="15">diffuse/bgpanel.png</texture>
+				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>			
+            </control>
+			<control type="image">
+                <!--Panel-->
+                <posx>95</posx>
+                <posy>90</posy>
+                <width>1730</width>
+                <height>784</height>
+				<texture border="15">diffuse/bgpanel.png</texture>
+				<bordersize>10</bordersize>
+				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>				
+            </control>
+			<!--Header-->
+			<control type="label" id="2">
+				<description>Heading</description>
+				<posx>0</posx>
+				<posy>80</posy>
+				<width>1920</width>
+				<height>100</height>
+				<label/>
+				<include>DialogHeader_Alt</include>
+				<align>center</align>
+				<scroll>true</scroll>
+			</control>
+			<control type="image">
+                <posx>584</posx>
+                <posy>169</posy>
+                <width>882</width>
+                <height>628</height>
+                <texture border="5">dialogs/default/inner.png</texture>
+            </control>
+            <control type="image">
+                <posx>1494</posx>
+                <posy>169</posy>
+                <width>300</width>
+                <height>628</height>
+                <texture border="5">dialogs/default/inner.png</texture>
+            </control>
+			<control type="image">
+				<left>125</left>
+				<width>430</width>
+				<height>626</height>
+				<top>170</top>
+				<texture fallback="DefaultVideo.png">$VAR[VideoListPosterVar]</texture>
+				<aspectratio align="center" aligny="center" scalediffuse="true">stretch</aspectratio>
+				<visible>[!String.IsEmpty(Container(50).ListItem.Art(poster)) | !String.IsEmpty(ListItem.Art(Container(6).ListItem.Art(poster))]</visible>
+			</control>
+			<control type="image">
+				<left>125</left>
+				<width>430</width>
+				<height>626</height>
+				<top>170</top>
+				<texture fallback="DefaultVideo.png">$VAR[VideoListPosterVar]</texture>
+				<aspectratio align="center" aligny="top" scalediffuse="true">keep</aspectratio>
+				 <visible>[String.IsEmpty(Container(50).ListItem.Art(poster)) | String.IsEmpty(ListItem.Art(Container(6).ListItem.Art(poster))]</visible>
+			</control>
+			<control type="label">
+				<description>Path label</description>
+				<left>124</left>
+				<bottom>180</bottom>
+				<width>1300</width>
+				<height>30</height>
+				<font>Reg26</font>
+				<align>left</align>
+				<aligny>bottom</aligny>
+				<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+				<label>$INFO[Container(50).ListItem.FileNameAndPath]</label>
+			</control>
+			<control type="group" id="100">
+				<top>150</top>
+				<left>575</left>
+				<control type="list" id="50">
+					<description>version list</description>
+					<top>20</top>
+					<left>10</left>
+					<height>625</height>
+					<onup>50</onup>
+					<ondown>50</ondown>
+					<onleft>9001</onleft>
+					<onright>60</onright>
+					<pagecontrol>60</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<include>MediaInfoListLayout</include>
+				</control>
+				<control type="scrollbar" id="60">
+					<texturesliderbackground border="5" colordiffuse="$INFO[Skin.String(ScrollbarBackgroundColor)]">scrollbar/texturesliderbar_small.png</texturesliderbackground>
+					<texturesliderbar colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]" border="5">scrollbar/texturesliderbar_small.png</texturesliderbar>
+					<texturesliderbarfocus colordiffuse="$INFO[Skin.String(ScrollbarFocusedColor)]" border="5">scrollbar/texturesliderbar_small.png</texturesliderbarfocus>
+					<textureslidernib colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]">scrollbar/texturesliderbar_nib.png</textureslidernib>
+					<textureslidernibfocus colordiffuse="$INFO[Skin.String(ScrollbarFocusedColor)]">scrollbar/texturesliderbar_nib.png</textureslidernibfocus>
+					<left>900</left>
+					<top>20</top>
+					<width>10</width>
+					<height>626</height>
+					<onleft>50</onleft>
+					<onright>101</onright>
+					<orientation>vertical</orientation>
+				</control>
+			</control>
+			<control type="grouplist" id="101">
+				<left>1495</left>
+				<top>170</top>
+				<width>300</width>
+				<height>565</height>
+				<onleft condition="Integer.IsGreater(Container(50).NumItems,0)">100</onleft>
+				<itemgap>10</itemgap>
+				<align>top</align>
+				<scrolltime tween="quadratic">200</scrolltime>
+				<include content="DefaultDialogButton">
+					<param name="id" value="21" />
+					<param name="label" value="$LOCALIZE[208]" />
+				</include>
+				<include content="DefaultDialogButton">
+					<param name="id" value="22" />
+					<param name="label" value="$LOCALIZE[40014]" />
+					<param name="visible">Window.IsVisible(managevideoversions)</param>
+				</include>
+				<include content="DefaultDialogButton">
+					<param name="id" value="23" />
+					<param name="label" value="$LOCALIZE[40015]" />
+					<param name="visible">Window.IsVisible(managevideoextras)</param>
+				</include>
+				<include content="DefaultDialogButton">
+					<param name="id" value="27" />
+					<param name="label" value="$LOCALIZE[13511]" />
+				</include>
+				<include content="DefaultDialogButton">
+					<param name="id" value="24" />
+					<param name="label" value="$LOCALIZE[40004]" />
+					<param name="visible">Window.IsVisible(managevideoversions)</param>
+				</include>
+				<include content="DefaultDialogButton">
+					<param name="id" value="28" />
+					<param name="label" value="$LOCALIZE[118]" />
+					<param name="visible">Window.IsVisible(managevideoextras)</param>
+				</include>
+				<include content="DefaultDialogButton">
+					<param name="id" value="26" />
+					<param name="label" value="$LOCALIZE[15015]" />
+				</include>
+				<include content="DefaultDialogButton">
+					<param name="id" value="25" />
+					<param name="label" value="$LOCALIZE[40023]" />
+					<param name="visible">Window.IsVisible(managevideoversions)</param>
+				</include>
+			</control>
+		</control>
+	</controls>
+</window>

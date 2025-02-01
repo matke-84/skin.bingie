@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<shortcuts>
+	<shortcut>
+		<defaultID>5</defaultID>
+		<label>5</label>
+		<label2>Kodi Command</label2>
+		<icon>common/settings1.png</icon>
+		<thumb />
+		<action>ActivateWindow(Settings)</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>31706</defaultID>
+		<label>31706</label>
+		<label2>Kodi Command</label2>
+		<icon>common/reload-skin.png</icon>
+		<thumb />
+		<action>ReloadSkin()</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>13012</defaultID>
+		<label>31629</label>
+		<label2>Kodi Command</label2>
+		<icon>common/exit1.png</icon>
+		<thumb />
+		<action>Quit()</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>13013</defaultID>
+		<label>31630</label>
+		<label2>Kodi Command</label2>
+		<icon>common/reboot1.png</icon>
+		<thumb />
+		<action>Reboot</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>13016</defaultID>
+		<label>31631</label>
+		<label2>Kodi Command</label2>
+		<icon>common/shutdown1.png</icon>
+		<thumb />
+		<action>ShutDown</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>20126</defaultID>
+		<label>20126</label>
+		<label2>Kodi Command</label2>
+		<icon>common/lock.png</icon>
+		<thumb />
+		<action>System.LogOff</action>
+		<visible>System.HasLoginScreen</visible>
+	</shortcut>
+</shortcuts>

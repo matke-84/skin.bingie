@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- BINGIE -->
+<smartplaylist type="tvshows">
+    <name>British Series</name>
+    <match>all</match>
+    <rule field="studio" operator="contains">
+        <value>BBC</value>
+        <value>BBC1</value>
+        <value>BBC2</value>
+        <value>BBC ONE</value>
+        <value>BBC TWO</value>
+        <value>TTL</value>
+        <value>ITV</value>
+        <value>TBC</value>
+        <value>BBC One Northern Ireland</value>
+        <value>BBC One Northern Ireland HD</value>
+        <value>BBC One Scotland</value>
+        <value>BBC Scotland</value>
+        <value>BBC Four</value>
+        <value>CBBC</value>
+        <value>CBeebies</value>
+        <value>BBC Alba</value>
+        <value>ITV +1</value>
+        <value>UTV</value>
+        <value>STV</value>
+        <value>ITV2</value>
+        <value>ITV3</value>
+        <value>ITV4</value>
+        <value>ITVBe</value>
+        <value>CITV</value>
+        <value>Channel 4</value>
+        <value>E4</value>
+        <value>More4</value>
+        <value>4seven</value>
+        <value>Channel 5</value>
+        <value>5STAR</value>
+        <value>5Spike</value>
+        <value>Sky One</value>
+        <value>Sky Two</value>
+        <value>Sky Arts</value>
+    </rule>
+    <order direction="ascending">random</order>
+    <limit>200</limit>
+</smartplaylist>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<window id="1118">
+    <defaultcontrol always="true">77777</defaultcontrol>
+    <menucontrol>900</menucontrol>
+    <include>CustomBingieWinProps</include>
+    <include>BingieViews_WindowOpen_Fade</include>
+	<onload condition="System.HasAlarm(preview_delay)">CancelAlarm(preview_delay,silent)</onload>
+	<onload condition="System.HasAlarm(StopPlayback)">CancelAlarm(StopPlayback,silent)</onload>
+	<onunload condition="$EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(BingieAutoTrailer)">AlarmClock(StopPlayback,PlayerControl(Stop),00:00,silent)</onunload>
+	<onload>SetProperty(DelayTransition,1,Home)</onload>
+    <controls>
+	<control type="group">
+		<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
+		<animation effect="fade" start="0" end="100" time="600" delay="200">Visible</animation>
+		<include>Defs_TMDbHelper_Loader</include>
+        <!-- fake go-to-fullscreen button -->
+        <control type="button" id="509">
+            <visible allowhiddenfocus="true">false</visible>
+            <onfocus>FullScreen</onfocus>
+        </control>
+        <include>GlobalBackground</include>
+        <!--NowPlaying-->
+        <include>NowPlayingBackground</include>
+        <!-- hidden submenu for count calculations -->
+        <include condition="!Skin.HasSetting(DisableAllSubmenus)">hiddenSubmenu</include>
+        <include>PlaySomething_Widget_Base</include>
+        <include condition="Skin.HasSetting(DebugGrid) | Skin.HasSetting(DebugInfo)">DebugInfo</include>
+		<!-- Loading Spinner -->
+        <include content="Busy_Spinner">
+            <param name="centerleft" value="50%"/>
+            <param name="centertop" value="50%"/>
+            <param name="visibility" value="Container(1510).IsUpdating + !Integer.IsGreater(Container(1510).NumItems,0)"/>
+            <param name="size" value="100"/>
+        </include>
+	</control>	
+    </controls>
+</window>

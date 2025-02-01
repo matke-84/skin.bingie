@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="window" id="1190">
+    <onunload>AlarmClock(ClearInfoDialog,ClearProperty(CloseInfoDialog,Home),00:01,silent)</onunload>
+	<onunload>AlarmClock(ClearBusyInfoDialogTrailer,ClearProperty(BusyInfoDialogTrailer,Home),00:01,silent)</onunload>
+	<onload>Skin.Reset(EnableOSDInfo)</onload>
+	<onload>Skin.Reset(EnableOSDCastInfo)</onload>
+	<onload>Skin.Reset(EnableOSDCrewInfo)</onload>
+    <controls>
+		<control type="group">
+            <visible>!Window.IsVisible(DialogVideoInfo.xml)</visible>
+            <include>Busy_Spinner</include>
+        </control>
+		<control type="videowindow"/>
+    </controls>
+</window>

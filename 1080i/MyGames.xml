@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<window>
+    <defaultcontrol always="true">5000</defaultcontrol>
+    <include>allViewIds</include>
+	<onload>ClearProperty(ShowViewSubMenu,Home)</onload>
+	<onunload>ClearProperty(ShowViewSubMenu,Home)</onunload>
+    
+    <controls>
+        <!-- Background -->
+        <include>GlobalBackground</include>
+		<!-- Now Playing -->
+		<include>NowPlayingBackground</include>
+		<!--Header-->
+        <include>Header</include>
+		<!-- all Views -->
+        <include>allViews</include>
+		
+        <!--Sub Menu-->
+        <control type="group">
+			<include>SideBladeModern</include>
+            <!--Grouplist 9000-->
+            <control type="grouplist" id="9000">
+                <posx>21</posx>
+                <posy>185</posy>
+                <width>458</width>
+                <height>770</height>
+                <itemgap>3</itemgap>
+                <onleft>5000</onleft>
+                <onright>5000</onright>
+				<onright>ClearProperty(ShowViewSubMenu,Home)</onright>
+				<onleft>ClearProperty(ShowViewSubMenu,Home)</onleft>
+				<onback>ClearProperty(ShowViewSubMenu,Home)</onback>
+				<onback>5000</onback>
+                <onup>9000</onup>
+                <ondown>9000</ondown>
+                <orientation>vertical</orientation>
+				
+                <control type="radiobutton" id="14">
+                    <!--Button Watched Toggle-->
+                    <include>SideBladeMenuButton</include>
+                    <label>20367</label>
+                </control>
+
+               <control type="button" id="3">
+					<description>Sort by button</description>
+					<include>SideBladeMenuButton</include>
+					<label>103</label>
+				</control>
+				<control type="togglebutton" id="4">
+					<description>Sort asc</description>
+					<include>SideBladeMenuButton</include>
+					<alttexturefocus border="10" colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">diffuse/panel.png</alttexturefocus>
+					<alttexturenofocus/>
+					<label>584</label>
+					<altlabel>585</altlabel>
+					<usealttexture>Container.SortDirection(Ascending)</usealttexture>
+				</control>
+
+				<control type="edit" id="19">
+					<visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
+					<description>Filter</description>
+					<textwidth>230</textwidth>
+					<include>SideBladeMenuButton</include>
+					<textoffsetx>50</textoffsetx>
+					<textoffsety>13</textoffsety>
+					<label>587</label>
+				</control>
+				<control type="radiobutton" id="98">
+					<visible>Container.CanFilterAdvanced</visible>
+					<description>Filter</description>
+					<include>SideBladeMenuButton</include>
+					<label>587</label>
+					<selected>Container.Filtered</selected>
+					<onclick>right</onclick>
+					<onclick>Filter</onclick>
+				</control>
+
+				<control type="button" id="624">
+                    <description/>
+                    <include>SideBladeMenuButton</include>
+                    <label>$LOCALIZE[10140]</label>
+					<onclick>Addon.OpenSettings($INFO[Container.PluginName])</onclick>
+                    <visible>!String.IsEmpty(Container.PluginName)</visible>
+                </control>
+                <control type="button" id="621">
+                    <description/>
+                    <include>SideBladeMenuButton</include>
+                    <label>$LOCALIZE[21452]</label>
+                    <onclick>ActivateWindow(addonbrowser,addons://more/game/,return)</onclick>
+                    <visible>Container.Content(addons)</visible>
+                </control>
+				
+				<include>SideBladeViewCommands</include>
+				
+				<control type="radiobutton" id="4406">
+					<description>Unlock Shares</description>
+					<include>SideBladeMenuButton</include>
+					<label>20336</label>
+					<onclick>mastermode</onclick>
+					<selected>system.ismaster</selected>
+					<visible>system.haslocks</visible>
+				</control>
+             </control>
+        </control>
+		
+		<!--NowPlaying-->
+        <include condition="Skin.HasSetting(DebugGrid) | Skin.HasSetting(DebugInfo)">DebugInfo</include>
+	
+	</controls>
+</window>

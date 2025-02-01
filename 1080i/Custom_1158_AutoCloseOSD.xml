@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- BINGIE -->
+<window type="dialog" id="1158">
+    <visible>Skin.HasSetting(AutoCloseVideoOSD) + ![Skin.HasSetting(EnableOSDInfo) | Window.IsActive(OSDVideoSettings) | Window.IsActive(OSDAudioSettings) | Window.IsActive(OSDSubtitleSettings) | Window.IsActive(videobookmarks) | Window.IsActive(pvrchannelguide)]</visible>
+    <visible>Window.IsActive(videoosd) + System.IdleTime(4) + Player.Playing | Window.IsActive(musicosd) + System.IdleTime(10) + Player.Playing</visible>
+    <onload>Dialog.Close(videoosd)</onload>
+	<onload>Dialog.Close(musicosd)</onload>
+    <controls />
+</window>

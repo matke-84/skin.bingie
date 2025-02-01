@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<window type="buttonMenu">
+    <defaultcontrol always="true">9001</defaultcontrol>
+	<onload>SetProperty(shutdownmenuactive,true,Home)</onload>
+	<onunload>ClearProperty(shutdownmenuactive,Home)</onunload>
+    <onload>Dialog.Close(busydialognocancel)</onload>
+	<onunload>ClearProperty(StartupMask,Home)</onunload>
+    <controls>
+	
+	<include>DialogOverlayExtra</include>
+    
+    <control type="button" id="9001">
+        <description>Make sure we hit the first button in the group list and not the close window button</description>
+        <left>-16</left>
+        <top>-16</top>
+        <width>4</width>
+        <height>4</height>
+        <label/>
+        <font/>
+        <onfocus>3110</onfocus>
+        <texturefocus/>
+        <texturenofocus/>
+        <onleft>3110</onleft>
+        <onright>3110</onright>
+        <onup>3110</onup>
+        <ondown>3110</ondown>
+        <onfocus>SetFocus(3110)</onfocus>
+    </control>
+	
+	
+	 <control type="group">
+		<bottom>0</bottom>
+		<height>110</height>
+		
+		<include>animation_dialog_button_modern</include>
+	 
+        <!--Panel-->
+		
+		<control type="image">
+			<posx>0</posx>
+			<bottom>0</bottom>
+			<width>100%</width>
+			<height>112</height>
+			<texture border="15">diffuse/panel2.png</texture>
+			<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+		</control>
+		
+		
+        <!--Menu-Label-->
+		<control type="label">
+			<posx>137</posx>
+			<posy>-2</posy>
+			<label>$INFO[Container(3110).ListItem.Label]</label>
+			<width>560</width>
+			<height>110</height>
+			<align>left</align>
+			<aligny>center</aligny>
+			<font>Reg42</font>
+			<textcolor>$INFO[Skin.String(MainMenuFocusTextColor)]</textcolor>
+			<animation effect="fade" time="250" delay="250">Visible</animation>
+        </control>
+        <!--Button Grouplist-->
+        <control type="list" id="3110">
+            <posx>590</posx>
+            <posy>24</posy>
+            <width>850</width>
+            <height>75</height>
+            <align>center</align>
+			<onup>Dialog.Close(shutdownmenu)</onup>
+			<ondown>Dialog.Close(shutdownmenu)</ondown>
+			<onup>900</onup>
+			<ondown>900</ondown>
+			<onback>900</onback>
+            <orientation>horizontal</orientation>
+            <focusposition/>
+            <scrolltime tween="cubic" easing="inout">500</scrolltime>
+			<animation effect="slide" end="85,0" condition="Integer.IsEqual(Container(3110).NumItems,4)">Conditional</animation>
+			<animation effect="slide" end="170,0" condition="Integer.IsEqual(Container(3110).NumItems,3)">Conditional</animation>
+			<animation effect="slide" end="255,0" condition="Integer.IsEqual(Container(3110).NumItems,2)">Conditional</animation>
+			<animation effect="slide" end="340,0" condition="Integer.IsEqual(Container(3110).NumItems,1)">Conditional</animation>
+			<itemlayout width="170" height="64">
+				<control type="image">
+					<width>64</width>
+					<height>64</height>
+					<texture background="true">$INFO[ListItem.Icon]</texture>
+					<colordiffuse>$INFO[Skin.String(MainMenuButtonColor)]</colordiffuse>
+				</control>
+			</itemlayout>
+			<focusedlayout width="170" height="64">
+				<control type="image">
+					<width>64</width>
+					<height>64</height>
+					<texture background="true">$INFO[ListItem.Icon]</texture>
+					<colordiffuse>$INFO[Skin.String(MainMenuFocusButtonColor)]</colordiffuse>
+				</control>
+			</focusedlayout>
+			<content>
+				<include condition="!Window.IsActive(loginscreen)">skinshortcuts-group-powermenu</include>
+                <!-- shutdown menu options for loginscreen -->
+                <item id="997">
+                    <label>$LOCALIZE[13009]</label>
+                    <icon>common/exit1.png</icon>
+                    <visible>System.ShowExitButton + Window.IsActive(loginscreen)</visible>
+                    <onclick condition="Window.IsActive(shutdownmenu)">Dialog.Close(all)</onclick>
+                    <onclick>Quit()</onclick>
+                </item>
+                <item id="998">
+                    <property name="id">$NUM[4]</property>
+                    <label>$LOCALIZE[13005]</label>
+                    <icon>common/shutdown1.png</icon>
+                    <visible>System.CanPowerDown + Window.IsActive(loginscreen)</visible>
+                    <onclick condition="Window.IsActive(shutdownmenu)">Dialog.Close(all)</onclick>
+                    <onclick>PowerDown</onclick>
+                </item>
+                <item id="999">
+                    <label>$LOCALIZE[13013]</label>
+                    <icon>common/reboot1.png</icon>
+                    <visible>System.CanReboot + Window.IsActive(loginscreen)</visible>
+                    <onclick condition="Window.IsActive(shutdownmenu)">Dialog.Close(all)</onclick>
+                    <onclick>Reboot</onclick>
+                </item>
+            </content>
+        </control>
+	 </control>
+    </controls>
+</window>

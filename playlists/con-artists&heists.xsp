@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Con-artists &amp; Heists</name>
+    <match>all</match>
+    <rule field="tag" operator="is">
+        <value>con artist</value>
+        <value>heist</value>
+    </rule>
+    <order direction="descending">year</order>
+</smartplaylist>

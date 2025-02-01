@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<window>
+    <defaultcontrol always="true">4</defaultcontrol>
+    <onunload>ClearProperty(Focus)</onunload>
+	<include>animation_window_open_close</include>
+    <controls>
+        <!--Dialog Overlay-->
+        <include>DialogOverlayExtra</include>
+		
+        <!--Dialog PVR Channel Manager-->
+        <control type="group">
+            <visible>!Window.IsVisible(virtualkeyboard) + !Window.IsVisible(pvrgroupmanager) + !Window.IsVisible(filebrowser) + !Window.IsVisible(yesnodialog) + !Window.IsVisible(okdialog) + !Window.IsVisible(progressdialog)</visible>
+			
+			<control type="image">
+                <!--Panel-->
+                <posx>319</posx>
+                <posy>111</posy>
+                <width>1282</width>
+                <height>890</height>
+                <texture border="15">diffuse/bgpanel.png</texture>
+				
+				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+            </control>
+			<control type="image">
+                <!--Panel-->
+                <posx>319</posx>
+                <posy>111</posy>
+                <width>1282</width>
+                <height>890</height>
+				<bordersize>10</bordersize>
+                <texture border="15">diffuse/bgpanel.png</texture>
+				
+				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+            </control>
+
+            <!--Header-->
+            <control type="label">
+                <description>Heading</description>
+                <posx>353</posx>
+                <posy>135</posy>
+                <width>1214</width>
+                <include>DialogHeader</include>
+                <label>$LOCALIZE[19199] • $LOCALIZE[19023]</label>
+                <align>center</align>
+            </control>
+            <control type="group" id="8000">
+                <!--Default Group-->
+                <posx>348</posx>
+                <posy>205</posy>
+                <control type="group" id="8001">
+                    <!--Group Left-->
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>39</posy>
+                        <width>600</width>
+                        <height>632</height>
+                        <texture border="5">dialogs/default/inner.png</texture>
+                    </control>
+                    <control type="list" id="20">
+                        <posx>0</posx>
+                        <posy>40</posy>
+                        <width>600</width>
+                        <height>630</height>
+                        <onup>20</onup>
+                        <ondown>20</ondown>
+						<onleft>8003</onleft>
+                        <onright>60</onright>
+                        <pagecontrol>60</pagecontrol>
+                        <scrolltime>0</scrolltime>
+                        <visible>!Window.IsActive(contextmenu)</visible>
+                        <itemlayout height="60">
+                            <control type="image">
+                                <posx>0</posx>
+                                <posy>1</posy>
+                                <width>600</width>
+                                <height>60</height>
+                                <texture>dialogs/default/separator.png</texture>
+                            </control>
+                            <control type="group">
+                                <animation effect="fade" start="100" end="50" time="300" tween="sine" easing="inout" condition="!ListItem.Property(ActiveChannel)">Conditional</animation>
+                                <control type="image">
+                                    <posx>20</posx>
+                                    <posy>10</posy>
+                                    <width>40</width>
+                                    <height>40</height>
+                                    <texture background="true">$INFO[ListItem.Icon]</texture>
+                                </control>
+                                <control type="label">
+                                    <posx>70</posx>
+                                    <posy>0</posy>
+                                    <width>510</width>
+                                    <height>60</height>
+                                    <label>$INFO[ListItem.Property(Number),(,) ]$INFO[ListItem.Property(Name)]</label>
+                                    <include>DialogListNF</include>
+                                    <scroll>false</scroll>
+                                    <visible>!ListItem.Property(Changed)</visible>
+                                </control>
+                                <control type="label">
+                                    <posx>70</posx>
+                                    <posy>0</posy>
+                                    <width>460</width>
+                                    <height>60</height>
+                                    <label>$INFO[ListItem.Property(Number),(,) ]$INFO[ListItem.Property(Name)]</label>
+                                    <include>DialogListNF</include>
+                                    <scroll>false</scroll>
+                                    <visible>ListItem.Property(Changed)</visible>
+                                </control>
+                            </control>
+                            <control type="image">
+                                <posx>545</posx>
+                                <posy>10</posy>
+                                <width>40</width>
+                                <height>40</height>
+                                <texture>common/checkbox.png</texture>
+								<colordiffuse>$INFO[Skin.String(ViewDetailsTextColor)]</colordiffuse>
+                                <visible>ListItem.Property(Changed)</visible>
+                            </control>
+                        </itemlayout>
+                        <focusedlayout height="90">
+                            <control type="group">
+                                <visible>!Control.HasFocus(20)</visible>
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>1</posy>
+                                    <width>600</width>
+                                    <height>90</height>
+                                    <texture>dialogs/default/separator.png</texture>
+                                </control>
+                                <control type="group">
+                                    <animation effect="fade" start="100" end="50" time="300" tween="sine" easing="inout" condition="!ListItem.Property(ActiveChannel)">Conditional</animation>
+                                    <control type="group">
+                                        <visible>!ListItem.Property(Changed)</visible>
+                                        <control type="label">
+                                            <posx>100</posx>
+                                            <posy>0</posy>
+                                            <width>480</width>
+                                            <height>56</height>
+                                            <label>$INFO[ListItem.Property(Number),(,) ]$INFO[ListItem.Property(Name)]</label>
+                                            <include>DialogListNF</include>
+                                            <scroll>false</scroll>
+                                        </control>
+                                        <control type="label">
+                                            <posx>100</posx>
+                                            <posy>35</posy>
+                                            <width>480</width>
+                                            <height>56</height>
+                                            <label>$INFO[ListItem.Property(ClientName),$LOCALIZE[19210]: ,]</label>
+                                            <include>DialogListNF</include>
+                                            <scroll>false</scroll>
+                                        </control>
+                                    </control>
+                                    <control type="group">
+                                        <visible>ListItem.Property(Changed)</visible>
+                                        <control type="label">
+                                            <posx>100</posx>
+                                            <posy>0</posy>
+                                            <width>430</width>
+                                            <height>56</height>
+                                            <label>$INFO[ListItem.Property(Number),(,) ]$INFO[ListItem.Property(Name)]</label>
+                                            <include>DialogListNF</include>
+                                            <scroll>false</scroll>
+                                        </control>
+                                        <control type="label">
+                                            <posx>100</posx>
+                                            <posy>35</posy>
+                                            <width>430</width>
+                                            <height>56</height>
+                                            <label>$INFO[ListItem.Property(ClientName),$LOCALIZE[19210]: ,]</label>
+                                            <include>DialogListNF</include>
+                                            <scroll>false</scroll>
+                                        </control>
+                                    </control>
+                                </control>
+                            </control>
+                            <control type="group">
+                                <visible>Control.HasFocus(20)</visible>
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>0</posy>
+                                    <width>600</width>
+                                    <height>90</height>
+                                    <texture colordiffuse="$INFO[Skin.String(ButtonColor)]" border="10">diffuse/panel_trans.png</texture>
+									<colordiffuse>$INFO[Skin.String(ButtonFocusColor)]</colordiffuse>
+                                    <visible>ListItem.IsSelected</visible>
+                                </control>
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>0</posy>
+                                    <width>600</width>
+                                    <height>90</height>
+                                    <texture border="10">diffuse/panel.png</texture>
+									<colordiffuse>$INFO[Skin.String(ButtonFocusColor)]</colordiffuse>
+                                    <visible>!ListItem.IsSelected</visible>
+                                </control>
+                                <control type="group">
+                                    <animation effect="fade" start="100" end="50" time="300" tween="sine" easing="inout" condition="!ListItem.Property(ActiveChannel)">Conditional</animation>
+                                    <control type="group">
+                                        <visible>!ListItem.Property(Changed)</visible>
+                                        <control type="label">
+                                            <posx>100</posx>
+                                            <posy>0</posy>
+                                            <width>480</width>
+                                            <height>56</height>
+                                            <label>$INFO[ListItem.Property(Number),(,) ]$INFO[ListItem.Property(Name)]</label>
+                                            <include>DialogListFO</include>
+                                            <scroll>false</scroll>
+                                        </control>
+                                        <control type="label">
+                                            <posx>100</posx>
+                                            <posy>35</posy>
+                                            <width>480</width>
+                                            <height>56</height>
+                                            <label>$INFO[ListItem.Property(ClientName),$LOCALIZE[19210]: ,]</label>
+                                            <include>DialogListFO</include>
+                                            <scroll>false</scroll>
+                                        </control>
+                                    </control>
+                                    <control type="group">
+                                        <visible>ListItem.Property(Changed)</visible>
+                                        <control type="label">
+                                            <posx>100</posx>
+                                            <posy>0</posy>
+                                            <width>430</width>
+                                            <height>56</height>
+                                            <label>$INFO[ListItem.Property(Number),(,) ]$INFO[ListItem.Property(Name)]</label>
+                                            <include>DialogListFO</include>
+                                            <scroll>false</scroll>
+                                        </control>
+                                        <control type="label">
+                                            <posx>100</posx>
+                                            <posy>35</posy>
+                                            <width>430</width>
+                                            <height>56</height>
+                                            <label>$INFO[ListItem.Property(ClientName),$LOCALIZE[19210]: ,]</label>
+                                            <include>DialogListFO</include>
+                                            <scroll>false</scroll>
+                                        </control>
+                                    </control>
+                                </control>
+                            </control>
+                            <control type="image">
+                                <posx>545</posx>
+                                <posy>25</posy>
+                                <width>40</width>
+                                <height>40</height>
+                                <texture>common/checkbox.png</texture>
+								<colordiffuse>$INFO[Skin.String(ViewDetailsTextColor)]</colordiffuse>
+                                <visible>ListItem.Property(Changed)</visible>
+                            </control>
+                            <control type="image">
+                                <posx>20</posx>
+                                <posy>10</posy>
+                                <width>70</width>
+                                <height>70</height>
+                                <texture background="true">$INFO[ListItem.Icon]</texture>
+                                <animation effect="fade" start="100" end="50" time="300" tween="sine" easing="inout" condition="!ListItem.Property(ActiveChannel)">Conditional</animation>
+                            </control>
+                        </focusedlayout>
+                    </control>
+                    <control type="image" id="62">
+                        <animation effect="fade" start="100" end="0" time="0" delay="1500">WindowOpen</animation>
+                    </control>
+                    <control type="image" id="61">
+                        <animation effect="fade" start="0" end="100" time="0">Visible</animation>
+                        <animation effect="fade" start="100" end="0" time="0">Hidden</animation>
+                        <visible>Control.HasFocus(60) | !Control.IsVisible(62)</visible>
+                    </control>
+                    <control type="image" id="61">
+                        <animation effect="fade" start="0" end="100" time="0">Visible</animation>
+                        <animation effect="fade" start="100" end="0" time="0" delay="1500">Hidden</animation>
+                        <visible>!Control.HasFocus(60) + [Container(20).Scrolling | Container(20).OnScrollNext | Container(20).OnScrollPrevious]</visible>
+                    </control>
+                </control>
+				<control type="scrollbar" id="60">
+					<texturesliderbackground border="5" colordiffuse="$INFO[Skin.String(ScrollbarBackgroundColor)]">scrollbar/texturesliderbar_small.png</texturesliderbackground>
+					<texturesliderbar colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]" border="5">scrollbar/texturesliderbar_small.png</texturesliderbar>
+					<texturesliderbarfocus colordiffuse="$INFO[Skin.String(ScrollbarFocusedColor)]" border="5">scrollbar/texturesliderbar_small.png</texturesliderbarfocus>
+					<textureslidernib colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]">scrollbar/texturesliderbar_nib.png</textureslidernib>
+					<textureslidernibfocus colordiffuse="$INFO[Skin.String(ScrollbarFocusedColor)]">scrollbar/texturesliderbar_nib.png</textureslidernibfocus>
+                    <posx>607</posx>
+                    <posy>41</posy>
+                    <height>628</height>
+					<width>10</width>
+                    <onleft>20</onleft>
+                    <onright>8002</onright>
+                    <ondown>60</ondown>
+                    <onup>60</onup>
+                    <showonepage>false</showonepage>
+                    <orientation>vertical</orientation>
+                    <animation effect="fade" start="75" end="0" time="300" tween="sine" easing="inout" condition="!Control.IsVisible(61)">Conditional</animation>
+                </control>
+                <control type="group" id="8002">
+                    <!--Group Right-->
+                    <control type="group" id="80021">
+                        <posx>624</posx>
+                        <posy>0</posy>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>39</posy>
+                            <width>600</width>
+                            <height>543</height>
+                            <texture border="5">dialogs/default/inner.png</texture>
+                        </control>
+                        <control type="radiobutton" id="7">
+                            <description>Channel activated</description>
+                            <posx>0</posx>
+                            <posy>40</posy>
+                            <width>600</width>
+                            <height>61</height>
+                            <align>left</align>
+                            <textoffsetx>20</textoffsetx>
+                            <textwidth>484</textwidth>
+                            <radioposx>492</radioposx>
+                            <texturenofocus>dialogs/default/separator.png</texturenofocus>
+							<include>DialogButton</include>
+                            <label>19074</label>
+                            <onleft>60</onleft>
+                            <onright>8003</onright>
+                            <onup>SetProperty(Focus,1)</onup>
+                            <onup>8003</onup>
+                            <ondown>8</ondown>
+                        </control>
+                        <control type="edit" id="8">
+                            <description>Channel name</description>
+                            <posx>0</posx>
+                            <posy>100</posy>
+                            <width>600</width>
+                            <height>61</height>
+                            <align>left</align>
+                            <aligny>center</aligny>
+                            <textoffsetx>20</textoffsetx>
+                            <texturenofocus>dialogs/default/separator.png</texturenofocus>
+							<include>DialogButton</include>
+                            <label>19201</label>
+                            <onright>8003</onright>
+                            <onleft>60</onleft>
+                            <onup>7</onup>
+                            <ondown>9</ondown>
+                        </control>
+                        <control type="button" id="9">
+                            <description>Channel logo Button</description>
+                            <posx>0</posx>
+                            <posy>160</posy>
+                            <width>600</width>
+                            <height>61</height>
+                            <align>left</align>
+                            <textoffsetx>20</textoffsetx>
+                            <textwidth>540</textwidth>
+                            <texturenofocus>dialogs/default/separator.png</texturenofocus>
+							<include>DialogButton</include>
+                            <label>19202</label>
+                            <onleft>60</onleft>
+                            <onright>8003</onright>
+                            <onup>8</onup>
+                            <ondown>12</ondown>
+                        </control>
+                        <control type="image" id="10">
+                            <description>Current Channel Icon</description>
+                            <posx>540</posx>
+                            <posy>170</posy>
+                            <width>40</width>
+                            <height>40</height>
+                            <aspectratio>scale</aspectratio>
+                            <texture background="true">$INFO[ListItem.Icon]</texture>
+                        </control>
+                        <control type="radiobutton" id="12">
+                            <description>EPG activated</description>
+                            <posx>0</posx>
+                            <posy>220</posy>
+                            <width>600</width>
+                            <height>61</height>
+                            <align>left</align>
+                            <textoffsetx>20</textoffsetx>
+                            <textwidth>484</textwidth>
+                            <radioposx>492</radioposx>
+                            <texturenofocus>dialogs/default/separator.png</texturenofocus>
+							<include>DialogButton</include>
+                            <label>19206</label>
+                            <onleft>60</onleft>
+                            <onright>8003</onright>
+                            <onup>9</onup>
+                            <ondown>13</ondown>
+                        </control>
+                        <control type="spincontrolex" id="13">
+                            <description>EPG source</description>
+                            <posx>0</posx>
+                            <posy>280</posy>
+                            <width>600</width>
+                            <height>61</height>
+                            <texturenofocus>dialogs/default/separator.png</texturenofocus>
+							<include>DialogButton</include>
+                            <textoffsetx>20</textoffsetx>
+                            <align>left</align>
+                            <spinposx>1</spinposx>
+                            <label>19200</label>
+                            <onright>8003</onright>
+                            <onleft>60</onleft>
+                            <onup>12</onup>
+                            <ondown>14</ondown>
+                        </control>
+                        <control type="radiobutton" id="14">
+                            <description>Parental locked</description>
+                            <posx>0</posx>
+                            <posy>340</posy>
+                            <width>600</width>
+                            <height>61</height>
+                            <align>left</align>
+                            <textoffsetx>20</textoffsetx>
+                            <textwidth>484</textwidth>
+                            <radioposx>492</radioposx>
+                            <texturenofocus>dialogs/default/separator.png</texturenofocus>
+							<include>DialogButton</include>
+                            <label>19267</label>
+                            <onleft>60</onleft>
+                            <onright>8003</onright>
+                            <onup>13</onup>
+                            <ondown>30</ondown>
+                        </control>
+						<control type="button" id="30">
+                            <description>Group Manager Button</description>
+                            <posx>0</posx>
+                            <posy>400</posy>
+                            <width>600</width>
+                            <height>61</height>
+                            <align>left</align>
+                            <textoffsetx>20</textoffsetx>
+                            <textwidth>540</textwidth>
+                            <texturenofocus>dialogs/default/separator.png</texturenofocus>
+							<include>DialogButton</include>
+                            <label>19205</label>
+                            <onleft>60</onleft>
+                            <onright>8003</onright>
+                            <onup>14</onup>
+                            <ondown>34</ondown>
+                        </control>
+						<control type="button" id="34">
+                            <description>TV/Radio Button</description>
+                            <posx>0</posx>
+                            <posy>460</posy>
+                            <width>600</width>
+                            <height>61</height>
+                            <align>left</align>
+                            <textoffsetx>20</textoffsetx>
+                            <textwidth>540</textwidth>
+                            <texturenofocus>dialogs/default/separator.png</texturenofocus>
+							<include>DialogButton</include>
+                            <label>19024</label>
+                            <onleft>60</onleft>
+                            <onright>8003</onright>
+                            <onup>30</onup>
+                            <ondown>31</ondown>
+							<visible>String.IsEmpty(Window.Property(IsRadio))</visible>
+                        </control>
+						<control type="button" id="34">
+                            <description>TV/Radio Button</description>
+                            <posx>0</posx>
+                            <posy>460</posy>
+                            <width>600</width>
+                            <height>61</height>
+                            <align>left</align>
+                            <textoffsetx>20</textoffsetx>
+                            <textwidth>540</textwidth>
+                            <texturenofocus>dialogs/default/separator.png</texturenofocus>
+							<include>DialogButton</include>
+                            <label>19023</label>
+                            <onleft>60</onleft>
+                            <onright>8003</onright>
+                            <onup>30</onup>
+                            <ondown>31</ondown>
+							<visible>!String.IsEmpty(Window.Property(IsRadio))</visible>
+                        </control>
+						<control type="button" id="31">
+                            <description>New channel Button</description>
+                            <posx>0</posx>
+                            <posy>520</posy>
+                            <width>600</width>
+                            <height>61</height>
+                            <align>left</align>
+                            <textoffsetx>20</textoffsetx>
+                            <textwidth>540</textwidth>
+                            <texturenofocus></texturenofocus>
+							<include>DialogButton</include>
+                            <label>19204</label>
+                            <onleft>60</onleft>
+                            <onright>8003</onright>
+                            <onup>34</onup>
+                            <ondown>8003</ondown>
+                        </control>
+                    </control>
+                </control>
+            </control>
+			
+			<control type="grouplist" id="8003">
+               <posx>345</posx>
+                <posy>900</posy>
+				<onup condition="!String.IsEmpty(Window.Property(Focus))">33</onup>
+				<onup condition="String.IsEmpty(Window.Property(Focus))">8000</onup>
+				<onup>ClearProperty(Focus)</onup>
+				<ondown condition="!String.IsEmpty(Window.Property(Focus))">7</ondown>
+				<ondown condition="String.IsEmpty(Window.Property(Focus))">8000</ondown>
+				<itemgap>90</itemgap>
+				<orientation>horizontal</orientation>
+
+                <control type="button" id="4">
+                    <!--Select-->
+                    <include>DialogButtonOther</include>
+                    <label>$LOCALIZE[424]</label>
+                </control>
+                <control type="button" id="6">
+                    <!--Close-->
+                    <include>DialogButtonOther</include>
+                    <label>$LOCALIZE[222]</label>
+                </control>
+                <control type="button" id="5">
+                    <!--Apply Changes-->
+                    <include>DialogButtonOther</include>
+                    <label>$LOCALIZE[14070]</label>
+                </control>
+            </control>
+        </control>
+    </controls>
+</window>

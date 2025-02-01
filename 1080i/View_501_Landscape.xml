@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<includes>
+    <!--Default-->
+    <include name="View_501_Landscape">
+		<control type="group">
+			<defaultcontrol always="true">501</defaultcontrol>
+		    <visible>Control.IsVisible(501)</visible>
+			<include>animation_view_change</include>
+			<control type="panel" id="501">
+				<posx>62</posx>
+				<width>1880</width>
+				<bottom>160</bottom>
+                <height>700</height>
+                <onup>501</onup>
+                <ondown>501</ondown>
+                <onleft>9000</onleft>
+                <onright condition="Skin.HasSetting(EnableQuickJump)">6000</onright>
+                <onright condition="!Skin.HasSetting(EnableQuickJump)">60</onright>
+				<pagecontrol>60</pagecontrol>
+				<viewtype label="31430">thumbnail</viewtype>
+				<include content="View_Forced">
+					<param name="viewtype" value="$LOCALIZE[31430]" />
+				</include>
+				<orientation>vertical</orientation>
+				<preloaditems>4</preloaditems>
+				<scrolltime tween="quadratic">400</scrolltime>
+                <visible>!Container.Content(files)</visible>
+				<itemlayout width="602" height="350">
+                    <control type="group">
+                        <width>592</width>
+                        <height>340</height>
+                        <include>LandscapeLayout</include>
+                    </control>
+				</itemlayout>
+				<focusedlayout width="602" height="350">
+					<control type="group">
+                        <width>592</width>
+                        <height>340</height>
+						<include>LandscapeLayoutFocus</include>
+					</control>
+				</focusedlayout>
+			</control>
+
+			
+			<control type="group">
+                <!--vertical Scollbar-->
+                <control type="scrollbar" id="60">
+                    <visible>Control.IsVisible(501) + Integer.IsGreater(Container.NumItems,0)</visible>
+                    <right>15</right>
+                    <bottom>178</bottom>
+                    <height>674</height>
+                    <onup>60</onup>
+                    <ondown>6000</ondown>
+                    <onleft>501</onleft>
+                    <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] + !Control.IsVisible(6002)">Conditional</animation>
+                    <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] | Control.IsVisible(6002)">Conditional</animation>
+                </control>
+			</control>    			
+		</control>	
+	</include>
+</includes>

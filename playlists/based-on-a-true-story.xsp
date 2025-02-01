@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Based-On-A-True-Story</name>
+    <match>all</match>
+    <rule field="tag" operator="contains">
+        <value>based on a true story</value>
+    </rule>
+    <rule field="rating" operator="greaterthan">
+        <value>6.4</value>
+    </rule>
+    <order direction="descending">year</order>
+</smartplaylist>

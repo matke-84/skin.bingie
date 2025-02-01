@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- BINGIE -->
+<smartplaylist type="tvshows">
+    <name>Food &amp; Travel TV Shows</name>
+    <match>all</match>
+    <rule field="genre" operator="contains">
+        <value>Food</value>
+        <value>Home</value>
+        <value>Travel</value>
+        <value>Garden</value>
+    </rule>
+    <order direction="ascending">random</order>
+    <limit>200</limit>
+</smartplaylist>

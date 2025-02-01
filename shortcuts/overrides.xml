@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<overrides>
+
+	<doNotShareMenu />
+	
+	<groupings>
+
+		<!-- common items -->
+		<node label="32029">
+			<shortcut label="137" grouping="32029" icon="shortcuts/search.png">ActivateWindow(1109,return)</shortcut>
+			<shortcut label="10000" grouping="32029" icon="shortcuts/home.png">ActivateWindow(home,return)</shortcut>
+			<shortcut label="31640" grouping="32029" icon="shortcuts/something.png">ActivateWindow(1118,return)</shortcut>
+			<shortcut label="31341" grouping="32029" icon="shortcuts/new.png">ActivateWindow(1112,return)</shortcut>
+			<shortcut label="31613" grouping="32029" icon="shortcuts/tv.png">ActivateWindow(1110,return)</shortcut>
+			<shortcut label="31342" grouping="32029" icon="shortcuts/clapperboard.png">ActivateWindow(1111,return)</shortcut>
+			<shortcut label="31025" grouping="32029" icon="shortcuts/categories.png">ActivateWindow(1119,return)</shortcut>
+			<shortcut label="31534" grouping="32029" icon="shortcuts/mylist.png">ActivateWindow(1114,return)</shortcut>
+			<shortcut label="31252" grouping="32029" icon="shortcuts/widget.png">ActivateWindow(1113,return)</shortcut>
+			<shortcut label="31383" grouping="32029" icon="shortcuts/widget.png">ActivateWindow(1115,return)</shortcut>
+			<shortcut label="31069" grouping="32029" icon="shortcuts/antenna.png">ActivateWindow(1116,return)</shortcut>
+			<shortcut label="2" grouping="32029" icon="shortcuts/music.png">ActivateWindow(1120,return)</shortcut>
+			<shortcut label="342" grouping="32029" icon="shortcuts/clapperboard.png">ActivateWindow(Videos,videodb://movies/titles/,return)</shortcut>
+			<shortcut label="20343" grouping="32029" icon="shortcuts/tv.png">ActivateWindow(Videos,videodb://tvshows/titles/,return)</shortcut>
+			<shortcut label="32022" grouping="32029" icon="shortcuts/antenna.png" condition="PVR.HasTVChannels">ActivateWindow(TVChannels)</shortcut>
+			<shortcut label="20389" grouping="32029" icon="defaultmusicvideos.png" condition="Library.HasContent(musicvideos)">ActivateWindow(Videos,videodb://musicvideos/titles/,return)</shortcut>
+			<shortcut label="12600" grouping="32029" icon="shortcuts/weather.png">ActivateWindow(Weather)</shortcut>
+			<shortcut label="10002" grouping="32029" icon="defaultaddonpicture.png">ActivateWindow(pictures,return)</shortcut>
+			<shortcut label="10025" grouping="32029" icon="defaultaddonmovieinfo.png">ActivateWindow(Videos,return)</shortcut>
+			<shortcut label="10821" grouping="32029" icon="defaultaddongame.png">ActivateWindow(Games,return)</shortcut>
+			<shortcut label="10004" grouping="32029" icon="defaultaddonsettings.png">ActivateWindow(Settings)</shortcut>
+			<shortcut label="1037" grouping="32029" icon="defaultaddonvideo.png">ActivateWindow(Videos,addons://sources/video/,return)</shortcut>
+			<shortcut label="19163" grouping="32029" icon="defaultinprogressshows.png" condition="PVR.HasTVChannels">ActivateWindow(TVRecordings,return)</shortcut>
+			<shortcut label="19021" grouping="32029" icon="defaultaddonlyrics.png">ActivateWindow(radiochannels,return)</shortcut>
+			<shortcut label="7" grouping="32029" icon="defaultaddonfilemanager.png">ActivateWindow(filemanager)</shortcut>
+			<shortcut label="10040" grouping="32029" icon="defaultaddon.png">ActivateWindow(Programs,Addons,return)</shortcut>
+			<shortcut label="20244" grouping="32029" icon="defaultaddonprogram.png" condition="System.Platform.Android">ActivateWindow(10001,androidapp://sources/apps/,return)</shortcut>
+			<shortcut label="10134" grouping="32029" icon="defaultaddonfavourites.png">ActivateWindow(FavouritesBrowser)</shortcut>
+		</node>
+
+		<!-- video library-->
+		<node label="32030" condition="Library.HasContent(video)">
+			<shortcut label="31183" grouping="1212" type="1212" icon="defaultaddonssearch.png">ActivateWindow(1108,return)</shortcut>
+			<shortcut label="31205" grouping="1212" type="1212" icon="defaultaddonssearch.png">ActivateWindow(1106,return)</shortcut>
+			<content>video</content>
+			<node label="32040">
+				<content>playlist-video</content>
+			</node>
+			<node label="32010">
+				<shortcut label="1037" type="32014" icon="DefaultAddonVideo.png">ActivateWindow(Videos,addons://sources/video/,return)</shortcut>
+				<content>addon-video</content>
+			</node>
+			<node label="32075">
+				<content>videosources</content>
+				<content>upnp-video</content>
+			</node>
+		</node>
+		
+		<!-- music -->
+		<node label="32031" condition="Library.HasContent(music)">
+		    <shortcut label="31206" grouping="1211" type="1211" icon="defaultaddonssearch.png">ActivateWindow(1107,return)</shortcut>
+			<shortcut label="2" grouping="32029" icon="defaultaddonmusic.png">ActivateWindow(10502,musicdb://,return)</shortcut>
+			<shortcut label="19021" grouping="32029" icon="defaultaddonlyrics.png">ActivateWindow(radiochannels,return)</shortcut>
+			<shortcut label="589" grouping="1211" type="1211" icon="defaultalbumcover.png">PlayerControl(Partymode(music))</shortcut>
+            <content>music</content>
+			<node label="32040">
+				<content>playlist-audio</content>
+			</node>
+			<node label="32011">
+				<shortcut label="1038" type="32019" icon="defaultaddonmusic.png">ActivateWindow(10502,Addons,return)</shortcut>
+				<content>addon-audio</content>
+			</node>
+			<node label="32075">
+				<content>musicsources</content>
+				<content>upnp-music</content>
+			</node>
+		</node>
+		
+		<!-- Live TV -->
+		<node label="32017" condition="PVR.HasTVChannels">
+			<shortcut label="32022" grouping="32029" icon="defaultaddonpvrclient.png" condition="PVR.HasTVChannels">ActivateWindow(TVGuide)</shortcut>
+			<shortcut label="19163" grouping="32029" icon="defaultinprogressshows.png" condition="PVR.HasTVChannels">ActivateWindow(TVRecordings,return)</shortcut>
+			<shortcut label="19021" grouping="32029" icon="defaultaddonlyrics.png" condition="PVR.HasTVChannels">ActivateWindow(radiochannels,return)</shortcut>
+			<node label="32017" condition="PVR.HasTVChannels">
+				<content>pvr</content>
+				<node label="19023">
+					<content>pvr-tv</content>
+				</node>
+			</node>
+			<node label="32087" condition="PVR.HasRadioChannels">
+				<content>radio</content>
+				<node label="19024">
+					<content>pvr-radio</content>
+				</node>
+			</node>
+		</node>
+		
+		<!-- pictures -->
+		<node label="32020">
+			<shortcut label="10002" grouping="32029" icon="defaultaddonpicture.png">ActivateWindow(pictures,return)</shortcut>
+			<content>picturesources</content>
+		</node>
+		
+        <!-- addons -->
+        <node label="32007">
+			<node label="32009">
+				<shortcut label="10001" type="32021" icon="defaultaddonprogram.png">ActivateWindow(Programs,addons://sources/executable/,return)</shortcut>
+                <shortcut label="20244" grouping="32029" icon="defaultaddonprogram.png" condition="System.Platform.Android">ActivateWindow(Programs,androidapp://sources/apps/,return)</shortcut>
+				<content>addon-program</content>
+			</node>
+            <shortcut label="20244" type="32029" condition="System.Platform.Android">||BROWSE||androidapp://sources/apps/</shortcut>
+			<node label="32010">
+				<shortcut label="1037" type="32014" icon="defaultaddonvideo.png">ActivateWindow(Videos,addons://sources/video/,return)</shortcut>
+				<content>addon-video</content>
+			</node>
+			<node label="32011">
+				<shortcut label="1038" type="32019" icon="defaultaddonmusic.png">ActivateWindow(10502,addons://sources/audio/,return)</shortcut>
+				<content>addon-audio</content>
+			</node>
+			<node label="32012">
+				<shortcut label="1039" type="32020" icon="defaultaddonpicture.png">ActivateWindow(Pictures,Addons,return)</shortcut>
+				<content>addon-image</content>
+			</node>
+		</node>
+
+		<!-- favourites-->	
+		<node label="32006">
+			<shortcut label="10134" grouping="32029" icon="defaultaddonfavourites.png">ActivateWindow(FavouritesBrowser)</shortcut>
+			<content>favourite</content>
+		</node>		
+		
+		<!-- xbmc commands -->
+		<node label="32054">
+			<shortcut label="31565" grouping="32029" condition="String.IsEmpty(Window(Home).Property(powermenu))">submenu</shortcut>
+			<shortcut label="20077" icon="common/skin-settings.png">ActivateWindow(SkinSettings)</shortcut>
+			<shortcut label="10004" icon="common/settings1.png">ActivateWindow(Settings)</shortcut>
+			<shortcut label="20126" icon="common/lock.png">System.LogOff</shortcut>
+            <shortcut label="31706" icon="common/reload-skin.png">ReloadSkin</shortcut>
+			<shortcut label="13012" icon="common/exit1.png">Quit</shortcut>
+			<shortcut label="13015" icon="common/shutdown1.png">Shutdown</shortcut>
+			<shortcut label="13013" icon="common/reboot1.png">Reset</shortcut>
+			<shortcut label="13010" icon="common/hybernate.png">Hibernate</shortcut>
+			<shortcut label="20045" icon="common/mastermode.png">Mastermode</shortcut>
+			<shortcut label="13016" icon="common/shutdown1.png">Powerdown</shortcut>
+			<shortcut label="13011" icon="common/sleep.png">Suspend</shortcut>
+			<shortcut label="600" icon="common/rip-cd.png">RipCD</shortcut>
+			<shortcut label="360" icon="common/screensaver.png">ActivateScreensaver</shortcut>
+			<shortcut label="13014" icon="common/minimize.png">Minimize</shortcut>
+			<shortcut label="32046" icon="common/update-video.png">UpdateLibrary(video)</shortcut>
+			<shortcut label="32047" icon="common/update-audio.png">UpdateLibrary(music)</shortcut>
+			<shortcut label="32055" icon="common/clean-video.png">CleanLibrary(video)</shortcut>
+			<shortcut label="32056" icon="common/clean-audio.png">CleanLibrary(music)</shortcut>
+			<shortcut label="20150" icon="common/shutdown-timer.png">AlarmClock(shutdowntimer,Shutdown())</shortcut>
+			<shortcut label="20151" icon="common/cancel-timer.png">CancelAlarm(shutdowntimer)</shortcut>
+			<shortcut label="14092" icon="common/toggle-debug.png">Skin.ToggleDebug</shortcut>
+            <shortcut label="24034" icon="common/check-updates.png">UpdateAddonRepos</shortcut>
+            <shortcut label="14111" icon="common/toggle-debug.png">ActivateWindow(eventlog)</shortcut>
+		</node>
+	</groupings>
+    
+    <widget-groupings>
+
+		<content>widgets</content>
+		<node label="32030">
+			<content>video</content>
+			<node label="32040">
+				<content>playlist-video</content>
+			</node>
+			<node label="32010">
+				<content>addon-video</content>
+			</node>
+			<node label="32075">
+				<content>videosources</content>
+			</node>
+		</node>
+		<node label="32031">
+			<content>music</content>
+			<node label="32040">
+				<content>playlist-audio</content>
+			</node>
+			<node label="32011">
+				<content>addon-audio</content>
+			</node>
+			<node label="32075">
+				<content>musicsources</content>
+			</node>
+		</node>
+		<node label="32020">
+			<content>picturesources</content>
+		</node>
+		<node label="32007">
+			<node label="32010">
+				<content>addon-video</content>
+			</node>
+			<node label="32011">
+				<content>addon-audio</content>
+			</node>
+			<node label="32012">
+				<content>addon-image</content>
+			</node>
+            <node label="32009">
+				<content>addon-program-plugin</content>
+			</node>
+			<shortcut label="10001" type="32021" icon="defaultaddonprogram.png" widget="addon" widgetType="program" widgetTarget="programs">addons://sources/executable</shortcut>
+			<shortcut label="1037" type="32014" icon="defaultaddonvideo.png" widget="addon" widgetType="video" widgetTarget="video">addons://sources/video</shortcut>
+			<shortcut label="1038" type="32019" icon="defaultaddonmusic.png" widget="addon" widgetType="music" widgetTarget="music">addons://sources/audio</shortcut>
+			<shortcut label="1039" type="32020" icon="defaultaddonpicture.png" widget="addon" widgetType="picture" widgetTarget="pictures">addons://sources/image</shortcut>
+		</node>
+	</widget-groupings>
+
+    <!-- home widgets -->
+	<propertydefault defaultID="10000" property="widget">widget1</propertydefault>
+	<propertydefault defaultID="10000" property="widgetTarget">videos</propertydefault>
+	<propertydefault defaultID="10000" property="widgetType">video</propertydefault>
+	<propertydefault defaultID="10000" property="widgetPath">$VAR[DefWidgetContent]</propertydefault>
+	<propertydefault defaultID="10000" property="widgetName">$VAR[DefWidgetName]</propertydefault>
+
+	<propertydefault defaultID="10000" property="widget.1">widget2</propertydefault>
+	<propertydefault defaultID="10000" property="widgetTarget.1">videos</propertydefault>
+	<propertydefault defaultID="10000" property="widgetType.1">video</propertydefault>
+	<propertydefault defaultID="10000" property="widgetPath.1">$VAR[DefWidget1Content]</propertydefault>
+	<propertydefault defaultID="10000" property="widgetName.1">$VAR[DefWidget1Name]</propertydefault>
+
+	<propertydefault defaultID="10000" property="widget.2">widget3</propertydefault>
+	<propertydefault defaultID="10000" property="widgetTarget.2">videos</propertydefault>
+	<propertydefault defaultID="10000" property="widgetType.2">tvshows</propertydefault>
+	<propertydefault defaultID="10000" property="widgetPath.2">$VAR[DefWidget2Content]</propertydefault>
+	<propertydefault defaultID="10000" property="widgetName.2">$VAR[DefWidget2Name]</propertydefault>
+
+	<propertydefault defaultID="10000" property="widget.3">widget4</propertydefault>
+	<propertydefault defaultID="10000" property="widgetTarget.3">videos</propertydefault>
+	<propertydefault defaultID="10000" property="widgetType.3">video</propertydefault>
+	<propertydefault defaultID="10000" property="widgetPath.3">$VAR[DefWidget3Content]</propertydefault>
+	<propertydefault defaultID="10000" property="widgetName.3">$VAR[DefWidget3Name]</propertydefault>
+
+	<propertydefault defaultID="10000" property="widget.4">widget5</propertydefault>
+	<propertydefault defaultID="10000" property="widgetTarget.4">videos</propertydefault>
+	<propertydefault defaultID="10000" property="widgetType.4">movies</propertydefault>
+	<propertydefault defaultID="10000" property="widgetPath.4">$VAR[DefWidget4Content]</propertydefault>
+	<propertydefault defaultID="10000" property="widgetName.4">$VAR[DefWidget4Name]</propertydefault>
+
+	<propertydefault defaultID="10000" property="widget.5">widget6</propertydefault>
+	<propertydefault defaultID="10000" property="widgetTarget.5">videos</propertydefault>
+	<propertydefault defaultID="10000" property="widgetType.5">video</propertydefault>
+	<propertydefault defaultID="10000" property="widgetPath.5">$VAR[DefWidget5Content]</propertydefault>
+	<propertydefault defaultID="10000" property="widgetName.5">$VAR[DefWidget5Name]</propertydefault>
+
+    <widgetRename>False</widgetRename> 
+
+	<!-- Action Overrides -->
+	<!-- SubMenu-->
+	<override action="submenu">
+		<condition>true</condition>
+		<action>SetFocus(4444,0)</action>
+	</override>
+
+	<!-- MainMenu -->
+	<!-- On Window Transition -> Do action and flush widget props -->
+	<override action="globaloverride" group="mainmenu">
+		<action>::ACTION::</action>
+		<action>SetProperty(flushWidgetProps,1,Home)</action>
+	</override>
+	<!-- If Clicked Currently Loaded Shortcut -> Close Menu and Refocus Widgets -->
+	<override action="globaloverride" group="mainmenu">
+		<condition>$EXP[IsKnownMenuEntryPath]</condition>
+		<action>ClearProperty(ShowViewSubMenu,Home)</action>
+		<action>SetFocus($VAR[MenuEntryOverrideFocus])</action>
+	</override>
+
+	<!-- Power Menu -->
+	<groupoverride group="powermenu" condition="Window.IsActive(DialogButtonMenu.xml)">Close</groupoverride>
+
+</overrides>
+
+

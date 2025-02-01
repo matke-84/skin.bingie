@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- BINGIE -->
+<smartplaylist type="movies">
+    <name>Romance</name>
+    <match>all</match>
+    <rule field="genre" operator="contains">
+        <value>Romance</value>
+    </rule>
+    <order direction="descending">year</order>
+    <limit>200</limit>
+</smartplaylist>

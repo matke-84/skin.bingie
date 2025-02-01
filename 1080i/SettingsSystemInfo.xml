@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<window>
+    <defaultcontrol always="true">9000</defaultcontrol>
+    <controls>
+        <!--Globalbackground-->
+        <include>GlobalBackground</include>
+		<!-- Now Playing -->
+		<include>NowPlayingBackground</include>
+		<!--Header-->
+        <include>Header</include>	
+	
+ 		<control type="group">
+		<bottom>135</bottom>
+		<height>810</height>
+		<include>animation_window_open_close</include>	
+        <!--Panel-->
+		<control type="image">
+			<posx>60</posx>
+			<width>1800</width>
+			<texture border="15">diffuse/bgpanel.png</texture>
+			<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+		</control>
+		
+		<control type="image">
+			<posx>60</posx>
+			<width>510</width>
+			<texture border="15">diffuse/bgpanel.png</texture>
+			<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+		</control>
+		
+        <!--Grouplist Buttons-->
+        <control type="grouplist" id="9000">
+            <posx>90</posx>
+            <posy>30</posy>
+            <width>450</width>
+            <height>96%</height>
+            <itemgap>5</itemgap>
+			<orientation>vertical</orientation>
+            <onleft/>
+            <onright>60</onright>
+            <onup>9000</onup>
+            <ondown>9000</ondown>
+            <control type="button" id="95">
+                <description>General</description>
+                <width>450</width>
+				<height>50</height>
+                <align>left</align>
+                <label>20037</label>
+                <font>Reg28</font>
+				<textoffsetx>38</textoffsetx>
+				<onfocus>ClearProperty(SkinSettingSection,Home)</onfocus>				
+            </control>
+            <control type="button" id="94">
+                <description>Storage</description>
+                <width>450</width>
+				<height>50</height>
+                <align>left</align>
+                <label>13277</label>
+                <font>Reg28</font>
+				<textoffsetx>38</textoffsetx>
+				<onfocus>ClearProperty(SkinSettingSection,Home)</onfocus>
+            </control>
+            <control type="button" id="96">
+                <description>Network</description>
+                <width>450</width>
+				<height>50</height>
+                <align>left</align>
+                <label>13279</label>
+                <font>Reg28</font>
+				<textoffsetx>38</textoffsetx>
+				<onfocus>ClearProperty(SkinSettingSection,Home)</onfocus>
+            </control>
+            <control type="button" id="97">
+                <description>Video</description>
+                <width>450</width>
+				<height>50</height>
+                <align>left</align>
+                <label>13280</label>
+                <font>Reg28</font>
+				<textoffsetx>38</textoffsetx>
+				<onfocus>ClearProperty(SkinSettingSection,Home)</onfocus>
+            </control>
+            <control type="button" id="98">
+                <description>Hardware</description>
+                <width>450</width>
+				<height>50</height>
+                <align>left</align>
+                <label>13281</label>
+                <font>Reg28</font>
+				<textoffsetx>38</textoffsetx>
+				<onfocus>ClearProperty(SkinSettingSection,Home)</onfocus>
+            </control>
+            <control type="button" id="99">
+                <description>PVR</description>
+                <width>450</width>
+				<height>50</height>
+                <align>left</align>
+                <label>$LOCALIZE[19191]</label>
+                <font>Reg28</font>
+				<textoffsetx>38</textoffsetx>
+				<onfocus>ClearProperty(SkinSettingSection,Home)</onfocus>
+            </control>
+            <control type="togglebutton" id="100">
+                <description>Policy</description>
+				<width>450</width>
+                <label>$LOCALIZE[12389]</label>				
+				<onfocus>SetProperty(SkinSettingSection,100,Home)</onfocus>
+				<usealttexture>String.IsEqual(Window(Home).Property(SkinSettingSection),100)</usealttexture>
+				<include>SkinSettings_MenuButtonLarge</include>
+            </control>
+        </control>
+        <!--Grouplist Info-->
+        <control type="grouplist">
+            <posx>670</posx>
+            <posy>25</posy>
+            <width>1100</width>
+            <height>96%</height>
+            <itemgap>3</itemgap>
+			<orientation>vertical</orientation>
+            <control type="label" id="52">
+                <description>XBMC XBE BUILD Version</description>
+                <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                <width>1100</width>
+            </control>
+            <control type="label" id="21">
+                <description>CPU Text</description>
+                <width>1100</width>
+                <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                <label>$LOCALIZE[13271] $INFO[System.CPUUsage]</label>
+            </control>
+            <control type="progress" id="22">
+                <description>CPU BAR</description>
+                <width>1100</width>
+                <info>System.CPUUsage</info>
+            </control>
+            <control type="label" id="23">
+                <description>Memory Text</description>
+                <width>1100</width>
+                <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                <label>$LOCALIZE[154] $INFO[system.memory(used.percent)]</label>
+            </control>
+            <control type="progress" id="24">
+                <description>Memory BAR</description>
+                <width>1100</width>
+                <info>system.memory(used)</info>
+            </control>
+            <control type="label" id="25">
+                <description>Spacer</description>
+                <font/>
+                <width>1100</width>
+            </control>
+            <control type="label" id="2">
+                <description>Label 2</description>
+                <font>Reg30</font>
+                <height>45</height>
+                <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                <width>1100</width>
+            </control>
+            <control type="label" id="3">
+                <description>Label 3</description>
+                <font>Reg30</font>
+                <height>45</height>
+                <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                <width>1100</width>
+            </control>
+            <control type="label" id="4">
+                <description>Label 4</description>
+                <font>Reg30</font>
+                <height>45</height>
+                <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                <width>1100</width>
+            </control>
+            <control type="label" id="5">
+                <description>Label 5</description>
+                <font>Reg30</font>
+                <height>45</height>
+                <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                <width>1100</width>
+            </control>
+            <control type="label" id="6">
+                <description>Label 6</description>
+                <font>Reg30</font>
+                <height>45</height>
+                <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                <width>1100</width>
+            </control>
+            <control type="label" id="7">
+                <description>Label 7</description>
+                <font>Reg30</font>
+                <height>45</height>
+                <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                <width>1100</width>
+            </control>
+            <control type="label" id="8">
+                <description>Label 8</description>
+                <font>Reg30</font>
+                <height>45</height>
+                <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                <width>1100</width>
+            </control>
+            <control type="label" id="9">
+                <description>Label 9</description>
+                <font>Reg30</font>
+                <height>45</height>
+                <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                <width>1100</width>
+            </control>
+            <control type="label" id="10">
+                <description>Label 10</description>
+                <font>Reg30</font>
+                <height>45</height>
+                <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                <width>1100</width>
+            </control>
+            <control type="label" id="11">
+                <description>Label 11</description>
+                <font>Reg30</font>
+                <height>45</height>
+                <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                <width>1100</width>
+            </control>
+            <control type="label" id="12">
+                <description>Label 12</description>
+                <font>Reg30</font>
+                <height>45</height>
+                <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                <width>1100</width>
+            </control>
+        </control>
+			<control type="textbox" id="30">
+				<left>670</left>
+				<top>332</top>
+				<height>460</height>
+				<width>1100</width>
+				<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+				<font>Reg30</font>
+				<pagecontrol>60</pagecontrol>
+				<autoscroll>false</autoscroll>
+			</control>
+			<control type="scrollbar" id="60">
+				<left>1810</left>
+				<top>340</top>
+				<width>20</width>
+				<height>448</height>
+				<onleft>9000</onleft>
+				<orientation>vertical</orientation>
+				<visible>Control.IsVisible(30)</visible>
+			</control>
+		</control>
+	</controls>
+</window>

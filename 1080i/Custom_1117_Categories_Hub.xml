@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<window id="1117">
+    <defaultcontrol always="true">117</defaultcontrol>
+    <include>CustomBingieWinProps</include>
+    <include>BingieViews_WindowOpen_Fade</include>   
+    <!--<onunload>ClearProperty(category,Home)</onunload>-->
+    <controls>
+		<control type="group">
+	    <include>HideWindowOnStartupAndDialogInfoLoad</include>
+		<include>Defs_TMDbHelper_Loader</include>
+		<include>HiddenTop250</include>
+        <include>GlobalBackground</include>
+
+        <!-- Spotlight Section -->
+        <include content="Bingie_Base_BG">
+            <param name="visibility" value="!$EXP[IsPlayingRecognizedContent]" />
+        </include>
+        <include content="Preview_Window">
+            <param name="id" value="11701" />
+        </include>
+        <control type="group">
+            <include content="BingieSpotlightCornerImage">
+                <param name="visibility" value="!Player.HasVideo" />
+                <param name="image" value="$VAR[bingieThumb]" />
+            </include>
+
+            <!-- Details -->
+            <control type="grouplist">
+                    <visible>!$EXP[IsCurrentWidgetSpotlight]</visible>
+                    <animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
+                    <include>WidgetsDisplaySpotlightTransition</include>
+                    <width>1500</width>
+                    <include>BingieLeftDefs</include>
+                    <top>10</top>  
+                    <height>600</height>
+                    <orientation>vertical</orientation>
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <itemgap>10</itemgap>
+                    <!-- Movies and Episodes Info Slide-down -->
+                    <animation effect="slide" start="0" end="0,130" time="0" condition="Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1) | [$EXP[IsMainMenuOpened] + Integer.IsGreater(Window(Home).Property(ListItem.PercentPlayed),1)]">Conditional</animation>
+
+                    <include content="Bingie_Headline_Item">
+                        <param name="id" value="9000" />
+                        <param name="image" value="$VAR[BingieInfoClearlogo]" />
+                        <param name="text" value="$VAR[BingieInfoLabel]" />
+                    </include>
+
+                    <!-- Details Row at Top-->
+                    <control type="group">
+					<visible>!$EXP[IsMainMenuOpened]</visible>
+                        <visible>Skin.HasSetting(MovieDetailsHome) + !Integer.IsGreater(ListItem.PercentPlayed,1) | !Skin.HasSetting(MovieDetailsHome)</visible>
+                        <include>Default_Visible_Fade</include>
+                        <top>-7</top>
+                        <width>1000</width>
+                        <height>55</height>
+                        <include>SpotlightRowDetails</include>
+                    </control>
+
+                    <!-- TV shows Seasons and Episodes -->
+                    <control type="grouplist">
+					<visible>!Skin.HasSetting(MovieDetailsHome)</visible>
+					<visible>!$EXP[IsMainMenuOpened]</visible>
+                        <visible>$EXP[IsEpisodeDBType]</visible>
+                        <include>Default_Visible_Fade</include>
+                        <orientation>vertical</orientation>
+                        <top>0</top>
+						<height>200</height>
+						<width>650</width>
+						<itemgap>20</itemgap>
+						<usecontrolcoords>true</usecontrolcoords>
+                        <!--Season/Episode label-->
+                        <control type="label">
+                            <height>50</height>
+                            <width>650</width>
+                            <align>left</align>
+							<posx>-6</posx>
+							<posy>-5</posy>
+                            <aligny>center</aligny>
+                            <font>bold29</font>
+                         	<textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor>
+                            <label>$VAR[BingieEpisodeInfoHeader]</label>
+                        </control>
+                    </control>
+					
+					<!-- TV shows Seasons and Episodes for Continue Watching -->
+                    <control type="grouplist">
+					<visible>Skin.HasSetting(MovieDetailsHome)</visible>
+					<visible>!$EXP[IsMainMenuOpened]</visible>
+                        <visible>$EXP[IsEpisodeDBType]</visible>
+                        <include>Default_Visible_Fade</include>
+                        <orientation>vertical</orientation>
+                        <top>0</top>
+						<height>200</height>
+						<width>650</width>
+						<itemgap>20</itemgap>
+						<usecontrolcoords>true</usecontrolcoords>
+                        <!--Season/Episode label-->
+                        <control type="label">
+                            <height>28</height>
+                            <width>650</width>
+                            <align>left</align>
+							<posx>-9</posx>
+							<posy>2</posy>
+                            <aligny>center</aligny>
+                            <font>Reg36</font>
+                         	<textcolor>$INFO[Skin.String(BingieSecondaryTextColor)]</textcolor>
+                            <label>$VAR[BingieEpisodeInfoHeader]</label>
+                        </control>
+                    </control>
+				
+				<!-- Movie and TV Show Continue Watching -->
+                        <control type="group">
+                            <visible>Skin.HasSetting(MovieDetailsHome)</visible>
+							<visible>Integer.IsGreater(ListItem.PercentPlayed,1) | [$EXP[IsMainMenuOpened] + Integer.IsGreater(Window(Home).Property(ListItem.PercentPlayed),1)]</visible>
+                            <top>29</top>
+							<left>1</left>
+							<width>650</width>
+                            <height>30</height>
+                            <aligny>center</aligny>
+                            <control type="progress">
+                                <width>185</width>
+                                <height>8</height>
+                                <texturebg colordiffuse="$INFO[Skin.String(BingieDetailsFlagColor)]" border="0">diffuse/panel2.png</texturebg>
+                                <lefttexture/>
+                                <midtexture colordiffuse="$INFO[Skin.String(BingieProgressBarColor)]" border="4">diffuse/panel2.png</midtexture>
+                                <righttexture/>
+                                <info>ListItem.PercentPlayed</info>
+                            </control>
+                            <control type="label">
+                                <top>-11</top>
+                                <left>210</left>
+                                <height>25</height>
+                                <width>450</width>
+                                <font>Reg26</font>
+                                <textcolor>$INFO[Skin.String(BingieSecondaryTextColor)]</textcolor>
+                                <label>$VAR[PercentRemained,,% $LOCALIZE[31059]]</label>
+                            </control>
+                        </control>
+						
+					<control type="grouplist">
+						<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
+						<include>Animation_Right_Home</include>
+						<width>1500</width>
+						<height>600</height>
+						<orientation>vertical</orientation>
+						<usecontrolcoords>true</usecontrolcoords>
+						<itemgap>5</itemgap>	
+					<!-- Bingie Home Top 250/Sublabel/watch xx Now -->
+					<control type="grouplist">
+							<orientation>horizontal</orientation>
+							<visible>!$EXP[IsMainMenuOpened]</visible>
+							<visible>!$EXP[IsEpisodeDBType]</visible>
+							<visible>!Skin.HasSetting(DisableTop250) + Skin.HasSetting(EnableRatings) + !String.IsEmpty(Control.GetLabel(8231)) + !Integer.IsGreater(ListItem.PercentPlayed,1) | !Skin.HasSetting(DisableTop250) + Skin.HasSetting(EnableRatings) + !String.IsEmpty(Control.GetLabel(823)) + $EXP[IsTVShowInLastEpisodes] + !Integer.IsGreater(ListItem.PercentPlayed,1) | 
+							!Skin.HasSetting(DisableTop250) + Skin.HasSetting(EnableRatings) + !String.IsEmpty(Control.GetLabel(8231)) + !Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1)</visible>
+							<animation effect="fade" time="150">Visible</animation>
+							<height>55</height>
+							<width>800</width>
+							<top>-5</top>
+							<aligny>center</aligny> 
+							<usecontrolcoords>true</usecontrolcoords>
+							<itemgap>15</itemgap>
+						<!-- Spotlight Details Row Top250 Red Icon -->
+						<control type="image">
+								<visible>!Skin.HasSetting(EnableTop250WhiteLabel)</visible>
+								<visible>!String.IsEmpty(Control.GetLabel(8231))</visible>
+								<posy>5</posy>
+								<left>1</left>
+								<height>50</height>
+								<width>50</width>
+								<aspectratio>keep</aspectratio>
+								<texture>bingie/top250.png</texture>
+						</control>
+						<!-- Spotlight Details Row Top250 White Icon -->
+						<control type="image">
+								<visible>Skin.HasSetting(EnableTop250WhiteLabel)</visible>
+								<visible>!String.IsEmpty(Control.GetLabel(8231))</visible>
+								<posy>5</posy>
+								<left>1</left>
+								<height>50</height>
+								<width>50</width>
+								<aspectratio>keep</aspectratio>
+								<texture>bingie/top250white.png</texture>
+						</control>
+						<!-- Spotlight Text Label Top250 -->	
+						<control type="label" id="8231">
+							<visible>!$EXP[IsEpisodeDBType]</visible>
+							<visible>!String.IsEmpty(Control.GetLabel(8231))</visible>
+							<font>bold29</font> 
+							<textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor>
+							<label>$VAR[IMDBTop250SubLabel,#, on IMDB Today]</label>
+							<include>Default_Visible_Fade</include>
+						</control>	
+							<!-- Tagline/Watch xx Now -->
+						<control type="label" id="823">
+								<visible>!$EXP[IsEpisodeDBType]</visible>
+								<visible>!String.IsEmpty(Control.GetLabel(823)) + String.IsEmpty(Control.GetLabel(8231))</visible>
+								<width>820</width>
+								<font>bold29</font> 
+								<textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor> 
+								<label>$VAR[BingieSublabel]</label>
+								<include>Default_Visible_Fade</include>
+						</control> 
+					</control>
+
+					<!-- Bingie Home Plot -->
+                    <control type="textbox" id="90009">
+					<visible>!$EXP[IsMainMenuOpened]</visible>
+                        <visible>Skin.HasSetting(MovieDetailsHome) + !Integer.IsGreater(ListItem.PercentPlayed,1) | !Skin.HasSetting(MovieDetailsHome)</visible>
+                        <include>Default_Visible_Fade</include>
+						<top>5</top>
+						<height min="30" max="121">auto</height>
+                        <width max="820">auto</width>
+                        <align>left</align>
+                        <font>Plots</font>
+						<textcolor>$INFO[Skin.String(BingiePlotTextColor)]</textcolor>
+                        <label>$VAR[BingiePlot]</label>
+                    </control>
+
+                    <!-- Additional Info -->
+					<control type="group">
+						<top>5</top>
+                    <include content="Bingie_Additional_Info">
+                       <param name="visibility" value="!$EXP[IsEpisodeDBType] + !$EXP[IsCategoryDBType] + !$EXP[IsMainMenuOpened] + !$EXP[IsTVShowInLastEpisodes] | [Skin.HasSetting(DisableTop250) | !Skin.HasSetting(EnableRatings)] + !$EXP[IsEpisodeDBType] + !$EXP[IsCategoryDBType] + !$EXP[IsMainMenuOpened] | Container.Content(episodes)"/>
+                    </include>	
+					</control>					
+                </control>
+				</control>
+
+                <!-- Footer -->
+				<control type="group">
+					<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
+					<include>Animation_Right_Home</include>
+					<right>-116</right>
+					<include>Bingie_Footer</include>
+				</control>
+            </control>
+
+        <control type="group">
+			<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
+			<include>Animation_Right_Home</include>
+            <left>131</left>
+            <top>611</top>
+            <width>1666</width>
+            <!-- Content Header -->
+            <control type="label">
+			<left>7</left>
+			<top>-39</top>
+                <include condition="Skin.HasSetting(EnableRatings)">FooterON</include>
+				<include condition="!Skin.HasSetting(EnableRatings)">FooterOFF</include>
+                <height>40</height>
+                <font>Reg29</font>
+                <align>left</align>
+                <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                <label>[CAPITALIZE][B]$INFO[Window(Home).Property(category)][/B][/CAPITALIZE]</label>
+                <visible>Integer.IsGreater(Container(117).NumItems,0)</visible>
+            </control>
+
+            <!-- Movies -->			
+			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),action &amp; adventure)">
+                <param name="content" value="$VAR[ActionAdvantureMovies]" />
+            </include>
+			
+			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),dramas)">
+                <param name="content" value="$VAR[DramaMovies]" />
+            </include>
+			
+			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),comedies)">
+                <param name="content" value="$VAR[ComedyMovies]" />
+            </include>
+			
+            <include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),kids &amp; family)">
+                <param name="content" value="$VAR[FamilyMovies]" />
+            </include>
+
+            <include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),horror)">
+                <param name="content" value="$VAR[HorrorMovies]" />
+            </include>
+
+            <include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),documentaries)">
+                <param name="content" value="$VAR[DocumentaryMovies]" />
+            </include>
+
+            <include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),anime)">
+                <param name="content" value="$VAR[AnimeMovies]" />
+            </include>
+
+            <include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),crime)">
+                <param name="content" value="$VAR[CrimeMovies]" />
+            </include>
+			
+			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),fantasy)">
+                <param name="content" value="$VAR[FantasyMovies]" />
+            </include>  
+
+			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),music &amp; musicals)">
+                <param name="content" value="$VAR[MusicMovies]" />
+            </include>  
+
+			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),Romance)">
+                <param name="content" value="$VAR[RomanceMovies]" />
+            </include> 
+
+			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),sci-fi)">
+                <param name="content" value="$VAR[SciFiMovies]" />
+            </include>		
+
+			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),thriller)">
+                <param name="content" value="$VAR[ThrillerMovies]" />
+            </include> 	
+
+			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),westerns)">
+                <param name="content" value="$VAR[WesternMovies]" />
+            </include> 	
+
+			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),animations)">
+                <param name="content" value="$VAR[AnimationMovies]" />
+            </include>	
+
+			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),history &amp; war)">
+                <param name="content" value="$VAR[HistoryWarMovies]" />
+            </include>	
+
+			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),mysteries)">
+                <param name="content" value="$VAR[MysteryMovies]" />
+            </include>	
+
+			<!-- TV Shows -->
+			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),TV action &amp; adventure)">
+                <param name="content" value="$VAR[ActionAdvantureTVShows]" />
+            </include>
+			
+			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),TV animations)">
+                <param name="content" value="$VAR[AnimationTVShows]" />
+            </include>	
+			
+			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),TV comedies)">
+                <param name="content" value="$VAR[ComedyTVShow]" />
+            </include>
+			
+			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),TV crime)">
+                <param name="content" value="$VAR[CrimeTVShows]" />
+            </include>
+			
+			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),TV documentaries)">
+                <param name="content" value="$VAR[DocumentaryTVShows]" />
+            </include>
+			
+			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),TV dramas)">
+                <param name="content" value="$VAR[DramaTVShows]" />
+            </include>
+			
+			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),TV kids &amp; family)">
+                <param name="content" value="$VAR[FamilyTVShows]" />
+            </include>
+			
+			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),TV mysteries)">
+                <param name="content" value="$VAR[MysteryTVShows]" />
+            </include>	
+			
+			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),TV sci-fi &amp; fantasy)">
+                <param name="content" value="$VAR[SciFiFantasyTVShows]" />
+            </include> 
+			
+			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),TV war &amp; politics)">
+                <param name="content" value="$VAR[WarPoliticsTVShows]" />
+            </include>	
+			
+			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),TV westerns)">
+                <param name="content" value="$VAR[WesternTVShows]" />
+            </include>
+
+            <!-- Empty Category -->
+            <control type="label">
+                <top>-99</top>
+                <width>auto</width>
+                <height>100</height>
+                <font>Reg42</font>
+                <align>center</align>
+                <aligny>top</aligny>
+                <wrapmultiline>true</wrapmultiline>
+                <textcolor>$INFO[Skin.String(BingieSecondaryTextColor)]</textcolor>
+                <label>$LOCALIZE[31064]</label>
+                <visible>!Container(117).IsUpdating + !Integer.IsGreater(Container(117).NumItems,0)</visible>
+            </control>
+        </control>
+		
+		<!-- Back arrow -->
+		<control type="image">
+				<visible>Integer.IsGreater(Container(117).NumItems,0)</visible>
+				<bottom>490</bottom>
+				<left>30</left>
+                <height>76</height>
+                <width>76</width>
+				<aspectratio>keep</aspectratio>
+                <texture>bingie/categoriesarrow.png</texture>
+		</control>
+
+        <!-- Loading Spinner -->
+        <include content="Busy_Spinner">
+            <param name="centerleft" value="50%"/>
+            <param name="centertop" value="50%"/>
+            <param name="visibility" value="Container(117).IsUpdating + !Integer.IsGreater(Container(117).NumItems,0)"/>
+            <param name="size" value="100"/>
+        </include>	
+
+	<!-- Category header width -->
+	<include name="FooterON">
+		<width>560</width>
+	</include>
+		
+	<include name="FooterOFF">
+		<width>100%</width>
+	</include>
+	
+	<include>Header</include>
+	
+		<!-- Snow Effect -->
+        <control type="group">
+            <include condition="String.IsEqual(Skin.String(season_greetings),snow_animation)">snow</include>
+        </control>
+		<!-- Halloween Effect -->
+        <control type="group">
+            <include condition="String.IsEqual(Skin.String(season_greetings),halloween_animation)">pumpkin</include>
+        </control>
+		</control>
+	
+    </controls>
+</window>

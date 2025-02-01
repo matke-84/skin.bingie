@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<shortcuts>
+	<shortcut>
+		<label>2</label>
+		<label2>Music</label2>
+		<defaultID>2</defaultID>
+		<icon />
+		<thumb />
+		<action>ActivateWindow(10502,return)</action>
+	</shortcut>
+	<shortcut>
+		<label>19021</label>
+		<label2>Music</label2>
+		<defaultID>19021</defaultID>
+		<icon />
+		<thumb />
+		<action>ActivateWindow(radiochannels,return)</action>
+	</shortcut>
+	<shortcut>
+		<label>517</label>
+		<label2>Music</label2>
+		<defaultID>517</defaultID>
+		<icon />
+		<thumb />
+		<action>ActivateWindow(10502,musicdb://recentlyplayedalbums/,return)</action>
+	</shortcut>
+	<shortcut>
+		<label>359</label>
+		<label2>Music</label2>
+		<defaultID>359</defaultID>
+		<icon />
+		<thumb />
+		<action>ActivateWindow(10502,musicdb://recentlyaddedalbums/,return)</action>
+	</shortcut>
+	<shortcut>
+		<label>20389</label>
+		<label2>Music</label2>
+		<icon />
+		<thumb />
+		<action>ActivateWindow(Videos,videodb://musicvideos/titles/,return)</action>
+	</shortcut>
+	<shortcut>
+		<defaultID>1038</defaultID>
+		<label>1038</label>
+		<label2>Music</label2>
+		<icon />
+		<thumb />
+		<action>ActivateWindow(10502,addons://sources/audio/,return)</action>
+	</shortcut>
+		<shortcut>
+		<label>137</label>
+		<label2>Music</label2>
+		<defaultID>137</defaultID>
+		<icon />
+		<thumb />
+		<action>ActivateWindow(1107,return)</action>
+	</shortcut>
+</shortcuts>

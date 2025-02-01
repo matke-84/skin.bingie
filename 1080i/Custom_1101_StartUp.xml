@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- BINGIE -->
+<window id="1101">
+	<zorder>999</zorder>
+	<defaultcontrol always="true">100</defaultcontrol>
+	<onload>AlarmClock(FocusStartUpButton,SetFocus(100),00:00,silent)</onload>
+	<controls>
+		<control type="group">
+		<animation time="300" effect="fade" start="100" end="0" condition="String.Contains(VideoPlayer.Title,bingie_intro)">Conditional</animation>
+			<control type="image">
+				<include>Visible_Fade</include>
+				<include>FullscreenDimensions</include>
+				<texture background="true" colordiffuse="$VAR[BingiePanelColor]">colors/color_white.png</texture>
+			</control>
+			<control type="scrollbar" id="3000">
+				<include>HiddenObject</include>
+			</control>
+			<control type="grouplist">
+				<include>Startup_Dialog_OpenClose</include>
+				<centerleft>50%</centerleft>
+				<centertop>50%</centertop>
+				<width>900</width>
+				<height max="940">auto</height>
+				<orientation>vertical</orientation>
+				<itemgap>25</itemgap>
+				<align>center</align>
+				<!-- logo -->
+				<control type="group">
+					<width>300</width>
+					<height>180</height>
+					<control type="image">
+						<left>290</left>
+						<align>left</align>
+						<width>100%</width>
+						<height>100%</height>
+						<aspectratio align="center">keep</aspectratio>
+						<texture background="true">bingie_logo.png</texture>
+					</control>
+				</control>
+				<!-- headline -->
+				<control type="label">
+					<width>100%</width>
+					<height>26</height>
+					<font>Bold28</font>
+					<textcolor>ffffffff</textcolor>
+					<scroll>false</scroll>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>$LOCALIZE[31387]</label>
+				</control>
+				<!-- message -->
+				<control id="5" type="textbox">
+					<centerleft>50%</centerleft>
+					<width>100%</width>
+					<height max="745">auto</height>
+					<font>Reg24</font>
+					<autoscroll>false</autoscroll>
+					<align>left</align>
+					<textcolor>ffffffff</textcolor>
+					<aligny>top</aligny>
+					<pagecontrol>3000</pagecontrol>
+					<label>$LOCALIZE[31388]</label>
+				</control>
+				<!-- Button -->
+				<control type="grouplist" id="100">
+					<height>55</height>
+					<width>100%</width>
+					<orientation>horizontal</orientation>
+					<itemgap>25</itemgap>
+					<align>center</align>
+					<onright>noop</onright>
+					<onleft>noop</onleft>				
+					<control type="button" id="101">
+						<width min="300" max="391">auto</width>
+						<height>54</height>
+						<font>Reg24</font>
+						<textcolor>a6ffffff</textcolor>
+						<focusedcolor>ffffffff</focusedcolor>
+						<selectedcolor>ffffffff</selectedcolor>
+						<textoffsetx>20</textoffsetx>
+						<aligny>center</aligny>
+						<align>center</align>
+						<texturefocus border="10" colordiffuse="ffffffff">bingie/border/slimframefo.png</texturefocus>
+						<texturenofocus border="10" colordiffuse="a6ffffff">bingie/border/slimframefo.png</texturenofocus>
+						<alttexturefocus border="10" colordiffuse="ffffffff">bingie/border/slimframefo.png</alttexturefocus>
+						<alttexturenofocus border="10" colordiffuse="a6ffffff">bingie/border/slimframefo.png</alttexturenofocus>
+						<label>$LOCALIZE[31389]</label>
+						<onclick>Skin.SetBool(BingieFirstStartupDone)</onclick>
+						<onclick>SetProperty(finishBingieStartup1,1,Home)</onclick>
+						<onclick>ClearProperty(StartupMask,Home)</onclick>
+						<onclick condition="System.GetBool(filelists.showparentdiritems)">RunScript(script.bingie.toolbox,action=togglekodisetting,setting=filelists.showparentdiritems)</onclick>
+						<onclick condition="System.GetBool(input.enablemouse)">RunScript(script.bingie.toolbox,action=togglekodisetting,setting=input.enablemouse)</onclick>
+						<onclick>RunScript(script.bingie.toolbox,action=setkodisetting,setting=videolibrary.tvshowsselectfirstunwatcheditem,value=2)</onclick>
+						<onclick>RunScript(script.bingie.toolbox,action=setkodisetting,setting=videolibrary.flattentvshows,value=2)</onclick>
+						<onclick>RunScript(script.bingie.toolbox,action=setkodisetting,setting=myvideos.selectaction,value=2)</onclick>
+						<onclick>AlarmClock(clear_property,ClearProperty(finishBingieStartup1,Home),00:02,silent)</onclick>
+						<onclick>AlarmClock(delay_window,ReplaceWindow($VAR[StartUpWindow]),00:01,silent)</onclick>
+						<onup>PageUp(3000)</onup>
+						<ondown>PageDown(3000)</ondown>
+					</control>
+					<control type="button" id="102">
+						<width min="300" max="484">auto</width>
+						<height>54</height>
+						<font>Reg24</font>
+						<textcolor>a6ffffff</textcolor>
+						<focusedcolor>ffffffff</focusedcolor>
+						<selectedcolor>ffffffff</selectedcolor>
+						<textoffsetx>20</textoffsetx>
+						<aligny>center</aligny>
+						<align>center</align>
+						<texturefocus border="10" colordiffuse="ffffffff">bingie/border/slimframefo.png</texturefocus>
+						<texturenofocus border="10" colordiffuse="a6ffffff">bingie/border/slimframefo.png</texturenofocus>
+						<alttexturefocus border="10" colordiffuse="ffffffff">bingie/border/slimframefo.png</alttexturefocus>
+						<alttexturenofocus border="10" colordiffuse="a6ffffff">bingie/border/slimframefo.png</alttexturenofocus>
+						<label>$LOCALIZE[31390]</label>
+						<onclick>Skin.SetBool(BingieFirstStartupDone)</onclick>
+						<onclick>SetProperty(finishBingieStartup1,1,Home)</onclick>
+						<onclick>ClearProperty(StartupMask,Home)</onclick>
+						<onclick>AlarmClock(clear_property,ClearProperty(finishBingieStartup1,Home),00:02,silent)</onclick>
+						<onclick>AlarmClock(delay_window,ReplaceWindow($VAR[StartUpWindow]),00:01,silent)</onclick>
+						<onup>PageUp(3000)</onup>
+						<ondown>PageDown(3000)</ondown>
+					</control>
+				</control>
+				<!-- fake progress -->
+				<control type="group">
+					<width>901</width>
+					<height>10</height>
+					<control type="image">
+						<width>100%</width>
+						<height>100%</height>
+						<texture colordiffuse="ff414141" border="2">colors/color_white.png</texture>
+					</control>
+					<control type="image">
+						<width>1%</width>
+						<height>100%</height>
+						<texture colordiffuse="ffe50914" border="4">diffuse/panel2.png</texture>
+						<animation effect="zoom" end="5000,100" easing="in" tween="cubic" time="600" condition="!String.IsEmpty(Window(Home).Property(finishBingieStartup1))">Conditional</animation>
+					</control>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

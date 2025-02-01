@@ -1,0 +1,981 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<includes>
+    <include file="Defaults.xml" />
+    <include file="IncludesVariables.xml" />
+    <include file="IncludesBingie.xml" />
+    <include file="IncludesHomeWidgets.xml" />
+    <include file="IncludesFunctions.xml" />
+    <include file="IncludesAnimations.xml" />
+    <include file="IncludesNowPlaying.xml" />
+    <include file="IncludesDialogVideoInfo.xml" />
+    <include file="View_10_SimplePVR.xml" />
+    <include file="View_50_List.xml" />
+	<include file="View_51_ListDetails.xml" />
+    <include file="View_55_BannerList.xml" />
+	<include file="View_52_HorizontalPanel.xml" />
+    <include file="View_53_PanelDetails.xml" />
+	<include file="View_54_Panel.xml" />
+	<include file="View_56_BannerPlex.xml" />
+	<include file="View_57_BigPanel.xml" />
+	<include file="View_501_Landscape.xml" />
+	<include file="View_502_LandscapeSingle.xml" />
+	<include file="View_503_Logos.xml" />
+	<include file="View_507_FanArt.xml" />
+	<include file="View_509_PanelSquare.xml" />
+	<include file="View_510_PanelSquareDetails.xml"/>
+	<include file="View_511_Thumbs.xml"/>
+	<include file="View_512_ThumbsDetails.xml" />
+	<include file="View_513_PosterRow.xml" />
+	<include file="View_514_PosterShift.xml" />
+    <include file="View_523_BingieMainLandscape.xml" />
+	<include file="View_524_Showcase.xml" />
+    <include file="View_526_BingieMainPoster.xml" />
+    <include file="View_525_Bingie_Episodes.xml" />
+	<include file="View_527_Bingie_Seasons.xml" />
+	<include file="View_528_BingieMainSquare.xml" />
+    <include file="IncludesViews.xml" />
+    <include file="IncludesMediaFlags.xml" />
+    <include file="IncludesViewsLayoutPoster.xml" />
+    <include file="IncludesViewsLayoutLandscape.xml" />
+    <include file="IncludesViewsLayoutSquare.xml" />
+    <include file="IncludesViewsLayoutBanner.xml" />
+    <include file="IncludesOSD.xml" />
+    <include file="IncludesSkinSettings.xml" />
+    <include file="IncludesContextMenu.xml" />
+    <include file="IncludesHomeBingie.xml"/>
+    <include file="IncludesHubs.xml" />
+    <include file="IncludesBingieKeyboard.xml"/>
+    <include file="IncludesBingieSearch.xml"/>
+    <include file="IncludesSkinShortcuts.xml" />
+	<include file="IncludesDefaultSkinSettings.xml" />
+    <include file="IncludesDefaultSkinHubs.xml" />
+	<include file="IncludesBackgroundBuilding.xml" />
+	<include file="IncludesWeather.xml" />
+    <include file="IncludesHeader.xml" />
+    <include file="IncludesFooter.xml" />
+	<include file="IncludesPaths.xml" />
+    <include file="IncludesOSDDialogs.xml" />
+	<include file="script-skinshortcuts-includes.xml"/>
+    <include file="IncludesDebugInfo.xml" condition="Skin.HasSetting(DebugGrid) | Skin.HasSetting(DebugInfo)" />
+
+    <!-- Constants -->
+    <constant name="landscape_width">366</constant>
+    <constant name="bingie_no_circular_posx">130</constant>
+    <constant name="bingie_no_circular_left_diff">65</constant>
+    <constant name="search_widget_height">417</constant>
+    <constant name="search_widget_thumb_width">297</constant>
+    <constant name="search_key_size">80</constant>
+    <constant name="search_radiokey_width">220</constant>
+    <constant name="bingie_menu_width">500</constant>
+    <constant name="episodes_thumb_height">266</constant>
+    <constant name="episodes_thumb_width">466</constant>
+
+    <!-- expressions -->
+    <expression name="IsBingieViewsActive">Window.IsActive(Home) | Window.IsActive(1109) | Window.IsActive(1106) | Window.IsActive(1119) | Window.IsActive(1110) | Window.IsActive(1111) | Window.IsActive(1112) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(1116) | Window.IsActive(1118) | Window.IsActive(1120)</expression>
+
+    <expression name="IsBingieHubsActive">Window.IsActive(1110) | Window.IsActive(1111) | Window.IsActive(1112) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1116) | Window.IsActive(1118) | Window.IsActive(1120)</expression>
+	
+	<expression name="IsBingieHubsActive2">Window.IsActive(1110) | Window.IsActive(1111) | Window.IsActive(1112) | Window.IsActive(1113) | Window.IsActive(1116) | Window.IsActive(1118) | Window.IsActive(1120)</expression>
+
+    <expression name="IsBingieListsActive">Window.IsActive(1115)</expression>
+
+    <expression name="IsBingieCategoriesActive">Window.IsActive(1117)</expression>
+	
+	<expression name="AllBingieViews">Window.IsActive(Home) | Window.IsActive(1106) | Window.IsActive(1107) | Window.IsActive(1108) | Window.IsActive(1109) | Window.IsActive(1110) | Window.IsActive(1111) | Window.IsActive(1112) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(1116) | Window.IsActive(1117) | Window.IsActive(1118) | Window.IsActive(1119) | Window.IsActive(1120) | Control.IsVisible(523) | Control.IsVisible(525) | Control.IsVisible(526) | Control.IsVisible(527) | Control.IsVisible(528)</expression>
+
+    <expression name="IsRecognizedVideoContent">VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(livetv) | VideoPlayer.Content(musicvideos) | Pvr.IsPlayingRecording</expression>
+
+    <expression name="IsPlayingUnrecognizedContent">Player.HasVideo + Player.Playing + ![VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(musicvideos) | VideoPlayer.Content(livetv) | Pvr.IsPlayingRecording]</expression>
+
+    <expression name="IsPlayingRecognizedContent">Player.Paused + Player.HasVideo | Player.HasVideo + Player.Playing + [VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(livetv) | VideoPlayer.Content(musicvideos) | Pvr.IsPlayingRecording]</expression>
+
+    <expression name="IsMainMenuOpened">ControlGroup(9001).HasFocus() | Control.HasFocus(900) | String.IsEqual(Window(Home).Property(ShowViewSubMenu),show)</expression>
+
+    <expression name="IsTVShowInLastEpisodes">String.IsEqual(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.Title)</expression>
+	
+	<expression name="IsTVShowInLastEpisodesBasedOnProps">String.IsEqual(Window(Home).Property(LatestEpisode.10.ShowTitle),Window(Home).Property(ListItem.Title)) | String.IsEqual(Window(Home).Property(LatestEpisode.9.ShowTitle),Window(Home).Property(ListItem.Title)) | String.IsEqual(Window(Home).Property(LatestEpisode.8.ShowTitle),Window(Home).Property(ListItem.Title)) | String.IsEqual(Window(Home).Property(LatestEpisode.7.ShowTitle),Window(Home).Property(ListItem.Title)) | String.IsEqual(Window(Home).Property(LatestEpisode.6.ShowTitle),Window(Home).Property(ListItem.Title)) | String.IsEqual(Window(Home).Property(LatestEpisode.5.ShowTitle),Window(Home).Property(ListItem.Title)) | String.IsEqual(Window(Home).Property(LatestEpisode.4.ShowTitle),Window(Home).Property(ListItem.Title)) | String.IsEqual(Window(Home).Property(LatestEpisode.3.ShowTitle),Window(Home).Property(ListItem.Title)) | String.IsEqual(Window(Home).Property(LatestEpisode.2.ShowTitle),Window(Home).Property(ListItem.Title)) | String.IsEqual(Window(Home).Property(LatestEpisode.1.ShowTitle),Window(Home).Property(ListItem.Title))</expression>
+
+    <expression name="IsTvShowDBType">String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.Property(DBTYPE),tvshow) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE,tvshow)) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),tvshow)</expression>
+
+    <expression name="IsTvShowDBTypeNoFallback">String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.Property(DBTYPE),tvshow)</expression>
+
+    <expression name="IsMovieDBType">String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.Property(DBTYPE),movie) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE,movie)) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),movie)</expression>
+
+    <expression name="IsMusicDBType">String.IsEqual(ListItem.DBTYPE,music) | String.IsEqual(ListItem.DBTYPE,song) | String.IsEqual(ListItem.DBTYPE,album) | String.IsEqual(ListItem.DBTYPE,artist)</expression>
+	
+	<expression name="IsMovieDBTypeNoFallback">String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.Property(DBTYPE),movie)</expression>
+
+    <expression name="IsEpisodeDBType">String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.Property(DBTYPE),episode) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE,episode)) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),episode)</expression>
+	
+	<expression name="IsSeasonDBType">String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.Property(DBTYPE),season) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE,season)) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),season)</expression>
+	
+	<expression name="IsSetDBType">String.IsEqual(ListItem.DBTYPE,set) | String.IsEqual(ListItem.Property(DBTYPE),set) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE,set)) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),set)</expression>
+
+    <expression name="IsEpisodeDBTypeNoFallback">String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.Property(DBTYPE),episode)</expression>
+
+    <expression name="IsCategoryDBType">String.IsEmpty(ListItem.DBType) + [String.IsEqual(ListItem.Property(DBTYPE),genre) | String.IsEqual(ListItem.Property(DBTYPE),category) | String.IsEqual(ListItem.Property(DBTYPE),categorie) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE),category)]</expression>
+
+    <expression name="IsMenuEntryActive">[Window.IsActive(Home) + String.IsEqual(ListItem.Property(path), ActivateWindow(home,return))] | [Window.IsActive(1110) + String.IsEqual(ListItem.Property(path), ActivateWindow(1110,return))] | [Window.IsActive(1111) + String.IsEqual(ListItem.Property(path), ActivateWindow(1111,return))] | [Window.IsActive(1112) + String.IsEqual(ListItem.Property(path), ActivateWindow(1112,return))] | [Window.IsActive(1113) + String.IsEqual(ListItem.Property(path), ActivateWindow(1113,return))] | [Window.IsActive(1114) + String.IsEqual(ListItem.Property(path), ActivateWindow(1114,return))] | [Window.IsActive(1115) + String.IsEqual(ListItem.Property(path), ActivateWindow(1115,return))] | [Window.IsActive(1109) + String.IsEqual(ListItem.Property(path), ActivateWindow(1109,return))] | [Window.IsActive(1119) + String.IsEqual(ListItem.Property(path), ActivateWindow(1119,return))] | [Window.IsActive(1116) + String.IsEqual(ListItem.Property(path), ActivateWindow(1116,return))] | [Window.IsActive(1118) + String.IsEqual(ListItem.Property(path), ActivateWindow(1118,return))] | [Window.IsActive(1120) + String.IsEqual(ListItem.Property(path), ActivateWindow(1120,return))]</expression>
+
+    <expression name="IsKnownMenuEntryPath">String.IsEqual(ListItem.Property(path), ActivateWindow(home,return)) | String.IsEqual(ListItem.Property(path), ActivateWindow(1110,return)) | String.IsEqual(ListItem.Property(path), ActivateWindow(1111,return)) | String.IsEqual(ListItem.Property(path), ActivateWindow(1112,return)) | String.IsEqual(ListItem.Property(path), ActivateWindow(1113,return)) | String.IsEqual(ListItem.Property(path), ActivateWindow(1114,return)) | String.IsEqual(ListItem.Property(path), ActivateWindow(1115,return)) | String.IsEqual(ListItem.Property(path), ActivateWindow(1109,return)) | String.IsEqual(ListItem.Property(path), ActivateWindow(1119,return)) | String.IsEqual(ListItem.Property(path), ActivateWindow(1118,return)) | String.IsEqual(ListItem.Property(path), ActivateWindow(1120,return))</expression>
+
+    <expression name="IsFirstRun">!Skin.HasSetting(BingieFirstStartupDone) | !Skin.HasSetting(BingieSecondStartupDone)</expression>
+
+    <expression name="IsActualKeyboardActive">Window.IsActive(virtualkeyboard) + String.IsEmpty(Window(Home).Property(SpaceSearchTerm)) + String.IsEmpty(Window(Home).Property(BackspaceSearchTerm))</expression>
+
+    <expression name="IsCurrentWidgetSpotlight">Control.HasFocus(1508) | [Control.IsVisible(1508) + Container(77777).Position(0)]</expression>
+	
+	<expression name="EXP_TMDBHelper_Metadata">String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.Property(DBTYPE),movie) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE,movie)) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),movie) | Container.Content(movies) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.Property(DBTYPE),tvshow) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE,tvshow)) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),tvshow) | Container.Content(tvshows) | String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.Property(DBTYPE),season) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE,season)) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),season) | Container.Content(seasons) | String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.Property(DBTYPE),episode) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE,episode)) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),episode) | Container.Content(episodes) | Container.Content(sets) | Window.IsActive(Custom_1116_PVR_Hub.xml)</expression>
+
+	<expression name="Exp_IsPersonInfo">[String.IsEqual(ListItem.Property(item.type),person) | String.IsEqual(ListItem.Property(tmdb_type),person)]</expression>
+
+    <include name="HiddenObject">
+        <left>-3000</left>
+        <top>-3000</top>
+        <width>1</width>
+        <height>1</height>
+        <texturefocus />
+        <texturenofocus />
+        <label/>
+        <font/>
+    </include>
+
+    <include name="FullscreenDimensions">
+        <posx>0</posx>
+        <posy>0</posy>
+        <width>100%</width>
+        <height>100%</height>
+    </include>
+
+    <include name="navigation_horizontal">
+        <orientation>horizontal</orientation>
+    </include>
+
+    <include name="align_right">
+        <align>right</align>
+    </include>
+
+    <include name="align_center">
+        <align>center</align>
+    </include>
+
+    <include name="left">
+        <left>$PARAM[left]</left>
+    </include>
+
+    <include name="right">
+        <right>$PARAM[right]</right>
+    </include>
+
+    <include name="height">
+        <height>$PARAM[height]</height>
+    </include>
+
+    <include name="width">
+        <width>$PARAM[width]</width>
+    </include>
+
+    <include name="top">
+        <top>$PARAM[top]</top>
+    </include>
+
+    <include name="posx">
+        <posx>$PARAM[posx]</posx>
+    </include>
+
+    <include name="ButtonMovementAction">
+        <onleft>$PARAM[action]</onleft>
+        <onright>$PARAM[action]</onright>
+        <onup>$PARAM[action]</onup>
+        <ondown>$PARAM[action]</ondown>
+        <onback>$PARAM[action]</onback>
+    </include>
+
+    <include name="textoffsetx">
+        <textoffsetx>$PARAM[textoffsetx]</textoffsetx>
+    </include>
+
+    <include name="ScrollTime">
+        <scrolltime tween="quadratic">500</scrolltime>
+    </include>
+
+    <include name="BingieLeftDefs">
+        <left>138</left>
+    </include>
+
+    <!--Dialog Color/Font-->
+    <include name="DialogHeader">
+        <!--Dialog Header-->
+        <font>Bold38</font>
+        <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+    </include>
+	<include name="DialogHeader_Alt">
+        <!--Dialog Header-->
+        <font>Bold38</font>
+        <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+    </include>
+    <include name="DialogButton">
+        <!--Dialog Button-->
+        <font>Reg28</font>
+        <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+        <disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
+		<texturenofocus></texturenofocus>
+		<texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="10">diffuse/panel.png</texturefocus>
+    </include>
+
+    <include name="DialogListNF">
+        <!--Dialog List NF-->
+        <font>Reg28</font>
+        <textcolor fallback="white">$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+        <disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
+    </include>
+	
+    <include name="DialogListFO">
+        <!--Dialog List FO-->
+        <font>Reg28</font>
+        <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
+        <selectedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</selectedcolor>
+    </include>
+
+    <include name="DialogLabel">
+        <!--Dialog Label-->
+        <font>Reg28</font>
+        <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        <disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
+    </include>
+	
+	<include name="DialogButtonOther">
+        <!--Dialog Button OK Cancel-->
+        <height>80</height>
+        <width>350</width>
+        <include>Key</include>
+    </include>
+
+    <!-- Busy Spinner -->
+    <include name="Busy_Spinner">
+        <param name="centertop" default="50%"/>
+        <param name="centerleft" default="50%"/>
+        <param name="size" default="100"/>
+        <param name="visibility" default="true"/>
+        <definition>
+            <control type="multiimage">
+                <nested/>
+                <visible>$PARAM[visibility]</visible>
+                <animation effect="fade" start="0" end="100" time="0">WindowOpen</animation>
+                <animation effect="fade" start="100" end="0" time="500" delay="500">WindowClose</animation>
+                <centertop>$PARAM[centertop]</centertop>
+                <centerleft>$PARAM[centerleft]</centerleft>
+                <width>$PARAM[size]</width>
+                <height>$PARAM[size]</height>
+                <aspectratio>keep</aspectratio>
+                <imagepath>spinner/busy_spinner/</imagepath>
+                <timeperimage>100</timeperimage>
+                <colordiffuse>$INFO[Skin.String(SpinnerTextureColor)]</colordiffuse>
+                <fadetime>0</fadetime>
+            </control>
+        </definition>
+    </include>
+
+    <!--Keyboard-->
+    <include name="EditTextKeyboard">
+        <font>Reg45</font>
+        <align>center</align>
+        <textoffsetx>0</textoffsetx>
+        <texturenofocus/>
+        <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+        <disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
+        <pulseonselect>false</pulseonselect>
+        <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="10">diffuse/panel.png</texturefocus>
+    </include>
+    <include name="KeyBoardKey">
+        <height>70</height>
+        <width>130</width>
+        <align>center</align>
+        <font>Reg30</font>
+        <textoffsetx>0</textoffsetx>
+        <selectedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</selectedcolor>
+        <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
+        <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+        <disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
+        <pulseonselect>false</pulseonselect>
+        <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="10">diffuse/panel.png</texturefocus>
+        <texturenofocus colordiffuse="$INFO[Skin.String(ButtonColor)]" border="10">diffuse/panel.png</texturenofocus>
+     </include>
+    <include name="KeyBoardKeyRadio">
+        <align>left</align>
+        <textoffsetx>20</textoffsetx>
+        <radioposx/>
+        <radioposy>15</radioposy>
+        <radiowidth>28</radiowidth>
+        <radioheight>28</radioheight>
+        <textureradiofocus>dialogs/keyboard/radio-on.png</textureradiofocus>
+        <textureradionofocus>dialogs/keyboard/radio-off.png</textureradionofocus>
+        <font>Reg26</font>
+        <include>KeyBoardKey</include>
+    </include>
+    
+    <include name="Key">
+        <height>110</height>
+        <align>center</align>
+        <font>Reg28</font>
+        <textoffsetx>0</textoffsetx>
+        <selectedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</selectedcolor>
+        <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
+        <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+        <disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
+        <pulseonselect>false</pulseonselect>
+        <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="20">dialogs/keyboard/key-nf-2.png</texturefocus>
+        <texturenofocus colordiffuse="$INFO[Skin.String(ButtonColor)]" border="20">dialogs/keyboard/key-nf-2.png</texturenofocus>
+        <alttexturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="20">dialogs/keyboard/key-nf-2.png</alttexturefocus>
+        <alttexturenofocus colordiffuse="$INFO[Skin.String(ButtonColor)]" border="20">dialogs/keyboard/key-nf-2.png</alttexturenofocus>
+    </include>
+
+    <include name="SmallKey">
+        <width>130</width>
+        <font>Reg34</font>
+        <include>Key</include>
+    </include>
+	<include name="ExtraSmallKey">
+        <width>70</width>
+		<height>70</height>
+        <include>Key</include>
+    </include>
+    <include name="BigKey">
+        <width>250</width>
+        <font>Reg28</font>
+        <include>Key</include>
+    </include>
+    <include name="SpaceBar">
+        <width>735</width>
+        <include>Key</include>
+    </include>
+    <include name="BackSpace">
+        <width>490</width>
+        <include>Key</include>
+    </include>
+    <include name="DialogButtonBrowseAdd">
+        <textureradiofocus colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]">dialogs/keyboard/plus.png</textureradiofocus>
+        <textureradionofocus colordiffuse="$INFO[Skin.String(GeneralTextColor)]">dialogs/keyboard/plus.png</textureradionofocus>
+        <radiowidth>30</radiowidth>
+        <radioheight>30</radioheight>
+        <radioposx>10</radioposx>
+        <textoffsetx>60</textoffsetx>
+        <width>260</width>
+        <height>60</height>
+        <include>DialogButton</include>
+    </include>
+    <include name="DialogButtonBrowseRemove">
+        <textureradiofocus colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]">dialogs/keyboard/remove.png</textureradiofocus>
+        <textureradionofocus colordiffuse="$INFO[Skin.String(GeneralTextColor)]">dialogs/keyboard/remove.png</textureradionofocus>
+		<textureradiooffdisabled>dialogs/keyboard/remove.png</textureradiooffdisabled>
+        <radiowidth>30</radiowidth>
+        <radioheight>30</radioheight>
+        <radioposx>10</radioposx>
+        <textoffsetx>60</textoffsetx>
+        <width>260</width>
+        <height>60</height>
+        <include>DialogButton</include>
+    </include>
+    <include name="DialogButtonBrowseEdit">
+        <textureradiofocus colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]">dialogs/keyboard/edit.png</textureradiofocus>
+        <textureradionofocus colordiffuse="$INFO[Skin.String(GeneralTextColor)]">dialogs/keyboard/edit.png</textureradionofocus>
+        <radiowidth>30</radiowidth>
+        <radioheight>30</radioheight>
+        <radioposx>10</radioposx>
+        <textoffsetx>60</textoffsetx>
+        <width>260</width>
+        <height>60</height>
+        <include>DialogButton</include>
+    </include>
+    <include name="DialogButtonBrowse">
+        <textureradiofocus colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]">dialogs/mediasource/browse-nf.png</textureradiofocus>
+        <textureradionofocus colordiffuse="$INFO[Skin.String(GeneralTextColor)]">dialogs/mediasource/browse-nf.png</textureradionofocus>
+        <radiowidth>230</radiowidth>
+        <radioheight>230</radioheight>
+        <radioposx>2</radioposx>
+        <textoffsetx>60</textoffsetx>
+        <width>260</width>
+        <height>60</height>
+        <include>DialogButton</include>
+    </include>
+    <include name="KeyLeft">
+        <width>130</width>
+        <include>Key</include>
+        <textureradiofocus colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]">dialogs/keyboard/left.png</textureradiofocus>
+        <textureradionofocus colordiffuse="$INFO[Skin.String(ButtonTextColor)]">dialogs/keyboard/left.png</textureradionofocus>
+        <radiowidth>70</radiowidth>
+        <radioheight>70</radioheight>
+        <radioposx>30</radioposx>
+    </include>
+    <include name="KeyRight">
+        <width>130</width>
+        <include>Key</include>
+        <textureradiofocus colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]">dialogs/keyboard/right.png</textureradiofocus>
+        <textureradionofocus colordiffuse="$INFO[Skin.String(ButtonTextColor)]">dialogs/keyboard/right.png</textureradionofocus>
+        <radiowidth>70</radiowidth>
+        <radioheight>70</radioheight>
+        <radioposx>30</radioposx>
+    </include>
+    <include name="KeyBack">
+        <width>130</width>
+        <include>Key</include>
+        <textureradiofocus colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]">dialogs/keyboard/back.png</textureradiofocus>
+        <textureradionofocus colordiffuse="$INFO[Skin.String(ButtonTextColor)]">dialogs/keyboard/back.png</textureradionofocus>
+        <radiowidth>70</radiowidth>
+        <radioheight>70</radioheight>
+        <radioposx>30</radioposx>
+    </include>
+    <include name="KeyDone">
+        <width>130</width>
+        <include>Key</include>
+        <textureradiofocus colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]">dialogs/keyboard/done.png</textureradiofocus>
+        <textureradionofocus colordiffuse="$INFO[Skin.String(ButtonTextColor)]">dialogs/keyboard/done.png</textureradionofocus>
+        <radiowidth>70</radiowidth>
+        <radioheight>70</radioheight>
+        <radioposx>30</radioposx>
+    </include>
+    <include name="DoubleKeyDone">
+        <width>250</width>
+        <height>90</height>
+        <include>Key</include>
+    </include>
+    <include name="DoubleKeyCancel">
+        <width>250</width>
+        <height>90</height>
+        <include>Key</include>
+    </include>
+    <include name="ListDetailsBtn">
+        <width>580</width>
+        <height>40</height>
+        <align>left</align>
+        <disabledcolor fallback="white">$INFO[Skin.String(ViewDetailsTextColor)]</disabledcolor>
+        <texturefocus/>
+        <texturenofocus>dialogs/default/separator.png</texturenofocus>
+        <textoffsetx>0</textoffsetx>
+        <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+        <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+        <enable>false</enable>
+    </include>
+	
+	<include name="Object_Hidden_Button">
+        <param name="control" default="button" />
+        <definition>
+            <control type="$PARAM[control]" id="$PARAM[id]">
+                <nested />
+                <top>-1000</top>
+                <left>-1000</left>
+                <width>1</width>
+                <height>1</height>
+                <texturefocus />
+                <texturenofocus />
+                <font />
+                <visible allowhiddenfocus="true">False</visible>
+            </control>
+        </definition>
+    </include>		
+	
+	<!-- Trailer Control Button -->
+    <include name="DialogInfo_VideoTrailerControl">
+        <param name="onback">8000</param>
+        <definition>
+		<!-- Bingie OSD for Trailers -->
+		<control type="group">
+			<visible>Skin.HasSetting(UseBingieOSD)</visible>
+			<visible>Control.HasFocus(70011)</visible>
+			<bottom>0</bottom>
+			<height>290</height>
+			<control type="group">
+			<animation effect="slide" start="0,400" end="0,0" tween="cubic" easing="out" delay="1000" time="450" reversible="false">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,400" tween="cubic" easing="out" delay="4000" time="450" reversible="false" condition="System.IdleTime(1) + Player.Playing">conditional</animation>
+			<animation effect="slide" start="0,400" end="0,0" tween="cubic" easing="out" delay="0" time="450" reversible="true" condition="Player.Paused | Player.Forwarding | Player.Rewinding | Player.Seeking">conditional</animation>
+				<!-- Vignette Mask -->
+				<control type="image">
+					<width>100%</width>
+					<height>100%</height>
+					<texture background="true">overlays/osd_gradient.png</texture>
+				</control>
+				<!-- Progress Bars White Line Bottom Center-->
+				<control type="progress">
+					<description>ProgressbarCache</description>
+					<posx>384</posx>
+					<posy>174</posy>
+					<height>7</height>
+					<width>1152</width>
+					<texturebg colordiffuse="$INFO[Skin.String(BingieOSDProgressBarBackgroundColor)]">diffuse/panel2.png</texturebg>
+					<lefttexture/>
+					<midtexture colordiffuse="$INFO[Skin.String(BingieOSDProgressBarCacheColor)]">diffuse/panel2.png</midtexture>
+					<righttexture/>
+					<overlaytexture/>
+					<info>Player.ProgressCache</info>
+				</control>
+				<!-- Progress Bars Color Line Bottom Center-->				
+				<control type="progress" id="23">
+					<description>Progress Bar</description>
+					<posx>384</posx>
+					<posy>174</posy>
+					<height>7</height>
+					<width>1152</width>
+					<texturebg colordiffuse="4dffffff">diffuse/panel2.png</texturebg>
+					<lefttexture/>
+					<midtexture colordiffuse="$INFO[Skin.String(BingieOSDProgressBarColor)]">diffuse/panel2.png</midtexture>
+					<righttexture/>
+					<overlaytexture/>
+					<info>Player.SeekBar</info>
+					<reveal>true</reveal>
+				</control>
+				<control type="slider" id="401">
+					<description>Seek Slider</description>
+					<info>Player.SeekBar</info>
+					<posx>384</posx>
+					<posy>167</posy>
+					<height>11</height>
+					<width>1152</width>
+					<texturesliderbar>colors/color_transparent.png</texturesliderbar>
+					<textureslidernib colordiffuse="$INFO[Skin.String(BingieOSDProgressBarColor)]">common/slider/slider_button_nofocus.png</textureslidernib>
+					<visible>Player.SeekEnabled + Player.Seeking</visible>
+				</control>
+				<!-- Play Time / Remaining Time -->
+				<control type="label">
+					<description>Play Time</description>
+					<animation end="-45,0" time="0" effect="slide" condition="[Player.Seeking + [!String.IsEqual(Player.SeekTime(hh),00) | [VideoPlayer.HasEpg + !String.IsEqual(PVR.EpgEventSeekTime(hh),00)]]] | [VideoPlayer.HasEPG + !String.IsEqual(PVR.EpgEventElapsedTime(hh),00)] | !String.IsEqual(Player.Time(hh),00)">Conditional</animation>
+					<posx>274</posx>
+					<posy>146</posy>
+					<width>160</width>
+					<align>left</align>
+					<font>Reg30</font>
+					<textcolor>$INFO[Skin.String(BingieOSDTextColor)]</textcolor>
+					<label>$VAR[PlayTimeFormat]</label>
+				</control>
+				<control type="label">
+					<description>Time Remaining</description>
+					<posx>1571</posx>
+					<posy>146</posy>
+					<width>160</width>
+					<align>left</align>
+					<font>Reg30</font>
+					<textcolor>$INFO[Skin.String(BingieOSDTextColor)]</textcolor>
+					<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
+					<label>$VAR[TimeRemainingFormat]</label>
+				</control>
+				<!-- Forwarding/Rewinding Indicators -->
+				<control type="image">
+					<visible>Player.Forwarding | Player.Rewinding</visible>
+					<texture>$VAR[ForwardRewindIndicatorImage]</texture>
+					<include>PlayerImageIndicatorDefs</include>
+				</control>				
+				<!-- Play/Pause Indicators -->
+				<control type="image">
+					<visible>Player.Paused | Player.Playing</visible>
+					<visible>!Window.IsActive(videoosd)</visible>
+					<texture>$VAR[PlayingPausedIndicatorImage]</texture>
+					<include>PlayerImageIndicatorDefs</include>
+				</control>
+			</control>
+		</control>
+		
+		<!-- Clasic OSD for Trailers -->
+		<control type="group">
+			<visible>!Skin.HasSetting(UseBingieOSD)</visible>
+			<visible>Control.HasFocus(70011)</visible>
+			<bottom>0</bottom>
+			<height>220</height>
+			<animation effect="slide" start="0,400" end="0,0" tween="cubic" easing="out" delay="1000" time="450" reversible="false">Visible</animation>
+			<animation effect="slide" start="0,0" end="0,400" tween="cubic" easing="out" delay="4000" time="450" reversible="false" condition="System.IdleTime(1) + Player.Playing">conditional</animation>
+			<animation effect="slide" start="0,400" end="0,0" tween="cubic" easing="out" delay="0" time="450" reversible="true" condition="Player.Paused | Player.Forwarding | Player.Rewinding | Player.Seeking">conditional</animation>
+			<!--Panel-->
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>100%</width>
+				<height>220</height>
+				<texture>diffuse/panel2.png</texture>
+				<colordiffuse>$INFO[Skin.String(OSDPanelColor)]</colordiffuse>
+			</control> 
+
+			<!--Cover no poster-->
+			<control type="image">
+				<posx>40</posx>
+				<posy>39</posy>
+				<width>141</width>
+				<height>141</height>
+				<fadetime>200</fadetime>
+				<texture background="true">defaultvideo.png</texture>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+			</control>			
+			
+			<control type="group">
+				<posx>-170</posx>
+				<!-- OSDLabel1 -->
+				<control type="label">
+					<posx>390</posx>
+					<posy>20</posy>
+					<width>1000</width>
+					<align>left</align>
+					<font>Reg40</font>
+					<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
+					<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
+					<label>$VAR[OSDLabel1]</label>
+					<scroll>false</scroll>
+				</control>
+                <!-- OSDLabel2 -->
+				<control type="label">
+					<posx>390</posx>
+					<posy>80</posy>
+					<width>980</width>
+					<align>left</align>
+					<font>Reg42</font>
+					<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
+					<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
+					<label>[B]$VAR[OSDLabel2][/B]</label>
+					<scroll>false</scroll>
+				</control>
+				<control type="progress">
+					<description>ProgressbarCache</description>
+					<posx>525</posx>
+					<posy>160</posy>
+					<height>20</height>
+					<width>700</width>
+					<info>Player.ProgressCache</info>
+					<visible>Player.HasDuration + !VideoPlayer.content(livetv)</visible>					
+					<texturebg border="10" colordiffuse="00ffffff">diffuse/panel.png</texturebg>
+					<lefttexture/>
+					<midtexture border="10" colordiffuse="$INFO[Skin.String(OSDProgressBarCacheColor)]">diffuse/osd_panel.png</midtexture>
+					<righttexture/>
+					<overlaytexture/>
+                    <visible>!String.IsEqual(Skin.String(OSDProgressBarCacheColor),None)</visible>
+				</control>
+				<control type="progress" id="23">
+					<description>Progress Bar</description>
+					<posx>525</posx>
+					<posy>160</posy>
+					<height>20</height>
+					<width>700</width>
+					<info>Player.Progress</info>
+					<visible>!VideoPlayer.HasEpg</visible>
+					<texturebg border="10" colordiffuse="$VAR[OSDProgressBarBackgroundColor]">diffuse/osd_panel_trans.png</texturebg>
+					<lefttexture/>
+					<midtexture border="10" colordiffuse="$INFO[Skin.String(OSDProgressBarColor)]">diffuse/osd_panel.png</midtexture>
+					<righttexture/>
+					<overlaytexture/>
+				</control>
+				<control type="progress" id="23">
+					<description>Progress Bar</description>
+					<posx>525</posx>
+					<posy>160</posy>
+					<height>20</height>
+					<width>700</width>
+					<info>PVR.EpgEventProgress</info>
+					<visible>VideoPlayer.HasEpg</visible>
+					<texturebg border="10" colordiffuse="$VAR[OSDProgressBarBackgroundColor]">diffuse/osd_panel_trans.png</texturebg>
+					<lefttexture/>
+					<midtexture border="10" colordiffuse="$INFO[Skin.String(OSDProgressBarColor)]">diffuse/osd_panel.png</midtexture>
+					<righttexture/>
+					<overlaytexture/>
+				</control>
+				<control type="image">
+					<description>Progress Bar Border</description>
+					<posx>525</posx>
+					<posy>160</posy>
+					<height>20</height>
+					<width>700</width>
+					<visible>Player.HasDuration</visible>
+					<texture border="10" colordiffuse="$INFO[Skin.String(OSDProgressBarBorderColor)]">diffuse/thinborder.png</texture>
+				</control>
+                <control type="slider" id="401">
+                    <description>Seek Slider</description>
+					<info>Player.SeekBar</info>
+                    <posx>525</posx>
+					<posy>154</posy>
+					<height>16</height>
+					<width>700</width>
+                    <texturesliderbar>colors/color_transparent.png</texturesliderbar>
+                    <textureslidernib colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">diffuse/seekslider.png</textureslidernib>
+                    <textureslidernibfocus>colors/color_white.png</textureslidernibfocus>
+                    <visible>Player.Seeking + !Player.HasAudio</visible>
+                </control>
+				<!--Process/Seekbar-->
+				<control type="label">
+					<!--Play Time-->
+					<posx>390</posx>
+					<posy>139</posy>
+					<width>160</width>
+					<align>left</align>
+					<font>Reg28</font>
+					<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
+					<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
+					<label>$VAR[PlayTime]</label>
+				</control>
+				<control type="label">
+					<!--Play Time-->
+					<posx>1248</posx>
+					<posy>139</posy>
+					<width>160</width>
+					<align>left</align>
+					<font>Reg28</font>
+					<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
+					<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
+					<label>$VAR[RemainingTime,- ]</label>
+					<visible>Player.HasDuration</visible>					
+				</control>				
+			</control>
+			
+		    <!--OSD: right side below clock-->
+		    <control type="label">
+				<!--PlayerActionLabel-->
+				<animation type="Conditional" condition="Player.Paused | Player.Forwarding | Player.Rewinding">
+					<effect type="slide" start="0,0" end="-160,0" time="200" tween="cubic" easing="inout" delay="0" />
+				</animation>
+				<right>40</right>
+				<posy>90</posy>
+				<width>890</width>
+				<align>right</align>
+				<font>Reg30</font>
+				<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
+				<label>$VAR[PlayerActionLabel]</label>				
+			</control>
+			
+			<control type="label">
+				<!--Total duration-->
+				<animation type="Conditional" condition="Player.Paused | Player.Forwarding | Player.Rewinding">
+					<effect type="slide" start="0,0" end="-160,0" time="200" tween="cubic" easing="inout" delay="0" />
+				</animation>
+				<right>40</right>
+				<posy>139</posy>
+				<width>940</width>
+				<align>right</align>
+				<font>Reg28</font>
+				<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
+				<label>$VAR[TotalDuration,[B]$LOCALIZE[180]: [/B]]</label>
+			</control>
+            
+			<!-- pause img -->
+			<control type="image">
+				<visible>Player.Paused</visible>
+				<animation delay="150" time="300" effect="fade">Visible</animation>
+				<animation delay="0" time="200" effect="fade">Hidden</animation>
+				<right>33</right>
+				<bottom>43</bottom>
+				<width>135</width>
+				<height>135</height>
+				<texture>osd/osd_pause.png</texture>
+				<colordiffuse>$INFO[Skin.String(OSDButtonsFocusColor)]</colordiffuse>
+			</control>
+			<!-- ff/rr img -->
+			<control type="image">
+				<visible>Player.Forwarding</visible>
+				<animation delay="150" time="300" effect="fade">Visible</animation>
+				<animation delay="0" time="200" effect="fade">Hidden</animation>
+				<right>40</right>
+				<bottom>50</bottom>
+				<width>120</width>
+				<height>120</height>
+				<texture>osd/osd_ff.png</texture>
+				<colordiffuse>$INFO[Skin.String(OSDButtonsFocusColor)]</colordiffuse>
+			</control>
+			<control type="image">
+				<visible>Player.Rewinding</visible>
+				<animation delay="150" time="300" effect="fade">Visible</animation>
+				<animation delay="0" time="200" effect="fade">Hidden</animation>
+				<right>40</right>
+				<bottom>50</bottom>
+				<width>120</width>
+				<height>120</height>
+				<texture flipx="true">osd/osd_ff.png</texture>
+				<colordiffuse>$INFO[Skin.String(OSDButtonsFocusColor)]</colordiffuse>
+			</control>
+
+			<!--Clock-->
+            <control type="label">
+                <right>38</right>
+                <posy>7</posy>
+                <width>400</width>
+                <height>100</height>
+                <align>right</align>
+                <info>System.Time</info>
+                <font>Reg60</font>
+                <aligny>center</aligny>
+                <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
+                <shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>             
+                <animation type="Conditional" condition="Player.Paused | Player.Forwarding | Player.Rewinding">
+                    <effect type="slide" start="0,0" end="-160,0" time="200" tween="cubic" easing="inout" delay="0" />
+                </animation>
+            </control>		
+		</control>
+            <control type="button" id="70011">
+                <texturenofocus />
+                <texturefocus />
+
+                <onback>$PARAM[onback]</onback>
+                <onback condition="Player.HasVideo">Stop</onback>
+
+                <onunfocus>SetFocus($PARAM[onback])</onunfocus>
+                <onunfocus condition="Player.HasVideo">Stop</onunfocus>
+				
+				<onclick condition="!Player.HasVideo">SetFocus($PARAM[onback])</onclick>
+                <onclick condition="Player.HasVideo + Skin.HasSetting(EnableAutoPauseOnOSD)">PlayerControl(Play)</onclick>
+
+                <onleft condition="!Player.HasVideo">SetFocus($PARAM[onback])</onleft>
+                <onleft condition="Player.HasVideo">AnalogSeekBack</onleft>
+
+                <onright condition="!Player.HasVideo">SetFocus($PARAM[onback])</onright>
+                <onright condition="Player.HasVideo">AnalogSeekForward</onright>
+				
+				<onup condition="!Player.HasVideo">SetFocus($PARAM[onback])</onup>
+				<onup condition="Player.HasVideo">StepForward</onup>
+
+                <ondown condition="!Player.HasVideo">SetFocus($PARAM[onback])</ondown>
+				<ondown condition="Player.HasVideo">StepBack</ondown>
+            </control>
+        </definition>
+    </include>
+	
+	<include name="Defs_TMDbHelper_Loader">
+        <control type="list" id="99950">
+            <width>1</width>
+            <height>1</height>
+            <itemlayout />
+            <focusedlayout />
+            <left>-1920</left>
+        </control>
+    </include>
+	
+	<!-- Hidden Top250 -->
+	<include name="HiddenTop250">		
+		<control type="label" id="1719">
+			<width>1</width>
+            <height>1</height>
+            <left>-1920</left>
+			<label/>
+			<visible>!String.IsEmpty(ListItem.Top250) | !String.IsEmpty(Container(99950).ListItem.Property(Top250))</visible>				
+        </control>
+	</include>
+	
+	<include name="MediaInfoListLayout">
+		<param name="height">125</param>
+		<param name="width">880</param>
+		<definition>
+			<itemlayout height="$PARAM[height]" width="$PARAM[width]">
+				<control type="image">
+                    <posx>1</posx>
+                    <posy>1</posy>
+                    <width>878</width>
+                    <height>125</height>
+                    <texture border="10">dialogs/default/separator.png</texture>
+                </control>
+				<control type="image">
+					<left>10</left>
+					<top>10</top>
+					<width>105</width>
+					<height>105</height>
+					<texture fallback="DefaultVideo.png">$VAR[VideoListThumbVar]</texture>
+					<aspectratio align="center" aligny="center">scale</aspectratio>
+				</control>
+				<control type="label">
+					<left>133</left>
+					<top>-2</top>
+					<right>20</right>
+					<height>60</height>
+					<font>Reg32</font>
+					<aligny>center</aligny>
+					<textcolor fallback="white">$INFO[Skin.String(GeneralTextColor)]</textcolor>
+					<focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+					<disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
+					<label>$VAR[MediaInfoListLabelVar]</label>
+				</control>
+				<control type="label">
+					<left>133</left>
+					<top>48</top>
+					<right>20</right>
+					<height>65</height>
+					<font>Reg26</font>
+					<aligny>center</aligny>
+					<textcolor fallback="white">$INFO[Skin.String(GeneralTextColor)]</textcolor>
+					<focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+					<disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
+					<label>$VAR[MediaInfoListLabel2Var]</label>
+				</control>
+			</itemlayout>
+			<focusedlayout height="$PARAM[height]" width="$PARAM[width]">
+				<control type="image">
+                    <posx>1</posx>
+                    <posy>1</posy>
+                    <width>878</width>
+                    <height>124</height>
+                    <texture border="10">dialogs/default/separator.png</texture>
+                </control>
+				<control type="image">
+					<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
+					<left>0</left>
+					<top>0</top>
+					<right>0</right>
+					<bottom>0</bottom>
+					<texture border="10">diffuse/panel.png</texture>
+					<colordiffuse>$INFO[Skin.String(ButtonFocusColor)]</colordiffuse>
+				</control>
+				<control type="image">
+					<left>10</left>
+					<top>10</top>
+					<width>105</width>
+					<height>105</height>
+					<texture fallback="DefaultVideo.png">$VAR[VideoListThumbVar]</texture>
+					<aspectratio align="center" aligny="center">scale</aspectratio>
+				</control>
+				<control type="label">
+					<left>133</left>
+					<top>-2</top>
+					<right>20</right>
+					<height>60</height>
+					<aligny>center</aligny>
+					<scroll>true</scroll>
+					<font>Reg32</font>
+					<textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
+					<selectedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</selectedcolor>
+					<label>$VAR[MediaInfoListLabelVar]</label>
+				</control>
+				<control type="label">
+					<left>133</left>
+					<top>48</top>
+					<right>20</right>
+					<height>65</height>
+					<font>Reg26</font>
+					<aligny>center</aligny>
+					<scroll>true</scroll>
+					<textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
+					<selectedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</selectedcolor>
+					<label>$VAR[MediaInfoListLabel2Var]</label>
+				</control>
+			</focusedlayout>
+		</definition>
+	</include>
+	
+	<include name="DefaultDialogButton">
+		<param name="width">300</param>
+		<param name="height">60</param>
+		<param name="wrapmultiline">false</param>
+		<param name="onclick"></param>
+		<param name="visible">true</param>
+		<param name="enable">true</param>
+		<definition>
+			<control type="button" id="$PARAM[id]">
+				<width>$PARAM[width]</width>
+				<height>$PARAM[height]</height>
+				<label>$PARAM[label]</label>
+				<textoffsetx>20</textoffsetx>
+				<onclick>$PARAM[onclick]</onclick>
+				<wrapmultiline>$PARAM[wrapmultiline]</wrapmultiline>
+				<align>center</align>
+				<texturefocus border="15" colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">diffuse/panel.png</texturefocus>
+				<texturenofocus/>
+				<visible>$PARAM[visible]</visible>
+				<enable>$PARAM[enable]</enable>
+			</control>
+		</definition>
+	</include>
+	
+</includes>

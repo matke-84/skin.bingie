@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<window>
+    <defaultcontrol>5000</defaultcontrol>
+	
+	<onunload>ClearProperty(ShowViewSubMenu,Home)</onunload>
+	<include>allViewIds</include>
+    <controls>
+		<include>Defs_TMDbHelper_Loader</include>
+        <!--Global Background-->
+        <include>GlobalBackground</include>
+		<!-- Now Playing -->
+		<include>NowPlayingBackground</include>
+
+        <!--PVR Views-->
+        <include>allViews</include>
+        
+		<include>PVRsideblade</include>
+        <include condition="Skin.HasSetting(DebugGrid) | Skin.HasSetting(DebugInfo)">DebugInfo</include>
+    </controls>
+</window>

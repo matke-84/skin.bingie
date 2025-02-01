@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Documentaries</name>
+    <match>all</match>
+    <rule field="genre" operator="contains">
+        <value>Docu</value>
+    </rule>
+    <rule field="tag" operator="isnot">
+        <value>standup</value>
+        <value>stand up</value>
+        <value>stand-up</value>
+    </rule>
+    <rule field="plot" operator="doesnotcontain">
+        <value>standup</value>
+        <value>stand up</value>
+        <value>stand-up</value>
+    </rule>
+    <order direction="ascending">random</order>
+    <limit>200</limit>
+</smartplaylist>

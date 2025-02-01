@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<window>
+    <defaultcontrol always="true">9000</defaultcontrol>
+    <include>DefaultSkinSettings</include>
+    <!--set trailer alarm off-->
+    <onload condition="System.HasAlarm(preview_delay)">CancelAlarm(preview_delay,silent)</onload>
+    <controls>
+        <!--Global Background-->
+        <include>GlobalBackground</include>
+		<!-- Now Playing -->
+		<include>NowPlayingBackground</include>		
+        <!--Header-->
+        <include>Header</include>
+        <control type="group">
+            <include>animation_window_open_close</include>
+            <bottom>135</bottom>
+            <height>75%</height>
+            <!--Panel-->
+            <control type="image">
+                <posx>60</posx>
+                <width>1800</width>
+                <texture border="15">diffuse/bgpanel.png</texture>
+            <colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+            </control>
+            
+            <control type="image">
+                <posx>60</posx>
+                <width>560</width>
+                <texture border="15">diffuse/bgpanel.png</texture>
+                <colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+            </control>
+            
+            <!--Picture	(Fanart)-->
+            <control type="image">
+                <posx>90</posx>
+                <posy>30</posy>
+                <width>500</width>
+                <height>300</height>
+                <texture background="true">$INFO[Container(9000).ListItem.ActualIcon]</texture>
+                <aspectratio>scale</aspectratio>
+				<fadetime>350</fadetime>
+            </control>
+            
+            <!--InfoText-->
+            <control type="textbox">
+                <posx>90</posx>
+                <posy>351</posy>
+                <width>500</width>
+                <height>270</height>
+                <font>Reg30</font>
+                <align>left</align>
+                <label>$INFO[Container(9000).ListItem.Label2]</label>
+            </control>
+            
+            
+            
+            <!--List 9000-->
+            <control type="panel" id="9000">
+                <viewtype label="31437">icons</viewtype>
+                <right>69</right>
+                <top>22</top>
+                <height>780</height>
+                <width>1208</width>
+                <orientation>vertical</orientation>
+                <onup>9000</onup>
+                <ondown>9000</ondown>
+                <preloaditems>4</preloaditems>
+                <itemlayout height="260" width="302">
+                    <control type="group">
+                        <width>288</width>
+                        <height>246</height>
+                        <include>SquarePosterPanelLayout</include>
+						<control type="textbox">
+							<left>15</left>
+							<right>15</right>
+							<bottom>8</bottom>
+							<height>38</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>[UPPERCASE]$INFO[ListItem.label][/UPPERCASE]</label>
+							<font>settings</font>
+							<autoscroll>false</autoscroll>
+							<textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
+						</control>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="260" width="302">
+                    <control type="group">
+                        <width>288</width>
+                        <height>246</height>
+                        <include>SquarePosterPanelLayoutFocus</include>
+						<control type="textbox">
+							<left>15</left>
+							<right>15</right>
+							<bottom>8</bottom>
+							<height>38</height>							
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>[UPPERCASE]$INFO[ListItem.label][/UPPERCASE]</label>
+							<font>settings</font>
+							<autoscroll delay="2000" time="2000" repeat="2000">true</autoscroll>
+							<textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
+						</control>
+                    </control>
+                </focusedlayout>
+                <content>
+                    <item id="11">
+                        <description>Skin Settings</description>
+                        <label>20077</label>
+                        <label2>31407</label2>
+                        <onclick>activatewindow(skinsettings)</onclick>
+                        <icon>special://skin/extras/media/backgrounds/settings_bingie.jpg</icon>
+                        <thumb>addonskin.png</thumb>
+                    </item>
+                    <item id="1">
+                        <description>Interface</description>
+                        <label>14206</label>
+                        <label2>31400</label2>
+                        <onclick>activatewindow(InterfaceSettings)</onclick>
+                        <icon>special://skin/extras/media/backgrounds/settings_interface.jpg</icon>
+                        <thumb>appearance.png</thumb>
+                    </item>
+                    <item id="2">
+                        <description>Media Settings</description>
+                        <label>14212</label>
+                        <label2>31401</label2>
+                        <onclick>activatewindow(MediaSettings)</onclick>
+                        <icon>special://skin/extras/media/backgrounds/settings_media_settings.jpg</icon>
+                        <thumb>media.png</thumb>
+                    </item>
+                    <item id="3">
+                        <description>Live TV</description>
+                        <label>31088</label>
+                        <label2>31410</label2>
+                        <onclick>ActivateWindow(PVRSettings)</onclick>
+                        <icon>special://skin/extras/media/backgrounds/settings_live_tv.jpg</icon>
+                        <thumb>addontvinfo.png</thumb>
+                    </item>
+                    <item id="4">
+                        <description>Player</description>
+                        <label>14201</label>
+                        <label2>31402</label2>
+                        <onclick>ActivateWindow(PlayerSettings)</onclick>
+                        <icon>special://skin/extras/media/backgrounds/settings_player_settings.jpg</icon>
+                        <thumb>player.png</thumb>
+                    </item>
+                    <item id="5">
+                        <description>Addons</description>
+                        <label>24001</label>
+                        <label2>31408</label2>
+                        <onclick>activatewindow(AddonBrowser)</onclick>
+                        <icon>special://skin/extras/media/backgrounds/settings_addons.jpg</icon>
+                        <thumb>addon.png</thumb>
+                    </item>
+                    <item id="8">
+                        <description>Network/Services</description>
+                        <label>14036</label>
+                        <label2>31405</label2>
+                        <onclick>activatewindow(ServiceSettings)</onclick>
+                        <icon>special://skin/extras/media/backgrounds/settings_services.jpg</icon>
+                        <thumb>network.png</thumb>
+                    </item>
+                    <item id="9">
+                        <description>System</description>
+                        <label>13000</label>
+                        <label2>31406</label2>
+                        <onclick>activatewindow(SystemSettings)</onclick>
+                        <icon>special://skin/extras/media/backgrounds/settings_system.jpg</icon>
+                        <thumb>settings.png</thumb>
+                    </item>
+                    <item id="10">
+                        <description>System Info</description>
+                        <label>130</label>
+                        <label2>31409</label2>
+                        <onclick>activatewindow(7)</onclick>
+                        <icon>special://skin/extras/media/backgrounds/settings_system_info.jpg</icon>
+                        <thumb>cpu.png</thumb>
+                    </item>
+                    <item id="12">
+                        <description>Profiles</description>
+                        <label>13200</label>
+                        <label2>31421</label2>
+                        <onclick>activatewindow(Profiles)</onclick>
+                        <icon>special://skin/extras/media/backgrounds/settings_profiles.jpg</icon>
+                        <thumb>actor.png</thumb>
+                    </item>
+                    <item id="13">
+                        <description>Games</description>
+                        <label>$LOCALIZE[15016]</label>
+                        <label2>$LOCALIZE[31403]</label2>
+                        <onclick>ActivateWindow(GameSettings)</onclick>
+                        <icon>special://skin/extras/media/backgrounds/settings_games.jpg</icon>
+                        <thumb>games.png</thumb>
+                    </item>
+                    <item id="14">
+                        <description>File Manager</description>
+                        <label>7</label>
+                        <label2>31404</label2>
+                        <onclick>ActivateWindow(filemanager)</onclick>
+                        <icon>special://skin/extras/media/backgrounds/system.jpg</icon>
+                        <thumb>file.png</thumb>
+                    </item>
+                </content>
+            </control>
+            
+        </control>		
+
+        <include condition="Skin.HasSetting(DebugGrid) | Skin.HasSetting(DebugInfo)">DebugInfo</include>
+    </controls>
+</window>

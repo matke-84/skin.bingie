@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- BINGIE -->
+<smartplaylist type="tvshows">
+    <name>Docuseries</name>
+    <match>all</match>
+    <rule field="genre" operator="startswith">
+        <value>Docu</value>
+    </rule>
+    <order direction="ascending">random</order>
+    <limit>200</limit>
+</smartplaylist>

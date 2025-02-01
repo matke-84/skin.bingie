@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<window>
+    <defaultcontrol always="true">1000</defaultcontrol>
+    <controls>
+		
+		<control type="button">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>100%</width>
+			<height>100%</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>Reg28</font>
+			<label/>
+			<textcolor/>
+			<focusedcolor/>
+			<disabledcolor/>
+			<texturefocus>colors/color_transparent.png</texturefocus>
+			<texturenofocus/>
+			<onclick>back</onclick>
+		</control>
+		
+        <include>DialogContextMenuModern</include>
+	
+	</controls>
+</window>

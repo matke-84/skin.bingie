@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- BINGIE -->
+<smartplaylist type="episodes">
+    <name>4K Ultra HD TV</name>
+    <match>all</match>
+    <rule field="videoresolution" operator="greaterthan">
+        <value>1080p</value>
+    </rule>
+	<order direction="ascending">sorttitle</order>
+    <limit>200</limit>
+</smartplaylist>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="tvshows">
+    <name>TV Action &amp; Adventure</name>
+    <match>all</match>
+    <rule field="genre" operator="contains">
+        <value>Action</value>
+        <value>Adventure</value>
+    </rule>
+    <rule field="votes" operator="greaterthan">
+        <value>100</value>
+    </rule>
+    <rule field="tag" operator="isnot">
+        <value>superhero</value>
+    </rule>
+    <order direction="descending">year</order>
+	<limit>200</limit>
+</smartplaylist>

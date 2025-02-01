@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Gangster Movies</name>
+    <match>all</match>
+    <rule field="tag" operator="is">
+        <value>gangster</value>
+        <value>gangster comedy</value>
+        <value>gangsters</value>
+        <value>mafia</value>
+        <value>mafia boss</value>
+        <value>mafia war</value>
+    </rule>
+    <rule field="genre" operator="isnot">
+        <value>Animation</value>
+    </rule>
+    <rule field="votes" operator="greaterthan">
+        <value>100</value>
+    </rule>
+    <order direction="descending">year</order>
+</smartplaylist>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="tvshows">
+    <name>Crime</name>
+    <match>all</match>
+    <rule field="genre" operator="is">
+        <value>Crime</value>
+    </rule>
+    <order direction="descending">year</order>
+	<limit>200</limit>
+</smartplaylist>

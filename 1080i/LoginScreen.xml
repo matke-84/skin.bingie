@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<window>
+    <defaultcontrol always="true">52</defaultcontrol>
+	
+    <controls>
+        <control type="group">
+			<include>animation_window_open_close</include>
+            <!--Global Background-->
+            <include>GlobalBackground</include>
+			<!-- Now Playing -->
+			<include>NowPlayingBackground</include>
+            <include>Header</include>
+
+            <!-- window title -->
+            <control type="label" id="2">
+                <visible>false</visible>
+            </control>
+
+            <!-- Who's watching -->
+            <control type="label">
+                <posy>122</posy>
+                <align>center</align>
+                <font>Reg46</font>
+                <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                <label>31172</label>
+            </control>
+            
+            <!--Login Screen-->
+            <control type="group">
+                <control type="list" id="52">
+                    <orientation>horizontal</orientation>
+                    <posx>836</posx>
+                    <posy>302</posy>
+                    <width>248</width>
+                    <height>500</height>
+                    <onleft>52</onleft>
+                    <onright>52</onright>
+                    <ondown>10034</ondown>
+					<onback>ActivateWindow(Home)</onback>
+                    <pagecontrol/>
+                    <scrolltime tween="cubic" easing="out">500</scrolltime>
+					<focusposition>1</focusposition>
+                    <movement>1</movement>
+                    <itemlayout height="320" width="300">
+						<control type="image">
+                            <posx>4</posx>
+                            <posy>4</posy>
+                            <width>240</width>
+                            <height>240</height>
+                            <texture background="true" fallback="defaultactor.png">$INFO[Listitem.Icon]</texture>
+                            <aspectratio>keep</aspectratio>
+                        </control>
+                        <control type="label">
+                            <align>center</align>
+							<posx>3</posx>
+                            <posy>273</posy>
+                            <width>240</width>
+                            <height>50</height>
+                            <textcolor fallback="white">$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                            <label>$INFO[ListItem.Label]</label>
+                            <font>Reg32</font>
+                            <aligny>center</aligny>
+                        </control>
+					</itemlayout>
+                    <focusedlayout height="320" width="300">
+                        <control type="group">                            
+							 <control type="image">
+								<visible>Control.HasFocus(52)</visible>
+                                <align>left</align>
+                                <aligny>top</aligny>
+                                <width>248</width>
+                                <height>248</height>
+                                <aspectratio>keep</aspectratio>
+                                <bordertexture colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">diffuse/panel2.png</bordertexture>
+                                <bordersize>4</bordersize>
+                                <texture background="true" fallback="defaultactor.png">$INFO[Listitem.Icon]</texture>
+                            </control>
+							<control type="image">
+								<visible>!Control.HasFocus(52)</visible>
+								<animation effect="fade" start="100" end="50" time="0" tween="sine" easing="inout" condition="!Control.HasFocus(52)">Conditional</animation> 
+                                <align>left</align>
+                                <aligny>top</aligny>
+                                <width>248</width>
+                                <height>248</height>
+                                <aspectratio>keep</aspectratio>
+                                <bordersize>4</bordersize>
+                                <texture background="true" fallback="defaultactor.png">$INFO[Listitem.Icon]</texture>
+                            </control>
+                            <control type="label">
+                                <align>center</align>
+								<posx>3</posx>
+                                <posy>267</posy>
+                                <width>240</width>
+                                <height>50</height>
+                                <textcolor fallback="white">$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                                <label>$INFO[ListItem.Label]</label>
+                                <font>Reg32</font>
+                                <aligny>center</aligny>
+                            </control>
+                        </control>
+                    </focusedlayout>
+                </control>
+            </control>
+						
+			<!-- Surprise Me -->
+			<control type="group">
+			<width>272</width>
+			<posx>-4</posx>
+			<control type="button" id="10034">
+                <posx>828</posx>
+                <bottom>340</bottom>
+                <width>272</width>
+                <height>64</height>
+                <onup>52</onup>
+				<ondown>10035</ondown>
+				<onback>ActivateWindow(Home)</onback>
+				<align>center</align>
+				<aligny>top</aligny>
+				<font>Reg32</font>
+				<textoffsetx>60</textoffsetx>
+				<textoffsety>8</textoffsety>
+				<textcolor>FFFFFFFF</textcolor>
+				<focusedcolor>FF000000</focusedcolor>
+                <texturefocus border="10" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">diffuse/panel-spot.png</texturefocus>
+                <texturenofocus border="10" colordiffuse="FF595959">diffuse/panel-spot.png</texturenofocus>
+                <onclick>ActivateWindow(1118)</onclick>
+            </control>
+			<control type="image">
+				<visible>Control.HasFocus(10034)</visible>
+				<posx>848</posx>
+                <bottom>353</bottom>
+				<width>37</width>
+				<height>37</height>
+				<texture>shortcuts/logonsomething.png</texture>
+			</control>
+			<control type="image">
+				<visible>!Control.HasFocus(10034)</visible>
+				<posx>848</posx>
+                <bottom>353</bottom>
+				<width>37</width>
+				<height>37</height>
+				<texture>shortcuts/something.png</texture>
+			</control>
+			<control type="label">
+				<posx>900</posx>
+                <bottom>348</bottom>
+				<width>185</width>
+				<height>50</height>
+				<label>31640</label>
+				<font>surprise</font>
+				<textcolor>$VAR[LogonColor]</textcolor>
+				<scroll>true</scroll>
+			</control>
+			</control>
+			<!-- Manage Profiles -->
+			<control type="button" id="10035">
+                <posx>930</posx>
+                <bottom>215</bottom>
+                <width>60</width>
+                <height>60</height>
+                <onup>10034</onup>
+				<onback>ActivateWindow(Home)</onback>
+				<align>center</align>
+				<aligny>top</aligny>
+                <texturefocus colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/edit.png</texturefocus>
+                <texturenofocus colordiffuse="FF7F7F7F">bingie/edit.png</texturenofocus>
+                <onclick>ActivateWindow(profiles)</onclick>
+            </control>
+        </control>
+    </controls>
+</window>

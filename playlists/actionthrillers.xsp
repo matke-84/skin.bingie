@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Action Thrillers</name>
+    <match>all</match>
+    <rule field="genre" operator="is">
+        <value>Action</value>
+    </rule>
+    <rule field="genre" operator="is">
+        <value>Thriller</value>
+    </rule>
+    <order direction="descending">year</order>
+</smartplaylist>

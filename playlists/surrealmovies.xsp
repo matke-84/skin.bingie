@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Surreal Movies</name>
+    <match>all</match>
+    <rule field="tag" operator="is">
+        <value>surreal</value>
+        <value>surrealism</value>
+    </rule>
+    <rule field="rating" operator="greaterthan">
+        <value>6.1</value>
+    </rule>
+    <order direction="descending">year</order>
+</smartplaylist>

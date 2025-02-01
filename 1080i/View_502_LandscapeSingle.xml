@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<includes>
+    <!--Default-->
+    <include name="View_502_LandscapeSingle">	
+		<control type="group">
+			<include>animation_view_change</include>
+			<defaultcontrol always="true">502</defaultcontrol>
+		    <visible>Control.IsVisible(502)</visible>
+			<!-- movie details -->
+			<control type="group">
+				<visible>Skin.HasSetting(LandscapeViewShowInfo)</visible>
+				<include>MovieDetailsTop</include>
+			</control>            
+            <!--CDART IMAGE-->
+            <control type="image">
+                <include condition="!Skin.HasSetting(View502_EnableZoomEffect)">CD_Width</include>
+                <include condition="Skin.HasSetting(View502_EnableZoomEffect)">CD_Width_Zoom</include>
+				<include condition="!Skin.HasSetting(View502_EnableZoomEffect)">CD_Height</include>
+                <include condition="Skin.HasSetting(View502_EnableZoomEffect)">CD_Height_Zoom</include>
+				<animation effect="slide" end="-23" condition="Skin.HasSetting(View502_EnableZoomEffect)">Conditional</animation>
+				<animation effect="slide" end="0,14" condition="Skin.HasSetting(View502_EnableZoomEffect)">Conditional</animation>
+                <bottom>157</bottom>
+                <posx>686</posx>
+                <texture background="true" diffuse="diffuse/cdmask_new.png" fallback="defaultcovers/cd_big.png">$VAR[DiscArtImage]</texture>
+                <aspectratio scalediffuse="false" align="center" aligny="top">scale</aspectratio>
+                <animation effect="fade" start="0" end="100" time="350" delay="1200" reversible="false" condition="!Container.OnNext + !Container.OnPrevious">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="350" delay="1200" reversible="false">Visible</animation>
+                <animation effect="rotate" end="-360" center="auto" time="20000" loop="true" reversible="false" condition="Skin.HasSetting(AnimateDiscArt)">Conditional</animation>
+				<visible>Skin.HasSetting(View502_ShowCDart) + Control.HasFocus(502) + !Container.OnNext + !Container.OnPrevious + !String.StartsWith(ListItem.Art(thumb),Default) + $EXP[IsMovieDBType] | Skin.HasSetting(View502_ShowCDart) + Control.HasFocus(502) + !Container.OnNext + !Container.OnPrevious + !String.StartsWith(ListItem.Art(thumb),Default) + Skin.HasSetting(EnableFakeDiscArt)</visible>
+                <visible>Integer.IsGreater(Container.NumItems,0)</visible>
+            </control>			
+			<control type="fixedlist" id="502">
+				<posx>62</posx>
+				<width>1796</width>
+				<height>336</height>
+				<bottom>148</bottom>
+				<onup>9000</onup>
+				<ondown condition="Skin.HasSetting(EnableQuickJump)">7000</ondown>
+                <ondown condition="!Skin.HasSetting(EnableQuickJump)">60</ondown>
+				<onleft>502</onleft>
+				<onright>502</onright>
+				<pagecontrol>60</pagecontrol>
+				<viewtype label="31431">thumbnail</viewtype>
+				<include content="View_Forced">
+					<param name="viewtype" value="$LOCALIZE[31431]" />
+				</include>
+				<orientation>horizontal</orientation>
+				<focusposition>1</focusposition>
+				<preloaditems>4</preloaditems>
+				<scrolltime tween="quadratic">400</scrolltime>
+				<visible>!Container.Content(files)</visible>
+				<itemlayout width="607" height="340">
+					<control type="group">
+                        <width>582</width>
+                        <height>334</height>
+                        <include>LandscapeLayout</include>
+                    </control>
+				</itemlayout>
+				<focusedlayout width="607" height="340" condition="Skin.HasSetting(View502_EnableZoomEffect)">
+                    <control type="group">
+						<animation effect="zoom" center="auto" start="100" end="108" time="160" tween="quadratic" condition="Skin.HasSetting(View502_EnableZoomEffect)">Focus</animation>
+                        <width>582</width>
+                        <height>334</height>
+                        <include>LandscapeLayoutFocus</include>
+                    </control>
+				</focusedlayout>
+				<focusedlayout width="607" height="340" condition="!Skin.HasSetting(View502_EnableZoomEffect)">
+                    <control type="group">
+                        <width>582</width>
+                        <height>334</height>
+                        <include>LandscapeLayout</include>
+                    </control>
+				</focusedlayout>
+			</control>	
+			<include content="Bingie_Main_View_Fixed_Frame">
+				<visible>!Skin.HasSetting(View502_EnableZoomEffect) + Integer.IsGreater(Container(502).NumItems,0) + Control.HasFocus(502)</visible>
+                <param name="containerid" value="502" />
+                <param name="top" value="596" />
+                <param name="width" value="582" />
+                <param name="height" value="334" />
+                <texture background="true" border="12">$INFO[Skin.String(thumbsborder_focused),bingie/border/thumb_fo_,.png]</texture>
+				<bordersize>2</bordersize>
+				<posx>669</posx>
+            </include>			
+			<!--horizontal Scrollbar-->
+			<control type="group">
+				<control type="scrollbar" id="60">
+					<texturesliderbackground border="5" colordiffuse="$INFO[Skin.String(ScrollbarBackgroundColor)]">scrollbar/texturesliderbar_small.png</texturesliderbackground>
+					<texturesliderbar colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]" border="5">scrollbar/texturesliderbar_small.png</texturesliderbar>
+					<texturesliderbarfocus colordiffuse="$INFO[Skin.String(ScrollbarFocusedColor)]" border="5">scrollbar/texturesliderbar_small.png</texturesliderbarfocus>
+					<textureslidernib colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]">scrollbar/texturesliderbar_nib.png</textureslidernib>
+					<textureslidernibfocus colordiffuse="$INFO[Skin.String(ScrollbarFocusedColor)]">scrollbar/texturesliderbar_nib.png</textureslidernibfocus>
+					<visible>Control.IsVisible(502) + Integer.IsGreater(Container.NumItems,0)</visible>
+					<left>70</left>
+					<bottom>0</bottom>
+					<width>1780</width>
+					<height>10</height>
+					<onup>502</onup>
+					<onleft>60</onleft>
+					<onright>60</onright>
+					<orientation>horizontal</orientation>
+					<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] + !Control.IsVisible(7002)">Conditional</animation>
+					<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] | Control.IsVisible(7002)">Conditional</animation>
+				</control>
+			</control>			
+		</control>
+	</include>
+	<include name="CD_Width">
+		<width>548</width>
+	</include>
+	<include name="CD_Width_Zoom">
+		<width>594</width>
+	</include>
+	<include name="CD_Height">
+		<height>548</height>
+	</include>
+	<include name="CD_Height_Zoom">
+		<height>594</height>
+	</include>		
+</includes>

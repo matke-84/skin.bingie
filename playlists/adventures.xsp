@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Adventures</name>
+    <match>all</match>
+    <rule field="genre" operator="is">
+        <value>Adventure</value>
+    </rule>
+    <rule field="rating" operator="greaterthan">
+        <value>6.4</value>
+    </rule>
+    <rule field="tag" operator="isnot">
+        <value>superhero</value>
+    </rule>
+    <order direction="descending">year</order>
+</smartplaylist>

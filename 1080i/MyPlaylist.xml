@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<window>
+    <defaultcontrol always="true">5000</defaultcontrol>
+    <include>allViewIds</include>
+	
+	<onunload>ClearProperty(ShowViewSubMenu,Home)</onunload>
+    <controls>
+        <!-- Video Background -->
+        <include>GlobalBackground</include>
+		<!-- Now Playing -->
+		<include>NowPlayingBackground</include>
+		<!--Header-->
+        <include>Header</include>		
+		<!-- all Views -->
+        <include>allViews</include>
+		
+        <!--Sub Menu-->
+        <control type="group">
+			<include>SideBladeModern</include>
+           <!--Grouplist 9000-->
+            <control type="grouplist" id="9000">
+                <posx>21</posx>
+                <posy>185</posy>
+                <width>458</width>
+                <height>770</height>
+                <itemgap>3</itemgap>
+                <onleft>5000</onleft>
+                <onright>5000</onright>
+				<onright>ClearProperty(ShowViewSubMenu,Home)</onright>
+				<onleft>ClearProperty(ShowViewSubMenu,Home)</onleft>
+				<onback>ClearProperty(ShowViewSubMenu,Home)</onback>
+				<onback>5000</onback>
+                <onup>9000</onup>
+                <ondown>9000</ondown>
+                <orientation>vertical</orientation>
+                <control type="button" id="3">
+                    <!--Button Sort-->
+                    <include>SideBladeMenuButton</include>
+                    <align>left</align>
+                </control>
+                <control type="togglebutton" id="4">
+                    <!--Ascending-->
+                    <label>584</label>
+                    <altlabel>585</altlabel>
+                    <include>SideBladeMenuButton</include>
+					<alttexturefocus border="10" colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">diffuse/panel.png</alttexturefocus>
+					<alttexturenofocus/>
+                    <align>left</align>
+                </control>
+                <control type="radiobutton" id="20">
+                    <!--Shuffle-->
+                    <label>191</label>
+                    <include>SideBladeMenuButton</include>
+                    <align>left</align>
+                </control>
+                <control type="button" id="21">
+                    <!--Save-->
+                    <label>190</label>
+                    <include>SideBladeMenuButton</include>
+                    <align>left</align>
+                </control>
+                <control type="button" id="22">
+                    <!--Clear-->
+                    <label>192</label>
+                    <include>SideBladeMenuButton</include>
+                    <align>left</align>
+                </control>
+                <control type="button" id="23">
+                    <!--Play-->
+                    <label>208</label>
+                    <include>SideBladeMenuButton</include>
+                    <align>left</align>
+                </control>
+				
+				<control type="image" id="6201">
+                    <!--Seperator-->
+                    <width>458</width>
+                    <height>10</height>
+                    <align>left</align>
+                    <texture>common/menu-separator.png</texture>
+                </control>
+							
+				<include>SideBladeViewCommands</include>
+            </control>
+        </control>
+        <include condition="Skin.HasSetting(DebugGrid) | Skin.HasSetting(DebugInfo)">DebugInfo</include>
+    </controls>
+</window>

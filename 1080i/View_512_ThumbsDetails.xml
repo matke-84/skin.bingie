@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+  <include name="View_512_ThumbsDetails">
+    <control type="group">
+      <visible>Control.IsVisible(512)</visible>
+	  <include>animation_view_change</include>      
+      <include>MovieDetailsLeft</include>	  
+	  <control type="panel" id="512">
+        <animation effect="slide" end="-630" time="0" condition="Skin.HasSetting(View512_ShowInfoRight)">Conditional</animation>
+        <viewtype label="31439">icons</viewtype>
+          <include content="View_Forced">
+              <param name="viewtype" value="$LOCALIZE[31439]" />
+          </include>
+        <right>28</right>
+        <bottom>169</bottom>
+        <height>704</height>
+        <width>1212</width>
+        <orientation>vertical</orientation>
+        <onleft>9000</onleft>
+		<onleft>CancelAlarm(preview_delay,silent)</onleft>
+		<onleft>CancelAlarm(preview_delay,silent)</onleft>
+		<onleft condition="[!String.IsEmpty(ListItem.Trailer) + [String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | !String.Contains(ListItem.Trailer,plugin)] | String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | String.IsEmpty(ListItem.Trailer) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)] + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)] + Skin.HasSetting(View512_DetailsAutoTrailer)">PlayerControl(Stop)</onleft>
+		<onback>CancelAlarm(preview_delay,silent)</onback>
+		<onback condition="[!String.IsEmpty(ListItem.Trailer) + [String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | !String.Contains(ListItem.Trailer,plugin)] | String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | String.IsEmpty(ListItem.Trailer) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)] + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)] + Skin.HasSetting(View512_DetailsAutoTrailer)">PlayerControl(Stop)</onback>
+		<onback>ClearProperty(ListAnimation,home)</onback>
+        <onright condition="Skin.HasSetting(EnableQuickJump)">6000</onright>
+        <onright condition="!Skin.HasSetting(EnableQuickJump)">60</onright>
+        <onup>512</onup>
+        <ondown>512</ondown>
+        <preloaditems>4</preloaditems>
+        <pagecontrol>60</pagecontrol>
+		<scrolltime tween="quadratic">400</scrolltime>
+          <itemlayout height="176" width="297">
+            <control type="group">
+                <width>297</width>
+                <height>176</height>
+                <include>ThumbsViewLayoutSmall</include>
+            </control>
+        </itemlayout>
+        <focusedlayout height="176" width="297">
+			<control type="group">
+                <width>297</width>
+                <height>176</height>
+				<include>ThumbsViewLayoutFocusSmall</include>
+                <include condition="Skin.HasSetting(View512_DetailsAutoTrailer)">LibraryAutoTrailerStopButton</include>
+						<include content="LibraryAutoTrailerStartButton" condition="Skin.HasSetting(View512_DetailsAutoTrailer)">
+							<param name="interval" value="$INFO[Skin.String(details_auto_trailer_interval)]" />
+						</include>
+				<control type="button">
+					<visible>false</visible>	
+					<onfocus>AlarmClock(SetList,ClearProperty(ListAnimation,home),00:00,silent)</onfocus>
+					<onfocus>AlarmClock(SetList,SetProperty(ListAnimation,1,home),00:00,silent)</onfocus>					
+				</control>
+			</control>
+        </focusedlayout>
+ 	  </control>     	  	  
+	  <!--vertical Scollbar-->
+		<control type="scrollbar" id="60">
+			<visible>Control.IsVisible(512) + Integer.IsGreater(Container.NumItems,0)</visible>
+			<right>15</right>
+			<bottom>177</bottom>
+            <height>688</height>
+			<onup>60</onup>
+			<ondown>6000</ondown>
+			<onleft>509</onleft>
+			<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] + !Control.IsVisible(6002)">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] | Control.IsVisible(6002)">Conditional</animation>
+		</control>   	  
+    </control>			
+  </include>
+</includes>

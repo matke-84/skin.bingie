@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<includes>
+    <include name="View_526_Bingie_Main_Poster">
+        <control type="group">
+            <include>FullscreenDimensions</include>
+            <visible>Control.IsVisible(526)</visible>
+            <include>animation_view_change</include>
+
+            <include content="Bingie_Main_Spotlight_Section">
+                <param name="id" value="526" />
+            </include>
+
+            <!-- View 526 -->
+            <control type="group">
+				<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
+				<include>Animation_Right_Home</include>
+                <left>131</left>
+                <top>600</top>
+                <width>1660</width>
+                <!-- Content Header -->
+                <control type="label">
+                    <width>100%</width>
+                    <height>40</height>
+					<posx>7</posx>
+					<top>-29</top>
+                    <font>Bold31</font>
+                    <align>left</align>
+                    <textcolor>$INFO[Skin.String(BingieHeaderTextColor)]</textcolor>
+                    <label>$VAR[BingieMainContentHeader] $INFO[Container(526).NumItems,(,)]</label>
+                    <visible>Skin.HasSetting(EnableMediaCount) + Integer.IsGreater(Container(526).NumItems,0)</visible>
+					<visible>!String.IsEmpty(ListItem.DBID) + !Container.Content(episodes) + !Container.Content(seasons) + !String.Contains(ListItem.Path,plugin://)</visible>
+                </control>
+
+                <include condition="!Skin.HasSetting(View526_UseFixedLayout) | !Skin.HasSetting(View_526_HorizontalNavigation)" content="Bingie_Main_Poster_View">
+                    <param name="containerType" value="panel" />
+                </include>
+                <include condition="Skin.HasSetting(View526_UseFixedLayout) + Skin.HasSetting(View_526_HorizontalNavigation)" content="Bingie_Main_Poster_View">
+                    <param name="containerType" value="fixedlist" />
+                </include>
+               <include content="Bingie_Main_View_Fixed_Frame">
+                    <param name="visibility" value="Skin.HasSetting(View526_UseFixedLayout) + Skin.HasSetting(View_526_HorizontalNavigation)" />
+                    <param name="containerid" value="526" />
+                    <param name="top" value="11" />
+                    <param name="width" value="240" />
+                    <param name="height" value="330" />
+                    <texture background="true" border="12">$INFO[Skin.String(thumbsborder_focused),bingie/border/poster_fo_,.png]</texture>
+					<bordersize>2</bordersize>
+                </include>
+            </control>			
+			
+            <!-- scrollbar -->
+            <control type="group">
+                <control type="scrollbar" id="60">
+					<texturesliderbackground border="5" colordiffuse="$INFO[Skin.String(ScrollbarBackgroundColor)]">scrollbar/texturesliderbar_small.png</texturesliderbackground>
+					<texturesliderbar colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]" border="5">scrollbar/texturesliderbar_small.png</texturesliderbar>
+					<texturesliderbarfocus colordiffuse="$INFO[Skin.String(ScrollbarFocusedColor)]" border="5">scrollbar/texturesliderbar_small.png</texturesliderbarfocus>
+					<textureslidernib colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]">scrollbar/texturesliderbar_nib.png</textureslidernib>
+					<textureslidernibfocus colordiffuse="$INFO[Skin.String(ScrollbarFocusedColor)]">scrollbar/texturesliderbar_nib.png</textureslidernibfocus>
+                    <visible>Control.IsVisible(526) + Integer.IsGreater(Container.NumItems,0) + !Skin.HasSetting(View_526_HorizontalNavigation)</visible>
+                    <width>10</width>
+					<height>461</height>
+                    <right>0</right>
+                    <bottom>0</bottom>
+                    <onleft>526</onleft>
+                    <orientation>vertical</orientation>
+                    <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+                    <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+                </control>
+                <control type="scrollbar" id="60">
+					<texturesliderbackground border="5" colordiffuse="$INFO[Skin.String(ScrollbarBackgroundColor)]">scrollbar/texturesliderbar_small.png</texturesliderbackground>
+					<texturesliderbar colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]" border="5">scrollbar/texturesliderbar_small.png</texturesliderbar>
+					<texturesliderbarfocus colordiffuse="$INFO[Skin.String(ScrollbarFocusedColor)]" border="5">scrollbar/texturesliderbar_small.png</texturesliderbarfocus>
+					<textureslidernib colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]">scrollbar/texturesliderbar_nib.png</textureslidernib>
+					<textureslidernibfocus colordiffuse="$INFO[Skin.String(ScrollbarFocusedColor)]">scrollbar/texturesliderbar_nib.png</textureslidernibfocus>
+                    <visible>Control.IsVisible(526) + Integer.IsGreater(Container.NumItems,0) + Skin.HasSetting(View_526_HorizontalNavigation)</visible>
+                    <include content="left">
+                        <param name="left" value="140" />
+                    </include>
+                    <left>70</left>
+                    <width>1650</width>
+                    <height>10</height>
+                    <bottom>0</bottom>
+                    <onup>526</onup>
+                    <orientation>horizontal</orientation>
+                    <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+                    <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+                </control>
+            </control>
+        </control>
+    </include>
+
+    <!-- Container -->
+    <include name="Bingie_Main_Poster_View">
+        <control type="$PARAM[containerType]" id="526">
+            <viewtype label="31027">poster</viewtype>
+            <include content="View_Forced">
+                <param name="viewtype" value="$LOCALIZE[31027]" />
+            </include>
+            <top>11</top>
+            <height>469</height>
+            <width>1666</width>
+            <itemgap>0</itemgap>
+            <include condition="Skin.HasSetting(View_526_HorizontalNavigation)">navigation_horizontal</include>
+            <orientation>vertical</orientation>
+            <include>ScrollTime</include>
+            <preloaditems>4</preloaditems>
+            <pagecontrol>60</pagecontrol>
+            <onright condition="!Skin.HasSetting(View_526_HorizontalNavigation) + Skin.HasSetting(EnableQuickJump) + Control.IsVisible(6002)">6000</onright>
+            <onright condition="!Skin.HasSetting(View_526_HorizontalNavigation) + Skin.HasSetting(EnableQuickJump) + !Control.IsVisible(6002)">noop</onright>
+            <onright condition="!Skin.HasSetting(View_526_HorizontalNavigation) + !Skin.HasSetting(EnableQuickJump)">60</onright>
+            <onright condition="Skin.HasSetting(View_526_HorizontalNavigation)">526</onright>
+			<onleft>9000</onleft>
+            <onup condition="!Skin.HasSetting(View_526_HorizontalNavigation)">526</onup>
+            <ondown condition="Skin.HasSetting(View_526_HorizontalNavigation) + Skin.HasSetting(EnableQuickJump) + Control.IsVisible(7002)">7000</ondown>
+            <ondown condition="Skin.HasSetting(View_526_HorizontalNavigation) + Skin.HasSetting(EnableQuickJump) + !Control.IsVisible(7002)">noop</ondown>
+            <ondown condition="Skin.HasSetting(View_526_HorizontalNavigation) + !Skin.HasSetting(EnableQuickJump)">60</ondown>
+            <ondown condition="!Skin.HasSetting(View_526_HorizontalNavigation)">526</ondown>
+			<onleft>CancelAlarm(preview_delay,silent)</onleft>
+			<onleft condition="[!String.IsEmpty(ListItem.Trailer) + [String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | !String.Contains(ListItem.Trailer,plugin)] | String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | String.IsEmpty(ListItem.Trailer) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)] + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)] + Skin.HasSetting(View526_DetailsAutoTrailer)">PlayerControl(Stop)</onleft>
+			<onback>CancelAlarm(preview_delay,silent)</onback>
+			<onback condition="[!String.IsEmpty(ListItem.Trailer) + [String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | !String.Contains(ListItem.Trailer,plugin)] | String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | String.IsEmpty(ListItem.Trailer) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)] + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)] + Skin.HasSetting(View526_DetailsAutoTrailer)">PlayerControl(Stop)</onback>
+            <itemlayout height="328" width="238">
+                <control type="group">
+                    <width>240</width>
+                    <height>330</height>
+                    <include>PosterPanelBingieLayout</include>
+                </control>
+            </itemlayout>
+            <focusedlayout height="328" width="238">
+                <control type="group">
+                    <width>240</width>
+                    <height>330</height>
+                    <include condition="!Skin.HasSetting(View526_UseFixedLayout) | !Skin.HasSetting(View_526_HorizontalNavigation)">PosterPanelBingieLayoutFocus</include>
+					<include condition="Skin.HasSetting(View526_UseFixedLayout) + Skin.HasSetting(View_526_HorizontalNavigation)">PosterPanelBingieLayout</include>
+                    <control type="group">
+                        <!--Watched Overlay-->
+                        <right>8</right>
+                        <top>8</top>
+                        <include>WatchedIndicatorNormal</include>
+                    </control>
+                    <include condition="Skin.HasSetting(View526_DetailsAutoTrailer)">LibraryAutoTrailerStopButton</include>
+						<include content="LibraryAutoTrailerStartButton" condition="Skin.HasSetting(View526_DetailsAutoTrailer)">
+							<param name="interval" value="$INFO[Skin.String(details_auto_trailer_interval)]" />
+						</include>
+                </control>
+				<!--Top 250 1-->
+				<control type="image">
+				<visible>!Container.Content(episodes) + !Container.Content(seasons) + !String.IsEmpty(Control.GetLabel(8231)) + !Skin.HasSetting(DisableTop250Indicator) + Skin.HasSetting(EnableRatings)</visible>
+				<posy>8</posy>
+				<left>8</left>
+                <height>60</height>
+                <width>50</width>
+				<aspectratio>keep</aspectratio>
+                <texture>bingie/top250p.png</texture>
+		        </control>
+            </focusedlayout>
+        </control>
+    </include>
+</includes>

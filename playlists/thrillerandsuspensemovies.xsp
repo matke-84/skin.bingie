@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- BINGIE -->
+<smartplaylist type="movies">
+    <name>Thriller &amp; Suspense Movies</name>
+    <match>all</match>
+    <rule field="genre" operator="contains">
+        <value>Thriller</value>
+        <value>Suspense</value>
+    </rule>
+    <order direction="ascending">random</order>
+    <limit>200</limit>
+</smartplaylist>

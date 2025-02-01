@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<includes>
+    <include name="View_50_List">
+        <!--Panel-->
+		
+        <control type="group">
+            <visible>Control.IsVisible(50)</visible>
+            <visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
+            <include>animation_view_change</include>			
+        
+        <!--View 50-->
+        <control type="group">
+			<animation effect="slide" end="-514" time="0" condition="Skin.HasSetting(View50_SwapPoster)">Conditional</animation>
+            <visible>Control.IsVisible(50)</visible>
+			<bottom>13%</bottom>
+            <height>736</height>					 
+            <!-- ID="50" -->
+            <control type="list" id="50">
+                <posy>11</posy>
+                <posx>25</posx>
+                <width>1880</width>
+                <height>722</height>
+                <onleft>9000</onleft>
+                <onright condition="Skin.HasSetting(EnableQuickJump)">6000</onright>
+                <onright condition="!Skin.HasSetting(EnableQuickJump)">60</onright>
+                <onup>50</onup>
+                <ondown>50</ondown>
+                <pagecontrol>60</pagecontrol>
+                <viewtype label="31443">list</viewtype>
+                <include content="View_Forced">
+                    <param name="viewtype" value="$LOCALIZE[31443]" />
+                </include>
+                <scrolltime tween="quadratic">400</scrolltime>
+                <itemlayout width="1286" height="63">
+                    <control type="label">
+                        <!--Label 1-->
+                        <posx>563</posx>
+						<posy>0</posy>
+                        <width>1234</width>
+                        <font>Reg28</font>
+                        <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
+                        <label>$VAR[ListTitle]</label>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="1286" height="90">
+                    <control type="image">
+						<posx>549</posx>
+						<posy>0</posy>
+						<height>90</height>
+						<width>1286</width>
+						<texture border="10">diffuse/panel.png</texture>
+						<colordiffuse>$INFO[Skin.String(ViewDetailsFocusColor)]</colordiffuse>
+					</control>
+                    <control type="label">
+                        <!--Label 1-->
+                        <posx>563</posx>
+						<posy>-2</posy>
+                        <width>1234</width>
+                        <height>55</height>
+                        <font>Reg36</font>
+						<scroll>true</scroll>
+                        <textcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</textcolor>
+                        <label>$VAR[ListTitle]</label>
+                    </control>
+                    <control type="label">
+                        <!--Label 2-->
+                        <posx>563</posx>
+                        <posy>49</posy>
+                        <width>1234</width>
+                        <height>30</height>
+                        <font>Reg28</font>
+						<scroll>true</scroll>
+                        <textcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</textcolor>
+                        <label>$VAR[ListDetails]</label>
+                        <visible>!String.IsEqual(ListItem.Label,..)</visible>
+                    </control>				
+                </focusedlayout>             		
+            </control>
+        
+        <control type="group">
+			<animation effect="slide" end="1830" time="0" condition="Skin.HasSetting(View50_SwapPoster) + Control.IsVisible(50)">Conditional</animation>
+            <visible>Integer.IsGreater(Container.NumItems,0)</visible>                       
+            <!-- poster images -->
+            <control type="group">
+                <!--Poster-->
+                <visible>Integer.IsGreater(Container.NumItems,0)</visible>
+				<posy>3</posy>
+				<posx>52</posx>
+				<height>736</height>
+				<width>500</width>
+                <bordersize>8</bordersize>
+				<control type="image">
+					<aspectratio align="center" aligny="center" scalediffuse="true">stretch</aspectratio>
+					<texture background="true" diffuse="diffuse/poster_big.png" fallback="DefaultVideo.png">$VAR[PosterThumb]</texture>
+					<bordersize>8</bordersize>
+                    <visible>[!String.IsEmpty(ListItem.Art(poster)) | !String.IsEmpty(ListItem.Art(tvshow.poster))]</visible>
+					<fadetime>350</fadetime>
+				</control>
+                <control type="image">
+					<aspectratio align="center" aligny="top" scalediffuse="true">keep</aspectratio>
+					<texture background="true" diffuse="diffuse/panel2.png" fallback="DefaultVideo.png">$VAR[PosterThumb]</texture>
+					<bordersize>8</bordersize>
+                    <visible>String.IsEmpty(ListItem.Art(poster)) + String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
+					<fadetime>350</fadetime>
+				</control>
+                <control type="group">
+                    <right>8</right>
+                    <posy>8</posy>
+                    <include>WatchedIndicatorLarge</include>
+                </control>
+            </control>
+        </control>
+        </control>
+	   	<!--vertical Scollbar-->
+		<control type="scrollbar" id="60">
+			<visible>Control.IsVisible(50) + Integer.IsGreater(Container.NumItems,0)</visible>
+			<right>15</right>
+			<posy>215</posy>
+			<height>720</height>
+			<onup>60</onup>
+			<ondown>6000</ondown>
+			<onleft>50</onleft>
+			<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] + !Control.IsVisible(6002)">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] | Control.IsVisible(6002)">Conditional</animation>
+		</control>
+      </control>
+ 	</include>
+</includes>

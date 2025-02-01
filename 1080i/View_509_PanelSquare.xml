@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+  <include name="View_509_PanelSquare">
+    <control type="group">
+      <visible>Control.IsVisible(509)</visible>
+      <include>animation_view_change</include>
+      <control type="panel" id="509">
+        <viewtype label="31436">icons</viewtype>
+          <include content="View_Forced">
+              <param name="viewtype" value="$LOCALIZE[31436]" />
+          </include>
+        <posx>50</posx>
+        <bottom>137</bottom>
+        <width>1840</width>
+        <height>780</height>
+        <orientation>vertical</orientation>
+        <onleft>9000</onleft>
+        <onright condition="Skin.HasSetting(EnableQuickJump)">6000</onright>
+        <onright condition="!Skin.HasSetting(EnableQuickJump)">60</onright>
+        <onup>509</onup>
+        <ondown>509</ondown>
+        <preloaditems>4</preloaditems>
+        <pagecontrol>60</pagecontrol>
+        <scrolltime tween="quadratic">400</scrolltime>
+          <itemlayout height="260" width="260">
+            <control type="group">
+                <width>260</width>
+                <height>260</height>
+                <include>SquarePosterPanelLayout</include>
+            </control>
+        </itemlayout>
+        <focusedlayout height="260" width="260">
+		  <control type="group">
+                <width>260</width>
+                <height>260</height>
+                <include>SquarePosterPanelLayoutFocus</include>
+            </control>
+        </focusedlayout>
+	  </control>
+      
+	  <!--vertical Scollbar-->
+		<control type="scrollbar" id="60">
+			<visible>Control.IsVisible(509) + Integer.IsGreater(Container.NumItems,0)</visible>
+			<right>15</right>
+			<bottom>145</bottom>
+			<height>764</height>
+			<onup>60</onup>
+			<ondown>6000</ondown>
+			<onleft>509</onleft>
+			<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] + !Control.IsVisible(6002)">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] | Control.IsVisible(6002)">Conditional</animation>
+		</control>	  	
+    </control>
+  </include>
+</includes>

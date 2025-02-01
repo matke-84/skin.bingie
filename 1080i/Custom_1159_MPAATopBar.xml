@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- BINGIE -->
+<window type="dialog" id="1159">
+    <animation effect="fade" delay="600" start="0" end="100" time="400">WindowOpen</animation>
+    <animation effect="fade" start="100" end="0" time="500">WindowClose</animation>
+    <visible>!String.IsEmpty(Window(Home).Property(DialogMPAATopBar)) + String.IsEmpty(Window(Home).Property(DisableOSDCast))</visible>
+    <onload>AlarmClock(CloseMPAATopBar,ClearProperty(DialogMPAATopBar,Home),00:07,silent)</onload>
+	<onload>Skin.Reset(EnableOSDInfo)</onload>
+	<onload>Skin.Reset(EnableOSDCastInfo)</onload>
+	<onload>Skin.Reset(EnableOSDCrewInfo)</onload>
+    
+    <controls>
+        <control type="group">
+            <visible>!Window.IsActive(videoosd) + Window.IsVisible(fullscreenvideo)</visible>
+            <visible>!String.IsEmpty(VideoPlayer.MPAA) + !String.Contains(VideoPlayer.MPAA,not rated) + !String.Contains(VideoPlayer.MPAA,n/a) + !String.Contains(VideoPlayer.MPAA,nr)</visible>
+			<width>auto</width>
+			<height>290</height>
+			<!-- Vignette Mask -->
+			<control type="image">
+				<width>100%</width>
+				<height>100%</height>
+				<texture background="true" flipy="true">overlays/osd_gradient.png</texture>
+			</control>
+            <control type="grouplist">
+                <left>85</left>
+                <top>70</top>
+                <height>72</height>
+                <orientation>horizontal</orientation>
+                <itemgap>20</itemgap>
+                <usecontrolcoords>true</usecontrolcoords>
+                <control type="image">
+                    <animation effect="zoom" end="100,1200" easing="inout" tween="sine" time="350" delay="700" condition="true">WindowOpen</animation>
+                    <width>6</width>
+                    <height>6</height>
+                    <texture>diffuse/panel2.png</texture>
+                    <colordiffuse>FFE50914</colordiffuse>
+                    <aspectratio>stretch</aspectratio>
+                </control>
+                <control type="label">
+					<animation effect="fade" start="0" end="100" time="350" delay="1000" condition="true">WindowOpen</animation>
+                    <width>auto</width>
+                    <height>100%</height>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <font>Reg34</font>
+                    <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
+                    <shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
+                    <label>$VAR[VideoRatingTopBarLabel]</label>
+                </control>
+            </control>
+        </control>
+    </controls>
+</window>

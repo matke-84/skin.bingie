@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Courtroom Dramas</name>
+    <match>all</match>
+    <rule field="genre" operator="is">
+        <value>Drama</value>
+    </rule>
+    <rule field="tag" operator="contains">
+        <value>court case</value>
+        <value>courthouse</value>
+        <value>courtroom</value>
+        <value>courtroom drama</value>
+        <value>lawsuit</value>
+    </rule>
+    <rule field="genre" operator="isnot">
+        <value>comedy</value>
+    </rule>
+    <rule field="votes" operator="greaterthan">
+        <value>100</value>
+    </rule>
+    <order direction="descending">year</order>
+</smartplaylist>

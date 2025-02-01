@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="9999">
+	<defaultcontrol always="true">9001</defaultcontrol>
+	<controls>
+		<include>DialogOverlayExtra</include>
+		<control type="group">
+			<posx>360</posx>
+			<posy>255</posy>
+			<include>animation_window_open_close</include>
+			<control type="group">
+				<control type="image">
+					<description>Background Image</description>
+					<posx>-20</posx>
+					<posy>-20</posy>
+					<width>1240</width>
+					<height>550</height>
+					<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+					<texture>diffuse/panel2.png</texture>
+				</control>
+				<control type="image">
+					<description>Background Image</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>1200</width>
+					<height>510</height>
+					<texture border="10">dialogs/trakt/trakt-auth-bg.png</texture>
+				</control>
+				<control type="label">
+					<description>header label</description>
+					<posx>1183</posx>
+					<posy>20</posy>
+					<width>735</width>
+					<height>40</height>
+					<label>$ADDON[script.trakt 32153]</label>
+					<align>right</align>
+					<aligny>center</aligny>
+					<font>Bold38</font>
+					<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+				</control>
+			</control>
+			<control type="group">
+				<control type="label" id="203">
+					<description>Instructions Label</description>
+					<posx>395</posx>
+					<posy>110</posy>
+					<width>370</width>
+					<height>80</height>
+					<font>Bold32</font>
+					<textcolor>black</textcolor>
+					<wrapmultiline>true</wrapmultiline>
+					<label/><!-- this is set from the code -->
+					<align>center</align>
+					<aligny>center</aligny>
+				</control>
+				<control type="label" id="204">
+					<description>Code Label</description>
+					<posx>395</posx>
+					<posy>200</posy>
+					<width>370</width>
+					<height>80</height>
+					<font>Bold34</font>
+					<label/><!-- this is set from the code -->
+					<textcolor>FFED2224</textcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+				</control>
+				<control type="label" id="205">
+					<description>Warning Label</description>
+					<posx>395</posx>
+					<posy>300</posy>
+					<width>370</width>
+					<height>80</height>
+					<font>Reg30</font>
+					<wrapmultiline>true</wrapmultiline>
+					<label/><!-- this is set from the code -->
+					<textcolor>black</textcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+				</control>
+			</control>
+			<control type="image">
+				<description>QR Code</description>
+				<posx>863</posx>
+				<posy>90</posy>
+				<width>336</width>
+				<height>336</height>
+				<texture>dialogs/trakt/qr_code.png</texture>
+				<aspectratio>keep</aspectratio>
+			</control>
+			<control type="grouplist" id="9001">
+				<posx>0</posx>
+				<posy>440</posy>
+				<width>1200</width>
+				<height>60</height>
+				<align>center</align>
+				<itemgap>45</itemgap>
+				<orientation>horizontal</orientation>
+				<control type="button" id="201">
+					<description>Later Button</description>
+					<width>320</width>
+					<height>60</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$ADDON[script.trakt 32155]</label>
+					<textcolor fallback="white">$INFO[Skin.String(ButtonTextColor)]</textcolor>
+					<focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+					<disabledcolor>aaffffff</disabledcolor>
+					<pulseonselect>false</pulseonselect>
+			        <textoffsetx>10</textoffsetx>
+				</control>
+				<control type="button" id="202">
+					<description>Never Button</description>
+					<width>320</width>
+					<height>60</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$ADDON[script.trakt 32156]</label>
+					<textcolor fallback="white">$INFO[Skin.String(ButtonTextColor)]</textcolor>
+					<focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+					<disabledcolor>aaffffff</disabledcolor>
+					<pulseonselect>false</pulseonselect>
+			        <textoffsetx>10</textoffsetx>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

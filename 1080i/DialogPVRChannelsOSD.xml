@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<window>
+    <defaultcontrol always="true">11</defaultcontrol>
+    <controls>
+		
+        <!-- small channels OSD -->
+        <include condition="Skin.HasSetting(small_pvrchannelsosd)">DialogPVRChannelsOSD_Small</include>
+        
+        <!-- large channels osd -->
+        <include condition="!Skin.HasSetting(small_pvrchannelsosd)">DialogPVRChannelsOSD_Large</include>
+        
+    </controls>
+</window>

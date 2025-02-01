@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- BINGIE -->
+<smartplaylist type="tvshows">
+    <name>In Progress TV Shows</name>
+    <match>all</match>
+    <rule field="inprogress" operator="true" />
+    <limit>200</limit>
+    <order direction="descending">lastplayed</order>
+</smartplaylist>

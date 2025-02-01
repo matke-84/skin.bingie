@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Film Noir</name>
+    <match>all</match>
+    <rule field="tag" operator="is">
+        <value>noir</value>
+    </rule>
+    <order direction="descending">year</order>
+</smartplaylist>

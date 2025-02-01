@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1121">
+    <defaultcontrol>7</defaultcontrol>
+	<onunload>ClearProperty(header,1121)</onunload>
+	<onunload>ClearProperty(textbox,1121)</onunload>
+	<onunload>ClearProperty(osdheader,1121)</onunload>
+	<onunload>ClearProperty(osdtextbox,1121)</onunload>
+    <controls>
+        <!--Dialog Overlay-->
+        <include>DialogOverlayExtra</include>
+		
+        <!--Dialog Tex Viewer-->
+        <control type="group">
+            <include>animation_window_open_close</include>
+			
+			<control type="image">
+                <!--Panel-->
+                <posx>445</posx>
+                <posy>150</posy>
+                <width>1030</width>
+                <height>771</height>
+                <texture border="15">diffuse/bgpanel.png</texture>
+				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>				
+            </control>
+			
+			<control type="image">
+                <!--Panel-->
+                 <posx>445</posx>
+                <posy>150</posy>
+                <width>1030</width>
+                <height>771</height>
+				<texture border="15">diffuse/bgpanel.png</texture>
+				<bordersize>10</bordersize>
+				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>				
+            </control>
+					
+			 <control type="label">
+                <description>Heading</description>
+                <posx>473</posx>
+                <posy>172</posy>
+                <width>974</width>
+                <label>$VAR[CustomPlotHeader]</label>
+                <include>DialogHeader</include>
+                <align>center</align>
+            </control>
+			
+            <control type="image">
+                <posx>479</posx>
+                <posy>245</posy>
+                <width>962</width>
+                <height>561</height>
+                <texture border="5">dialogs/default/inner.png</texture>
+            </control>
+						
+            <control type="textbox" id="5">
+                <description>textarea</description>
+                <posx>495</posx>
+                <posy>255</posy>
+                <width>930</width>
+                <height>545</height>
+                <label>$VAR[CustomPlotTextbox]</label>
+                <include>DialogLabel</include>
+                <align>left</align>
+                <pagecontrol>60</pagecontrol>
+            </control>
+			
+            <control type="scrollbar" id="60">
+				<texturesliderbackground border="5" colordiffuse="$INFO[Skin.String(ScrollbarBackgroundColor)]">scrollbar/texturesliderbar_small.png</texturesliderbackground>
+				<texturesliderbar colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]" border="5">scrollbar/texturesliderbar_small.png</texturesliderbar>
+				<texturesliderbarfocus colordiffuse="$INFO[Skin.String(ScrollbarFocusedColor)]" border="5">scrollbar/texturesliderbar_small.png</texturesliderbarfocus>
+				<textureslidernib colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]">scrollbar/texturesliderbar_nib.png</textureslidernib>
+				<textureslidernibfocus colordiffuse="$INFO[Skin.String(ScrollbarFocusedColor)]">scrollbar/texturesliderbar_nib.png</textureslidernibfocus>
+                <posx>1448</posx>
+                <posy>247</posy>
+                <height>557</height>
+				<width>10</width>
+                <onleft>8000</onleft>
+                <onright>8000</onright>
+				<onback>8000</onback>
+                <showonepage>false</showonepage>
+                <orientation>vertical</orientation>
+                <animation effect="fade" start="75" end="0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(60)">Conditional</animation>
+            </control>
+			
+            <control type="group" id="8000">
+                <posx>466</posx>
+                <posy>809</posy>
+                <control type="button" id="7">
+                    <posx>5</posx>
+					<posy>9</posy>
+                    <description>Close</description>
+                    <label>$LOCALIZE[222]</label>
+                    <include>DialogButtonOther</include>
+                    <onclick>PreviousMenu</onclick>
+                    <onleft>60</onleft>
+                    <onright>60</onright>
+                    <onup>60</onup>
+                    <ondown>60</ondown>
+                    <animation effect="fade" start="100" end="75" time="0" condition="!Control.IsEnabled(7)">Conditional</animation>
+                </control>
+            </control>
+			
+        </control>
+    </controls>
+</window>

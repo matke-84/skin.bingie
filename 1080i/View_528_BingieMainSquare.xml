@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<includes>
+    <include name="View_528_Bingie_Main_Square">
+        <control type="group">
+            <include>FullscreenDimensions</include>
+            <visible>Control.IsVisible(528)</visible>
+            <include>animation_view_change</include>
+
+            <include content="Bingie_Main_Spotlight_Section">
+                <param name="id" value="528" />
+            </include>
+
+            <!-- View 528 -->
+            <control type="group">
+                <left>131</left>
+                <top>600</top>
+                <width>1660</width>
+                <!-- Content Header -->
+                <control type="label">
+                    <width>100%</width>
+                    <height>40</height>
+					<posx>7</posx>
+					<top>11</top>
+                    <font>Bold31</font>
+                    <align>left</align>
+                    <textcolor>$INFO[Skin.String(BingieHeaderTextColor)]</textcolor>
+                    <label>$VAR[BingieMainContentHeader] $INFO[Container(528).NumItems,(,)]</label>
+                    <visible>Skin.HasSetting(EnableMediaCount) + Integer.IsGreater(Container(528).NumItems,0)</visible>
+					<visible>!String.IsEmpty(ListItem.DBID) + !Container.Content(episodes) + !Container.Content(seasons) + !String.Contains(ListItem.Path,plugin://)</visible>
+                </control>
+
+                <include content="Bingie_Main_Square_View">
+                    <param name="containerType" value="panel" />
+                </include>
+            </control>
+			
+		   <!-- scrollbar -->
+            <control type="group">
+                <control type="scrollbar" id="60">
+					<texturesliderbackground border="5" colordiffuse="$INFO[Skin.String(ScrollbarBackgroundColor)]">scrollbar/texturesliderbar_small.png</texturesliderbackground>
+					<texturesliderbar colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]" border="5">scrollbar/texturesliderbar_small.png</texturesliderbar>
+					<texturesliderbarfocus colordiffuse="$INFO[Skin.String(ScrollbarFocusedColor)]" border="5">scrollbar/texturesliderbar_small.png</texturesliderbarfocus>
+					<textureslidernib colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]">scrollbar/texturesliderbar_nib.png</textureslidernib>
+					<textureslidernibfocus colordiffuse="$INFO[Skin.String(ScrollbarFocusedColor)]">scrollbar/texturesliderbar_nib.png</textureslidernibfocus>
+                    <visible>Control.IsVisible(528) + Integer.IsGreater(Container.NumItems,0)</visible>
+                    <width>10</width>
+					<height>421</height>
+                    <right>0</right>
+                    <bottom>0</bottom>
+                    <onleft>528</onleft>
+                    <orientation>vertical</orientation>
+                    <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+                    <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+                </control>
+            </control>
+        </control>
+    </include>
+
+    <!-- Container -->
+    <include name="Bingie_Main_Square_View">
+        <control type="$PARAM[containerType]" id="528">
+            <viewtype label="31122">panel</viewtype>
+            <include content="View_Forced">
+                <param name="viewtype" value="$LOCALIZE[31122]" />
+            </include>
+            <focusedposition>0</focusedposition>
+            <top>51</top>
+            <width>1768</width>
+            <height>470</height>
+            <orientation>vertical</orientation>
+            <itemgap>0</itemgap>
+            <preloaditems>4</preloaditems>
+            <pagecontrol>60</pagecontrol>
+            <include>ScrollTime</include>
+            <onright condition="Skin.HasSetting(EnableQuickJump) + Control.IsVisible(6002)">6000</onright>
+            <onright condition="Skin.HasSetting(EnableQuickJump) + !Control.IsVisible(6002)">noop</onright>
+            <onright condition="!Skin.HasSetting(EnableQuickJump)">60</onright>
+			<onleft>9000</onleft>
+            <onup>528</onup>
+            <ondown>528</ondown>
+            <itemlayout height="238" width="238">
+                <control type="group">
+                    <width>240</width>
+                    <height>240</height>
+                    <include>SquarePosterPanelLayout</include>
+                </control>
+            </itemlayout>
+            <focusedlayout height="238" width="238">
+                <control type="group">
+                    <width>240</width>
+                    <height>240</height>
+                    <include>SquarePosterPanelLayoutFocus</include>
+                </control>
+            </focusedlayout>
+        </control>
+    </include>
+</includes>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<window>
+    <defaultcontrol always="true">100</defaultcontrol>
+    <include>DefaultSkinSettings</include>
+	<onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=900&amp;group=mainmenu|powermenu|searchmenu)</onunload>
+	<onunload condition="!Skin.HasSetting(EnableRatings)">Skin.SetBool(TMDbHelper.DisableRatings)</onunload>
+    <onunload condition="Skin.HasSetting(EnableRatings)">Skin.Reset(TMDbHelper.DisableRatings)</onunload>
+    <controls>
+        <!--Global Background-->
+        <include>GlobalBackground</include>
+		<!-- Now Playing -->
+		<include>NowPlayingBackground</include>
+		
+        <!--Header-->
+        <include>Header</include>
+
+        <control type="group">
+			<include>animation_window_open_close</include>
+			<bottom>135</bottom>
+			<height>810</height>
+			<control type="image">
+				<posx>60</posx>
+				<posy>0</posy>
+				<width>1800</width>
+				<texture border="15">diffuse/bgpanel.png</texture>
+				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+			</control>
+			
+			<control type="image">
+				<posx>60</posx>
+				<posy>0</posy>
+				<width>500</width>
+				<texture border="15">diffuse/bgpanel.png</texture>
+				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+			</control>
+			
+			<!--List 100 Left Area-->
+			<control type="grouplist" id="100">
+				<description>List</description>
+				<posx>90</posx>
+				<posy>30</posy>
+				<width>440</width>
+				<height>792</height>
+				<onright>1000</onright>
+				<scrolltime>0</scrolltime>
+				<orientation>vertical</orientation>
+				<include>SkinSettings_MenuOptions</include>
+			</control>
+			<!--Group 1000 Right Area-->
+			<control type="group" id="1000">
+				<posx>590</posx>
+				<posy>30</posy>
+                <width>1210</width>
+				<height>792</height>
+                <include>SkinSettings_HomeLayout</include>
+                <include>SkinSettings_Shortcuts</include>
+				<include>SkinSettings_Library</include>
+				<include>SkinSettings_PVR</include>
+				<include>SkinSettings_OSD</include>
+				<include>SkinSettings_General</include>
+                <include>SkinSettings_Background</include>
+                <include>SkinSettings_ColorThemes</include>
+                <include>SkinSettings_CustomColors</include>
+				<include>SkinSettings_Addons</include>
+				<include>SkinSettings_Backup</include>
+			</control>
+        </control>
+    
+        <include condition="Skin.HasSetting(DebugGrid) | Skin.HasSetting(DebugInfo)">DebugInfo</include>
+	</controls>
+</window>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Dramas</name>
+    <match>all</match>
+    <rule field="genre" operator="is">
+        <value>Drama</value>
+    </rule>
+    <rule field="genre" operator="isnot">
+        <value>Horror</value>
+    </rule>
+    <rule field="genre" operator="isnot">
+        <value>Documentary</value>
+    </rule>
+    <order direction="descending">year</order>
+</smartplaylist>

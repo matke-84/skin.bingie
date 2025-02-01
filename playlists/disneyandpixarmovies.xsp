@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- BINGIE -->
+<smartplaylist type="movies">
+    <name>Disney &amp; Pixar Films</name>
+    <match>all</match>
+    <rule field="studio" operator="contains">
+        <value>Disney</value>
+        <value>Walt Disney Animation Studios</value>
+        <value>Walt Disney Productions</value>
+        <value>Disney Channel</value>
+        <value>Pixar</value>
+    </rule>
+    <order direction="ascending">sorttitle</order>
+    <limit>200</limit>
+</smartplaylist>

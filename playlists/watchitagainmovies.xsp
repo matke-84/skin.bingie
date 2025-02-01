@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- BINGIE -->
+<smartplaylist type="movies">
+    <name>Watch It Again Movies</name>
+    <match>all</match>
+    <rule field="playcount" operator="greaterthan">
+        <value>0</value>
+    </rule>
+    <order direction="descending">dateadded</order>
+    <limit>200</limit>
+</smartplaylist>

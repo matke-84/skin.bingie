@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<window id="1116">
+    <defaultcontrol always="true">77777</defaultcontrol>
+    <menucontrol>900</menucontrol>
+    <include>CustomBingieWinProps</include>
+    <include>BingieViews_WindowOpen_Fade</include>
+
+    <controls>
+		<include>Defs_TMDbHelper_Loader</include>
+        <include>GlobalBackground</include>
+		<!-- Now Playing -->
+        <include>NowPlayingBackground</include>
+        <!-- hidden submenu for count calculations -->
+        <include condition="!Skin.HasSetting(DisableAllSubmenus)">hiddenSubmenu</include>
+
+        <!-- Spotlight Section -->
+        <include content="Bingie_Base_BG">
+            <param name="visibility" value="!Player.HasVideo" />
+        </include>
+
+        <control type="group">
+            <width>1920</width>
+            <height>600</height>
+            <include content="BingieSpotlightCornerImage">
+                <param name="visibility" value="!Player.HasVideo" />
+                <param name="image" value="$VAR[bingiePVRThumb]" />
+            </include>
+
+            <!-- Details -->
+            <control type="grouplist">
+				<visible>!$EXP[IsMainMenuOpened]</visible>
+                <top>22</top>
+                <include>BingieLeftDefs</include>
+                <width>1500</width>
+                <orientation>vertical</orientation>
+                <usecontrolcoords>true</usecontrolcoords>
+                <itemgap>10</itemgap>
+                <animation effect="slide" start="0" end="0,110" time="0" condition="Control.HasFocus(1510) | String.IsEqual(Window(Home).Property(CurrentWidgetID),1510)">Conditional</animation>
+                <include content="Bingie_Headline_Item">
+                    <param name="id" value="11602" />
+                    <param name="image" value="$VAR[BingieInfoClearlogo]" />
+                    <param name="text" value="$VAR[BingieInfoLabel]" />
+                    <param name="genre_adjust" value="false" />
+                </include>
+
+                <!-- Row Details -->
+                <control type="group">
+                    <visible>![Control.HasFocus(1510) | String.IsEqual(Window(Home).Property(CurrentWidgetID),1510)]</visible>
+                    <width>1000</width>
+                    <height>50</height>
+                    <include>Default_Visible_Fade</include>
+                    <include>SpotlightRowDetails</include>
+                </control>
+                <!-- Sublabel -->
+                <control type="label" id="823">
+                    <visible>!String.IsEmpty(Control.GetLabel(823))</visible>
+                    <width>800</width>
+                    <font>Reg29</font>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor>
+                    <label>$VAR[BingieSublabel]</label>
+                    <include>Default_Visible_Fade</include>
+					<scroll>true</scroll>
+                </control>
+
+                <!-- Tune In progress bar -->
+                <control type="grouplist">
+                    <visible>Control.HasFocus(1510) | String.IsEqual(Window(Home).Property(CurrentWidgetID),1510)</visible>
+                    <include>Default_Visible_Fade</include>
+                    <orientation>horizontal</orientation>
+                    <itemgap>30</itemgap>
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <width>650</width>
+                    <height>30</height>
+                    <aligny>center</aligny>
+                    <control type="progress">
+                        <top>12</top>
+                        <visible>Integer.IsGreater(ListItem.Progress,0) + Integer.IsLess(ListItem.Progress,100)</visible>
+                        <width>250</width>
+                        <height>8</height>
+                        <texturebg colordiffuse="$INFO[Skin.String(BingieDetailsFlagColor)]" border="0">diffuse/panel2.png</texturebg>
+                        <lefttexture/>
+                        <midtexture colordiffuse="$INFO[Skin.String(BingieProgressBarColor)]" border="4">diffuse/panel2.png</midtexture>
+                        <righttexture/>
+                        <info>ListItem.Progress</info>
+                    </control>
+                    <control type="label">
+						<top>2</top>
+                        <height>25</height>
+                        <width>450</width>
+                        <font>Reg22</font>
+                        <textcolor>$INFO[Skin.String(BingieSecondaryTextColor)]</textcolor>
+                        <label>$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ,]</label>
+                    </control>
+                </control>
+
+                <!-- Plot -->
+                <control type="textbox">
+                    <visible>![Control.HasFocus(1510) | String.IsEqual(Window(Home).Property(CurrentWidgetID),1510)]</visible>
+					<top>-5</top>
+                    <height min="30" max="121">auto</height>
+                    <width max="820">auto</width> 
+                    <textcolor>$INFO[Skin.String(BingiePlotTextColor)]</textcolor>
+                    <align>left</align>
+                    <font>Plots</font>
+                    <label>$VAR[BingiePlot]</label>
+                    <include>Default_Visible_Fade</include>
+                </control>
+                <!-- Up-Next Label -->
+                <control type="label">
+                    <visible>!String.IsEmpty(ListItem.NextTitle)</visible>
+                    <width>800</width>
+                    <font>Reg29</font>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor>
+                    <label>$LOCALIZE[31065]: $VAR[BingiePVRUpNextlabel]</label>
+                    <include>Default_Visible_Fade</include>
+					<scroll>true</scroll>
+                </control>
+            </control>
+        </control>
+
+        <control type="grouplist" id="77777">
+            <usecontrolcoords>true</usecontrolcoords>
+            <left>0</left>
+            <top>611</top>
+            <include>Fixed_Focus_Bottom</include>
+            <bottom>0</bottom>
+            <include>Fixed_Focus_Itemgap</include>
+            <itemgap>2</itemgap>
+            <pagecontrol>317</pagecontrol>
+            <orientation>vertical</orientation>
+            <width>100%</width>
+            <onback condition="$EXP[IsPlayingRecognizedContent]">SetFocus(509)</onback>
+            <onback condition="$EXP[IsPlayingRecognizedContent]">SetProperty(KeepPlayingPreview,1,Home)</onback>
+            <onback condition="!$EXP[IsPlayingRecognizedContent]">900</onback>
+            <include>bingie_items_pvr</include>
+        </control>
+
+        <include content="Bingie_Screens_Fixed_Focus_Frame_Base" condition="Skin.HasSetting(EnableFixedFrameWidgets)">
+            <visible>[Control.HasFocus(1510) | String.IsEqual(Window(Home).Property(CurrentWidgetID),1510)] | [Control.HasFocus(1520) | String.IsEqual(Window(Home).Property(CurrentWidgetID),1520)] | [Control.HasFocus(1530) | String.IsEqual(Window(Home).Property(CurrentWidgetID),1530)]</visible>
+            <param name="visibility" value="ControlGroup(77777).HasFocus() + !String.IsEmpty(Container(77777).CurrentItem) + !String.IsEmpty(ListItem.Label)"/>
+			<top>651</top>
+            <param name="width" value="240"/>
+            <param name="height" value="240"/>
+            <texture background="true" border="10">$INFO[Skin.String(thumbsborder_focused),bingie/border/thumb_fo_,.png]</texture>
+        </include>
+        <include content="Bingie_Screens_Fixed_Focus_Frame_Base" condition="Skin.HasSetting(EnableFixedFrameWidgets)">
+            <visible>[Control.HasFocus(1540) | String.IsEqual(Window(Home).Property(CurrentWidgetID),1540)]</visible>
+			<top>651</top>
+            <param name="visibility" value="ControlGroup(77777).HasFocus() + !String.IsEmpty(Container(77777).CurrentItem) + !String.IsEmpty(ListItem.Label)"/>
+            <param name="width" value="landscape_width"/>
+            <param name="height" value="210"/>
+            <texture background="true" border="10">$INFO[Skin.String(thumbsborder_focused),bingie/border/thumb_fo_,.png]</texture>
+        </include>
+		
+		<!-- gradient overlays on widgets -->
+        <control type="group">
+			<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
+			<include>Animation_Right_Home</include>
+            <include>Bingie_Left_Gradient</include>
+        </control>
+		
+		<include>Header</include>
+
+        <include content="Dim_Overlay">
+            <param name="visibility" value="$EXP[IsMainMenuOpened]" />
+        </include>
+
+        <!-- Loading Suggestions -->
+        <include content="Busy_Spinner">
+            <param name="centerleft" value="50%"/>
+            <param name="centertop" value="48%"/>
+            <param name="visibility" value="Container(1510).IsUpdating + !Integer.IsGreater(Container(1510).NumItems,0)"/>
+            <param name="size" value="100"/>
+        </include>
+        <!-- Main Menu -->
+        <control type="group">
+			<include>BingieSideBladeMainMenu</include>
+			<animation effect="fade" start="100" end="50" time="300" condition="!Control.IsVisible(40003) + !$EXP[IsMainMenuOpened] + !$EXP[IsCurrentWidgetSpotlight] + [Window.IsActive(Home) | $EXP[IsBingieHubsActive2]] + Container.HasPrevious">Conditional</animation>
+		</control>	
+
+        <!-- fake go-to-fullscreen button -->
+        <control type="button" id="509">
+            <visible allowhiddenfocus="true">false</visible>
+            <onfocus>FullScreen</onfocus>
+        </control>
+		
+		<!-- Snow Effect -->
+        <control type="group">
+            <include condition="String.IsEqual(Skin.String(season_greetings),snow_animation)">snow</include>
+        </control>
+		<!-- Halloween Effect -->
+        <control type="group">
+            <include condition="String.IsEqual(Skin.String(season_greetings),halloween_animation)">pumpkin</include>
+        </control>
+    </controls>
+</window>

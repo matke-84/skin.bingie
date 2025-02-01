@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- BINGIE -->
+<smartplaylist type="movies">
+    <name>IMDB Top 10</name>
+    <match>all</match>
+    <rule field="top250" operator="is">
+        <value>1</value>
+        <value>2</value>
+        <value>3</value>
+        <value>4</value>
+        <value>5</value>
+        <value>6</value>
+        <value>7</value>
+        <value>8</value>
+        <value>9</value>
+        <value>10</value>
+    </rule>
+    <order direction="ascending">top250</order>
+    <limit>200</limit>
+</smartplaylist>

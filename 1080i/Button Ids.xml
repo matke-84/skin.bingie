@@ -1,0 +1,114 @@
+<!-- Enable Streaming Services Filter -->
+		<control type="radiobutton" id="2010">
+		
+<!-- Splash Screen -->
+        <control type="radiobutton" id="2011">
+
+<!-- Auto Hide Plot on System Idle -->	
+        <control type="radiobutton" id="2012">			
+
+<!-- Disable Static Slim Menu -->    
+		<control type="radiobutton" id="2013">		
+		
+<!-- Enable Bingie Logo on Bingie Home and Settings -->
+        <control type="radiobutton" id="2014">
+
+<!-- Replace Add to My List with Add/Remove Trakt Watchlist -->    
+		<control type="radiobutton" id="2015">
+		
+<!-- Prefer White Details Icons -->
+        <control type="radiobutton" id="2016">		
+
+<!-- Enable Fixed Frame in Home & Hubs (Moving Frame) -->
+        <control type="radiobutton" id="2017">
+		
+<!-- Show Fanart Thumb in Bingie Seasons -->
+        <control type="radiobutton" id="2018">		
+		
+<!-- MPAA Style -->
+        <control type="radiobutton" id="2019">		
+
+<!-- Enable Air Date in Bingie Seasons/Episodes -->	
+        <control type="radiobutton" id="2020">
+		
+<!-- Footer Bar Visibilit -->
+        <control type="button" id="2021">			
+					
+<!-- Lists Filter -->	
+        <control type="button" id="2022">
+		
+<!-- Enable Animated Discart on Supported OSD -->
+        <control type="radiobutton" id="2023">
+
+<!-- Enable Finish Time, Current Time, & Total Duration for OSD Playback -->
+        <control type="radiobutton" id="2024">
+
+<!-- Disable Collection -->
+		<control type="radiobutton" id="2025">
+            
+<!-- Replace Rate This Title with Add Raiting -->
+		<control type="radiobutton" id="2026">
+            
+<!-- Enable Seek/Jump Indicator -->
+		<control type="radiobutton" id="2027">	
+
+<!-- Enable Ratings -->
+		<control type="radiobutton" id="2028">
+		
+<!-- Disable Dummy Spotlight Widget -->
+        <control type="radiobutton" id="2029">
+
+<!-- Enable Top 250 on Posters -->
+		<control type="radiobutton" id="2030">
+
+<!-- Number of Roles -->
+		<control type="radiobutton" id="2031">           
+		
+<!-- Search Types -->
+		<control type="radiobutton" id="2033">
+
+<!-- Season Greetings  -->
+		<control type="label" id="2034">
+
+<!-- Disable Spotlight Slide Animation-->	
+		<control type="radiobutton" id="2035">
+
+<!-- Bingie Pause -->
+        <control type="radiobutton" id="2036">
+
+<!-- TMDB Search Options -->
+		<control type="radiobutton" id="2037">
+
+<!-- Prefer Colored Top250 Sublabel on Spotlight Details Row -->	
+		<control type="radiobutton" id="2038">
+		
+<!-- Ratings to Show -->
+        <control type="button" id="2039">			
+
+<!-- Prefer White Footer -->
+		<control type="radiobutton" id="2040">
+		
+<!-- Replace Cast and Crew List with Cast and Crew Images -->
+        <control type="radiobutton" id="2041">		
+		
+<!-- Extra Fanart -->
+        <control type="radiobutton" id="2042">
+		
+<!-- Disable cast thumbnails in details -->
+        <control type="radiobutton" id="2043">			
+		
+<!-- Disable Total Media Count In Bingie Library Views  -->	
+		<control type="radiobutton" id="2044">
+
+<!-- Disable Continue Watching Movie Percentage -->
+        <control type="radiobutton" id="2045">
+
+<!-- Enable Bingie Logo -->	
+        <control type="radiobutton" id="2046">
+
+<!-- Enable Studio Logo -->
+        <control type="radiobutton" id="2047">
+
+<!-- Categories List -->
+        <control type="radiobutton" id="2048">
+		

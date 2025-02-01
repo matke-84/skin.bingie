@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog">
+    <defaultcontrol always="true">9902</defaultcontrol>
+	<onload>Skin.SetString(Wikipedia.Format.Link,{})</onload>
+	<onload>Skin.SetString(Wikipedia.Format.Emphasis,{})</onload>
+	<onload>Skin.SetString(Wikipedia.Format.Superscript,{})</onload>
+    <controls>
+    <control type="group">
+		<!--Global Background-->
+        <include condition="!Window.IsActive(DialogVideoInfo.xml)">GlobalBackground</include>
+		<!-- Now Playing -->
+		<include>NowPlayingBackground</include>		      
+			<control type="group">
+				<include>Animation_Wikipedia</include>
+				<visible>!String.IsEmpty(Control.GetLabel(9901))</visible>
+				<control type="list" id="9902">
+					<onback>8000</onback>
+					<onback>SetFocus(611)</onback>
+					<ondown>9902</ondown>
+					<onright condition="Control.IsVisible(61)">61</onright>		
+					<orientation>vertical</orientation>
+					<top>183</top>
+					<left>60</left>
+					<height>720</height>
+					<animation effect="fade" start="0" end="100" time="400">Visible</animation>
+					<itemlayout width="550" height="64">
+					  <control type="label">
+					  <posx>20</posx>
+					   <height>65</height>
+						<label>$INFO[ListItem.Label]</label>
+						<align>left</align>
+						<font>Plots</font>
+						<textwidth>410</textwidth>
+						<textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
+					  </control>
+					</itemlayout>
+					<focusedlayout width="550" height="64">
+					<control type="image">
+					<visible>Control.HasFocus(9902)</visible>
+						<width>450</width>
+						<height>65</height>
+						<texture border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texture>
+					</control>
+					<control type="image">
+					<visible>!Control.HasFocus(9902)</visible>
+						<width>450</width>
+						<height>65</height>
+						<texture border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderUnfocusColor)]">bingie/border/default_button_focus.png</texture>
+					</control>
+					<control type="label">
+					<visible>Control.HasFocus(9902)</visible>
+					 <posx>20</posx>
+					 <height>65</height>
+						<align>left</align>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Plots</font>
+						<textwidth>410</textwidth>
+						<scroll>true</scroll>
+						<textcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</textcolor>
+					  </control>
+					<control type="label">
+					<visible>!Control.HasFocus(9902)</visible>
+					 <posx>20</posx>
+					 <height>65</height>
+						<align>left</align>
+						<label>$INFO[ListItem.Label]</label>
+						<font>Plots</font>
+						<textwidth>410</textwidth>
+						<scroll>true</scroll>
+						<textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
+					  </control>
+					</focusedlayout>
+				</control>
+
+				<control type="group">
+					<control type="textbox" id="9904">
+						<left>60</left>
+						<align>left</align>
+						<textcolor>$INFO[Skin.String(BingiePrimaryTextColor)]</textcolor>
+						<font>Reg22</font>
+						<bottom>20</bottom>
+						<height>66</height>
+						<aligny>center</aligny>
+					</control>
+					<control type="group">
+						<left>569</left>
+						<control type="label" id="9901">
+							<top>89</top>
+							<aligny>center</aligny>
+							<height>80</height>
+							<textcolor>$INFO[Skin.String(BingieLabelTextColor)]</textcolor>
+							<font>Bold42</font>
+						</control>
+						<control type="textbox" id="9903">
+							<top>194</top>
+							<posx>0</posx>
+							<width>1290</width>
+							<height>685</height>
+							<textcolor>$INFO[Skin.String(BingiePlotTextColor)]</textcolor>
+							<align>left</align>
+							<font>Plots</font>
+						</control>
+						<control type="image" id="9905">
+							<width>200</width>
+							<height>44</height>
+							<bottom>30</bottom>
+							<right>60</right>
+							<aspectratio align="right">keep</aspectratio>
+						</control>
+					</control>
+				</control>
+				<control type="scrollbar" id="61">
+					<texturesliderbackground border="5" colordiffuse="$INFO[Skin.String(ScrollbarBackgroundColor)]">scrollbar/texturesliderbar_small.png</texturesliderbackground>
+					<texturesliderbar colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]" border="5">scrollbar/texturesliderbar_small.png</texturesliderbar>
+					<texturesliderbarfocus colordiffuse="$INFO[Skin.String(ScrollbarFocusedColor)]" border="5">scrollbar/texturesliderbar_small.png</texturesliderbarfocus>
+					<textureslidernib colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]">scrollbar/texturesliderbar_nib.png</textureslidernib>
+					<textureslidernibfocus colordiffuse="$INFO[Skin.String(ScrollbarFocusedColor)]">scrollbar/texturesliderbar_nib.png</textureslidernibfocus>
+					<onleft>9902</onleft>
+					<orientation>vertical</orientation>
+					<width>10</width>
+					<top>203</top>
+					<bottom>207</bottom>
+					<centerright>30</centerright>
+					<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(61) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] | !String.IsEqual(Skin.String(scrollbar_visibility),always_hide)">Conditional</animation>
+					<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(61) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] | String.IsEqual(Skin.String(scrollbar_visibility),always_hide)">Conditional</animation>
+				</control>
+			</control>
+	</control>
+    </controls>
+</window>

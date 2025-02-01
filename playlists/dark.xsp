@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Dark</name>
+    <match>all</match>
+    <rule field="tag" operator="contains">
+        <value>dark comedy</value>
+        <value>dark</value>
+    </rule>
+    <rule field="tag" operator="doesnotcontain">
+        <value>stand-up comedy</value>
+    </rule>
+    <rule field="mpaarating" operator="isnot">
+        <value>Rated PG</value>
+    </rule>
+    <rule field="votes" operator="greaterthan">
+        <value>100</value>
+    </rule>
+    <order direction="descending">year</order>
+</smartplaylist>

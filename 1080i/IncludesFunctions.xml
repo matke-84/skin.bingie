@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<includes>
+
+    <include name="HiddenHomeMenuButton">
+        <control type="button">
+            <visible>false</visible>
+            <onfocus>SetProperty(ShowViewSubMenu,show,Home)</onfocus>
+            <onfocus condition="!Skin.HasSetting(DisableAllSubmenus)">SetProperty(submenupos,$INFO[Container(900).Position],Home)</onfocus>
+            <onfocus condition="!Skin.HasSetting(DisableAllSubmenus) + Skin.HasSetting(AutoShowSubmenu) + Integer.IsGreater(Container(4445).NumItems,0) + !Control.IsVisible(4446)">SetProperty(submenu,show,Home)</onfocus>
+            <onfocus condition="!Skin.HasSetting(DisableAllSubmenus) + Skin.HasSetting(AutoShowSubmenu) + Integer.IsGreater(Container(4445).NumItems,0) + !Control.IsVisible(4446) + Skin.String(SubmenuLayout, vertical)">SetFocus(4444,0)</onfocus>
+            <onfocus condition="!Skin.HasSetting(AutoShowSubmenu) | Control.IsVisible(4446) | !Integer.IsGreater(Container(4445).NumItems,0)">ClearProperty(submenu,Home)</onfocus>
+            <onfocus condition="!String.IsEmpty(Window(Home).Property(KeepPlayingPreview))">ClearProperty(KeepPlayingPreview,Home)</onfocus>
+        </control>
+    </include>
+
+    <include name="HiddenWidgetButton">
+        <param name="widget" default="Default" />
+        <param name="groupid" default="77777" />
+        <definition>
+            <control type="button">
+                <visible>false</visible>
+                <include content="SetWidgetProps">
+                    <param name="widgetid" value="$PARAM[widgetid]" />
+                    <param name="widgetstyle" value="$PARAM[widgetstyle]" />
+                </include>
+                <include content="Bingie_$PARAM[widget]_AutoPreview" condition="Skin.HasSetting(BingieAutoTrailer) | Skin.HasSetting(SpotLightTrailers)">
+                    <param name="widgetid" value="$PARAM[widgetid]" />
+                    <param name="groupid" value="$PARAM[groupid]" />
+                </include>
+                <include content="WidgetProperties">
+                    <param name="widgetid" value="$PARAM[widgetid]" />
+                </include>
+            </control>
+        </definition>
+    </include>
+	
+	<include name="SearchHiddenWidgetButton">
+        <param name="widget" default="Default" />
+        <param name="groupid" default="77777" />
+        <definition>
+            <control type="button">
+                <visible>false</visible>
+                <include content="SetWidgetProps">
+                    <param name="widgetid" value="$PARAM[widgetid]" />
+                    <param name="widgetstyle" value="$PARAM[widgetstyle]" />
+                </include>
+                <include content="WidgetProperties">
+                    <param name="widgetid" value="$PARAM[widgetid]" />
+                </include>
+            </control>
+        </definition>
+    </include>
+
+    <include name="SetWidgetProps">
+		<onfocus>ClearProperty(StartupMask,Home)</onfocus>
+        <onfocus>ClearProperty(submenu,Home)</onfocus>
+        <onfocus>ClearProperty(ShowViewSubMenu,Home)</onfocus>
+        <onfocus>SetProperty(ShowWidget,1,Home)</onfocus>
+        <onfocus>SetProperty(widgetstyle,$PARAM[widgetstyle],Home)</onfocus>
+		<onfocus>SetProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
+        <onfocus>SetProperty(LastFocusWidgetPos,$INFO[Container($PARAM[widgetid]).CurrentItem],Home)</onfocus>
+    </include>
+
+    <!-- Auto Trailer Function -->
+    <include name="Bingie_Default_AutoPreview">
+        <include content="Bingie_Trailer_Action" condition="Skin.HasSetting(BingieAutoTrailer)">
+            <param name="interval" value="$INFO[Skin.String(main_auto_trailer_interval)]" />
+            <param name="widgetid" value="$PARAM[widgetid]" />
+            <param name="groupid" value="$PARAM[groupid]" />
+        </include>
+        <onfocus condition="!String.IsEmpty(Window(Home).Property(KeepPlayingPreview))">ClearProperty(KeepPlayingPreview,Home)</onfocus>
+        <onunfocus condition="System.HasAlarm(preview_delay)">CancelAlarm(preview_delay,silent)</onunfocus>
+        <onunfocus condition="$EXP[IsPlayingUnrecognizedContent] + String.IsEmpty(Window(Home).Property(KeepPlayingPreview))">PlayerControl(Stop)</onunfocus>
+    </include>
+
+    <include name="Bingie_Spotlight_AutoPreview">
+		<onfocus condition="String.IsEmpty(Window(Home).Property(SpotlightTrailerInterval)) + [Window.IsVisible(1103) | !String.IsEmpty(Window(Home).Property(StartupMask))] + String.IsEqual(Skin.String(splash_screen),bingie_default) + [String.IsEqual(Skin.String(SplashAnimationResolution),2160p) | String.IsEqual(Skin.String(SplashAnimationResolution),1080p)]">SetProperty(SpotlightTrailerInterval,7,Home)</onfocus>		
+		<onfocus condition="String.IsEmpty(Window(Home).Property(SpotlightTrailerInterval)) + [Window.IsVisible(1103) | !String.IsEmpty(Window(Home).Property(StartupMask))] + String.IsEqual(Skin.String(splash_screen),bingie_image)">SetProperty(SpotlightTrailerInterval,7,Home)</onfocus>
+        <onfocus condition="String.IsEmpty(Window(Home).Property(SpotlightTrailerInterval)) + !Window.IsVisible(1103) + String.IsEmpty(Window(Home).Property(StartupMask))">SetProperty(SpotlightTrailerInterval,1,Home)</onfocus>
+        <include content="Bingie_Spotlight_Trailer_Action" condition="Skin.HasSetting(SpotLightTrailers)">
+            <param name="interval" value="$INFO[Window(Home).Property(SpotlightTrailerInterval)]" />
+            <param name="widgetid" value="$PARAM[widgetid]" />
+            <param name="groupid" value="$PARAM[groupid]" />
+        </include>
+        <onfocus condition="!String.IsEmpty(Window(Home).Property(KeepPlayingPreview))">ClearProperty(KeepPlayingPreview,Home)</onfocus>
+        <onunfocus condition="System.HasAlarm(preview_delay)">CancelAlarm(preview_delay,silent)</onunfocus>
+        <onunfocus condition="$EXP[IsPlayingUnrecognizedContent] + String.IsEmpty(Window(Home).Property(KeepPlayingPreview))">PlayerControl(Stop)</onunfocus>
+        <onunfocus>SetProperty(SpotlightTrailerInterval,$INFO[Skin.String(main_auto_trailer_interval)],Home)</onunfocus>
+    </include>
+
+    <include name="Bingie_Trailer_Action">
+        <onfocus condition="!System.IdleTime(1) + !String.IsEmpty(ListItem.Trailer) + [String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | !String.Contains(ListItem.Trailer,plugin)]">
+            AlarmClock(preview_delay,PlayMedia($ESCINFO[ListItem.Trailer],1),00:$PARAM[interval],silent)</onfocus>
+        <onfocus condition="!System.IdleTime(1) + String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)">
+            AlarmClock(preview_delay,RunScript(script.bingie.helper,action=playtrailer,title=$INFO[ListItem.Title]$INFO[ListItem.Year]),00:$PARAM[interval],silent)</onfocus>
+		<onfocus condition="!System.IdleTime(1) + String.IsEmpty(ListItem.Trailer) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)] + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)">
+            AlarmClock(preview_delay,RunScript(script.bingie.helper,action=playtrailer,title=$VAR[TVShowTitle]$INFO[ListItem.Year],tvshow=true,youtube=$INFO[Skin.String(AutoYoutubeTrailer)]),00:$PARAM[interval],silent)</onfocus>	
+    </include>
+	
+	<include name="Bingie_Spotlight_Trailer_Action">
+        <onfocus condition="!System.IdleTime(1) + !String.IsEmpty(ListItem.Trailer) + [String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | !String.Contains(ListItem.Trailer,plugin)] | !String.IsEmpty(Window(Home).Property(StartupMask))">
+            AlarmClock(preview_delay,PlayMedia($ESCINFO[ListItem.Trailer],1),00:$PARAM[interval],silent)</onfocus>
+        <onfocus condition="!System.IdleTime(1) + String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | !String.IsEmpty(Window(Home).Property(StartupMask))">
+            AlarmClock(preview_delay,RunScript(script.bingie.helper,action=playtrailer,title=$INFO[ListItem.Title]$INFO[ListItem.Year]),00:$PARAM[interval],silent)</onfocus>
+		<onfocus condition="!System.IdleTime(1) + String.IsEmpty(ListItem.Trailer) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)] + String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | !String.IsEmpty(Window(Home).Property(StartupMask))">
+            AlarmClock(preview_delay,RunScript(script.bingie.helper,action=playtrailer,title=$VAR[TVShowTitle]$INFO[ListItem.Year],tvshow=true,youtube=$INFO[Skin.String(AutoYoutubeTrailer)]),00:$PARAM[interval],silent)</onfocus>	
+    </include>
+
+    <include name="LibraryAutoTrailerStartButton">
+        <control type="button">
+        <visible>false</visible>	
+		<onfocus condition="!String.IsEmpty(ListItem.Trailer) + [String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | !String.Contains(ListItem.Trailer,plugin)]">
+            AlarmClock(preview_delay,PlayMedia($ESCINFO[ListItem.Trailer],1),00:$PARAM[interval],silent)</onfocus>
+        <onfocus condition="String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)">
+            AlarmClock(preview_delay,RunScript(script.bingie.helper,action=playtrailer,title=$INFO[ListItem.Title]$INFO[ListItem.Year]),00:$PARAM[interval],silent)</onfocus>
+		<onfocus condition="String.IsEmpty(ListItem.Trailer) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)] + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)">
+            AlarmClock(preview_delay,RunScript(script.bingie.helper,action=playtrailer,title=$VAR[TVShowTitle]$INFO[ListItem.Year],tvshow=true,youtube=$INFO[Skin.String(AutoYoutubeTrailer)]),00:$PARAM[interval],silent)</onfocus>	          
+        </control>
+    </include>
+	
+	<include name="LibraryAutoTrailerStopButton">
+        <control type="button">
+        <visible>false</visible>				          
+            <onunfocus condition="System.HasAlarm(preview_delay)">CancelAlarm(preview_delay,silent)</onunfocus>
+            <onunfocus condition="!String.IsEmpty(ListItem.Trailer) + [String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | !String.Contains(ListItem.Trailer,plugin)] | String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | String.IsEmpty(ListItem.Trailer) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)] + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)">PlayerControl(Stop)</onunfocus>
+        </control>
+    </include>
+
+    <!-- IMPORTANT - USE ESCINFO TO AVOID COMMAS IN INFOLABEL -->
+    <include name="WidgetProperties">
+        <onfocus>SetProperty(ListItem.ClearLogo, $ESCINFO[Container($PARAM[widgetid]).ListItem.Art(clearlogo)],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.Art.tvshow.clearlogo, $ESCINFO[Container($PARAM[widgetid]).ListItem.Art(tvshow.clearlogo)],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.Plot, $ESCINFO[Container($PARAM[widgetid]).ListItem.Plot],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.Title, $ESCINFO[Container($PARAM[widgetid]).ListItem.Title],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.Year, $ESCINFO[Container($PARAM[widgetid]).ListItem.Year],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.Genre, $ESCINFO[Container($PARAM[widgetid]).ListItem.Genre],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.Label, $ESCINFO[Container($PARAM[widgetid]).ListItem.Label],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.Duration, $ESCINFO[Container($PARAM[widgetid]).ListItem.Duration],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.Duration.Mins, $ESCINFO[Container($PARAM[widgetid]).ListItem.Duration(mins)],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.Duration.M, $ESCINFO[Container($PARAM[widgetid]).ListItem.Duration(m)],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.Duration.Hours, $ESCINFO[Container($PARAM[widgetid]).ListItem.Duration(h)],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.PercentPlayed, $INFO[Container($PARAM[widgetid]).ListItem.PercentPlayed],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.Label2, $ESCINFO[Container($PARAM[widgetid]).ListItem.Label2],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.DBTYPE, $ESCINFO[Container($PARAM[widgetid]).ListItem.DBTYPE],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.TvShowTitle, $ESCINFO[Container($PARAM[widgetid]).ListItem.TvShowTitle],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.Premiered, $ESCINFO[Container($PARAM[widgetid]).ListItem.Premiered],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.VideoResolution, $ESCINFO[Container($PARAM[widgetid]).ListItem.VideoResolution],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.AudioChannels, $ESCINFO[Container($PARAM[widgetid]).ListItem.AudioChannels],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.Art.fanart, $ESCINFO[Container($PARAM[widgetid]).ListItem.Art(fanart)],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.TotalEpisodes, $ESCINFO[Container($PARAM[widgetid]).ListItem.Property(TotalEpisodes)],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.TotalSeasons, $ESCINFO[Container($PARAM[widgetid]).ListItem.Property(TotalSeasons)],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.UnWatchedEpisodes, $ESCINFO[Container($PARAM[widgetid]).ListItem.Property(UnWatchedEpisodes)],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.VideoCodec, $ESCINFO[Container($PARAM[widgetid]).ListItem.VideoCodec],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.VideoAspect, $ESCINFO[Container($PARAM[widgetid]).ListItem.VideoAspect],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.SubtitleLanguage, $ESCINFO[Container($PARAM[widgetid]).ListItem.SubtitleLanguage],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.AudioCodec, $ESCINFO[Container($PARAM[widgetid]).ListItem.AudioCodec],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.AudioLanguage, $ESCINFO[Container($PARAM[widgetid]).ListItem.AudioLanguage],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.MPAA, $ESCINFO[Container($PARAM[widgetid]).ListItem.MPAA],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.IsStereoScopic, $ESCINFO[Container($PARAM[widgetid]).ListItem.IsStereoScopic],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.TagLine, $ESCINFO[Container($PARAM[widgetid]).ListItem.TagLine],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.Rating, $ESCINFO[Container($PARAM[widgetid]).ListItem.Rating],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.UserRating, $ESCINFO[Container($PARAM[widgetid]).ListItem.UserRating],Home)</onfocus>
+		<onfocus>SetProperty(ListItem.Trailer, $ESCINFO[Container($PARAM[widgetid]).ListItem.Trailer],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.Season, $ESCINFO[Container($PARAM[widgetid]).ListItem.Season],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.Episode, $ESCINFO[Container($PARAM[widgetid]).ListItem.Episode],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.Artist, $ESCINFO[Container($PARAM[widgetid]).ListItem.Artist],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.Album, $ESCINFO[Container($PARAM[widgetid]).ListItem.Album],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.StartTime, $ESCINFO[Container($PARAM[widgetid]).ListItem.StartTime],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.ChannelName, $ESCINFO[Container($PARAM[widgetid]).ListItem.ChannelName],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.ChannelNumberLabel, $ESCINFO[Container($PARAM[widgetid]).ListItem.ChannelNumberLabel],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.StartDate, $ESCINFO[Container($PARAM[widgetid]).ListItem.StartDate],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.Art.Poster, $ESCINFO[Container($PARAM[widgetid]).ListItem.Art(poster)],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.Art.landscape, $ESCINFO[Container($PARAM[widgetid]).ListItem.Art(landscape)],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.Thumb, $ESCINFO[Container($PARAM[widgetid]).ListItem.Art(thumb)],Home)</onfocus>
+        <onfocus>SetProperty(ListItem.Icon, $ESCINFO[Container($PARAM[widgetid]).ListItem.Icon],Home)</onfocus>
+        <onfocus condition="String.IsEmpty(Window(Home).Property(ListItem.Plot))">SetProperty(ListItem.Plot, $ESCINFO[Container($PARAM[widgetid]).ListItem.Property(Plot)],Home)</onfocus>
+        <onfocus condition="String.IsEmpty(Window(Home).Property(ListItem.DBTYPE))">SetProperty(ListItem.DBTYPE, $ESCINFO[Container($PARAM[widgetid]).ListItem.Property(dbtype)],Home)</onfocus>
+        <onfocus condition="String.IsEmpty(Window(Home).Property(ListItem.Art.Poster))">SetProperty(ListItem.Art.Poster, $ESCINFO[Container($PARAM[widgetid]).ListItem.Property(Poster)],Home)</onfocus>
+        <onfocus condition="String.IsEmpty(Window(Home).Property(ListItem.Clearlogo))">SetProperty(ListItem.ClearLogo, $ESCINFO[Container($PARAM[widgetid]).ListItem.Property(logo)],Home)</onfocus>
+        <onfocus condition="String.IsEmpty(Window(Home).Property(ListItem.Art.fanart))">SetProperty(ListItem.Art.fanart, $ESCINFO[Container($PARAM[widgetid]).ListItem.Property(fanart)],Home)</onfocus>
+        <onfocus condition="String.IsEmpty(Window(Home).Property(ListItem.Clearlogo))">SetProperty(ListItem.ClearLogo, $ESCINFO[Control.GetLabel(90005)],Home)</onfocus>
+        <onfocus condition="String.IsEmpty(Window(Home).Property(ListItem.Art.fanart))">SetProperty(ListItem.Art.fanart, $ESCINFO[Control.GetLabel(99004)],Home)</onfocus>
+        <onfocus condition="String.IsEmpty(Window(Home).Property(ListItem.Plot))">SetProperty(ListItem.Plot, $ESCINFO[Control.GetLabel(90009)],Home)</onfocus>
+    </include>
+	
+</includes>

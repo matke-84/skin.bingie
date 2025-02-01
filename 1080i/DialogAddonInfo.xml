@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<window>
+    <defaultcontrol always="true">9000</defaultcontrol>
+    <onunload>ClearProperty(showinfo,addoninformation)</onunload>
+    <controls>
+        <!--Dialog Overlay-->
+		<control type="group">
+			<visible>!Window.IsVisible(AddonSettings) + !Window.IsActive(TextViewer)</visible>
+			<include>DialogOverlayExtra</include>
+			<animation effect="fade" time="250" start="0" end="100" reversible="false">WindowOpen</animation>
+        </control>
+		
+        <!--Dialog PVR Guid Info-->
+        <control type="group">
+            <visible>!Window.IsVisible(AddonSettings) + !Window.IsActive(TextViewer)</visible>
+			<animation type="WindowOpen">
+				<effect type="slide" start="1200" end="0" time="250" tween="cubic" easing="inout" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="slide" start="0" end="1200" time="250" tween="cubic" easing="inout" />
+			</animation>
+            <!--Panel-->
+            <control type="image">
+                <posx>630</posx>
+                <posy>0</posy>
+                <width>1340</width>
+                <height>100%</height>
+				<texture>diffuse/panel2.png</texture>
+				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+            </control>
+			<control type="image">
+                <posx>630</posx>
+                <posy>0</posy>
+                <width>1340</width>
+                <height>100%</height>
+				<texture>diffuse/panel2.png</texture>
+				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+            </control>
+			
+           <!--Header-->
+            <control type="label">
+                <description>Heading</description>
+                <posx>695</posx>
+                <posy>10</posy>
+                <width>1200</width>
+				<font>Bold45</font>
+                <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+				<shadowcolor>black</shadowcolor>
+                <align>left</align>
+				<height>100</height>
+				<label>24003</label>
+            </control>
+			<!-- title -->
+			<control type="label">
+				<posx>695</posx>
+				<posy>150</posy>
+				<width>800</width>
+				<font>Reg36</font>
+				<align>left</align>
+				<label>$INFO[ListItem.AddonName]</label>
+            </control>
+
+			
+			<control type="image">
+				<posx>675</posx>
+                <posy>213</posy>
+				<width>1200</width>
+				<height>263</height>
+				<texture border="5">dialogs/default/inner.png</texture>
+			</control>
+			
+			<!--Icon-->
+            <control type="image">
+                <right>66</right>
+                <posy>235</posy>
+                <width>219</width>
+                <height>219</height>
+				<aspectratio align="center" aligny="center" scalediffuse="true">keep</aspectratio>
+				<texture background="true" diffuse="diffuse/panel2.png" fallback="DefaultVideo.png">$INFO[ListItem.Icon]</texture>
+            </control>
+			
+            <control type="grouplist">
+                <posx>675</posx>
+                <posy>220</posy>
+
+                <control type="button">
+                    <!--Addon Type-->
+                    <width>800</width>
+                    <height>60</height>
+                    <align>left</align>
+                    <textoffsetx>20</textoffsetx>
+                    <textwidth>540</textwidth>
+                    <texturenofocus>dialogs/default/separator.png</texturenofocus>
+                    <label>$LOCALIZE[146]</label>
+                    <label2>$INFO[ListItem.AddonType]</label2>
+                    <enable>false</enable>
+					<disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
+                </control>
+                <control type="button">
+                    <!--Author-->
+                    <width>800</width>
+                    <height>60</height>
+                    <align>left</align>
+                    <textoffsetx>20</textoffsetx>
+                    <textwidth>540</textwidth>
+                    <texturenofocus>dialogs/default/separator.png</texturenofocus>
+                    <label>$LOCALIZE[21863]:</label>
+                    <label2>$INFO[ListItem.AddonCreator]</label2>
+                    <enable>false</enable>
+					<disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
+                </control>
+                <control type="button">
+                    <!--Version-->
+                    <width>800</width>
+                    <height>60</height>
+                    <align>left</align>
+                    <textoffsetx>20</textoffsetx>
+                    <textwidth>540</textwidth>
+                    <texturenofocus>dialogs/default/separator.png</texturenofocus>
+                    <label>$LOCALIZE[24051]</label>
+                    <label2>$INFO[ListItem.AddonVersion]</label2>
+                    <enable>false</enable>
+					<disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
+                </control>
+                <control type="label">
+                    <!--Disclaimer-->
+                    <width>780</width>
+                    <height>60</height>
+                    <align>left</align>
+					<scroll>true</scroll>
+                    <label>   $INFO[ListItem.AddonDisclaimer]</label>
+					<textcolor>red</textcolor>
+					<visible>!String.IsEmpty(ListItem.AddonDisclaimer)</visible>
+                </control>
+            </control>
+            <control type="image">
+                <posx>675</posx>
+                <posy>486</posy>
+                <width>1200</width>
+                <height>430</height>
+                <texture border="5">dialogs/default/inner.png</texture>
+            </control>
+            <control type="textbox">
+                <description>Plot value</description>
+                <posx>695</posx>
+                <posy>506</posy>
+                <width>1160</width>
+                <height>400</height>
+                <align>justify</align>
+                <pagecontrol>60</pagecontrol>
+                <label fallback="19055">$INFO[ListItem.AddonSummary][CR]$INFO[ListItem.AddonDescription]</label>
+                <visible>String.IsEmpty(Window.Property(showinfo))</visible>
+            </control>
+            <control type="textbox">
+                <description>News value</description>
+                <posx>695</posx>
+                <posy>506</posy>
+                <width>1160</width>
+                <height>400</height>
+                <align>justify</align>
+                <pagecontrol>60</pagecontrol>
+                <label fallback="19055">$INFO[ListItem.AddonNews]</label>
+                <visible>String.IsEqual(Window.Property(showinfo),news)</visible>
+            </control>
+            
+            <!-- screenshots -->
+            <control type="panel" id="50">
+                <posx>676</posx>
+                <posy>520</posy>
+                <width>1200</width>
+                <height>340</height>
+                <orientation>horizontal</orientation>
+                <onup>9000</onup>
+                <ondown>9000</ondown>
+                <preloaditems>4</preloaditems>
+                <visible>String.IsEqual(Window.Property(showinfo),screenshots)</visible>
+                <itemlayout height="340" width="599">
+                    <control type="image">
+                        <bordersize>4</bordersize>
+                        <texture background="true" diffuse="home/home_matte2.png">$INFO[ListItem.Icon]</texture>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="340" width="599">
+                    <control type="image">
+                        <!--focus image-->
+                        <texture diffuse="home/home_matte2.png">diffuse/panel2.png</texture>
+                        <colordiffuse>$INFO[Skin.String(GeneralTextColor)]</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <bordersize>4</bordersize>
+                        <texture background="true" diffuse="home/home_matte2.png">$INFO[ListItem.Icon]</texture>
+                    </control>
+                </focusedlayout>
+            </control>
+      
+			<!--Button Group-->
+            <control type="grouplist" id="9000">
+                <posx>675</posx>
+                <posy>940</posy>
+				<orientation>horizontal</orientation>
+				<itemgap>5</itemgap>
+				<onup>50</onup>
+				<width>1200</width>
+				
+				<control type="button" id="12">
+                  <!--Launch Addon button-->
+                    <width>296</width>
+                    <height>80</height>
+                    <align>center</align>
+                    <label>518</label>
+					<include>DialogButtonOther</include>
+					<visible>Control.IsEnabled(12)</visible>
+                </control>
+				
+				<control type="button" id="9">
+                   <!--Addon Settings-->
+                    <width>296</width>
+                    <height>80</height>
+                    <align>center</align>
+                    <label>24020</label>
+					<include>DialogButtonOther</include>
+					<visible>Control.IsEnabled(9)</visible>
+                </control>
+				
+				<control type="button" id="10">
+                    <!--Addon Dependencies-->
+                    <width>296</width>
+                    <height>80</height>
+                    <align>center</align>
+                    <label>39024</label>
+                    <include>DialogButtonOther</include>
+                    <visible>Control.IsEnabled(10)</visible>
+                </control>
+				
+				<control type="button" id="14">
+                    <!--version-->
+                    <width>296</width>
+                    <height>80</height>
+                    <align>center</align>
+                    <label>24069</label>
+                    <include>DialogButtonOther</include>
+                    <visible>Control.IsEnabled(14)</visible>
+                </control>
+				
+				<control type="togglebutton" id="22112">
+                    <!--news-->
+                    <width>296</width>
+                    <height>80</height>
+                    <align>center</align>
+                    <label>29916</label>
+                    <altlabel>29915</altlabel>
+					<usealttexture>String.IsEqual(Window.Property(showinfo),news)</usealttexture>
+                    <onclick condition="!String.IsEqual(Window.Property(showinfo),news)">SetProperty(showinfo,news)</onclick>
+                    <onclick condition="String.IsEqual(Window.Property(showinfo),news)">ClearProperty(showinfo)</onclick>
+					<include>DialogButtonOther</include>
+                </control>  
+				
+				<control type="togglebutton" id="22111">
+                    <!--screenshots-->
+                    <width>296</width>
+                    <height>80</height>
+                    <align>center</align>
+                    <label>20008</label>
+                    <altlabel>29915</altlabel>
+					<usealttexture>String.IsEqual(Window.Property(showinfo),screenshots)</usealttexture>
+					<include>DialogButtonOther</include>
+                    <onclick condition="!String.IsEqual(Window.Property(showinfo),screenshots)">SetProperty(showinfo,screenshots)</onclick>
+                    <onclick condition="String.IsEqual(Window.Property(showinfo),screenshots)">ClearProperty(showinfo)</onclick>
+                    <visible>Integer.IsGreater(Container(50).NumItems,0)</visible>
+                </control> 
+
+				<control type="button" id="8">
+                  <!--Update Addon button-->
+                    <width>296</width>
+                    <height>80</height>
+                    <align>center</align>
+                    <label>24069</label>
+					<include>DialogButtonOther</include>
+					<visible>Control.IsEnabled(8)</visible>
+                </control>
+              
+                <control type="radiobutton" id="13">
+                    <!--enable auto update-->
+                    <width>306</width>
+                    <textoffsetx>30</textoffsetx>
+                    <height>80</height>
+                    <align>left</align>
+					<radioposx>184</radioposx>
+                    <label>21340</label>
+					<textwidth>160</textwidth>
+					<include>DialogButtonOther</include>
+                    <visible>Control.IsEnabled(13)</visible>
+                </control>
+
+				<control type="button" id="7">
+                    <!--Enable/Disable Addon button-->
+                    <width>296</width>
+                    <height>80</height>
+                    <align>center</align>
+                    <label>24021</label>
+					<include>DialogButtonOther</include>
+					<visible>Control.IsEnabled(7)</visible>
+                </control>				
+				
+				<control type="button" id="6">
+                    <!--Install/Uninstall Addon button-->
+                    <width>296</width>
+                    <height>80</height>
+                    <align>center</align>
+                    <label>24022</label>
+					<include>DialogButtonOther</include>
+					<visible>Control.IsEnabled(6)</visible>
+                </control>                           				
+				
+				<control type="button" id="11111">
+                    <!--Close-->
+                    <width>296</width>
+                    <height>80</height>
+                    <align>center</align>
+                    <label>222</label>
+					<include>DialogButtonOther</include>
+                    <onclick>Close</onclick>
+                    <visible>Control.IsEnabled(11111)</visible>
+                </control>
+                
+            </control>
+            <!--Arrows-->
+            <control type="image">
+                <animation effect="fade" start="100" end="50" tween="sine" easing="inout" time="800" pulse="true" reversible="false" condition="true">Conditional</animation>
+                <right>15</right>
+                <bottom>70</bottom>
+                <posy>50</posy>
+                <width>20</width>
+                <height>60</height>
+                <aspectratio>keep</aspectratio>
+                <texture>dialogs/videoinfo/arrow.png</texture>
+                <visible>!Control.HasFocus(51)</visible>
+                <colordiffuse>white</colordiffuse>
+                <visible>Container(9000).HasNext</visible>
+            </control>
+            <control type="image">
+                <animation effect="fade" start="100" end="50" tween="sine" easing="inout" time="800" pulse="true" reversible="false" condition="true">Conditional</animation>
+                <right>1255</right>
+                <bottom>70</bottom>
+                <posy>50</posy>
+                <width>20</width>
+                <height>60</height>
+                <aspectratio>keep</aspectratio>
+                <texture flipx="true">dialogs/videoinfo/arrow.png</texture>
+                <visible>!Control.HasFocus(51)</visible>
+                <colordiffuse>white</colordiffuse>
+                <visible>Container(9000).HasPrevious</visible>
+            </control>
+        </control>
+    </controls>
+</window>

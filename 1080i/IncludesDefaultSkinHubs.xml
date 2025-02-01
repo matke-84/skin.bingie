@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<includes>
+
+    <include name="DefaultSkinHubs">
+        <include condition="!Skin.HasSetting(HubLocalWidgetsDefaults) + !Skin.HasSetting(HubAddonWidgetsDefaults)">Default_Local_Hubs_Widgets</include>
+		<include condition="!Skin.HasSetting(HubAddonWidgetsDefaults) + !Skin.HasSetting(HubLocalWidgetsDefaults)">Default_Addon_Hubs_Widgets</include>
+    </include>
+
+    <!-- default widgets in hubs -->
+    <include name="Default_Local_Hubs_Widgets">
+        <!-- set default spotlights -->
+        <onload>Skin.SetString(spotlightmovieslocal.label, $LOCALIZE[13278])</onload>
+        <onload>Skin.Reset(spotlightmovieslocal.path)</onload>
+        <onload>Skin.SetString(spotlighttvshowslocal.label, $LOCALIZE[13278])</onload>
+        <onload>Skin.Reset(spotlighttvshowslocal.path)</onload>
+        <onload>Skin.SetString(spotlightnewlocal.label, $LOCALIZE[13278])</onload>
+        <onload>Skin.Reset(spotlightnewlocal.path)</onload>
+		<onload>Skin.SetString(spotlightmusic.label, $LOCALIZE[13278])</onload>
+        <onload>Skin.Reset(spotlightmusic.path)</onload>
+
+        <!-- MOVIES HUB -->
+        <!-- movies hub - widget 1 -->
+        <onload>Skin.SetString(bingiehub-movieslocal-510.label, $LOCALIZE[31535] $VAR[ForCurrentProfileNameLabel])</onload>
+        <onload>Skin.SetString(bingiehub-movieslocal-510.target, videos)</onload>
+        <onload>Skin.SetString(bingiehub-movieslocal-510.path, special://skin/extras/widgetplaylists/inprogressmovies.xsp)</onload>
+        <!-- movies hub - widget 2 -->
+        <onload>Skin.SetString(bingiehub-movieslocal-520.label, $LOCALIZE[31127])</onload>
+        <onload>Skin.SetString(bingiehub-movieslocal-520.target, videos)</onload>
+        <onload>Skin.SetString(bingiehub-movieslocal-520.path, special://skin/extras/widgetplaylists/recentlyaddedmovies.xsp)</onload>
+        <!-- movies hub - widget 3 -->
+        <onload>Skin.SetString(bingiehub-movieslocal-530.label, $LOCALIZE[31562])</onload>
+        <onload>Skin.SetString(bingiehub-movieslocal-530.target, videos)</onload>
+        <onload>Skin.SetString(bingiehub-movieslocal-530.path, special://skin/extras/widgetplaylists/randommovies.xsp)</onload>     
+        <!-- reset -->
+		<onload>Skin.Reset(bingiehub-movieslocal-540.label)</onload>
+        <onload>Skin.Reset(bingiehub-movieslocal-540.target)</onload>
+        <onload>Skin.Reset(bingiehub-movieslocal-540.path)</onload>
+		<onload>Skin.Reset(bingiehub-movieslocal-550.label)</onload>
+        <onload>Skin.Reset(bingiehub-movieslocal-550.target)</onload>
+        <onload>Skin.Reset(bingiehub-movieslocal-550.path)</onload>
+        <onload>Skin.Reset(bingiehub-movieslocal-560.label)</onload>
+        <onload>Skin.Reset(bingiehub-movieslocal-560.target)</onload>
+        <onload>Skin.Reset(bingiehub-movieslocal-560.path)</onload>
+        <onload>Skin.Reset(bingiehub-movieslocal-570.label)</onload>
+        <onload>Skin.Reset(bingiehub-movieslocal-570.target)</onload>
+        <onload>Skin.Reset(bingiehub-movieslocal-570.path)</onload>
+        <onload>Skin.Reset(bingiehub-movieslocal-580.label)</onload>
+        <onload>Skin.Reset(bingiehub-movieslocal-580.target)</onload>
+        <onload>Skin.Reset(bingiehub-movieslocal-580.path)</onload>
+
+        <!-- TVSHOWS HUB -->
+        <!-- tvshows hub - widget 1 -->
+        <onload>Skin.SetString(bingiehub-tvshowslocal-510.label, $LOCALIZE[31535] $VAR[ForCurrentProfileNameLabel])</onload>
+        <onload>Skin.SetString(bingiehub-tvshowslocal-510.target, videos)</onload>
+        <onload>Skin.SetString(bingiehub-tvshowslocal-510.path, plugin://script.bingie.widgets/?action=inprogress&amp;mediatype=episodes&amp;reload=$INFO[Window(Home).Property(widgetreload2)])</onload>
+        <!-- tvshows hub - widget 2 -->
+        <onload>Skin.SetString(bingiehub-tvshowslocal-520.label, $LOCALIZE[31127])</onload>
+        <onload>Skin.SetString(bingiehub-tvshowslocal-520.target, videos)</onload>
+        <onload>Skin.SetString(bingiehub-tvshowslocal-520.path, special://skin/extras/widgetplaylists/recentlyaddedtvshows.xsp)</onload>
+        <!-- tvshows hub - widget 3 -->
+        <onload>Skin.SetString(bingiehub-tvshowslocal-530.label, $LOCALIZE[31385])</onload>
+        <onload>Skin.SetString(bingiehub-tvshowslocal-530.target, videos)</onload>
+        <onload>Skin.SetString(bingiehub-tvshowslocal-530.path, special://skin/extras/widgetplaylists/randomtvshows.xsp)</onload>
+        <!-- reset -->
+		<onload>Skin.Reset(bingiehub-tvshowslocal-540.label)</onload>
+        <onload>Skin.Reset(bingiehub-tvshowslocal-540.target)</onload>
+        <onload>Skin.Reset(bingiehub-tvshowslocal-540.path)</onload>
+		<onload>Skin.Reset(bingiehub-tvshowslocal-550.label)</onload>
+        <onload>Skin.Reset(bingiehub-tvshowslocal-550.target)</onload>
+        <onload>Skin.Reset(bingiehub-tvshowslocal-550.path)</onload>
+        <onload>Skin.Reset(bingiehub-tvshowslocal-560.label)</onload>
+        <onload>Skin.Reset(bingiehub-tvshowslocal-560.target)</onload>
+        <onload>Skin.Reset(bingiehub-tvshowslocal-560.path)</onload>
+        <onload>Skin.Reset(bingiehub-tvshowslocal-570.label)</onload>
+        <onload>Skin.Reset(bingiehub-tvshowslocal-570.target)</onload>
+        <onload>Skin.Reset(bingiehub-tvshowslocal-570.path)</onload>
+        <onload>Skin.Reset(bingiehub-tvshowslocal-580.label)</onload>
+        <onload>Skin.Reset(bingiehub-tvshowslocal-580.target)</onload>
+        <onload>Skin.Reset(bingiehub-tvshowslocal-580.path)</onload>
+
+        <!-- NEW HUB -->
+        <!-- new hub - widget 1 -->
+        <onload>Skin.SetString(bingiehub-newlocal-510.label, $LOCALIZE[31127])</onload>
+        <onload>Skin.SetString(bingiehub-newlocal-510.target, videos)</onload>
+        <onload>Skin.SetString(bingiehub-newlocal-510.path, plugin://script.bingie.widgets/?action=recent&amp;mediatype=media&amp;reload=$INFO[Window(Home).Property(widgetreload)])</onload>
+        <!-- new hub - widget 2 -->
+        <onload>Skin.SetString(bingiehub-newlocal-520.label, $LOCALIZE[31563])</onload>
+        <onload>Skin.SetString(bingiehub-newlocal-520.target, videos)</onload>
+        <onload>Skin.SetString(bingiehub-newlocal-520.path, plugin://script.bingie.widgets/?action=popular&amp;mediatype=media&amp;reload=$INFO[Window(Home).Property(widgetreload)])</onload>
+        <!-- reset -->
+        <onload>Skin.Reset(bingiehub-newlocal-530.label)</onload>
+        <onload>Skin.Reset(bingiehub-newlocal-530.target)</onload>
+        <onload>Skin.Reset(bingiehub-newlocal-530.path)</onload>
+        <onload>Skin.Reset(bingiehub-newlocal-540.label)</onload>
+        <onload>Skin.Reset(bingiehub-newlocal-540.target)</onload>
+        <onload>Skin.Reset(bingiehub-newlocal-540.path)</onload>
+        <onload>Skin.Reset(bingiehub-newlocal-550.label)</onload>
+        <onload>Skin.Reset(bingiehub-newlocal-550.target)</onload>
+        <onload>Skin.Reset(bingiehub-newlocal-550.path)</onload>
+        <onload>Skin.Reset(bingiehub-newlocal-560.label)</onload>
+        <onload>Skin.Reset(bingiehub-newlocal-560.target)</onload>
+        <onload>Skin.Reset(bingiehub-newlocal-560.path)</onload>
+        <onload>Skin.Reset(bingiehub-newlocal-570.label)</onload>
+        <onload>Skin.Reset(bingiehub-newlocal-570.target)</onload>
+        <onload>Skin.Reset(bingiehub-newlocal-570.path)</onload>
+        <onload>Skin.Reset(bingiehub-newlocal-580.label)</onload>
+        <onload>Skin.Reset(bingiehub-newlocal-580.target)</onload>
+        <onload>Skin.Reset(bingiehub-newlocal-580.path)</onload>
+		
+		<!-- SOMETHING HUB -->
+        <!-- something hub - widget 1 -->
+        <onload>Skin.SetString(bingiehub-somethinglocal-510.label, $LOCALIZE[31620])</onload>
+        <onload>Skin.SetString(bingiehub-somethinglocal-510.target, videos)</onload>
+        <onload>Skin.SetString(bingiehub-somethinglocal-510.path, special://skin/extras/widgetplaylists/randommovies.xsp)</onload>
+
+		<!-- MUSIC HUB -->
+        <!-- music hub - widget 1 -->
+        <onload>Skin.SetString(bingiehub-music-510.label, $LOCALIZE[31058])</onload>
+        <onload>Skin.SetString(bingiehub-music-510.target, music)</onload>
+        <onload>Skin.SetString(bingiehub-music-510.path, special://skin/extras/widgetplaylists/recentlyaddedalbums.xsp)</onload>
+        <!-- music hub - widget 2 -->
+        <onload>Skin.SetString(bingiehub-music-520.label, $LOCALIZE[31131])</onload>
+        <onload>Skin.SetString(bingiehub-music-520.target, music)</onload>
+        <onload>Skin.SetString(bingiehub-music-520.path, special://skin/extras/widgetplaylists/recentlyaddedartists.xsp)</onload>
+        <!-- music hub - widget 3 -->
+        <onload>Skin.SetString(bingiehub-music-530.label, $LOCALIZE[31211])</onload>
+        <onload>Skin.SetString(bingiehub-music-530.target, music)</onload>
+        <onload>Skin.SetString(bingiehub-music-530.path, special://skin/extras/widgetplaylists/recentlyaddedsongs.xsp)</onload>
+        <!-- reset -->
+		<onload>Skin.Reset(bingiehub-music-540.label)</onload>
+        <onload>Skin.Reset(bingiehub-music-540.target)</onload>
+        <onload>Skin.Reset(bingiehub-music-540.path)</onload>
+		<onload>Skin.Reset(bingiehub-music-550.label)</onload>
+        <onload>Skin.Reset(bingiehub-music-550.target)</onload>
+        <onload>Skin.Reset(bingiehub-music-550.path)</onload>
+        <onload>Skin.Reset(bingiehub-music-560.label)</onload>
+        <onload>Skin.Reset(bingiehub-music-560.target)</onload>
+        <onload>Skin.Reset(bingiehub-music-560.path)</onload>
+        <onload>Skin.Reset(bingiehub-music-570.label)</onload>
+        <onload>Skin.Reset(bingiehub-music-570.target)</onload>
+        <onload>Skin.Reset(bingiehub-music-570.path)</onload>
+        <onload>Skin.Reset(bingiehub-music-580.label)</onload>
+        <onload>Skin.Reset(bingiehub-music-580.target)</onload>
+        <onload>Skin.Reset(bingiehub-music-580.path)</onload>		
+    </include>
+	
+	<!-- default widgets in hubs -->
+    <include name="Default_Addon_Hubs_Widgets">
+        <!-- set default spotlights -->
+        <onload>Skin.SetString(spotlightmoviesaddon.label, $LOCALIZE[13278])</onload>
+        <onload>Skin.Reset(spotlightmoviesaddon.path)</onload>
+        <onload>Skin.SetString(spotlighttvshowsaddon.label, $LOCALIZE[13278])</onload>
+        <onload>Skin.Reset(spotlighttvshowsaddon.path)</onload>
+        <onload>Skin.SetString(spotlightnewaddon.label, $LOCALIZE[13278])</onload>
+        <onload>Skin.Reset(spotlightnewaddon.path)</onload>
+		<onload>Skin.SetString(spotlightmusic.label, $LOCALIZE[13278])</onload>
+        <onload>Skin.Reset(spotlightmusic.path)</onload>
+
+        <!-- MOVIES HUB -->
+        <!-- movies hub - widget 1 -->
+        <onload>Skin.SetString(bingiehub-moviesaddon-510.label, $LOCALIZE[31337])</onload>
+        <onload>Skin.SetString(bingiehub-moviesaddon-510.target, videos)</onload>
+		<onload>Skin.SetString(bingiehub-moviesaddon-510.path, plugin://plugin.video.themoviedb.helper?info=trakt_trending&amp;type=movie&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbHelper.Widgets.Reload)])</onload>
+        <!-- movies hub - widget 2 -->
+        <onload>Skin.SetString(bingiehub-moviesaddon-520.label, $LOCALIZE[31326])</onload>
+        <onload>Skin.SetString(bingiehub-moviesaddon-520.target, videos)</onload>
+        <onload>Skin.SetString(bingiehub-moviesaddon-520.path, plugin://plugin.video.themoviedb.helper?info=trakt_popular&amp;type=movie&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbHelper.Widgets.Reload)])</onload>
+        <!-- movies hub - widget 3 -->
+        <onload>Skin.SetString(bingiehub-moviesaddon-530.label, $LOCALIZE[31277])</onload>
+        <onload>Skin.SetString(bingiehub-moviesaddon-530.target, videos)</onload>
+        <onload>Skin.SetString(bingiehub-moviesaddon-530.path, plugin://plugin.video.themoviedb.helper/?info=trakt_userlist&amp;list_name=IMDB:+Top+Rated+Movies&amp;list_slug=imdb-top-rated-movies&amp;user_slug=justin&amp;plugin_category=IMDB:+Top+Rated+Movies&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbHelper.Widgets.Reload)])</onload>     
+        <!-- reset -->
+		<onload>Skin.Reset(bingiehub-moviesaddon-540.label)</onload>
+        <onload>Skin.Reset(bingiehub-moviesaddon-540.target)</onload>
+        <onload>Skin.Reset(bingiehub-moviesaddon-540.path)</onload>
+		<onload>Skin.Reset(bingiehub-moviesaddon-550.label)</onload>
+        <onload>Skin.Reset(bingiehub-moviesaddon-550.target)</onload>
+        <onload>Skin.Reset(bingiehub-moviesaddon-550.path)</onload>
+        <onload>Skin.Reset(bingiehub-moviesaddon-560.label)</onload>
+        <onload>Skin.Reset(bingiehub-moviesaddon-560.target)</onload>
+        <onload>Skin.Reset(bingiehub-moviesaddon-560.path)</onload>
+        <onload>Skin.Reset(bingiehub-moviesaddon-570.label)</onload>
+        <onload>Skin.Reset(bingiehub-moviesaddon-570.target)</onload>
+        <onload>Skin.Reset(bingiehub-moviesaddon-570.path)</onload>
+        <onload>Skin.Reset(bingiehub-moviesaddon-580.label)</onload>
+        <onload>Skin.Reset(bingiehub-moviesaddon-580.target)</onload>
+        <onload>Skin.Reset(bingiehub-moviesaddon-580.path)</onload>
+
+        <!-- TVSHOWS HUB -->
+        <!-- tvshows hub - widget 1 -->
+        <onload>Skin.SetString(bingiehub-tvshowsaddon-510.label, $LOCALIZE[31328])</onload>
+        <onload>Skin.SetString(bingiehub-tvshowsaddon-510.target, videos)</onload>
+        <onload>Skin.SetString(bingiehub-tvshowsaddon-510.path, plugin://plugin.video.themoviedb.helper?info=trakt_trending&amp;type=tv&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbHelper.Widgets.Reload)])</onload>
+        <!-- tvshows hub - widget 2 -->
+        <onload>Skin.SetString(bingiehub-tvshowsaddon-520.label, $LOCALIZE[31319])</onload>
+        <onload>Skin.SetString(bingiehub-tvshowsaddon-520.target, videos)</onload>
+        <onload>Skin.SetString(bingiehub-tvshowsaddon-520.path, plugin://plugin.video.themoviedb.helper?info=trakt_popular&amp;type=tv&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbHelper.Widgets.Reload)])</onload>
+        <!-- tvshows hub - widget 3 -->
+        <onload>Skin.SetString(bingiehub-tvshowsaddon-530.label, $LOCALIZE[31707])</onload>
+        <onload>Skin.SetString(bingiehub-tvshowsaddon-530.target, videos)</onload>
+        <onload>Skin.SetString(bingiehub-tvshowsaddon-530.path, plugin://plugin.video.themoviedb.helper/?info=trakt_userlist&amp;list_name=IMDB:+Top+Rated+TV+Shows&amp;list_slug=imdb-top-rated-tv-shows&amp;user_slug=justin&amp;plugin_category=IMDB:+Top+Rated+TV+Shows&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbHelper.Widgets.Reload)])</onload>
+        <!-- reset -->
+		<onload>Skin.Reset(bingiehub-tvshowsaddon-540.label)</onload>
+        <onload>Skin.Reset(bingiehub-tvshowsaddon-540.target)</onload>
+        <onload>Skin.Reset(bingiehub-tvshowsaddon-540.path)</onload>
+		<onload>Skin.Reset(bingiehub-tvshowsaddon-550.label)</onload>
+        <onload>Skin.Reset(bingiehub-tvshowsaddon-550.target)</onload>
+        <onload>Skin.Reset(bingiehub-tvshowsaddon-550.path)</onload>
+        <onload>Skin.Reset(bingiehub-tvshowsaddon-560.label)</onload>
+        <onload>Skin.Reset(bingiehub-tvshowsaddon-560.target)</onload>
+        <onload>Skin.Reset(bingiehub-tvshowsaddon-560.path)</onload>
+        <onload>Skin.Reset(bingiehub-tvshowsaddon-570.label)</onload>
+        <onload>Skin.Reset(bingiehub-tvshowsaddon-570.target)</onload>
+        <onload>Skin.Reset(bingiehub-tvshowsaddon-570.path)</onload>
+        <onload>Skin.Reset(bingiehub-tvshowsaddon-580.label)</onload>
+        <onload>Skin.Reset(bingiehub-tvshowsaddon-580.target)</onload>
+        <onload>Skin.Reset(bingiehub-tvshowsaddon-580.path)</onload>
+
+        <!-- NEW HUB -->
+        <!-- new hub - widget 1 -->
+        <onload>Skin.SetString(bingiehub-newaddon-510.label, $LOCALIZE[31334])</onload>
+        <onload>Skin.SetString(bingiehub-newaddon-510.target, videos)</onload>
+        <onload>Skin.SetString(bingiehub-newaddon-510.path, plugin://plugin.video.themoviedb.helper/?info=trakt_userlist&amp;list_name=Latest+Releases&amp;list_slug=latest-releases&amp;user_slug=giladg&amp;plugin_category=Latest+Releases&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbHelper.Widgets.Reload)])</onload>
+        <!-- new hub - widget 2 -->
+        <onload>Skin.SetString(bingiehub-newaddon-520.label, $LOCALIZE[31633])</onload>
+        <onload>Skin.SetString(bingiehub-newaddon-520.target, videos)</onload>
+        <onload>Skin.SetString(bingiehub-newaddon-520.path, plugin://plugin.video.themoviedb.helper/?info=trakt_userlist&amp;list_name=Latest+TV+Shows&amp;list_slug=latest-tv-shows&amp;user_slug=garycrawfordgc&amp;plugin_category=Latest+TV+Shows&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbHelper.Widgets.Reload)])</onload>
+        <!-- new hub - widget 3 -->
+        <onload>Skin.SetString(bingiehub-newaddon-530.label, $LOCALIZE[31332])</onload>
+        <onload>Skin.SetString(bingiehub-newaddon-530.target, videos)</onload>
+        <onload>Skin.SetString(bingiehub-newaddon-530.path, plugin://plugin.video.themoviedb.helper/?info=trending_day&amp;tmdb_type=movie&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbHelper.Widgets.Reload)])</onload>
+		<!-- new hub - widget 4 -->
+        <onload>Skin.SetString(bingiehub-newaddon-540.label, $LOCALIZE[31256])</onload>
+        <onload>Skin.SetString(bingiehub-newaddon-540.target, videos)</onload>
+        <onload>Skin.SetString(bingiehub-newaddon-540.path, plugin://plugin.video.themoviedb.helper/?info=trending_day&amp;tmdb_type=tv&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbHelper.Widgets.Reload)])</onload>
+		<!-- reset -->
+        <onload>Skin.Reset(bingiehub-newaddon-550.label)</onload>
+        <onload>Skin.Reset(bingiehub-newaddon-550.target)</onload>
+        <onload>Skin.Reset(bingiehub-newaddon-550.path)</onload>
+        <onload>Skin.Reset(bingiehub-newaddon-560.label)</onload>
+        <onload>Skin.Reset(bingiehub-newaddon-560.target)</onload>
+        <onload>Skin.Reset(bingiehub-newaddon-560.path)</onload>
+        <onload>Skin.Reset(bingiehub-newaddon-570.label)</onload>
+        <onload>Skin.Reset(bingiehub-newaddon-570.target)</onload>
+        <onload>Skin.Reset(bingiehub-newaddon-570.path)</onload>
+        <onload>Skin.Reset(bingiehub-newaddon-580.label)</onload>
+        <onload>Skin.Reset(bingiehub-newaddon-580.target)</onload>
+        <onload>Skin.Reset(bingiehub-newaddon-580.path)</onload>
+		
+		<!-- SOMETHING HUB -->
+        <!-- something hub - widget 1 -->
+        <onload>Skin.SetString(bingiehub-somethingaddon-510.label, $LOCALIZE[31620])</onload>
+        <onload>Skin.SetString(bingiehub-somethingaddon-510.target, videos)</onload>
+        <onload>Skin.SetString(bingiehub-somethingaddon-510.path, plugin://plugin.video.themoviedb.helper/?info=random_popular&amp;tmdb_type=both&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbHelper.Widgets.Reload)])</onload>
+
+		<!-- MUSIC HUB -->
+        <!-- music hub - widget 1 -->
+        <onload>Skin.SetString(bingiehub-music-510.label, $LOCALIZE[31058])</onload>
+        <onload>Skin.SetString(bingiehub-music-510.target, music)</onload>
+        <onload>Skin.SetString(bingiehub-music-510.path, special://skin/extras/widgetplaylists/recentlyaddedalbums.xsp)</onload>
+        <!-- music hub - widget 2 -->
+        <onload>Skin.SetString(bingiehub-music-520.label, $LOCALIZE[31131])</onload>
+        <onload>Skin.SetString(bingiehub-music-520.target, music)</onload>
+        <onload>Skin.SetString(bingiehub-music-520.path, special://skin/extras/widgetplaylists/recentlyaddedartists.xsp)</onload>
+        <!-- music hub - widget 3 -->
+        <onload>Skin.SetString(bingiehub-music-530.label, $LOCALIZE[31211])</onload>
+        <onload>Skin.SetString(bingiehub-music-530.target, music)</onload>
+        <onload>Skin.SetString(bingiehub-music-530.path, special://skin/extras/widgetplaylists/recentlyaddedsongs.xsp)</onload>
+        <!-- reset -->
+		<onload>Skin.Reset(bingiehub-music-540.label)</onload>
+        <onload>Skin.Reset(bingiehub-music-540.target)</onload>
+        <onload>Skin.Reset(bingiehub-music-540.path)</onload>
+		<onload>Skin.Reset(bingiehub-music-550.label)</onload>
+        <onload>Skin.Reset(bingiehub-music-550.target)</onload>
+        <onload>Skin.Reset(bingiehub-music-550.path)</onload>
+        <onload>Skin.Reset(bingiehub-music-560.label)</onload>
+        <onload>Skin.Reset(bingiehub-music-560.target)</onload>
+        <onload>Skin.Reset(bingiehub-music-560.path)</onload>
+        <onload>Skin.Reset(bingiehub-music-570.label)</onload>
+        <onload>Skin.Reset(bingiehub-music-570.target)</onload>
+        <onload>Skin.Reset(bingiehub-music-570.path)</onload>
+        <onload>Skin.Reset(bingiehub-music-580.label)</onload>
+        <onload>Skin.Reset(bingiehub-music-580.target)</onload>
+        <onload>Skin.Reset(bingiehub-music-580.path)</onload>		
+    </include>
+
+</includes>

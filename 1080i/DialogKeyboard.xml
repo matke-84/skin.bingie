@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- BINGIE -->
+<window>
+	<zorder>6</zorder>
+    <defaultcontrol always="true">300</defaultcontrol>
+    <controls>
+        <include condition="Window.IsActive(1109) | Window.IsActive(1108) | Window.IsActive(1106) | Window.IsActive(1107)">BingieSearchMiniKeyboard</include>
+        <include condition="!Window.IsActive(1109) + !Window.IsActive(1108) + !Window.IsActive(1106) + !Window.IsActive(1107)">DefaultKeyboard</include>
+    </controls>
+</window>

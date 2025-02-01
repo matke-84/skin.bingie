@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<window>
+    <defaultcontrol>8</defaultcontrol>
+    <controls>
+			<control type="videowindow" id="20">
+				<description>videowindow</description>
+				<include>FullscreenDimensions</include>
+			</control>
+			<control type="group">
+				<control type="mover" id="8">
+				<description>top left mover</description>
+				<left>0</left>
+				<top>0</top>
+				<width>128</width>
+				<height>128</height>
+				<texturefocus colordiffuse="ffe50914">calibrate/cal_tl.png</texturefocus>
+				<texturenofocus>calibrate/cal_tl.png</texturenofocus>
+				<movingspeed acceleration="180" maxvelocity="300" resettimeout="200" delta="1">
+					<eventconfig type="up" />
+					<eventconfig type="down" />
+					<eventconfig type="left" />
+					<eventconfig type="right" />
+				</movingspeed>
+			</control>
+			<control type="mover" id="9">
+				<description>right bottom mover</description>
+				<left>700</left>
+				<top>500</top>
+				<width>128</width>
+				<height>128</height>
+				<texturefocus colordiffuse="ffe50914">calibrate/cal_br.png</texturefocus>
+				<texturenofocus>calibrate/cal_br.png</texturenofocus>
+				<movingspeed acceleration="180" maxvelocity="300" resettimeout="200" delta="1">
+					<eventconfig type="up" />
+					<eventconfig type="down" />
+					<eventconfig type="left" />
+					<eventconfig type="right" />
+				</movingspeed>
+			</control>
+			<control type="resize" id="11">
+				<description>pixel aspect ratio</description>
+				<left>0</left>
+				<top>390</top>
+				<width>500</width>
+				<height>500</height>
+				<texturefocus colordiffuse="ffe50914">calibrate/cal_ratio.png</texturefocus>
+				<texturenofocus>calibrate/cal_ratio.png</texturenofocus>
+				<movingspeed acceleration="140" maxvelocity="300" resettimeout="180" delta="1">
+					<eventconfig type="left" />
+					<eventconfig type="right" />
+				</movingspeed>
+			</control>
+			<control type="mover" id="10">
+				<description>subtitle position mover</description>
+				<left>200</left>
+				<top>500</top>
+				<width>380</width>
+				<height>90</height>
+				<!-- NOTE: The image must have 40px of trasparent on top and bottom the bar -->
+				<texturefocus colordiffuse="ffe50914">calibrate/cal_sub.png</texturefocus>
+				<texturenofocus>calibrate/cal_sub.png</texturenofocus>
+				<movingspeed acceleration="180" maxvelocity="300" resettimeout="200" delta="1">
+					<eventconfig type="up" />
+					<eventconfig type="down" />
+				</movingspeed>
+			</control>
+			<control type="mover" id="12">
+				<description>reset calibration</description>
+				<left>0</left>
+				<top>900</top>
+				<width>100</width>
+				<height>100</height>
+				<texturefocus colordiffuse="ffe50914">calibrate/reset.png</texturefocus>
+				<texturenofocus>calibrate/reset.png</texturenofocus>
+			</control>
+            <control type="label" id="2">
+                <description>coordinates label</description>
+                <posx>0</posx>
+                <posy>60</posy>
+                <width>100%</width>
+                <align>center</align>
+                <label/>
+                <font>Reg40</font>
+            </control>
+            <control type="label" id="3">
+                <description>help information</description>
+                <posx>0</posx>
+                <posy>135</posy>
+                <width>100%</width>
+                <align>center</align>
+                <label/>
+                <font>Reg40</font>
+            </control>
+			<control type="label" id="4">
+				<description>calibration value</description>
+				<posx>0</posx>
+				<posy>210</posy>
+				<width>100%</width>
+				<align>center</align>
+				<label></label>
+				<font>Reg40</font>
+			</control>
+        </control>
+    </controls>
+</window>

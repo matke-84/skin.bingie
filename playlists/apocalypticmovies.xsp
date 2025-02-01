@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>End of the World</name>
+    <match>all</match>
+    <rule field="tag" operator="is">
+        <value>apocalypse</value>
+        <value>end of the world</value>
+    </rule>
+    <order direction="descending">year</order>
+</smartplaylist>

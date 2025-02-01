@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<includes>
+    <include name="View_507_FanArt">	
+	 <!--View 507-->
+        <control type="group">
+            <visible>Control.IsVisible(507)</visible>
+			<visible>Integer.IsGreater(Container(507).NumItems,0)</visible>
+			<control type="image">
+				<visible>!Container.Content(images) + !Player.HasVideo</visible>
+				<width>100%</width>
+				<height>100%</height>
+				<texture background="true" border="15">overlays/vignette.png</texture>
+				<colordiffuse>cc000000</colordiffuse>
+			</control>
+			<include>WatchedIndicatorLarge</include>
+            
+             <!-- ID="52" -->
+            <control type="panel" id="507">
+                <posx>0</posx>
+                <posy>40</posy>
+                <width>100%</width>
+                <height>800</height>
+                <onup>9000</onup>
+                <ondown condition="Skin.HasSetting(EnableQuickJump)">7000</ondown>
+                <ondown condition="!Skin.HasSetting(EnableQuickJump)">60</ondown>
+                <onleft>507</onleft>
+                <onright>507</onright>
+				<onback>ClearProperty(ListAnimation,home)</onback>
+                <viewtype label="31434">fanart</viewtype>
+				<include content="View_Forced">
+					<param name="viewtype" value="$LOCALIZE[31434]" />
+				</include>
+                <scrolltime tween="quadratic">400</scrolltime>
+                <focusposition>0</focusposition>
+                <orientation>horizontal</orientation>
+                <preloaditems>2</preloaditems>
+				<itemlayout height="2500" width="1920">
+                </itemlayout>
+                <focusedlayout height="2500" width="1920">
+						<control type="button">
+							<visible>false</visible>	
+							<onfocus>AlarmClock(SetList,ClearProperty(ListAnimation,home),00:00,silent)</onfocus>
+							<onfocus>AlarmClock(SetList,SetProperty(ListAnimation,1,home),00:00,silent)</onfocus>					
+						</control>
+                </focusedlayout>
+            </control>
+			
+			<!--Info-->
+			<control type="group">
+				<visible>Control.IsVisible(507) + !String.IsEmpty(ListItem.Label)</visible>
+				<visible>Skin.HasSetting(FanArtViewShowInfo)</visible>
+				<include>animation_view_change</include>
+				<bottom>8%</bottom>
+				<height>283</height>
+
+				<control type="image">
+				    <posy>-65</posy>
+					<posx>60</posx>
+					<height>284</height>
+					<width>1800</width>
+					<texture>diffuse/panel2.png</texture>
+					<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+				</control>
+				
+				<control type="group">
+					<!--Regie, Duration... Movies, TV-Shows, Sesaons, Music-Videos-->
+					<onup>500</onup>
+					<ondown>500</ondown>
+					<onleft>100</onleft>
+					<posx>84</posx>
+					<posy>-51</posy>
+					<control type="label">
+						<height>70</height>
+						<width>1751</width>
+						<font>Bold74</font>
+						<textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
+						<label>[UPPERCASE]$VAR[mediatitle][/UPPERCASE]</label>
+					</control>
+					<control type="label">
+						  <posy>82</posy>
+						  <height>40</height>
+						  <width>1751</width>
+						  <font>bold40</font>
+						  <textcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</textcolor>
+						  <label>$VAR[ListDetails]</label>
+						  <include>Animation.TestOut</include>
+					</control>
+                    <control type="label">
+						  <posy>82</posy>
+						  <height>40</height>
+						  <width>1751</width>
+						  <font>bold40</font>
+						  <textcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</textcolor>
+						  <label>$VAR[Details]</label>
+						  <include>Animation.TestIn</include>
+					</control>
+					<control type="textbox">
+						<posy>132</posy>
+						<width>1751</width>
+						<height>115</height>
+						<label>$VAR[Plots]</label>
+						<textcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</textcolor>
+						<align>justify</align>
+						<font>Reg30</font>
+					</control>
+				</control>						
+			</control>					
+		</control>
+     </include> 
+</includes>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- BINGIE -->
+<smartplaylist type="movies">
+    <name>Blockbuster Movies</name>
+    <match>all</match>
+    <rule field="playcount" operator="is">
+            <value>0</value>
+        </rule>
+    <rule field="rating" operator="greaterthan">
+        <value>6.4</value>
+    </rule>
+    <rule field="dateadded" operator="inthelast">
+        <value>180 days</value>
+    </rule>
+    <order direction="descending">votes</order>
+    <limit>200</limit>
+</smartplaylist>

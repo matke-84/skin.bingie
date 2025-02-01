@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- BINGIE -->
+<smartplaylist type="movies">
+    <name>New &amp; Popular</name>
+    <match>all</match>
+    <rule field="year" operator="greaterthan">
+            <value>2019</value>
+    </rule>
+    <rule field="playcount" operator="is">
+        <value>0</value>
+    </rule>
+    <rule field="rating" operator="greaterthan">
+        <value>6.4</value>
+    </rule>
+	<order direction="descending">dateadded</order>
+    <limit>200</limit>
+</smartplaylist>
+

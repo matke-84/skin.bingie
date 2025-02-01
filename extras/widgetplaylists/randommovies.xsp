@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- BINGIE -->
+<smartplaylist type="movies">
+    <name>Random movies</name>
+    <match>all</match>
+    <order direction="descending">random</order>
+</smartplaylist>

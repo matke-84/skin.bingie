@@ -1,0 +1,2476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<includes>
+    <!-- Skin Settings Menu -->
+    <include name="SkinSettings_MenuOptions">
+		<!-- Homescreen Layout -->
+        <control type="togglebutton" id="12">
+            <label>31115</label>
+            <altlabel>31115</altlabel>
+            <onfocus>SetProperty(SkinSettingSection,12,Home)</onfocus>
+            <usealttexture>String.IsEqual(Window(Home).Property(SkinSettingSection),12)</usealttexture>
+            <include condition="!Window.IsActive(Custom_1105_SkinSettings.xml)">SkinSettings_MenuButtonLarge</include>
+            <include condition="Window.IsActive(Custom_1105_SkinSettings.xml)">SkinSettings_MenuButtonSmall</include>
+        </control>
+        <!--Configure Shortcuts-->
+        <control type="togglebutton" id="9">
+            <label>31013</label>
+            <altlabel>31013</altlabel>
+            <onfocus>SetProperty(SkinSettingSection,9,Home)</onfocus>
+            <include condition="!Window.IsActive(Custom_1105_SkinSettings.xml)">SkinSettings_MenuButtonLarge</include>
+            <include condition="Window.IsActive(Custom_1105_SkinSettings.xml)">SkinSettings_MenuButtonSmall</include>
+            <usealttexture>String.IsEqual(Window(Home).Property(SkinSettingSection),9)</usealttexture>
+        </control>
+        <!-- General Skin Settings -->        
+		<control type="togglebutton" id="6">
+            <label>31005</label>
+            <altlabel>31005</altlabel>
+            <onfocus>SetProperty(SkinSettingSection,6,Home)</onfocus>
+            <include condition="!Window.IsActive(Custom_1105_SkinSettings.xml)">SkinSettings_MenuButtonLarge</include>
+            <include condition="Window.IsActive(Custom_1105_SkinSettings.xml)">SkinSettings_MenuButtonSmall</include>
+            <usealttexture>String.IsEqual(Window(Home).Property(SkinSettingSection),6)</usealttexture>
+        </control>
+        <!-- Media Library Views -->
+		<control type="togglebutton" id="17">
+            <label>31221</label>
+            <altlabel>31221</altlabel>
+            <onfocus>SetProperty(SkinSettingSection,17,Home)</onfocus>
+            <include condition="!Window.IsActive(Custom_1105_SkinSettings.xml)">SkinSettings_MenuButtonLarge</include>
+            <include condition="Window.IsActive(Custom_1105_SkinSettings.xml)">SkinSettings_MenuButtonSmall</include>
+            <usealttexture>String.IsEqual(Window(Home).Property(SkinSettingSection),17)</usealttexture>
+        </control>
+        <!--PVR settings-->
+		<control type="togglebutton" id="18">
+            <label>31088</label>
+            <altlabel>31088</altlabel>
+            <onfocus>SetProperty(SkinSettingSection,18,Home)</onfocus>
+            <include condition="!Window.IsActive(Custom_1105_SkinSettings.xml)">SkinSettings_MenuButtonLarge</include>
+            <include condition="Window.IsActive(Custom_1105_SkinSettings.xml)">SkinSettings_MenuButtonSmall</include>
+            <usealttexture>String.IsEqual(Window(Home).Property(SkinSettingSection),18)</usealttexture>
+            <visible>PVR.HasTVChannels</visible>
+        </control>
+        <!-- Playback & OSD -->
+		<control type="togglebutton" id="16">
+            <label>31668</label>
+            <altlabel>31668</altlabel>
+            <onfocus>SetProperty(SkinSettingSection,16,Home)</onfocus>
+            <include condition="!Window.IsActive(Custom_1105_SkinSettings.xml)">SkinSettings_MenuButtonLarge</include>
+            <include condition="Window.IsActive(Custom_1105_SkinSettings.xml)">SkinSettings_MenuButtonSmall</include>
+            <usealttexture>String.IsEqual(Window(Home).Property(SkinSettingSection),16)</usealttexture>
+        </control>
+        <!-- Background Settings -->
+        <control type="togglebutton" id="8">
+            <label>31022</label>
+            <altlabel>31022</altlabel>
+            <onfocus>SetProperty(SkinSettingSection,8,Home)</onfocus>
+            <include condition="!Window.IsActive(Custom_1105_SkinSettings.xml)">SkinSettings_MenuButtonLarge</include>
+            <include condition="Window.IsActive(Custom_1105_SkinSettings.xml)">SkinSettings_MenuButtonSmall</include>
+            <usealttexture>String.IsEqual(Window(Home).Property(SkinSettingSection),8)</usealttexture>
+        </control>
+        <!-- Custom Colors Settings -->
+        <control type="togglebutton" id="20">
+            <label>31667</label>
+            <altlabel>31667</altlabel>
+            <onfocus>SetProperty(SkinSettingSection,20,Home)</onfocus>
+            <include condition="!Window.IsActive(Custom_1105_SkinSettings.xml)">SkinSettings_MenuButtonLarge</include>
+            <include condition="Window.IsActive(Custom_1105_SkinSettings.xml)">SkinSettings_MenuButtonSmall</include>
+            <usealttexture>String.IsEqual(Window(Home).Property(SkinSettingSection),20)</usealttexture>
+        </control>
+        <!-- Supported Addons -->
+        <control type="togglebutton" id="31">
+            <label>31696</label>
+            <altlabel>31696</altlabel>
+            <onfocus>SetProperty(SkinSettingSection,31,Home)</onfocus>
+            <include condition="!Window.IsActive(Custom_1105_SkinSettings.xml)">SkinSettings_MenuButtonLarge</include>
+            <include condition="Window.IsActive(Custom_1105_SkinSettings.xml)">SkinSettings_MenuButtonSmall</include>
+            <usealttexture>String.IsEqual(Window(Home).Property(SkinSettingSection),31)</usealttexture>
+        </control>
+		<!-- Color Themes -->
+        <control type="togglebutton" id="15">
+            <label>31462</label>
+            <altlabel>31462</altlabel>
+            <onfocus>SetProperty(SkinSettingSection,15,Home)</onfocus>
+            <include condition="!Window.IsActive(Custom_1105_SkinSettings.xml)">SkinSettings_MenuButtonLarge</include>
+            <include condition="Window.IsActive(Custom_1105_SkinSettings.xml)">SkinSettings_MenuButtonSmall</include>
+            <usealttexture>String.IsEqual(Window(Home).Property(SkinSettingSection),15)</usealttexture>
+        </control>
+		<!-- Backup & Restore -->
+        <control type="togglebutton" id="14">
+            <label>31271</label>
+            <altlabel>31271</altlabel>
+            <onfocus>SetProperty(SkinSettingSection,14,Home)</onfocus>
+            <include condition="!Window.IsActive(Custom_1105_SkinSettings.xml)">SkinSettings_MenuButtonLarge</include>
+            <include condition="Window.IsActive(Custom_1105_SkinSettings.xml)">SkinSettings_MenuButtonSmall</include>
+            <usealttexture>String.IsEqual(Window(Home).Property(SkinSettingSection),14)</usealttexture>
+        </control>
+    </include>
+
+    <!-- Tab Factory -->
+    <include name="SkinSettings_Tab">
+        <definition>
+            <control type="grouplist" id="$PARAM[id]000">
+                <description>Control Area</description>
+                <width>100%</width>
+                <height>96%</height>
+                <itemgap>5</itemgap>
+                <orientation>vertical</orientation>
+                <onup>$PARAM[id]000</onup>
+                <ondown>$PARAM[id]000</ondown>
+                <onleft condition="!Window.IsActive(Custom_1105_SkinSettings.xml)">100</onleft>
+                <onleft condition="Window.IsActive(Custom_1105_SkinSettings.xml)">2000</onleft>
+                <onright>3$PARAM[id]</onright>
+                <pagecontrol>3$PARAM[id]</pagecontrol>
+                <visible>String.IsEqual(Window(Home).Property(SkinSettingSection),$PARAM[id])</visible>
+                <nested />
+            </control>
+            <control type="scrollbar" id="3$PARAM[id]">
+                <right>-40</right>
+                <height>96%</height>
+                <onleft>$PARAM[id]000</onleft>
+                <showonepage>false</showonepage>
+                <visible>String.IsEqual(Window(Home).Property(SkinSettingSection),$PARAM[id])</visible>
+            </control>
+        </definition>
+    </include>
+
+    <!-- TABS -->
+    <!-- Home Tab-->
+    <include name="SkinSettings_HomeLayout">
+        <include content="SkinSettings_Tab">
+            <param name="id" value="12"/>
+            <!-- content -->            
+            <include>Home_Spotlight_Settings</include>
+			<include>Home_Widgets_Settings</include>
+			<include>Home_Trailers</include>
+            <include>Home_Details_Settings</include>
+			<include>Thumbs_Up_Down_Settings</include>
+			<include>Categories_Hub</include>
+			<include>Search_Settings</include>
+			<include>Home_Menu_Settings</include>
+        </include>
+    </include>
+
+    <!-- Shortcuts Tab-->
+    <include name="SkinSettings_Shortcuts">
+        <include content="SkinSettings_Tab">
+            <param name="id" value="9"/>
+            <!-- content -->
+            <include>Shortcuts_Config</include>
+        </include>
+    </include>
+
+    <!-- General Tab-->
+    <include name="SkinSettings_General">
+        <include content="SkinSettings_Tab">
+            <param name="id" value="6"/>
+            <!-- content -->  
+            <include>General_Artwork_Details_Settings</include>			
+			<include>Footer_Media_Flags_Ratings</include>
+			<include>General_Trailers_Settings</include>
+            <include>General_Header_Settings</include>
+            <include>General_Indicators_Settings</include>
+            <include>General_Resources_Settings</include>
+            <include>General_Splash_Screen_Settings</include>
+            <include>General_Advanced_Settings</include>
+        </include>
+    </include>
+
+    <!-- Media Library Views Tab-->
+    <include name="SkinSettings_Library">
+        <include content="SkinSettings_Tab">
+            <param name="id" value="17"/>
+            <!-- content -->
+            <include>Media_Library_Main_Section</include>
+            <include>Media_Library_Alphabet_Navigation_Settings</include>
+            <include>Media_Library_Video_Dialog_Settings</include>
+        </include>
+    </include>
+
+    <!-- Live TV Tab-->
+    <include name="SkinSettings_PVR">
+        <include content="SkinSettings_Tab">
+            <param name="id" value="18"/>
+            <!-- content -->
+            <include>PVR_Settings</include>
+        </include>
+    </include>
+
+    <!-- OSD Tab-->
+    <include name="SkinSettings_OSD">
+        <include content="SkinSettings_Tab">
+            <param name="id" value="16"/>
+            <!-- content -->
+            <include>OSD_General_Settings</include>
+            <include>OSD_Info_Panel_Settings</include>
+            <include>OSD_Video_Playback_Settings</include>
+            <include>OSD_Up_Next_Settings</include>
+            <include>OSD_Music_Playback_Settings</include>
+        </include>
+    </include>
+
+    <!-- Custom Colors Tab-->
+    <include name="SkinSettings_CustomColors">
+        <include content="SkinSettings_Tab">
+            <param name="id" value="20"/>
+            <!-- content -->
+            <include>CustomColors_General_Colors_Settings</include>
+			<include>CustomColors_Menu_Colors_Settings</include>
+            <include>CustomColors_Library_Colors_Settings</include>
+            <include>CustomColors_Bingie_Colors_Settings</include>
+			<include>CustomColors_US_MPAA_Colors_Settings</include>
+            <include>CustomColors_Header_Colors_Settings</include>
+            <include>CustomColors_Footer_Colors_Settings</include>
+			<include>CustomColors_OSD_General_Colors_Settings</include>
+			<include>CustomColors_OSD_Bingie_Colors_Settings</include>
+            <include>CustomColors_OSD_Clasic_Colors_Settings</include>
+            <include>CustomColors_PVR_Colors_Settings</include>
+        </include>
+    </include>
+
+    <!-- Color Themes Tab-->
+    <include name="SkinSettings_ColorThemes">
+        <include content="SkinSettings_Tab">
+            <param name="id" value="15"/>
+            <!-- content -->
+            <include>ColorThemes_Theme_Settings</include>
+            <include>ColorThemes_DayNight_Settings</include>
+            <include>ColorThemes_Pallete_Settings</include>
+        </include>
+    </include>
+
+    <!-- Backgrounds Tab-->
+    <include name="SkinSettings_Background">
+        <include content="SkinSettings_Tab">
+            <param name="id" value="8"/>
+            <!-- content -->
+            <include>Background_Global_Settings</include>
+        </include>
+    </include>
+
+    <!-- Supported Addons Tab-->
+    <include name="SkinSettings_Addons">
+        <include content="SkinSettings_Tab">
+            <param name="id" value="31"/>
+            <!-- content -->
+            <include>Supported_Addons_Settings</include>
+        </include>
+    </include>
+
+    <!-- Backup Tab-->
+    <include name="SkinSettings_Backup">
+        <include content="SkinSettings_Tab">
+            <param name="id" value="14"/>
+            <!-- content -->
+            <include>Backup_Settings</include>
+        </include>
+    </include>
+
+    <!-- Defaults -->
+    <!-- Default Skin Settings Button -->
+    <include name="SkinSettings_Button">
+        <width>100%</width>
+        <align>left</align>
+		<aligny>center</aligny>
+        <height>50</height>
+        <font>Reg28</font>
+        <textoffsetx>38</textoffsetx>
+        <textwidth>950</textwidth>
+    </include>
+
+    <!-- Default Skin Settings Header -->
+    <include name="SkinSettings_Header">
+        <width>100%</width>
+        <align>left</align>
+        <height>60</height>
+        <font>Bold36</font>
+        <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+    </include>
+
+    <!-- Default Skin Setting Large Menu Button -->
+    <include name="SkinSettings_MenuButtonLarge">
+        <font>Reg28</font>
+        <width>440</width>
+		<height>50</height>
+        <align>left</align>
+		<textoffsetx>38</textoffsetx>
+        <alttexturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="10">diffuse/panel.png</alttexturefocus>
+        <alttexturenofocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="10">diffuse/panel_trans.png</alttexturenofocus>
+    </include>
+
+    <!-- Default Skin Setting Small Menu Button -->
+    <include name="SkinSettings_MenuButtonSmall">
+        <height>80</height>
+        <width>300</width>
+        <align>center</align>
+        <font>Reg24</font>
+        <textoffsetx>20</textoffsetx>
+        <selectedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</selectedcolor>
+        <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
+        <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+        <disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
+        <pulseonselect>false</pulseonselect>
+        <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="20">dialogs/keyboard/key-nf-2.png</texturefocus>
+        <texturenofocus colordiffuse="$INFO[Skin.String(ButtonColor)]" border="20">dialogs/keyboard/key-nf-2-trans.png</texturenofocus>
+        <alttexturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="20">dialogs/keyboard/key-nf-2.png</alttexturefocus>
+        <alttexturenofocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="20">dialogs/keyboard/key-nf-2-trans.png</alttexturenofocus>
+    </include>
+
+    <!-- Default Skin Settings Action Button -->
+    <include name="SkinSettings_ActionButton">
+        <control type="radiobutton" id="$PARAM[id]">
+            <include>SkinSettings_Button</include>
+            <textureradioonfocus colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]">common/settings1.png</textureradioonfocus>
+            <textureradioonnofocus colordiffuse="$INFO[Skin.String(ButtonTextColor)]">common/settings1.png</textureradioonnofocus>
+            <textureradioofffocus colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]">common/settings1.png</textureradioofffocus>
+            <textureradiooffnofocus colordiffuse="$INFO[Skin.String(ButtonTextColor)]">common/settings1.png</textureradiooffnofocus>
+            <radiowidth>125</radiowidth>
+            <radioheight>40</radioheight>
+            <radioposx>1090</radioposx>
+            <radioposy>5</radioposy>
+            <label>$PARAM[label]</label>
+            <onclick>$PARAM[action2]</onclick>
+            <onclick>$PARAM[action]</onclick>
+            <selected>Control.HasFocus($PARAM[id])</selected>
+            <visible>$PARAM[visible]</visible>
+        </control>
+    </include>
+
+    <!-- Default Skin Settings Addon Button -->
+    <include name="SkinSettings_AddonButton">
+        <control type="radiobutton" id="$PARAM[id]">
+            <include>SkinSettings_Button</include>
+            <textureradioonfocus colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]">common/settings1.png</textureradioonfocus>
+            <textureradioonnofocus colordiffuse="$INFO[Skin.String(ButtonTextColor)]">common/settings1.png</textureradioonnofocus>
+            <textureradioofffocus colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]">common/settings1.png</textureradioofffocus>
+            <textureradiooffnofocus colordiffuse="$INFO[Skin.String(ButtonTextColor)]">common/settings1.png</textureradiooffnofocus>
+            <radiowidth>125</radiowidth>
+            <radioheight>40</radioheight>
+            <radioposx>1090</radioposx>
+            <radioposy>5</radioposy>
+            <include content="SkinSettings_AddonButton_Label" condition="System.HasAddon($PARAM[addon])">
+                <param name="label" value="$INFO[System.AddonTitle($PARAM[addon])] ($INFO[System.AddonVersion($PARAM[addon])])" />
+            </include>
+            <include content="SkinSettings_AddonButton_Label" condition="!System.HasAddon($PARAM[addon])">
+                <param name="label" value="$PARAM[addon]" />
+            </include>
+            <onclick condition="System.HasAddon($PARAM[addon])">Addon.OpenSettings($PARAM[addon])</onclick>
+            <onclick condition="!System.HasAddon($PARAM[addon])">RunPlugin(plugin://$PARAM[addon])</onclick>
+            <selected>Control.HasFocus($PARAM[id])</selected>
+            <animation effect="fade" start="100" end="40" time="0" condition="!System.HasAddon($PARAM[addon])">Conditional</animation>
+        </control>
+    </include>
+    <include name="SkinSettings_AddonButton_Label">
+        <label>$PARAM[label]</label>
+    </include>
+
+    <!-- Default Skin Settings Color Button -->
+    <include name="SkinSettings_ColorButton">
+        <control type="radiobutton" id="$PARAM[id]">
+            <include>SkinSettings_Button</include>
+			<textureradioonfocus colordiffuse="$INFO[Skin.String($PARAM[skinsetting])]">diffuse/colorpicker.png</textureradioonfocus>
+            <textureradioonnofocus colordiffuse="$INFO[Skin.String($PARAM[skinsetting])]">diffuse/colorpicker.png</textureradioonnofocus>
+            <textureradioofffocus colordiffuse="$INFO[Skin.String($PARAM[skinsetting])]">diffuse/colorpicker.png</textureradioofffocus>
+            <textureradiooffnofocus colordiffuse="$INFO[Skin.String($PARAM[skinsetting])]">diffuse/colorpicker.png</textureradiooffnofocus>
+			<radiowidth>58</radiowidth>
+            <radioheight>28</radioheight>
+            <radioposx>1114</radioposx>
+            <label>$PARAM[labelprefix]$PARAM[label]</label>
+            <label2>$INFO[Skin.String($PARAM[skinsetting].name)]             </label2>
+            <onclick condition="System.HasAddon(script.skin.helper.colorpicker)">RunScript(script.skin.helper.colorpicker,action=COLORPICKER,skinstring=$PARAM[skinsetting],header=$PARAM[label],palette=$INFO[Skin.String(defaultcolorpalette)])</onclick>
+            <onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">RunPlugin(plugin://script.skin.helper.colorpicker)</onclick>
+            <visible>$PARAM[visible]</visible>
+        </control>
+    </include>
+
+    <!-- Sections Includes -->
+
+    <!-- HOME TAB INCLUDES-->
+    <!-- Home Spotlight Settings -->
+    <include name="Home_Spotlight_Settings">
+        <control type="label" id="23002">
+            <include>SkinSettings_Header</include>
+            <label>31185</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>       	
+        <!--Disable Spotlight Content-->
+        <control type="radiobutton" id="31753">
+            <include>SkinSettings_Button</include>
+            <label>31297</label>
+            <onclick>Skin.ToggleSetting(DisableSpotlightContent)</onclick>
+            <selected>Skin.HasSetting(DisableSpotlightContent)</selected>
+        </control>
+        <!-- Set Custom Content in Home Spotlight -->
+        <control type="radiobutton" id="31751">
+            <include>SkinSettings_Button</include>
+            <label>31688</label>
+            <onclick condition="String.IsEmpty(Skin.String(spotlighthome.label))">RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetName=spotlighthome.label&amp;skinWidgetTarget=spotlighthome.target&amp;skinWidgetPath=spotlighthome.path)</onclick>
+            <onclick condition="!String.IsEmpty(Skin.String(spotlighthome.label))">Skin.Reset(spotlighthome.label)</onclick>
+            <onclick condition="!String.IsEmpty(Skin.String(spotlighthome.path))">Skin.Reset(spotlighthome.path)</onclick>
+            <selected>Skin.String(spotlighthome.label)</selected>
+            <visible>!Skin.HasSetting(DisableSpotlightContent)</visible>
+        </control>
+		<!-- Auto Hide Plot on System Idle -->	
+		<control type="radiobutton" id="2012">
+            <include>SkinSettings_Button</include>
+            <label>$LOCALIZE[31177]</label>
+            <onclick>Skin.ToggleSetting(AutoHidePlotOnIdle)</onclick>
+            <selected>Skin.HasSetting(AutoHidePlotOnIdle)</selected>
+            <visible>!Skin.HasSetting(DisableSpotlightContent)</visible>
+        </control>			
+	</include>
+
+    <!-- Home Widgets Settings -->
+    <include name="Home_Widgets_Settings">
+        <control type="label" id="23004">
+            <include>SkinSettings_Header</include>
+            <label>31564</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+        <!-- Layout for Widgets -->
+        <control type="button" id="23719">
+            <include>SkinSettings_Button</include>
+            <label>31507</label>
+            <label2>$INFO[Skin.String(widgetstyle.label)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=widgetstyle,header=$LOCALIZE[31507])</onclick>
+        </control>
+        <!-- Enable Fixed Frame in Home & Hubs (Moving Frame) -->
+        <control type="radiobutton" id="2017">
+            <include>SkinSettings_Button</include>
+            <label>31123</label>
+            <onclick>Skin.ToggleSetting(EnableFixedFrameWidgets)</onclick>
+            <selected>!Skin.HasSetting(EnableFixedFrameWidgets)</selected>
+        </control>
+        <!-- display tags on widgets -->
+        <control type="button" id="31675">
+            <include>SkinSettings_Button</include>
+            <label>31675</label>
+            <label2>$INFO[Skin.String(Widgets_DisplayTags.label)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=Widgets_DisplayTags,header=$LOCALIZE[31675])</onclick>
+        </control>
+        <!--enable showinformation skin bypass-->
+        <control type="radiobutton" id="23721">
+            <include>SkinSettings_Button</include>
+            <label>31596</label>
+            <onclick>Skin.ToggleSetting(ShowInformationBypass)</onclick>
+            <selected>Skin.HasSetting(ShowInformationBypass)</selected>
+        </control>
+        <!--prefer tv show art for episodes-->
+        <control type="radiobutton" id="31304">
+            <include>SkinSettings_Button</include>
+            <label>31304</label>
+            <onclick>Skin.ToggleSetting(PreferTvShowThumbWidget)</onclick>
+            <selected>Skin.HasSetting(PreferTvShowThumbWidget)</selected>
+			<visible>String.IsEqual(Skin.String(widgetstyle),landscape)</visible>
+        </control>
+		<!-- Disable Dummy Spotlight Widget -->	
+        <control type="radiobutton" id="2029">
+            <include>SkinSettings_Button</include>
+            <label>31169</label>
+            <onclick>Skin.ToggleSetting(DisableDummySpotlight)</onclick>
+            <selected>Skin.HasSetting(DisableDummySpotlight)</selected>
+        </control>
+    </include>
+	
+	<!-- Home Trailers -->
+    <include name="Home_Trailers">
+        <control type="label" id="31522">
+            <include>SkinSettings_Header</include>
+            <label>31522</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+		<!-- Auto Play Trailer for Spotlight Content -->
+        <control type="radiobutton" id="31754">
+            <include>SkinSettings_Button</include>
+            <label>31754</label>
+			<onclick condition="!System.HasAddon(plugin.video.youtube)">InstallAddon(plugin.video.youtube)</onclick>
+            <onclick condition="System.HasAddon(plugin.video.youtube)">Skin.ToggleSetting(SpotLightTrailers)</onclick>
+            <selected>Skin.HasSetting(SpotLightTrailers)</selected>
+            <visible>!Skin.HasSetting(DisableSpotlightContent)</visible>
+        </control>
+       	<!-- Auto Play Trailers in Home & Hubs -->
+        <control type="radiobutton" id="28637">
+            <include>SkinSettings_Button</include>
+            <label>31173</label>
+			<onclick condition="!System.HasAddon(plugin.video.youtube)">InstallAddon(plugin.video.youtube)</onclick>
+            <onclick condition="System.HasAddon(plugin.video.youtube)">Skin.ToggleSetting(BingieAutoTrailer)</onclick>
+            <selected>Skin.HasSetting(BingieAutoTrailer)</selected>
+        </control>
+        <!-- Select Delay Interval for Auto-Trailers -->
+        <control type="button" id="43699">
+            <include>SkinSettings_Button</include>
+            <label>$LOCALIZE[31719]</label>
+            <label2>$LOCALIZE[31634]: $INFO[Skin.String(main_auto_trailer_interval.label)]</label2>
+            <visible>Skin.HasSetting(BingieAutoTrailer) | Skin.HasSetting(SpotLightTrailers)</visible>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=main_auto_trailer_interval,header=$LOCALIZE[31634])</onclick>
+        </control>		
+	</include>
+
+      <!-- Home Details Settings -->
+      <include name="Home_Details_Settings">
+        <control type="label" id="23005">
+            <include>SkinSettings_Header</include>
+            <label>31188</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>      
+        <!-- Select which details to show in details row -->
+        <include content="SkinSettings_ActionButton">
+            <param name="id" value="31144" />
+            <param name="label" value="31144" />
+            <param name="action" value="RunScript(script.bingie.toolbox,action=setskinsetting,setting=details_row,header=$LOCALIZE[31144])" />
+        </include>
+		<!-- Select mpaa style -->
+		<control type="button" id="2019">
+            <include>SkinSettings_Button</include>
+            <label>$LOCALIZE[31309]</label>
+            <label2>$INFO[Skin.String(mpaa_style.label)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=mpaa_style,header=$LOCALIZE[31309])</onclick>
+        </control>	
+		<!-- Prefer Red/White Details Icons -->	
+		<control type="radiobutton" id="2016">
+            <include>SkinSettings_Button</include>
+            <label>31282</label>
+            <onclick>Skin.ToggleSetting(EnableColorDetailsIcons)</onclick>
+            <selected>Skin.HasSetting(EnableColorDetailsIcons)</selected>
+        </control>
+		<!-- Disable Additional Details Cast Thumbnails -->	
+		<control type="radiobutton" id="2043">
+            <include>SkinSettings_Button</include>
+            <label>31199</label>
+            <onclick>Skin.ToggleSetting(EnableCastThumb)</onclick>
+            <selected>Skin.HasSetting(EnableCastThumb)</selected>
+        </control>		
+	    <!-- Enable Continue Watching Movie Percentage -->
+        <control type="radiobutton" id="2045">
+            <include>SkinSettings_Button</include>
+            <label>31281</label>
+            <onclick>Skin.ToggleSetting(MovieDetailsHome)</onclick>
+            <selected>!Skin.HasSetting(MovieDetailsHome)</selected>
+        </control>
+	</include>
+	
+	 <!-- Thumbs UP/DOWN Settings -->
+    <include name="Thumbs_Up_Down_Settings">
+        <control type="label" id="23010">
+            <include>SkinSettings_Header</include>
+            <label>31158</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+            <visible>Skin.HasSetting(details_row_thumbs)</visible>
+        </control>
+        <!--Thumbs up rate value-->
+        <control type="button" id="31663">
+            <include>SkinSettings_Button</include>
+            <label>$LOCALIZE[31663]</label>
+            <label2>$INFO[Skin.String(ThumbsUpRateValue.label)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=ThumbsUpRateValue,header=$LOCALIZE[31663])</onclick>
+        </control>
+        <!--Thumbs down rate value-->
+        <control type="button" id="31664">
+            <include>SkinSettings_Button</include>
+            <label>$LOCALIZE[31664]</label>
+            <label2>$INFO[Skin.String(ThumbsDownRateValue.label)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=ThumbsDownRateValue,header=$LOCALIZE[31664])</onclick>
+        </control>
+    </include>
+
+    <!-- Ratings & Studio Logo Settings -->
+    <include name="Footer_Media_Flags_Ratings">
+        <control type="label" id="23007">
+            <include>SkinSettings_Header</include>
+            <label>31156</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+		<!-- Enable Ratings -->
+		<control type="radiobutton" id="2028">
+            <include>SkinSettings_Button</include>
+            <label>$LOCALIZE[31594]</label>
+            <onclick>Skin.ToggleSetting(EnableRatings)</onclick>
+            <selected>Skin.HasSetting(EnableRatings)</selected>
+        </control>
+		<!-- Select which ratings to show in footer -->
+		<include content="SkinSettings_ActionButton">
+            <param name="id" value="2039" />
+            <param name="label" value="      $LOCALIZE[31692]" />
+            <param name="action" value="RunScript(script.bingie.toolbox,action=setskinsetting,setting=ratings,header=$LOCALIZE[31692])" />
+            <param name="visible" value="Skin.HasSetting(EnableRatings)" />
+        </include>	
+		<!-- Enable Studio Logo -->
+		<control type="radiobutton" id="2047">
+            <include>SkinSettings_Button</include>
+            <label>$LOCALIZE[31042]</label>
+            <onclick>Skin.ToggleSetting(EnableStudioLogo)</onclick>
+            <selected>Skin.HasSetting(EnableStudioLogo)</selected>
+        </control>					
+		<!--Prefer white footer -->
+		<control type="radiobutton" id="2040">
+            <include>SkinSettings_Button</include>
+            <label>$LOCALIZE[31338]</label>
+			<onclick condition="!System.HasAddon(resource.images.studios.white)">InstallAddon(resource.images.studios.white)</onclick>
+            <onclick condition="System.HasAddon(resource.images.studios.white)">Skin.ToggleSetting(PreferWhiteFooter)</onclick>
+			<selected>Skin.HasSetting(PreferWhiteFooter)</selected>
+        </control>								          	
+		<!-- Ratings Visibility -->
+        <include content="SkinSettings_ActionButton">
+            <param name="id" value="2021" />
+            <param name="label" value="$LOCALIZE[31118]" />
+            <param name="action" value="RunScript(script.bingie.toolbox,action=setskinsetting,setting=footer_visibility,header=$LOCALIZE[31118])" />
+        </include>
+		<!-- Top250 visibility -->
+        <include content="SkinSettings_ActionButton">
+            <param name="id" value="31323" />
+            <param name="label" value="$LOCALIZE[31323]" />
+            <param name="action" value="RunScript(script.bingie.toolbox,action=setskinsetting,setting=top250_visibility,header=$LOCALIZE[31118])" />
+			<param name="visible" value="Skin.HasSetting(EnableRatings)" />
+        </include>
+		<!-- Prefer White Top250 Sublabel -->	
+		<control type="radiobutton" id="2038">
+            <include>SkinSettings_Button</include>
+            <label>      $LOCALIZE[31283]</label>
+            <onclick>Skin.ToggleSetting(EnableTop250WhiteLabel)</onclick>
+            <selected>Skin.HasSetting(EnableTop250WhiteLabel)</selected>
+            <visible>Skin.HasSetting(EnableRatings) + [!Skin.HasSetting(DisableTop250) | !Skin.HasSetting(DisableSpotlightTop250) | Skin.HasSetting(EnableTop250Info)]</visible>
+        </control>
+	</include>
+	
+	<!-- Categories Lists -->
+    <include name="Categories_Hub">
+        <control type="label" id="230007">
+            <include>SkinSettings_Header</include>
+            <label>$LOCALIZE[31489]</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+        <!-- Categories List -->
+        <control type="button" id="2048">
+            <include>SkinSettings_Button</include>
+            <label>$LOCALIZE[31166]</label>
+            <label2>$INFO[Skin.String(categories_types.label)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=categories_types,header=$LOCALIZE[31166])</onclick>
+			<visible>![!Library.HasContent(Movies) + !Library.HasContent(TVShows)]</visible>
+        </control>
+		<!-- Enable Streaming Services TMDB Helper List -->
+		<control type="radiobutton" id="2010">
+            <include>SkinSettings_Button</include>
+            <label>$LOCALIZE[31468]</label>
+            <onclick>Skin.ToggleSetting(EnableDigitalFilter)</onclick>
+            <selected>Skin.HasSetting(EnableDigitalFilter)</selected>
+			<visible>String.IsEqual(Skin.String(categories_types),TMDbHelperList) | !Library.HasContent(Movies) + !Library.HasContent(TVShows)</visible>
+        </control>
+		<!-- Select which categories to show in categories hub -->
+        <include content="SkinSettings_ActionButton">
+            <param name="id" value="31354" />
+            <param name="label" value="$LOCALIZE[31354]" />
+            <param name="action" value="RunScript(script.bingie.toolbox,action=setskinsetting,setting=categories_list,header=$LOCALIZE[31354])" />
+        </include>
+	</include>
+	
+	<!-- Search Settings -->
+    <include name="Search_Settings">
+        <control type="label" id="5137">
+            <include>SkinSettings_Header</include>
+            <label>31415</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+		<control type="radiobutton" id="31251">
+            <include>SkinSettings_Button</include>
+            <label>31251</label>
+            <onclick>Skin.ToggleSetting(EnableBingieSearchAuto)</onclick>
+            <selected>!Skin.HasSetting(EnableBingieSearchAuto)</selected>
+            <visible>!Skin.HasSetting(EnableCustomBingieSearch)</visible>
+        </control>		
+		<include content="SkinSettings_ActionButton">
+            <param name="id" value="2033" />
+            <param name="label" value="      $LOCALIZE[31165]" />
+            <param name="action" value="RunScript(script.bingie.toolbox,action=setskinsetting,setting=search_types,header=$LOCALIZE[31165])" />
+            <param name="visible" value="!Skin.HasSetting(EnableCustomBingieSearch) + !Skin.HasSetting(EnableBingieSearchAuto)" />
+        </include>
+		<include content="SkinSettings_ActionButton">
+            <param name="id" value="2037" />
+            <param name="label" value="$VAR[TMDbSearchContentLabel]" />
+            <param name="action" value="RunScript(script.bingie.toolbox,action=setskinsetting,setting=tmdbhelper_search,header=$LOCALIZE[31010])" />
+            <param name="visible" value="[Skin.HasSetting(EnableBingieSearchAuto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | Skin.HasSetting(EnableBingieSearchTMDBHelper) + !Skin.HasSetting(EnableBingieSearchAuto)] + !Skin.HasSetting(EnableCustomBingieSearch)" />
+        </include>
+		<control type="radiobutton" id="31117">
+            <description>Custom search</description>
+            <include>SkinSettings_Button</include>
+            <label>31117</label>
+            <onclick>Skin.ToggleSetting(EnableCustomBingieSearch)</onclick>
+			<onclick condition="!Skin.HasSetting(EnableCustomBingieSearch)">RunScript(script.bingie.toolbox,action=dialogok,header=$LOCALIZE[31117],message=$LOCALIZE[31709])</onclick>
+            <selected>Skin.HasSetting(EnableCustomBingieSearch)</selected>
+        </control>
+        <control type="radiobutton" id="32109">
+            <description>enable keyboard option</description>
+            <include>SkinSettings_Button</include>
+            <label>31550</label>
+            <onclick>Skin.ToggleSetting(EnableBingieSearchFullKeyboard)</onclick>
+            <selected>Skin.HasSetting(EnableBingieSearchFullKeyboard)</selected>
+        </control>
+    </include>
+
+    <!-- Home Menu Options -->
+    <include name="Home_Menu_Settings">
+        <control type="label" id="23006">
+            <include>SkinSettings_Header</include>
+            <label>31182</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+		<!-- Disable Static Slim Menu -->    
+		<control type="radiobutton" id="2013">
+            <include>SkinSettings_Button</include>
+            <label>31276</label>
+            <onclick>Skin.ToggleSetting(DisableStaticSlimMenu)</onclick>
+            <selected>Skin.HasSetting(DisableStaticSlimMenu)</selected>
+        </control>
+        <!--disable all submenus-->
+        <control type="radiobutton" id="23017">
+            <include>SkinSettings_Button</include>
+            <label>31265</label>
+            <onclick>Skin.ToggleSetting(DisableAllSubmenus)</onclick>
+            <selected>Skin.HasSetting(DisableAllSubmenus)</selected>
+        </control>
+        <!--enable auto show submenus-->
+        <control type="radiobutton" id="23014">
+            <include>SkinSettings_Button</include>
+            <label>$LOCALIZE[31113]</label>
+            <onclick>Skin.ToggleSetting(AutoShowSubmenu)</onclick>
+            <selected>Skin.HasSetting(AutoShowSubmenu)</selected>
+            <visible>!Skin.HasSetting(DisableAllSubmenus)</visible>
+        </control>
+	</include>
+
+    <!-- Background Settings -->
+    <!-- Global Background Settings -->
+    <include name="Background_Global_Settings">
+        <!-- skin background -->
+        <control type="label" id="14001">
+            <include>SkinSettings_Header</include>
+            <label>31142</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+        <!-- set global background -->
+        <control type="button" id="14002">
+            <include>SkinSettings_Button</include>
+            <label>31646</label>
+            <label2>$INFO[Skin.String(CustomBackgroundSetting.label)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=selectimage,skinstring=CustomBackgroundSetting,header=$LOCALIZE[31646],allowmulti=true,resourceaddon=resource.images.skinbackgrounds)</onclick>
+        </control>
+		<!-- background color -->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31203" />
+            <param name="label" value="$LOCALIZE[31203]" />
+            <param name="skinsetting" value="BackgroundColor" />
+        </include>
+        <!-- background color diffuse -->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="14009" />
+            <param name="label" value="$LOCALIZE[31574]" />
+            <param name="skinsetting" value="BackgroundDiffuseColor" />
+        </include>
+        <!-- multi-image Background transition time-->
+        <control type="button" id="13019">
+            <include>SkinSettings_Button</include>
+            <label>31449</label>
+            <label2>$INFO[Skin.String(RandomFanartDelay.label)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=RandomFanartDelay,header=$LOCALIZE[31449])</onclick>
+        </control>
+        <!--background animation-->
+        <control type="radiobutton" id="13018">
+            <include>SkinSettings_Button</include>
+            <label>31266</label>
+            <onclick>Skin.ToggleSetting(BackgroundAnimation)</onclick>
+            <selected>Skin.HasSetting(BackgroundAnimation)</selected>
+        </control>
+        <!--background randomize-->
+        <control type="radiobutton" id="31726">
+            <include>SkinSettings_Button</include>
+            <label>31726</label>
+            <onclick>Skin.ToggleSetting(RandomizeBackground)</onclick>
+            <selected>Skin.HasSetting(RandomizeBackground)</selected>
+        </control>
+    </include>
+
+    <!-- Media Library Views Settings -->
+    <!-- Main Section -->
+    <include name="Media_Library_Main_Section">
+        <!-- media library views -->
+        <control type="label" id="13020">
+            <include>SkinSettings_Header</include>
+            <label>$LOCALIZE[31221]</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+        <!-- enable/disable views -->
+        <include content="SkinSettings_ActionButton">
+            <param name="id" value="6026" />
+            <param name="label" value="31487" />
+            <param name="action" value="RunScript(script.bingie.toolbox,action=ENABLEVIEWS,richlayout=true)" />
+            <param name="visible" value="true" />
+        </include>
+        <!-- Show ClearLogo (If Available) -->
+        <control type="button" id="13027">
+            <include>SkinSettings_Button</include>
+            <label>31327</label>
+            <label2>$INFO[Skin.String(ClearLogoLocation.label)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=ClearLogoLocation,header=$LOCALIZE[31327])</onclick>
+        </control>
+		<!-- Enable Total Media Count In Bingie Library Views  -->	
+		<control type="radiobutton" id="2044">
+            <include>SkinSettings_Button</include>
+            <label>31261</label>
+            <onclick>Skin.ToggleSetting(EnableMediaCount)</onclick>
+            <selected>Skin.HasSetting(EnableMediaCount)</selected>
+        </control>
+		<!-- display tags in views -->
+        <control type="button" id="31141">
+            <include>SkinSettings_Button</include>
+            <label>31141</label>
+            <label2>$INFO[Skin.String(Views_DisplayTags.label)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=Views_DisplayTags,header=$LOCALIZE[31141])</onclick>
+        </control>	
+		<!-- style for codec info -->
+        <control type="button" id="13029">
+            <include>SkinSettings_Button</include>
+            <label>$LOCALIZE[31632]</label>
+            <label2>$INFO[Skin.String(mediaflagsstyle.label)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=mediaflagsstyle,header=$LOCALIZE[31632])</onclick>
+        </control>
+    </include>
+
+    <!-- Media Library Alphabet Navigation Settings -->
+    <include name="Media_Library_Alphabet_Navigation_Settings">
+        <control type="label" id="23019">
+            <include>SkinSettings_Header</include>
+            <label>31181</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+        <control type="textbox" id="23020">
+            <width>1200</width>
+            <align>justify</align>
+            <label>31227</label>
+            <height>auto</height>
+            <font>Reg26</font>
+        </control>
+        <control type="radiobutton" id="31720">
+            <include>SkinSettings_Button</include>
+            <label>31720</label>
+            <onclick>Skin.ToggleSetting(DisableScrollingLetters)</onclick>
+            <selected>!Skin.HasSetting(DisableScrollingLetters)</selected>
+        </control>
+        <control type="radiobutton" id="31725">
+            <include>SkinSettings_Button</include>
+            <label>31725</label>
+            <onclick>Skin.ToggleSetting(EnableQuickJump)</onclick>
+            <selected>Skin.HasSetting(EnableQuickJump)</selected>
+        </control>
+    </include>
+
+    <!-- Video Dialog Settings -->
+    <include name="Media_Library_Video_Dialog_Settings">
+        <!-- video information dialog -->
+        <control type="label" id="20159">
+            <include>SkinSettings_Header</include>
+            <label>31684</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+        <!-- use bingie info -->
+        <control type="radiobutton" id="46656">
+            <include>SkinSettings_Button</include>
+            <label>31378</label>
+            <onclick>Skin.ToggleSetting(UseBingieInfoDialog)</onclick>
+            <selected>!Skin.HasSetting(UseBingieInfoDialog)</selected>
+        </control>
+		<!-- Lists filter -->
+        <control type="button" id="2022">
+            <include>SkinSettings_Button</include>
+            <label>$LOCALIZE[31467]</label>
+            <label2>$INFO[Skin.String(list_filter.label)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=list_filter,header=$LOCALIZE[31467])</onclick>
+        </control>
+        <!-- Select which buttons to show in videoinfo -->
+        <include content="SkinSettings_ActionButton">
+            <param name="id" value="31695" />
+            <param name="label" value="31695" />
+            <param name="action" value="RunScript(script.bingie.toolbox,action=setskinsetting,setting=videoinfo_buttons,header=$LOCALIZE[31695])" />
+        </include>
+        <!-- Select which details to show in videoinfo -->
+        <include content="SkinSettings_ActionButton">
+            <param name="id" value="46654" />
+            <param name="label" value="$LOCALIZE[31595]" />
+            <param name="action" value="RunScript(script.bingie.toolbox,action=setskinsetting,setting=videoinfo_details,header=$LOCALIZE[31595])" />
+        </include>
+		<!-- Replace Cast and Crew List with Cast and Crew Images -->
+		<control type="radiobutton" id="2041">
+            <include>SkinSettings_Button</include>
+            <label>$LOCALIZE[31184]</label>
+            <onclick>Skin.ToggleSetting(CastCrewImages)</onclick>
+            <selected>Skin.HasSetting(CastCrewImages)</selected>
+			<visible>Skin.HasSetting(UseBingieInfoDialog)</visible>
+        </control>
+		<!-- Number of roles -->
+        <control type="button" id="2031">
+            <include>SkinSettings_Button</include>
+            <label>$LOCALIZE[31150]</label>
+            <label2>$INFO[Skin.String(cast_number.label)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=cast_number,header=$LOCALIZE[31150])</onclick>
+        </control>
+		<!-- Replace Add to My List with Add/Remove Trakt Watchlist -->
+		<control type="radiobutton" id="2015">
+            <include>SkinSettings_Button</include>
+            <label>$LOCALIZE[31214]</label>
+            <onclick>Skin.ToggleSetting(AddToWatchlist)</onclick>
+            <selected>Skin.HasSetting(AddToWatchlist)</selected>
+			<visible>Skin.HasSetting(UseBingieInfoDialog) + [Library.HasContent(Movies) | Library.HasContent(TVShows)]</visible>
+        </control>			
+		<!-- Replace Rate This Title with Add Raiting -->
+		<control type="radiobutton" id="2026">
+            <include>SkinSettings_Button</include>
+            <label>$LOCALIZE[31208]</label>
+            <onclick>Skin.ToggleSetting(AddRaitingTrakt)</onclick>
+            <selected>Skin.HasSetting(AddRaitingTrakt)</selected>
+			<visible>Skin.HasSetting(UseBingieInfoDialog) + [Library.HasContent(Movies) | Library.HasContent(TVShows)]</visible>
+        </control>
+		<!-- Enable details icons -->
+        <control type="radiobutton" id="46655">
+            <include>SkinSettings_Button</include>
+            <label>31120</label>
+            <onclick>Skin.ToggleSetting(EnableDetailsIconsInfoDialog)</onclick>
+            <selected>Skin.HasSetting(EnableDetailsIconsInfoDialog)</selected>
+        </control>
+		<!-- Disable collection -->
+		<control type="radiobutton" id="2025">
+            <include>SkinSettings_Button</include>
+            <label>$LOCALIZE[31317]</label>
+            <onclick>Skin.ToggleSetting(VideoInfoButtonCollection)</onclick>
+            <selected>Skin.HasSetting(VideoInfoButtonCollection)</selected>
+			<visible>Skin.HasSetting(UseBingieInfoDialog)</visible>
+        </control>
+		<!-- Enable studio logo -->
+        <control type="radiobutton" id="46657">
+            <include>SkinSettings_Button</include>
+            <label>31042</label>
+            <onclick>Skin.ToggleSetting(EnableStudioLogoInfoDialog)</onclick>
+            <selected>!Skin.HasSetting(EnableStudioLogoInfoDialog)</selected>
+            <visible>Skin.HasSetting(UseBingieInfoDialog)</visible>
+        </control>
+        <!-- prefer youtube trailers -->
+        <control type="radiobutton" id="46653">
+            <include>SkinSettings_Button</include>
+            <label>31619</label>
+            <onclick>Skin.ToggleSetting(PreferYoutubeTrailers)</onclick>
+            <selected>Skin.HasSetting(PreferYoutubeTrailers)</selected>
+            <visible>Skin.HasSetting(UseBingieInfoDialog)</visible>
+        </control>
+        <!-- Show next/resumable ep. info instead of tvshow's -->
+        <control type="radiobutton" id="39275">
+            <include>SkinSettings_Button</include>
+            <label>31218</label>
+            <onclick>Skin.ToggleSetting(ShowEpisodePlotInfoDialog)</onclick>
+            <selected>Skin.HasSetting(ShowEpisodePlotInfoDialog)</selected>
+            <visible>Skin.HasSetting(UseBingieInfoDialog)</visible>
+        </control>
+    </include>
+
+    <!-- Custom Color Settings -->
+    <!-- Bingie Colors -->
+    <include name="CustomColors_Bingie_Colors_Settings">
+        <!-- bingie views -->
+        <control type="label" id="2000">
+            <include>SkinSettings_Header</include>
+            <label>31321</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+        <!--Bingie Primary Text Color--> 
+		<include content="SkinSettings_ColorButton">
+            <param name="id" value="31157" />
+            <param name="label" value="$LOCALIZE[31157]" />
+            <param name="skinsetting" value="BingiePrimaryTextColor" />
+        </include>
+        <!--Bingie Secondary Text Color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31047" />
+            <param name="label" value="$LOCALIZE[31047]" />
+            <param name="skinsetting" value="BingieSecondaryTextColor" />
+        </include>
+        <!--Bingie Details Flag Color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31537" />
+            <param name="label" value="$LOCALIZE[31537]" />
+            <param name="skinsetting" value="BingieDetailsFlagColor" />
+        </include>
+        <!--Bingie Details Text Flag Color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31085" />
+            <param name="label" value="$LOCALIZE[31085]" />
+            <param name="skinsetting" value="BingieDetailsFlagTextColor" />
+        </include>			
+		<!--Widgets Details Text Color -->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31718" />
+            <param name="label" value="$LOCALIZE[31718]" />
+            <param name="skinsetting" value="BingieDeatailsTextColor" />
+        </include>	
+        <!--Bingie Ratings in Details Row Color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31583" />
+            <param name="label" value="$LOCALIZE[31583]" />
+            <param name="skinsetting" value="BingieRatingInDetailsColor" />
+        </include>
+		<!--Bingie Label Text Color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31102" />
+            <param name="label" value="$LOCALIZE[31102]" />
+            <param name="skinsetting" value="BingieLabelTextColor" />
+        </include>	
+        <!--Bingie Sub Label Text Color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31412" />
+            <param name="label" value="$LOCALIZE[31412]" />
+            <param name="skinsetting" value="BingieSubLabelTextColor" />
+        </include>		
+		<!--Bingie Plot Text Color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31621" />
+            <param name="label" value="$LOCALIZE[31621]" />
+            <param name="skinsetting" value="BingiePlotTextColor" />
+        </include>
+		<include content="SkinSettings_ColorButton">
+            <param name="id" value="31672" />
+            <param name="label" value="$LOCALIZE[31672]" />
+            <param name="skinsetting" value="BingieSpotlightPlotTextColor" />
+        </include>
+		<!--Bingie Top 250 Icon Color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31548" />
+            <param name="label" value="$LOCALIZE[31548]" />
+			<param name="visible" value="Skin.HasSetting(EnableTop250WhiteLabel) | Skin.HasSetting(EnableTop250WhiteLabel)" />
+            <param name="skinsetting" value="BingieTop250IconColor" />
+        </include>
+		<!--Bingie Additional Info Icons Color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31561" />
+            <param name="label" value="$LOCALIZE[31561]" />
+			<param name="visible" value="!Skin.HasSetting(EnableColorDetailsIcons) | !Skin.HasSetting(EnableColorDetailsIcons)" />
+            <param name="skinsetting" value="BingieAdditionalInfoIconsColor" />
+        </include>
+        <!--Bingie Additional Info Text Color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31010" />
+            <param name="label" value="$LOCALIZE[31411]" />
+            <param name="skinsetting" value="BingieAdditionalInfoTextColor" />
+        </include>
+		<include content="SkinSettings_ColorButton">
+            <param name="id" value="31084" />
+            <param name="label" value="$LOCALIZE[31084]" />
+			<param name="visible" value="Skin.HasSetting(EnableDetailsIconsInfoDialog)" />
+            <param name="skinsetting" value="BingieDialogAdditionalInfoIconColor" />
+        </include>	
+		<include content="SkinSettings_ColorButton">
+            <param name="id" value="31572" />
+            <param name="label" value="$LOCALIZE[31572]" />
+            <param name="skinsetting" value="BingieDialogAdditionalInfoTextColor" />
+        </include>
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="5169" />
+            <param name="label" value="$LOCALIZE[31520]" />
+            <param name="skinsetting" value="WidgetSpinnerTextureColor" />
+        </include>				
+		<include content="SkinSettings_ColorButton">
+            <param name="id" value="31003" />
+            <param name="label" value="$LOCALIZE[31003]" />
+            <param name="skinsetting" value="BingieHeaderTextColor" />
+        </include>
+		<include content="SkinSettings_ColorButton">
+            <param name="id" value="31015" />
+            <param name="label" value="$LOCALIZE[31015]" />
+            <param name="skinsetting" value="BingieButtonTextColor" />
+        </include>
+		<include content="SkinSettings_ColorButton">
+            <param name="id" value="31143" />
+            <param name="label" value="$LOCALIZE[31143]" />
+            <param name="skinsetting" value="BingieSecondaryButtonFocusTextColor" />
+        </include>
+		<include content="SkinSettings_ColorButton">
+            <param name="id" value="31011" />
+            <param name="label" value="$LOCALIZE[31011]" />
+            <param name="skinsetting" value="BingieButtonFocusTextColor" />
+        </include>
+		<include content="SkinSettings_ColorButton">
+            <param name="id" value="31019" />
+            <param name="label" value="$LOCALIZE[31019]" />
+            <param name="skinsetting" value="BingieProgressBarColor" />
+        </include>
+		<include content="SkinSettings_ColorButton">
+            <param name="id" value="31020" />
+            <param name="label" value="$LOCALIZE[31020]" />
+            <param name="skinsetting" value="BingieProgressBarBackgroundColor" />
+        </include>
+		<include content="SkinSettings_ColorButton">
+            <param name="id" value="31093" />
+            <param name="label" value="$LOCALIZE[31093]" />
+            <param name="skinsetting" value="BingieHomeProgressBarTextColor" />
+        </include>
+    </include>
+	
+	<!-- Custom Colors Header Settings -->
+    <include name="CustomColors_US_MPAA_Colors_Settings">
+        <!-- general color settings -->
+        <control type="label" id="31661">
+            <include>SkinSettings_Header</include>
+            <label>31661</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+        <!--General Audiences Panel Color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31655" />
+            <param name="label" value="$LOCALIZE[31655]" />
+            <param name="skinsetting" value="GPanelColor" />
+        </include>
+        <!--Parental Guidance Suggested Panel Color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31656" />
+            <param name="label" value="$LOCALIZE[31656]" />
+            <param name="skinsetting" value="PGPanelColor" />
+        </include>
+        <!--Parents Strongly Cautioned Panel Color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31647" />
+            <param name="label" value="$LOCALIZE[31647]" />
+            <param name="skinsetting" value="PG13PanelColor" />
+        </include>
+		<!--Restricted Panel Color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31645" />
+            <param name="label" value="$LOCALIZE[31645]" />
+            <param name="skinsetting" value="RPanelColor" />
+        </include>
+        <!--Adults Only Panel Color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31643" />
+            <param name="label" value="$LOCALIZE[31643]" />
+            <param name="skinsetting" value="NC17PanelColor" />
+        </include>
+        <!--Not Rated Panel Color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31638" />
+            <param name="label" value="$LOCALIZE[31638]" />
+            <param name="skinsetting" value="NRPanelColor" />
+        </include>
+		<!--Panel Border Color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31605" />
+            <param name="label" value="$LOCALIZE[31605]" />
+            <param name="skinsetting" value="PanelBorderColor" />
+        </include>
+		<!--Font color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31639" />
+            <param name="label" value="$LOCALIZE[31639]" />
+            <param name="skinsetting" value="MPAATextColor" />
+        </include>
+    </include>
+
+    <!-- Custom Colors Header Settings -->
+    <include name="CustomColors_Header_Colors_Settings">
+        <!-- general color settings -->
+        <control type="label" id="13011">
+            <include>SkinSettings_Header</include>
+            <label>31450</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+        <!--header text color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31219" />
+            <param name="label" value="$LOCALIZE[31219]" />
+            <param name="skinsetting" value="HeaderTextColor" />
+        </include>
+        <!--header shadow color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31220" />
+            <param name="label" value="$LOCALIZE[31220]" />
+            <param name="skinsetting" value="HeaderTextShadowColor" />
+        </include>
+    </include>
+
+    <!-- Custom Colors General Settings -->
+    <include name="CustomColors_General_Colors_Settings">
+        <!-- general color settings -->
+        <control type="label" id="13010">
+            <include>SkinSettings_Header</include>
+            <label>31486</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+		<!--General panel color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31260" />
+            <param name="label" value="$LOCALIZE[31260]" />
+            <param name="skinsetting" value="GeneralPanelsColor" />
+        </include>
+        <!--general text color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31460" />
+            <param name="label" value="$LOCALIZE[31460]" />
+            <param name="skinsetting" value="GeneralTextColor" />
+        </include>
+        <!--buttons color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31475" />
+            <param name="label" value="$LOCALIZE[31475]" />
+            <param name="skinsetting" value="ButtonColor" />
+        </include>
+        <!--buttons focus color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31233" />
+            <param name="label" value="$LOCALIZE[31233]" />
+            <param name="skinsetting" value="ButtonFocusColor" />
+        </include>
+        <!--buttons text color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31458" />
+            <param name="label" value="$LOCALIZE[31458]" />
+            <param name="skinsetting" value="ButtonTextColor" />
+        </include>
+        <!--buttons focus text color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31459" />
+            <param name="label" value="$LOCALIZE[31459]" />
+            <param name="skinsetting" value="ButtonFocusTextColor" />
+        </include>
+        <!--spincontrol and radiobutton color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31747" />
+            <param name="label" value="$LOCALIZE[31747]" />
+            <param name="skinsetting" value="ActiveSpinControlColor" />
+        </include>
+		<!--listitem border focus color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31189" />
+            <param name="label" value="$LOCALIZE[31189]" />
+            <param name="skinsetting" value="ViewDetailsBorderFocusColor" />
+        </include>
+		<!--listitem border unfocus color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31476" />
+            <param name="label" value="$LOCALIZE[31476]" />
+            <param name="skinsetting" value="ViewDetailsBorderUnfocusColor" />
+        </include>
+        <!--label overlay panel color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31603" />
+            <param name="label" value="$LOCALIZE[31603]" />
+            <param name="skinsetting" value="TagOverlaysPanelColor" />
+        </include>
+        <!--label overlay text color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31604" />
+            <param name="label" value="$LOCALIZE[31604]" />
+            <param name="skinsetting" value="TagOverlaysTextColor" />
+        </include>
+		<!--scrollbar background color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31495" />
+            <param name="label" value="$LOCALIZE[31495]" />
+            <param name="skinsetting" value="ScrollbarBackgroundColor" />
+        </include>
+        <!--scrollbar unfocused color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31496" />
+            <param name="label" value="$LOCALIZE[31496]" />
+            <param name="skinsetting" value="ScrollbarUnfocusedColor" />
+        </include>
+        <!--scrollbar focused color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31497" />
+            <param name="label" value="$LOCALIZE[31497]" />
+            <param name="skinsetting" value="ScrollbarFocusedColor" />
+        </include>
+		<!--busy loading spinner color -->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="5166" />
+            <param name="label" value="$LOCALIZE[31505]" />
+            <param name="skinsetting" value="SpinnerTextureColor" />
+        </include>
+		<!-- overlay color -->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31151" />
+            <param name="label" value="$LOCALIZE[31151]" />
+            <param name="skinsetting" value="BackgroundOverlayColor" />
+        </include>
+    </include>
+	
+	<!-- Custom Colors Menu Settings -->
+    <include name="CustomColors_Menu_Colors_Settings">
+        <!-- general color settings -->
+        <control type="label" id="13009">
+            <include>SkinSettings_Header</include>
+            <label>31602</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+        <!--homemenu unfocused text color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31722" />
+            <param name="label" value="$LOCALIZE[31722]" />
+            <param name="skinsetting" value="MainMenuTextColor" />
+        </include>
+        <!--homemenu focused text color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31723" />
+            <param name="label" value="$LOCALIZE[31723]" />
+            <param name="skinsetting" value="MainMenuFocusTextColor" />
+        </include>
+		<!--homemenu button color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31077" />
+            <param name="label" value="$LOCALIZE[31077]" />
+            <param name="skinsetting" value="MainMenuButtonColor" />
+        </include>
+        <!--homemenu focused button color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31048" />
+            <param name="label" value="$LOCALIZE[31048]" />
+            <param name="skinsetting" value="MainMenuFocusButtonColor" />
+        </include>
+		<!--Line Under Home Menu Icons-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31693" />
+            <param name="label" value="31693" />
+            <param name="skinsetting" value="LineUnderMenuIconsColor" />
+        </include>
+        <!--sideblade panel color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31601" />
+            <param name="label" value="$LOCALIZE[31601]" />
+            <param name="skinsetting" value="SideBladePanelColor" />
+        </include>
+    </include>
+
+    <!-- Custom Colors Footer Settings -->
+    <include name="CustomColors_Footer_Colors_Settings">
+        <!-- general color settings -->
+        <control type="label" id="13012">
+            <include>SkinSettings_Header</include>
+            <label>31365</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+        <!--footer text color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31455" />
+            <param name="label" value="$LOCALIZE[31455]" />
+            <param name="skinsetting" value="FooterTextColor" />
+        </include>
+        <!--footer shadow text color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31477" />
+            <param name="label" value="$LOCALIZE[31477]" />
+            <param name="skinsetting" value="FooterTextShadowColor" />
+        </include>
+    </include>
+
+    <!-- Custom Color PVR Settings -->
+    <include name="CustomColors_PVR_Colors_Settings">
+        <!-- PVR Guide colors -->
+        <control type="label" id="69568">
+            <include>SkinSettings_Header</include>
+            <label>$LOCALIZE[31088]</label>
+        </control>
+		<include content="SkinSettings_ColorButton">
+            <param name="id" value="31737" />
+            <param name="label" value="$LOCALIZE[31737]" />
+            <param name="skinsetting" value="PVRGuideItemColorFocus" />
+        </include>
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31736" />
+            <param name="label" value="$LOCALIZE[31736]" />
+            <param name="skinsetting" value="PVRGuideItemColorUnfocus" />
+        </include>
+		<include content="SkinSettings_ColorButton">
+            <param name="id" value="31739" />
+            <param name="label" value="$LOCALIZE[31739]" />
+            <param name="skinsetting" value="PVRGuideItemTextColorFocus" />
+        </include>
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31738" />
+            <param name="label" value="$LOCALIZE[31738]" />
+            <param name="skinsetting" value="PVRGuideItemTextColorUnfocus" />
+        </include>
+    </include>
+
+    <!-- Custom Colors General OSD Settings -->
+    <include name="CustomColors_OSD_General_Colors_Settings">
+        <!-- OSD bingie colors -->
+        <control type="label" id="69567">
+            <include>SkinSettings_Header</include>
+            <label>$LOCALIZE[31668]</label>
+        </control>
+		<!--OSD Volume Button Color -->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31685" />
+            <param name="label" value="$LOCALIZE[31685]" />
+            <param name="skinsetting" value="OSDVolumeButtonColor" />
+        </include>
+        <!--OSD Buffering Spinner Color -->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31295" />
+            <param name="label" value="$LOCALIZE[31280]" />
+            <param name="skinsetting" value="OSDBufferingSpinnerColor" />
+        </include>
+        <!-- Lyrics diffuse panel -->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31585" />
+            <param name="label" value="$LOCALIZE[31585]" />
+            <param name="skinsetting" value="LyricsOverlayColor" />
+        </include>
+        <!-- Lyrics unfocused text -->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31557" />
+            <param name="label" value="$LOCALIZE[31557]" />
+            <param name="skinsetting" value="LyricsTextColor" />
+        </include>
+        <!-- Lyrics unfocused text shadow -->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31006" />
+            <param name="label" value="$LOCALIZE[31006]" />
+            <param name="skinsetting" value="LyricsTextShadowColor" />
+        </include>
+        <!-- Lyrics focused text -->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31238" />
+            <param name="label" value="$LOCALIZE[31238]" />
+            <param name="skinsetting" value="LyricsFocusTextColor" />
+        </include>
+        <!-- Lyrics focused text shadow -->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31028" />
+            <param name="label" value="$LOCALIZE[31028]" />
+            <param name="skinsetting" value="LyricsFocusTextShadowColor" />
+        </include>
+    </include>
+	
+	<!-- Custom Colors Clasic OSD Settings -->
+    <include name="CustomColors_OSD_Clasic_Colors_Settings">
+        <!-- OSD bingie colors -->
+        <control type="label" id="31068">
+            <include>SkinSettings_Header</include>
+            <label>$LOCALIZE[31068]</label>
+        </control>
+        <!--OSDPanelColor-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31473" />
+            <param name="label" value="$LOCALIZE[31473]" />
+            <param name="skinsetting" value="OSDPanelColor" />
+        </include>
+        <!--osd text color 1 -->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31478" />
+            <param name="label" value="$LOCALIZE[31478]" />
+            <param name="skinsetting" value="OSDPrimaryTextColor" />
+        </include>
+        <!--osd text color 1 shadow -->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31479" />
+            <param name="label" value="$LOCALIZE[31479]" />
+            <param name="skinsetting" value="OSDPrimaryTextShadowColor" />
+        </include>
+        <!--osd progress bar background color -->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31482" />
+            <param name="label" value="$LOCALIZE[31482]" />
+            <param name="skinsetting" value="OSDProgressBarBackgroundColor" />
+        </include>
+        <!--osd progress bar border color -->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31547" />
+            <param name="label" value="$LOCALIZE[31547]" />
+            <param name="skinsetting" value="OSDProgressBarBorderColor" />
+        </include>
+        <!--osd progress bar color -->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31483" />
+            <param name="label" value="$LOCALIZE[31483]" />
+            <param name="skinsetting" value="OSDProgressBarColor" />
+        </include>
+        <!--osd progress bar cache color -->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31573" />
+            <param name="label" value="$LOCALIZE[31573]" />
+            <param name="skinsetting" value="OSDProgressBarCacheColor" />
+        </include>
+        <!--osd buttons color -->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31484" />
+            <param name="label" value="$LOCALIZE[31484]" />
+            <param name="skinsetting" value="OSDButtonsColor" />
+        </include>
+        <!--osd buttons focus color -->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31485" />
+            <param name="label" value="$LOCALIZE[31485]" />
+            <param name="skinsetting" value="OSDButtonsFocusColor" />
+        </include>
+    </include>
+	
+	<!-- Custom Colors Bingie OSD Settings -->
+    <include name="CustomColors_OSD_Bingie_Colors_Settings">
+		<!-- OSD bingie colors -->
+        <control type="label" id="31016">
+            <include>SkinSettings_Header</include>
+            <label>$LOCALIZE[31016]</label>
+        </control>
+		<!--osd bingie text color -->
+		<include content="SkinSettings_ColorButton">
+            <param name="id" value="31044" />
+            <param name="label" value="$LOCALIZE[31044]" />
+            <param name="skinsetting" value="BingieOSDTextColor" />
+        </include>
+		<!--osd bingie buttons color -->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31681" />
+            <param name="label" value="$LOCALIZE[31681]" />
+            <param name="skinsetting" value="OSDBingieButtonsColor" />
+        </include>
+        <!--osd bingie buttons focus color -->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31682" />
+            <param name="label" value="$LOCALIZE[31682]" />
+            <param name="skinsetting" value="OSDBingieButtonsFocusColor" />
+        </include>
+		<include content="SkinSettings_ColorButton">
+            <param name="id" value="31033" />
+            <param name="label" value="$LOCALIZE[31033]" />
+            <param name="skinsetting" value="BingieOSDProgressBarColor" />
+        </include>
+		<include content="SkinSettings_ColorButton">
+            <param name="id" value="31032" />
+            <param name="label" value="$LOCALIZE[31032]" />
+            <param name="skinsetting" value="BingieOSDProgressBarBackgroundColor" />
+        </include>
+		<include content="SkinSettings_ColorButton">
+            <param name="id" value="31043" />
+            <param name="label" value="$LOCALIZE[31043]" />
+            <param name="skinsetting" value="BingieOSDProgressBarCacheColor" />
+        </include>
+		<include content="SkinSettings_ColorButton">
+            <param name="id" value="31581" />
+            <param name="label" value="$LOCALIZE[31581]" />
+            <param name="skinsetting" value="BingieOSDPlotTextColor" />
+        </include>
+		<include content="SkinSettings_ColorButton">
+            <param name="id" value="31103" />
+            <param name="label" value="$LOCALIZE[31103]" />
+            <param name="skinsetting" value="BingieOSDLabelTextColor" />
+        </include>
+		<include content="SkinSettings_ColorButton">
+            <param name="id" value="31582" />
+            <param name="label" value="$LOCALIZE[31582]" />
+            <param name="skinsetting" value="BingieOSDSubLabelTextColor" />
+        </include>
+		<include content="SkinSettings_ColorButton">
+            <param name="id" value="31097" />
+            <param name="label" value="$LOCALIZE[31097]" />
+            <param name="skinsetting" value="BingieOSDDeatailsTextColor" />
+        </include>	
+    </include>
+
+    <include name="CustomColors_Library_Colors_Settings">
+        <!-- media library views -->
+        <control type="label" id="1999">
+            <include>SkinSettings_Header</include>
+            <label>$LOCALIZE[31221]</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+        <!--viewdetails text color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31222" />
+            <param name="label" value="$LOCALIZE[31222]" />
+            <param name="skinsetting" value="ViewDetailsTextColor" />
+        </include>
+        <!--view details shadow color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31223" />
+            <param name="label" value="$LOCALIZE[31223]" />
+            <param name="skinsetting" value="ViewDetailsTextShadowColor" />
+        </include>
+        <!--viewdetails highlights color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31226" />
+            <param name="label" value="$LOCALIZE[31226]" />
+            <param name="skinsetting" value="ViewDetailsHighlightTextColor" />
+        </include>
+        <!--listitem text unfocus color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31569" />
+            <param name="label" value="$LOCALIZE[31569]" />
+            <param name="skinsetting" value="ViewDetailsListItemTextColor" />
+        </include>
+        <!--listitem text focus color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31570" />
+            <param name="label" value="$LOCALIZE[31570]" />
+            <param name="skinsetting" value="ViewDetailsListItemTextFocusColor" />
+        </include>
+        <!--listitem text focus color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31571" />
+            <param name="label" value="$LOCALIZE[31571]" />
+            <param name="skinsetting" value="ViewDetailsFocusColor" />
+        </include>
+    </include>
+
+    <!-- PVR Tab -->
+    <!-- PVR Settings -->
+    <include name="PVR_Settings">
+        <!-- PVR appearance settings -->
+        <control type="label" id="13040">
+            <include>SkinSettings_Header</include>
+            <label>31088</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+        <!-- number of rows guide -->
+        <control type="button" id="13043">
+            <include>SkinSettings_Button</include>
+            <label>31245</label>
+            <label2>$INFO[Skin.String(GuideRows.label)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=GuideRows,header=$LOCALIZE[31245])</onclick>
+        </control>
+        <control type="radiobutton" id="13045">
+            <include>SkinSettings_Button</include>
+            <label>31239</label>
+            <onclick>Skin.ToggleSetting(UseAltEpgProgress)</onclick>
+            <onclick condition="Window.IsActive(tvguide)">ReloadSkin()</onclick>
+            <selected>Skin.HasSetting(UseAltEpgProgress)</selected>
+        </control>
+        <control type="radiobutton" id="31673">
+            <description>no channel logos in guide</description>
+            <include>SkinSettings_Button</include>
+            <label>31673</label>
+            <onclick>Skin.ToggleSetting(HideChannelLogosInGuide)</onclick>
+            <selected>Skin.HasSetting(HideChannelLogosInGuide)</selected>
+        </control>
+        <control type="radiobutton" id="13049">
+            <description>Enable mini guide on fullscreen live tv</description>
+            <include>SkinSettings_Button</include>
+            <label>31616</label>
+            <onclick>Skin.ToggleSetting(pvrGuideOnFullscreenVideo)</onclick>
+            <selected>Skin.HasSetting(pvrGuideOnFullscreenVideo)</selected>
+        </control>
+        <control type="radiobutton" id="31750">
+            <description>Enable small PVR channels OSD</description>
+            <include>SkinSettings_Button</include>
+            <label>31750</label>
+            <onclick>Skin.ToggleSetting(small_pvrchannelsosd)</onclick>
+            <selected>Skin.HasSetting(small_pvrchannelsosd)</selected>
+        </control>
+		<control type="radiobutton" id="31420">
+            <include>SkinSettings_Button</include>
+            <label>$LOCALIZE[31420]</label>
+            <onclick>Skin.ToggleSetting(NoPvrArtOSD)</onclick>
+            <selected>Skin.HasSetting(NoPvrArtOSD)</selected>
+        </control>
+        <control type="radiobutton" id="13041">
+            <include>SkinSettings_Button</include>
+            <label>31237</label>
+            <onclick>Skin.ToggleSetting(ShowEpgGenreColors)</onclick>
+            <selected>Skin.HasSetting(ShowEpgGenreColors)</selected>
+        </control>
+    </include>
+
+    <!-- OSD Tab -->
+    <!-- OSD General Settings -->
+    <include name="OSD_General_Settings">
+        <!-- OSD generic -->
+        <control type="label" id="478">
+            <include>SkinSettings_Header</include>
+            <label>478</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+        <control type="radiobutton" id="13061">
+            <include>SkinSettings_Button</include>
+            <label>31017</label>
+            <onclick condition="!Skin.HasSetting(UseBingieOSD)">Skin.SetBool(AutoCloseVideoOSD)</onclick>
+			<onclick condition="!Skin.HasSetting(UseBingieOSD)">Skin.SetString(MusicArtistLogo,enabled)</onclick>
+			<onclick condition="!Skin.HasSetting(UseBingieOSD)">Skin.SetString(MusicArtistLogo.label,$LOCALIZE[31125])</onclick>
+            <onclick>Skin.ToggleSetting(UseBingieOSD)</onclick>
+            <selected>!Skin.HasSetting(UseBingieOSD)</selected>
+        </control>
+		<include content="SkinSettings_ActionButton">
+            <param name="id" value="46658" />
+            <param name="label" value="$LOCALIZE[31060]" />
+            <param name="action" value="RunScript(script.bingie.toolbox,action=setskinsetting,setting=bingie_osd_buttons,header=$LOCALIZE[31060])" />
+            <param name="visible" value="Skin.HasSetting(UseBingieOSD)" />
+        </include>
+        <!-- Volume Indicator Style -->
+        <control type="button" id="31760">
+            <include>SkinSettings_Button</include>
+            <label>31760</label>
+            <label2>$INFO[Skin.String(volumestyle.label)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=volumestyle,header=$LOCALIZE[31760])</onclick>
+        </control>
+    </include>
+
+    <!-- OSD Info Panel Settings -->
+    <include name="OSD_Info_Panel_Settings">
+        <!-- OSD Info Panel Header -->
+        <control type="label" id="13051">
+            <include>SkinSettings_Header</include>
+            <label>31588</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+			<visible>Skin.HasSetting(UseBingieOSD)</visible>
+        </control>
+        <!-- Enable Finish Time, Current Time, & Total Duration for OSD Playback -->
+        <control type="radiobutton" id="2024">
+            <include>SkinSettings_Button</include>
+            <label>31258</label>
+            <onclick>Skin.ToggleSetting(EnableTimeInfo)</onclick>
+            <selected>Skin.HasSetting(EnableTimeInfo)</selected>
+			<visible>Skin.HasSetting(UseBingieOSD)</visible>
+        </control>
+		<!-- Enable Seek/Jump Indicator -->
+		<control type="radiobutton" id="2027">
+            <include>SkinSettings_Button</include>
+            <label>31249</label>
+            <onclick>Skin.ToggleSetting(DisableJumpIndicator)</onclick>
+            <selected>Skin.HasSetting(DisableJumpIndicator)</selected>
+            <visible>Skin.HasSetting(UseBingieOSD)</visible>
+        </control>
+		<!-- style for codec info -->
+        <control type="button" id="13064">
+            <include>SkinSettings_Button</include>
+            <label>31632</label>
+            <label2>$INFO[Skin.String(osdmediaflagsstyle.label)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=osdmediaflagsstyle,header=$LOCALIZE[31632])</onclick>
+            <visible>!Skin.HasSetting(UseBingieOSD)</visible>
+        </control>
+        <control type="radiobutton" id="13059">
+            <include>SkinSettings_Button</include>
+            <label>31325</label>
+            <onclick>Skin.ToggleSetting(ShowWeatherVideoInfoOSD)</onclick>
+            <selected>Skin.HasSetting(ShowWeatherVideoInfoOSD)</selected>
+			<visible>!Skin.HasSetting(UseBingieOSD)</visible>
+        </control>
+		<!-- Enable Animated Discart on Supported OSD -->
+        <control type="radiobutton" id="2023">
+            <include>SkinSettings_Button</include>
+            <label>31259</label>
+            <onclick>Skin.ToggleSetting(HideOSDDisc)</onclick>
+            <selected>Skin.HasSetting(HideOSDDisc)</selected>
+        </control>
+    </include>
+
+    <!-- OSD Video Playback Settings -->
+    <include name="OSD_Video_Playback_Settings">
+        <!-- Video playback -->
+        <control type="label" id="13050">
+            <include>SkinSettings_Header</include>
+            <label>31724</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+        <control type="radiobutton" id="31072">
+            <include>SkinSettings_Button</include>
+            <label>31072</label>
+            <onclick>Skin.ToggleSetting(AutoCloseVideoOSD)</onclick>
+            <selected>Skin.HasSetting(AutoCloseVideoOSD)</selected>
+        </control>
+        <control type="radiobutton" id="31024">
+            <include>SkinSettings_Button</include>
+            <label>31024</label>
+            <onclick>Skin.ToggleSetting(ForceVideoPlaybackStop)</onclick>
+            <selected>Skin.HasSetting(ForceVideoPlaybackStop)</selected>
+        </control>
+        <control type="radiobutton" id="13067">
+            <include>SkinSettings_Button</include>
+            <label>31759</label>
+            <onclick>Skin.ToggleSetting(EnableBufferingProgressOSD)</onclick>
+            <selected>Skin.HasSetting(EnableBufferingProgressOSD)</selected>
+        </control>
+		<control type="radiobutton" id="2036">
+            <include>SkinSettings_Button</include>
+            <label>31592</label>
+            <onclick>Skin.ToggleSetting(EnableAutoPauseOnOSD)</onclick>
+            <selected>Skin.HasSetting(EnableAutoPauseOnOSD)</selected>
+        </control>
+    </include>
+
+    <!-- OSD Up Next Settings -->
+    <include name="OSD_Up_Next_Settings">
+        <!-- Up Next Addon Header -->
+        <control type="label" id="31680">
+            <include>SkinSettings_Header</include>
+            <label>31012</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+            <visible>System.HasAddon(service.upnext)</visible>
+        </control>
+        <!-- switch upnext notification to just buttons -->
+        <control type="radiobutton" id="41820">
+            <include>SkinSettings_Button</include>
+            <label>31009</label>
+            <onclick>Skin.ToggleSetting(NextUpNotificationSlim)</onclick>
+            <selected>Skin.HasSetting(NextUpNotificationSlim)</selected>
+            <visible>System.HasAddon(service.upnext)</visible>
+        </control>
+    </include>
+
+	<!-- OSD Music Playback Settings -->
+    <include name="OSD_Music_Playback_Settings">
+        <control type="label" id="31670">
+            <include>SkinSettings_Header</include>
+            <label>31670</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+        <control type="radiobutton" id="5143">
+            <include>SkinSettings_Button</include>
+            <label>31179</label>
+            <onclick>Skin.ToggleSetting(FullscreenMusic)</onclick>
+            <selected>Skin.HasSetting(FullscreenMusic)</selected>
+        </control>
+        <control type="radiobutton" id="13055">
+            <include>SkinSettings_Button</include>
+            <label>31232</label>
+            <onclick>Skin.ToggleSetting(AlwaysShowMusicInfo)</onclick>
+            <selected>Skin.HasSetting(AlwaysShowMusicInfo)</selected>
+        </control>
+        <control type="button" id="31665">
+            <description>Artist Logo in musicplayer</description>
+            <include>SkinSettings_Button</include>
+            <label>31665</label>
+            <label2>$INFO[Skin.String(MusicArtistLogo.label)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=MusicArtistLogo,header=$LOCALIZE[31665])</onclick>
+        </control>
+        <control type="button" id="31504">
+            <description>Fallback image music playback</description>
+            <include>SkinSettings_Button</include>
+            <label>31504</label>
+            <label2>$INFO[Skin.String(MusicBackground.label)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=selectimage,skinstring=MusicBackground,header=$LOCALIZE[31504],allowmulti=true,resourceaddon=resource.images.skinbackgrounds)</onclick>
+        </control>
+        <control type="radiobutton" id="5170">
+            <description>Animate Music background</description>
+            <include>SkinSettings_Button</include>
+            <label>31617</label>
+            <onclick>Skin.ToggleSetting(animateMusicArt)</onclick>
+            <selected>Skin.HasSetting(animateMusicArt)</selected>
+        </control>
+        <control type="radiobutton" id="31716">
+            <description>scrolling music text</description>
+            <include>SkinSettings_Button</include>
+            <label>31716</label>
+            <onclick>Skin.ToggleSetting(MusicOSDScrollingTitles)</onclick>
+            <selected>Skin.HasSetting(MusicOSDScrollingTitles)</selected>
+        </control>
+    </include>
+
+    <!-- Shortcuts Tab -->
+    <!-- Shortcuts Configuration -->
+    <include name="Shortcuts_Config">
+        <control type="label" id="6001">
+            <include>SkinSettings_Header</include>
+            <label>31167</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+        <control type="textbox" id="6002">
+            <width>100%</width>
+            <height min="160">auto</height>
+            <font>Reg25</font>
+            <posy>60</posy>
+            <label>31168</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+            <shadowcolor>black</shadowcolor>
+            <align>left</align>
+            <aligny>top</aligny>
+        </control>
+        <include content="SkinSettings_ActionButton">
+            <param name="id" value="6003" />
+            <param name="label" value="31014" />
+            <param name="action" value="RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)" />
+            <param name="visible" value="true" />
+        </include>
+        <include content="SkinSettings_ActionButton">
+            <param name="id" value="96008" />
+            <param name="label" value="31204" />
+            <param name="action" value="RunScript(script.skinshortcuts,type=manage&amp;group=powermenu)" />
+            <param name="action2" value="SetProperty(powermenu, active,Home)" />
+            <param name="visible" value="true" />
+        </include>
+		<include content="SkinSettings_ActionButton">
+            <param name="id" value="9099" />
+            <param name="label" value="31202" />
+            <param name="action" value="RunScript(script.skinshortcuts,type=manage&amp;group=searchmenu)" />
+            <param name="visible" value="Skin.HasSetting(EnableCustomBingieSearch)" />
+        </include>
+        <!-- empty label -->
+        <control type="label" id="6028">
+            <height>20</height>
+            <label/>
+        </control>
+        <!-- set global items limit -->
+        <control type="button" id="31211">
+            <include>SkinSettings_Button</include>
+            <label>31037</label>
+            <label2>$INFO[Skin.String(WidgetsGlobalLimit)]</label2>
+            <onclick>Skin.SetNumeric(WidgetsGlobalLimit)</onclick>
+        </control>
+        <!-- empty label -->
+        <control type="label" id="23028">
+            <height>20</height>
+            <label/>
+        </control>
+        <control type="textbox" id="23026">
+            <description/>
+            <width>1200</width>
+            <align>justify</align>
+            <label>31312</label>
+            <height>auto</height>
+            <font>Reg26</font>
+            <visible>Skin.HasSetting(LockHubWidgets)</visible>
+        </control>
+		<control type="label" id="23029">
+            <height>5</height>
+        </control>
+        <!-- Lock Widgets In HUBS -->
+        <control type="radiobutton" id="31205">
+            <include>SkinSettings_Button</include>
+            <label>31708</label>
+            <onclick>Skin.ToggleSetting(LockHubWidgets)</onclick>
+            <selected>Skin.HasSetting(LockHubWidgets)</selected>
+        </control>
+        <!-- empty label -->
+        <control type="label" id="6004">
+            <height>20</height>
+            <label/>
+        </control>
+        <control type="label" id="6005">
+            <include>SkinSettings_Header</include>
+            <label>31170</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+        <control type="textbox" id="6006">
+            <width>100%</width>
+            <height min="220">auto</height>
+            <font>Reg25</font>
+            <posy>60</posy>
+            <label>31171</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+            <shadowcolor>black</shadowcolor>
+            <align>left</align>
+            <aligny>top</aligny>
+        </control>
+        <include content="SkinSettings_ActionButton">
+            <param name="id" value="6007" />
+            <param name="label" value="$ADDON[script.skinshortcuts 32028]" />
+            <param name="action" value="RunScript(script.skinshortcuts,type=resetall)" />
+            <param name="visible" value="true" />
+        </include>
+        <include content="SkinSettings_ActionButton">
+            <param name="id" value="31208" />
+            <param name="label" value="$LOCALIZE[31250]" />
+            <param name="action" value="RunScript(script.bingie.toolbox,action=dialogyesno,header=$LOCALIZE[14117],message=$LOCALIZE[31375][CR]$LOCALIZE[31333],yesaction=Skin.Reset(HubWidgetsDefaults),noaction=)" />
+        </include>
+    </include>
+
+
+    <!-- Supported Addons Tab -->
+    <!-- Supported Addons Settings -->
+    <include name="Supported_Addons_Settings">
+        <control type="label" id="31696">
+            <include>SkinSettings_Header</include>
+            <label>31696</label>
+        </control>
+		<include content="SkinSettings_AddonButton">
+            <param name="id" value="31030" />
+            <param name="addon" value="script.bingie.widgets" />
+        </include>
+        <include content="SkinSettings_AddonButton">
+            <param name="id" value="31033" />
+            <param name="addon" value="script.skin.helper.skinbackup" />
+        </include>
+        <include content="SkinSettings_AddonButton">
+            <param name="id" value="31002" />
+            <param name="addon" value="script.skinshortcuts" />
+        </include>
+        <include content="SkinSettings_AddonButton">
+            <param name="id" value="31019" />
+            <param name="addon" value="plugin.program.autocompletion" />
+        </include>
+        <include content="SkinSettings_AddonButton">
+            <param name="id" value="31007" />
+            <param name="addon" value="service.upnext" />
+        </include>
+		<include content="SkinSettings_AddonButton">
+            <param name="id" value="31004" />
+            <param name="addon" value="plugin.video.themoviedb.helper" />
+        </include>
+        <include content="SkinSettings_AddonButton">
+            <param name="id" value="31015" />
+            <param name="addon" value="plugin.video.youtube" />
+        </include>
+        <include content="SkinSettings_AddonButton">
+            <param name="id" value="31011" />
+            <param name="addon" value="script.trakt" />
+        </include>
+    </include>
+
+    <!-- Color Themes Tab -->
+    <!-- ColorThemes Theme Settings -->
+    <include name="ColorThemes_Theme_Settings">
+        <control type="label" id="15001">
+            <include>SkinSettings_Header</include>
+            <label>31463</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+        <control type="textbox" id="15002">
+            <description/>
+            <width>1200</width>
+            <align>left</align>
+            <label>31464</label>
+            <height>auto</height>
+            <font>Reg26</font>
+        </control>
+        <control type="label" id="15003">
+            <height>5</height>
+        </control>
+        <control type="button" id="15004">
+            <description>Select Theme</description>
+            <label>31755</label>
+            <include>SkinSettings_Button</include>
+            <onclick>RunScript(script.skin.helper.skinbackup,action=colorthemes)</onclick>
+            <onclick condition="!System.HasAddon(script.skin.helper.skinbackup)">RunPlugin(plugin://script.skin.helper.skinbackup)</onclick>
+            <onclick>ClearProperty(startupDone,Home)</onclick>
+        </control>
+    </include>
+
+    <!-- ColorThemes Pallete Settings -->
+    <include name="ColorThemes_Pallete_Settings">
+        <!-- Default palette for Color Picker -->
+        <control type="label" id="15006">
+            <include>SkinSettings_Header</include>
+            <label>31730</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+        <control type="textbox" id="15007">
+            <description/>
+            <width>1200</width>
+            <align>left</align>
+            <label>31731</label>
+            <height>auto</height>
+            <font>Reg26</font>
+        </control>
+		<control type="label" id="15009">
+            <height>5</height>
+        </control>
+        <control type="button" id="15008">
+            <include>SkinSettings_Button</include>
+            <label>31729</label>
+            <label2>$INFO[Skin.String(defaultcolorpalette)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=defaultcolorpalette,header=$LOCALIZE[31729])</onclick>
+        </control>
+    </include>
+
+    <!-- Backup Tab -->
+    <!-- Backup Settings -->
+    <include name="Backup_Settings">
+        <!-- backup and restore -->
+        <control type="label" id="8001">
+            <include>SkinSettings_Header</include>
+            <label>31271</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+        <include content="SkinSettings_ActionButton">
+            <param name="id" value="8005" />
+            <param name="label" value="31756" />
+            <param name="action" value="RunAddon(script.skin.helper.skinbackup)" />
+            <param name="visible" value="System.HasAddon(script.skin.helper.skinbackup)" />
+        </include>
+        <include content="SkinSettings_ActionButton">
+            <param name="id" value="8002" />
+            <param name="label" value="31272" />
+            <param name="action" value="RunScript(script.skin.helper.skinbackup,action=backup)" />
+            <param name="visible" value="System.HasAddon(script.skin.helper.skinbackup)" />
+        </include>
+        <include content="SkinSettings_ActionButton">
+            <param name="id" value="8003" />
+            <param name="label" value="31273" />
+            <param name="action" value="RunScript(script.skin.helper.skinbackup,action=RESTORE)" />
+            <param name="visible" value="System.HasAddon(script.skin.helper.skinbackup)" />
+        </include>
+        <include content="SkinSettings_ActionButton">
+            <param name="id" value="8004" />
+            <param name="label" value="31274" />
+            <param name="action" value="RunScript(script.skin.helper.skinbackup,action=RESET)" />
+            <param name="visible" value="System.HasAddon(script.skin.helper.skinbackup)" />
+        </include>
+        <include content="SkinSettings_ActionButton">
+            <param name="id" value="8006" />
+            <param name="label" value="31756" />
+            <param name="action" value="RunPlugin(plugin://script.skin.helper.skinbackup)" />
+            <param name="visible" value="!System.HasAddon(script.skin.helper.skinbackup)" />
+        </include>
+    </include>
+
+    <!-- General Tab -->
+    <!-- General Trailers Settings -->
+    <include name="General_Trailers_Settings">
+        <control type="label" id="32102">
+            <include>SkinSettings_Header</include>
+            <label>31533</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+        <!-- allow youtube lookup -->
+        <control type="radiobutton" id="31752">
+            <description>Allow youtube lookup for trailers</description>
+            <include>SkinSettings_Button</include>
+            <label>31752</label>
+            <onclick condition="!Skin.String(AutoYoutubeTrailer,true)">Skin.SetString(AutoYoutubeTrailer,true)</onclick>
+            <onclick condition="Skin.String(AutoYoutubeTrailer,true)">Skin.SetString(AutoYoutubeTrailer,false)</onclick>
+            <selected>Skin.String(AutoYoutubeTrailer,true)</selected>
+        </control>
+    </include>
+
+    <!-- General Artwork & Details Settings -->
+    <include name="General_Artwork_Details_Settings">
+        <control type="label" id="8027">
+            <include>SkinSettings_Header</include>
+            <label>31679</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+		<!-- Disable Clearlogo -->
+        <control type="radiobutton" id="31627">
+            <include>SkinSettings_Button</include>
+            <label>31627</label>
+            <onclick>Skin.ToggleSetting(NoClearLogoBingie)</onclick>
+            <selected>Skin.HasSetting(NoClearLogoBingie)</selected>
+        </control>
+		<!-- Use Extra FanArt -->
+        <control type="radiobutton" id="2042">
+            <include>SkinSettings_Button</include>
+            <label>$LOCALIZE[31207]</label>
+            <onclick>Skin.ToggleSetting(EnableNativeExtraFanart)</onclick>
+            <selected>Skin.HasSetting(EnableNativeExtraFanart)</selected>
+        </control>
+        <!-- Time To Show Each FanArt Image (In Seconds) -->
+        <control type="button" id="339">
+            <include>SkinSettings_Button</include>
+            <label>      $LOCALIZE[31296]</label>
+            <label2>$INFO[Skin.String(extrafanartdelay.label)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=extrafanartdelay,header=$LOCALIZE[31296])</onclick>
+            <visible>Skin.HasSetting(EnableNativeExtraFanart)</visible>
+        </control>
+		<!-- Use Fake DiscArt When No DiscArt Exists For A Media Item -->
+		<control type="radiobutton" id="17118">
+            <include>SkinSettings_Button</include>
+            <label>31498</label>
+            <onclick>Skin.ToggleSetting(EnableFakeDiscArt)</onclick>
+            <selected>Skin.HasSetting(EnableFakeDiscArt)</selected>
+        </control>		
+		<!--Enable Air Date-->
+        <control type="radiobutton" id="2073">
+            <include>SkinSettings_Button</include>
+            <label>31609</label>
+            <onclick>Skin.ToggleSetting(EnableAirDate)</onclick>
+			<selected>Skin.HasSetting(EnableAirDate)</selected>
+        </control>
+		<!-- Select which details to show in details row -->
+        <include content="SkinSettings_ActionButton">
+            <param name="id" value="31294" />
+            <param name="label" value="31294" />
+            <param name="action" value="RunScript(script.bingie.toolbox,action=setskinsetting,setting=special_tags,header=$LOCALIZE[31294])" />
+        </include>
+        <!--thumbs label alignment-->
+        <control type="radiobutton" id="5168">
+            <include>SkinSettings_Button</include>
+            <label>$LOCALIZE[31600]</label>
+            <onclick>Skin.ToggleSetting(ThumbsLabelAlignmentCenter)</onclick>
+            <selected>Skin.HasSetting(ThumbsLabelAlignmentCenter)</selected>
+        </control>	
+		<control type="button" id="31628">
+            <include>SkinSettings_Button</include>
+            <label>31628</label>
+            <label2>$INFO[Skin.String(thumbsborder_focused.label)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=thumbsborder_focused,header=$LOCALIZE[31628])</onclick>
+        </control>
+        <control type="radiobutton" id="31732">
+            <description>Disable auto scroll for plots/descriptions</description>
+            <include>SkinSettings_Button</include>
+            <label>31732</label>
+            <onclick>Skin.ToggleSetting(DisablePlotAutoScroll)</onclick>
+            <selected>!Skin.HasSetting(DisablePlotAutoScroll)</selected>
+        </control>
+    </include>
+
+    <!-- General Header Settings -->
+    <include name="General_Header_Settings">
+        <!-- header settings -->
+        <control type="label" id="31704">
+            <include>SkinSettings_Header</include>
+            <label>31704</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+        <control type="button" id="31702">
+            <include>SkinSettings_Button</include>
+            <label>31702</label>
+            <label2>$INFO[Skin.String(general_header.label)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=general_header,header=$LOCALIZE[31702])</onclick>
+        </control>
+        <control type="button" id="31703">
+            <include>SkinSettings_Button</include>
+            <label>31703</label>
+            <label2>$INFO[Skin.String(home_header.label)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=home_header,header=$LOCALIZE[31703])</onclick>
+        </control>
+        <!--compact header-->
+        <control type="radiobutton" id="31671">
+            <include>SkinSettings_Button</include>
+            <label>31671</label>
+            <onclick>Skin.ToggleSetting(CompactHeader)</onclick>
+            <selected>Skin.HasSetting(CompactHeader)</selected>
+			<visible>!String.Contains(Skin.String(general_header),disable) | !String.Contains(Skin.String(home_header),disable)</visible>
+        </control>
+    </include>
+
+    <!-- General Watched Indicators Settings -->
+    <include name="General_Indicators_Settings">
+        <!-- watched indicators -->
+        <control type="label" id="17130">
+            <include>SkinSettings_Header</include>
+            <label>31512</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+        <control type="radiobutton" id="17131">
+            <include>SkinSettings_Button</include>
+            <label>31513</label>
+            <onclick>Skin.ToggleSetting(WatchedIndicator.Watched)</onclick>
+            <selected>Skin.HasSetting(WatchedIndicator.Watched)</selected>
+        </control>
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="17132" />
+            <param name="label" value="$LOCALIZE[31517]" />
+            <param name="labelprefix" value="--- " />
+            <param name="skinsetting" value="WatchedIndicator.Watched.Color" />
+            <param name="visible" value="Skin.HasSetting(WatchedIndicator.Watched)" />
+        </include>
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="17133" />
+            <param name="label" value="$LOCALIZE[31521]" />
+            <param name="labelprefix" value="--- " />
+            <param name="skinsetting" value="WatchedIndicator.Watched.TextColor" />
+            <param name="visible" value="Skin.HasSetting(WatchedIndicator.Watched)" />
+        </include>
+        <control type="radiobutton" id="17134">
+            <include>SkinSettings_Button</include>
+            <label>31514</label>
+            <onclick>Skin.ToggleSetting(WatchedIndicator.Progress)</onclick>
+            <selected>Skin.HasSetting(WatchedIndicator.Progress)</selected>
+        </control>
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="17135" />
+            <param name="label" value="$LOCALIZE[31517]" />
+            <param name="labelprefix" value="--- " />
+            <param name="skinsetting" value="WatchedIndicator.Progress.Color" />
+            <param name="visible" value="Skin.HasSetting(WatchedIndicator.Progress)" />
+        </include>
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="17136" />
+            <param name="label" value="$LOCALIZE[31521]" />
+            <param name="labelprefix" value="--- " />
+            <param name="skinsetting" value="WatchedIndicator.Progress.TextColor" />
+            <param name="visible" value="Skin.HasSetting(WatchedIndicator.Progress)" />
+        </include>
+        <control type="radiobutton" id="17137">
+            <include>SkinSettings_Button</include>
+            <label>31515</label>
+            <onclick>Skin.ToggleSetting(WatchedIndicator.Sets)</onclick>
+            <selected>Skin.HasSetting(WatchedIndicator.Sets)</selected>
+        </control>
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="17138" />
+            <param name="label" value="$LOCALIZE[31517]" />
+            <param name="labelprefix" value="--- " />
+            <param name="skinsetting" value="WatchedIndicator.Sets.Color" />
+            <param name="visible" value="Skin.HasSetting(WatchedIndicator.Sets)" />
+        </include>
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="17139" />
+            <param name="label" value="$LOCALIZE[31521]" />
+            <param name="labelprefix" value="--- " />
+            <param name="skinsetting" value="WatchedIndicator.Sets.TextColor" />
+            <param name="visible" value="Skin.HasSetting(WatchedIndicator.Sets)" />
+        </include>
+        <control type="radiobutton" id="17140">
+            <include>SkinSettings_Button</include>
+            <label>31516</label>
+            <onclick>Skin.ToggleSetting(WatchedIndicator.Episodes)</onclick>
+            <selected>Skin.HasSetting(WatchedIndicator.Episodes)</selected>
+        </control>
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="17141" />
+            <param name="label" value="$LOCALIZE[31517]" />
+            <param name="labelprefix" value="--- " />
+            <param name="skinsetting" value="WatchedIndicator.Episodes.Color" />
+            <param name="visible" value="Skin.HasSetting(WatchedIndicator.Episodes)" />
+        </include>
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="17142" />
+            <param name="label" value="$LOCALIZE[31521]" />
+            <param name="labelprefix" value="--- " />
+            <param name="skinsetting" value="WatchedIndicator.Episodes.TextColor" />
+            <param name="visible" value="Skin.HasSetting(WatchedIndicator.Episodes)" />
+        </include>
+        <control type="radiobutton" id="17160">
+            <include>SkinSettings_Button</include>
+            <label>31568</label>
+            <onclick>Skin.ToggleSetting(WatchedIndicator.UnWatched)</onclick>
+            <selected>Skin.HasSetting(WatchedIndicator.UnWatched)</selected>
+        </control>
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="17161" />
+            <param name="label" value="$LOCALIZE[31517]" />
+            <param name="labelprefix" value="--- " />
+            <param name="skinsetting" value="WatchedIndicator.UnWatched.Color" />
+            <param name="visible" value="Skin.HasSetting(WatchedIndicator.UnWatched)" />
+        </include>
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="17162" />
+            <param name="label" value="$LOCALIZE[31521]" />
+            <param name="labelprefix" value="--- " />
+            <param name="skinsetting" value="WatchedIndicator.UnWatched.TextColor" />
+            <param name="visible" value="Skin.HasSetting(WatchedIndicator.UnWatched)" />
+        </include>
+        <control type="radiobutton" id="31748">
+            <include>SkinSettings_Button</include>
+            <label>31748</label>
+            <onclick>Skin.ToggleSetting(WatchedIndicator.Playing)</onclick>
+            <selected>Skin.HasSetting(WatchedIndicator.Playing)</selected>
+        </control>
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31517" />
+            <param name="label" value="$LOCALIZE[31517]" />
+            <param name="labelprefix" value="--- " />
+            <param name="skinsetting" value="WatchedIndicator.Playing.Color" />
+            <param name="visible" value="Skin.HasSetting(WatchedIndicator.Playing)" />
+        </include>
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31749" />
+            <param name="label" value="$LOCALIZE[31749]" />
+            <param name="labelprefix" value="--- " />
+            <param name="skinsetting" value="WatchedIndicator.Playing.TextColor" />
+            <param name="visible" value="Skin.HasSetting(WatchedIndicator.Playing)" />
+        </include>
+        <!--Bingie New Episodes Flag -->
+        <control type="radiobutton" id="31039">
+            <include>SkinSettings_Button</include>
+            <label>31039</label>
+            <onclick>Skin.ToggleSetting(DisableNewEpisodesIndicator)</onclick>
+            <selected>Skin.HasSetting(DisableNewEpisodesIndicator)</selected>
+        </control>
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31008" />
+            <param name="label" value="$LOCALIZE[31008]" />
+            <param name="labelprefix" value="--- " />
+            <param name="skinsetting" value="BingieNewEpisodesTagColor" />
+            <param name="visible" value="!Skin.HasSetting(DisableNewEpisodesIndicator)" />
+        </include>
+		<include content="SkinSettings_ColorButton">
+            <param name="id" value="31105" />
+            <param name="label" value="$LOCALIZE[31105]" />
+            <param name="labelprefix" value="--- " />
+            <param name="skinsetting" value="NewEpisodes.TextColor" />
+            <param name="visible" value="!Skin.HasSetting(DisableNewEpisodesIndicator)" />
+        </include>
+		<!-- Enable Top 250 on Posters -->	
+		<control type="radiobutton" id="2030">
+            <include>SkinSettings_Button</include>
+            <label>31248</label>
+            <onclick>Skin.ToggleSetting(DisableTop250Indicator)</onclick>
+            <selected>Skin.HasSetting(DisableTop250Indicator)</selected>
+			<visible>Skin.HasSetting(EnableRatings)</visible>
+        </control>
+    </include>
+
+    <!-- General Resources Settings -->
+    <include name="General_Resources_Settings">
+        <!-- resources -->
+        <control type="label" id="8011">
+            <include>SkinSettings_Header</include>
+            <label>31717</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+        <control type="button" id="17121">
+            <description>Weather Icons</description>
+            <include>SkinSettings_Button</include>
+            <label>31623</label>
+            <label2>$INFO[Skin.String(WeatherIconPack.name)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=setresourceaddon,skinstring=WeatherIconPack,addontype=resource.images.weathericons)</onclick>
+        </control>
+        <control type="button" id="31624">
+            <description>Weather FanArt</description>
+            <include>SkinSettings_Button</include>
+            <label>31624</label>
+            <label2>$INFO[Skin.String(WeatherFanArtPack.name)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=setresourceaddon,skinstring=WeatherFanArtPack,addontype=resource.images.weatherfanart)</onclick>
+        </control>
+        <control type="button" id="17125">
+            <description>Movie Genre Icons</description>
+            <include>SkinSettings_Button</include>
+            <label>31626</label>
+            <label2>$INFO[Skin.String(MovieGenreIconPack.name)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=setresourceaddon,skinstring=MovieGenreIconPack,addontype=resource.images.moviegenreicons)</onclick>
+        </control>
+        <control type="button" id="31733">
+            <description>Movie Genre Fanart</description>
+            <include>SkinSettings_Button</include>
+            <label>31733</label>
+            <label2>$INFO[Skin.String(moviegenrefanart.name)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=setresourceaddon,skinstring=moviegenrefanart,addontype=resource.images.moviegenrefanart)</onclick>
+        </control>
+    </include>
+
+    <!-- Splash Screen Settings -->
+    <include name="General_Splash_Screen_Settings">
+        <control type="label" id="8014">
+            <include>SkinSettings_Header</include>
+            <label>31176</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>		
+		<!-- Splash screen -->
+        <control type="button" id="2011">
+            <include>SkinSettings_Button</include>
+            <label>31154</label>
+            <label2>$INFO[Skin.String(splash_screen.label)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=splash_screen,header=$LOCALIZE[31154])</onclick>
+        </control>
+		<control type="radiobutton" id="8030">
+            <!-- Enable 4k animations -->
+            <description/>
+            <include>SkinSettings_Button</include>
+            <label>31075</label>
+            <onclick condition="String.IsEqual(Skin.String(SplashAnimationResolution),2160p)">Skin.SetString(SplashAnimationResolution,1080p)</onclick>
+            <onclick condition="String.IsEqual(Skin.String(SplashAnimationResolution),1080p)">Skin.SetString(SplashAnimationResolution,2160p)</onclick>
+            <selected>String.IsEqual(Skin.String(SplashAnimationResolution),2160p)</selected>
+            <visible>!String.IsEqual(Skin.String(splash_screen),bingie_image) + !String.IsEqual(Skin.String(splash_screen),none)</visible>
+        </control>
+    </include>
+
+    <!-- General Advanced Settings -->
+    <include name="General_Advanced_Settings">
+        <!-- advanced settings -->
+        <control type="label" id="8010">
+            <include>SkinSettings_Header</include>
+            <label>31270</label>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+		<control type="button" id="5162">
+            <include>SkinSettings_Button</include>
+            <label>31344</label>
+            <label2>$INFO[Skin.String(scrollbar_visibility.label)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=scrollbar_visibility,header=$LOCALIZE[31344])</onclick>
+        </control>
+        <!-- Enable Bingie Logo on Home -->
+        <control type="radiobutton" id="2014">
+            <include>SkinSettings_Button</include>
+            <label>31275</label>
+            <onclick>Skin.ToggleSetting(DisableBingieLogo)</onclick>
+            <selected>Skin.HasSetting(DisableBingieLogo)</selected>
+        </control>
+		<!-- Season Greetings -->
+		<control type="button" id="2034">
+            <include>SkinSettings_Button</include>
+            <label>31104</label>
+            <label2>$INFO[Skin.String(season_greetings.label)]</label2>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=season_greetings,header=$LOCALIZE[31104])</onclick>
+        </control>		                                                                 
+    </include>
+</includes>

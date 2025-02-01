@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- BINGIE -->
+<smartplaylist type="movies">
+    <name>Spotlight Movies</name>
+    <match>all</match>
+    <rule field="year" operator="greaterthan">
+            <value>2019</value>
+    </rule>
+	<rule field="playcount" operator="is">
+            <value>0</value>
+        </rule>
+    <rule field="rating" operator="greaterthan">
+        <value>6.9</value>
+    </rule>
+    <rule field="dateadded" operator="inthelast">
+        <value>60 days</value>
+    </rule>
+    <order direction="descending">votes</order>
+    <limit>200</limit>
+</smartplaylist>

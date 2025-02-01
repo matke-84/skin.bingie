@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<window>
+	<zorder>5</zorder>
+    <defaultcontrol always="true">1000</defaultcontrol>
+    <onload condition="Skin.HasSetting(BingieAutoTrailer) + System.HasAlarm(preview_delay)">CancelAlarm(preview_delay,silent)</onload>
+	 <coordinates>
+		<system>1</system>
+		<left>0</left>
+		<top>0</top>
+	</coordinates>
+    <!--Normal "1" over DialogVideoInfo.xml-->
+    <controls>
+		<include>DialogOverlayExtra</include>
+		
+        <!--Dialog Select-->
+        <control type="group" id="1000">
+			<top>-41</top>
+			<left>-2</left>
+            <include>animation_window_open_close</include>
+            <visible>!Window.IsVisible(yesnodialog) + !Window.IsVisible(virtualkeyboard) + !Window.IsVisible(numericinput) + ![Window.IsVisible(script-LibraryEditor-genre.xml) + String.IsEmpty(Window.Property(ShowDialog))] + !Window.IsVisible(script-LibraryEditor-dialogs.xml)</visible>
+     		<!-- background panel -->
+			<control type="image">
+				<posx>367</posx>
+				<posy>236</posy>
+				<width>1190</width>
+				<height>690</height>
+				<texture border="15">diffuse/bgpanel.png</texture>
+				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+			</control>
+			<control type="image">
+				<posx>367</posx>
+				<posy>236</posy>
+				<width>1190</width>
+				<height>690</height>
+				<texture border="15">diffuse/bgpanel.png</texture>
+				<bordersize>10</bordersize>
+				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+				
+			</control>
+			
+			<!--Header-->
+			<control type="label" id="1">
+				<description>Heading</description>
+				<posx>419</posx>
+				<posy>225</posy>
+				<width>1080</width>
+				<height>100</height>
+				<label/>
+				<include>DialogHeader_Alt</include>
+				<align>center</align>
+				<scroll>true</scroll>
+			</control>
+			
+            <control type="group">
+                <!--Container 3 Small-->
+                <visible>Control.IsVisible(3)</visible>
+                <control type="image">
+                    <posx>422</posx>
+					<posy>314</posy>
+                    <width>1080</width>
+                    <height>483</height>
+                    <texture border="5">dialogs/default/inner.png</texture>
+                </control>
+            </control>
+            <control type="group">
+                <!--Container 6 Big-->
+                <visible>!Control.IsVisible(3)</visible>
+                <control type="image">
+                    <posx>422</posx>
+                    <posy>314</posy>
+                    <width>612</width>
+                    <height>483</height>
+                    <texture border="5">dialogs/default/inner.png</texture>
+                </control>
+                <control type="image">
+                    <posx>1080</posx>
+                    <posy>314</posy>
+                    <width>422</width>
+                    <height>483</height>
+                    <texture border="5">dialogs/default/inner.png</texture>
+                </control>
+                <control type="multiimage">
+                    <posx>1091</posx>
+                    <posy>325</posy>
+                    <width>400</width>
+                    <height>300</height>
+                    <aspectratio>keep</aspectratio>
+					<timeperimage>100</timeperimage>
+					<fadetime>0</fadetime>
+                    <imagepath>$INFO[Container(6).ListItem.FileNameAndPath]</imagepath>
+                    <visible>String.Contains(Container(6).ListItem.FileNameAndPath,spinner)</visible>
+                </control>
+                <control type="multiimage">
+                    <posx>1091</posx>
+                    <posy>325</posy>
+                    <width>400</width>
+                    <height>300</height>
+                    <aspectratio>keep</aspectratio>
+					<timeperimage>5000</timeperimage>
+					<fadetime>150</fadetime>
+                    <randomize>true</randomize>
+                    <imagepath>$INFO[Container(6).ListItem.Icon]</imagepath>
+                    <visible>!String.Contains(Container(6).ListItem.FileNameAndPath,spinner)</visible>
+                </control>
+				<control type="textbox">
+					<posx>1091</posx>
+                    <posy>630</posy>
+                    <width>400</width>
+                    <height>140</height>
+                    <font>Reg22</font>
+					<label>$INFO[Container(6).ListItem.Label2,, ][CR]$INFO[Container(6).ListItem.AddonVersion,$LOCALIZE[24051] ]</label>
+					<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<align>left</align>
+					<aligny>top</aligny>
+                    <visible>!String.IsEmpty(Container(6).ListItem.label2)</visible>
+				</control>
+                <control type="textbox">
+					<posx>1091</posx>
+                    <posy>630</posy>
+                    <width>400</width>
+                    <height>140</height>
+                    <font>Reg22</font>
+					<label>$INFO[Container(6).ListItem.AddonSummary,, ][CR]$INFO[Container(6).ListItem.AddonVersion,$LOCALIZE[24051] ]</label>
+					<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<align>left</align>
+					<aligny>top</aligny>
+                    <visible>String.IsEmpty(Container(6).ListItem.label2)</visible>
+				</control>
+            </control>
+            <!--List-->
+            <control type="list" id="3">
+                <!--Container 3 Small-->
+                <posx>412</posx>
+				<posy>315</posy>
+				<width>1100</width>
+                <height>480</height>
+                <onright>60</onright>
+                <onup>3</onup>
+                <ondown>3</ondown>
+                <onleft>8000</onleft>
+                <pagecontrol>60</pagecontrol>
+                <scrolltime tween="cubic" easing="out">500</scrolltime>
+                <itemlayout height="60" width="1100">
+                    <control type="image">
+                        <posx>11</posx>
+                        <posy>1</posy>
+                        <width>1078</width>
+                        <height>60</height>
+                        <texture border="10">dialogs/default/separator.png</texture>
+                    </control>
+                    <control type="label">
+                        <posx>30</posx>
+                        <posy>-1</posy>
+                        <width>1020</width>
+                        <height>60</height>
+                        <include condition="String.IsEqual(System.Language,Arabic) | String.IsEqual(System.Language,Hebrew)">align_right</include>
+                        <label>$INFO[ListItem.Label]</label>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <include>DialogListNF</include>
+                        <scroll>false</scroll>
+                    </control>
+                    <control type="image">
+                        <right>30</right>
+                        <posy>10</posy>
+                        <width>40</width>
+                        <height>40</height>
+                        <texture>common/checkbox.png</texture>
+                        <colordiffuse>$INFO[Skin.String(ButtonTextColor)]</colordiffuse>
+                        <visible>ListItem.IsSelected</visible>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="60" width="1100" condition="Control.HasFocus(3)">
+                    <control type="group">
+                        <control type="image">
+							<posx>11</posx>
+                            <width>1078</width>
+                            <height>60</height>
+                            <texture border="10">diffuse/panel.png</texture>
+                            <colordiffuse>$INFO[Skin.String(ButtonFocusColor)]</colordiffuse>
+                        </control>
+                        <control type="label">
+                            <posx>30</posx>
+                            <posy>-1</posy>
+                            <width>1020</width>
+                            <height>60</height>
+                            <include condition="String.IsEqual(System.Language,Arabic) | String.IsEqual(System.Language,Hebrew)">align_right</include>
+                            <label>$INFO[ListItem.Label]</label>
+                            <align>left</align>
+                            <aligny>center</aligny>
+                            <scroll>true</scroll>
+                            <include>DialogListFO</include>
+                        </control>
+                        <control type="image">
+                            <right>30</right>
+                            <posy>10</posy>
+                            <width>40</width>
+                            <height>40</height>
+                            <texture>common/checkbox.png</texture>
+                            <colordiffuse>$INFO[Skin.String(ButtonFocusTextColor)]</colordiffuse>
+                            <visible>ListItem.IsSelected</visible>
+                        </control>
+                    </control>
+                </focusedlayout>
+				<focusedlayout height="60" width="1100" condition="!Control.HasFocus(3)">
+                    <control type="group">                       
+                        <control type="image">
+							<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(3)">Conditional</animation>
+							<posx>11</posx>
+                            <width>1078</width>
+                            <height>60</height>
+                            <texture border="10">diffuse/panel.png</texture>
+                            <colordiffuse>$INFO[Skin.String(ButtonFocusColor)]</colordiffuse>
+                        </control>
+                        <control type="label">
+                            <posx>30</posx>
+                            <posy>-1</posy>
+                            <width>1020</width>
+                            <height>60</height>
+                            <include condition="String.IsEqual(System.Language,Arabic) | String.IsEqual(System.Language,Hebrew)">align_right</include>
+                            <label>$INFO[ListItem.Label]</label>
+                            <align>left</align>
+                            <aligny>center</aligny>
+                            <scroll>true</scroll>
+                            <include>DialogListFO</include>
+                        </control>
+                        <control type="image">
+                            <right>30</right>
+                            <posy>10</posy>
+                            <width>40</width>
+                            <height>40</height>
+                            <texture>common/checkbox.png</texture>
+                            <colordiffuse>$INFO[Skin.String(ButtonFocusTextColor)]</colordiffuse>
+                            <visible>ListItem.IsSelected</visible>
+                        </control>
+                    </control>
+                </focusedlayout>
+				
+			</control>
+			<control type="scrollbar" id="60">
+				<visible>Control.IsVisible(3)</visible>
+				<posx>1517</posx>
+				<posy>317</posy>
+				<height>478</height>
+				<onup>60</onup>
+				<ondown>60</ondown>
+				<onleft>3</onleft>
+				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+			</control>
+
+			
+            <control type="list" id="6">
+                <!--Container 6 Big-->
+                <posx>423</posx>
+                <posy>315</posy>
+                <width>610</width>
+                <height>480</height>
+                <onleft>8000</onleft>
+                <onright>1661</onright>
+                <onup>6</onup>
+                <ondown>6</ondown>
+                <pagecontrol>1661</pagecontrol>
+                <scrolltime tween="cubic" easing="out">500</scrolltime>
+                <itemlayout height="120" width="610">
+                    <control type="image">
+                        <posx>1</posx>
+                        <posy>1</posy>
+                        <width>608</width>
+                        <height>120</height>
+                        <texture border="10">dialogs/default/separator.png</texture>
+                    </control>
+                    <control type="image">
+                        <posx>10</posx>
+                        <posy>10</posy>
+                        <width>100</width>
+                        <height>100</height>
+                        <aspectratio>scale</aspectratio>
+                        <texture background="true" fallback="DefaultAddon.png">$INFO[ListItem.Icon]</texture>
+                    </control>
+                    <control type="label">
+                        <posx>120</posx>
+                        <posy>12</posy>
+                        <width>480</width>
+                        <height>60</height>
+                        <label>[B]$INFO[ListItem.Label][/B]</label>
+                        <align>left</align>
+                        <aligny>bottom</aligny>
+                        <include>DialogListNF</include>
+                        <scroll>false</scroll>
+                    </control>
+                    <control type="label">
+                        <posx>120</posx>
+                        <bottom>9</bottom>
+                        <width>480</width>
+                        <height>50</height>
+                        <label>$INFO[ListItem.Label2,, ]$INFO[ListItem.AddonVersion,$LOCALIZE[24051] ]</label>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <font>Reg22</font>
+                        <include>DialogListNF</include>
+                        <scroll>false</scroll>
+                        <visible>!String.IsEmpty(ListItem.Label2)</visible>
+                    </control>
+                    <control type="label">
+                        <posx>120</posx>
+                        <bottom>9</bottom>
+                        <width>480</width>
+                        <height>50</height>
+                        <label>$INFO[ListItem.AddonSummary,, ]$INFO[ListItem.AddonVersion,$LOCALIZE[24051] ]</label>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <font>Reg22</font>
+                        <include>DialogListNF</include>
+                        <scroll>false</scroll>
+                        <visible>String.IsEmpty(ListItem.Label2)</visible>
+                    </control>
+                    <control type="image">
+                        <right>10</right>
+                        <posy>10</posy>
+                        <width>40</width>
+                        <height>40</height>
+                        <texture>common/checkbox.png</texture>
+                        <colordiffuse>$INFO[Skin.String(ButtonTextColor)]</colordiffuse>
+                        <visible>ListItem.IsSelected</visible>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="120" width="610" condition="Control.HasFocus(6)">
+                    <control type="group">                      
+                        <control type="image">
+                            <width>610</width>
+                            <height>120</height>
+                            <texture border="10">diffuse/panel.png</texture>
+                            <colordiffuse>$INFO[Skin.String(ButtonFocusColor)]</colordiffuse>
+                        </control>
+                            <control type="image">
+                            <posx>10</posx>
+                            <posy>10</posy>
+                            <width>100</width>
+                            <height>100</height>
+                            <aspectratio>scale</aspectratio>
+                            <texture background="true" fallback="DefaultAddon.png">$INFO[ListItem.Icon]</texture>
+                        </control>
+                        <control type="label">
+                            <posx>120</posx>
+                            <posy>12</posy>
+                            <width>480</width>
+                            <height>60</height>
+                            <label>[B]$INFO[ListItem.Label][/B]</label>
+                            <align>left</align>
+                            <aligny>bottom</aligny>
+                            <include>DialogListFO</include>
+                            <scroll>true</scroll>
+                        </control>
+                        <control type="label">
+                            <posx>120</posx>
+                            <bottom>9</bottom>
+                            <width>480</width>
+                            <height>50</height>
+                            <label>$INFO[ListItem.Label2,, ]$INFO[ListItem.AddonVersion,$LOCALIZE[24051] ]</label>
+                            <align>left</align>
+                            <aligny>center</aligny>
+                            <font>Reg22</font>
+                            <include>DialogListFO</include>
+                            <scroll>true</scroll>
+                            <visible>!String.IsEmpty(ListItem.Label2)</visible>
+                        </control>
+                        <control type="label">
+                            <posx>120</posx>
+                            <bottom>10</bottom>
+                            <width>480</width>
+                            <height>50</height>
+                            <label>$INFO[ListItem.AddonSummary,, ]$INFO[ListItem.AddonVersion,$LOCALIZE[24051] ]</label>
+                            <align>left</align>
+                            <aligny>center</aligny>
+                            <font>Reg22</font>
+                            <include>DialogListFO</include>
+                            <scroll>true</scroll>
+                            <visible>String.IsEmpty(ListItem.Label2)</visible>
+                        </control>
+                        <control type="image">
+                            <right>10</right>
+                            <posy>9</posy>
+                            <width>40</width>
+                            <height>40</height>
+                            <texture>common/checkbox.png</texture>
+                            <colordiffuse>$INFO[Skin.String(ButtonFocusTextColor)]</colordiffuse>
+                            <visible>ListItem.IsSelected</visible>
+                        </control>
+                    </control>
+                </focusedlayout>
+				<focusedlayout height="120" width="610" condition="!Control.HasFocus(6)">
+                    <control type="group">
+                        <control type="image">
+							<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(6)">Conditional</animation>
+                            <width>610</width>
+                            <height>120</height>
+                            <texture border="10">diffuse/panel.png</texture>
+                            <colordiffuse>$INFO[Skin.String(ButtonFocusColor)]</colordiffuse>
+                        </control>
+                            <control type="image">
+                            <posx>10</posx>
+                            <posy>10</posy>
+                            <width>100</width>
+                            <height>100</height>
+                            <aspectratio>scale</aspectratio>
+                            <texture background="true" fallback="DefaultAddon.png">$INFO[ListItem.Icon]</texture>
+                        </control>
+                        <control type="label">
+                            <posx>120</posx>
+                            <posy>12</posy>
+                            <width>480</width>
+                            <height>60</height>
+                            <label>[B]$INFO[ListItem.Label][/B]</label>
+                            <align>left</align>
+                            <aligny>bottom</aligny>
+                            <include>DialogListFO</include>
+                            <scroll>true</scroll>
+                        </control>
+                        <control type="label">
+                            <posx>120</posx>
+                            <bottom>9</bottom>
+                            <width>480</width>
+                            <height>50</height>
+                            <label>$INFO[ListItem.Label2,, ]$INFO[ListItem.AddonVersion,$LOCALIZE[24051] ]</label>
+                            <align>left</align>
+                            <aligny>center</aligny>
+                            <font>Reg22</font>
+                            <include>DialogListFO</include>
+                            <scroll>true</scroll>
+                            <visible>!String.IsEmpty(ListItem.Label2)</visible>
+                        </control>
+                        <control type="label">
+                            <posx>120</posx>
+                            <bottom>10</bottom>
+                            <width>480</width>
+                            <height>50</height>
+                            <label>$INFO[ListItem.AddonSummary,, ]$INFO[ListItem.AddonVersion,$LOCALIZE[24051] ]</label>
+                            <align>left</align>
+                            <aligny>center</aligny>
+                            <font>Reg22</font>
+                            <include>DialogListFO</include>
+                            <scroll>true</scroll>
+                            <visible>String.IsEmpty(ListItem.Label2)</visible>
+                        </control>
+                        <control type="image">
+                            <right>10</right>
+                            <posy>9</posy>
+                            <width>40</width>
+                            <height>40</height>
+                            <texture>common/checkbox.png</texture>
+                            <colordiffuse>$INFO[Skin.String(ButtonFocusTextColor)]</colordiffuse>
+                            <visible>ListItem.IsSelected</visible>
+                        </control>
+                    </control>
+                </focusedlayout>
+            </control>
+			<control type="scrollbar" id="1661">
+				<visible>Control.IsVisible(6)</visible>
+				<posx>1047</posx>
+				<posy>316</posy>
+				<height>479</height>
+				<onleft>6</onleft>
+                <onup>661</onup>
+                <ondown>661</ondown>
+				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(1661) | Container.Scrolling  | String.IsEqual(Skin.String(scrollbar_visibility),always_show)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(1661) | Container.Scrolling  | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+			</control>
+            
+            <!--description -->
+			<control type="label">
+                <posx>423</posx>
+				<posy>805</posy>
+                <width>1100</width>
+                <height>20</height>
+                <include condition="String.IsEqual(System.Language,Arabic) | String.IsEqual(System.Language,Hebrew)">align_right</include>
+                <label>$INFO[Container(3).ListItem.Label2]</label>
+                <align>left</align>
+                <aligny>center</aligny>
+                <scroll>true</scroll>
+                <font>Reg22</font>
+            </control>
+            
+			<!--Buttons-->
+            <control type="grouplist" id="8000">
+				<posx>414</posx>
+				<posy>830</posy>
+				<width>1050</width>
+				<height>690</height>
+				<itemgap>20</itemgap>
+				<orientation>horizontal</orientation>
+				<onup condition="Control.IsVisible(6)">6</onup>
+				<ondown condition="Control.IsVisible(6)">6</ondown>
+				<onup condition="!Control.IsVisible(6)">3</onup>
+				<ondown condition="!Control.IsVisible(6)">3</ondown>
+                <control type="button" id="5">
+                    <description>OK</description>
+					<left>0</left>
+                    <label>186</label>
+                    <width>400</width>
+                    <include>DialogButtonOther</include>
+                    <height>80</height>
+					<onright>7</onright>
+                </control>
+                <control type="button" id="7">
+                    <right>0</right>
+                    <description>Close</description>
+                    <label></label>
+                    <width>400</width>
+                    <include>DialogButtonOther</include>
+                    <height>80</height>
+                    <visible>!String.IsEmpty(Control.GetLabel(7))</visible>
+                </control>
+            </control>
+        </control>
+    </controls>
+</window>

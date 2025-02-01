@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Oldies</name>
+    <match>all</match>
+    <rule field="year" operator="lessthan">
+        <value>1971</value>
+    </rule>
+    <rule field="tag" operator="isnot">
+        <value>stand-up comedy</value>
+    </rule>
+    <order direction="descending">year</order>
+</smartplaylist>

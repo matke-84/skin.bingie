@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<window>
+	<zorder>3</zorder>
+	<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+	<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+	<controls>
+		<!-- Vignette Mask -->
+		<control type="image">
+			<width>1920</width>
+			<height>290</height>
+			<texture background="true" flipy="true">overlays/osd_gradient.png</texture>
+		</control>
+		<control type="group">
+			<right>20</right>
+			<width>80</width>
+			<top>10</top>
+            <visible>!Window.IsActive(notification) + !Window.IsActive(fullscreenvideo) + !Window.IsVisible(startup)</visible>
+			<control type="image">
+				<left>20</left>
+				<top>10</top>
+				<width>60</width>
+				<height>60</height>
+				<texture>dialogs/extendedprogress/progress/p100.png</texture>
+				<animation effect="fade" end="30" time="0" condition="true">Conditional</animation>
+			</control>
+			<control type="group">
+				<visible>!Window.IsActive(volumebar)</visible>
+				<animation effect="fade" time="200">VisibleChange</animation>
+				<control type="image">
+					<left>20</left>
+					<top>10</top>
+					<width>60</width>
+					<height>60</height>
+					<texture>$INFO[Control.GetLabel(32),dialogs/extendedprogress/progress/p,.png]</texture>
+                    <colordiffuse>$INFO[Skin.String(SpinnerTextureColor)]</colordiffuse>
+					<animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
+				</control>
+				<control type="image">
+					<left>20</left>
+					<top>10</top>
+					<width>60</width>
+					<height>60</height>
+					<texture>dialogs/extendedprogress/loading.png</texture>
+                    <colordiffuse>$INFO[Skin.String(SpinnerTextureColor)]</colordiffuse>
+					<animation effect="rotate" center="auto" start="360" end="0" time="1500" loop="true" condition="true">Conditional</animation>
+				</control>
+			</control>
+			<control type="grouplist">
+				<left>-800</left>
+				<top>-34</top>
+				<width>800</width>
+				<height>120</height>
+				<align>right</align>
+				<orientation>horizontal</orientation>
+				<control type="label" id="30">
+					<width min="0" max="680">auto</width>
+					<height>120</height>
+					<font>Reg26</font>
+				</control>
+				<control type="label">
+					<width min="0" max="120">auto</width>
+					<height>120</height>
+					<font>Reg26</font>
+					<label>$INFO[Control.GetLabel(32),: ,%]</label>
+				</control>
+			</control>
+			<control type="label" id="31">
+				<description>Title label</description>
+				<left>-750</left>
+				<top>-8</top>
+				<width>750</width>
+				<height>120</height>
+				<font>Reg26</font>
+				<textcolor>FFFFFFFF</textcolor>
+				<align>right</align>
+			</control>
+			<control type="progress" id="32">
+				<left>3000</left>
+				<height>15</height>
+			</control>
+		</control>
+	</controls>
+</window>

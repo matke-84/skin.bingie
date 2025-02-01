@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Murder Mysteries</name>
+    <match>all</match>
+    <rule field="tag" operator="contains">
+        <value>murder</value>
+        <value>murder hunt</value>
+        <value>murder investigation</value>
+        <value>murder mystery</value>
+        <value>murder plot</value>
+        <value>murder suspect</value>
+        <value>murder trial</value>
+        <value>murderer</value>
+    </rule>
+    <rule field="genre" operator="is">
+        <value>Mystery</value>
+    </rule>
+    <rule field="votes" operator="greaterthan">
+        <value>100</value>
+    </rule>
+    <order direction="descending">year</order>
+</smartplaylist>

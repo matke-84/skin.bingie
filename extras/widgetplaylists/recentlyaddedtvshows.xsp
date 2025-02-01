@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- BINGIE -->
+<smartplaylist type="tvshows">
+    <name>Recently Added TV Shows</name>
+    <match>all</match>
+    <rule field="playcount" operator="is">
+        <value>0</value>
+    </rule>
+    <limit>200</limit>
+    <order direction="descending">dateadded</order>
+</smartplaylist>

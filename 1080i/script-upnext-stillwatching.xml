@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<window>
+	<defaultcontrol always="true">3012</defaultcontrol>
+	<zorder>1</zorder>
+	<controls>
+	<include>animation_fade_visible_hidden</include>
+		<!-- background -->
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>100%</width>
+			<height>100%</height>
+			<texture>diffuse/panel2.png</texture>
+			<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+		</control>
+		<!-- Still watching dialog -->
+		<control type="group">
+			<posy>500</posy>
+			<width>100%</width>
+			<height>300</height>
+			<control type="group">
+				<!-- Still There ? -->
+				<control type="label">
+					<align>center</align>
+					<width>100%</width>
+					<height>50</height>
+					<font>Bold46</font>
+					<textcolor>$INFO[Skin.String(BingieOSDLabelTextColor)]</textcolor>
+					<label>$ADDON[service.upnext 30024]</label>
+				</control>
+				<!-- Buttons -->
+				<control type="grouplist">
+					<top>75</top>
+					<orientation>horizontal</orientation>
+					<height>65</height>
+					<width>100%</width>
+					<align>center</align>
+					<itemgap>15</itemgap>
+					<!-- Continue Watching -->
+					<control type="button" id="3012">
+						<width min="370">auto</width>
+						<height>65</height>
+						<align>center</align>
+						<onright>3013</onright>
+						<textoffsetx>40</textoffsetx>
+						<label>$ADDON[service.upnext 30010]</label>
+						<aligny>center</aligny>
+						<font>Reg34</font>
+						<focusedcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</focusedcolor>
+						<texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+						<texturenofocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderUnfocusColor)]">bingie/border/default_button_focus.png</texturenofocus>
+						<texturenofocus/>
+					</control>
+					<!-- Cancel -->
+					<control type="button" id="3013">
+						<width min="164">auto</width>
+						<height>65</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<onleft>3012</onleft>
+						<label>$ADDON[service.upnext 30034]</label>
+						<font>Reg34</font>
+						<textoffsetx>40</textoffsetx>
+						<focusedcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</focusedcolor>
+						<texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
+						<texturenofocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderUnfocusColor)]">bingie/border/default_button_focus.png</texturenofocus>
+						<texturenofocus/>
+					</control>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

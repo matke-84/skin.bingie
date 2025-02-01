@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<window id="1120">
+    <defaultcontrol always="true">77777</defaultcontrol>
+    <menucontrol>900</menucontrol>
+    <include>CustomBingieWinProps</include>
+    <include>BingieViews_WindowOpen_Fade</include>
+	<onload>Skin.TimerStart(spotlightanimation)</onload>
+    <controls>
+		<include>Defs_TMDbHelper_Loader</include>
+        <!-- fake go-to-fullscreen button -->
+        <control type="button" id="509">
+            <visible allowhiddenfocus="true">false</visible>
+            <onfocus>FullScreen</onfocus>
+        </control>
+        <include>GlobalBackground</include>
+        <!-- hidden submenu for count calculations -->
+        <include condition="!Skin.HasSetting(DisableAllSubmenus)">hiddenSubmenu</include>
+        <include>HomeBingie</include>
+        <include condition="Skin.HasSetting(DebugGrid) | Skin.HasSetting(DebugInfo)">DebugInfo</include>
+    </controls>
+</window>

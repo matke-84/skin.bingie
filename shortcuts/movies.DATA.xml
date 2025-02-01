@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<shortcuts>
+	<!-- all movies -->
+	<shortcut>
+		<label>31050</label>
+		<label2>Movies</label2>
+		<defaultID>135</defaultID>
+		<icon />
+		<thumb />
+		<action>ActivateWindow(Videos,videodb://movies/titles/,return)</action>
+		<visible>Library.HasContent(Movies) | Library.HasContent(TVShows)</visible>
+	</shortcut>
+	<shortcut>
+		<label>31050</label>
+		<label2>Movies</label2>
+		<defaultID>135</defaultID>
+		<icon />
+		<thumb />
+		<action>ActivateWindow(Videos,"plugin://plugin.video.themoviedb.helper/?info=dir_movie&amp;tmdb_type=None&amp;reload=$INFO[Window(Home).Property(TMDbHelper.Widgets.Reload)]",return)</action>
+		<visible>!Library.HasContent(Movies) + !Library.HasContent(TVShows)</visible>
+	</shortcut>
+	<!-- recently added movies -->
+	<shortcut>
+		<label>31127</label>
+		<label2>Movies</label2>
+		<defaultID>135</defaultID>
+		<icon />
+		<thumb />
+		<action>ActivateWindow(Videos,videodb://recentlyaddedmovies/,return)</action>
+		<visible>Library.HasContent(Movies) | Library.HasContent(TVShows)</visible>
+	</shortcut>
+	<!-- movies in progress -->
+	<shortcut>
+		<label>31035</label>
+		<label2>Movies</label2>
+		<defaultID>135</defaultID>
+		<icon />
+		<thumb />
+		<action>ActivateWindow(Videos,special://skin/extras/widgetplaylists/inprogressmovies.xsp,return)</action>
+		<visible>Library.HasContent(Movies) | Library.HasContent(TVShows)</visible>
+	</shortcut>
+	<!-- unwatched movies -->
+	<shortcut>
+		<label>16101</label>
+		<label2>Movies</label2>
+		<defaultID>135</defaultID>
+		<icon />
+		<thumb />
+		<action>ActivateWindow(Videos,special://skin/extras/widgetplaylists/unwatchedmovies.xsp,return)</action>
+		<visible>Library.HasContent(Movies) | Library.HasContent(TVShows)</visible>
+	</shortcut>
+	<!-- movie genres -->
+	<shortcut>
+		<label>135</label>
+		<label2>Movies</label2>
+		<defaultID>135</defaultID>
+		<icon />
+		<thumb />
+		<action>ActivateWindow(Videos,videodb://movies/genres/,return)</action>
+		<visible>Library.HasContent(Movies) | Library.HasContent(TVShows)</visible>
+	</shortcut>
+	<shortcut>
+		<label>135</label>
+		<label2>Movies</label2>
+		<defaultID>135</defaultID>
+		<icon />
+		<thumb />
+		<action>ActivateWindow(Videos,"plugin://plugin.video.themoviedb.helper/?info=genres&amp;tmdb_type=movie&amp;reload=$INFO[Window(Home).Property(TMDbHelper.Widgets.Reload)]",return)</action>
+		<visible>!Library.HasContent(Movies) + !Library.HasContent(TVShows)</visible>
+	</shortcut>
+	<!-- Movie Sets -->
+	<shortcut>
+		<label>20434</label>
+		<label2>Movies</label2>
+		<defaultID>135</defaultID>
+		<icon />
+		<thumb />
+		<action>ActivateWindow(Videos,videodb://movies/sets/,return)</action>
+		<visible>Library.HasContent(Movies) | Library.HasContent(TVShows)</visible>
+	</shortcut>
+	<shortcut>
+		<label>20434</label>
+		<label2>Movies</label2>
+		<defaultID>135</defaultID>
+		<icon />
+		<thumb />
+		<action>ActivateWindow(Videos,"plugin://plugin.video.themoviedb.helper/?info=all_items&amp;tmdb_type=collection&amp;reload=$INFO[Window(Home).Property(TMDbHelper.Widgets.Reload)]",return)</action>
+		<visible>!Library.HasContent(Movies) + !Library.HasContent(TVShows)</visible>
+	</shortcut>
+	<!-- search movies -->
+	<shortcut>
+		<label>137</label>
+		<label2>Movies</label2>
+		<defaultID>137</defaultID>
+		<icon />
+		<thumb />
+		<action>ActivateWindow(1108,return)</action>
+	</shortcut>
+</shortcuts>

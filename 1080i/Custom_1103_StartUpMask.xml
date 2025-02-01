@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- BINGIE -->
+<window type="dialog" id="1103">
+	<defaultcontrol always="true">10</defaultcontrol>
+	<zorder>999</zorder>
+	<onload condition="String.IsEqual(Skin.String(splash_screen),bingie_default)">PlayMedia($INFO[Skin.String(SplashAnimationResolution),special://skin/extras/media/bingie_intro_,.mp4],1)</onload>
+	<onload condition="String.IsEqual(Skin.String(splash_screen),bingie_image)">AlarmClock(startup,ClearProperty(StartupMask,home),00:10,silent)</onload>
+	<onload condition="String.IsEqual(Skin.String(splash_screen),none)">AlarmClock(startup,ClearProperty(StartupMask,home),00:00,silent)</onload>	
+	<visible>!String.IsEmpty(Window(Home).Property(StartupMask))</visible>	
+	<controls>
+		<!-- intro -->
+		<control type="group">
+			<visible>Player.HasVideo</visible>
+			<control type="image">
+				<include>FullscreenDimensions</include>
+				<texture>colors/color_black.png</texture>
+			</control>
+			<control type="videowindow">
+				<include>FullscreenDimensions</include>
+			</control>
+		</control>
+        <!-- image -->
+        <control type="image">
+		    <visible>!Player.HasVideo + String.IsEqual(Skin.String(splash_screen),bingie_image)</visible>
+			<animation effect="fade" end="0" time="500">WindowClose</animation>
+            <include>FullscreenDimensions</include>
+            <aspectratio>scale</aspectratio>
+            <texture background="true">special://skin/extras/media/bingie_splash.png</texture>
+			<fadetime>1000</fadetime>
+        </control>
+		<!-- block input button -->
+		<control type="button" id="10">
+			<include>HiddenObject</include>
+			<include content="ButtonMovementAction">
+				<param name="action" value="noop" />
+			</include>
+		</control>
+		<!-- busy spinner -->
+		<include content="Busy_Spinner">
+			<animation delay="300" time="500" effect="fade" start="0" end="100">Visible</animation>
+			<param name="centerleft" value="50%" />
+			<param name="centertop" value="85%"/>
+			<param name="visibility" value="String.Contains(VideoPlayer.Title,bingie_intro) + !Integer.IsLess(Player.TimeRemaining(ss),6)"/>
+			<param name="size" value="80"/>
+		</include>
+		<!-- busy spinner -->
+		<include content="Busy_Spinner">
+			<animation delay="300" time="500" effect="fade" start="0" end="100">Visible</animation>
+			<param name="centerleft" value="50%" />
+			<param name="centertop" value="85%"/>
+			<param name="visibility" value="System.HasAlarm(startup) + String.IsEqual(Skin.String(splash_screen),bingie_image)"/>
+			<param name="size" value="80"/>
+		</include>
+		<!-- Snow Effect -->
+		<control type="group">
+			<include condition="String.IsEqual(Skin.String(season_greetings),snow_animation)">snow</include>
+		</control>
+		<!-- Halloween Effect -->
+		<control type="group">
+			<include condition="String.IsEqual(Skin.String(season_greetings),halloween_animation)">pumpkin</include>
+		</control>
+	</controls>
+</window>

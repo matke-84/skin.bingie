@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<window>
+	<defaultcontrol/>
+	<onload condition="System.HasAlarm(preview_delay)">CancelAlarm(preview_delay,silent)</onload>
+	<onload condition="Player.HasVideo + !Window.IsVisible(videoosd) + !Player.Paused + !Skin.HasSetting(EnableOSDInfo)">AlarmClock(OpenMPAATopBar,SetProperty(DialogMPAATopBar,1,home),00:00,silent)</onload>
+	<onunload condition="![Player.HasVideo + VideoPlayer.Content(livetv)]">ClearProperty(pvrGuideOnFullscreenVideo,Home)</onunload>
+	<onunload condition="!VideoPlayer.Content(livetv) + Skin.HasSetting(ForceVideoPlaybackStop) + ![Skin.HasSetting(EnableOSDInfo)]">AlarmClock(StopPlayback,PlayerControl(Stop),00:00,silent)</onunload>
+	<onunload>AlarmClock(LastPlayed,CancelAlarm(preview_delay,silent),00:01,silent)</onunload>
+	<onunload>ClearProperty(DialogMPAATopBar,home)</onunload>
+	<onunload>CancelAlarm(OpenMPAATopBar,silent)</onunload>
+
+	<controls>
+		<control type="image">
+			<left>0</left>
+			<top>300</top>
+			<width>100%</width>
+			<height>275</height>
+			<texture border="10">diffuse/panel.png</texture>
+			<colordiffuse>$INFO[Skin.String(OSDPanelColor)]</colordiffuse>
+		</control>
+
+		<!-- Aspect Ratio / Zoom Info Overlay -->
+		<control type="group" id="0">
+			<left>0</left>
+			<top>300</top>
+			<width>100%</width>
+			<height>275</height>
+
+			<!-- Row 1 label -->
+			<control type="label" id="10">
+				<left>20%</left>
+				<top>20</top>
+				<width>60%</width>
+				<height>50</height>
+				<font>Bold30</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<label/>
+			</control>
+
+			<!-- Row 2 label -->
+			<control type="label" id="11">
+				<left>20%</left>
+				<top>110</top>
+				<width>60%</width>
+				<height>50</height>
+				<font>Bold30</font>
+				<textcolor>white</textcolor>
+				<label/>
+			</control>
+
+			<!-- Row 3 label -->
+			<control type="label" id="12">
+				<left>20%</left>
+				<top>200</top>
+				<width>60%</width>
+				<height>50</height>
+				<font>Bold30</font>
+				<textcolor>white</textcolor>
+				<label/>
+			</control>
+		</control>
+
+		<!-- Buffering Progress Overlay -->
+		<control type="group" id="2">
+			<visible>Player.Caching + Skin.HasSetting(EnableBufferingProgressOSD)</visible>
+			<animation end="-850,-230" time="0" effect="slide" condition="Skin.HasSetting(UseBingieOSD)">Conditional</animation>
+			<animation end="-850,-230" time="0" effect="slide" condition="!Skin.HasSetting(UseBingieOSD)">Conditional</animation>
+			<animation delay="300" effect="fade" time="200">Visible</animation>
+			<animation effect="fade" delay="200" time="150">Hidden</animation>
+			<control type="image" id="22">
+				<right>50</right>
+				<top>710</top>
+				<width>120</width>
+				<height>120</height>
+				<animation effect="fade" end="30" time="0" condition="true">Conditional</animation>
+				<colordiffuse>$INFO[Skin.String(OSDPanelColor)]</colordiffuse>
+				<texture>dialogs/buffer-progress/bottom-panel.png</texture>
+			</control>
+			<control type="image" id="23">
+				<right>50</right>
+				<top>710</top>
+				<width>120</width>
+				<height>120</height>
+				<animation effect="fade" end="30" time="0" condition="true">Conditional</animation>
+				<texture>dialogs/buffer-progress/p100.png</texture>
+			</control>
+			<control type="image" id="24">
+				<right>50</right>
+				<top>710</top>
+				<width>120</width>
+				<height>120</height>
+				<colordiffuse>$INFO[Skin.String(OSDBufferingSpinnerColor)]</colordiffuse>
+				<texture>dialogs/buffer-progress/p$INFO[Player.CacheLevel].png</texture>
+			</control>
+			<control type="label" id="25">
+				<description>buffering value</description>
+				<label>$INFO[Player.CacheLevel]%</label>
+				<right>50</right>
+				<top>710</top>
+				<width>120</width>
+				<height>120</height>
+				<aligny>center</aligny>
+				<align>center</align>
+				<font>Bold26</font>
+				<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
+			</control>
+			<control type="label" id="26">
+				<description>buffering label</description>
+				<label>$LOCALIZE[15107]</label>
+				<right>48</right>
+				<top>857</top>
+				<width>120</width>
+				<height>20</height>
+				<aligny>center</aligny>
+				<align>center</align>
+				<font>Bold20</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<visible>!Skin.HasSetting(UseBingieOSD)</visible>
+			</control>
+		</control>
+	</controls>
+</window>

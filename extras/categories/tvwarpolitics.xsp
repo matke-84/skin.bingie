@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- BINGIE -->
+<smartplaylist type="tvshows">
+    <name>TV War &amp; Politics</name>
+    <match>all</match>
+    <rule field="genre" operator="contains">       
+        <value>War</value>
+		<value>Politics</value>
+    </rule>
+    <order direction="descending">year</order>
+    <limit>200</limit>
+</smartplaylist>

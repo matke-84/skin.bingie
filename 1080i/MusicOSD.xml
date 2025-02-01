@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<window>
+    <defaultcontrol always="true">200</defaultcontrol>
+    <onload>SetFocus(203)</onload>
+	<onload condition="Player.Forwarding | Player.Rewinding">Play</onload>
+	<onunload>ClearProperty(VizSlide,Home)</onunload>
+    <controls>
+        <control type="group">
+			<include>HideOsdConditions</include>
+			<include>OSDButtonsModern</include>
+		</control>
+	</controls>
+</window>

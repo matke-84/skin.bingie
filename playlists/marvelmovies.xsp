@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- BINGIE -->
+<smartplaylist type="movies">
+    <name>Marvel Movies</name>
+    <match>all</match>
+    <rule field="studio" operator="contains">
+        <value>Marvel</value>
+        <value>Marvel Studios</value>
+        <value>Marvel Entertainment</value>
+        <value>Marvel Enterprises</value>
+        <value>Marvel Animation</value>
+    </rule>
+    <order direction="ascending">random</order>
+    <limit>200</limit>
+</smartplaylist>

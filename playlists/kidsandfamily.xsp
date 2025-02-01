@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- BINGIE -->
+<smartplaylist type="movies">
+    <name>Kids &amp; Family</name>
+    <match>one</match>
+    <rule field="genre" operator="contains">
+        <value>Family</value>
+        <value>Children</value>
+        <value>Kids</value>
+    </rule>
+    <rule field="mpaarating" operator="is">
+        <value>US:G</value>
+        <value>USA:G</value>
+        <value>G</value>
+        <value>Rated G</value>
+    </rule>
+    <order direction="ascending">random</order>
+    <limit>200</limit>
+</smartplaylist>

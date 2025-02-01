@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Astronomy &amp; Space</name>
+    <match>all</match>
+    <rule field="tag" operator="contains">
+        <value>astronaut</value>
+        <value>astronomer</value>
+        <value>astronomy</value>
+        <value>deep space</value>
+        <value>space adventure</value>
+        <value>space battle</value>
+        <value>space centre</value>
+        <value>space colony</value>
+        <value>space exploration</value>
+        <value>space invasion</value>
+        <value>space marine</value>
+        <value>space mission</value>
+        <value>space opera</value>
+        <value>space pirate</value>
+        <value>space prison</value>
+        <value>space probe</value>
+        <value>space program</value>
+        <value>space race</value>
+        <value>space shuttle</value>
+        <value>space station</value>
+        <value>space suit</value>
+        <value>space travel</value>
+        <value>space walk</value>
+        <value>space war</value>
+        <value>space western</value>
+        <value>spacecraft</value>
+        <value>spaceman</value>
+        <value>spaceship</value>
+    </rule>
+    <rule field="genre" operator="isnot">
+        <value>animation</value>
+    </rule>
+    <order direction="descending">year</order>
+</smartplaylist>

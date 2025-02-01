@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<includes>
+		
+	<include name="DialogContextMenuModern">
+		<control type="group">
+			<height>100%</height>
+            <width>270</width>
+			<animation effect="slide" start="0" end="0,210" time="0" condition="Window.IsActive(visualisation)">Conditional</animation>
+			<animation type="WindowOpen">
+				<effect type="slide" start="-660" end="0" time="250" tween="cubic" easing="inout" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="slide" start="0" end="-660" time="250" tween="cubic" easing="inout" />
+			</animation>
+		<!--Panel-->
+		<control type="image">
+			<posy>0</posy>
+			<posx>-20</posx>
+			<width>520</width>
+			<height>1080</height>
+			<texture border="5">diffuse/panel2.png</texture>
+			<colordiffuse>$INFO[Skin.String(SideBladePanelColor)]</colordiffuse>
+			<aspectratio>stretch</aspectratio>
+		</control>
+		<!-- header -->
+        <control type="label">
+            <posx>70</posx>
+            <posy>10</posy>
+            <width min="80" max="1100">auto</width>
+            <height>100</height>
+            <font>Bold45</font>
+            <align>left</align>
+            <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
+            <label>[UPPERCASE]$LOCALIZE[33061][/UPPERCASE]</label>
+        </control>
+            <!--Label Menu: -->
+            <control type="image">
+                <!--Seperator-->
+                <posx>56</posx>
+                <posy>160</posy>
+                <width>388</width>
+                <height>20</height>
+                <align>left</align>
+                <texture>common/menu-separator2.png</texture>
+            </control>
+			<control type="image">
+                <!--Seperator-->
+                <posx>56</posx>
+                <posy>1014</posy>
+                <width>388</width>
+                <height>20</height>
+                <align>left</align>
+                <texture>common/menu-separator2.png</texture>
+            </control>						
+            <control type="grouplist" id="996">
+                <width>458</width>
+                <posx>21</posx>
+                <posy>180</posy>
+				<onright>Dialog.Close(contextmenu)</onright>
+                <height>817</height>
+                <itemgap>3</itemgap>
+                <!--Buttons-->
+                <control type="button" id="1000">
+                    <description>Buttons</description>
+                    <include>SideBladeMenuButton</include>               
+				</control>			
+            </control>
+        </control>
+	</include>	
+	
+	<include name="SideBladeModern">
+		<posx>-660</posx>
+		<posy>0</posy>
+		<visible>!Window.IsActive(virtualkeyboard)</visible>
+		<include>animation_sub_menu</include>
+        <control type="group">
+            <posy>0</posy>
+            <posx>0</posx>
+            <width>520</width>
+            <height>100%</height>
+            <control type="image">
+                <left>0</left>
+                <width>500</width>
+                <height>100%</height>
+                <colordiffuse>$INFO[Skin.String(SideBladePanelColor)]</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+                <texture background="true">diffuse/panel2.png</texture>
+            </control>
+        </control>
+
+		<!-- header -->
+        <control type="label">
+            <posx>71</posx>
+            <posy>10</posy>
+            <width min="80" max="1100">auto</width>
+            <height>100</height>
+            <font>Bold45</font>
+            <align>left</align>
+            <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
+            <label>[UPPERCASE]$LOCALIZE[33063][/UPPERCASE]</label>
+        </control>
+		<control type="image">
+			<!--Seperator-->
+			<posx>56</posx>
+			<posy>160</posy>
+			<width>388</width>
+			<height>20</height>
+			<align>left</align>
+			<texture>common/menu-separator2.png</texture>
+		</control>
+		<control type="image">
+			<!--Seperator-->
+			<posx>56</posx>
+			<posy>980</posy>
+			<width>388</width>
+			<height>20</height>
+			<align>left</align>
+			<texture>common/menu-separator2.png</texture>
+		</control>		
+	</include>
+    
+    <include name="SideBladeViewCommands">
+         <control type="button" id="308">
+			<!--Switch fullscreen-->
+			<include>SideBladeMenuButton</include>
+			<label>244</label>
+			<onclick>FullScreen</onclick>
+            <visible>Player.HasMedia</visible>
+		</control>
+         <control type="button" id="309">
+			<!--Open Kodi favourites-->
+			<include>SideBladeMenuButton</include>
+			<label>1036</label>
+			<onclick>ActivateWindow(FavouritesBrowser)</onclick>
+		</control>
+        
+        <!-- VIEW SETTINGS START HERE -->
+        <control type="label" id="2001">
+            <!--empty space-->
+            <width>458</width>
+            <height>5</height>
+        </control>
+        <control type="image" id="2002">
+            <!--Seperator-->
+            <width>458</width>
+            <height>1</height>
+            <texture>colors/color_white.png</texture>
+            <colordiffuse>$INFO[Skin.String(ButtonTextColor)]</colordiffuse>
+        </control>
+        <control type="label" id="14018">
+            <!--Label Menu-->
+            <textoffsetx>50</textoffsetx>
+            <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
+            <include>SideBladeMenuButton</include>
+            <label>$LOCALIZE[14018]:</label>
+        </control>
+                
+        <control type="button" id="4403">
+            <!--Set View new method-->
+            <include>SideBladeMenuButton</include>
+            <label>$LOCALIZE[31305]$INFO[Container.Viewmode,: ,]</label>
+            <include>Items_LockUnlock</include>
+            <onclick>RunScript(script.bingie.toolbox,action=SETVIEW)</onclick>
+            <visible>!Window.IsActive(tvguide) + !Window.IsActive(tvchannels)</visible>
+        </control>
+
+        <control type="radiobutton" id="4404">
+            <!--Lock/Unlock View-->
+            <include>SideBladeMenuButton</include>
+            <label>$LOCALIZE[31074]</label>
+            <textureradioonfocus colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]">common/locked.png</textureradioonfocus>
+            <textureradioofffocus colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]">common/locked.png</textureradioofffocus>
+            <textureradioonnofocus colordiffuse="$INFO[Skin.String(ButtonTextColor)]">common/locked.png</textureradioonnofocus>
+            <textureradiooffnofocus colordiffuse="$INFO[Skin.String(ButtonTextColor)]">common/locked.png</textureradiooffnofocus>
+            <include>Items_LockUnlock</include>
+            <include>Items_LockView</include>
+            <visible>Window.IsVisible(MyVideoNav.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyPrograms.xml) | Window.IsVisible(MyGames.xml)</visible>
+            <visible>[Container.Content() + !String.IsEmpty(Skin.String(Skin.ForcedView.))] | [Container.Content(tags) + !String.IsEmpty(Skin.String(Skin.ForcedView.tags))] | [Container.Content(years) + !String.IsEmpty(Skin.String(Skin.ForcedView.years))] | [Container.Content(genres) + !String.IsEmpty(Skin.String(Skin.ForcedView.genres))] | [Container.Content(countries) + !String.IsEmpty(Skin.String(Skin.ForcedView.countries))] | [Container.Content(studios) + !String.IsEmpty(Skin.String(Skin.ForcedView.studios))] | [Container.Content(playlists) + !String.IsEmpty(Skin.String(Skin.ForcedView.playlists))] | [Container.Content(movies) + !String.IsEmpty(Skin.String(Skin.ForcedView.movies))] | [Container.Content(sets) + !String.IsEmpty(Skin.String(Skin.ForcedView.sets))] | [Container.Content(tvshows) + !String.IsEmpty(Skin.String(Skin.ForcedView.tvshows))] | [Container.Content(seasons) + !String.IsEmpty(Skin.String(Skin.ForcedView.seasons))] | [Container.Content(episodes) + !String.IsEmpty(Skin.String(Skin.ForcedView.episodes))] | [Container.Content(artists) + !String.IsEmpty(Skin.String(Skin.ForcedView.artists))] | [Container.Content(albums) + !String.IsEmpty(Skin.String(Skin.ForcedView.albums))] | [Container.Content(songs) + !String.IsEmpty(Skin.String(Skin.ForcedView.songs))] | [Container.Content(musicvideos) + !String.IsEmpty(Skin.String(Skin.ForcedView.musicvideos))] | [Container.Content(addons) + !String.IsEmpty(Skin.String(Skin.ForcedView.addons))] | [Container.Content(actors) + !String.IsEmpty(Skin.String(Skin.ForcedView.actors))] | [Container.Content(directors) + !String.IsEmpty(Skin.String(Skin.ForcedView.directors))] | [Container.Content(files) + !String.IsEmpty(Skin.String(Skin.ForcedView.files))] | [Container.Content(mixed) + !String.IsEmpty(Skin.String(Skin.ForcedView.mixed))] | [Container.Content(images) + !String.IsEmpty(Skin.String(Skin.ForcedView.images))] | [Container.Content(games) + !String.IsEmpty(Skin.String(Skin.ForcedView.games))] | [Container.Content(unknown) + !String.IsEmpty(Skin.String(Skin.ForcedView.unknown))] | [Container.Content(videos) + !String.IsEmpty(Skin.String(Skin.ForcedView.videos))]</visible>
+        </control>
+        <control type="radiobutton" id="4405">
+            <!--Lock/Unlock View-->
+            <include>SideBladeMenuButton</include>
+            <label>$LOCALIZE[31073]</label>
+            <textureradioonfocus colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]">common/unlocked.png</textureradioonfocus>
+            <textureradioofffocus colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]">common/unlocked.png</textureradioofffocus>
+            <textureradioonnofocus colordiffuse="$INFO[Skin.String(ButtonTextColor)]">common/unlocked.png</textureradioonnofocus>
+            <textureradiooffnofocus colordiffuse="$INFO[Skin.String(ButtonTextColor)]">common/unlocked.png</textureradiooffnofocus>
+            <include>Items_LockUnlock</include>
+            <include>Items_LockView</include>
+            <visible>Window.IsVisible(MyVideoNav.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyPrograms.xml) | Window.IsVisible(MyGames.xml)</visible>
+            <visible>!Control.IsVisible(4404)</visible>
+        </control>      
+
+        <control type="radiobutton" id="341">
+            <!--Show info-->
+            <include>SideBladeMenuButton</include>
+            <label>36427</label>
+            <onclick>Skin.ToggleSetting(GuideShowInfo)</onclick>
+            <selected>Skin.HasSetting(GuideShowInfo)</selected>
+            <visible>Window.IsActive(tvguide)</visible>
+        </control>
+        
+ 		<control type="radiobutton" id="3010">
+			<!--Show info-->
+			<include>SideBladeMenuButton</include>
+			<label>36427</label>
+			<onclick condition="Control.IsVisible(507)">Skin.ToggleSetting(FanArtViewShowInfo)</onclick>
+            <onclick condition="Control.IsVisible(524)">Skin.ToggleSetting(ShowCaseViewShowInfo)</onclick>
+            <onclick condition="Control.IsVisible(52)">Skin.ToggleSetting(PanelViewShowInfo)</onclick>
+            <onclick condition="Control.IsVisible(502)">Skin.ToggleSetting(LandscapeViewShowInfo)</onclick>
+            <onclick condition="Control.IsVisible(503)">Skin.ToggleSetting(LogoViewShowInfo)</onclick>        
+			<onclick condition="Control.IsVisible(524)">Skin.reset(View524_ShowCDart)</onclick>
+			<onclick condition="Control.IsVisible(502)">Skin.reset(View502_ShowCDart)</onclick>
+			<selected>
+            [Control.IsVisible(507) + Skin.HasSetting(FanArtViewShowInfo)] |
+            [Control.IsVisible(524) + Skin.HasSetting(ShowCaseViewShowInfo)] |
+            [Control.IsVisible(52) + Skin.HasSetting(PanelViewShowInfo)] |
+            [Control.IsVisible(502) + Skin.HasSetting(LandscapeViewShowInfo)] |
+            [Control.IsVisible(503) + Skin.HasSetting(LogoViewShowInfo)]
+            </selected>
+			<visible>
+            Control.IsVisible(52) | Control.IsVisible(503) | Control.IsVisible(507) |
+            [Control.IsVisible(524) + !Skin.HasSetting(View524_ShowCDart) | Control.IsVisible(524) + !$EXP[IsMovieDBType] + !Skin.HasSetting(EnableFakeDiscArt)] |            
+            [Control.IsVisible(502) + !Skin.HasSetting(View502_ShowCDart) | Control.IsVisible(502) + !$EXP[IsMovieDBType] + !Skin.HasSetting(EnableFakeDiscArt)]
+            </visible>
+		</control>
+        
+        <!-- show info for poster row-->
+        <control type="button" id="317491">
+            <include>SideBladeMenuButton</include>
+            <label>$LOCALIZE[31727]: $INFO[Skin.String(View513_DisplayInfo.label)]</label>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,id=View_DisplayInfo,setting=View513_DisplayInfo,header=$LOCALIZE[31727])</onclick>
+            <visible>Control.IsVisible(513)</visible>
+        </control>
+        
+        <!-- show info for poster shift-->
+        <control type="button" id="317492">
+            <include>SideBladeMenuButton</include>
+            <label>$LOCALIZE[31727]: $INFO[Skin.String(View514_DisplayInfo.label)]</label>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,id=View_DisplayInfo,setting=View514_DisplayInfo,header=$LOCALIZE[31727])</onclick>
+            <visible>Control.IsVisible(514)</visible>
+        </control>
+        
+        <control type="radiobutton" id="3005">
+			<!--show extended info-->
+			<include>SideBladeMenuButton</include>
+			<label>31114</label>
+            <onclick condition="Control.IsVisible(512)">Skin.ToggleSetting(View512_DetailsShowInfo)</onclick>
+            <onclick condition="Control.IsVisible(510)">Skin.ToggleSetting(View510_DetailsShowInfo)</onclick>
+            <onclick condition="Control.IsVisible(55)">Skin.ToggleSetting(View55_DetailsShowInfo)</onclick>
+            <onclick condition="Control.IsVisible(53)">Skin.ToggleSetting(View53_DetailsShowInfo)</onclick>
+            <onclick condition="Control.IsVisible(51)">Skin.ToggleSetting(View51_DetailsShowInfo)</onclick>
+			<onclick condition="Control.IsVisible(512)">Skin.Reset(View512_DetailsAutoTrailer)</onclick>
+            <onclick condition="Control.IsVisible(510)">Skin.Reset(View510_DetailsAutoTrailer)</onclick>
+            <onclick condition="Control.IsVisible(55)">Skin.Reset(View55_DetailsAutoTrailer)</onclick>
+            <onclick condition="Control.IsVisible(53)">Skin.Reset(View53_DetailsAutoTrailer)</onclick>
+            <onclick condition="Control.IsVisible(51)">Skin.Reset(View51_DetailsAutoTrailer)</onclick>
+			<onclick condition="Control.IsVisible(512) + Skin.HasSetting(View512_DetailsAutoTrailer)">ReloadSkin()</onclick>
+			<onclick condition="Control.IsVisible(510) + Skin.HasSetting(View510_DetailsAutoTrailer)">ReloadSkin()</onclick>
+			<onclick condition="Control.IsVisible(55) + Skin.HasSetting(View55_DetailsAutoTrailer)">ReloadSkin()</onclick>
+			<onclick condition="Control.IsVisible(53) + Skin.HasSetting(View53_DetailsAutoTrailer)">ReloadSkin()</onclick>
+			<onclick condition="Control.IsVisible(51) + Skin.HasSetting(View51_DetailsAutoTrailer)">ReloadSkin()</onclick>
+			<selected>
+            [Control.IsVisible(512) + Skin.HasSetting(View512_DetailsShowInfo)] |
+            [Control.IsVisible(510) + Skin.HasSetting(View510_DetailsShowInfo)] |
+            [Control.IsVisible(51) + Skin.HasSetting(View51_DetailsShowInfo)] |
+            [Control.IsVisible(55) + Skin.HasSetting(View55_DetailsShowInfo)] |
+            [Control.IsVisible(53) + Skin.HasSetting(View53_DetailsShowInfo)]
+            </selected>
+            <visible>
+            Control.IsVisible(51) |
+            Control.IsVisible(512) | Control.IsVisible(510) |
+            Control.IsVisible(55) | Control.IsVisible(53)
+            </visible>
+		</control>
+		
+		<control type="radiobutton" id="2018">
+			<!--show fanart thumb in bingie seasons-->
+			<include>SideBladeMenuButton</include>
+			<label>31119</label>
+			<onclick condition="Control.IsVisible(525)">Skin.ToggleSetting(View525_DetailsShowFanart)</onclick>
+			<onclick condition="Control.IsVisible(527)">Skin.ToggleSetting(View527_DetailsShowFanart)</onclick>
+			<selected>[Control.IsVisible(525) + Skin.HasSetting(View525_DetailsShowFanart)] | [Control.IsVisible(527) + Skin.HasSetting(View527_DetailsShowFanart)]</selected>
+            <visible>Control.IsVisible(525) | Control.IsVisible(527)</visible>
+		</control>
+		
+		<control type="radiobutton" id="31045">
+            <!--Enable Air Date-->
+            <include>SideBladeMenuButton</include>
+            <label>31045</label>
+            <onclick condition="Control.IsVisible(525)">Skin.ToggleSetting(View525_EnableAirDate)</onclick>
+			<onclick condition="Control.IsVisible(527)">Skin.ToggleSetting(View527_EnableAirDate)</onclick>
+            <selected>
+                [Control.IsVisible(525) + Skin.HasSetting(View525_EnableAirDate)] |
+				[Control.IsVisible(527) + Skin.HasSetting(View527_EnableAirDate)]
+            </selected>
+            <visible>Control.IsVisible(525) | Control.IsVisible(527)</visible>
+        </control>
+        
+        <control type="radiobutton" id="3006">
+			<!--horizontal navigation view-->
+			<visible>Control.IsVisible(526)</visible>
+			<include>SideBladeMenuButton</include>
+			<label>31635</label>
+            <onclick condition="Control.IsVisible(526)">Skin.ToggleSetting(View_526_HorizontalNavigation)</onclick>
+            <onclick>ReloadSkin()</onclick>
+			<selected>[Control.IsVisible(526) + Skin.HasSetting(View_526_HorizontalNavigation)]
+            </selected>
+        </control>
+
+        <control type="radiobutton" id="3051">
+            <!--fixed position-->
+            <visible>Control.IsVisible(526) + Skin.HasSetting(View_526_HorizontalNavigation)</visible>
+            <include>SideBladeMenuButton</include>
+            <label>31511</label>
+            <onclick condition="Control.IsVisible(526)">Skin.ToggleSetting(View526_UseFixedLayout)</onclick>
+            <selected>
+                [Control.IsVisible(526) + Skin.HasSetting(View526_UseFixedLayout)]
+            </selected>
+            <onclick>ReloadSkin()</onclick>
+        </control>
+
+        <control type="radiobutton" id="31751">
+            <!--auto play trailer-->
+            <visible>Container.Content(movies) | Container.Content(tvshows)</visible>
+            <include>SideBladeMenuButton</include>
+            <label>31751</label>
+            <onclick>Skin.ToggleSetting(DetailsAutoTrailer)</onclick>
+			<onclick condition="Control.IsVisible(512)">Skin.ToggleSetting(View512_DetailsAutoTrailer)</onclick>
+            <onclick condition="Control.IsVisible(510)">Skin.ToggleSetting(View510_DetailsAutoTrailer)</onclick>
+            <onclick condition="Control.IsVisible(55)">Skin.ToggleSetting(View55_DetailsAutoTrailer)</onclick>
+            <onclick condition="Control.IsVisible(53)">Skin.ToggleSetting(View53_DetailsAutoTrailer)</onclick>
+            <onclick condition="Control.IsVisible(51)">Skin.ToggleSetting(View51_DetailsAutoTrailer)</onclick>
+			<onclick condition="Control.IsVisible(523)">Skin.ToggleSetting(View523_DetailsAutoTrailer)</onclick>
+            <onclick condition="Control.IsVisible(526)">Skin.ToggleSetting(View526_DetailsAutoTrailer)</onclick>
+			<onclick>ReloadSkin()</onclick>
+            <selected>
+			[Control.IsVisible(512) + Skin.HasSetting(View512_DetailsAutoTrailer)] |
+            [Control.IsVisible(510) + Skin.HasSetting(View510_DetailsAutoTrailer)] |
+            [Control.IsVisible(51) + Skin.HasSetting(View51_DetailsAutoTrailer)] |
+            [Control.IsVisible(55) + Skin.HasSetting(View55_DetailsAutoTrailer)] |
+            [Control.IsVisible(53) + Skin.HasSetting(View53_DetailsAutoTrailer)] |
+			[Control.IsVisible(523) + Skin.HasSetting(View523_DetailsAutoTrailer)] |
+			[Control.IsVisible(526) + Skin.HasSetting(View526_DetailsAutoTrailer)]
+			</selected>
+			<visible>
+            [Control.IsVisible(512) + !Skin.HasSetting(View512_DetailsShowInfo)] |
+            [Control.IsVisible(510) + !Skin.HasSetting(View510_DetailsShowInfo)] |
+            [Control.IsVisible(51) + !Skin.HasSetting(View51_DetailsShowInfo)] |
+            [Control.IsVisible(55) + !Skin.HasSetting(View55_DetailsShowInfo)] |
+            [Control.IsVisible(53) + !Skin.HasSetting(View53_DetailsShowInfo)] | Control.IsVisible(523) | Control.IsVisible(526)
+			</visible>
+        </control>
+
+        <!--Auto Trailer Interval-->
+        <control type="radiobutton" id="31795">
+            <include>SideBladeMenuButton</include>
+            <textureradioonfocus colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]">common/settings1.png</textureradioonfocus>
+            <textureradioofffocus colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]">common/settings1.png</textureradioofffocus>
+            <textureradioonnofocus colordiffuse="$INFO[Skin.String(ButtonTextColor)]">common/settings1.png</textureradioonnofocus>
+            <textureradiooffnofocus colordiffuse="$INFO[Skin.String(ButtonTextColor)]">common/settings1.png</textureradiooffnofocus>
+            <radiowidth>115</radiowidth>
+            <radioheight>35</radioheight>
+            <radioposx>0</radioposx>
+            <radioposy>12</radioposy>
+            <label>31634</label>
+            <visible>[Control.IsVisible(512) + Skin.HasSetting(View512_DetailsAutoTrailer)] |
+            [Control.IsVisible(510) + Skin.HasSetting(View510_DetailsAutoTrailer)] |
+            [Control.IsVisible(51) + Skin.HasSetting(View51_DetailsAutoTrailer)] |
+            [Control.IsVisible(55) + Skin.HasSetting(View55_DetailsAutoTrailer)] |
+            [Control.IsVisible(53) + Skin.HasSetting(View53_DetailsAutoTrailer)] |
+			[Control.IsVisible(523) + Skin.HasSetting(View523_DetailsAutoTrailer)] |
+			[Control.IsVisible(526) + Skin.HasSetting(View526_DetailsAutoTrailer)]</visible>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=details_auto_trailer_interval,header=$LOCALIZE[31634])</onclick>
+        </control>
+	
+         <control type="radiobutton" id="3045">
+			<!--Show info right-->
+			<include>SideBladeMenuButton</include>
+			<label>31599</label>
+			<onclick condition="Control.IsVisible(512)">Skin.ToggleSetting(View512_ShowInfoRight)</onclick>
+            <onclick condition="Control.IsVisible(510)">Skin.ToggleSetting(View510_ShowInfoRight)</onclick>
+            <onclick condition="Control.IsVisible(55)">Skin.ToggleSetting(View55_ShowInfoRight)</onclick>
+            <onclick condition="Control.IsVisible(53)">Skin.ToggleSetting(View53_ShowInfoRight)</onclick>
+            <onclick condition="Control.IsVisible(51)">Skin.ToggleSetting(View51_ShowInfoRight)</onclick>
+			<selected>
+            [Control.IsVisible(512) + Skin.HasSetting(View512_ShowInfoRight)] |
+            [Control.IsVisible(510) + Skin.HasSetting(View510_ShowInfoRight)] |
+            [Control.IsVisible(51) + Skin.HasSetting(View51_ShowInfoRight)] |
+            [Control.IsVisible(55) + Skin.HasSetting(View55_ShowInfoRight)] |
+            [Control.IsVisible(53) + Skin.HasSetting(View53_ShowInfoRight)]
+            </selected>
+			<visible>
+            Control.IsVisible(51) |
+            Control.IsVisible(512) | Control.IsVisible(510) | Control.IsVisible(53) |
+            Control.IsVisible(55)
+            </visible>
+		</control>
+		
+		<control type="radiobutton" id="31423">
+		<!--swap poster in view-->
+            <visible>Control.IsVisible(50)</visible>
+			<include>SideBladeMenuButton</include>
+			<label>31423</label>
+			<onclick condition="Control.IsVisible(50)">Skin.ToggleSetting(View50_SwapPoster)</onclick>
+			<selected>Control.IsVisible(50) + Skin.HasSetting(View50_SwapPoster)</selected>
+        </control>
+		
+ 		<control type="radiobutton" id="3050">
+			<!--Prefer ClearArt-->
+			<include>SideBladeMenuButton</include>
+			<label>31447</label>
+			<onclick>Skin.ToggleSetting(LogoViewPreferClearArt)</onclick>
+			<selected>Skin.HasSetting(LogoViewPreferClearArt)</selected>
+			<visible>Control.IsVisible(503)</visible>
+		</control>
+
+        <control type="radiobutton" id="3057">
+            <!--Disable Fixed Frame-->
+            <include>SideBladeMenuButton</include>
+            <label>31004</label>
+            <onclick condition="Control.IsVisible(525)">Skin.ToggleSetting(View525_DisableFixedBingieFrame)</onclick>
+			<onclick condition="Control.IsVisible(527)">Skin.ToggleSetting(View527_DisableFixedBingieFrame)</onclick>
+            <selected>
+                [Control.IsVisible(525) + !Skin.HasSetting(View525_DisableFixedBingieFrame)] |
+				[Control.IsVisible(527) + !Skin.HasSetting(View527_DisableFixedBingieFrame)]
+            </selected>
+            <visible>Control.IsVisible(525) | Control.IsVisible(527)</visible>
+        </control>
+
+        <control type="radiobutton" id="3056">
+            <!-- enable zoom effect -->
+            <include>SideBladeMenuButton</include>
+            <label>$LOCALIZE[31757]</label>
+			<onclick condition="Control.IsVisible(52)">Skin.ToggleSetting(View52_EnableZoomEffect)</onclick>
+			<onclick condition="Control.IsVisible(502)">Skin.ToggleSetting(View502_EnableZoomEffect)</onclick>
+            <selected>[Control.IsVisible(52) + Skin.HasSetting(View52_EnableZoomEffect)] | [Control.IsVisible(502) + Skin.HasSetting(View502_EnableZoomEffect)]</selected>
+            <visible>Control.IsVisible(52) | Control.IsVisible(502)</visible>
+			<onclick>ReloadSkin()</onclick>
+        </control>    
+        
+         <control type="radiobutton" id="3059">
+			<!--Show discart-->
+			<include>SideBladeMenuButton</include>
+			<label>31200</label>
+            <onclick condition="Control.IsVisible(502)">Skin.ToggleSetting(View502_ShowCDart)</onclick>
+            <onclick condition="Control.IsVisible(513)">Skin.ToggleSetting(View513_ShowCDart)</onclick>
+            <onclick condition="Control.IsVisible(514)">Skin.ToggleSetting(View514_ShowCDart)</onclick>
+			<onclick condition="Control.IsVisible(524)">Skin.ToggleSetting(View524_ShowCDart)</onclick>
+			<selected>
+            [Control.IsVisible(502) + Skin.HasSetting(View502_ShowCDart)] | 
+            [Control.IsVisible(513) + Skin.HasSetting(View513_ShowCDart)] | 
+            [Control.IsVisible(514) + Skin.HasSetting(View514_ShowCDart)] |
+			[Control.IsVisible(524) + Skin.HasSetting(View524_ShowCDart)]
+            </selected>
+			<visible>
+			Control.IsVisible(513) | Control.IsVisible(514) |
+            [Control.IsVisible(502) + !Skin.HasSetting(LandscapeViewShowInfo)] | [Control.IsVisible(524) + !Skin.HasSetting(ShowCaseViewShowInfo)]
+            </visible>
+            <visible>!Skin.String(View513_DisplayInfo,small) | Skin.String(View514_DisplayInfo,small)</visible>
+			<visible>$EXP[IsMovieDBType] | [$EXP[IsMovieDBType] + Skin.HasSetting(EnableFakeDiscArt)] | [!$EXP[IsMovieDBType] + Skin.HasSetting(EnableFakeDiscArt)] | Window.IsActive(Music)</visible>
+		</control>
+
+		<control type="radiobutton" id="3070">
+			<!--animate discart-->
+			<include>SideBladeMenuButton</include>
+			<label>31201</label>
+			<onclick>Skin.ToggleSetting(AnimateDiscArt)</onclick>
+			<selected>Skin.HasSetting(AnimateDiscArt)</selected>
+			<visible>
+			Control.IsVisible(51) | Control.IsVisible(510) | 
+			[Control.IsVisible(502) + Skin.HasSetting(View502_ShowCDart)] |
+            [Control.IsVisible(513) + Skin.HasSetting(View513_ShowCDart)] | 
+            [Control.IsVisible(514) + Skin.HasSetting(View514_ShowCDart)] |
+			[Control.IsVisible(524) + Skin.HasSetting(View524_ShowCDart)]
+			</visible>
+			<visible>
+            Control.IsVisible(51) + Window.IsActive(Music) + !Skin.HasSetting(View51_DetailsShowInfo) |
+            Control.IsVisible(510) + Window.IsActive(Music) + !Skin.HasSetting(View510_DetailsShowInfo) | Control.IsVisible(513) | Control.IsVisible(514) |
+            [Control.IsVisible(502) + !Skin.HasSetting(LandscapeViewShowInfo)] | [Control.IsVisible(524) + !Skin.HasSetting(ShowCaseViewShowInfo)]
+            </visible>
+            <visible>!Skin.String(View513_DisplayInfo,small) | Skin.String(View514_DisplayInfo,small)</visible>
+			<visible>$EXP[IsMovieDBType] | [$EXP[IsMovieDBType] + Skin.HasSetting(EnableFakeDiscArt)] | [!$EXP[IsMovieDBType] + Skin.HasSetting(EnableFakeDiscArt)] | Window.IsActive(Music)</visible>
+		</control>
+			
+		<control type="radiobutton" id="19001">
+			<!--Disable fanart-->
+			<include>SideBladeMenuButton</include>
+			<label>31268</label>
+			<onclick condition="Control.IsVisible(10)">Skin.ToggleSetting(View10_DisableFanArt)</onclick>
+            <onclick condition="Control.IsVisible(50)">Skin.ToggleSetting(View50_DisableFanArt)</onclick>
+			<onclick condition="Control.IsVisible(51)">Skin.ToggleSetting(View51_DisableFanArt)</onclick>
+            <onclick condition="Control.IsVisible(52)">Skin.ToggleSetting(View52_DisableFanArt)</onclick>
+            <onclick condition="Control.IsVisible(53)">Skin.ToggleSetting(View53_DisableFanArt)</onclick>
+            <onclick condition="Control.IsVisible(54)">Skin.ToggleSetting(View54_DisableFanArt)</onclick>
+            <onclick condition="Control.IsVisible(55)">Skin.ToggleSetting(View55_DisableFanArt)</onclick>
+            <onclick condition="Control.IsVisible(56)">Skin.ToggleSetting(View56_DisableFanArt)</onclick>
+            <onclick condition="Control.IsVisible(57)">Skin.ToggleSetting(View57_DisableFanArt)</onclick>          
+            <onclick condition="Control.IsVisible(501)">Skin.ToggleSetting(View501_DisableFanArt)</onclick>
+            <onclick condition="Control.IsVisible(502)">Skin.ToggleSetting(View502_DisableFanArt)</onclick>
+			<onclick condition="Control.IsVisible(503)">Skin.ToggleSetting(View503_DisableFanArt)</onclick>
+			<onclick condition="Control.IsVisible(507)">Skin.ToggleSetting(View507_DisableFanArt)</onclick>
+            <onclick condition="Control.IsVisible(509)">Skin.ToggleSetting(View509_DisableFanArt)</onclick>
+            <onclick condition="Control.IsVisible(510)">Skin.ToggleSetting(View510_DisableFanArt)</onclick>
+            <onclick condition="Control.IsVisible(511)">Skin.ToggleSetting(View511_DisableFanArt)</onclick>
+            <onclick condition="Control.IsVisible(512)">Skin.ToggleSetting(View512_DisableFanArt)</onclick>
+            <onclick condition="Control.IsVisible(513)">Skin.ToggleSetting(View513_DisableFanArt)</onclick>
+            <onclick condition="Control.IsVisible(514)">Skin.ToggleSetting(View514_DisableFanArt)</onclick>
+			<onclick condition="Control.IsVisible(523)">Skin.ToggleSetting(View523_DisableFanArt)</onclick>
+			<onclick condition="Control.IsVisible(524)">Skin.ToggleSetting(View524_DisableFanArt)</onclick>
+			<onclick condition="Control.IsVisible(525)">Skin.ToggleSetting(View525_DisableFanArt)</onclick>
+			<onclick condition="Control.IsVisible(526)">Skin.ToggleSetting(View526_DisableFanArt)</onclick>
+			<onclick condition="Control.IsVisible(527)">Skin.ToggleSetting(View527_DisableFanArt)</onclick>
+			<onclick condition="Control.IsVisible(528)">Skin.ToggleSetting(View528_DisableFanArt)</onclick>
+			<selected>
+			[Skin.HasSetting(View10_DisableFanArt) + Control.IsVisible(10)] |
+            [Skin.HasSetting(View50_DisableFanArt) + Control.IsVisible(50)] |
+            [Skin.HasSetting(View51_DisableFanArt) + Control.IsVisible(51)] |
+            [Skin.HasSetting(View52_DisableFanArt) + Control.IsVisible(52)] |
+            [Skin.HasSetting(View53_DisableFanArt) + Control.IsVisible(53)] |
+            [Skin.HasSetting(View54_DisableFanArt) + Control.IsVisible(54)] |
+            [Skin.HasSetting(View55_DisableFanArt) + Control.IsVisible(55)] |
+            [Skin.HasSetting(View56_DisableFanArt) + Control.IsVisible(56)] |
+            [Skin.HasSetting(View57_DisableFanArt) + Control.IsVisible(57)] |
+            [Skin.HasSetting(View524_DisableFanArt) + Control.IsVisible(524)] |
+            [Skin.HasSetting(View501_DisableFanArt) + Control.IsVisible(501)] |
+            [Skin.HasSetting(View502_DisableFanArt) + Control.IsVisible(502)] |
+			[Skin.HasSetting(View503_DisableFanArt) + Control.IsVisible(503)] |
+			[Skin.HasSetting(View507_DisableFanArt) + Control.IsVisible(507)] |
+            [Skin.HasSetting(View509_DisableFanArt) + Control.IsVisible(509)] |
+            [Skin.HasSetting(View510_DisableFanArt) + Control.IsVisible(510)] |
+            [Skin.HasSetting(View511_DisableFanArt) + Control.IsVisible(511)] |
+            [Skin.HasSetting(View512_DisableFanArt) + Control.IsVisible(512)] |
+            [Skin.HasSetting(View513_DisableFanArt) + Control.IsVisible(513)] |
+            [Skin.HasSetting(View514_DisableFanArt) + Control.IsVisible(514)] |
+			[Skin.HasSetting(View523_DisableFanArt) + Control.IsVisible(523)] |
+			[Skin.HasSetting(View524_DisableFanArt) + Control.IsVisible(524)] |
+			[Skin.HasSetting(View525_DisableFanArt) + Control.IsVisible(525)] |
+			[Skin.HasSetting(View526_DisableFanArt) + Control.IsVisible(526)] |
+			[Skin.HasSetting(View527_DisableFanArt) + Control.IsVisible(527)] |
+			[Skin.HasSetting(View528_DisableFanArt) + Control.IsVisible(528)]
+            </selected>
+			<visible>
+            Control.IsVisible(10) | Control.IsVisible(50) | Control.IsVisible(51) | 
+            Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) |
+            Control.IsVisible(55) | Control.IsVisible(56) | Control.IsVisible(57) |
+            Control.IsVisible(501) | Control.IsVisible(502) | Control.IsVisible(513) |
+            Control.IsVisible(503) | Control.IsVisible(507) |
+            Control.IsVisible(509) | Control.IsVisible(510) |
+            Control.IsVisible(511) | Control.IsVisible(512) | Control.IsVisible(514) | Control.IsVisible(523) | 
+            Control.IsVisible(524) | Control.IsVisible(525) | Control.IsVisible(526) | Control.IsVisible(527) | Control.IsVisible(528)
+            </visible>
+		</control>
+        <control type="radiobutton" id="19002">
+			<!--Disable extra fanart-->
+			<include>SideBladeMenuButton</include>
+			<label>31653</label>
+            <onclick condition="Control.IsVisible(10)">Skin.ToggleSetting(View10_DisableExtraFanArt)</onclick>
+            <onclick condition="Control.IsVisible(50)">Skin.ToggleSetting(View50_DisableExtraFanArt)</onclick>
+			<onclick condition="Control.IsVisible(51)">Skin.ToggleSetting(View51_DisableExtraFanArt)</onclick>
+            <onclick condition="Control.IsVisible(52)">Skin.ToggleSetting(View52_DisableExtraFanArt)</onclick>
+            <onclick condition="Control.IsVisible(53)">Skin.ToggleSetting(View53_DisableExtraFanArt)</onclick>
+            <onclick condition="Control.IsVisible(54)">Skin.ToggleSetting(View54_DisableExtraFanArt)</onclick>
+            <onclick condition="Control.IsVisible(55)">Skin.ToggleSetting(View55_DisableExtraFanArt)</onclick>
+            <onclick condition="Control.IsVisible(56)">Skin.ToggleSetting(View56_DisableExtraFanArt)</onclick>
+            <onclick condition="Control.IsVisible(57)">Skin.ToggleSetting(View57_DisableExtraFanArt)</onclick>
+            <onclick condition="Control.IsVisible(524)">Skin.ToggleSetting(View524_DisableExtraFanArt)</onclick>
+            <onclick condition="Control.IsVisible(501)">Skin.ToggleSetting(View501_DisableExtraFanArt)</onclick>
+            <onclick condition="Control.IsVisible(502)">Skin.ToggleSetting(View502_DisableExtraFanArt)</onclick>
+            <onclick condition="Control.IsVisible(507)">Skin.ToggleSetting(View507_DisableExtraFanArt)</onclick>
+            <onclick condition="Control.IsVisible(509)">Skin.ToggleSetting(View509_DisableExtraFanArt)</onclick>
+            <onclick condition="Control.IsVisible(510)">Skin.ToggleSetting(View510_DisableExtraFanArt)</onclick>
+            <onclick condition="Control.IsVisible(511)">Skin.ToggleSetting(View511_DisableExtraFanArt)</onclick>
+            <onclick condition="Control.IsVisible(512)">Skin.ToggleSetting(View512_DisableExtraFanArt)</onclick>
+            <onclick condition="Control.IsVisible(513)">Skin.ToggleSetting(View513_DisableExtraFanArt)</onclick>
+            <onclick condition="Control.IsVisible(514)">Skin.ToggleSetting(View514_DisableExtraFanArt)</onclick>
+            <onclick condition="Control.IsVisible(523)">Skin.ToggleSetting(View523_DisableExtraFanArt)</onclick>
+            <onclick condition="Control.IsVisible(526)">Skin.ToggleSetting(View526_DisableExtraFanArt)</onclick>
+			<onclick condition="Control.IsVisible(527)">Skin.ToggleSetting(View527_DisableFanArt)</onclick>
+			<onclick condition="Control.IsVisible(528)">Skin.ToggleSetting(View528_DisableFanArt)</onclick>
+			<selected>
+            [Skin.HasSetting(View10_DisableExtraFanArt) + Control.IsVisible(10)] |
+            [Skin.HasSetting(View50_DisableExtraFanArt) + Control.IsVisible(50)] |
+            [Skin.HasSetting(View51_DisableExtraFanArt) + Control.IsVisible(51)] |
+            [Skin.HasSetting(View52_DisableExtraFanArt) + Control.IsVisible(52)] |
+            [Skin.HasSetting(View53_DisableExtraFanArt) + Control.IsVisible(53)] |
+            [Skin.HasSetting(View54_DisableExtraFanArt) + Control.IsVisible(54)] |
+            [Skin.HasSetting(View55_DisableExtraFanArt) + Control.IsVisible(55)] |
+            [Skin.HasSetting(View56_DisableExtraFanArt) + Control.IsVisible(56)] |
+            [Skin.HasSetting(View57_DisableExtraFanArt) + Control.IsVisible(57)] |
+            [Skin.HasSetting(View524_DisableExtraFanArt) + Control.IsVisible(524)] |
+            [Skin.HasSetting(View501_DisableExtraFanArt) + Control.IsVisible(501)] |
+            [Skin.HasSetting(View502_DisableExtraFanArt) + Control.IsVisible(502)] |
+            [Skin.HasSetting(View507_DisableExtraFanArt) + Control.IsVisible(507)] |
+            [Skin.HasSetting(View509_DisableExtraFanArt) + Control.IsVisible(509)] |
+            [Skin.HasSetting(View510_DisableExtraFanArt) + Control.IsVisible(510)] |
+            [Skin.HasSetting(View511_DisableExtraFanArt) + Control.IsVisible(511)] |
+            [Skin.HasSetting(View512_DisableExtraFanArt) + Control.IsVisible(512)] |
+            [Skin.HasSetting(View513_DisableExtraFanArt) + Control.IsVisible(513)] |
+            [Skin.HasSetting(View514_DisableExtraFanArt) + Control.IsVisible(514)] |
+            [Skin.HasSetting(View523_DisableExtraFanArt) + Control.IsVisible(523)] |
+            [Skin.HasSetting(View526_DisableExtraFanArt) + Control.IsVisible(526)] |
+			[Skin.HasSetting(View527_DisableExtraFanArt) + Control.IsVisible(527)] |
+			[Skin.HasSetting(View527_DisableExtraFanArt) + Control.IsVisible(528)]
+            </selected>
+			<visible>Skin.HasSetting(EnableNativeExtraFanart)</visible>
+			<visible>
+            Control.IsVisible(10) | Control.IsVisible(50) | Control.IsVisible(51) | 
+            Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | 
+            Control.IsVisible(55) | Control.IsVisible(56) | Control.IsVisible(57) | 
+            Control.IsVisible(501) | Control.IsVisible(502) |             
+            Control.IsVisible(507) |
+            Control.IsVisible(509) | Control.IsVisible(510) | Control.IsVisible(511) | 
+            Control.IsVisible(512) | Control.IsVisible(513) | Control.IsVisible(514) | 
+            Control.IsVisible(523)  Control.IsVisible(524) | 
+			Control.IsVisible(526) | Control.IsVisible(527) | Control.IsVisible(528)
+            </visible>
+		</control>
+        <control type="button" id="84403">
+            <!--Open Skin settings-->
+            <include>SideBladeMenuButton</include>
+            <label>20077</label>
+            <onclick>ClearProperty(ShowViewSubMenu,Home)</onclick>
+            <onclick>SetFocus(5000)</onclick>
+            <onclick condition="!String.StartsWith(Window(Home).property(contenttype),tv)">SetProperty(SkinSettingSection,17,Home)</onclick>
+            <onclick condition="String.StartsWith(Window(Home).property(contenttype),tv)">SetProperty(SkinSettingSection,18,Home)</onclick>
+            <onclick>ActivateWindow(1105)</onclick>
+        </control>
+
+	</include>
+    
+    <include name="PVRsideblade">
+	    <control type="group">
+			<include>SideBladeModern</include>
+			<!-- hidden labels for pvr -->
+			<control type="label" id="29">
+				<description>Empty so we can pass the values up one level</description>
+				<visible>False</visible>
+			</control>
+			<control type="label" id="30">
+				<description>Empty so we can pass the values up one level</description>
+				<visible>False</visible>
+			</control>
+			<!--Grouplist 9000-->
+            <control type="grouplist" id="9000">
+                <posx>21</posx>
+                <posy>185</posy>
+                <width>458</width>
+                <height>770</height>
+                <itemgap>3</itemgap>
+                <onleft>5000</onleft>
+                <onright>5000</onright>
+				<onright>ClearProperty(ShowViewSubMenu,Home)</onright>
+				<onleft>ClearProperty(ShowViewSubMenu,Home)</onleft>
+				<onback>ClearProperty(ShowViewSubMenu,Home)</onback>
+				<onback condition="!Window.IsActive(tvguide)">5000</onback>
+                <onup>9000</onup>
+                <ondown>9000</ondown>
+                <orientation>vertical</orientation>
+                <control type="button" id="100">
+                    <!--Channels-->
+                    <description>Channels</description>
+                    <label>19019</label>
+                    <include>SideBladeMenuButton</include>
+					<onclick condition="Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)">NextChannelGroup</onclick>
+					<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVChannels)</onclick>
+					<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioChannels)</onclick>
+                </control>
+                <control type="button" id="101">
+					<description>TV Guide</description>
+					<left>0</left>
+					<top>80</top>
+					<textwidth>400</textwidth>
+					<include>SideBladeMenuButton</include>
+					<label>22020</label>
+					<onclick condition="Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)">NextChannelGroup</onclick>
+					<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVGuide)</onclick>
+					<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioGuide)</onclick>
+				</control>
+				<control type="button" id="102">
+					<description>Recordings</description>
+					<left>0</left>
+					<top>120</top>
+					<textwidth>400</textwidth>
+					<include>SideBladeMenuButton</include>
+					<label>19163</label>
+					<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVRecordings)</onclick>
+					<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioRecordings)</onclick>
+				</control>
+				<control type="button" id="103">
+					<description>Timers</description>
+					<left>0</left>
+					<top>160</top>
+					<textwidth>400</textwidth>
+					<include>SideBladeMenuButton</include>
+					<label>19040</label>
+					<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimers)</onclick>
+					<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimers)</onclick>
+				</control>
+                <control type="button" id="105">
+					<description>Timer Rules</description>
+					<left>0</left>
+					<top>160</top>
+					<textwidth>400</textwidth>
+					<include>SideBladeMenuButton</include>
+					<label>19138</label>
+					<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimerRules)</onclick>
+					<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimerRules)</onclick>
+				</control>
+				<control type="button" id="104">
+					<description>Search</description>
+					<left>0</left>
+					<top>200</top>
+					<textwidth>400</textwidth>
+					<include>SideBladeMenuButton</include>
+					<label>137</label>
+					<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVSearch)</onclick>
+					<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioSearch)</onclick>
+				</control>
+				<control type="button" id="28">
+					<description>Channel Groups</description>
+					<left>0</left>
+					<right>40</right>
+					<textwidth>400</textwidth>
+					<include>SideBladeMenuButton</include>
+					<label/>
+				</control>
+				<control type="radiobutton" id="5">
+					<description>Group recording items by folder structure</description>
+					<left>0</left>
+					<right>40</right>
+					<textwidth>400</textwidth>
+					<include>SideBladeMenuButton</include>
+					<label>19270</label>
+					<visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
+				</control>
+				
+				<control type="button" id="3">
+					<description>Sort by button</description>
+					<include>SideBladeMenuButton</include>
+					<label>103</label>
+				</control>
+				<control type="togglebutton" id="4">
+					<description>Sort asc</description>
+					<include>SideBladeMenuButton</include>
+					<alttexturefocus border="10" colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">diffuse/panel.png</alttexturefocus>
+					<alttexturenofocus/>
+					<label>21431</label>
+					<altlabel>21430</altlabel>
+					<usealttexture>Container.SortDirection(Ascending)</usealttexture>
+				</control>
+                
+                <control type="radiobutton" id="6">
+					<description>Show hidden channels</description>
+					<include>SideBladeMenuButton</include>
+					<label>19051</label>
+					<visible>Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)</visible>
+				</control>
+				<control type="radiobutton" id="7">
+					<description>Show deleted recordings</description>
+					<include>SideBladeMenuButton</include>
+					<label>19184</label>
+					<visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
+				</control>
+                <control type="radiobutton" id="8">  
+                    <description>Hide disabled timers</description>  
+                    <include>SideBladeMenuButton</include>  
+                    <label>19077</label>  
+                    <visible>Window.IsActive(TVTimers) | Window.IsActive(RadioTimers) | Window.IsActive(TVTimerRules) | Window.IsActive(RadioTimerRules)</visible>  
+                </control>  
+  
+				<control type="radiobutton" id="31">
+                    <!--filter-->
+                    <include>SideBladeMenuButton</include>
+                    <label>587</label>
+					<selected>Container.Filtered</selected>
+					<onclick>right</onclick>
+					<visible>Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)</visible>
+                </control>
+                <include>SideBladeViewCommands</include>
+				
+            </control>
+         </control>
+		 
+	</include>
+
+    <include name="SideBladeMenuButton">
+		<width>458</width>
+		<align>left</align>
+		<font>Reg26</font>
+		<textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
+		<focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
+		<disabledcolor>77585858</disabledcolor>
+		<invalidcolor>red</invalidcolor>
+		<pulseonselect>false</pulseonselect>
+		<texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="10">diffuse/panel.png</texturefocus>
+        <texturenofocus/>
+    </include>
+
+</includes>

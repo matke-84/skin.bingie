@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Detective Movies</name>
+    <match>all</match>
+    <rule field="tag" operator="contains">
+        <value>detective</value>
+        <value>detective inspector</value>
+        <value>investigation</value>
+        <value>private detective</value>
+        <value>private investigator</value>
+        <value>undercover</value>
+    </rule>
+    <rule field="rating" operator="greaterthan">
+        <value>6.4</value>
+    </rule>
+    <rule field="genre" operator="is">
+        <value>Crime</value>
+    </rule>
+    <rule field="votes" operator="greaterthan">
+        <value>100</value>
+    </rule>
+    <order direction="descending">year</order>
+</smartplaylist>

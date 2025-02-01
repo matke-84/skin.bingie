@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Vampire Movies</name>
+    <match>all</match>
+    <rule field="genre" operator="isnot">
+        <value>adventure</value>
+    </rule>
+	<rule field="tag" operator="isnot">
+        <value>werewolf</value>
+    </rule>
+	<rule field="tag" operator="is">
+        <value>vampire</value>
+        <value>dracula</value>
+        <value>van helsing</value>
+        <value>interview with the vampire</value>
+        <value>30 days of night</value>
+        <value>30 days of night dark days</value>
+        <value>a girl walks home alone at night</value>
+        <value>salems lot</value>
+        <value>a return to salems lot</value>
+        <value>afflicted</value>
+        <value>the addiction</value>
+        <value>blade</value>
+        <value>bitten</value>
+    </rule>
+    <order direction="descending">year</order>
+</smartplaylist>

@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<includes>
+    <!-- Widget Select -->
+    <include name="skinshortcuts-widgetselect">
+        <control type="label" id="900$PARAM[widgetpos]0">
+            <width>510</width>
+            <align>left</align>
+            <height>42</height>
+            <font>Reg26</font>
+            <label>[B]$LOCALIZE[31499] $PARAM[widgetpos][/B]</label>
+        </control>
+        <control type="button" id="900$PARAM[widgetpos]1">
+            <description>select widget</description>
+            <width>510</width>
+            <height>45</height>
+            <align>left</align>
+            <onclick>SetProperty(widgetID, $PARAM[widgetid])</onclick>
+            <onclick>SendClick(312)</onclick>
+            <textoffsetx>20</textoffsetx>
+            <font>Reg22</font>
+            <label>$ADDON[script.skinshortcuts 32044] >></label>
+        </control>
+        <control type="button" id="900$PARAM[widgetpos]2">
+            <description>widget label</description>
+            <width>510</width>
+            <height>45</height>
+            <align>left</align>
+            <font>Reg22</font>
+            <label>$ADDON[script.skinshortcuts 32025]:</label>
+            <label2>$INFO[Container(211).ListItem.Property(widgetName$PARAM[widgetprop])]</label2>
+            <textoffsetx>20</textoffsetx>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinshortcutsproperty,header=$ADDON[script.skinshortcuts 32025],property=widgetName$PARAM[widgetprop])</onclick>
+            <visible>!String.IsEmpty(Container(211).ListItem.Property(widget$PARAM[widgetprop]))</visible>
+        </control>
+        <control type="button" id="900$PARAM[widgetpos]3">
+            <description>widget limit</description>
+            <width>510</width>
+            <height>45</height>
+            <align>left</align>
+            <font>Reg22</font>
+            <label>$LOCALIZE[21427]:</label>
+            <label2>$VAR[widget_limit_label$PARAM[widgetpos]]</label2>
+            <textoffsetx>20</textoffsetx>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinshortcutsproperty,setting=widgetlimit,header=$LOCALIZE[21427],property=widgetLimit$PARAM[widgetprop])</onclick>
+            <visible>!String.IsEmpty(Container(211).ListItem.Property(widget$PARAM[widgetprop]))</visible>
+        </control>
+        <control type="button" id="900$PARAM[widgetpos]4">
+            <description>widget sort by</description>
+            <width>510</width>
+            <height>45</height>
+            <align>left</align>
+            <font>Reg22</font>
+            <label>$LOCALIZE[581]:</label>
+            <label2>$VAR[widget_sortby_label$PARAM[widgetpos]]</label2>
+            <textoffsetx>20</textoffsetx>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinshortcutsproperty,setting=widgetsortby,header=$LOCALIZE[581],property=widgetSortBy$PARAM[widgetprop])</onclick>
+            <!-- clear sort order -->
+            <onclick condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortOrder$PARAM[widgetprop]))">SetProperty(customProperty, widgetSortOrder$PARAM[widgetprop])</onclick>
+            <onclick condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortOrder$PARAM[widgetprop]))">SetProperty(customValue, "")</onclick>
+            <onclick>SendClick(404)</onclick>
+            <visible>!String.IsEmpty(Container(211).ListItem.Property(widget$PARAM[widgetprop]))</visible>
+        </control>
+        <control type="button" id="900$PARAM[widgetpos]5">
+            <description>widget sort order</description>
+            <width>510</width>
+            <height>45</height>
+            <align>left</align>
+            <font>Reg22</font>
+            <label>$LOCALIZE[580]:</label>
+            <label2>$VAR[widget_sortorder_label$PARAM[widgetpos]]</label2>
+            <textoffsetx>20</textoffsetx>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinshortcutsproperty,setting=widgetsortorder,header=$LOCALIZE[580],property=widgetSortOrder$PARAM[widgetprop])</onclick>
+            <visible>!String.IsEmpty(Container(211).ListItem.Property(widget$PARAM[widgetprop])) + !String.IsEmpty(Container(211).ListItem.Property(widgetSortBy$PARAM[widgetprop]))</visible>
+        </control>
+        <control type="button" id="900$PARAM[widgetpos]6">
+            <description>widget tags</description>
+            <width>510</width>
+            <height>45</height>
+            <align>left</align>
+            <font>Reg22</font>
+            <label>$LOCALIZE[31675]:</label>
+            <label2>$INFO[Container(211).ListItem.Property(widgetTags$PARAM[widgetprop])]</label2>
+            <textoffsetx>20</textoffsetx>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinshortcutsproperty,header=$LOCALIZE[31675],property=widgetTags$PARAM[widgetprop],setting=Widgets_DisplayTags)</onclick>
+            <visible>!String.IsEmpty(Container(211).ListItem.Property(widget$PARAM[widgetprop]))</visible>
+            <visible>String.IsEqual(Skin.String(Widgets_DisplayTags),override)</visible>
+            <visible>!String.Contains(Container(211).ListItem.Property(widgetstyle$PARAM[widgetprop]),box) + ![String.IsEmpty(Container(211).ListItem.Property(widgetstyle$PARAM[widgetprop])) + String.Contains(Skin.String(widgetstyle),box)]</visible>
+        </control>
+    </include>
+
+    <!-- Vars -->
+
+    <!-- widget style label -->
+    <variable name="widget_style_label1">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetstyle.name))">$INFO[Container(211).ListItem.Property(widgetstyle.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetstyle))">$INFO[Container(211).ListItem.Property(widgetstyle)]</value>
+        <value>$LOCALIZE[31641]</value>
+    </variable>
+    <variable name="widget_style_label2">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetstyle.1.name))">$INFO[Container(211).ListItem.Property(widgetstyle.1.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetstyle.1))">$INFO[Container(211).ListItem.Property(widgetstyle.1)]</value>
+        <value>$LOCALIZE[31641]</value>
+    </variable>
+    <variable name="widget_style_label3">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetstyle.2.name))">$INFO[Container(211).ListItem.Property(widgetstyle.2.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetstyle.2))">$INFO[Container(211).ListItem.Property(widgetstyle.2)]</value>
+        <value>$LOCALIZE[31641]</value>
+    </variable>
+    <variable name="widget_style_label4">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetstyle.3.name))">$INFO[Container(211).ListItem.Property(widgetstyle.3.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetstyle.3))">$INFO[Container(211).ListItem.Property(widgetstyle.3)]</value>
+        <value>$LOCALIZE[31641]</value>
+    </variable>
+    <variable name="widget_style_label5">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetstyle.4.name))">$INFO[Container(211).ListItem.Property(widgetstyle.4.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetstyle.4))">$INFO[Container(211).ListItem.Property(widgetstyle.4)]</value>
+        <value>$LOCALIZE[31641]</value>
+    </variable>
+    <variable name="widget_style_label6">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetstyle.5.name))">$INFO[Container(211).ListItem.Property(widgetstyle.5.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetstyle.5))">$INFO[Container(211).ListItem.Property(widgetstyle.5)]</value>
+        <value>$LOCALIZE[31641]</value>
+    </variable>
+    <variable name="widget_style_label7">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetstyle.6.name))">$INFO[Container(211).ListItem.Property(widgetstyle.6.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetstyle.6))">$INFO[Container(211).ListItem.Property(widgetstyle.6)]</value>
+        <value>$LOCALIZE[31641]</value>
+    </variable>
+    <variable name="widget_style_label8">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetstyle.7.name))">$INFO[Container(211).ListItem.Property(widgetstyle.7.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetstyle.7))">$INFO[Container(211).ListItem.Property(widgetstyle.7)]</value>
+        <value>$LOCALIZE[31641]</value>
+    </variable>
+	<variable name="widget_style_label9">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetstyle.8.name))">$INFO[Container(211).ListItem.Property(widgetstyle.8.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetstyle.8))">$INFO[Container(211).ListItem.Property(widgetstyle.8)]</value>
+        <value>$LOCALIZE[31641]</value>
+    </variable>
+	<variable name="widget_style_label10">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetstyle.9.name))">$INFO[Container(211).ListItem.Property(widgetstyle.9.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetstyle.9))">$INFO[Container(211).ListItem.Property(widgetstyle.9)]</value>
+        <value>$LOCALIZE[31641]</value>
+    </variable>
+
+    <!-- widget limit label -->
+    <variable name="widget_limit_label1">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetLimit))">$INFO[Container(211).ListItem.Property(widgetLimit)]</value>
+        <value>$INFO[Skin.String(WidgetsGlobalLimit)]</value>
+    </variable>
+    <variable name="widget_limit_label2">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetLimit.1))">$INFO[Container(211).ListItem.Property(widgetLimit.1)]</value>
+        <value>$INFO[Skin.String(WidgetsGlobalLimit)]</value>
+    </variable>
+    <variable name="widget_limit_label3">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetLimit.2))">$INFO[Container(211).ListItem.Property(widgetLimit.2)]</value>
+        <value>$INFO[Skin.String(WidgetsGlobalLimit)]</value>
+    </variable>
+    <variable name="widget_limit_label4">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetLimit.3))">$INFO[Container(211).ListItem.Property(widgetLimit.3)]</value>
+        <value>$INFO[Skin.String(WidgetsGlobalLimit)]</value>
+    </variable>
+    <variable name="widget_limit_label5">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetLimit.4))">$INFO[Container(211).ListItem.Property(widgetLimit.4)]</value>
+        <value>$INFO[Skin.String(WidgetsGlobalLimit)]</value>
+    </variable>
+    <variable name="widget_limit_label6">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetLimit.5))">$INFO[Container(211).ListItem.Property(widgetLimit.5)]</value>
+        <value>$INFO[Skin.String(WidgetsGlobalLimit)]</value>
+    </variable>
+    <variable name="widget_limit_label7">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetLimit.6))">$INFO[Container(211).ListItem.Property(widgetLimit.6)]</value>
+        <value>$INFO[Skin.String(WidgetsGlobalLimit)]</value>
+    </variable>
+    <variable name="widget_limit_label8">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetLimit.7))">$INFO[Container(211).ListItem.Property(widgetLimit.7)]</value>
+        <value>$INFO[Skin.String(WidgetsGlobalLimit)]</value>
+    </variable>
+	<variable name="widget_limit_label9">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetLimit.8))">$INFO[Container(211).ListItem.Property(widgetLimit.8)]</value>
+        <value>$INFO[Skin.String(WidgetsGlobalLimit)]</value>
+    </variable>
+	<variable name="widget_limit_label10">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetLimit.9))">$INFO[Container(211).ListItem.Property(widgetLimit.9)]</value>
+        <value>$INFO[Skin.String(WidgetsGlobalLimit)]</value>
+    </variable>
+
+    <!-- widget sortby label -->
+    <variable name="widget_sortby_label1">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortBy.name))">$INFO[Container(211).ListItem.Property(widgetSortBy.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortBy))">$INFO[Container(211).ListItem.Property(widgetSortBy)]</value>
+        <value>$LOCALIZE[16018]</value>
+    </variable>
+    <variable name="widget_sortby_label2">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortBy.1.name))">$INFO[Container(211).ListItem.Property(widgetSortBy.1.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortBy.1))">$INFO[Container(211).ListItem.Property(widgetSortBy.1)]</value>
+        <value>$LOCALIZE[16018]</value>
+    </variable>
+    <variable name="widget_sortby_label3">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortBy.2.name))">$INFO[Container(211).ListItem.Property(widgetSortBy.2.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortBy.2))">$INFO[Container(211).ListItem.Property(widgetSortBy.2)]</value>
+        <value>$LOCALIZE[16018]</value>
+    </variable>
+    <variable name="widget_sortby_label4">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortBy.3.name))">$INFO[Container(211).ListItem.Property(widgetSortBy.3.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortBy.3))">$INFO[Container(211).ListItem.Property(widgetSortBy.3)]</value>
+        <value>$LOCALIZE[16018]</value>
+    </variable>
+    <variable name="widget_sortby_label5">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortBy.4.name))">$INFO[Container(211).ListItem.Property(widgetSortBy.4.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortBy.4))">$INFO[Container(211).ListItem.Property(widgetSortBy.4)]</value>
+        <value>$LOCALIZE[16018]</value>
+    </variable>
+    <variable name="widget_sortby_label6">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortBy.5.name))">$INFO[Container(211).ListItem.Property(widgetSortBy.5.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortBy.5))">$INFO[Container(211).ListItem.Property(widgetSortBy.5)]</value>
+        <value>$LOCALIZE[16018]</value>
+    </variable>
+    <variable name="widget_sortby_label7">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortBy.6.name))">$INFO[Container(211).ListItem.Property(widgetSortBy.6.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortBy.6))">$INFO[Container(211).ListItem.Property(widgetSortBy.6)]</value>
+        <value>$LOCALIZE[16018]</value>
+    </variable>
+    <variable name="widget_sortby_label8">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortBy.7.name))">$INFO[Container(211).ListItem.Property(widgetSortBy.7.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortBy.7))">$INFO[Container(211).ListItem.Property(widgetSortBy.7)]</value>
+        <value>$LOCALIZE[16018]</value>
+    </variable>
+	<variable name="widget_sortby_label9">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortBy.8.name))">$INFO[Container(211).ListItem.Property(widgetSortBy.8.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortBy.8))">$INFO[Container(211).ListItem.Property(widgetSortBy.8)]</value>
+        <value>$LOCALIZE[16018]</value>
+    </variable>
+	<variable name="widget_sortby_label10">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortBy.9.name))">$INFO[Container(211).ListItem.Property(widgetSortBy.9.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortBy.9))">$INFO[Container(211).ListItem.Property(widgetSortBy.9)]</value>
+        <value>$LOCALIZE[16018]</value>
+    </variable>
+
+    <!-- widget sort order label -->
+    <variable name="widget_sortorder_label1">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortOrder.name))">$INFO[Container(211).ListItem.Property(widgetSortOrder.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortOrder))">$INFO[Container(211).ListItem.Property(widgetSortOrder)]</value>
+        <value>$LOCALIZE[16018]</value>
+    </variable>
+    <variable name="widget_sortorder_label2">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortOrder.1.name))">$INFO[Container(211).ListItem.Property(widgetSortOrder.1.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortOrder.1))">$INFO[Container(211).ListItem.Property(widgetSortOrder.1)]</value>
+        <value>$LOCALIZE[16018]</value>
+    </variable>
+    <variable name="widget_sortorder_label3">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortOrder.2.name))">$INFO[Container(211).ListItem.Property(widgetSortOrder.2.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortOrder.2))">$INFO[Container(211).ListItem.Property(widgetSortOrder.2)]</value>
+        <value>$LOCALIZE[16018]</value>
+    </variable>
+    <variable name="widget_sortorder_label4">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortOrder.3.name))">$INFO[Container(211).ListItem.Property(widgetSortOrder.3.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortOrder.3))">$INFO[Container(211).ListItem.Property(widgetSortOrder.3)]</value>
+        <value>$LOCALIZE[16018]</value>
+    </variable>
+    <variable name="widget_sortorder_label5">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortOrder.4.name))">$INFO[Container(211).ListItem.Property(widgetSortOrder.4.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortOrder.4))">$INFO[Container(211).ListItem.Property(widgetSortOrder.4)]</value>
+        <value>$LOCALIZE[16018]</value>
+    </variable>
+    <variable name="widget_sortorder_label6">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortOrder.5.name))">$INFO[Container(211).ListItem.Property(widgetSortOrder.5.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortOrder.5))">$INFO[Container(211).ListItem.Property(widgetSortOrder.5)]</value>
+        <value>$LOCALIZE[16018]</value>
+    </variable>
+    <variable name="widget_sortorder_label7">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortOrder.6.name))">$INFO[Container(211).ListItem.Property(widgetSortOrder.6.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortOrder.6))">$INFO[Container(211).ListItem.Property(widgetSortOrder.6)]</value>
+        <value>$LOCALIZE[16018]</value>
+    </variable>
+    <variable name="widget_sortorder_label8">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortOrder.7.name))">$INFO[Container(211).ListItem.Property(widgetSortOrder.7.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortOrder.7))">$INFO[Container(211).ListItem.Property(widgetSortOrder.7)]</value>
+        <value>$LOCALIZE[16018]</value>
+    </variable>
+	<variable name="widget_sortorder_label9">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortOrder.8.name))">$INFO[Container(211).ListItem.Property(widgetSortOrder.8.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortOrder.8))">$INFO[Container(211).ListItem.Property(widgetSortOrder.8)]</value>
+        <value>$LOCALIZE[16018]</value>
+    </variable>
+	<variable name="widget_sortorder_label10">
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortOrder.9.name))">$INFO[Container(211).ListItem.Property(widgetSortOrder.9.name)]</value>
+        <value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetSortOrder.9))">$INFO[Container(211).ListItem.Property(widgetSortOrder.9)]</value>
+        <value>$LOCALIZE[16018]</value>
+    </variable>
+</includes>
+

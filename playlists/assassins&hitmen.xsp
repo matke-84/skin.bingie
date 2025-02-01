@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Hitmen &amp; Assassins</name>
+    <match>all</match>
+    <rule field="tag" operator="is">
+        <value>assassin</value>
+        <value>hitman</value>
+        <value>hitwoman</value>
+    </rule>
+    <order direction="descending">year</order>
+</smartplaylist>

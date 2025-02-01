@@ -1,0 +1,1227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- BINGIE -->
+<includes>
+    <!-- VARS -->
+    <variable name="SearchString">
+        <value condition="!String.IsEmpty(Skin.String(CustomSearchTerm))">$INFO[Skin.String(CustomSearchTerm)]</value>
+        <value condition="!String.IsEmpty(Window.Property(SuggestionPath)) + [ControlGroup(77777).HasFocus() | Control.HasFocus(1007) | [Control.HasFocus(900) + !String.IsEmpty(Window.Property(KeepSuggestions))]]">$INFO[Container(1007).ListItem.Label]</value>
+    </variable>
+	
+	<variable name="SearchTMDBAll">
+        <value condition="!String.IsEmpty(Skin.String(CustomSearchTerm))">plugin://plugin.video.themoviedb.helper?info=search&amp;type=both&amp;query=$INFO[Skin.String(CustomSearchTerm)]&amp;nextpage=false</value>
+    </variable>
+	
+	<variable name="SearchTMDBMovies">
+        <value condition="!String.IsEmpty(Skin.String(CustomSearchTerm))">plugin://plugin.video.themoviedb.helper?info=search&amp;type=movie&amp;query=$INFO[Skin.String(CustomSearchTerm)]&amp;nextpage=false</value>
+    </variable>
+	
+	<variable name="SearchTMDBCollections">
+        <value condition="!String.IsEmpty(Skin.String(CustomSearchTerm))">plugin://plugin.video.themoviedb.helper?info=search&amp;type=collection&amp;query=$INFO[Skin.String(CustomSearchTerm)]&amp;nextpage=false</value>       
+    </variable>
+	
+	<variable name="SearchTMDBShows">
+        <value condition="!String.IsEmpty(Skin.String(CustomSearchTerm))">plugin://plugin.video.themoviedb.helper?info=search&amp;type=tv&amp;query=$INFO[Skin.String(CustomSearchTerm)]&amp;nextpage=false</value>       
+    </variable>
+	
+	<variable name="SearchTMDBPeople">
+        <value condition="!String.IsEmpty(Skin.String(CustomSearchTerm))">plugin://plugin.video.themoviedb.helper?info=search&amp;type=person&amp;query=$INFO[Skin.String(CustomSearchTerm)]&amp;nextpage=false</value>       
+    </variable>
+
+    <variable name="EmptySearchResultsString">
+        <value condition="Control.HasFocus(1007) + String.IsEmpty(Skin.String(CustomSearchTerm))">$LOCALIZE[31558]</value>
+        <value condition="String.IsEmpty(Skin.String(CustomSearchTerm)) + Window.IsActive(1106) + [Library.HasContent(Movies) | Library.HasContent(TVShows)]">$LOCALIZE[31560]</value>
+		<value condition="String.IsEmpty(Skin.String(CustomSearchTerm)) + Window.IsActive(1106) + !Library.HasContent(Movies) + !Library.HasContent(TVShows)">$LOCALIZE[31036]</value>
+		<value condition="String.IsEmpty(Skin.String(CustomSearchTerm)) + Window.IsActive(1107)">$LOCALIZE[31038]</value>
+		<value condition="String.IsEmpty(Skin.String(CustomSearchTerm)) + Window.IsActive(1108) + [Library.HasContent(Movies) | Library.HasContent(TVShows)]">$LOCALIZE[31559]</value>
+		<value condition="String.IsEmpty(Skin.String(CustomSearchTerm)) + Window.IsActive(1108) + !Library.HasContent(Movies) + !Library.HasContent(TVShows)">$LOCALIZE[31198]</value>
+        <value condition="String.IsEmpty(Skin.String(CustomSearchTerm)) + [Skin.HasSetting(EnableBingieSearchAuto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | Skin.HasSetting(EnableBingieSearchLibrary)]">$LOCALIZE[31559]</value>
+		<value condition="String.IsEmpty(Skin.String(CustomSearchTerm)) + [Skin.HasSetting(EnableBingieSearchAuto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | Skin.HasSetting(EnableBingieSearchTMDBHelper)]">$LOCALIZE[31186]</value>
+        <value>$LOCALIZE[31578]</value>
+    </variable>
+
+    <variable name="SuggestionBorderColor">
+        <value condition="Control.HasFocus(1007)">$INFO[Skin.String(ViewDetailsBorderFocusColor)]</value>
+        <value>$INFO[Skin.String(BingieSecondaryTextColor)]</value>
+    </variable>
+
+    <!-- INCLUDES -->
+    <!-- Static Search Suggestions -->
+    <include name="Search_Suggestions_Content">
+        <content>
+            <item>
+                <label>$LOCALIZE[31078]</label>
+                <property name="path">special://skin/playlists/blockbustermovies.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31079]</label>
+                <property name="path">special://skin/playlists/bingeworthyshows.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31649]</label>
+                <property name="path">special://skin/playlists/watchitagainmovies.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31650]</label>
+                <property name="path">special://skin/playlists/watchitagaintvshows.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31666]</label>
+                <property name="path">special://skin/playlists/recentlyaddedmovies.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31101]</label>
+                <property name="path">special://skin/playlists/recentlyaddedshows.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31532]</label>
+                <property name="path">special://skin/playlists/criticallyacclaimedmovies.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31098]</label>
+                <property name="path">special://skin/playlists/criticallyacclaimedtvshows.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31536]</label>
+                <property name="path">special://skin/playlists/actionandcrimemovies.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31164]</label>
+                <property name="path">special://skin/playlists/actionandcrimeseries.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31159]</label>
+                <property name="path">special://skin/playlists/documentaries.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31160]</label>
+                <property name="path">special://skin/playlists/docuseries.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31162]</label>
+                <property name="path">special://skin/playlists/adventureandfantasymovies.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31163]</label>
+                <property name="path">special://skin/playlists/adventureandfantasyseries.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31277]</label>
+                <property name="path">special://skin/playlists/imdbtop250movies.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31707]</label>
+                <property name="path">special://skin/playlists/imdbtop250TV.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31194]</label>
+                <property name="path">special://skin/playlists/syfymovies.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31195]</label>
+                <property name="path">special://skin/playlists/syfyseries.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31196]</label>
+                <property name="path">special://skin/playlists/thrillerandsuspensemovies.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31197]</label>
+                <property name="path">special://skin/playlists/thrillerandsuspenseseries.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+        </content>
+    </include>
+	
+	<!-- Static Search Suggestions Movies -->
+    <include name="Search_Suggestions_Movies">
+        <content>
+            <item>
+                <label>$LOCALIZE[31078]</label>
+                <property name="path">special://skin/playlists/blockbustermovies.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31649]</label>
+                <property name="path">special://skin/playlists/watchitagainmovies.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31666]</label>
+                <property name="path">special://skin/playlists/recentlyaddedmovies.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31532]</label>
+                <property name="path">special://skin/playlists/criticallyacclaimedmovies.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31536]</label>
+                <property name="path">special://skin/playlists/actionandcrimemovies.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31162]</label>
+                <property name="path">special://skin/playlists/adventureandfantasymovies.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31277]</label>
+                <property name="path">special://skin/playlists/imdbtop250movies.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31159]</label>
+                <property name="path">special://skin/playlists/documentaries.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31194]</label>
+                <property name="path">special://skin/playlists/syfymovies.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31196]</label>
+                <property name="path">special://skin/playlists/thrillerandsuspensemovies.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+        </content>
+    </include>
+	
+	<!-- Static Search Suggestions -->
+    <include name="Search_Suggestions_TVShows">
+        <content>
+            <item>
+                <label>$LOCALIZE[31079]</label>
+                <property name="path">special://skin/playlists/bingeworthyshows.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31650]</label>
+                <property name="path">special://skin/playlists/watchitagaintvshows.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31101]</label>
+                <property name="path">special://skin/playlists/recentlyaddedshows.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31098]</label>
+                <property name="path">special://skin/playlists/criticallyacclaimedtvshows.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31164]</label>
+                <property name="path">special://skin/playlists/actionandcrimeseries.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31160]</label>
+                <property name="path">special://skin/playlists/docuseries.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31163]</label>
+                <property name="path">special://skin/playlists/adventureandfantasyseries.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31707]</label>
+                <property name="path">special://skin/playlists/imdbtop250TV.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31195]</label>
+                <property name="path">special://skin/playlists/syfyseries.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31197]</label>
+                <property name="path">special://skin/playlists/thrillerandsuspenseseries.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+        </content>
+    </include>
+	
+    <!-- Static Search TMDB and Trakt Suggestions -->
+    <include name="Search_Suggestions_Content_2">
+        <content>
+			<item>
+                <label>$LOCALIZE[31432]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=trending_day&amp;type=movie&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31453]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=trending_day&amp;type=tv&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31454]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=trending_week&amp;type=movie&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31700]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=trending_week&amp;type=tv&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31347]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=popular&amp;type=movie&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31346]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=popular&amp;type=tv&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31339]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=top_rated&amp;type=movie&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31340]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=top_rated&amp;type=tv&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31343]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=revenue_movies&amp;type=movie&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31335]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=most_voted&amp;type=movie&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31336]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=most_voted&amp;type=tv&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31337]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_trending&amp;type=movie&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31328]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_trending&amp;type=tv&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31326]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_popular&amp;type=movie&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31319]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_popular&amp;type=tv&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31313]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_mostplayed&amp;type=movie&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31314]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_mostplayed&amp;type=tv&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31315]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_mostviewers&amp;type=movie&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31316]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_mostviewers&amp;type=tv&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>			
+        </content>
+    </include>
+	
+	<!-- Static Search TMDB and Trakt Suggestions Movies -->
+    <include name="Search_Suggestions_Movies_2">
+        <content>
+			<item>
+                <label>$LOCALIZE[31432]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=trending_day&amp;type=movie&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31454]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=trending_week&amp;type=movie&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31347]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=popular&amp;type=movie&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31339]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=top_rated&amp;type=movie&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31343]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=revenue_movies&amp;type=movie&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31335]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=most_voted&amp;type=movie&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31337]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_trending&amp;type=movie&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31326]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_popular&amp;type=movie&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31313]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_mostplayed&amp;type=movie&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31315]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_mostviewers&amp;type=movie&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>		
+        </content>
+    </include>
+	
+	<!-- Static Search TMDB and Trakt Suggestions TV Shows -->
+    <include name="Search_Suggestions_TVShows_2">
+        <content>
+			<item>
+                <label>$LOCALIZE[31453]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=trending_day&amp;type=tv&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31700]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=trending_week&amp;type=tv&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31346]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=popular&amp;type=tv&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31340]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=top_rated&amp;type=tv&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31336]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=most_voted&amp;type=tv&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31328]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_trending&amp;type=tv&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31319]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_popular&amp;type=tv&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31314]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_mostplayed&amp;type=tv&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31316]</label>
+                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_mostviewers&amp;type=tv&amp;nextpage=false</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>			
+        </content>
+    </include>
+
+    <!-- Search Radio Key -->
+    <include name="SearchRadioKey">
+        <param name="force_refresh" value="false"/>
+        <param name="onclick2Cond" default="!String.IsEmpty(Skin.String(CustomSearchTerm))" />
+        <param name="onclick2" default="Skin.SetString(CustomSearchTerm)" />
+        <definition>
+            <control type="radiobutton" id="$PARAM[id]">
+                <height>search_key_size</height>
+                <width>search_radiokey_width</width>
+                <label/>
+                <radioposx>$PARAM[radioposx]</radioposx>
+                <radioposy>$PARAM[radioposy]</radioposy>
+                <radiowidth>$PARAM[radiowidth]</radiowidth>
+                <radioheight>$PARAM[radioheight]</radioheight>
+                <textureradioonfocus colordiffuse="$INFO[Skin.String(BingieButtonFocusTextColor)]">$PARAM[texture]</textureradioonfocus>
+                <textureradioofffocus colordiffuse="$INFO[Skin.String(BingieButtonFocusTextColor)]">$PARAM[texture]</textureradioofffocus>
+                <textureradioonnofocus colordiffuse="$INFO[Skin.String(BingieButtonTextColor)]">$PARAM[texture]</textureradioonnofocus>
+                <textureradiooffnofocus colordiffuse="$INFO[Skin.String(BingieButtonTextColor)]">$PARAM[texture]</textureradiooffnofocus>
+                <ondown>$PARAM[ondown]</ondown>
+                <onclick condition="$PARAM[force_refresh]">SetProperty(CustomSearch,1,home)</onclick>
+                <onclick>$PARAM[onclick]</onclick>
+                <onclick condition="$PARAM[onclick2Cond]">$PARAM[onclick2]</onclick>
+                <include>SearchKeyDefs</include>
+            </control>
+        </definition>
+    </include>
+
+    <!-- Search Key -->
+    <include name="SearchKey">
+        <param name="size" default="search_key_size" />
+        <definition>
+            <control type="button" id="$PARAM[id]">
+                <width>$PARAM[size]</width>
+                <height>$PARAM[size]</height>
+                <onup>$PARAM[onup]</onup>
+                <ondown>$PARAM[ondown]</ondown>
+                <include>SearchKeyDefs</include>
+                <label>$PARAM[key]</label>
+                <onclick>Skin.SetString(CustomSearchTerm,$INFO[Skin.String(CustomSearchTerm)]$PARAM[key])</onclick>
+				<onclick>SetProperty(CustomSearch,1,home)</onclick>
+            </control>
+        </definition>
+    </include>
+
+    <!-- Native Search Key -->
+    <include name="NativeSearchKey">
+        <param name="size" default="search_key_size" />
+        <definition>
+            <control type="button" id="$PARAM[id]">
+                <nested />
+                <width>$PARAM[size]</width>
+                <height>$PARAM[size]</height>
+                <onup>$PARAM[onup]</onup>
+                <ondown>$PARAM[ondown]</ondown>
+                <include>SearchKeyDefs</include>
+            </control>
+        </definition>
+    </include>
+
+    <include name="SearchKeyDefs">
+        <align>center</align>
+        <font>Reg34</font>
+        <textoffsetx>0</textoffsetx>
+        <selectedcolor>$INFO[Skin.String(BingieButtonFocusTextColor)]</selectedcolor>
+        <textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
+		<focusedcolor>$INFO[Skin.String(BingieButtonFocusTextColor)]</focusedcolor>
+		<disabledcolor>ffaaaaaa</disabledcolor>
+        <pulseonselect>false</pulseonselect>
+        <texturefocus border="20">dialogs/keyboard/key-nf2.png</texturefocus>
+        <texturenofocus colordiffuse="ff1a1a1a" border="20">dialogs/keyboard/key-nf.png</texturenofocus>
+    </include>
+	
+	<include name="SearchKeyDefs2">
+        <align>center</align>
+        <font>Reg30</font>
+        <textoffsetx>0</textoffsetx>
+		<textwidth>254</textwidth>
+        <selectedcolor>$INFO[Skin.String(BingieButtonFocusTextColor)]</selectedcolor>
+        <textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
+		<focusedcolor>$INFO[Skin.String(BingieButtonFocusTextColor)]</focusedcolor>
+		<disabledcolor>ffaaaaaa</disabledcolor>
+        <pulseonselect>false</pulseonselect>
+        <texturefocus border="20">dialogs/keyboard/key-nf2.png</texturefocus>
+        <texturenofocus colordiffuse="ff1a1a1a" border="20">dialogs/keyboard/key-nf.png</texturenofocus>
+    </include>
+
+    <!-- Search Keyboard Row -->
+    <include name="SearchKeyboardRow">
+        <control type="grouplist" id="$PARAM[id]">
+            <width>455</width>
+            <height>search_key_size</height>
+            <orientation>horizontal</orientation>
+            <itemgap>-10</itemgap>
+            <onleft>$PARAM[onleft]</onleft>
+            <onright>$PARAM[onright]</onright>
+            <include>$PARAM[row_include]</include>
+        </control>
+    </include>
+
+    <include name="SearchKeyboardRow_BackspaceAndSpace_Row">
+        <!-- Space -->
+        <include content="SearchRadioKey">
+            <param name="id" value="10" />
+            <param name="radioposx" value="60" />
+            <param name="radioposy" value="20" />
+            <param name="radiowidth" value="100" />
+            <param name="radioheight" value="40" />
+            <param name="texture" value="bingie/keyboard/space.png" />
+            <param name="ondown" value="1001" />
+            <param name="onclick" value="SetProperty(SpaceSearchTerm,1,Home)" />
+        </include>
+        <!-- Backspace -->
+        <include content="SearchRadioKey">
+            <param name="id" value="11" />
+            <param name="radioposx" value="30" />
+            <param name="radioposy" value="20" />
+            <param name="radiowidth" value="160" />
+            <param name="radioheight" value="40" />
+            <param name="texture" value="bingie/keyboard/backspace.png" />
+            <param name="ondown" value="1001" />
+            <param name="onclick" value="SetProperty(BackspaceSearchTerm,1,Home)" />
+            <param name="force_refresh" value="true"/>
+        </include>
+    </include>
+
+    <include name="SearchKeyboardRow_First_Row">
+        <!-- A -->
+        <include content="SearchKey">
+            <param name="id" value="101" />
+            <param name="onup" value="10" />
+            <param name="ondown" value="107" />
+            <param name="key" value="a" />
+        </include>
+        <!-- B -->
+        <include content="SearchKey">
+            <param name="id" value="102" />
+            <param name="onup" value="10" />
+            <param name="ondown" value="108" />
+            <param name="key" value="b" />
+        </include>
+        <!-- C -->
+        <include content="SearchKey">
+            <param name="id" value="103" />
+            <param name="onup" value="10" />
+            <param name="ondown" value="109" />
+            <param name="key" value="c" />
+        </include>
+        <!-- D -->
+        <include content="SearchKey">
+            <param name="id" value="104" />
+            <param name="onup" value="11" />
+            <param name="ondown" value="110" />
+            <param name="key" value="d" />
+        </include>
+        <!-- E -->
+        <include content="SearchKey">
+            <param name="id" value="105" />
+            <param name="onup" value="11" />
+            <param name="ondown" value="111" />
+            <param name="key" value="e" />
+        </include>
+        <!-- F -->
+        <include content="SearchKey">
+            <param name="id" value="106" />
+            <param name="onup" value="11" />
+            <param name="ondown" value="112" />
+            <param name="key" value="f" />
+        </include>
+    </include>
+
+    <include name="SearchKeyboardRow_Second_Row">
+        <!-- G -->
+        <include content="SearchKey">
+            <param name="id" value="107" />
+            <param name="onup" value="101" />
+            <param name="ondown" value="113" />
+            <param name="key" value="g" />
+        </include>
+        <!-- H -->
+        <include content="SearchKey">
+            <param name="id" value="108" />
+            <param name="onup" value="102" />
+            <param name="ondown" value="114" />
+            <param name="key" value="h" />
+        </include>
+        <!-- I -->
+        <include content="SearchKey">
+            <param name="id" value="109" />
+            <param name="onup" value="103" />
+            <param name="ondown" value="115" />
+            <param name="key" value="i" />
+        </include>
+        <!-- J -->
+        <include content="SearchKey">
+            <param name="id" value="110" />
+            <param name="onup" value="104" />
+            <param name="ondown" value="116" />
+            <param name="key" value="j" />
+        </include>
+        <!-- K -->
+        <include content="SearchKey">
+            <param name="id" value="111" />
+            <param name="onup" value="105" />
+            <param name="ondown" value="117" />
+            <param name="key" value="k" />
+        </include>
+        <!-- L -->
+        <include content="SearchKey">
+            <param name="id" value="112" />
+            <param name="onup" value="106" />
+            <param name="ondown" value="118" />
+            <param name="key" value="l" />
+        </include>
+    </include>
+
+    <include name="SearchKeyboardRow_Third_Row">
+        <!-- M -->
+        <include content="SearchKey">
+            <param name="id" value="113" />
+            <param name="onup" value="107" />
+            <param name="ondown" value="119" />
+            <param name="key" value="m" />
+        </include>
+        <!-- N -->
+        <include content="SearchKey">
+            <param name="id" value="114" />
+            <param name="onup" value="108" />
+            <param name="ondown" value="120" />
+            <param name="key" value="n" />
+        </include>
+        <!-- O -->
+        <include content="SearchKey">
+            <param name="id" value="115" />
+            <param name="onup" value="109" />
+            <param name="ondown" value="121" />
+            <param name="key" value="o" />
+        </include>
+        <!-- P -->
+        <include content="SearchKey">
+            <param name="id" value="116" />
+            <param name="onup" value="110" />
+            <param name="ondown" value="122" />
+            <param name="key" value="p" />
+        </include>
+        <!-- Q -->
+        <include content="SearchKey">
+            <param name="id" value="117" />
+            <param name="onup" value="111" />
+            <param name="ondown" value="123" />
+            <param name="key" value="q" />
+        </include>
+        <!-- R -->
+        <include content="SearchKey">
+            <param name="id" value="118" />
+            <param name="onup" value="112" />
+            <param name="ondown" value="124" />
+            <param name="key" value="r" />
+        </include>
+    </include>
+
+    <include name="SearchKeyboardRow_Fourth_Row">
+        <!-- S -->
+        <include content="SearchKey">
+            <param name="id" value="119" />
+            <param name="onup" value="113" />
+            <param name="ondown" value="125" />
+            <param name="key" value="s" />
+        </include>
+        <!-- T -->
+        <include content="SearchKey">
+            <param name="id" value="120" />
+            <param name="onup" value="114" />
+            <param name="ondown" value="126" />
+            <param name="key" value="t" />
+        </include>
+        <!-- U -->
+        <include content="SearchKey">
+            <param name="id" value="121" />
+            <param name="onup" value="115" />
+            <param name="ondown" value="127" />
+            <param name="key" value="u" />
+        </include>
+        <!-- V -->
+        <include content="SearchKey">
+            <param name="id" value="122" />
+            <param name="onup" value="116" />
+            <param name="ondown" value="128" />
+            <param name="key" value="v" />
+        </include>
+        <!-- W -->
+        <include content="SearchKey">
+            <param name="id" value="123" />
+            <param name="onup" value="117" />
+            <param name="ondown" value="129" />
+            <param name="key" value="w" />
+        </include>
+        <!-- X -->
+        <include content="SearchKey">
+            <param name="id" value="124" />
+            <param name="onup" value="118" />
+            <param name="ondown" value="130" />
+            <param name="key" value="x" />
+        </include>
+    </include>
+
+    <include name="SearchKeyboardRow_Fifth_Row">
+        <!-- Y -->
+        <include content="SearchKey">
+            <param name="id" value="125" />
+            <param name="onup" value="119" />
+            <param name="ondown" value="131" />
+            <param name="key" value="y" />
+        </include>
+        <!-- Z -->
+        <include content="SearchKey">
+            <param name="id" value="126" />
+            <param name="onup" value="120" />
+            <param name="ondown" value="132" />
+            <param name="key" value="z" />
+        </include>
+        <!-- 1 -->
+        <include content="SearchKey">
+            <param name="id" value="127" />
+            <param name="onup" value="121" />
+            <param name="ondown" value="133" />
+            <param name="key" value="$NUMBER[1]" />
+        </include>
+        <!-- 2 -->
+        <include content="SearchKey">
+            <param name="id" value="128" />
+            <param name="onup" value="122" />
+            <param name="ondown" value="134" />
+            <param name="key" value="$NUMBER[2]" />
+        </include>
+        <!-- 3 -->
+        <include content="SearchKey">
+            <param name="id" value="129" />
+            <param name="onup" value="123" />
+            <param name="ondown" value="135" />
+            <param name="key" value="$NUMBER[3]" />
+        </include>
+        <!-- 4 -->
+        <include content="SearchKey">
+            <param name="id" value="130" />
+            <param name="onup" value="124" />
+            <param name="ondown" value="136" />
+            <param name="key" value="$NUMBER[4]" />
+        </include>
+    </include>
+
+    <include name="SearchKeyboardRow_Sixth_Row">
+        <!-- 5 -->
+        <include content="SearchKey">
+            <param name="id" value="131" />
+            <param name="onup" value="125" />
+            <param name="ondown" value="1007" />
+            <param name="key" value="$NUMBER[5]" />
+        </include>
+        <!-- 6 -->
+        <include content="SearchKey">
+            <param name="id" value="132" />
+            <param name="onup" value="126" />
+            <param name="ondown" value="1007" />
+            <param name="key" value="$NUMBER[6]" />
+        </include>
+        <!-- 7 -->
+        <include content="SearchKey">
+            <param name="id" value="133" />
+            <param name="onup" value="127" />
+            <param name="ondown" value="1007" />
+            <param name="key" value="$NUMBER[7]" />
+        </include>
+        <!-- 8 -->
+        <include content="SearchKey">
+            <param name="id" value="134" />
+            <param name="onup" value="128" />
+            <param name="ondown" value="1007" />
+            <param name="key" value="$NUMBER[8]" />
+        </include>
+        <!-- 9 -->
+        <include content="SearchKey">
+            <param name="id" value="135" />
+            <param name="onup" value="129" />
+            <param name="ondown" value="1007" />
+            <param name="key" value="$NUMBER[9]" />
+        </include>
+        <!-- 0 -->
+        <include content="SearchKey">
+            <param name="id" value="136" />
+            <param name="onup" value="130" />
+            <param name="ondown" value="1007" />
+            <param name="key" value="$NUMBER[0]" />
+        </include>
+    </include>
+
+    <!-- Search Suggestions Container -->
+    <include name="Search_Suggestions_Container">
+        <param name="visibility" default="true" />
+        <param name="left" default="75" />
+        <param name="onback" default="101" />
+        <param name="onup" default="101" />
+        <param name="ondown" default="noop" />
+        <param name="onright" default="77777" />
+        <param name="onleft" default="900" />
+        <definition>
+            <control type="list" id="$PARAM[id]">
+                <nested/>
+                <visible>$PARAM[visibility]</visible>
+                <left>$PARAM[left]</left>
+                <top>$PARAM[top]</top>
+                <width>$PARAM[width]</width>
+                <height>$PARAM[height]</height>
+                <orientation>vertical</orientation>
+                <onback>$PARAM[onback]</onback>
+                <onup>$PARAM[onup]</onup>
+                <ondown>$PARAM[ondown]</ondown>
+                <onright condition="!Container(500).IsUpdating">$PARAM[onright]</onright>
+                <onleft>$PARAM[onleft]</onleft>
+                <align>left</align>
+                <itemlayout width="$PARAM[width]" height="65">
+                    <control type="label">
+                        <left>25</left>
+                        <width>380</width>
+                        <height>100%</height>
+                        <aligny>center</aligny>
+                        <align>left</align>
+                        <font>Reg30</font>
+                        <textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
+                        <scroll>false</scroll>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="$PARAM[width]" height="65" condition="Control.HasFocus($PARAM[id])">
+                    <control type="group">
+                        <left>9</left>
+                        <control type="image">
+                            <width>100%</width>
+                            <height>100%</height>
+                            <aligny>top</aligny>
+                            <align>left</align>
+                            <aspectratio align="left" aligny="top">stretch</aspectratio>
+                            <colordiffuse>$INFO[Skin.String(ViewDetailsBorderFocusColor)]</colordiffuse>
+                            <texture border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texture>
+                            <visible>Control.HasFocus($PARAM[id]) | Control.IsVisible(500)</visible>
+                        </control>
+                        <control type="label">
+                            <left>16</left>
+                            <width>380</width>
+                            <height>100%</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <font>Reg30</font>
+                            <textcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</textcolor>
+                            <scroll>true</scroll>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                        <control type="button">
+                            <visible>false</visible>
+                            <onfocus condition="String.IsEmpty(Skin.String(CustomSearchTerm))">$PARAM[onitemfocus]</onfocus>
+                            <onfocus condition="String.IsEmpty(Skin.String(CustomSearchTerm))">$PARAM[onitemfocus2]</onfocus>
+							<onfocus condition="String.IsEmpty(Window.Property(SearchPosterAnimation)) + [Container(1007).OnNext | Container(1007).OnPrevious]">SetProperty(SearchPosterAnimation,1)</onfocus>
+                        </control>
+                    </control>
+                </focusedlayout>
+				<focusedlayout width="$PARAM[width]" height="65" condition="!Control.HasFocus($PARAM[id])">
+                    <control type="group">
+                        <left>9</left>
+                        <control type="image">
+                            <width>100%</width>
+                            <height>100%</height>
+                            <aligny>top</aligny>
+                            <align>left</align>
+                            <aspectratio align="left" aligny="top">stretch</aspectratio>
+                            <colordiffuse>$INFO[Skin.String(ViewDetailsBorderFocusColor)]</colordiffuse>
+                            <texture border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderUnfocusColor)]">bingie/border/default_button_focus.png</texture>
+                            <visible>Control.HasFocus($PARAM[id]) | Control.IsVisible(500)</visible>
+                        </control>
+                        <control type="label">
+                            <left>16</left>
+                            <width>380</width>
+                            <height>100%</height>
+                            <aligny>center</aligny>
+                            <align>left</align>
+                            <font>Reg30</font>
+                            <textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
+                            <scroll>true</scroll>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                    </control>
+                </focusedlayout>
+            </control>
+        </definition>
+    </include>
+
+    <!-- Search Container Template -->
+    <include name="SearchContainerTemplate">
+        <definition>
+            <control type="panel" id="$PARAM[id]">
+                <nested />
+				<animation effect="fade" start="100" end="0" time="0" condition="!String.IsEmpty(Window.Property(SearchPosterAnimation)) + Container(500).IsUpdating + String.IsEmpty(Skin.String(CustomSearchTerm)) + !String.IsEmpty(Window.Property(SuggestionPath)) | Container($PARAM[id]).IsUpdating  + !String.IsEmpty(Skin.String(CustomSearchTerm))">Conditional</animation>
+                <visible>Container($PARAM[id]).IsUpdating | Integer.IsGreater(Container($PARAM[id]).NumItems,0) | $PARAM[force_visible]</visible>
+                <visible>$PARAM[visibility]</visible>
+                <width>$PARAM[width]</width>
+                <height>$PARAM[height]</height>
+                <orientation>$PARAM[orientation]</orientation>
+                <pagecontrol>$PARAM[pagecontrol]</pagecontrol>
+                <scrolltime tween="quadratic">400</scrolltime>
+                <preloaditems>4</preloaditems>
+                <itemlayout width="$PARAM[layoutwidth]" height="$PARAM[layoutheight]">
+                    <control type="group">
+                        <width>$PARAM[layoutwidth]</width>
+                        <height>$PARAM[layoutheight]</height>
+                        <include>$PARAM[layout]Layout</include>
+                        <control type="group">
+                            <include content="$PARAM[layout]Tags">
+                                <param name="force_tags" value="$PARAM[force_tags]" />
+                                <param name="widgetTags" value="$PARAM[widgetTags]" />
+                            </include>
+							<control type="group">
+								<left>29</left>
+								<include>Poster_New_Episodes_Tag_Overlay</include>
+							</control>
+                        </control>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="$PARAM[layoutwidth]" height="$PARAM[layoutheight]">
+                    <control type="group">
+                        <width>$PARAM[layoutwidth]</width>
+                        <height>$PARAM[layoutheight]</height>
+                        <include>$PARAM[layout]LayoutFocus</include>
+                        <control type="group">
+                            <include content="$PARAM[layout]Tags">
+                                <param name="force_tags" value="$PARAM[force_tags]" />
+                                <param name="widgetTags" value="$PARAM[widgetTags]" />
+                            </include>
+							<control type="group">
+								<left>29</left>
+								<include>Poster_New_Episodes_Tag_Overlay</include>
+							</control>
+                        </control>
+						<include content="SearchHiddenWidgetButton">
+							<param name="widgetstyle" value="poster"/>
+							<param name="widgetid" value="$PARAM[widgetid]"/>
+						</include>
+						<control type="button">
+                            <visible>false</visible>
+							<onfocus condition="!String.IsEmpty(Window.Property(SearchPosterAnimation))">ClearProperty(SearchPosterAnimation)</onfocus>
+                        </control>
+						<!--Top 250-->
+						<include>Top250Indicator</include>
+                    </control>
+                </focusedlayout>
+            </control>
+        </definition>
+    </include>
+	
+	<include name="Object_SearchList_Template">
+        <include content="SearchResultWidgetTopLabel">
+            <param name="groupid" value="$PARAM[groupid]" />
+            <param name="id" value="$PARAM[id]" />
+            <param name="label" value="$PARAM[label]$INFO[Container($PARAM[id]).NumItems, (,)]" />
+            <visible>Control.IsVisible($PARAM[id])</visible>
+			<animation effect="fade" start="100" end="0" time="0" condition="Container($PARAM[id]).IsUpdating">Conditional</animation>
+        </include>
+        <include content="CustomSearchResultWidget">
+            <param name="id" value="$PARAM[id]" />
+            <param name="layout">$PARAM[layout]</param>
+			<param name="limit">$PARAM[limit]</param>
+            <param name="layoutwidth">$PARAM[layoutwidth]</param>
+			<param name="layoutheight">$PARAM[layoutheight]</param>
+			<param name="height">$PARAM[height]</param>
+			<param name="force_tags">$PARAM[force_tags]</param>
+            <param name="allow_showinfo_onclick" value="true" />
+			<param name="orientation" value="vertical" />
+            <param name="visibility" value="!String.IsEmpty(Skin.String(CustomSearchTerm))" />
+            <content target="videos" sortby="file" limit="$PARAM[limit]">$PARAM[path]$INFO[Skin.String(CustomSearchTerm)]</content>
+        </include>
+    </include>
+
+    <!-- Tag Overlays -->
+	<include name="PosterPanelBingieTags">
+        <include condition="!String.IsEqual(Skin.String(Widgets_DisplayTags),override) + !String.IsEqual(Skin.String(Widgets_DisplayTags),disable) | $PARAM[force_tags]">PosterTagOverlayBingie</include>
+        <!-- <include condition="String.IsEqual(Skin.String(Widgets_DisplayTags),auto)">PosterTagOverlayVisibility</include> -->
+        <include content="$PARAM[widgetTags]" condition="String.IsEqual(Skin.String(Widgets_DisplayTags),override)">
+            <param name="prefix" value="Poster"/>
+        </include>
+    </include>
+	
+    <include name="ThumbsViewBingieTags">
+        <include condition="!String.IsEqual(Skin.String(Widgets_DisplayTags),override) + !String.IsEqual(Skin.String(Widgets_DisplayTags),disable) | $PARAM[force_tags]">ThumbsTagOverlayBingie</include>
+        <!-- <include condition="String.IsEqual(Skin.String(Widgets_DisplayTags),auto)">PosterTagOverlayVisibility</include> -->
+        <include content="$PARAM[widgetTags]" condition="String.IsEqual(Skin.String(Widgets_DisplayTags),override)">
+            <param name="prefix" value="Landscape"/>
+        </include>
+    </include>
+
+    <include name="SquarePosterPanelTags">
+        <include condition="!String.IsEqual(Skin.String(Widgets_DisplayTags),override) + !String.IsEqual(Skin.String(Widgets_DisplayTags),disable) | $PARAM[force_tags]">SquarePosterTagOverlay</include>
+        <!-- <include condition="String.IsEqual(Skin.String(Widgets_DisplayTags),auto)">SquarePosterTagOverlayVisibility</include> -->
+        <include content="$PARAM[widgetTags]" condition="String.IsEqual(Skin.String(Widgets_DisplayTags),override)">
+            <param name="prefix" value="SquarePoster"/>
+        </include>
+    </include>
+	
+	<include name="SearchResultWidget">
+        <param name="height">search_widget_height</param>
+        <param name="orientation">horizontal</param>
+        <param name="layoutheight">search_widget_height</param>
+        <param name="force_tags" default="false" />
+        <definition>
+                <include content="SearchContainerTemplate">
+                    <nested />
+                    <include condition="Skin.HasSetting(ShowInformationBypass) + $PARAM[allow_showinfo_onclick]">ContainerShowInfoOnclick</include>
+                    <param name="id" value="$PARAM[id]"/>
+                    <param name="width" value="1188" />
+                    <param name="height" value="975" />
+                    <param name="orientation" value="$PARAM[orientation]" />
+                    <param name="layout" value="$PARAM[layout]" />
+                    <param name="layoutwidth" value="$PARAM[layoutwidth]" />
+                    <param name="layoutheight" value="$PARAM[layoutheight]" />
+                    <param name="force_visible" value="!String.IsEmpty(Window(home).Property(CustomSearch))" />
+                    <param name="force_tags" value="$PARAM[force_tags]" />
+                    <param name="visibility" value="$PARAM[visibility]" />
+                    <param name="widgetTags" value="$PARAM[widgetTags]" />
+                </include>
+        </definition>
+    </include>
+
+    <include name="CustomSearchResultWidget">
+        <definition>
+                <include content="SearchContainerTemplate">
+                    <nested />
+                    <include condition="Skin.HasSetting(ShowInformationBypass) + $PARAM[allow_showinfo_onclick]">ContainerShowInfoOnclick</include>
+                    <param name="id" value="$PARAM[id]"/>
+                    <param name="width" value="1188" />
+                    <param name="height" value="$PARAM[height]" />
+                    <param name="orientation" value="$PARAM[orientation]" />
+                    <param name="layout" value="$PARAM[layout]" />
+                    <param name="layoutwidth" value="$PARAM[layoutwidth]" />
+                    <param name="layoutheight" value="$PARAM[layoutheight]" />
+                    <param name="force_visible" value="!String.IsEmpty(Window(home).Property(CustomSearch))" />
+                    <param name="force_tags" value="$PARAM[force_tags]" />
+                    <param name="visibility" value="$PARAM[visibility]" />
+                    <param name="widgetTags" value="$PARAM[widgetTags]" />
+                </include>
+        </definition>
+    </include>
+
+    <!-- Search Result Widget Top Label -->
+    <include name="SearchResultWidgetTopLabel">
+        <definition>
+            <control type="group" id="$PARAM[groupid]">
+                <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating</visible>
+                <nested />
+                <height>40</height>
+                <control type="label">
+                    <left>5</left>
+                    <width>auto</width>
+                    <label>$PARAM[label]</label>
+                    <aligny>center</aligny>
+                    <textcolor>$INFO[Skin.String(BingiePrimaryTextColor)]</textcolor>
+                    <font>Reg30</font>
+                    <height>36</height>
+                    <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating</visible>
+                </control>
+            </control>
+        </definition>
+    </include>
+
+    <!-- Search Episode Widget -->
+    <include name="EpisodeSearchResultWidget">
+        <include content="SearchResultWidget">
+            <param name="id" value="$PARAM[id]" />
+            <param name="layout">ThumbsViewBingie</param>
+			<param name="height" value="230" />
+            <param name="layoutwidth">396</param>
+			<param name="layoutheight">230</param>
+			<param name="widgetTags" value="WidgetTagOverlayEnable" />
+            <param name="force_tags" value="true" />
+            <param name="allow_showinfo_onclick" value="true" />
+			<param name="orientation" value="vertical" />
+            <param name="visibility" value="!String.IsEmpty(Skin.String(CustomSearchTerm))" />
+            <content browse="never" limit="100" target="videos">videodb://tvshows/titles/-1/-1/-1/-1/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22title%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22$INFO[Skin.String(CustomSearchTerm)]%22%5D%7D%5D%7D%2C%22type%22%3A%22episodes%22%7D</content>
+        </include>
+    </include>
+
+    <!-- Search Music Videos Widget -->
+    <include name="MusicVideosSearchResultWidget">
+        <include content="SearchResultWidget">
+            <param name="id" value="$PARAM[id]" />
+            <param name="layout">ThumbsViewBingie</param>
+			<param name="height" value="230" />
+            <param name="layoutwidth">396</param>
+			<param name="layoutheight">230</param>
+			<param name="widgetTags" value="WidgetTagOverlayEnable" />
+            <param name="force_tags" value="true" />
+            <param name="allow_showinfo_onclick" value="false" />
+			<param name="orientation" value="vertical" />
+            <param name="visibility" value="!String.IsEmpty(Skin.String(CustomSearchTerm))" />
+            <content browse="never" limit="100" target="videos">videodb://musicvideos/titles/?xsp=%7b%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22title%22%2c%22operator%22%3a%22contains%22%2c%22value%22%3a%5b%22$INFO[Skin.String(CustomSearchTerm)]%22%5d%7d%5d%7d%2c%22type%22%3a%22musicvideos%22%7d</content>
+        </include>
+    </include>
+
+    <!-- Search Albums Widget -->
+    <include name="AlbumsSearchResultWidget">
+        <include content="SearchResultWidget">
+            <param name="id" value="$PARAM[id]" />
+            <param name="layout">SquarePosterPanel</param>
+			<param name="height" value="396" />
+            <param name="layoutwidth">396</param>
+			<param name="layoutheight">396</param>
+			<param name="widgetTags" value="WidgetTagOverlayEnable" />
+            <param name="force_tags" value="true" />
+            <param name="allow_showinfo_onclick" value="false" />
+			<param name="orientation" value="vertical" />
+            <param name="visibility" value="!String.IsEmpty(Skin.String(CustomSearchTerm))" />
+            <content browse="never" limit="100" target="music">musicdb://albums/?xsp=%7b%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22album%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22album%22%2c%22operator%22%3a%22contains%22%2c%22value%22%3a%5b%22$INFO[Skin.String(CustomSearchTerm)]%22%5d%7d%5d%7d%2c%22type%22%3a%22albums%22%7d</content>
+        </include>
+    </include>
+
+    <!-- Search Artists Widget -->
+    <include name="ArtistsSearchResultWidget">
+        <include content="SearchResultWidget">
+            <param name="id" value="$PARAM[id]" />
+            <param name="layout">SquarePosterPanel</param>
+			<param name="height" value="396" />
+            <param name="layoutwidth">396</param>
+			<param name="layoutheight">396</param>
+			<param name="widgetTags" value="WidgetTagOverlayEnable" />
+            <param name="force_tags" value="true" />
+            <param name="allow_showinfo_onclick" value="false" />
+			<param name="orientation" value="vertical" />
+            <param name="visibility" value="!String.IsEmpty(Skin.String(CustomSearchTerm))" />
+            <content browse="never" limit="100" target="music">musicdb://artists/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22artist%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22artist%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22$INFO[Skin.String(CustomSearchTerm)]%22%5D%7D%5D%7D%2C%22type%22%3A%22artists%22%7D</content>
+        </include>
+    </include>
+
+    <!-- Search Songs Widget -->
+    <include name="SongsSearchResultWidget">
+        <include content="SearchResultWidget">
+            <param name="id" value="$PARAM[id]" />
+            <param name="layout">SquarePosterPanel</param>
+			<param name="height" value="396" />
+            <param name="layoutwidth">396</param>
+			<param name="layoutheight">396</param>
+			<param name="widgetTags" value="WidgetTagOverlayEnable" />
+            <param name="force_tags" value="true" />
+            <param name="allow_showinfo_onclick" value="false" />
+			<param name="orientation" value="vertical" />
+            <param name="visibility" value="!String.IsEmpty(Skin.String(CustomSearchTerm))" />
+            <content browse="never" limit="100" target="music">musicdb://songs/?xsp=%7b%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22artist%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22title%22%2c%22operator%22%3a%22contains%22%2c%22value%22%3a%5b%22$INFO[Skin.String(CustomSearchTerm)]%22%5d%7d%5d%7d%2c%22type%22%3a%22songs%22%7d</content>
+        </include>
+    </include>
+</includes>

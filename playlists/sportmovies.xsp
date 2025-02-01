@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Sport Movies</name>
+    <match>all</match>
+    <rule field="tag" operator="is">
+        <value>football (soccer)</value>
+        <value>sports</value>
+    </rule>
+    <rule field="votes" operator="greaterthan">
+        <value>100</value>
+    </rule>
+    <rule field="genre" operator="isnot">
+        <value>documentary</value>
+    </rule>
+    <order direction="descending">year</order>
+</smartplaylist>

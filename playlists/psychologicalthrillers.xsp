@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Psychological Thrillers</name>
+    <match>all</match>
+    <rule field="tag" operator="is">
+        <value>psychological thriller</value>
+        <value>psychologist</value>
+        <value>mental hospital</value>
+        <value>split personality</value>
+        <value>dual identity</value>
+        <value>dissociative identity disorder</value>
+        <value>alter ego</value>
+        <value>self destructiveness</value>
+        <value>prescription medication</value>
+        <value>social media</value>
+        <value>sociopath</value>
+        <value>therapy</value>
+        <value>suicide attempt</value>
+        <value>insanity</value>
+        <value>voyeurism</value>
+        <value>mentally handicapped man</value>
+        <value>mental illness</value>
+        <value>double identity</value>
+        <value>paranoia </value>
+        <value>ex-husband ex-wife relationship</value>
+        <value>mother son relationship</value>
+        <value>mind transfer</value>
+        <value>drug addiction</value>
+        <value>depression</value>
+        <value>sibling relationship</value>
+        <value>experiment</value>
+        <value>post traumatic stress disorder</value>
+    </rule>
+    <rule field="genre" operator="is">
+        <value>Thriller</value>
+    </rule>
+    <rule field="rating" operator="greaterthan">
+        <value>6.3</value>
+    </rule>
+    <rule field="genre" operator="isnot">
+        <value>action</value>
+    </rule>
+    <rule field="genre" operator="isnot">
+        <value>comedy</value>
+    </rule>
+    <rule field="genre" operator="isnot">
+        <value>adventure</value>
+    </rule>
+    <rule field="votes" operator="greaterthan">
+        <value>100</value>
+    </rule>
+    <order direction="descending">year</order>
+</smartplaylist>

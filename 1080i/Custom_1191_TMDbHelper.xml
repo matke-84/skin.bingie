@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="window" id="1191">
+    <onload>ClearProperty(TMDbHelper.WidgetContainer,Home)</onload>
+	<onunload>AlarmClock(ActivateOSD,ActivateWindow(videoosd),00:00,silent)</onunload>
+	<onunload>AlarmClock(SetFocusOSD,SetFocus($VAR[OSDMenuFocus]),00:00,silent)</onunload>
+	    <controls>        
+		<control type="videowindow"/>
+    </controls>
+</window>

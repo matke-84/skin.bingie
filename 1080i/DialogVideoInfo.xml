@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<window>
+    <defaultcontrol always="true">8000</defaultcontrol>
+	<onload condition="!String.IsEqual(ListItem.Property(item.type),person)">SetFocus(8000)</onload>
+	<onload condition="String.IsEqual(ListItem.Property(item.type),person)">SetFocus(2999,0)</onload>
+	<onload condition="!String.IsEmpty(Window.Property(AdditionalInfo))">ClearProperty(AdditionalInfo)</onload>
+    <onload condition="!String.IsEmpty(Window(Home).Property(ListItem.TVShowID))">ClearProperty(ListItem.TVShowID,Home)</onload>
+    <onload condition="!String.IsEmpty(ListItem.DBID) + [String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.Property(DBTYPE),episode)]">RunScript(script.bingie.helper,action=gettvshowid,dbid=$INFO[ListItem.DBID])</onload>
+    <onload condition="!String.IsEmpty(Window(Home).Property(BaseWindow))">ClearProperty(BaseWindow,Home)</onload>
+	<onload condition="System.HasAlarm(preview_delay)">CancelAlarm(preview_delay,true)</onload>
+    <onload condition="!String.IsEmpty(ListItem.DBID) + [String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.DBTYPE,episode)]">RunScript(script.bingie.helper,action=ismylist)</onload>
+   	<onload condition="!String.IsEmpty(Window(Home).Property(NoFadeOut))">ClearProperty(NoFadeOut,home)</onload>
+	<onload>SetProperty(TMDbHelper.WidgetContainer,Home)</onload>
+    <onunload condition="!String.IsEmpty(Window(Home).Property(ListItem.TVShowID)) + String.IsEmpty(Window(Home).Property(KeepTVShowID))">ClearProperty(ListItem.TVShowID,Home)</onunload>
+    <onunload condition="!String.IsEmpty(Window(Home).Property(IsInMyList))">ClearProperty(IsInMyList,Home)</onunload>
+    <onunload condition="!String.IsEmpty(Window(Home).Property(RateTitle))">ClearProperty(RateTitle,Home)</onunload>
+    <onunload condition="!String.IsEmpty(Window(Home).Property(RateTitle.Action))">ClearProperty(RateTitle.Action,Home)</onunload>
+	<onunload condition="!String.IsEmpty(Window.Property(AdditionalInfo))">ClearProperty(AdditionalInfo)</onunload>
+	<onunload condition="!String.IsEmpty(Window.Property(PlaySearchTrailer))">ClearProperty(PlaySearchTrailer)</onunload>
+    <onunload>ClearProperty(TMDbHelper.WidgetContainer,Home)</onunload>
+    <controls>
+		<include>Defs_TMDbHelper_Loader</include>
+        <include condition="Skin.HasSetting(UseBingieInfoDialog)">BingieInfo</include>
+        <include condition="!Skin.HasSetting(UseBingieInfoDialog)">TitanInfo</include>
+		<include condition="String.IsEqual(ListItem.Property(item.type),person)">TMDB_Helper_Cast</include>
+		<include condition="Skin.HasSetting(DebugGrid) | Skin.HasSetting(DebugInfo)">DebugInfo</include>
+	</controls>
+</window>

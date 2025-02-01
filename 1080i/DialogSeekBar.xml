@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- BINGIE -->
+<window>
+    <visible>Window.IsActive(fullscreenvideo)</visible>
+    <visible>Window.IsActive(videoosd) | [Player.ShowInfo + !Window.IsActive(videoosd)] | Player.Seeking | Player.DisplayAfterSeek | !String.IsEmpty(Player.SeekNumeric) | [Player.Paused + !Player.Caching] | Player.Forwarding | Player.Rewinding</visible>
+	<controls>
+			
+        <control type="group">		
+        		
+			<!-- osd setings background -->
+			<control type="image">
+				<animation effect="fade" time="250" condition="[Skin.HasSetting(EnableOSDInfo) + Window.IsActive(videoosd)]">Visible</animation>
+				<animation effect="fade" end="0" time="350" condition="[Skin.HasSetting(EnableOSDInfo) + Window.IsActive(videoosd)]">Hidden</animation>
+				<animation effect="fade" time="350" condition="[Skin.HasSetting(EnableOSDInfo) + Window.IsActive(videoosd)]">WindowOpen</animation>
+				<width>100%</width>
+				<height>100%</height>
+				<texture background="true">diffuse/panel2.png</texture>
+				<colordiffuse>b3000000</colordiffuse>
+				<visible>[Window.IsActive(OSDVideoSettings) | Window.IsActive(OSDAudioSettings) | Window.IsActive(OSDSubtitleSettings) | Window.IsActive(videobookmarks) | Window.IsActive(pvrchannelguide)] + !Skin.HasSetting(EnableOSDInfo) + Skin.HasSetting(UseBingieOSD) | [Window.IsActive(OSDVideoSettings) | Window.IsActive(OSDAudioSettings) | Window.IsActive(OSDSubtitleSettings) | Window.IsActive(videobookmarks) | Window.IsActive(pvrchannelguide) | [Skin.HasSetting(EnableOSDInfo) + Window.IsActive(videoosd)]] + !Skin.HasSetting(UseBingieOSD)</visible>
+			</control>
+
+			<!-- Vignette Mask -->
+			<control type="image">
+				<width>100%</width>
+				<height>290</height>
+				<texture background="true" flipy="true">overlays/osd_gradient.png</texture>
+				<visible>[Window.IsActive(OSDVideoSettings) | Window.IsActive(OSDAudioSettings) | Window.IsActive(OSDSubtitleSettings) | Window.IsActive(videobookmarks) | Window.IsActive(pvrchannelguide)] + Skin.HasSetting(UseBingieOSD)</visible>
+			</control>	
+		
+			<!--Info Panel-->
+            <include>OSDInfoPanel</include>	
+			
+			<!-- CLEAR LOGO or Clearart on PAUSE -->
+			<control type="group">
+				<top>0</top>
+				<left>0</left>
+				<height>100%</height>
+				<width>100%</width>				
+				<visible>Skin.HasSetting(UseBingieOSD)</visible>
+				<visible>Player.Paused + System.IdleTime(3) + String.IsEmpty(Window(Home).Property(DialogMPAATopBar))</visible>
+				<visible>![Control.IsVisible(552233) | Window.IsActive(OSDVideoSettings) | Window.IsActive(OSDAudioSettings) | Window.IsActive(OSDSubtitleSettings) | Window.IsActive(subtitlesearch) | Window.IsActive(sliderdialog) | Window.IsVisible(VideoOSDBookmarks.xml)]</visible>
+				<animation delay="1000" time="300" effect="fade">Visible</animation>
+				<animation delay="0" time="300" effect="fade">Hidden</animation>
+				<!-- background -->
+				<control type="image">
+					<width>100%</width>
+					<height>100%</height>
+					<texture background="true">diffuse/panel2.png</texture>
+					<colordiffuse>b3000000</colordiffuse>
+				</control>	
+				<control type="grouplist">
+					<top>320</top>
+					<left>130</left>
+					<height>530</height>
+					<width>70%</width>
+					<orientation>vertical</orientation>
+					<itemgap>10</itemgap>
+					<usecontrolcoords>true</usecontrolcoords>
+					<!-- ClearLogo on Pause -->
+					<control type="image" id="111">
+						<top>100</top>
+						<width>490</width>
+						<height>190</height>
+						<fadetime>200</fadetime>
+						<texture background="true">$VAR[VideoPlayerClearLogo]</texture>
+						<aspectratio align="left" aligny="center">keep</aspectratio>
+						<visible>!String.IsEmpty(Control.GetLabel(111))</visible>
+					</control>
+					<!-- Title -->
+					<control type="label">
+						<top>187</top>
+						<width>auto</width>
+						<height>70</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>Reg60</font>
+						<textcolor>$INFO[Skin.String(BingieOSDLabelTextColor)]</textcolor>
+						<label>[B]$VAR[OSDLabel4][/B]</label>
+						<scroll>false</scroll>
+						<wrapmultiline>true</wrapmultiline>
+						<visible>!Control.IsVisible(111)</visible>
+					</control>
+					<!-- Sublabel -->
+					<control type="label">
+						<width>auto</width>
+						<font>Reg32</font>
+						<textcolor>$INFO[Skin.String(BingieOSDSubLabelTextColor)]</textcolor>
+						<label>$VAR[OSDLabel5]</label>
+						<scroll>false</scroll>
+					</control>
+				</control>
+			</control>
+
+            <!--OSD Panel-->
+            <control type="group">
+                <visible>!Player.FrameAdvance + !Window.IsActive(sliderdialog) + !Window.IsActive(script-upnext-upnext.xml) + !Window.IsVisible(playerprocessinfo) + !Window.IsActive(pvrosdchannels)</visible>
+                <visible>[Window.IsActive(visualisation) | Window.IsActive(fullscreenvideo)] + !Player.HasGame</visible>
+                <animation type="WindowOpen">
+					<effect type="slide" start="0,400" end="0,0" tween="cubic" easing="out" delay="0" time="450" reversible="false"/>
+					<effect type="fade" start="0" end="100" delay="0" time="350" reversible="false"/>
+				</animation>
+				<animation type="WindowClose" condition="Window.IsVisible(1158)">
+					<effect type="slide" start="0,0" end="0,400" tween="cubic" easing="out" delay="0" time="450" reversible="false"/>
+					<effect type="fade" start="100" end="0" delay="0" time="350" reversible="false"/>
+				</animation>
+				<animation type="Hidden" condition="Skin.HasSetting(EnableOSDInfo)">
+					<effect type="slide" start="0,0" end="0,300" tween="cubic" easing="out" delay="0" time="800" reversible="false"/>
+					<effect type="fade" start="100" end="0" delay="0" time="700" reversible="false"/>
+				</animation>
+				<animation type="WindowClose" condition="!Window.IsVisible(1158)">
+					<effect type="slide" start="0,0" end="0,300" tween="cubic" easing="out" delay="0" time="800" reversible="false"/>
+					<effect type="fade" start="100" end="0" delay="0" time="700" reversible="false"/>
+				</animation>
+                <include condition="!Skin.HasSetting(UseBingieOSD)">OSDPanelModern</include>
+                <include condition="Skin.HasSetting(UseBingieOSD)">OSDPanelBingie</include>
+				<include condition="Skin.HasSetting(UseBingieOSD)">OSDInfoPanelBingie2</include>
+
+                <!-- weather on OSD -->
+                <include condition="!Skin.HasSetting(UseBingieOSD) + Skin.HasSetting(ShowWeatherVideoInfoOSD)">WeatherInfoOSD</include>
+            </control>
+			
+			<!-- Jump to Time Code Overlay -->
+			<control type="group" id="11111">
+				<right>20</right>
+				<top>40</top>
+				<height>180</height>
+				<width>550</width>
+				<visible>!Window.IsActive(videoosd)</visible>
+				<visible>[!String.IsEmpty(Player.SeekNumeric) | !String.IsEmpty(PVR.ChannelNumberInput)]</visible>
+				<animation effect="fade" start="0" end="100" time="250">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="300">Hidden</animation>
+				<control type="image" id="111111">
+					<width>550</width>
+					<height>159</height>
+					<texture colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]">diffuse/panel2.png</texture>
+					<bordersize>20</bordersize>
+				</control>
+				<control type="label" id="11111">
+					<left>47</left>
+					<top>30</top>
+					<width>550</width>
+					<height>50</height>
+					<label>$LOCALIZE[31758]</label>
+					<font>Bold28</font>
+					<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
+					<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
+					<aligny>center</aligny>
+					<align>Left</align>
+					<visible>!String.IsEmpty(Player.SeekNumeric)</visible>
+				</control>
+				<control type="label" id="11111">
+					<left>47</left>
+					<top>76</top>
+					<width>140</width>
+					<height>50</height>
+					<label>$INFO[Player.SeekNumeric(hh:mm:ss)]</label>
+					<font>Bold28</font>
+					<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
+					<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
+					<aligny>center</aligny>
+					<align>left</align>
+					<visible>!String.IsEmpty(Player.SeekNumeric)</visible>
+				</control>
+				<control type="label" id="22222">
+					<top>52</top>
+					<width>550</width>
+					<height>50</height>
+					<label>$INFO[PVR.ChannelNumberInput,$LOCALIZE[19029]: [B],[/B]]</label>
+					<font>Reg44</font>
+					<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
+					<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
+					<aligny>center</aligny>
+					<align>center</align>
+					<visible>!String.IsEmpty(PVR.ChannelNumberInput)</visible>
+				</control>
+			</control>
+        </control>
+        <include condition="Skin.HasSetting(DebugGrid) | Skin.HasSetting(DebugInfo)">DebugInfo</include>
+    </controls>
+</window>

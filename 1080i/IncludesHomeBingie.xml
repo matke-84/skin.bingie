@@ -1,0 +1,865 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<includes>
+    <include name="HomeBingie">
+        <include content="Bingie_Base_BG">
+            <param name="visibility" value="!$EXP[IsPlayingRecognizedContent]" />
+        </include>
+
+        <control type="group" id="9000">
+			<visible>!String.Contains(VideoPlayer.Title,bingie_intro)</visible>
+            <include>HideWindowOnStartupAndDialogInfoLoad</include>
+            <!-- Spotlight BG -->
+            <control type="group">
+                <include>FullscreenDimensions</include>
+                <visible>$EXP[IsCurrentWidgetSpotlight]</visible>
+				<animation effect="fade" start="0" end="100" time="400" condition="!Player.HasVideo">Visible</animation>
+                <control type="list" id="15081">
+                    <visible>$EXP[IsTvShowDBType]</visible>
+                    <left>-100</left>
+                    <top>-100</top>
+                    <preloaditems>1</preloaditems>
+                    <itemlayout/>
+                    <focusedlayout/>
+                    <content sortby="dateadded" sortorder="descending" limit="1">$VAR[SpotlightTVShowEpisodesPath]</content>
+                </control>
+				<include content="Preview_Window">
+                    <param name="id" value="90001" />
+                    <param name="width" value="100%" />
+                    <param name="height" value="100%" />
+                    <param name="overlaywidth" value="100%"/>
+                    <param name="overlayheight" value="100%"/>
+                    <param name="isFullscreen" value="true" />
+                </include>
+                <control type="image">
+                    <visible>!Player.HasVideo</visible>
+                    <fadetime>350</fadetime>
+                    <texture background="true">$VAR[BingieSpotlightBackground]</texture>
+                    <aspectratio aligny="top">scale</aspectratio>
+                    <include condition="Skin.HasSetting(BackgroundAnimation)">BackgroundAnimation</include>
+                    <animation effect="fade" end="0" time="400">Hidden</animation>
+					<animation effect="fade" start="0" end="100" time="1200">Visible</animation>
+                </control>
+			</control>
+			<!-- SPOTLIGHT DIFFUSE VIGNETTE -->
+			<control type="image">
+				<visible>$EXP[IsCurrentWidgetSpotlight]</visible>
+                <include>FullscreenDimensions</include>
+                <colordiffuse>$VAR[BingiePanelColor]</colordiffuse>
+                <texture background="true">bingie/diffuse.png</texture>
+			</control>
+			<control type="group">
+				<animation effect="slide" end="0,-250" time="300" condition="String.IsEqual(Container(77777).CurrentItem,2)">Conditional</animation>
+				<animation effect="slide" end="0,-250" time="300" condition="Integer.IsGreater(Container(77777).NumItems,1) + String.IsEqual(Container(77777).CurrentItem,Container(77777).NumItems) + [Skin.HasSetting(EnableRatings) | Skin.HasSetting(EnableStudioLogo)]">Conditional</animation>
+				<animation effect="slide" end="0,250" time="300" condition="Integer.IsGreater(Container(77777).NumItems,1) + String.IsEqual(Container(77777).CurrentItem,Container(77777).NumItems) + ![Skin.HasSetting(EnableRatings) | Skin.HasSetting(EnableStudioLogo)]">Conditional</animation>
+				<visible>$EXP[IsCurrentWidgetSpotlight]</visible>
+                <include content="Spotlight_MPAA_Flag_Object">
+                    <param name="visibility" value="Integer.IsGreater(Container(1508).NumItems,0) + !Container(1508).IsUpdating" />
+                </include>
+				<include content="Spotlight_MPAA_Flag_Object1">
+                    <param name="visibility" value="Integer.IsGreater(Container(1508).NumItems,0) + !Container(1508).IsUpdating" />
+                </include>
+            </control>
+            <!-- Widgets BG -->
+            <control type="group">
+                <visible>!$EXP[IsCurrentWidgetSpotlight]</visible>
+                <control type="image">
+                    <visible>!$EXP[IsPlayingRecognizedContent]</visible>
+                    <include>FullscreenDimensions</include>
+                    <texture background="true" colordiffuse="$VAR[BingiePanelColor]">colors/color_white.png</texture>
+                    <animation effect="fade" start="100" end="90" delay="0" time="400">Visible</animation>
+                    <animation effect="fade" start="90" end="0" delay="0" time="1200">Hidden</animation>
+                </control>
+            </control>
+
+            <!-- Details Section -->
+            <control type="group">
+                <width>1920</width>
+                <height>525</height>
+                <include content="Preview_Window">
+                    <param name="id" value="90002" />
+                    <param name="visibility" value="!$EXP[IsCurrentWidgetSpotlight]" />
+                </include>
+                <include content="BingieSpotlightCornerImage">
+                    <param name="visibility" value="!$EXP[IsCurrentWidgetSpotlight] + !Player.HasVideo" />
+                    <param name="image" value="$INFO[Control.GetLabel(99004)]" />
+                </include>
+
+                <!-- Spotlight Display -->
+                <include content="SpotlightLoadingSpinner">
+                    <param name="visibility" value="$EXP[IsCurrentWidgetSpotlight]" />
+                </include>
+
+				<!--Spotlight Grouplist, Clearlogo,  Sublabel, Plot & BUTTONS-->
+				<control type="group">
+					<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
+					<include>Animation_Right_Home</include>
+				<control type="grouplist">
+                    <visible>!Skin.HasSetting(DisableSpotlightContent)</visible>
+                    <visible>$EXP[IsCurrentWidgetSpotlight] + Integer.IsGreater(Container(1508).NumItems,0)</visible>
+                    <animation effect="fade" start="0" end="100" time="350" reversible="false">VisibleChange</animation>
+                    <include>SpotlightDisplayWidgetsTransition</include>
+                    <bottom>-245</bottom>
+					<height>625</height>
+					<width>900</width>
+					<align>right</align>
+                    <include>BingieLeftDefs</include>
+                    <orientation>vertical</orientation>
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <itemgap>15</itemgap> 
+
+					<!--  CLEARLOGO SPOTLIGHT -->
+                    <control type="image" id="150885">
+                        <include>Default_Visible_Fade</include>
+						<animation type="conditional" condition="[$EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + !Skin.HasSetting(AutoHidePlotOnIdle) | $EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + Skin.HasSetting(AutoHidePlotOnIdle) | Skin.HasSetting(AutoHidePlotOnIdle) + !Skin.HasSetting(SpotLightTrailers)] + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + !Window.IsActive(1120) + !$EXP[IsMainMenuOpened]" reversible="false">
+							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="5000" />
+							<effect type="slide" end="0,276" tween="sine" easing="in" time="400" delay="5000" />
+                        </animation>
+						<animation type="conditional" condition="Window.IsActive(1120) + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + [String.IsEqual(Container(1508).ListItem.DBTYPE,artist) | String.IsEqual(Container(1508).ListItem.DBTYPE,album)] + [!String.IsEmpty(Container(1508).ListItem.Property(Album_Description)) | !String.IsEmpty(Container(1508).ListItem.Property(Artist_Description))] + !$EXP[IsMainMenuOpened]" reversible="false">
+							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="5000" />
+							<effect type="slide" end="0,276" tween="sine" easing="in" time="400" delay="5000" />
+                        </animation>
+						<animation type="conditional" condition="Window.IsActive(1120) + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + [String.IsEqual(Container(1508).ListItem.DBTYPE,artist) | String.IsEqual(Container(1508).ListItem.DBTYPE,album)] + ![!String.IsEmpty(Container(1508).ListItem.Property(Album_Description)) | !String.IsEmpty(Container(1508).ListItem.Property(Artist_Description))] + !$EXP[IsMainMenuOpened]" reversible="false">
+							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="5000" />
+							<effect type="slide" end="0,94" tween="sine" easing="in" time="400" delay="5000" />
+                        </animation>
+						<animation type="conditional" condition="Window.IsActive(1120) + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + String.IsEqual(Container(1508).ListItem.DBTYPE,song) + !$EXP[IsMainMenuOpened]" reversible="false">
+							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="5000" />
+							<effect type="slide" end="0,94" tween="sine" easing="in" time="400" delay="5000" />
+                        </animation>
+						<height>230</height>                         
+                        <width>594</width>                          
+                        <align>left</align>
+                        <fadetime>350</fadetime>
+                        <aspectratio align="left" aligny="center">keep</aspectratio>
+                        <texture background="true" fallback="colors/color_transparent.png">$VAR[BingieSpotlightLogo]</texture>
+                    </control>
+                    <control type="textbox">
+                        <visible>String.EndsWith(Control.GetLabel(150885),color_transparent.png)</visible>
+						<animation type="conditional" condition="[$EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + !Skin.HasSetting(AutoHidePlotOnIdle) | $EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + Skin.HasSetting(AutoHidePlotOnIdle) | Skin.HasSetting(AutoHidePlotOnIdle) + !Skin.HasSetting(SpotLightTrailers)] + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + !Window.IsActive(1120) + !$EXP[IsMainMenuOpened]" reversible="false">
+							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="5000" />
+							<effect type="slide" end="0,294" tween="sine" easing="in" time="400" delay="5000" />
+                        </animation>
+						<animation type="conditional" condition="Window.IsActive(1120) + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + [String.IsEqual(Container(1508).ListItem.DBTYPE,artist) | String.IsEqual(Container(1508).ListItem.DBTYPE,album)] + [!String.IsEmpty(Container(1508).ListItem.Property(Album_Description)) | !String.IsEmpty(Container(1508).ListItem.Property(Artist_Description))] + !$EXP[IsMainMenuOpened]" reversible="false">
+							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="5000" />
+							<effect type="slide" end="0,294" tween="sine" easing="in" time="400" delay="5000" />
+                        </animation>
+						<animation type="conditional" condition="Window.IsActive(1120) + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + [String.IsEqual(Container(1508).ListItem.DBTYPE,artist) | String.IsEqual(Container(1508).ListItem.DBTYPE,album)] + ![!String.IsEmpty(Container(1508).ListItem.Property(Album_Description)) | !String.IsEmpty(Container(1508).ListItem.Property(Artist_Description))] + !$EXP[IsMainMenuOpened]" reversible="false">
+							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="5000" />
+							<effect type="slide" end="0,78" tween="sine" easing="in" time="400" delay="5000" />
+                        </animation>
+						<animation type="conditional" condition="Window.IsActive(1120) + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + String.IsEqual(Container(1508).ListItem.DBTYPE,song) + !$EXP[IsMainMenuOpened]" reversible="false">
+							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="5000" />
+							<effect type="slide" end="0,78" tween="sine" easing="in" time="400" delay="5000" />
+                        </animation>
+                        <top>-185</top>
+                        <height>195</height>
+                        <width max="800">auto</width>
+                        <align>left</align>
+						<aligny>center</aligny>
+                        <font>title2</font>
+                        <textcolor>$INFO[Skin.String(BingieLabelTextColor)]</textcolor>
+                        <label>[B]$VAR[BingieSpotlightTitle][/B]</label>
+						<autoscroll delay="4000" time="2000" repeat="6000">true</autoscroll>
+                    </control>
+					<!-- Spotlight Top 250 Grouplist -->
+					<control type="grouplist">
+						<visible>!$EXP[IsMainMenuOpened]</visible>
+						<visible>!Skin.HasSetting(DisableSpotlightTop250) + Skin.HasSetting(EnableRatings)</visible>
+						<visible>!String.IsEmpty(Control.GetLabel(823100)) | !String.IsEmpty(Control.GetLabel(82300)) + $EXP[IsTVShowInLastEpisodes]</visible>
+						<visible>!Window.IsActive(1120)</visible>
+						<animation effect="slide" end="0,125" tween="sine" easing="in" time="400" delay="5000" condition="[$EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + !Skin.HasSetting(AutoHidePlotOnIdle) | $EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + Skin.HasSetting(AutoHidePlotOnIdle) | Skin.HasSetting(AutoHidePlotOnIdle) + !Skin.HasSetting(SpotLightTrailers)] + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + !$EXP[IsMainMenuOpened]" reversible="false">Conditional</animation>
+						<orientation>horizontal</orientation>
+						<usecontrolcoords>true</usecontrolcoords>
+						<height>56</height>
+						<width>800</width>
+						<itemgap>15</itemgap>
+					<!-- Home Spotlight Top250 Red Icon -->
+					<control type="image">
+						<visible>!Skin.HasSetting(EnableTop250WhiteLabel)</visible>
+						<visible>!String.IsEmpty(Control.GetLabel(823100))</visible>
+						<posy>5</posy>
+						<left>1</left>
+						<height>50</height>
+						<width>50</width>
+						<aspectratio>keep</aspectratio>
+						<texture>bingie/top250.png</texture>
+					</control>
+					<!-- Home Spotlight Top250 White Icon -->
+					<control type="image">
+						<visible>Skin.HasSetting(EnableTop250WhiteLabel)</visible>
+						<visible>!String.IsEmpty(Control.GetLabel(823100))</visible>
+						<posy>2</posy>
+						<left>1</left>
+						<height>50</height>
+						<width>50</width>
+						<aspectratio>keep</aspectratio>
+						<colordiffuse>$INFO[Skin.String(BingieTop250IconColor)]</colordiffuse>
+						<texture>bingie/top250white.png</texture>
+					</control>
+					<!-- Home Spotlight on IMDB Today Text -->
+					<control type="label" id="823100">
+						<visible>!String.IsEmpty(Control.GetLabel(823100))</visible>
+						<font>bold29</font> 
+						<textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor> 
+						<label>$VAR[IMDBTop250SubLabel,#, $LOCALIZE[31311]]</label>
+						<include>Default_Visible_Fade</include>
+					</control>
+					<!-- Spotlight Watch season xx Now -->
+					<control type="label" id="82300">
+						<visible>!String.IsEmpty(Control.GetLabel(82300)) + String.IsEmpty(Control.GetLabel(823100))</visible>
+						<width>820</width>
+						<font>bold29</font> 
+						<textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor> 
+						<label>$VAR[BingieSublabel]</label>
+						<include>Default_Visible_Fade</include>
+					</control> 
+					</control>	
+					<!-- Music label -->
+					<control type="group">
+						<visible>String.IsEqual(Container(1508).ListItem.DBTYPE,song)</visible>
+                        <include>Default_Visible_Fade</include>
+						<width>820</width>
+						<height>56</height>
+                        <!--Song label-->
+                        <control type="label">
+                            <width>820</width>
+							<height>50</height>
+                            <align>left</align>
+                            <aligny>center</aligny>
+                            <font>bold29</font>
+                         	<textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor>
+                            <label>$INFO[ListItem.Title]</label>
+                        </control>
+					</control>
+					<!-- Plot - Spotlight -->
+                    <control type="textbox">
+						<visible>!$EXP[IsMainMenuOpened]</visible>
+						<visible>!Window.IsActive(1120)</visible>
+                     	<animation type="conditional" condition="[$EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + !Skin.HasSetting(AutoHidePlotOnIdle) | $EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + Skin.HasSetting(AutoHidePlotOnIdle) | Skin.HasSetting(AutoHidePlotOnIdle) + !Skin.HasSetting(SpotLightTrailers)] + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + !$EXP[IsMainMenuOpened]" reversible="false">
+                        <effect type="Fade" start="100" end="0" time="100" delay="5200" />
+                        <effect type="slide" start="0,0" end="0,75" tween="sine" easing="in" time="400" delay="5000" />
+                        </animation>
+						<include>Default_Visible_Fade</include>
+                        <bottom></bottom>
+						<height min="0" max="119">119</height>
+                        <width max="690">auto</width>
+                        <align>left</align>
+                        <font>Plots</font>
+                        <textcolor>$INFO[Skin.String(BingieSpotlightPlotTextColor)]</textcolor> 
+                        <label>$VAR[BingieSpotlightPlot]</label>
+					</control>
+					<!-- Plot - Music Spotlight -->
+					<control type="textbox">
+						<visible>!$EXP[IsMainMenuOpened]</visible>
+						<visible>Window.IsActive(1120) + [String.IsEqual(Container(1508).ListItem.DBTYPE,artist) | String.IsEqual(Container(1508).ListItem.DBTYPE,album)] + [!String.IsEmpty(Container(1508).ListItem.Property(Album_Description)) | !String.IsEmpty(Container(1508).ListItem.Property(Artist_Description))]</visible>
+                     	<animation type="conditional" condition="[$EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + !Skin.HasSetting(AutoHidePlotOnIdle) | $EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + Skin.HasSetting(AutoHidePlotOnIdle) | Skin.HasSetting(AutoHidePlotOnIdle) + !Skin.HasSetting(SpotLightTrailers)] + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + !$EXP[IsMainMenuOpened]" reversible="false">
+                        <effect type="Fade" start="100" end="0" time="100" delay="5200" />
+                        <effect type="slide" start="0,0" end="0,75" tween="sine" easing="in" time="400" delay="5000" />
+                        </animation>
+						<include>Default_Visible_Fade</include>
+                        <bottom></bottom>
+						<height min="0" max="119">119</height>
+                        <width max="690">auto</width>
+                        <align>left</align>
+                        <font>Plots</font>
+                        <textcolor>$INFO[Skin.String(BingieSpotlightPlotTextColor)]</textcolor> 
+                        <label>$VAR[BingieSpotlightPlot]</label>
+					</control>
+					
+					<!-- Spotlight Additional Details Grouplist -->
+					<control type="grouplist">
+						<visible>!$EXP[IsMainMenuOpened]</visible>
+						<visible>!Skin.HasSetting(EnableCastThumb)</visible>
+						<visible>![!String.IsEmpty(Control.GetLabel(823100)) | !String.IsEmpty(Control.GetLabel(82300)) + $EXP[IsTVShowInLastEpisodes]] | !String.IsEmpty(Control.GetLabel(823100)) + [Skin.HasSetting(DisableSpotlightTop250) | !Skin.HasSetting(EnableRatings)]</visible>
+						<visible>!Window.IsActive(1120)</visible>
+						<orientation>horizontal</orientation>
+						<usecontrolcoords>true</usecontrolcoords>
+						<top>14</top>
+						<height>114</height>
+						<width>auto</width>
+						<itemgap>15</itemgap>
+					<!-- Home Spotlight Additional Details Red Icon -->
+					<control type="image">
+						<visible>Skin.HasSetting(EnableColorDetailsIcons)</visible>
+						<visible>!String.IsEmpty(Control.GetLabel(31001))</visible>
+						<posy>14</posy>
+						<left>1</left>
+						<height>70</height>
+						<width>70</width>
+						<aspectratio>keep</aspectratio>
+						<texture>$VAR[BingieMoreDetailsImageSpotlight,bingie/details/,.png]</texture>
+					</control>
+					<!-- Home Spotlight Additional Details White Icon -->
+					<control type="image">
+						<visible>!Skin.HasSetting(EnableColorDetailsIcons)</visible>
+						<visible>!String.IsEmpty(Control.GetLabel(31001))</visible>
+						<posy>14</posy>
+						<left>1</left>
+						<height>70</height>
+						<width>70</width>
+						<aspectratio>keep</aspectratio>
+						<colordiffuse>$INFO[Skin.String(BingieAdditionalInfoIconsColor)]</colordiffuse>
+						<texture>$VAR[BingieMoreDetailsImageSpotlight,bingie/details/white/,.png]</texture>
+					</control>		
+					<!-- Home Spotlight Additional Details Text -->
+					<control type="textbox" id="31001">
+						<visible>!String.IsEmpty(Control.GetLabel(31001))</visible>
+						<height>115</height>
+						<width>650</width>
+						<left>10</left>			
+						<bottom>8</bottom> 				
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>Reg28</font> 
+						<textcolor>$INFO[Skin.String(BingieAdditionalInfoTextColor)]</textcolor>
+						<autoscroll>false</autoscroll>					
+						<label>$VAR[BingieMoreDetailsSpotlight]</label>
+					</control>
+					</control>
+
+					<!-- Spotlight Additional Details Grouplist -->
+					<control type="grouplist">
+						<visible>!$EXP[IsMainMenuOpened]</visible>
+						<visible>Skin.HasSetting(EnableCastThumb)</visible>
+						<visible>![!String.IsEmpty(Control.GetLabel(823100)) | !String.IsEmpty(Control.GetLabel(82300)) + $EXP[IsTVShowInLastEpisodes]] | !String.IsEmpty(Control.GetLabel(823100)) + [Skin.HasSetting(DisableSpotlightTop250) | !Skin.HasSetting(EnableRatings)]</visible>
+						<visible>!Window.IsActive(1120)</visible>
+						<orientation>horizontal</orientation>
+						<usecontrolcoords>true</usecontrolcoords>
+						<top>14</top>
+						<height>114</height>
+						<width>auto</width>
+						<itemgap>15</itemgap>
+					<!-- Home Spotlight Additional Details Red Icon -->
+					<control type="image">
+						<visible>Skin.HasSetting(EnableColorDetailsIcons)</visible>
+						<visible>!String.IsEmpty(Control.GetLabel(31002))</visible>
+						<visible>[String.IsEmpty(Container(99950).ListItem.Property(Cast.1.Thumb)) + [[String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),9)]]] | ![[String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),9)]]</visible>
+						<posy>14</posy>
+						<left>1</left>
+						<height>70</height>
+						<width>70</width>
+						<aspectratio>keep</aspectratio>
+						<texture>$VAR[BingieMoreDetailsImageSpotlight,bingie/details/,.png]</texture>
+					</control>
+					<!-- Home Spotlight Additional Details White Icon -->
+					<control type="image">
+						<visible>!Skin.HasSetting(EnableColorDetailsIcons)</visible>
+						<visible>!String.IsEmpty(Control.GetLabel(31002))</visible>
+						<visible>[String.IsEmpty(Container(99950).ListItem.Property(Cast.1.Thumb)) + [[String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),9)]]] | ![[String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),9)]]</visible>
+						<posy>14</posy>
+						<left>1</left>
+						<height>70</height>
+						<width>70</width>
+						<aspectratio>keep</aspectratio>
+						<colordiffuse>$INFO[Skin.String(BingieAdditionalInfoIconsColor)]</colordiffuse>
+						<texture>$VAR[BingieMoreDetailsImageSpotlight,bingie/details/white/,.png]</texture>
+					</control>	
+					<!-- Cast Thumb -->
+					<control type="group">
+						<visible>!String.IsEmpty(Container(99950).ListItem.Property(Cast.1.Thumb)) + [[String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),9)]]</visible>
+						<height>70</height> 
+						<width>70</width>
+					<control type="image">						
+						<visible>!String.IsEmpty(Control.GetLabel(31002))</visible>
+						<posy>14</posy>
+						<left>1</left>
+						<height>70</height>
+						<width>70</width>
+						<colordiffuse>$INFO[Skin.String(BingieAdditionalInfoIconsColor)]</colordiffuse>
+                        <texture>bingie/circle_back.png</texture>
+					</control>
+					<control type="image">
+						<visible>!String.IsEmpty(Control.GetLabel(31002))</visible>
+						<posy>17</posy>
+						<left>4</left>
+						<height>64</height>
+						<width>64</width>
+						<aspectratio scalediffuse="false" align="center" aligny="center">scale</aspectratio>
+                        <texture diffuse="diffuse/circle_diffuse.png">$INFO[Container(99950).ListItem.Property(Cast.1.Thumb)]</texture>
+					</control>
+					</control>					
+					<!-- Home Spotlight Additional Details Text -->
+					<control type="textbox" id="31002">
+						<visible>!String.IsEmpty(Control.GetLabel(31002))</visible>
+						<visible>[String.IsEmpty(Container(99950).ListItem.Property(Cast.1.Thumb)) + [[String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),9)]]] | ![[String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),9)]]</visible>
+						<height>115</height>
+						<width>650</width>
+						<left>10</left>			
+						<bottom>8</bottom> 				
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>Reg28</font> 
+						<textcolor>$INFO[Skin.String(BingieAdditionalInfoTextColor)]</textcolor>
+						<autoscroll>false</autoscroll>					
+						<label>$VAR[BingieMoreDetailsSpotlight]</label>
+					</control>
+					<control type="textbox" id="31002">
+						<visible>!String.IsEmpty(Control.GetLabel(31002))</visible>
+						<visible>!String.IsEmpty(Container(99950).ListItem.Property(Cast.1.Thumb)) + [[String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),9)]]</visible>
+						<height>115</height>
+						<width>650</width>
+						<left>10</left>			
+						<bottom>8</bottom> 				
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>Reg28</font> 
+						<label>$INFO[Container(99950).ListItem.Property(Cast.1.Name),$LOCALIZE[31100] ]</label>
+						<autoscroll>false</autoscroll>					
+						<label>$VAR[BingieMoreDetailsSpotlight]</label>
+					</control>
+					</control>	
+
+					<!-- Spotlight Additional Details Grouplist for Music Hub -->
+					<control type="grouplist">
+						<visible>!$EXP[IsMainMenuOpened]</visible>
+						<visible>Window.IsActive(1120)</visible>
+						<orientation>horizontal</orientation>
+						<usecontrolcoords>true</usecontrolcoords>
+						<top>14</top>
+						<height>114</height>
+						<width>auto</width>
+						<itemgap>15</itemgap>
+					<!-- Home Spotlight Additional Details Red Icon -->
+					<control type="image">
+						<visible>Skin.HasSetting(EnableColorDetailsIcons)</visible>
+						<posy>14</posy>
+						<left>1</left>
+						<height>70</height>
+						<width>70</width>
+						<aspectratio>keep</aspectratio>
+						<texture>bingie/details/music_genre.png</texture>
+					</control>
+					<!-- Home Spotlight Additional Details White Icon -->
+					<control type="image">
+						<visible>!Skin.HasSetting(EnableColorDetailsIcons)</visible>
+						<posy>14</posy>
+						<left>1</left>
+						<height>70</height>
+						<width>70</width>
+						<aspectratio>keep</aspectratio>
+						<colordiffuse>$INFO[Skin.String(BingieAdditionalInfoIconsColor)]</colordiffuse>
+						<texture>bingie/details/white/music_genre.png</texture>
+					</control>		
+					<!-- Home Spotlight Additional Details Text -->
+					<control type="textbox">
+						<height>115</height>
+						<width>650</width>
+						<left>10</left>			
+						<bottom>8</bottom> 				
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>Reg28</font> 
+						<textcolor>$INFO[Skin.String(BingieAdditionalInfoTextColor)]</textcolor>
+						<autoscroll>false</autoscroll>					
+						<label fallback="$LOCALIZE[29921]">$VAR[BingieMoreDetailsSpotlight]</label>
+					</control>
+					</control>					
+			
+                    <!-- Buttons -->
+                    <include content="Spotlight_Buttons">
+                        <param name="top" value="10"/>  
+                    </include>
+				</control>
+				</control>
+
+                <!-- Widgets Display -->
+                <control type="grouplist">
+                    <visible>!$EXP[IsCurrentWidgetSpotlight]</visible>
+                    <animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
+                    <include>WidgetsDisplaySpotlightTransition</include>
+                    <width>1500</width>
+                    <include>BingieLeftDefs</include>
+                    <top>10</top>  
+                    <height>600</height>
+                    <orientation>vertical</orientation>
+                    <usecontrolcoords>true</usecontrolcoords>
+                    <itemgap>10</itemgap>
+                    <!-- Movies and Episodes Info Slide-down -->
+                    <animation effect="slide" start="0" end="0,130" time="0" condition="Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1) | [$EXP[IsMainMenuOpened] + Integer.IsGreater(Window(Home).Property(ListItem.PercentPlayed),1)]">Conditional</animation>
+					<animation effect="slide" start="0" end="0,180" time="0" condition="$EXP[IsCategoryDBType]">Conditional</animation>
+
+                    <include content="Bingie_Headline_Item">
+                        <param name="id" value="9000" />
+                        <param name="image" value="$VAR[BingieInfoClearlogo]" />
+                        <param name="text" value="$VAR[BingieInfoLabel]" />
+                    </include>
+
+                    <!-- Details Row at Top-->
+                    <control type="group">				
+					<visible>!$EXP[IsMainMenuOpened]</visible>
+					<visible>!$EXP[IsCategoryDBType] + !$EXP[IsMusicDBType]</visible>
+                        <visible>Skin.HasSetting(MovieDetailsHome) + !Integer.IsGreater(ListItem.PercentPlayed,1) | !Skin.HasSetting(MovieDetailsHome)</visible>						
+                        <include>Default_Visible_Fade</include>
+                        <top>-7</top>
+                        <width>1000</width>
+                        <height>55</height>
+                        <include>SpotlightRowDetails</include>
+                    </control>
+					
+					<!-- Details Row at Top-->
+                    <control type="group">				
+					<visible>!$EXP[IsMainMenuOpened]</visible>
+					<visible>$EXP[IsMusicDBType]</visible>					
+                        <include>Default_Visible_Fade</include>
+                        <top>-7</top>
+                        <width>1000</width>
+                        <height>55</height>
+                        <include>MusicRowDetails</include>
+                    </control>
+
+                    <!-- TV shows Seasons and Episodes -->
+					<control type="group">
+						<visible>!$EXP[IsCategoryDBType]</visible>
+						<visible>!Skin.HasSetting(MovieDetailsHome)</visible>
+						<visible>!$EXP[IsMainMenuOpened]</visible>
+                        <visible>$EXP[IsEpisodeDBType]</visible>
+                        <include>Default_Visible_Fade</include>
+						<height>45</height>
+						<width>650</width>
+                    <control type="group">
+						<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
+						<include>Animation_Right_Home</include>
+						<height>45</height>
+						<width>650</width>
+                        <!--Season/Episode label-->
+                        <control type="label">
+                            <height>45</height>
+                            <width>650</width>
+                            <align>left</align>
+							<posx>-6</posx>
+                            <aligny>center</aligny>
+                            <font>bold29</font>
+                         	<textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor>
+                            <label>$VAR[BingieEpisodeInfoHeader]</label>
+                        </control>
+                    </control>
+					</control>
+					
+					<!-- TV shows Seasons and Episodes -->
+					<control type="group">
+						<visible>!$EXP[IsCategoryDBType]</visible>
+						<visible>Skin.HasSetting(MovieDetailsHome)</visible>
+						<visible>!$EXP[IsMainMenuOpened]</visible>
+                        <visible>$EXP[IsEpisodeDBType]</visible>
+						<visible>![Integer.IsGreater(ListItem.PercentPlayed,1) | [$EXP[IsMainMenuOpened] + Integer.IsGreater(Window(Home).Property(ListItem.PercentPlayed),1)]]</visible>
+                        <include>Default_Visible_Fade</include>
+						<height>45</height>
+						<width>650</width>
+                    <control type="group">
+						<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
+						<include>Animation_Right_Home</include>
+						<height>45</height>
+						<width>650</width>
+                        <!--Season/Episode label-->
+                        <control type="label">
+                            <height>45</height>
+                            <width>650</width>
+                            <align>left</align>
+							<posx>-6</posx>
+                            <aligny>center</aligny>
+                            <font>bold29</font>
+                         	<textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor>
+                            <label>$VAR[BingieEpisodeInfoHeader]</label>
+                        </control>
+                    </control>
+					</control>
+					
+					<!-- Music label -->
+					<control type="group">
+						<visible>String.IsEqual(ListItem.DBTYPE,song)</visible>
+                        <include>Default_Visible_Fade</include>
+						<height>45</height>
+						<width>650</width>
+                    <control type="group">
+						<height>45</height>
+						<width>650</width>
+                        <!--Song label-->
+                        <control type="label">
+                            <height>45</height>
+                            <width>650</width>
+                            <align>left</align>
+                            <aligny>center</aligny>
+                            <font>bold29</font>
+                         	<textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor>
+                            <label>$INFO[ListItem.Title]</label>
+                        </control>
+                    </control>
+					</control>
+					
+					<!-- TV shows Seasons and Episodes for Continue Watching -->
+                    <control type="group">
+					<visible>!$EXP[IsCategoryDBType]</visible>
+					<visible>Skin.HasSetting(MovieDetailsHome)</visible>
+					<visible>!$EXP[IsMainMenuOpened]</visible>
+                        <visible>$EXP[IsEpisodeDBType]</visible>
+						<visible>Integer.IsGreater(ListItem.PercentPlayed,1) | [$EXP[IsMainMenuOpened] + Integer.IsGreater(Window(Home).Property(ListItem.PercentPlayed),1)]</visible>
+                        <include>Default_Visible_Fade</include>
+						<height>28</height>
+						<width>650</width>
+                        <!--Season/Episode label-->
+                        <control type="label">
+                            <height>28</height>
+                            <width>650</width>
+                            <align>left</align>
+							<posx>-9</posx>
+							<posy>2</posy>
+                            <aligny>center</aligny>
+                            <font>Reg36</font>
+                         	<textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor>
+                            <label>$VAR[BingieEpisodeInfoHeader]</label>
+                        </control>
+                    </control>
+				
+						<!-- Movie and TV Show Continue Watching -->
+                        <control type="group">
+							<visible>!$EXP[IsCategoryDBType]</visible>
+                            <visible>Skin.HasSetting(MovieDetailsHome)</visible>
+							<visible>Integer.IsGreater(ListItem.PercentPlayed,1) | [$EXP[IsMainMenuOpened] + Integer.IsGreater(Window(Home).Property(ListItem.PercentPlayed),1)]</visible>
+                            <top>29</top>
+							<left>1</left>
+							<width>650</width>
+                            <height>30</height>
+                            <aligny>center</aligny>
+                            <control type="progress">
+                                <width>185</width>
+                                <height>8</height>
+                                <texturebg colordiffuse="$INFO[Skin.String(BingieDetailsFlagColor)]" border="0">diffuse/panel2.png</texturebg>
+                                <lefttexture/>
+                                <midtexture colordiffuse="$INFO[Skin.String(BingieProgressBarColor)]" border="4">diffuse/panel2.png</midtexture>
+                                <righttexture/>
+                                <info>ListItem.PercentPlayed</info>
+                            </control>
+                            <control type="label">
+                                <top>-11</top>
+                                <left>214</left>
+                                <height>25</height>
+                                <width>450</width>
+                                <font>Reg26</font>
+                                <textcolor>$INFO[Skin.String(BingieHomeProgressBarTextColor)]</textcolor>
+                                <label>$VAR[PercentRemained,,% $LOCALIZE[31059]]</label>
+                            </control>
+                        </control>
+					<control type="grouplist">
+						<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
+						<include>Animation_Right_Home</include>
+						<width>1500</width>
+						<height>600</height>
+						<orientation>vertical</orientation>
+						<usecontrolcoords>true</usecontrolcoords>
+						<itemgap>5</itemgap>
+					<!-- Bingie Home Top 250/Sublabel/watch xx Now -->
+					<control type="grouplist">
+							<orientation>horizontal</orientation>
+							<visible>!$EXP[IsMainMenuOpened]</visible>
+							<visible>!$EXP[IsEpisodeDBType]</visible>
+							<visible>!$EXP[IsCategoryDBType]</visible>
+							<visible>!Skin.HasSetting(DisableTop250) + Skin.HasSetting(EnableRatings) + !String.IsEmpty(Control.GetLabel(8231)) + !Integer.IsGreater(ListItem.PercentPlayed,1) | !Skin.HasSetting(DisableTop250) + Skin.HasSetting(EnableRatings) + !String.IsEmpty(Control.GetLabel(823)) + $EXP[IsTVShowInLastEpisodes] + !Integer.IsGreater(ListItem.PercentPlayed,1) | 
+							!Skin.HasSetting(DisableTop250) + Skin.HasSetting(EnableRatings) + !String.IsEmpty(Control.GetLabel(8231)) + !Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1)</visible>
+							<animation effect="fade" time="150">Visible</animation>
+							<height>55</height>
+							<width>800</width>
+							<top>-5</top>
+							<aligny>center</aligny> 
+							<usecontrolcoords>true</usecontrolcoords>
+							<itemgap>15</itemgap>
+						<!-- Spotlight Details Row Top250 Red Icon -->
+						<control type="image">
+								<visible>!Skin.HasSetting(EnableTop250WhiteLabel)</visible>
+								<visible>!String.IsEmpty(Control.GetLabel(8231))</visible>
+								<posy>5</posy>
+								<left>1</left>
+								<height>50</height>
+								<width>50</width>
+								<aspectratio>keep</aspectratio>
+								<texture>bingie/top250.png</texture>
+						</control>
+						<!-- Spotlight Details Row Top250 White Icon -->
+						<control type="image">
+								<visible>Skin.HasSetting(EnableTop250WhiteLabel)</visible>
+								<visible>!String.IsEmpty(Control.GetLabel(8231))</visible>
+								<posy>5</posy>
+								<left>1</left>
+								<height>50</height>
+								<width>50</width>
+								<aspectratio>keep</aspectratio>
+								<colordiffuse>$INFO[Skin.String(BingieTop250IconColor)]</colordiffuse>
+								<texture>bingie/top250white.png</texture>
+						</control>
+						<!-- Spotlight Text Label Top250 -->	
+						<control type="label" id="8231">
+							<visible>!$EXP[IsEpisodeDBType]</visible>
+							<visible>!String.IsEmpty(Control.GetLabel(8231))</visible>
+							<font>bold29</font> 
+							<textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor>
+							<label>$VAR[IMDBTop250SubLabel,#, $LOCALIZE[31311]]</label>
+							<include>Default_Visible_Fade</include>
+						</control>	
+							<!-- Tagline/Watch xx Now -->
+						<control type="label" id="823">
+								<visible>!$EXP[IsCategoryDBType]</visible>
+								<visible>!$EXP[IsEpisodeDBType]</visible>
+								<visible>!String.IsEmpty(Control.GetLabel(823)) + String.IsEmpty(Control.GetLabel(8231))</visible>
+								<width>820</width>
+								<font>bold29</font> 
+								<textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor> 
+								<label>$VAR[BingieSublabel]</label>
+								<include>Default_Visible_Fade</include>
+						</control> 
+					</control>	
+
+					<!-- Bingie Home Plot -->
+                    <control type="textbox" id="90009">
+					<visible>!$EXP[IsMainMenuOpened]</visible>
+					<visible>!$EXP[IsCategoryDBType]</visible>
+                        <visible>Skin.HasSetting(MovieDetailsHome) + !Integer.IsGreater(ListItem.PercentPlayed,1) | !Skin.HasSetting(MovieDetailsHome)</visible>
+						<visible>!String.IsEqual(ListItem.DBTYPE,song)</visible>
+                        <include>Default_Visible_Fade</include>
+						<top>5</top>
+						<height min="30" max="121">auto</height>
+                        <width max="820">auto</width>
+                        <align>left</align>
+                        <font>Plots</font>
+						<textcolor>$INFO[Skin.String(BingiePlotTextColor)]</textcolor>
+                        <label>$VAR[BingiePlot]</label>
+                    </control>
+
+                    <!-- Additional Info -->
+					<control type="group">
+						<top>5</top>
+                    <include content="Bingie_Additional_Info">
+                        <param name="visibility" value="!$EXP[IsEpisodeDBType] + !$EXP[IsCategoryDBType] + !$EXP[IsMainMenuOpened] + !$EXP[IsTVShowInLastEpisodes] | [Skin.HasSetting(DisableTop250) | !Skin.HasSetting(EnableRatings)] + !$EXP[IsEpisodeDBType] + !$EXP[IsCategoryDBType] + !$EXP[IsMainMenuOpened]"/>
+                    </include>
+					</control>
+                </control>
+				</control>
+                <!-- Footer -->
+				<control type="group">
+						<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
+						<include>Animation_Right_Home</include>
+						<include>Bingie_Footer</include>
+						<animation effect="slide" end="0,40" time="300" condition="!$EXP[IsCurrentWidgetSpotlight] + String.IsEqual(Skin.String(widgetstyle),landscape)">Conditional</animation>
+						<animation effect="fade" start="100" end="0" time="300" condition="[$EXP[IsCurrentWidgetSpotlight] + Skin.HasSetting(EnableFooterBarOnSpotlight)] | [!$EXP[IsCurrentWidgetSpotlight] + Skin.HasSetting(EnableFooterBarOnWidgets)] | [Skin.HasSetting(HideMediaFlagsTrailer) + $EXP[IsPlayingUnrecognizedContent]] | $EXP[IsCategoryDBType]">Conditional</animation>
+				</control>
+            </control>
+			
+			<control type="group">
+				<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
+				<include>Animation_Right_Home</include>
+            <!-- Widgets -->
+            <control type="grouplist" id="77777">
+                <animation time="300" effect="fade" start="100" end="70" reversible="true" easing="inout" condition="$EXP[IsMainMenuOpened] + !$EXP[IsPlayingRecognizedContent]">Conditional</animation>
+				<animation effect="slide" end="0,33" time="300" condition="$EXP[IsCurrentWidgetSpotlight]">Conditional</animation>
+				<animation effect="slide" end="0,40" time="300" condition="!$EXP[IsCurrentWidgetSpotlight] + [String.IsEqual(Skin.String(widgetstyle),landscape) + !Window.IsActive(1120)]">Conditional</animation>
+				<animation effect="slide" end="0,40" time="300" condition="Window.IsActive(1120)">Conditional</animation>
+                <usecontrolcoords>true</usecontrolcoords>
+				<top>571</top>
+                <include condition="[Window.IsActive(Home) | [$EXP[IsBingieHubsActive] + [Skin.HasSetting(LockHubWidgets) | Window.IsActive(1114)]]]">Fixed_Focus_Bottom</include>
+                <bottom>0</bottom>
+                <include condition="[Window.IsActive(Home) | [$EXP[IsBingieHubsActive] + [Skin.HasSetting(LockHubWidgets) | Window.IsActive(1114)]]]">Fixed_Focus_Itemgap</include>
+                <itemgap>2</itemgap>
+                <pagecontrol>317</pagecontrol>
+                <width>2070</width>
+                <onback condition="$EXP[IsPlayingRecognizedContent]">SetFocus(509)</onback>
+                <onback condition="!$EXP[IsPlayingRecognizedContent] + $EXP[IsBingieViewsActive]">900</onback>
+                <onleft condition="$EXP[IsBingieViewsActive] + $EXP[IsPlayingUnrecognizedContent]">SetProperty(KeepPlayingPreview,1,Home)</onleft>
+                <onleft condition="$EXP[IsBingieViewsActive]">900</onleft>
+                <include content="BingieSpotlightWidget" condition="[Window.IsActive(Home) | $EXP[IsBingieHubsActive]] + !Skin.HasSetting(DisableSpotlightContent)">
+                    <param name="widgetid" value="1508"/>
+                </include>
+                <include condition="Window.IsActive(Home)">skinshortcuts-template-Widgets</include>
+                <include condition="Window.IsActive(1110)">bingie_items_tvshows</include>
+                <include condition="Window.IsActive(1111)">bingie_items_movies</include>
+                <include condition="Window.IsActive(1112)">bingie_items_new</include>
+                <include condition="Window.IsActive(1113)">bingie_items_myhub</include>
+                <include condition="Window.IsActive(1114)">bingie_items_mylist</include>
+                <include condition="Window.IsActive(1115)">bingie_items_mycustom</include>
+				<include condition="Window.IsActive(1120)">bingie_items_music</include>				
+            </control>
+			
+			<include condition="String.IsEqual(Skin.String(widgetstyle),poster) + !Skin.HasSetting(DisableDummySpotlight) + !Window.IsActive(1120)">SpotlightDummyPosterWidget</include>
+            <include condition="String.IsEqual(Skin.String(widgetstyle),landscape) + !Skin.HasSetting(DisableDummySpotlight) + !Window.IsActive(1120)">SpotlightDummyLandscapeWidget</include>
+			<include condition="!Skin.HasSetting(DisableDummySpotlight) + Window.IsActive(1120)">SpotlightDummySquareWidget</include>
+         			
+			<!-- Fixed Focus Frame -->
+			<control type="group">
+				<include condition="Skin.HasSetting(EnableFixedFrameWidgets) + [Window.IsActive(Home) | $EXP[IsBingieHubsActive2] + Skin.HasSetting(LockHubWidgets)]">Bingie_Screens_Fixed_Focus_Frame</include>
+				<animation effect="slide" end="0,40" time="0" condition="!$EXP[IsCurrentWidgetSpotlight] + [String.IsEqual(Skin.String(widgetstyle),landscape) + !Window.IsActive(1120)]">Conditional</animation>
+				<animation effect="slide" end="0,40" time="300" condition="Window.IsActive(1120)">Conditional</animation>
+			</control>
+				<!-- gradient overlays on widgets -->
+                <include>Bingie_Left_Gradient</include>
+			</control>
+	
+			<!--Bingie Logo Diffuse-->
+			<control type="image">
+				<visible>!Skin.HasSetting(DisableBingieLogo) + [Window.IsActive(Home) | Window.IsActive(1110) | Window.IsActive(1111) | Window.IsActive(1112) | Window.IsActive(1113) | Window.IsActive(1120) | [Window.IsActive(1114) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),poster)]]]</visible> 
+				<description>diffuse behind Bingie logo</description>
+				<animation effect="slide" end="-66" time="0" condition="Window.IsActive(1110) | Window.IsActive(1111) | Window.IsActive(1114)">Conditional</animation>
+				<right>470</right>
+				<bottom>0</bottom>
+				<width>0</width>
+				<height>223</height>
+				<align>right</align>
+				<aspectratio align="right">keep</aspectratio>
+				<colordiffuse>80000000</colordiffuse>
+                <texture background="true">home/bingie_diffuse.png</texture>
+			</control>
+			<!--Bingie Logo-->
+			<control type="image">
+				<visible>!Skin.HasSetting(DisableBingieLogo) + !Window.IsActive(1110) + !Window.IsActive(1111) + !Window.IsActive(1114) + !Window.IsActive(1115) + !Window.IsActive(1120)</visible>
+				<description>Bingie logo</description>
+				<right>321</right>
+				<bottom>12</bottom>
+				<width>0</width>
+				<height>165</height>
+				<align>right</align>
+				<aspectratio align="right">keep</aspectratio>
+				<texture>home/bingie_logo.png</texture>
+			</control>
+
+			<control type="grouplist">
+				<visible>!Skin.HasSetting(DisableBingieLogo) + [Window.IsActive(1110) | Window.IsActive(1111) | Window.IsActive(1120) | Window.IsActive(1114) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),poster)]]</visible>
+				<orientation>horizontal</orientation>
+				<height>56</height>
+				<width>300</width>
+				<itemgap>10</itemgap>
+				<right>130</right>
+				<top>973</top>
+				<align>right</align>
+			<control type="image">
+				<width>9</width>
+				<height>40</height>
+				<texture background="true" colordiffuse="ffE50914">bingie/line.png</texture>
+			</control>
+			<control type="label">
+				<width>auto</width>
+				<aligny>center</aligny>
+				<height>39</height>
+                <font>bold38</font>
+				<align>right</align>
+				<label>$VAR[HubNames]</label>
+			</control>
+			</control>								       
+
+		<include>Header</include>
+
+        <include content="Dim_Overlay">
+            <param name="visibility" value="$EXP[IsMainMenuOpened]" />
+        </include>
+		<control type="group">
+			<include>BingieSideBladeMainMenu</include>
+			<animation effect="fade" start="100" end="50" time="300" condition="!Control.IsVisible(40003) + !$EXP[IsMainMenuOpened] + !$EXP[IsCurrentWidgetSpotlight] + [Window.IsActive(Home) | $EXP[IsBingieHubsActive2]] + Container.HasPrevious">Conditional</animation>
+		</control>	 
+		<!-- Snow Effect -->
+        <control type="group">
+            <include condition="String.IsEqual(Skin.String(season_greetings),snow_animation)">snow</include>
+        </control>
+		<!-- Halloween Effect -->
+        <control type="group">
+            <include condition="String.IsEqual(Skin.String(season_greetings),halloween_animation)">pumpkin</include>
+        </control>
+		</control>
+    </include>
+	
+</includes>

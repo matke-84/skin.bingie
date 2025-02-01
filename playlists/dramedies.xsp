@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Dramedies</name>
+    <match>all</match>
+    <rule field="genre" operator="is">
+        <value>Comedy</value>
+    </rule>
+    <rule field="genre" operator="is">
+        <value>Drama</value>
+    </rule>
+    <rule field="votes" operator="greaterthan">
+        <value>100</value>
+    </rule>
+    <rule field="tag" operator="isnot">
+        <value>stand-up comedy</value>
+    </rule>
+    <order direction="descending">year</order>
+</smartplaylist>

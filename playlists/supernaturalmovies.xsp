@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Supernatural Movies</name>
+    <match>all</match>
+    <rule field="tag" operator="is">
+        <value>paranormal</value>
+        <value>paranormal activity</value>
+        <value>paranormal investigation</value>
+        <value>paranormal phenomena</value>
+        <value>supernatural</value>
+        <value>supernatural being</value>
+        <value>supernatural horror</value>
+        <value>supernatural power</value>
+    </rule>
+    <order direction="descending">year</order>
+</smartplaylist>

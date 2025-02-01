@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<includes>	  
+ 
+    <include name="NowPlayingBackground">
+        <control type="group">
+            <visible>Player.HasVideo</visible>
+            <visible>![!String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia)) + Player.HasAudio]</visible>
+			<include condition="Player.HasVideo">NowPlayingVideoBackground</include>
+            
+            <!--Background Overlay-->
+            <control type="group">
+				<animation effect="fade" time="350" condition="Skin.HasSetting(EnableOSDInfo)">WindowOpen</animation>
+				<animation effect="fade" time="350" condition="Skin.HasSetting(EnableOSDInfo)">WindowClose</animation>
+                <visible>![Window.IsActive(tvguide) + !String.IsEmpty(Window(Home).Property(pvrGuideOnFullscreenVideo))] + !Window.IsActive(visualisation)</visible>
+				<visible>![Player.HasAudio + Window.IsVisible(DialogVideoInfo.xml)]</visible>
+                <control type="image">
+                    <description>panel diffuse bg</description>
+                    <include>FullscreenDimensions</include>
+                    <texture>colors/color_white.png</texture>
+                    <visible>!Window.IsActive(visualisation)</visible>
+                    <colordiffuse>$INFO[Skin.String(BackgroundColor)]</colordiffuse>
+                    <visible>Skin.String(BackgroundColor) + !String.IsEqual(Skin.String(BackgroundColor),None)</visible>
+                    <visible>!Window.IsActive(visualisation)</visible>
+                    <animation effect="fade" start="100" end="70" time="150" condition="String.IsEmpty(Window.Property(HideNowPlaying))">Conditional</animation>
+					<animation effect="fade" start="100" end="0" time="0" condition="!String.IsEmpty(Window.Property(HideNowPlaying))">Conditional</animation>
+                </control>
+            </control>           
+        </control>
+    </include>
+    
+    <include name="NowPlayingMusicBackground">
+        <control type="group">
+            <control type="visualisation" id="2">
+                <description>visualisation</description>
+                <include>FullscreenDimensions</include>
+                <visible>Visualisation.Enabled + ![String.IsEqual(Visualisation.Name,waveform) | String.IsEqual(Visualisation.Name,opengl spectrum) | String.IsEqual(Visualisation.Name,directx spectrum)] + !String.IsEmpty(Visualisation.Name) + !String.IsEqual(Visualisation.Name,None)</visible>
+            </control>
+            <!-- music fanart -->
+            <control type="multiimage" id="3333">
+				<visible>!Visualisation.Enabled</visible>
+                <aspectratio>scale</aspectratio>
+                <include>FullscreenDimensions</include>
+                <timeperimage>20000</timeperimage>
+                <randomize>true</randomize>
+                <fadetime>600</fadetime>
+                <loop>yes</loop>
+                <imagepath background="true">$VAR[music_fanart]</imagepath>
+                <animation effect="fade" start="100" end="20" time="0" condition="Visualisation.Enabled + ![String.IsEqual(Visualisation.Name,waveform) | String.IsEqual(Visualisation.Name,opengl spectrum) | String.IsEqual(Visualisation.Name,directx spectrum)] + !String.IsEmpty(Visualisation.Name) + !String.IsEqual(Visualisation.Name,None)">Conditional</animation>
+                <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animateMusicArt)">Conditional</animation>
+                <animation effect="slide" start="-10,-10" end="10,10" time="8000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(animateMusicArt)">Conditional</animation>
+            </control>
+            <control type="visualisation" id="2">
+                <description>visualisation</description>
+                <include>FullscreenDimensions</include>
+                <visible>Visualisation.Enabled + [String.IsEqual(Visualisation.Name,waveform) | String.IsEqual(Visualisation.Name,opengl spectrum) | String.IsEqual(Visualisation.Name,directx spectrum)]</visible>
+            </control>
+        </control>
+    </include>
+    
+	<include name="NowPlayingVideoBackground">
+		<control type="group">
+            <visible>Player.HasVideo</visible>
+            
+            <!-- black background -->
+            <control type="image">
+                <include>FullscreenDimensions</include>
+                <texture>colors/color_black.png</texture>
+            </control>
+            
+			<control type="videowindow">
+				<include>FullscreenDimensions</include>
+			</control>
+            
+		</control>
+	</include>
+    
+    <variable name="music_fanart">
+		<value condition="!String.IsEmpty(Player.Art(fanart))">$INFO[Player.Art(fanart)]</value>
+        <value condition="Skin.String(MusicBackground)">$INFO[Skin.String(MusicBackground)]</value>
+        <value>colors/color_black.png</value>
+    </variable>
+	
+</includes>

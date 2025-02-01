@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<includes>
+    <include name="View_55_BannerList">
+        <!--View 55-->
+        <control type="group">
+            <visible>Control.IsVisible(55)</visible>
+            <include>animation_view_change</include>
+			
+			<control type="group">
+				<animation effect="slide" end="7" time="0" condition="Skin.HasSetting(View55_ShowInfoRight)">Conditional</animation>
+				<include>MovieDetailsLeft</include>
+			</control>
+			
+			<!-- ID="52" -->
+            <control type="panel" id="55">
+                <animation effect="slide" end="-630" time="0" condition="Skin.HasSetting(View55_ShowInfoRight)">Conditional</animation>
+                <right>45</right>
+				<bottom>153</bottom>
+                <height>720</height>
+				<width>1196</width>
+                <onup>55</onup>
+                <ondown>55</ondown>
+                <onleft>9000</onleft>
+				<onleft>CancelAlarm(preview_delay,silent)</onleft>
+				<onleft>CancelAlarm(preview_delay,silent)</onleft>
+				<onleft condition="[!String.IsEmpty(ListItem.Trailer) + [String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | !String.Contains(ListItem.Trailer,plugin)] | String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | String.IsEmpty(ListItem.Trailer) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)] + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)] + Skin.HasSetting(View55_DetailsAutoTrailer)">PlayerControl(Stop)</onleft>
+				<onback>CancelAlarm(preview_delay,silent)</onback>
+				<onback condition="[!String.IsEmpty(ListItem.Trailer) + [String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | !String.Contains(ListItem.Trailer,plugin)] | String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | String.IsEmpty(ListItem.Trailer) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)] + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)] + Skin.HasSetting(View55_DetailsAutoTrailer)">PlayerControl(Stop)</onback>
+				<onback>ClearProperty(ListAnimation,home)</onback>
+                <onright condition="Skin.HasSetting(EnableQuickJump)">6000</onright>
+                <onright condition="!Skin.HasSetting(EnableQuickJump)">60</onright>
+                <pagecontrol>60</pagecontrol>
+                <viewtype label="31424">bigwide</viewtype>
+                <include content="View_Forced">
+                    <param name="viewtype" value="$LOCALIZE[31424]" />
+                </include>
+                <scrolltime tween="quadratic">400</scrolltime>
+                <focusposition>0</focusposition>
+                <orientation>vertical</orientation>
+                <preloaditems>4</preloaditems>
+                <itemlayout height="120" width="595">
+                    <control type="group">
+                        <width>595</width>
+                        <height>120</height>
+                        <include>BannerLayout</include>
+					</control>
+                </itemlayout>
+                <focusedlayout height="120" width="595">
+                    <control type="group">
+                        <width>595</width>
+                        <height>120</height>
+                        <control type="image">
+                            <texture>diffuse/banner.png</texture>
+                            <colordiffuse>$INFO[Skin.String(ViewDetailsBorderFocusColor)]</colordiffuse>
+                            <aspectratio scalediffuse="false" align="left">stretch</aspectratio>
+                            <include>thumbsborder_focused</include>
+                        </control>
+                        <include>BannerLayout</include>
+                        <include condition="Skin.HasSetting(View55_DetailsAutoTrailer)">LibraryAutoTrailerStopButton</include>
+						<include content="LibraryAutoTrailerStartButton" condition="Skin.HasSetting(View55_DetailsAutoTrailer)">
+							<param name="interval" value="$INFO[Skin.String(details_auto_trailer_interval)]" />
+						</include>
+						<control type="button">
+							<visible>false</visible>	
+							<onfocus>AlarmClock(SetList,ClearProperty(ListAnimation,home),00:00,silent)</onfocus>
+							<onfocus>AlarmClock(SetList,SetProperty(ListAnimation,1,home),00:00,silent)</onfocus>					
+						</control>
+					</control>
+                </focusedlayout>
+     			</control>
+ 			<!--vertical Scollbar-->
+			<control type="scrollbar" id="60">
+				<visible>Control.IsVisible(55) + Integer.IsGreater(Container.NumItems,0)</visible>
+				<right>15</right>
+				<bottom>161</bottom>
+                <height>704</height>
+				<onup>60</onup>
+				<ondown>6000</ondown>
+				<onleft>55</onleft>
+				<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] + !Control.IsVisible(6002)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] | Control.IsVisible(6002)">Conditional</animation>
+			</control> 
+		</control>		
+	</include>
+</includes>

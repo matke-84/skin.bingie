@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<includes>
+<!-- Poster Row Group Layout -->
+	<include name="View52_layout">
+            <posx>62</posx>
+            <bottom>14%</bottom>
+            <width>1806</width>
+            <height>352</height>
+            <onup>9000</onup>
+            <ondown condition="Skin.HasSetting(EnableQuickJump)">7000</ondown>
+                <ondown condition="!Skin.HasSetting(EnableQuickJump)">60</ondown>
+            <onleft>52</onleft>
+            <onright>52</onright>
+            <pagecontrol>60</pagecontrol>
+            <viewtype label="31445">bigwrap</viewtype>
+        <include content="View_Forced">
+            <param name="viewtype" value="$LOCALIZE[31445]" />
+        </include>
+            <scrolltime tween="quadratic">400</scrolltime>
+            <focusposition>3</focusposition>
+            <preloaditems>2</preloaditems>
+            <orientation>horizontal</orientation>
+        <itemlayout height="348" width="258">
+            <!-- Poster UnFocus Layout -->
+			<control type="group">
+                <width>248</width>
+                <height>348</height>
+                <include>PosterPanelLayout</include>
+				<control type="group">
+					<!--Watched Overlay-->
+					<right>8</right>
+					<top>8</top>
+					<include>WatchedIndicatorNormal</include>
+				</control>
+            </control>
+        </itemlayout>
+        <!-- Poster Focus Layout -->
+		<focusedlayout height="348" width="258">
+            <control type="group">
+                <width>248</width>
+                <height>348</height>
+                <animation effect="zoom" center="auto" start="100" end="106" time="160" tween="quadratic" condition="Skin.HasSetting(View52_EnableZoomEffect)">Focus</animation>
+                <include condition="Skin.HasSetting(View52_EnableZoomEffect)">PosterPanelLayoutFocus</include>
+				<include>PosterPanelLayout</include>
+				<control type="group">
+            <!--Watched Overlay-->
+            <right>8</right>
+            <top>8</top>
+            <include>WatchedIndicatorNormal</include>
+        </control>
+          </control>
+        </focusedlayout>
+</include>
+
+	<include name="View52_layout_fixed">
+		<control type="wraplist" id="52">
+			<include>View52_layout</include>
+		</control>
+	</include>	
+	
+	<!-- Panel No Info -->
+    <include name="View_52_HorizontalPanel">
+		<control type="group">
+            <visible>Control.IsVisible(52)</visible>
+            <include>animation_view_change</include>			
+			
+			<!-- Movie Details -->
+			<control type="group">
+				<visible>Skin.HasSetting(PanelViewShowInfo)</visible>
+				<include>MovieDetailsTop</include>
+			</control>
+            
+			<!-- View 52 -->
+			<include>View52_layout_fixed</include>
+			
+			<include content="Bingie_Main_View_Fixed_Frame">
+                <param name="visibility" value="!Skin.HasSetting(View52_EnableZoomEffect)" />
+                <param name="containerid" value="52" />
+                <param name="top" value="577" />
+                <param name="width" value="248" />
+                <param name="height" value="348" />
+                <texture background="true" border="12">$INFO[Skin.String(thumbsborder_focused),bingie/border/poster_fo_,.png]</texture>
+				<bordersize>2</bordersize>
+				<posx>836</posx>
+            </include>
+            
+            <!--Horizontal Scrollbar-->
+			<control type="group">
+				<control type="scrollbar" id="60">
+					<visible>Control.IsVisible(52) + Integer.IsGreater(Container.NumItems,0)</visible>
+					<texturesliderbackground border="5" colordiffuse="$INFO[Skin.String(ScrollbarBackgroundColor)]">scrollbar/texturesliderbar_small.png</texturesliderbackground>
+					<texturesliderbar colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]" border="5">scrollbar/texturesliderbar_small.png</texturesliderbar>
+					<texturesliderbarfocus colordiffuse="$INFO[Skin.String(ScrollbarFocusedColor)]" border="5">scrollbar/texturesliderbar_small.png</texturesliderbarfocus>
+					<textureslidernib colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]">scrollbar/texturesliderbar_nib.png</textureslidernib>
+					<textureslidernibfocus colordiffuse="$INFO[Skin.String(ScrollbarFocusedColor)]">scrollbar/texturesliderbar_nib.png</textureslidernibfocus>
+					<left>70</left>
+					<bottom>0</bottom>
+					<width>1780</width>
+					<height>10</height>
+					<onup>52</onup>
+					<onleft>60</onleft>
+					<onright>60</onright>
+					<orientation>horizontal</orientation>
+					<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] + !Control.IsVisible(7002)">Conditional</animation>
+					<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] | Control.IsVisible(7002)">Conditional</animation>
+				</control>
+			</control>
+		</control>
+	</include>
+</includes>

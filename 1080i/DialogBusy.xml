@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<window>
+    <controls>
+        <control type="group">
+			<visible>![[Skin.HasSetting(BingieAutoTrailer) | Skin.HasSetting(SpotLightTrailers)] + [$EXP[IsBingieViewsActive] | $EXP[IsBingieCategoriesActive]]]</visible>
+            <visible>String.IsEmpty(Window(Home).Property(StartupMask))</visible>
+			<visible>String.IsEmpty(Window(Home).Property(CloseInfoDialog)) | !String.IsEmpty(Window(Home).Property(BusyInfoDialogTrailer))</visible>
+            <include>Busy_Spinner</include>
+        </control>
+    </controls>
+</window>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<window>
+	<defaultcontrol/>
+    <controls>
+         <!--fallback background -->
+        <control type="group">
+			<include>GlobalBackground</include>
+            <visible>!Control.IsVisible(3333) | String.IsEmpty(Control.GetLabel(3333))</visible>
+		</control>
+		<!-- Now Playing -->
+        <include>NowPlayingMusicBackground</include>
+         
+         <!-- lyrics overlay -->
+         <control type="group">
+            <visible>Window.IsActive(script-cu-lrclyrics-main.xml)</visible>
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>100%</width>
+                <height>100%</height>
+                <texture>diffuse/panel2.png</texture>
+                <colordiffuse>$INFO[Skin.String(LyricsOverlayColor)]</colordiffuse>
+            </control>
+        </control>
+		
+		<!-- osd setings background -->
+		<control type="image">
+			<width>100%</width>
+			<height>100%</height>
+			<texture background="true">diffuse/panel2.png</texture>
+			<colordiffuse>b3000000</colordiffuse>
+			<visible>Window.IsActive(OSDAudioSettings)</visible>
+		</control>
+
+        <control type="group">
+            <include>HideOsdConditions</include>
+			<include condition="!Skin.HasSetting(UseBingieOSD)">OSDPanelModern</include>
+            <include condition="Skin.HasSetting(UseBingieOSD)">OSDPanelBingie</include>
+			<visible>Skin.HasSetting(AlwaysShowMusicInfo) | Window.IsActive(musicosd) | Player.Seeking | Player.DisplayAfterSeek | !String.IsEmpty(Player.SeekNumeric) | [Player.Paused + !Player.Caching + !Skin.HasSetting(UseBingieOSD)] | Player.Forwarding | Player.Rewinding</visible>
+			<animation effect="slide" start="0,400" end="0,0" tween="cubic" easing="out" delay="0" time="450" reversible="false" condition="!String.IsEqual(Window(Home).Property(VizSlide),hide)">Visible</animation>
+			<animation effect="slide" start="0,0" end="0,400" tween="cubic" easing="out" delay="0" time="450" reversible="false">Hidden</animation>
+			<animation effect="slide" start="0,400" end="0,0" tween="cubic" easing="out" delay="0" time="450" reversible="false">WindowOpen</animation>
+		</control>
+		
+		<!--clearlogo top right-->
+		<control type="image">
+			<right>40</right>
+			<top>20</top>
+			<width>550</width>
+			<height>180</height>
+			<fadetime>900</fadetime>
+			<aspectratio align="right" aligny="top">keep</aspectratio>
+			<texture background="true">$VAR[MusicPlayerClearLogo]</texture>
+            <visible>Skin.String(MusicArtistLogo,enabled) + !Skin.HasSetting(UseBingieOSD) | Skin.String(MusicArtistLogo,osd) + Window.IsActive(MusicOSD) + !Skin.HasSetting(UseBingieOSD) | !Window.IsActive(MusicOSD) + Skin.HasSetting(UseBingieOSD)</visible>
+            <include>animation_fade_visible_hidden_delayed</include>
+		</control>      
+		
+		<!-- Scrolling Text -->
+        <control type="group">
+            <top>370</top>
+            <animation effect="fade" time="500">WindowOpen</animation>
+			<animation effect="fade" time="500">WindowClose</animation>
+			<animation effect="fade" time="500">Visible</animation>
+			<animation effect="fade" time="500">Hidden</animation>
+			<visible>Player.HasAudio + !Window.IsActive(script-cu-lrclyrics-main.xml)</visible>
+			<visible>Skin.HasSetting(MusicOSDScrollingTitles)</visible>
+            <animation effect="slide" start="0" end="0,360" delay="0" time="300" condition="Skin.HasSetting(UseBingieOSD) + ![Skin.HasSetting(AlwaysShowMusicInfo) | Player.ShowInfo | Player.Forwarding | Player.Rewinding | Player.seeking | Window.IsActive(MusicOSD)]">Conditional</animation>
+			<animation effect="slide" start="0" end="0,360" delay="0" time="250" condition="!Skin.HasSetting(UseBingieOSD) + ![Skin.HasSetting(AlwaysShowMusicInfo) | Player.ShowInfo | Player.Forwarding | Player.Rewinding | Player.seeking | Window.IsActive(MusicOSD)]">Conditional</animation>	
+            <control type="label">
+                <description>Now Playing</description>
+                <left>0</left>
+                <top>100</top>
+                <right>0</right>
+                <label>$INFO[MusicPlayer.Title,  ,]$INFO[MusicPlayer.Title,  ,]$INFO[MusicPlayer.Title,  ,]$INFO[MusicPlayer.Title,  ,]$INFO[MusicPlayer.Title,  ,]$INFO[MusicPlayer.Title,  ,]$INFO[MusicPlayer.Title,  ,]$INFO[MusicPlayer.Title,  ,]$INFO[MusicPlayer.Title,  ,]$INFO[MusicPlayer.Title,  ,]$INFO[MusicPlayer.Title,  ,]$INFO[MusicPlayer.Title,  ,]$INFO[MusicPlayer.Title,  ,]$INFO[MusicPlayer.Title,  ,]$INFO[MusicPlayer.Title,  ,]$INFO[MusicPlayer.Title,  ,]$INFO[MusicPlayer.Title,  ,]$INFO[MusicPlayer.Title,  ,]$INFO[MusicPlayer.Title,  ,]$INFO[MusicPlayer.Title,  ,]$INFO[MusicPlayer.Title,  ,]$INFO[MusicPlayer.Title,  ,]$INFO[MusicPlayer.Title,  ,]$INFO[MusicPlayer.Title,  ,]$INFO[MusicPlayer.Title,  ,]</label>
+                <scroll>true</scroll>
+                <font>lyrics_big</font>
+                <textcolor>80ffffff</textcolor>
+                <align>left</align>
+                <scrollspeed>55</scrollspeed>
+                <visible>Integer.IsGreater(MusicPlayer.Time,0) + !String.IsEqual(Player.TimeRemaining(hh:mm:ss),00:00:01)</visible>
+                <animation effect="fade" start="0" end="100" time="950" delay="500" tween="cubic" easing="inout">Visible</animation>
+                <animation effect="fade" end="0" start="100" time="350">Hidden</animation>
+            </control>
+            <control type="label">
+                <description>Now Playing</description>
+                <left>0</left>
+                <top>130</top>
+                <right>0</right>
+                <label>$INFO[MusicPlayer.Album,  ,]$INFO[MusicPlayer.Album,  ,]$INFO[MusicPlayer.Album,  ,]$INFO[MusicPlayer.Album,  ,]$INFO[MusicPlayer.Album, ,]$INFO[MusicPlayer.Album,  ,]$INFO[MusicPlayer.Album,  ,]$INFO[MusicPlayer.Album,  ,]$INFO[MusicPlayer.Album,  ,]$INFO[MusicPlayer.Album,  ,]$INFO[MusicPlayer.Album,  ,]$INFO[MusicPlayer.Album,  ,]$INFO[MusicPlayer.Album,  ,]$INFO[MusicPlayer.Album,  ,]$INFO[MusicPlayer.Album,  ,]$INFO[MusicPlayer.Album,  ,]$INFO[MusicPlayer.Album,  ,]$INFO[MusicPlayer.Album,  ,]$INFO[MusicPlayer.Album,  ,]$INFO[MusicPlayer.Album,  ,]$INFO[MusicPlayer.Album,  ,]$INFO[MusicPlayer.Album,  ,]$INFO[MusicPlayer.Album,  ,]$INFO[MusicPlayer.Album,  ,]$INFO[MusicPlayer.Album,  ,]</label>
+                <scroll>true</scroll>
+                <font>lyrics_medium</font>
+                <textcolor>4dcccccc</textcolor>
+                <align>left</align>
+                <scrollspeed>100</scrollspeed>
+                <visible>Integer.IsGreater(MusicPlayer.Time,0) + !String.IsEqual(Player.TimeRemaining(hh:mm:ss),00:00:01)</visible>                
+                <animation effect="fade" start="0" end="100" time="950" delay="500" tween="cubic" easing="inout">Visible</animation>
+                <animation effect="fade" end="0" start="100" time="350">Hidden</animation>
+            </control>
+            <control type="label">
+                <description>Now Playing</description>
+                <left>0</left>
+                <top>210</top>
+                <right>0</right>
+                <label>$INFO[MusicPlayer.Artist,  ,]$INFO[MusicPlayer.Artist,  ,]$INFO[MusicPlayer.Artist,  ,]$INFO[MusicPlayer.Artist,  ,]$INFO[MusicPlayer.Artist,  ,]$INFO[MusicPlayer.Artist,  ,]$INFO[MusicPlayer.Artist,  ,]$INFO[MusicPlayer.Artist,  ,]$INFO[MusicPlayer.Artist,  ,]$INFO[MusicPlayer.Artist,  ,]$INFO[MusicPlayer.Artist,  ,]$INFO[MusicPlayer.Artist,  ,]$INFO[MusicPlayer.Artist,  ,]$INFO[MusicPlayer.Artist,  ,]$INFO[MusicPlayer.Artist,  ,]$INFO[MusicPlayer.Artist,  ,]$INFO[MusicPlayer.Artist,  ,]$INFO[MusicPlayer.Artist,  ,]$INFO[MusicPlayer.Artist,  ,]$INFO[MusicPlayer.Artist,  ,]$INFO[MusicPlayer.Artist,  ,]$INFO[MusicPlayer.Artist,  ,]$INFO[MusicPlayer.Artist,  ,]$INFO[MusicPlayer.Artist,  ,]$INFO[MusicPlayer.Artist,  ,]</label>
+                <scroll>true</scroll>
+                <font>lyrics_small</font>
+                <textcolor>b2cccccc</textcolor>
+                <align>left</align>
+                <scrollspeed>80</scrollspeed>
+                <visible>!Pvr.IsPlayingRadio</visible>
+                <visible>Integer.IsGreater(MusicPlayer.Time,0) + !String.IsEqual(Player.TimeRemaining(hh:mm:ss),00:00:01)</visible>                
+                <animation effect="fade" start="0" end="100" time="950" delay="500" tween="cubic" easing="inout">Visible</animation>
+                <animation effect="fade" end="0" start="100" time="350">Hidden</animation>
+            </control>
+        </control>
+
+    </controls>
+</window>

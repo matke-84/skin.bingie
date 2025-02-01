@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<includes>
+    <include name="View_10_SimplePVR">
+         <control type="group">
+            <visible>Control.IsVisible(10)</visible>
+				<!-- Background Panel TITLEBAR-->
+				<control type="image">
+					<posx>70</posx>
+					<posy>330</posy>
+					<width>1780</width>
+					<height>60</height>
+					<texture border="10">diffuse/panel.png</texture>
+					<colordiffuse>$VAR[PVRItemColor]</colordiffuse>
+				</control>	
+            <control type="group">
+                <posx>80</posx>
+                <posy>90</posy>
+                <control type="image">
+                    <!--Background-->
+                    <posx>-10</posx>
+                    <posy>-1</posy>
+                    <width>350</width>
+                    <height>200</height>
+                    <texture fallback="DefaultAddonTvInfo.png">$VAR[PVRThumb]</texture>
+                    <aspectratio align="center" aligny="center">keep</aspectratio>
+					<fadetime>350</fadetime>
+                </control>
+            </control>
+            <control type="label">
+                <!--Title-->
+                <posx>440</posx>
+                <posy>90</posy>
+                <width>650</width>
+                <height>50</height>
+                <font>Bold40</font>
+                <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                <label>$VAR[ListTitlePVR]</label>
+            </control>
+            <control type="grouplist">
+                <!--Start, End, Duration-->
+                <posx>440</posx>
+                <posy>145</posy>
+                <control type="group">
+                    <!-- Ground 1 -->
+                    <height>40</height>
+                    <visible>!String.IsEmpty(ListItem.Date)</visible>
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>180</width>
+                        <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+						<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                        <label>$LOCALIZE[142]</label>
+                    </control>
+                    <control type="label">
+                        <posx>160</posx>
+                        <posy>0</posy>
+                        <width>500</width>
+                        <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                        <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                        <label>$VAR[ListDateInfoPVR]</label>
+                        <scroll>true</scroll>
+                    </control>
+                </control>
+                <control type="group">
+                    <!-- Ground 2 -->
+                    <height>40</height>
+                    <visible>!String.IsEmpty(ListItem.Duration) + String.IsEmpty(ListItem.Timertype)</visible>
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>180</width>
+                        <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                        <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                        <label>$LOCALIZE[180]:</label>
+                    </control>
+                    <control type="label">
+                        <posx>160</posx>
+                        <posy>0</posy>
+                        <width>300</width>
+                        <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                        <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                        <label>$VAR[ListItemDuration]</label>
+                    </control>
+                </control>
+                <control type="group">
+                    <!-- Ground 3 -->
+                    <height>40</height>
+                    <visible>!String.IsEmpty(Container(99950).ListItem.Genre)</visible>
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>180</width>
+                        <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                        <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                        <label>$LOCALIZE[135]:</label>
+                    </control>
+                    <control type="label">
+                        <posx>160</posx>
+                        <posy>0</posy>
+                        <width>400</width>
+                        <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                        <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                        <label>$INFO[Container(99950).ListItem.Genre]</label>
+                    </control>
+                </control>
+                <control type="group">
+                    <!-- Timertype -->
+                    <height>40</height>
+                    <visible>!String.IsEmpty(ListItem.Timertype)</visible>
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>180</width>
+                        <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                        <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                        <label>$LOCALIZE[467]:</label>
+                    </control>
+                    <control type="label">
+                        <posx>160</posx>
+                        <posy>0</posy>
+                        <width>500</width>
+                        <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                        <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                        <label>$INFO[ListItem.Timertype]</label>
+                    </control>
+                </control>
+            </control>
+			<control type="textbox">
+                <!--Info Plot-->
+                <posx>1150</posx>
+                <posy>102</posy>
+                <width>700</width>
+                <height>186</height>
+                <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                <label fallback="195">$VAR[BingiePlot]</label>
+				<visible>String.IsEmpty(ListItem.NextTitle)</visible>
+            </control>
+            <control type="textbox">
+                <!--Info Plot-->
+                <posx>1150</posx>
+                <posy>102</posy>
+                <width>700</width>
+                <height>115</height>
+                <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                <label fallback="195">$VAR[BingiePlot]</label>
+				<visible>!String.IsEmpty(ListItem.NextTitle)</visible>
+            </control>
+			<control type="label">
+                <!--Info Plot-->
+                <posx>1150</posx>
+                <posy>245</posy>
+                <width>700</width>
+                <height>40</height>
+                <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                <label>$INFO[Container.ListItem.NextTitle,[B]$LOCALIZE[19031]: [/B]]</label>
+            </control>
+            <control type="group">
+                <!--Top Bar-->
+                <posx>70</posx>
+                <posy>313</posy>
+                <control type="label">
+                    <!--Channel Name-->
+                    <posx>155</posx>
+                    <posy>30</posy>
+                    <width>300</width>
+                    <height>30</height>
+                    <font>Reg30</font>
+                    <textoffsetx>0</textoffsetx>
+                    <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                    <label>19148</label>
+                </control>
+                <control type="label">
+                    <!--Channle Title-->
+                    <posx>470</posx>
+                    <posy>30</posy>
+                    <width>300</width>
+                    <height>30</height>
+                    <font>Reg30</font>
+                    <textoffsetx>0</textoffsetx>
+                    <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                    <label>369</label>
+                </control>
+                <control type="label">
+                    <!--Time-->
+                    <posx>1200</posx>
+                    <posy>30</posy>
+                    <width>100</width>
+                    <height>30</height>
+                    <font>Reg30</font>
+                    <textoffsetx>0</textoffsetx>
+                    <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                    <label>555</label>
+                </control>
+
+            </control>
+            <control type="list" id="10">
+                <!--List ID=14-->
+				<viewtype label="31567">list</viewtype>
+                <include content="View_Forced">
+                    <param name="viewtype" value="$LOCALIZE[31567]" />
+                </include>
+                <visible>[Window.IsActive(tvchannels) | Window.IsActive(tvtimers) | Window.IsActive(tvsearch) | Window.IsActive(tvrecordings)]</visible>
+                <posx>70</posx>
+                <posy>410</posy>
+                <width>1780</width>
+                <height>500</height>
+                <onup>10</onup>
+                <ondown>10</ondown>
+                <onleft>9000</onleft>
+                <onright condition="Skin.HasSetting(EnableQuickJump)">6000</onright>
+                <onright condition="!Skin.HasSetting(EnableQuickJump)">60</onright>
+                <pagecontrol>60</pagecontrol>
+                <scrolltime>200</scrolltime>
+                <itemlayout height="80"  width="1780">
+                     <control type="label">
+                        <!--Channel Number-->
+                        <posx>20</posx>
+                        <posy>0</posy>
+                        <width>120</width>
+                        <height>80</height>
+                        <font>Reg28</font>
+                        <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
+                        <label>$VAR[ListChannelNumberPVR]</label>
+                    </control>
+					<control type="image">
+                        <!--Rec-->
+                        <posx>145</posx>
+                        <posy>16</posy>
+                        <width>51</width>
+                        <height>51</height>
+                        <texture>pvr/icons/pvr_record.png</texture>
+                        <visible>ListItem.IsRecording</visible>
+                    </control>
+                    <control type="image">
+                        <!--Now Playing Icon-->
+                        <posx>145</posx>
+                        <posy>16</posy>
+                        <width>50</width>
+                        <height>50</height>
+                        <texture>pvr/icons/pvr_play.png</texture>
+                        <visible>ListItem.Isplaying + !ListItem.IsRecording</visible>
+                    </control>
+                    <control type="image">
+                        <posx>155</posx>
+                        <posy>10</posy>
+                        <width>60</width>
+                        <height>60</height>
+                        <texture>dialogs/filebrowser/white/defaultfolder.png</texture>
+                        <colordiffuse>$INFO[Skin.String(ViewDetailsListItemTextColor)]</colordiffuse>
+                        <visible>ListItem.IsFolder</visible>
+                    </control>
+                    <control type="label">
+                        <!--Channel Name-->
+                        <description>Channel Value</description>
+                        <posx>155</posx>
+                        <posy>0</posy>
+                        <width>250</width>
+                        <height>80</height>
+                        <font>Reg28</font>
+                        <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
+                        <label>$INFO[ListItem.ChannelName]</label>
+                        <visible>!ListItem.IsFolder</visible>
+						<animation effect="slide" end="45" time="0" condition="ListItem.IsRecording | ListItem.Isplaying + !ListItem.IsRecording">Conditional</animation>
+                    </control>
+                    <control type="label">
+                        <!--Channel Show-->
+                        <posx>470</posx>
+                        <posy>0</posy>
+                        <width>755</width>
+                        <height>80</height>
+                        <font>Reg28</font>
+                        <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
+                        <label>$VAR[ListTitlePVR]</label>
+                    </control>
+                    <control type="label">
+                        <!--Date-->
+                        <posx>1200</posx>
+                        <posy>0</posy>
+                        <width>500</width>
+                        <height>80</height>
+                        <font>Reg28</font>
+                        <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
+                        <label>$VAR[ListDatePVR]</label>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="80" width="1780">
+                    <control type="image">
+                        <!--Slide-->
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>100%</width>
+                        <height>80</height>
+                        <texture diffuse="diffuse/panel.png" border="10" colordiffuse="$INFO[Skin.String(ViewDetailsFocusColor)]">diffuse/panel.png</texture>
+                    </control>
+                    <control type="label">
+                        <!--Channel Number-->
+                        <posx>20</posx>
+                        <posy>0</posy>
+                        <width>120</width>
+                        <height>80</height>
+                        <font>Reg28</font>
+                        <textcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</textcolor>
+                        <label>$VAR[ListChannelNumberPVR]</label>
+                    </control>
+					<control type="image">
+                        <!--Rec-->
+                        <posx>145</posx>
+                        <posy>16</posy>
+                        <width>51</width>
+                        <height>51</height>
+                        <texture>pvr/icons/pvr_record.png</texture>
+                        <visible>ListItem.IsRecording</visible>
+                    </control>
+                    <control type="image">
+                        <!--Now Playing Icon-->
+                        <posx>145</posx>
+                        <posy>16</posy>
+                        <width>50</width>
+                        <height>50</height>
+                        <texture>pvr/icons/pvr_play.png</texture>
+                        <visible>ListItem.Isplaying + !ListItem.IsRecording</visible>
+                    </control>
+                    <control type="image">
+                        <posx>155</posx>
+                        <posy>10</posy>
+                        <width>60</width>
+                        <height>60</height>
+                        <texture>dialogs/filebrowser/white/defaultfolder.png</texture>
+                        <colordiffuse>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</colordiffuse>
+                        <visible>ListItem.IsFolder</visible>
+                    </control>
+
+                    <control type="label">
+                        <!--Channel Name-->
+                        <posx>155</posx>
+                        <posy>0</posy>
+                        <width>250</width>
+                        <height>80</height>
+                        <font>Reg28</font>
+                        <textcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</textcolor>
+                        <label>$INFO[ListItem.ChannelName]</label>
+                        <visible>!ListItem.IsFolder</visible>
+						<animation effect="slide" end="45" time="0" condition="ListItem.IsRecording | ListItem.Isplaying + !ListItem.IsRecording">Conditional</animation>
+                    </control>
+                    <control type="label">
+                        <!--Channel Show-->
+                        <posx>470</posx>
+                        <posy>0</posy>
+                        <width>755</width>
+                        <height>80</height>
+                        <font>Reg28</font>
+                        <textcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</textcolor>
+                        <label>$VAR[ListTitlePVR]</label>
+                    </control>
+                    <control type="label">
+                        <!--Date-->
+                        <posx>1200</posx>
+                        <posy>0</posy>
+                        <width>500</width>
+                        <height>80</height>
+                        <font>Reg28</font>
+                        <textcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</textcolor>
+                        <label>$VAR[ListDatePVR]</label>
+                    </control>
+                </focusedlayout>
+
+            </control>
+            <!--vertical Scollbar-->
+            <control type="scrollbar" id="60">
+                <visible>Control.IsVisible(10) + Integer.IsGreater(Container.NumItems,0)</visible>
+				<texturesliderbackground border="10" colordiffuse="$VAR[PVRScrollBarColor]">scrollbar/texturesliderbar.png</texturesliderbackground>
+                <right>10</right>
+                <posy>410</posy>
+                <height>480</height>
+                <onup>60</onup>
+                <ondown>6000</ondown>
+                <onleft>10</onleft>
+                <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] + !Control.IsVisible(6002)">Conditional</animation>
+                <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] | Control.IsVisible(6002)">Conditional</animation>
+            </control>
+        </control>
+      </include>
+</includes>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<window>
+    <defaultcontrol always="true">3</defaultcontrol>
+    <include>DefaultSkinSettings</include>
+    <controls>
+
+        <!--Global Background-->
+        <include>GlobalBackground</include>
+		<!-- Now Playing -->
+		<include>NowPlayingBackground</include>		
+        <!--Header-->
+        <include>Header</include>
+  		<control type="group">
+		<include>animation_window_open_close</include>
+		<bottom>135</bottom>
+		<height>810</height>
+       <!--Panel-->
+		<control type="image">
+			<posx>60</posx>
+			<width>1800</width>
+			<texture border="15">diffuse/bgpanel.png</texture>
+			<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+		</control>
+		
+		<control type="image">
+			<posx>60</posx>
+			<width>510</width>
+			<texture border="15">diffuse/bgpanel.png</texture>
+			<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+		</control>
+		
+		<control type="grouplist" id="3000">
+			<posx>90</posx>
+			<posy>30</posy>
+			<width>450</width>
+			<ondown>9000</ondown>
+			<!--default setting buttons-->
+			<control type="grouplist" id="3">
+				<description>Button Area</description>
+				<height>750</height>
+				<width>450</width>
+				<itemgap>5</itemgap>
+				<onleft>5</onleft>
+				<onright>5</onright>
+				<ondown>9001</ondown>
+				<orientation>vertical</orientation>
+				<include>animation_fade_visible_hidden</include>
+			</control>	
+		</control>
+        <control type="grouplist" id="5">
+            <description>Control Area</description>
+            <posx>600</posx>
+            <posy>30</posy>
+            <width>1230</width>
+            <height>760</height>
+            <itemgap>5</itemgap>
+            <onleft>3</onleft>
+            <onright>3</onright>
+            <onup>5</onup>
+            <ondown>5</ondown>
+            <orientation>vertical</orientation>			
+        </control>
+        <control type="button" id="7">
+            <description>Default Button</description>
+            <label/>
+            <font>Reg28</font>
+            <align>left</align>
+            <height>50</height>
+			<width>450</width>
+            <textoffsetx>38</textoffsetx>
+        </control>
+		<control type="colorbutton" id="15">
+            <description>Default Setting Button</description>
+            <label/>
+            <font>Reg28</font>
+            <align>left</align>
+            <height>50</height>
+			<width>45</width>
+            <textoffsetx>38</textoffsetx>
+        </control>
+        <control type="radiobutton" id="8">
+            <description>Default Radio Button</description>
+            <font>Reg28</font>
+            <align>left</align>
+            <height>50</height>
+            <radioposx>1102</radioposx>
+			<textoffsetx>38</textoffsetx>
+        </control>
+        <control type="label" id="14">
+            <include>SkinSettings_Header</include>
+            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        </control>
+        <control type="spincontrolex" id="9">
+            <description>Default Spin Control</description>
+            <font>Reg28</font>
+            <align>left</align>
+            <height>50</height>
+			<spinposx>34</spinposx>
+			<textoffsetx>38</textoffsetx>
+        </control>
+		<control type="sliderex" id="13">
+			<description>Default Slider</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<textwidth>352</textwidth>
+			<textoffsetx>38</textoffsetx>
+			<sliderwidth>160</sliderwidth>
+			<sliderheight>60</sliderheight>
+			<align>left</align>
+		</control>
+
+        <control type="button" id="10">
+            <description>Default Category Button</description>
+            <font>Reg28</font>
+            <align>left</align>
+            <height>50</height>
+			<width>450</width>
+			<textoffsetx>38</textoffsetx>
+			<focusedcolor>$VAR[SettingsButton]</focusedcolor>
+        </control>
+        <control type="grouplist" id="9000">
+            <posx>90</posx>
+            <posy>630</posy>
+            <width>450</width>
+            <height>600</height>
+            <onleft>9000</onleft>
+            <onright>5</onright>
+            <onup>3</onup>
+            <ondown>3</ondown>
+            <onback>3</onback>
+            <itemgap>5</itemgap>
+            <control type="label" id="200">
+                <height>50</height>
+                <font>Reg28</font>
+                <font>Reg28</font>
+                <label>31071</label>
+                <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                <align>left</align>
+            </control>
+            <control type="button" id="20">
+                <description>Setting level button</description>
+                <font>Reg28</font>
+                <align>left</align>
+                <height>50</height>
+                <label>10037</label>
+				<width>450</width>
+				<textoffsetx>38</textoffsetx>
+                <onclick>SettingsLevelChange</onclick>
+            </control>
+            <control type="button" id="21">
+                <description>Reset button</description>
+                <font>Reg28</font>
+                <align>left</align>
+                <height>50</height>
+                <label>10035</label>
+				<width>450</width>
+				<textoffsetx>38</textoffsetx>
+                <onclick>SettingsReset</onclick>
+            </control>
+        </control>
+		</control>
+
+        <control type="group">
+            <control type="textbox" id="6">
+                <description>description area</description>
+                <left>90</left>
+                <width>1162</width>
+                <bottom>20</bottom>
+                <height>86</height>
+                <font>Reg22</font>
+                <align>justify</align>
+                <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
+                <autoscroll time="3000" delay="5000" repeat="5000">true</autoscroll>
+            </control>
+        </control>
+        <control type="label" id="2">
+            <description>breadcrumbs label</description>
+            <visible>False</visible>
+        </control>
+
+		<include condition="Skin.HasSetting(DebugGrid) | Skin.HasSetting(DebugInfo)">DebugInfo</include>
+    </controls>
+</window>

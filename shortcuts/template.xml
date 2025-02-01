@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+    <other include="Widgets">
+		<condition tag="property" attribute="name|widget"></condition>
+		<match>all</match>
+        
+        <property name="id" tag="mainmenuid" />
+        <property name="submenuid" tag="property" attribute="name|submenuVisibility" />       
+
+        <!-- widget 1 -->
+		<property name="widgetTarget1" tag="property" attribute="name|widgetTarget" />
+        <property name="contentStyle1">normal</property>
+        <property name="widgetPath1" tag="property" attribute="name|widgetPath" />
+        <property name="widgetPath1"/>
+        <property name="widgetName1" tag="property" attribute="name|widgetName" />
+        <property name="widgetTags1" tag="property" attribute="name|widgetTags" value="enable">WidgetTagOverlayEnable</property>
+        <property name="widgetTags1" tag="property" attribute="name|widgetTags" value="disable">WidgetTagOverlayDisable</property>
+        <property name="widgetTags1">WidgetTagOverlayAuto</property>
+        <property name="widgetStyle1" tag="property" attribute="name|widgetstyle" />
+        <property name="widgetStyle1">default</property>
+        <property name="widgetSortBy1" tag="property" attribute="name|widgetSortBy" />
+        <property name="widgetSortOrder1" tag="property" attribute="name|widgetSortOrder" />
+        <property name="widgetLimit1" tag="property" attribute="name|widgetLimit" />
+        <property name="widgetLimit1">$INFO[Skin.String(WidgetsGlobalLimit)]</property>
+        <property name="widgetInfoPanel1" tag="property" attribute="name|widgetInfoPanel" />
+        <property name="widgetInfoPanel1">top</property>
+        <property name="widgetFixedFocus1" tag="property" attribute="name|widgetFixedFocus" />
+        <property name="widgetFixedFocus1">disabled</property>
+
+        <!-- widget 2 -->
+		<property name="widgetTarget2" tag="property" attribute="name|widgetTarget.1" />
+        <property name="contentStyle2">normal</property>
+        <property name="widgetPath2" tag="property" attribute="name|widgetPath.1" />
+        <property name="widgetPath2"/>
+        <property name="widgetName2" tag="property" attribute="name|widgetName.1" />
+        <property name="widgetTags2" tag="property" attribute="name|widgetTags.1" value="enable">WidgetTagOverlayEnable</property>
+        <property name="widgetTags2" tag="property" attribute="name|widgetTags.1" value="disable">WidgetTagOverlayDisable</property>
+        <property name="widgetTags2">WidgetTagOverlayAuto</property>
+        <property name="widgetStyle2" tag="property" attribute="name|widgetstyle.1" />
+        <property name="widgetStyle2">default</property>
+        <property name="widgetSortBy2" tag="property" attribute="name|widgetSortBy.1" />
+        <property name="widgetSortOrder2" tag="property" attribute="name|widgetSortOrder.1" />
+        <property name="widgetLimit2" tag="property" attribute="name|widgetLimit.1" />
+        <property name="widgetLimit2">$INFO[Skin.String(WidgetsGlobalLimit)]</property>
+        <property name="widgetInfoPanel2" tag="property" attribute="name|widgetInfoPanel.1" />
+        <property name="widgetInfoPanel2">top</property>
+        <property name="widgetFixedFocus2" tag="property" attribute="name|widgetFixedFocus.1" />
+        <property name="widgetFixedFocus2">disabled</property>
+
+        <!-- widget 3 -->
+		<property name="widgetTarget3" tag="property" attribute="name|widgetTarget.2" />
+        <property name="contentStyle3">normal</property>
+        <property name="widgetPath3" tag="property" attribute="name|widgetPath.2" />
+        <property name="widgetPath3"/>
+        <property name="widgetName3" tag="property" attribute="name|widgetName.2" />
+        <property name="widgetTags3" tag="property" attribute="name|widgetTags.2" value="enable">WidgetTagOverlayEnable</property>
+        <property name="widgetTags3" tag="property" attribute="name|widgetTags.2" value="disable">WidgetTagOverlayDisable</property>
+        <property name="widgetTags3">WidgetTagOverlayAuto</property>
+        <property name="widgetStyle3" tag="property" attribute="name|widgetstyle.2" />
+        <property name="widgetStyle3">default</property>
+        <property name="widgetSortBy3" tag="property" attribute="name|widgetSortBy.2" />
+        <property name="widgetSortOrder3" tag="property" attribute="name|widgetSortOrder.2" />
+        <property name="widgetLimit3" tag="property" attribute="name|widgetLimit.2" />
+        <property name="widgetLimit3">$INFO[Skin.String(WidgetsGlobalLimit)]</property>
+        <property name="widgetInfoPanel3" tag="property" attribute="name|widgetInfoPanel.2" />
+        <property name="widgetInfoPanel3">top</property>
+        <property name="widgetFixedFocus3" tag="property" attribute="name|widgetFixedFocus.2" />
+        <property name="widgetFixedFocus3">disabled</property>
+        
+        <!-- widget 4 -->
+		<property name="widgetTarget4" tag="property" attribute="name|widgetTarget.3" />
+        <property name="contentStyle4">normal</property>
+        <property name="widgetPath4" tag="property" attribute="name|widgetPath.3" />
+        <property name="widgetPath4"/>
+        <property name="widgetName4" tag="property" attribute="name|widgetName.3" />
+        <property name="widgetTags4" tag="property" attribute="name|widgetTags.3" value="enable">WidgetTagOverlayEnable</property>
+        <property name="widgetTags4" tag="property" attribute="name|widgetTags.3" value="disable">WidgetTagOverlayDisable</property>
+        <property name="widgetTags4">WidgetTagOverlayAuto</property>
+        <property name="widgetStyle4" tag="property" attribute="name|widgetstyle.3" />
+        <property name="widgetStyle4">default</property>
+        <property name="widgetSortBy4" tag="property" attribute="name|widgetSortBy.3" />
+        <property name="widgetSortOrder4" tag="property" attribute="name|widgetSortOrder.3" />
+        <property name="widgetLimit4" tag="property" attribute="name|widgetLimit.3" />
+        <property name="widgetLimit4">$INFO[Skin.String(WidgetsGlobalLimit)]</property>
+        <property name="widgetInfoPanel4" tag="property" attribute="name|widgetInfoPanel.3" />
+        <property name="widgetInfoPanel4">top</property>
+        <property name="widgetFixedFocus4" tag="property" attribute="name|widgetFixedFocus.3" />
+        <property name="widgetFixedFocus4">disabled</property>
+        
+        <!-- widget 5 -->
+		<property name="widgetTarget5" tag="property" attribute="name|widgetTarget.4" />
+        <property name="contentStyle5">normal</property>
+        <property name="widgetPath5" tag="property" attribute="name|widgetPath.4" />
+        <property name="widgetPath5"/>
+        <property name="widgetName5" tag="property" attribute="name|widgetName.4" />
+        <property name="widgetTags5" tag="property" attribute="name|widgetTags.4" value="enable">WidgetTagOverlayEnable</property>
+        <property name="widgetTags5" tag="property" attribute="name|widgetTags.4" value="disable">WidgetTagOverlayDisable</property>
+        <property name="widgetTags5">WidgetTagOverlayAuto</property>
+        <property name="widgetStyle5" tag="property" attribute="name|widgetstyle.4" />
+        <property name="widgetStyle5">default</property>
+        <property name="widgetSortBy5" tag="property" attribute="name|widgetSortBy.4" />
+        <property name="widgetSortOrder5" tag="property" attribute="name|widgetSortOrder.4" />
+        <property name="widgetLimit5" tag="property" attribute="name|widgetLimit.4" />
+        <property name="widgetLimit5">$INFO[Skin.String(WidgetsGlobalLimit)]</property>
+        <property name="widgetInfoPanel5" tag="property" attribute="name|widgetInfoPanel.4" />
+        <property name="widgetInfoPanel5">top</property>
+        <property name="widgetFixedFocus5" tag="property" attribute="name|widgetFixedFocus.4" />
+        <property name="widgetFixedFocus5">disabled</property>
+        
+        <!-- widget 6 -->
+		<property name="widgetTarget6" tag="property" attribute="name|widgetTarget.5" />
+        <property name="contentStyle6">normal</property>
+        <property name="widgetPath6" tag="property" attribute="name|widgetPath.5" />
+        <property name="widgetPath6"/>
+        <property name="widgetName6" tag="property" attribute="name|widgetName.5" />
+        <property name="widgetTags6" tag="property" attribute="name|widgetTags.5" value="enable">WidgetTagOverlayEnable</property>
+        <property name="widgetTags6" tag="property" attribute="name|widgetTags.5" value="disable">WidgetTagOverlayDisable</property>
+        <property name="widgetTags6">WidgetTagOverlayAuto</property>
+        <property name="widgetStyle6" tag="property" attribute="name|widgetstyle.5" />
+        <property name="widgetStyle6">default</property>
+        <property name="widgetSortBy6" tag="property" attribute="name|widgetSortBy.5" />
+        <property name="widgetSortOrder6" tag="property" attribute="name|widgetSortOrder.5" />
+        <property name="widgetLimit6" tag="property" attribute="name|widgetLimit.5" />
+        <property name="widgetLimit6">$INFO[Skin.String(WidgetsGlobalLimit)]</property>
+        <property name="widgetInfoPanel6" tag="property" attribute="name|widgetInfoPanel.5" />
+        <property name="widgetInfoPanel6">top</property>
+        <property name="widgetFixedFocus6" tag="property" attribute="name|widgetFixedFocus.5" />
+        <property name="widgetFixedFocus6">disabled</property>
+        
+        <!-- widget 7 -->
+		<property name="widgetTarget7" tag="property" attribute="name|widgetTarget.6" />
+        <property name="contentStyle7">normal</property>
+        <property name="widgetPath7" tag="property" attribute="name|widgetPath.6" />
+        <property name="widgetPath7"/>
+        <property name="widgetName7" tag="property" attribute="name|widgetName.6" />
+        <property name="widgetTags7" tag="property" attribute="name|widgetTags.6" value="enable">WidgetTagOverlayEnable</property>
+        <property name="widgetTags7" tag="property" attribute="name|widgetTags.6" value="disable">WidgetTagOverlayDisable</property>
+        <property name="widgetTags7">WidgetTagOverlayAuto</property>
+        <property name="widgetStyle7" tag="property" attribute="name|widgetstyle.6" />
+        <property name="widgetStyle7">default</property>
+        <property name="widgetSortBy7" tag="property" attribute="name|widgetSortBy.6" />
+        <property name="widgetSortOrder7" tag="property" attribute="name|widgetSortOrder.6" />
+        <property name="widgetLimit7" tag="property" attribute="name|widgetLimit.6" />
+        <property name="widgetLimit7">$INFO[Skin.String(WidgetsGlobalLimit)]</property>
+        <property name="widgetInfoPanel7" tag="property" attribute="name|widgetInfoPanel.6" />
+        <property name="widgetInfoPanel7">top</property>
+        <property name="widgetFixedFocus7" tag="property" attribute="name|widgetFixedFocus.6" />
+        <property name="widgetFixedFocus7">disabled</property>
+        
+        <!-- widget 8 -->
+		<property name="widgetTarget8" tag="property" attribute="name|widgetTarget.7" />
+        <property name="contentStyle8">normal</property>
+        <property name="widgetPath8" tag="property" attribute="name|widgetPath.7" />
+        <property name="widgetPath8"/>
+        <property name="widgetName8" tag="property" attribute="name|widgetName.7" />
+        <property name="widgetTags8" tag="property" attribute="name|widgetTags.7" value="enable">WidgetTagOverlayEnable</property>
+        <property name="widgetTags8" tag="property" attribute="name|widgetTags.7" value="disable">WidgetTagOverlayDisable</property>
+        <property name="widgetTags8">WidgetTagOverlayAuto</property>
+        <property name="widgetStyle8" tag="property" attribute="name|widgetstyle.7" />
+        <property name="widgetStyle8">default</property>
+        <property name="widgetSortBy8" tag="property" attribute="name|widgetSortBy.7" />
+        <property name="widgetSortOrder8" tag="property" attribute="name|widgetSortOrder.7" />
+        <property name="widgetLimit8" tag="property" attribute="name|widgetLimit.7" />
+        <property name="widgetLimit8">$INFO[Skin.String(WidgetsGlobalLimit)]</property>
+        <property name="widgetInfoPanel8" tag="property" attribute="name|widgetInfoPanel.7" />
+        <property name="widgetInfoPanel8">top</property>
+        <property name="widgetFixedFocus8" tag="property" attribute="name|widgetFixedFocus.7" />
+        <property name="widgetFixedFocus8">disabled</property>
+		
+		<!-- widget 9 -->
+		<property name="widgetTarget9" tag="property" attribute="name|widgetTarget.8" />
+        <property name="contentStyle9">normal</property>
+        <property name="widgetPath9" tag="property" attribute="name|widgetPath.8" />
+        <property name="widgetPath9"/>
+        <property name="widgetName9" tag="property" attribute="name|widgetName.8" />
+        <property name="widgetTags9" tag="property" attribute="name|widgetTags.8" value="enable">WidgetTagOverlayEnable</property>
+        <property name="widgetTags9" tag="property" attribute="name|widgetTags.8" value="disable">WidgetTagOverlayDisable</property>
+        <property name="widgetTags9">WidgetTagOverlayAuto</property>
+        <property name="widgetStyle9" tag="property" attribute="name|widgetstyle.8" />
+        <property name="widgetStyle9">default</property>
+        <property name="widgetSortBy9" tag="property" attribute="name|widgetSortBy.8" />
+        <property name="widgetSortOrder9" tag="property" attribute="name|widgetSortOrder.8" />
+        <property name="widgetLimit9" tag="property" attribute="name|widgetLimit.8" />
+        <property name="widgetLimit9">$INFO[Skin.String(WidgetsGlobalLimit)]</property>
+        <property name="widgetInfoPanel9" tag="property" attribute="name|widgetInfoPanel.8" />
+        <property name="widgetInfoPanel9">top</property>
+        <property name="widgetFixedFocus9" tag="property" attribute="name|widgetFixedFocus.8" />
+        <property name="widgetFixedFocus9">disabled</property>
+		
+		<!-- widget 10 -->
+		<property name="widgetTarget10" tag="property" attribute="name|widgetTarget.9" />
+        <property name="contentStyle10">normal</property>
+        <property name="widgetPath10" tag="property" attribute="name|widgetPath.9" />
+        <property name="widgetPath10"/>
+        <property name="widgetName10" tag="property" attribute="name|widgetName.9" />
+        <property name="widgetTags10" tag="property" attribute="name|widgetTags.9" value="enable">WidgetTagOverlayEnable</property>
+        <property name="widgetTags10" tag="property" attribute="name|widgetTags.9" value="disable">WidgetTagOverlayDisable</property>
+        <property name="widgetTags10">WidgetTagOverlayAuto</property>
+        <property name="widgetStyle10" tag="property" attribute="name|widgetstyle.9" />
+        <property name="widgetStyle10">default</property>
+        <property name="widgetSortBy10" tag="property" attribute="name|widgetSortBy.9" />
+        <property name="widgetSortOrder10" tag="property" attribute="name|widgetSortOrder.9" />
+        <property name="widgetLimit10" tag="property" attribute="name|widgetLimit.9" />
+        <property name="widgetLimit10">$INFO[Skin.String(WidgetsGlobalLimit)]</property>
+        <property name="widgetInfoPanel10" tag="property" attribute="name|widgetInfoPanel.9" />
+        <property name="widgetInfoPanel10">top</property>
+        <property name="widgetFixedFocus10" tag="property" attribute="name|widgetFixedFocus.9" />
+        <property name="widgetFixedFocus10">disabled</property>
+        
+        <controls>           
+            <!-- widget 1 -->
+            <include content="widget_header_multi" condition="$PYTHON['true' if widgetPath1 else 'false']">
+                <param name="widgetid" value="$SKINSHORTCUTS[id]510" />
+                <param name="submenuid" value="$SKINSHORTCUTS[submenuid]" />
+                <param name="widgetName" value="$SKINSHORTCUTS[widgetName1]" />
+            </include>
+            <include content="widget_base" condition="$PYTHON['true' if widgetPath1 else 'false']">
+                <param name="containerType" value="$PYTHON['fixedlist' if widgetStyle1 in 'details' or 'enabled' in widgetFixedFocus1 else 'panel']" />
+                <param name="contentStyle" value="$SKINSHORTCUTS[contentStyle1]" />
+                <param name="widgetid" value="$SKINSHORTCUTS[id]510" />
+                <param name="widgetName" value="$SKINSHORTCUTS[widgetName1]" />
+                <param name="submenuid" value="$SKINSHORTCUTS[submenuid]" />
+                <param name="widgetTags" value="$SKINSHORTCUTS[widgetTags1]" />
+                <param name="widgetTarget" value="$SKINSHORTCUTS[widgetTarget1]" />
+                <param name="widgetPath" value="$SKINSHORTCUTS[widgetPath1]" />
+                <param name="widgetStyle" value="widget_layout_$SKINSHORTCUTS[widgetStyle1]" />
+                <param name="widgetSortBy" value="$SKINSHORTCUTS[widgetSortBy1]" />
+                <param name="widgetSortOrder" value="$SKINSHORTCUTS[widgetSortOrder1]" />
+                <param name="widgetLimit" value="$SKINSHORTCUTS[widgetLimit1]" />
+                <param name="widgetInfoPanel" value="$SKINSHORTCUTS[widgetInfoPanel1]" />
+            </include>
+
+            <!-- widget 2 -->
+            <include content="widget_header_multi" condition="$PYTHON['true' if widgetPath2 else 'false']">
+                <param name="widgetid" value="$SKINSHORTCUTS[id]520" />
+                <param name="submenuid" value="$SKINSHORTCUTS[submenuid]" />
+                <param name="widgetName" value="$SKINSHORTCUTS[widgetName2]" />
+            </include>
+            <include content="widget_base" condition="$PYTHON['true' if widgetPath2 else 'false']">
+                <param name="containerType" value="$PYTHON['fixedlist' if widgetStyle2 in 'details' or 'enabled' in widgetFixedFocus2 else 'panel']" />
+                <param name="contentStyle" value="$SKINSHORTCUTS[contentStyle2]" />
+                <param name="widgetid" value="$SKINSHORTCUTS[id]520" />
+                <param name="widgetName" value="$SKINSHORTCUTS[widgetName2]" />
+                <param name="submenuid" value="$SKINSHORTCUTS[submenuid]" />
+                <param name="widgetTags" value="$SKINSHORTCUTS[widgetTags2]" />
+                <param name="widgetTarget" value="$SKINSHORTCUTS[widgetTarget2]" />
+                <param name="widgetPath" value="$SKINSHORTCUTS[widgetPath2]" />
+                <param name="widgetStyle" value="widget_layout_$SKINSHORTCUTS[widgetStyle2]" />
+                <param name="widgetSortBy" value="$SKINSHORTCUTS[widgetSortBy2]" />
+                <param name="widgetSortOrder" value="$SKINSHORTCUTS[widgetSortOrder2]" />
+                <param name="widgetLimit" value="$SKINSHORTCUTS[widgetLimit2]" />
+                <param name="widgetInfoPanel" value="$SKINSHORTCUTS[widgetInfoPanel2]" />
+            </include>
+            
+            <!-- widget 3 -->
+            <include content="widget_header_multi" condition="$PYTHON['true' if widgetPath3 else 'false']">
+                <param name="widgetid" value="$SKINSHORTCUTS[id]530" />
+                <param name="submenuid" value="$SKINSHORTCUTS[submenuid]" />
+                <param name="widgetName" value="$SKINSHORTCUTS[widgetName3]" />
+            </include>
+            <include content="widget_base" condition="$PYTHON['true' if widgetPath3 else 'false']">
+                <param name="containerType" value="$PYTHON['fixedlist' if widgetStyle3 in 'details' or 'enabled' in widgetFixedFocus3 else 'panel']" />
+                <param name="contentStyle" value="$SKINSHORTCUTS[contentStyle3]" />
+                <param name="widgetid" value="$SKINSHORTCUTS[id]530" />
+                <param name="widgetName" value="$SKINSHORTCUTS[widgetName3]" />
+                <param name="submenuid" value="$SKINSHORTCUTS[submenuid]" />
+                <param name="widgetTags" value="$SKINSHORTCUTS[widgetTags3]" />
+                <param name="widgetTarget" value="$SKINSHORTCUTS[widgetTarget3]" />
+                <param name="widgetPath" value="$SKINSHORTCUTS[widgetPath3]" />
+                <param name="widgetStyle" value="widget_layout_$SKINSHORTCUTS[widgetStyle3]" />
+                <param name="widgetSortBy" value="$SKINSHORTCUTS[widgetSortBy3]" />
+                <param name="widgetSortOrder" value="$SKINSHORTCUTS[widgetSortOrder3]" />
+                <param name="widgetLimit" value="$SKINSHORTCUTS[widgetLimit3]" />
+                <param name="widgetInfoPanel" value="$SKINSHORTCUTS[widgetInfoPanel3]" />
+            </include>
+            
+            <!-- widget 4 -->
+            <include content="widget_header_multi" condition="$PYTHON['true' if widgetPath4 else 'false']">
+                <param name="widgetid" value="$SKINSHORTCUTS[id]540" />
+                <param name="submenuid" value="$SKINSHORTCUTS[submenuid]" />
+                <param name="widgetName" value="$SKINSHORTCUTS[widgetName4]" />
+            </include>
+            <include content="widget_base" condition="$PYTHON['true' if widgetPath4 else 'false']">
+                <param name="containerType" value="$PYTHON['fixedlist' if widgetStyle4 in 'details' or 'enabled' in widgetFixedFocus4 else 'panel']" />
+                <param name="contentStyle" value="$SKINSHORTCUTS[contentStyle4]" />
+                <param name="widgetid" value="$SKINSHORTCUTS[id]540" />
+                <param name="widgetName" value="$SKINSHORTCUTS[widgetName4]" />
+                <param name="submenuid" value="$SKINSHORTCUTS[submenuid]" />
+                <param name="widgetTags" value="$SKINSHORTCUTS[widgetTags4]" />
+                <param name="widgetTarget" value="$SKINSHORTCUTS[widgetTarget4]" />
+                <param name="widgetPath" value="$SKINSHORTCUTS[widgetPath4]" />
+                <param name="widgetStyle" value="widget_layout_$SKINSHORTCUTS[widgetStyle4]" />
+                <param name="widgetSortBy" value="$SKINSHORTCUTS[widgetSortBy4]" />
+                <param name="widgetSortOrder" value="$SKINSHORTCUTS[widgetSortOrder4]" />
+                <param name="widgetLimit" value="$SKINSHORTCUTS[widgetLimit4]" />
+                <param name="widgetInfoPanel" value="$SKINSHORTCUTS[widgetInfoPanel4]" />
+            </include>
+            
+            <!-- widget 5 -->
+            <include content="widget_header_multi" condition="$PYTHON['true' if widgetPath5 else 'false']">
+                <param name="widgetid" value="$SKINSHORTCUTS[id]550" />
+                <param name="submenuid" value="$SKINSHORTCUTS[submenuid]" />
+                <param name="widgetName" value="$SKINSHORTCUTS[widgetName5]" />
+            </include>
+            <include content="widget_base" condition="$PYTHON['true' if widgetPath5 else 'false']">
+                <param name="containerType" value="$PYTHON['fixedlist' if widgetStyle5 in 'details' or 'enabled' in widgetFixedFocus5 else 'panel']" />
+                <param name="contentStyle" value="$SKINSHORTCUTS[contentStyle5]" />
+                <param name="widgetid" value="$SKINSHORTCUTS[id]550" />
+                <param name="widgetName" value="$SKINSHORTCUTS[widgetName5]" />
+                <param name="submenuid" value="$SKINSHORTCUTS[submenuid]" />
+                <param name="widgetTags" value="$SKINSHORTCUTS[widgetTags5]" />
+                <param name="widgetTarget" value="$SKINSHORTCUTS[widgetTarget5]" />
+                <param name="widgetPath" value="$SKINSHORTCUTS[widgetPath5]" />
+                <param name="widgetStyle" value="widget_layout_$SKINSHORTCUTS[widgetStyle5]" />
+                <param name="widgetSortBy" value="$SKINSHORTCUTS[widgetSortBy5]" />
+                <param name="widgetSortOrder" value="$SKINSHORTCUTS[widgetSortOrder5]" />
+                <param name="widgetLimit" value="$SKINSHORTCUTS[widgetLimit5]" />
+                <param name="widgetInfoPanel" value="$SKINSHORTCUTS[widgetInfoPanel5]" />
+            </include>
+            
+            <!-- widget 6 -->
+            <include content="widget_header_multi" condition="$PYTHON['true' if widgetPath6 else 'false']">
+                <param name="widgetid" value="$SKINSHORTCUTS[id]560" />
+                <param name="submenuid" value="$SKINSHORTCUTS[submenuid]" />
+                <param name="widgetName" value="$SKINSHORTCUTS[widgetName6]" />
+            </include>
+            <include content="widget_base" condition="$PYTHON['true' if widgetPath6 else 'false']">
+                <param name="containerType" value="$PYTHON['fixedlist' if widgetStyle6 in 'details' or 'enabled' in widgetFixedFocus6 else 'panel']" />
+                <param name="contentStyle" value="$SKINSHORTCUTS[contentStyle6]" />
+                <param name="widgetid" value="$SKINSHORTCUTS[id]560" />
+                <param name="widgetName" value="$SKINSHORTCUTS[widgetName6]" />
+                <param name="submenuid" value="$SKINSHORTCUTS[submenuid]" />
+                <param name="widgetTags" value="$SKINSHORTCUTS[widgetTags6]" />
+                <param name="widgetTarget" value="$SKINSHORTCUTS[widgetTarget6]" />
+                <param name="widgetPath" value="$SKINSHORTCUTS[widgetPath6]" />
+                <param name="widgetStyle" value="widget_layout_$SKINSHORTCUTS[widgetStyle6]" />
+                <param name="widgetSortBy" value="$SKINSHORTCUTS[widgetSortBy6]" />
+                <param name="widgetSortOrder" value="$SKINSHORTCUTS[widgetSortOrder6]" />
+                <param name="widgetLimit" value="$SKINSHORTCUTS[widgetLimit6]" />
+                <param name="widgetInfoPanel" value="$SKINSHORTCUTS[widgetInfoPanel6]" />
+            </include>
+
+            <!-- widget 7 -->
+            <include content="widget_header_multi" condition="$PYTHON['true' if widgetPath7 else 'false']">
+                <param name="widgetid" value="$SKINSHORTCUTS[id]570" />
+                <param name="submenuid" value="$SKINSHORTCUTS[submenuid]" />
+                <param name="widgetName" value="$SKINSHORTCUTS[widgetName7]" />
+            </include>
+            <include content="widget_base" condition="$PYTHON['true' if widgetPath7 else 'false']">
+                <param name="containerType" value="$PYTHON['fixedlist' if widgetStyle7 in 'details' or 'enabled' in widgetFixedFocus7 else 'panel']" />
+                <param name="contentStyle" value="$SKINSHORTCUTS[contentStyle7]" />
+                <param name="widgetid" value="$SKINSHORTCUTS[id]570" />
+                <param name="widgetName" value="$SKINSHORTCUTS[widgetName7]" />
+                <param name="submenuid" value="$SKINSHORTCUTS[submenuid]" />
+                <param name="widgetTags" value="$SKINSHORTCUTS[widgetTags7]" />
+                <param name="widgetTarget" value="$SKINSHORTCUTS[widgetTarget7]" />
+                <param name="widgetPath" value="$SKINSHORTCUTS[widgetPath7]" />
+                <param name="widgetStyle" value="widget_layout_$SKINSHORTCUTS[widgetStyle7]" />
+                <param name="widgetSortBy" value="$SKINSHORTCUTS[widgetSortBy7]" />
+                <param name="widgetSortOrder" value="$SKINSHORTCUTS[widgetSortOrder7]" />
+                <param name="widgetLimit" value="$SKINSHORTCUTS[widgetLimit7]" />
+                <param name="widgetInfoPanel" value="$SKINSHORTCUTS[widgetInfoPanel7]" />
+            </include>
+            
+            <!-- widget 8 -->
+            <include content="widget_header_multi" condition="$PYTHON['true' if widgetPath8 else 'false']">
+                <param name="widgetid" value="$SKINSHORTCUTS[id]580" />
+                <param name="submenuid" value="$SKINSHORTCUTS[submenuid]" />
+                <param name="widgetName" value="$SKINSHORTCUTS[widgetName8]" />
+            </include>
+            <include content="widget_base" condition="$PYTHON['true' if widgetPath8 else 'false']">
+                <param name="containerType" value="$PYTHON['fixedlist' if widgetStyle8 in 'details' or 'enabled' in widgetFixedFocus8 else 'panel']" />
+                <param name="contentStyle" value="$SKINSHORTCUTS[contentStyle8]" />
+                <param name="widgetid" value="$SKINSHORTCUTS[id]580" />
+                <param name="widgetName" value="$SKINSHORTCUTS[widgetName8]" />
+                <param name="submenuid" value="$SKINSHORTCUTS[submenuid]" />
+                <param name="widgetTags" value="$SKINSHORTCUTS[widgetTags8]" />
+                <param name="widgetTarget" value="$SKINSHORTCUTS[widgetTarget8]" />
+                <param name="widgetPath" value="$SKINSHORTCUTS[widgetPath8]" />
+                <param name="widgetStyle" value="widget_layout_$SKINSHORTCUTS[widgetStyle8]" />
+                <param name="widgetSortBy" value="$SKINSHORTCUTS[widgetSortBy8]" />
+                <param name="widgetSortOrder" value="$SKINSHORTCUTS[widgetSortOrder8]" />
+                <param name="widgetLimit" value="$SKINSHORTCUTS[widgetLimit8]" />
+                <param name="widgetInfoPanel" value="$SKINSHORTCUTS[widgetInfoPanel8]" />
+            </include>
+			
+			<!-- widget 9 -->
+            <include content="widget_header_multi" condition="$PYTHON['true' if widgetPath9 else 'false']">
+                <param name="widgetid" value="$SKINSHORTCUTS[id]590" />
+                <param name="submenuid" value="$SKINSHORTCUTS[submenuid]" />
+                <param name="widgetName" value="$SKINSHORTCUTS[widgetName9]" />
+            </include>
+            <include content="widget_base" condition="$PYTHON['true' if widgetPath9 else 'false']">
+                <param name="containerType" value="$PYTHON['fixedlist' if widgetStyle9 in 'details' or 'enabled' in widgetFixedFocus9 else 'panel']" />
+                <param name="contentStyle" value="$SKINSHORTCUTS[contentStyle9]" />
+                <param name="widgetid" value="$SKINSHORTCUTS[id]590" />
+                <param name="widgetName" value="$SKINSHORTCUTS[widgetName9]" />
+                <param name="submenuid" value="$SKINSHORTCUTS[submenuid]" />
+                <param name="widgetTags" value="$SKINSHORTCUTS[widgetTags9]" />
+                <param name="widgetTarget" value="$SKINSHORTCUTS[widgetTarget9]" />
+                <param name="widgetPath" value="$SKINSHORTCUTS[widgetPath9]" />
+                <param name="widgetStyle" value="widget_layout_$SKINSHORTCUTS[widgetStyle9]" />
+                <param name="widgetSortBy" value="$SKINSHORTCUTS[widgetSortBy9]" />
+                <param name="widgetSortOrder" value="$SKINSHORTCUTS[widgetSortOrder9]" />
+                <param name="widgetLimit" value="$SKINSHORTCUTS[widgetLimit9]" />
+                <param name="widgetInfoPanel" value="$SKINSHORTCUTS[widgetInfoPanel9]" />
+            </include>
+			
+			<!-- widget 10 -->
+            <include content="widget_header_multi" condition="$PYTHON['true' if widgetPath10 else 'false']">
+                <param name="widgetid" value="$SKINSHORTCUTS[id]5100" />
+                <param name="submenuid" value="$SKINSHORTCUTS[submenuid]" />
+                <param name="widgetName" value="$SKINSHORTCUTS[widgetName10]" />
+            </include>
+            <include content="widget_base" condition="$PYTHON['true' if widgetPath10 else 'false']">
+                <param name="containerType" value="$PYTHON['fixedlist' if widgetStyle10 in 'details' or 'enabled' in widgetFixedFocus10 else 'panel']" />
+                <param name="contentStyle" value="$SKINSHORTCUTS[contentStyle10]" />
+                <param name="widgetid" value="$SKINSHORTCUTS[id]5100" />
+                <param name="widgetName" value="$SKINSHORTCUTS[widgetName10]" />
+                <param name="submenuid" value="$SKINSHORTCUTS[submenuid]" />
+                <param name="widgetTags" value="$SKINSHORTCUTS[widgetTags10]" />
+                <param name="widgetTarget" value="$SKINSHORTCUTS[widgetTarget10]" />
+                <param name="widgetPath" value="$SKINSHORTCUTS[widgetPath10]" />
+                <param name="widgetStyle" value="widget_layout_$SKINSHORTCUTS[widgetStyle10]" />
+                <param name="widgetSortBy" value="$SKINSHORTCUTS[widgetSortBy10]" />
+                <param name="widgetSortOrder" value="$SKINSHORTCUTS[widgetSortOrder10]" />
+                <param name="widgetLimit" value="$SKINSHORTCUTS[widgetLimit10]" />
+                <param name="widgetInfoPanel" value="$SKINSHORTCUTS[widgetInfoPanel10]" />
+            </include>
+			
+        </controls>        
+	</other>
+	<submenu include="search" name="searchmenu">
+        <controls>
+            <skinshortcuts insert="searchlist">items</skinshortcuts>
+        </controls>
+        <items insert="searchlist">
+            <property name="label" tag="label" />
+			
+            <property name="path" tag="property" attribute="name|list"/>
+
+            <property name="limit" tag="property" attribute="name|widgetlimit"/>
+			<property name="limit">20</property>	
+			
+			<property name="force_tags" tag="property" attribute="name|force_tags"/>
+			<property name="force_tags">false</property>
+			
+			<property name="layout" tag="property" attribute="name|layout" />
+            <property name="layout">PosterPanelBingie</property>	
+			<property name="layoutwidth" tag="property" attribute="name|layout" value="PosterPanelBingie">297</property>
+			<property name="layoutwidth" tag="property" attribute="name|layout" value="SquarePosterPanel">396</property>
+			<property name="layoutwidth" tag="property" attribute="name|layout" value="ThumbsViewBingie">396</property>
+			<property name="layoutwidth">297</property>
+			<property name="layoutheight" tag="property" attribute="name|layout" value="PosterPanelBingie">417</property>
+			<property name="layoutheight" tag="property" attribute="name|layout" value="SquarePosterPanel">396</property>
+			<property name="layoutheight" tag="property" attribute="name|layout" value="ThumbsViewBingie">230</property>
+			<property name="layoutheight">417</property>
+			<property name="height" tag="property" attribute="name|layout" value="PosterPanelBingie">975</property>						
+			<property name="height" tag="property" attribute="name|layout" value="SquarePosterPanel">970</property>
+			<property name="height" tag="property" attribute="name|layout" value="ThumbsViewBingie">970</property>
+			<property name="height">975</property>
+
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[1]">1</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[2]">2</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[3]">3</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[4]">4</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[5]">5</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[6]">6</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[7]">7</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[8]">8</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[9]">9</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[10]">10</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[11]">11</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[12]">12</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[13]">13</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[14]">14</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[15]">15</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[16]">16</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[17]">17</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[18]">18</property>
+            <property name="id" tag="property" attribute="name|id" value="$NUMBER[19]">19</property>
+            <property name="id">20</property>
+            <controls>
+                <include content="Object_SearchList_Template">
+                    <param name="id" value="$PYTHON[int(id) + 5040]" />
+                    <param name="groupid" value="$PYTHON[int(id) + 7540]" />
+                    <param name="path" value="$SKINSHORTCUTS[path]" />
+                    <param name="label" value="$SKINSHORTCUTS[label]" />
+                    <param name="limit" value="$SKINSHORTCUTS[limit]" />
+					<param name="layout" value="$SKINSHORTCUTS[layout]" />
+					<param name="layoutwidth" value="$SKINSHORTCUTS[layoutwidth]" />
+					<param name="layoutheight" value="$SKINSHORTCUTS[layoutheight]" />
+					<param name="height" value="$SKINSHORTCUTS[height]" />
+					<param name="force_tags" value="$SKINSHORTCUTS[force_tags]" />
+                </include>
+            </controls>
+        </items>
+    </submenu>
+</template>

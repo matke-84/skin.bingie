@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<zorder>5</zorder>
+    <onunload>ClearProperty(filename_formatted,Home)</onunload>
+    <onload>RunScript(script.bingie.toolbox,action=GETPLAYERFILENAME,output=filename_formatted)</onload>
+    <controls>
+		<include>DialogOverlayExtra</include>
+        <control type="group" id="250">
+			<posy>125</posy>
+			<posx>-25</posx>
+			<include>animation_window_open_close</include>
+
+			<control type="image">
+                <!--Panel-->
+                <posx>230</posx>
+                <posy>90</posy>
+                <width>1510</width>
+                <height>650</height>
+				<texture border="15">diffuse/bgpanel.png</texture>
+				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+				
+            </control>
+			<control type="image">
+                <!--Panel-->
+                <posx>230</posx>
+                <posy>90</posy>
+                <width>1510</width>
+                <height>650</height>
+				<texture border="15">diffuse/bgpanel.png</texture>
+				<bordersize>10</bordersize>
+				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+				
+            </control>
+
+            <!--Top Label-->
+            <control type="group">
+                <control type="label" id="100">
+                    <!--textarea-->
+                    <posx>303</posx>
+                    <posy>130</posy>
+                    <width>880</width>
+                    <height>50</height>
+                    <font>Reg45</font>
+                    <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                    <align>Left</align>
+                    <wrapmultiline>false</wrapmultiline>
+                </control>
+				<control type="label" id="140">
+					<description>textarea</description>
+					<posx>303</posx>
+                    <posy>180</posy>
+                    <width>780</width>
+                    <height>50</height>
+                    <font>Reg25</font>
+					<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+					<align>Left</align>
+                    <wrapmultiline>false</wrapmultiline>
+				</control>
+            </control>
+            <!--Left Menu-->
+            <control type="group">
+                <control type="image">
+                    <!--Inner-->
+                    <posx>273</posx>
+                    <posy>240</posy>
+                    <width>1050</width>
+                    <height>404</height>
+                    <texture border="5">dialogs/default/inner.png</texture>
+                </control>
+                <control type="list" id="120">
+                    <!--List 120-->
+                    <posx>273</posx>
+                    <posy>242</posy>
+                    <width>1050</width>
+                    <height>400</height>
+					<itemgap>15</itemgap>
+                    <onleft>150</onleft>
+                    <onright>121</onright>
+                    <onup>120</onup>
+                    <ondown>120</ondown>
+                    <viewtype label="535">list</viewtype>
+                    <pagecontrol>121</pagecontrol>
+                    <scrolltime>200</scrolltime>
+                    <itemlayout width="1050" height="100">
+                        
+                        <!--Language Flag -->
+                        <control type="image">
+								<left>38</left>
+                                <top>5</top>
+                                <width>45</width>
+                                <height>45</height>
+                                <texture background="true">flags/flags_color/language/$INFO[ListItem.Art(thumb)].png</texture>
+                                <aspectratio>keep</aspectratio>
+                            </control>
+                        
+						<!-- Language Text -->							
+						<control type="textbox">
+							<left>0</left>
+							<top>40</top>
+							<width>120</width>
+							<height>55</height>
+							<font>Reg21</font>
+							<textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<wrapmultiline>true</wrapmultiline>
+							<label>$INFO[ListItem.Label]</label>
+							<autoscroll>false</autoscroll>
+						</control>
+						
+                        <!--Rating-->
+                        <control type="image">
+                                <posx>130</posx>
+                                <posy>12</posy>
+                                <width>100</width>
+                                <height>30</height>	
+								<texture background="true" colordiffuse="$INFO[Skin.String(ButtonTextColor)]">$INFO[ListItem.ActualIcon,ratings/star_rating_simple/rating,.png]</texture>
+								<aspectratio>keep</aspectratio>															
+                        </control>
+                        
+                        <control type="textbox">
+                                <!--Label 2-->
+                                <posx>255</posx>
+                                <posy>10</posy>
+                                <width>785</width>
+                                <height>64</height>
+                                <font>Reg26</font>
+                                <aligny>top</aligny>
+                                <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
+                                <selectedcolor>$INFO[Skin.String(ButtonTextColor)]</selectedcolor>
+                                <align>left</align>
+								<label>$INFO[ListItem.Label2]</label>
+								<wrapmultiline>true</wrapmultiline>
+								<autoscroll>false</autoscroll>
+                            </control>
+						 <!-- sync image - ON -->
+                            <control type="image">
+                                <posx>152</posx>
+                                <posy>50</posy>
+                                <width>55</width>
+                                <height>25</height>
+								<texture colordiffuse="$INFO[Skin.String(ButtonTextColor)]"> flags/subsync.png</texture>
+								<visible>ListItem.property(sync)</visible>
+								<aspectratio>keep</aspectratio>
+							</control>
+							<!-- sync image - OFF -->
+                            <control type="image">
+								<animation effect="fade" start="100" end="50" time="0" condition="true">Conditional</animation>
+                                <posx>152</posx>
+                                <posy>50</posy>
+                                <width>55</width>
+                                <height>25</height>
+								<texture colordiffuse="$INFO[Skin.String(ButtonTextColor)]"> flags/subsync.png</texture>
+								<visible>!ListItem.property(sync) + !string.IsEmpty(ListItem.Label)</visible>
+								<aspectratio>keep</aspectratio>
+							</control>
+                    </itemlayout>
+                    <focusedlayout width="1050" height="100">
+                        <control type="group">
+                            <visible>Control.HasFocus(120)</visible>
+                            <control type="image">
+                                <posx>1</posx>
+                                <posy>0</posy>
+                                <width>1048</width>
+                                <height>100</height>
+                                <texture border="10" colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">diffuse/panel.png</texture>
+                            </control>
+                            <!--Language Flag -->
+                           <control type="image">
+								<left>38</left>
+                                <top>5</top>
+                                <width>45</width>
+                                <height>45</height>
+                                <texture background="true">flags/flags_color/language/$INFO[ListItem.Art(thumb)].png</texture>
+                                <aspectratio>keep</aspectratio>
+                            </control>
+                            
+						<!-- Language Text -->							
+						<control type="textbox">
+							<left>0</left>
+							<top>40</top>
+							<width>120</width>
+							<height>55</height>
+							<font>Reg21</font>
+							<textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<wrapmultiline>true</wrapmultiline>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						
+                            <!--Rating-->
+                            <control type="image">
+                                <posx>130</posx>
+                                <posy>12</posy>
+                                <width>100</width>
+                                <height>30</height>						
+								<texture background="true" colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]">$INFO[ListItem.ActualIcon,ratings/star_rating_simple/rating,.png]</texture>
+								<aspectratio>keep</aspectratio>																							
+                            </control>
+							
+                            <control type="label">
+                                <!--Label 2-->
+                                <posx>255</posx>
+                                <posy>10</posy>
+                                <width>780</width>
+                                <height>80</height>
+                                <font>Reg26</font>
+                                <aligny>top</aligny>
+                                <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
+                                <selectedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</selectedcolor>
+                                <align>left</align>
+								<label>$INFO[ListItem.Label2]</label>
+								<scroll>true</scroll>
+                            </control>
+                            
+							<!-- sync image - ON -->
+                            <control type="image">
+                                <posx>152</posx>
+                                <posy>50</posy>
+                                <width>55</width>
+                                <height>25</height>
+								<texture colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]"> flags/subsync.png</texture>
+								<visible>ListItem.property(sync)</visible>
+								<aspectratio>keep</aspectratio>
+							</control>
+							<!-- sync image - OFF -->
+                            <control type="image">
+								<animation effect="fade" start="100" end="50" time="0" condition="true">Conditional</animation>
+                                <posx>152</posx>
+                                <posy>50</posy>
+                                <width>55</width>
+                                <height>25</height>
+								<texture colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]"> flags/subsync.png</texture>
+								<visible>!ListItem.property(sync) + !string.IsEmpty(ListItem.Label)</visible>
+                                <aspectratio>keep</aspectratio>
+							</control>
+                        </control>
+                        <control type="group">
+                            <visible>!Control.HasFocus(120)</visible>
+							<control type="image">
+                                <posx>1</posx>
+                                <posy>0</posy>
+                                <width>1048</width>
+                                <height>100</height>
+                                <texture border="10" colordiffuse="$INFO[Skin.String(ButtonColor)]">diffuse/panel.png</texture>
+                            </control>
+                            <!--Language Flag -->
+                            <control type="image">
+								<left>38</left>
+                                <top>5</top>
+                                <width>45</width>
+                                <height>45</height>
+                                <texture background="true">flags/flags_color/language/$INFO[ListItem.Art(thumb)].png</texture>
+                                <aspectratio>keep</aspectratio>
+                            </control>
+                            
+						<!-- Language Text -->							
+						<control type="textbox">
+							<left>0</left>
+							<top>40</top>
+							<width>120</width>
+							<height>55</height>
+							<font>Reg21</font>
+							<textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<wrapmultiline>true</wrapmultiline>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+														
+                            <!--Rating-->
+                            <control type="image">
+                                <posx>130</posx>
+                                <posy>12</posy>
+                                <width>100</width>
+                                <height>30</height>							
+								<texture background="true" colordiffuse="$INFO[Skin.String(ButtonTextColor)]">$INFO[ListItem.ActualIcon,ratings/star_rating_simple/rating,.png]</texture>
+								<aspectratio>keep</aspectratio>															
+                            </control>
+                            <control type="textbox">
+                                <!--Label 2-->
+                                <posx>255</posx>
+                                <posy>10</posy>
+                                <width>800</width>
+                                <height>64</height>
+                                <font>Reg26</font>
+                                <aligny>top</aligny>
+                                <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
+                                <selectedcolor>$INFO[Skin.String(ButtonTextColor)]</selectedcolor>
+                                <align>left</align>
+								<label>$INFO[ListItem.Label2]</label>
+								<wrapmultiline>true</wrapmultiline>
+                            </control>
+                            <!-- sync image - ON -->
+                            <control type="image">
+                                <posx>152</posx>
+                                <posy>50</posy>
+                                <width>55</width>
+                                <height>25</height>
+								<texture colordiffuse="$INFO[Skin.String(ButtonTextColor)]"> flags/subsync.png</texture>
+								<visible>ListItem.property(sync)</visible>
+								<aspectratio>keep</aspectratio>
+							</control>
+							<!-- sync image - OFF -->
+                            <control type="image">
+								<animation effect="fade" start="100" end="50" time="0" condition="true">Conditional</animation>
+                                <posx>152</posx>
+                                <posy>50</posy>
+                                <width>55</width>
+                                <height>25</height>
+								<texture colordiffuse="$INFO[Skin.String(ButtonTextColor)]"> flags/subsync.png</texture>
+								<visible>!ListItem.property(sync) + !string.IsEmpty(ListItem.Label)</visible>
+                                <aspectratio>keep</aspectratio>
+							</control>
+                        </control>
+                    </focusedlayout>
+                </control>
+                
+                <control type="scrollbar" id="121">
+                    <posx>1333</posx>
+                    <posy>240</posy>
+                    <height>404</height>
+                    <onleft>120</onleft>
+					<onright>150</onright>
+                    <animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(121) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)">Conditional</animation>
+                    <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(121) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+                </control>
+                
+				<control type="label">
+                    <!--filename-->
+                    <posx>303</posx>
+                    <posy>655</posy>
+                    <width>910</width>
+                    <height>50</height>
+                    <font>Reg25</font>
+                    <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                    <align>Left</align>
+					<label>$INFO[Window(Home).Property(filename_formatted)]</label>
+                    <wrapmultiline>false</wrapmultiline>
+                    <scroll>true</scroll>
+                </control>
+            </control>
+
+            <!--Right Menu-->
+            <control type="group">
+                <control type="image">
+                    <!--Inner-->
+                    <posx>1368</posx>
+                    <posy>240</posy>
+                    <height>404</height>
+                    <width>330</width>
+                    <texture border="5">dialogs/default/inner.png</texture>
+                </control>
+                <control type="button" id="160">
+                    <description>Manual search button</description>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <textoffsetx>10</textoffsetx>
+                    <left>1368</left>
+                    <top>120</top>
+                    <width>330</width>
+                    <height>60</height>
+                    <onleft>120</onleft>
+                    <onright>120</onright>
+                    <onup>150</onup>
+                    <ondown>150</ondown>
+                    <label>$LOCALIZE[24120]</label>
+                </control>
+                <control type="list" id="150">
+                    <!--List 150-->
+                    <posx>1368</posx>
+                    <posy>240</posy>
+                    <height>400</height>
+                    <width>330</width>
+                    <onleft>120</onleft>
+                    <onright>120</onright>
+                    <onup>160</onup>
+                    <ondown>150</ondown>
+                    <viewtype label="535">list</viewtype>
+                    <scrolltime>200</scrolltime>
+                    <pagecontrol>151</pagecontrol>
+                    <itemlayout width="330" height="60">
+                        <control type="label">
+                            <textoffsetx>40</textoffsetx>
+                            <posy>0</posy>
+                            <width>330</width>
+                            <height>60</height>
+                            <font>Reg28</font>
+                            <aligny>center</aligny>
+                            <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
+                            <selectedcolor>$INFO[Skin.String(ButtonTextColor)]</selectedcolor>
+                            <align>left</align>
+                            <info>ListItem.Label</info>
+                            <visible>!ListItem.property(man)</visible>
+                        </control>
+                        <control type="label">
+                            <textoffsetx>40</textoffsetx>
+                            <posy>0</posy>
+                            <width>330</width>
+                            <height>60</height>
+                            <font>Reg28</font>
+                            <aligny>center</aligny>
+                            <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
+                            <selectedcolor>$INFO[Skin.String(ButtonTextColor)]</selectedcolor>
+                            <align>left</align>
+                            <info>ListItem.Label</info>
+                            <visible>ListItem.property(man)</visible>
+                        </control>
+						<control type="image">
+							<posx>1</posx>
+                            <posy>2</posy>
+                            <width>328</width>
+                            <height>60</height>
+							<texture>dialogs/default/separator.png</texture>
+						</control>
+                    </itemlayout>
+                    <focusedlayout width="330" height="60">
+                        <control type="image">
+                            <!--Button-->
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>330</width>
+                            <height>60</height>
+                            <texture border="10">diffuse/panel.png</texture>
+							<colordiffuse>$INFO[Skin.String(ButtonFocusColor)]</colordiffuse>
+                            <visible>Control.HasFocus(150)</visible>
+                        </control>
+                        <control type="label">
+                            <visible>Control.HasFocus(150)</visible>
+                            <textoffsetx>40</textoffsetx>
+                            <posy>0</posy>
+                            <width>330</width>
+                            <height>60</height>
+                            <font>Reg28</font>
+                            <aligny>center</aligny>
+                            <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
+							<selectedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</selectedcolor>
+                            <align>left</align>
+                            <info>ListItem.Label</info>
+                            <visible>!ListItem.property(man)</visible>
+							<scroll>true</scroll>
+                        </control>
+                        <control type="label">
+                            <visible>Control.HasFocus(150)</visible>
+                            <textoffsetx>40</textoffsetx>
+                            <posy>0</posy>
+                            <width>330</width>
+                            <height>60</height>
+                            <font>Reg28</font>
+                            <aligny>center</aligny>
+                            <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
+                            <align>left</align>
+                            <info>ListItem.Label</info>
+                            <visible>ListItem.property(man)</visible>
+							<scroll>true</scroll>
+                        </control>
+                        <control type="label">
+                            <visible>!Control.HasFocus(150)</visible>
+                            <textoffsetx>40</textoffsetx>
+                            <posy>0</posy>
+                            <width>330</width>
+                            <height>60</height>
+                            <font>Reg28</font>
+                            <aligny>center</aligny>
+                            <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
+							<selectedcolor>$INFO[Skin.String(ButtonTextColor)]</selectedcolor>
+                            <align>left</align>
+                            <info>ListItem.Label</info>
+                            <visible>!ListItem.property(man)</visible>
+							<scroll>true</scroll>
+                        </control>
+                        <control type="label">
+                            <visible>!Control.HasFocus(150)</visible>
+                            <textoffsetx>40</textoffsetx>
+                            <posy>0</posy>
+                            <width>330</width>
+                            <height>60</height>
+                            <font>Reg28</font>
+                            <aligny>center</aligny>
+                            <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
+							<selectedcolor>$INFO[Skin.String(ButtonTextColor)]</selectedcolor>
+                            <align>left</align>
+                            <info>ListItem.Label</info>
+                            <visible>ListItem.property(man)</visible>
+							<scroll>true</scroll>
+                        </control>
+						<control type="image">
+							<posx>1</posx>
+                            <posy>2</posy>
+                            <width>328</width>
+                            <height>60</height>
+							<texture>dialogs/default/separator.png</texture>
+							<visible>!Control.HasFocus(150)</visible>
+						</control>
+                    </focusedlayout>
+                </control>              
+            </control>
+        </control>
+    </controls>
+</window>

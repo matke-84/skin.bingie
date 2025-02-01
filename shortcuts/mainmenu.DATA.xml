@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<shortcuts>
+	<!-- Search -->
+	<shortcut>
+		<label>137</label>
+		<label2>137</label2>
+		<icon>shortcuts/search.png</icon>
+		<thumb />
+		<action>ActivateWindow(1109,return)</action>
+	</shortcut>
+
+	<!-- Home -->
+	<shortcut>
+		<label>10000</label>
+		<label2>10000</label2>
+		<icon>shortcuts/home.png</icon>
+		<thumb />
+		<action>ActivateWindow(home,return)</action>
+	</shortcut>
+
+	<!-- New/Popular Hub -->
+	<shortcut>
+		<label>31625</label>
+		<label2>31625</label2>
+		<icon>shortcuts/new.png</icon>
+		<thumb />
+		<action>ActivateWindow(1112,return)</action>
+	</shortcut>
+	
+	<!-- TV hub -->
+	<shortcut>
+		<label>31590</label>
+		<label2>31590</label2>
+		<defaultID>shows</defaultID>
+		<icon>shortcuts/tv.png</icon>
+        <thumb />
+		<action>ActivateWindow(1110,return)</action>
+	</shortcut>
+
+	<!-- Movies hub -->
+	<shortcut>
+		<label>342</label>
+		<label2>342</label2>
+		<defaultID>movies</defaultID>
+		<icon>shortcuts/clapperboard.png</icon>
+		<thumb />
+		<action>ActivateWindow(1111,return)</action>
+	</shortcut>
+	
+	<!-- Category hub -->
+	<shortcut>
+		<label>31025</label>
+		<label2>31025</label2>
+		<icon>shortcuts/categories.png</icon>
+        <thumb />
+		<action>ActivateWindow(1119,return)</action>
+	</shortcut>
+
+	<!-- My List Hub -->
+    <shortcut>
+        <label>31534</label>
+        <label2>31534</label2>
+        <icon>shortcuts/mylist.png</icon>
+        <thumb />
+        <action>ActivateWindow(1114,return)</action>
+    </shortcut>
+
+</shortcuts>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<includes>
+	<variable name="503_LogoImage">
+		<value condition="Skin.HasSetting(LogoViewPreferClearArt) + !String.IsEmpty(ListItem.Art(clearart))">$INFO[ListItem.Art(clearart)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+		<value condition="String.IsEqual(ListItem.Label,..)">DefaultFolderBack.png</value>
+		<value>DefaultMovies.png</value>
+	</variable>
+
+    <include name="View_503_Logos">
+		<control type="group">
+			<include>animation_view_change</include>
+			<defaultcontrol always="true">503</defaultcontrol>
+			<visible>Control.IsVisible(503) + Integer.IsGreater(Container.NumItems,0)</visible>
+            <visible>!Window.IsActive(DialogVideoInfo.xml)</visible>			
+			 <include>WatchedIndicatorLarge</include>
+				<!-- movie details -->
+				<control type="group">
+					<visible>Skin.HasSetting(LogoViewShowInfo)</visible>
+					<include>MovieDetailsTop</include>
+				</control>			
+				<control type="fixedlist" id="503">
+					<left>75</left>
+					<bottom>40</bottom>
+					<width>1780</width>
+					<height>525</height>
+					<onleft>503</onleft>
+					<onright>503</onright>
+					<onup>9000</onup>
+					<ondown condition="Skin.HasSetting(EnableQuickJump)">7000</ondown>
+					<ondown condition="!Skin.HasSetting(EnableQuickJump)">60</ondown>
+					<focusposition>1</focusposition>
+					<pagecontrol>60</pagecontrol>
+					<preloaditems>2</preloaditems>
+					<viewtype label="31461">list</viewtype>
+					<include content="View_Forced">
+						<param name="viewtype" value="$LOCALIZE[31461]" />
+					</include>
+					<scrolltime tween="quadratic">400</scrolltime>
+					<orientation>horizontal</orientation>
+					<itemlayout width="690" height="450">
+						<control type="group">
+							<animation effect="fade" start="0" end="30" time="0" reversible="false" condition="true">Conditional</animation>
+							<control type="image">
+								<left>0</left>
+								<top>178</top>
+								<width>390</width>
+								<height>164</height>
+								<aspectratio aligny="center" align="center">keep</aspectratio>
+								<texture background="true">$VAR[503_LogoImage]</texture>
+							</control>
+						</control>
+					</itemlayout>
+					<focusedlayout width="690" height="550">
+						<control type="group">
+							<animation effect="zoom" center="196,288" start="100" end="190" time="480" tween="back" reversible="false">Focus</animation>
+							<animation effect="zoom" center="196,288" start="190" end="100" time="160" tween="back" reversible="false">UnFocus</animation>
+					<!-- LOGO IMAGE Center Position -->
+							<control type="image">
+								<left>0</left>
+								<top>178</top>
+								<width>390</width>
+								<height>164</height>
+								<aspectratio aligny="center" align="center">keep</aspectratio>
+								<texture background="true">$VAR[503_LogoImage]</texture>
+							</control>
+						</control>
+					</focusedlayout>
+			</control>		
+                <control type="scrollbar" id="60">
+					<texturesliderbackground border="5" colordiffuse="$INFO[Skin.String(ScrollbarBackgroundColor)]">scrollbar/texturesliderbar_small.png</texturesliderbackground>
+					<texturesliderbar colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]" border="5">scrollbar/texturesliderbar_small.png</texturesliderbar>
+					<texturesliderbarfocus colordiffuse="$INFO[Skin.String(ScrollbarFocusedColor)]" border="5">scrollbar/texturesliderbar_small.png</texturesliderbarfocus>
+					<textureslidernib colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]">scrollbar/texturesliderbar_nib.png</textureslidernib>
+					<textureslidernibfocus colordiffuse="$INFO[Skin.String(ScrollbarFocusedColor)]">scrollbar/texturesliderbar_nib.png</textureslidernibfocus>
+					<visible>Control.IsVisible(503) + Integer.IsGreater(Container.NumItems,0)</visible>
+					<left>70</left>
+                    <bottom>0</bottom>
+					<width>1780</width>
+					<height>10</height>
+					<onup>503</onup>
+					<onleft>60</onleft>
+					<onright>60</onright>
+					<orientation>horizontal</orientation>
+					<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] + !Control.IsVisible(7002)">Conditional</animation>
+					<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] | Control.IsVisible(7002)">Conditional</animation>
+				</control>
+        </control>
+	</include>
+</includes>

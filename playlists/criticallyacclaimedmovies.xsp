@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- BINGIE -->
+<smartplaylist type="movies">
+    <name>Critically-Acclaimed Movies</name>
+    <match>one</match>
+    <rule field="rating" operator="greaterthan">
+        <value>6.9</value>
+    </rule>
+    <rule field="userrating" operator="greaterthan">
+        <value>7</value>
+    </rule>
+    <rule field="top250" operator="isnot">
+        <value>0</value>
+    </rule>
+    <order direction="ascending">dateadded</order>
+    <limit>200</limit>
+</smartplaylist>
