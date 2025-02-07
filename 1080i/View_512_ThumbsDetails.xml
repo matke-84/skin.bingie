@@ -42,7 +42,7 @@
                 <width>297</width>
                 <height>176</height>
 				<include>ThumbsViewLayoutFocusSmall</include>
-                <include condition="Skin.HasSetting(View512_DetailsAutoTrailer)">LibraryAutoTrailerStopButton</include>
+                <include>LibraryAutoTrailerStopButton</include>
 						<include content="LibraryAutoTrailerStartButton" condition="Skin.HasSetting(View512_DetailsAutoTrailer)">
 							<param name="interval" value="$INFO[Skin.String(details_auto_trailer_interval)]" />
 						</include>

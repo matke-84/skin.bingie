@@ -272,7 +272,7 @@
                         <!--Channel Show-->
                         <posx>470</posx>
                         <posy>0</posy>
-                        <width>755</width>
+                        <width>710</width>
                         <height>80</height>
                         <font>Reg28</font>
                         <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
@@ -352,11 +352,12 @@
                         <!--Channel Show-->
                         <posx>470</posx>
                         <posy>0</posy>
-                        <width>755</width>
+                        <width>710</width>
                         <height>80</height>
                         <font>Reg28</font>
                         <textcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</textcolor>
                         <label>$VAR[ListTitlePVR]</label>
+						<scroll>true</scroll>
                     </control>
                     <control type="label">
                         <!--Date-->

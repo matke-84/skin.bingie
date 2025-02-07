@@ -74,7 +74,8 @@
                         <textcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</textcolor>
                         <label>$VAR[ListDetails]</label>
                         <visible>!String.IsEqual(ListItem.Label,..)</visible>
-                    </control>				
+                    </control>	
+					<include>LibraryAutoTrailerStopButton</include>					
                 </focusedlayout>             		
             </control>
         

@@ -44,13 +44,14 @@
                         <width>182</width>
                         <height>252</height>
                         <include>SmallPosterPanelLayoutFocus</include>
-				  <control type="group">
-					<!--Watched Overlay-->
-					<right>8</right>
-					<top>8</top>
-					<include>WatchedIndicatorSmall</include>
-				  </control>
-                      </control>
+						  <control type="group">
+							<!--Watched Overlay-->
+							<right>8</right>
+							<top>8</top>
+							<include>WatchedIndicatorSmall</include>
+						  </control>
+                    </control>
+					<include>LibraryAutoTrailerStopButton</include>
                 </focusedlayout>
 			</control>
 		

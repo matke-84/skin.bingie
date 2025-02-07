@@ -64,6 +64,7 @@
                         <height>334</height>
                         <include>LandscapeLayoutFocus</include>
                     </control>
+					<include>LibraryAutoTrailerStopButton</include>
 				</focusedlayout>
 				<focusedlayout width="607" height="340" condition="!Skin.HasSetting(View502_EnableZoomEffect)">
                     <control type="group">
@@ -71,6 +72,7 @@
                         <height>334</height>
                         <include>LandscapeLayout</include>
                     </control>
+					<include>LibraryAutoTrailerStopButton</include>
 				</focusedlayout>
 			</control>	
 			<include content="Bingie_Main_View_Fixed_Frame">

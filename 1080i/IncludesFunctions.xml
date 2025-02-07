@@ -110,11 +110,11 @@
     <include name="LibraryAutoTrailerStartButton">
         <control type="button">
         <visible>false</visible>	
-		<onfocus condition="!String.IsEmpty(ListItem.Trailer) + [String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | !String.Contains(ListItem.Trailer,plugin)]">
+		<onfocus condition="!String.IsEmpty(ListItem.Trailer) + [String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | !String.Contains(ListItem.Trailer,plugin)] + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)]">
             AlarmClock(preview_delay,PlayMedia($ESCINFO[ListItem.Trailer],1),00:$PARAM[interval],silent)</onfocus>
         <onfocus condition="String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)">
             AlarmClock(preview_delay,RunScript(script.bingie.helper,action=playtrailer,title=$INFO[ListItem.Title]$INFO[ListItem.Year]),00:$PARAM[interval],silent)</onfocus>
-		<onfocus condition="String.IsEmpty(ListItem.Trailer) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)] + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)">
+		<onfocus condition="String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,tvshow) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)">
             AlarmClock(preview_delay,RunScript(script.bingie.helper,action=playtrailer,title=$VAR[TVShowTitle]$INFO[ListItem.Year],tvshow=true,youtube=$INFO[Skin.String(AutoYoutubeTrailer)]),00:$PARAM[interval],silent)</onfocus>	          
         </control>
     </include>
@@ -123,8 +123,10 @@
         <control type="button">
         <visible>false</visible>				          
             <onunfocus condition="System.HasAlarm(preview_delay)">CancelAlarm(preview_delay,silent)</onunfocus>
-            <onunfocus condition="!String.IsEmpty(ListItem.Trailer) + [String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | !String.Contains(ListItem.Trailer,plugin)] | String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | String.IsEmpty(ListItem.Trailer) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)] + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)">PlayerControl(Stop)</onunfocus>
-        </control>
+            <onunfocus condition="!String.IsEmpty(ListItem.Trailer) + [String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | !String.Contains(ListItem.Trailer,plugin)] + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)] | String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,tvshow) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)">PlayerControl(Stop)</onunfocus>
+			<onfocus condition="String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)">CancelAlarm(preview_delay,silent)</onfocus>
+			<onfocus condition="String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)">PlayerControl(Stop)</onfocus>
+		</control>
     </include>
 
     <!-- IMPORTANT - USE ESCINFO TO AVOID COMMAS IN INFOLABEL -->

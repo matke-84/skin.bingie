@@ -69,7 +69,7 @@
                         <label>$VAR[ListDetails]</label>
                         <visible>!String.IsEqual(ListItem.Label,..)</visible>
                     </control>
-					<include condition="Skin.HasSetting(View51_DetailsAutoTrailer)">LibraryAutoTrailerStopButton</include>
+					<include>LibraryAutoTrailerStopButton</include>
 					<include content="LibraryAutoTrailerStartButton" condition="Skin.HasSetting(View51_DetailsAutoTrailer)">
 						<param name="interval" value="$INFO[Skin.String(details_auto_trailer_interval)]" />
 					</include>					

@@ -50,6 +50,7 @@
                 <itemlayout width="270" height="800">
                 </itemlayout>
                 <focusedlayout width="270" height="800">
+				<include>LibraryAutoTrailerStopButton</include>
                 </focusedlayout>
             </control>
             <control type="group">

@@ -49,6 +49,7 @@
             <include>WatchedIndicatorNormal</include>
         </control>
           </control>
+		  <include>LibraryAutoTrailerStopButton</include>
         </focusedlayout>
 </include>
 

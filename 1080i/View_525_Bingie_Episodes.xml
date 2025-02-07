@@ -747,6 +747,7 @@
                         <include>View_525_Details_Defs_Focus</include>
                         <!-- hidden button -->
                         <include>View525_Hidden_Button</include>
+						<include>LibraryAutoTrailerStopButton</include>
                     </focusedlayout>
                 </control>
 

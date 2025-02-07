@@ -35,6 +35,7 @@
                 <height>206</height>
 				<include>ThumbsViewLayoutFocus</include>
 			</control>
+			<include>LibraryAutoTrailerStopButton</include>
         </focusedlayout>
 	  </control>    
 	  <!--vertical Scollbar-->

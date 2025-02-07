@@ -35,6 +35,7 @@
                 <height>260</height>
                 <include>SquarePosterPanelLayoutFocus</include>
             </control>
+			<include>LibraryAutoTrailerStopButton</include>
         </focusedlayout>
 	  </control>
       

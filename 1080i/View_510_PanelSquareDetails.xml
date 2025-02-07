@@ -41,7 +41,7 @@
                 <width>238</width>
                 <height>238</height>
                 <include>SquarePosterPanelLayoutFocus</include>
-              <include condition="Skin.HasSetting(View510_DetailsAutoTrailer)">LibraryAutoTrailerStopButton</include>
+              <include>LibraryAutoTrailerStopButton</include>
 						<include content="LibraryAutoTrailerStartButton" condition="Skin.HasSetting(View510_DetailsAutoTrailer)">
 							<param name="interval" value="$INFO[Skin.String(details_auto_trailer_interval)]" />
 						</include>

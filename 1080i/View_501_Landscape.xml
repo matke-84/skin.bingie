@@ -39,6 +39,7 @@
                         <height>340</height>
 						<include>LandscapeLayoutFocus</include>
 					</control>
+					<include>LibraryAutoTrailerStopButton</include>
 				</focusedlayout>
 			</control>
 

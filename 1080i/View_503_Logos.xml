@@ -68,6 +68,7 @@
 								<texture background="true">$VAR[503_LogoImage]</texture>
 							</control>
 						</control>
+						<include>LibraryAutoTrailerStopButton</include>
 					</focusedlayout>
 			</control>		
                 <control type="scrollbar" id="60">

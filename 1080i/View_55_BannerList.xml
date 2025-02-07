@@ -67,6 +67,7 @@
 							<onfocus>AlarmClock(SetList,SetProperty(ListAnimation,1,home),00:00,silent)</onfocus>					
 						</control>
 					</control>
+					<include>LibraryAutoTrailerStopButton</include>
                 </focusedlayout>
      			</control>
  			<!--vertical Scollbar-->

@@ -70,7 +70,7 @@
 				<align>left</align>
 				<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                 <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
-				<label>$INFO[ListItem.Title]</label>
+				<label>$INFO[ListItem.Label]$VAR[PVRBullet]$INFO[ListItem.Season,$LOCALIZE[31000],:]$INFO[ListItem.Episode,$LOCALIZE[31001],]$VAR[PVRBullet2]$INFO[ListItem.EpisodeName]</label>
 			</control>
             <control type="group">
                 <posx>675</posx>

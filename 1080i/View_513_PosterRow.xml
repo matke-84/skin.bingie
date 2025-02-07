@@ -1420,6 +1420,7 @@
 								<onfocus>AlarmClock(SetList,ClearProperty(ListAnimation,home),00:00,silent)</onfocus>
 								<onfocus>AlarmClock(SetList,SetProperty(ListAnimation,1,home),00:00,silent)</onfocus>					
 							 </control>
+							 <include>LibraryAutoTrailerStopButton</include>
 					</focusedlayout>
 				</control>
 			

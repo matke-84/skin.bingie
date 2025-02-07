@@ -34,7 +34,7 @@
     </variable>
 	
 	<variable name="mediatitle">
-		<value condition="Container.Content(episodes) + !String.IsEmpty(ListItem.Episode)">$INFO[ListItem.Episode]. $INFO[ListItem.Title]</value>		
+		<value condition="Container.Content(episodes) + !String.IsEmpty(ListItem.Episode)">$INFO[ListItem.Season,$LOCALIZE[31000],:]$INFO[ListItem.Episode,$LOCALIZE[31001], ]$INFO[ListItem.Title]</value>		
 		<value condition="!String.IsEmpty(ListItem.Title) + !String.IsEqual(ListItem.Title,..)">$INFO[ListItem.Title]</value>
 		<value condition="Container.Content(tvshows) + !String.IsEmpty(ListItem.Title) + !String.IsEqual(ListItem.Title,..)">$INFO[ListItem.Title]</value>
 		<value>$INFO[ListItem.Label]</value>
@@ -195,8 +195,8 @@
     </variable>
     
     <variable name="ListTitlePVR">
-        <value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
-        <value condition="!String.IsEmpty(ListItem.Label)">$INFO[ListItem.Label]</value>
+        <value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]$VAR[PVRBullet]$INFO[ListItem.Season,$LOCALIZE[31000],:]$INFO[ListItem.Episode,$LOCALIZE[31001],]$VAR[PVRBullet2]$INFO[ListItem.EpisodeName]</value>
+        <value condition="!String.IsEmpty(ListItem.Label)">$INFO[ListItem.Label]$VAR[PVRBullet]$INFO[ListItem.Season,$LOCALIZE[31000],:]$INFO[ListItem.Episode,$LOCALIZE[31001],]$VAR[PVRBullet2]$INFO[ListItem.EpisodeName]</value>
         <value condition="!String.IsEmpty(Container(1510).ListItem.Title)">$INFO[Container(1510).ListItem.Title]</value>
         <value condition="!String.IsEmpty(Container(1510).ListItem.Label)">$INFO[Container(1510).ListItem.Label]</value>
     </variable>
@@ -574,6 +574,16 @@
 	<variable name="TMDbSearchContentLabel">
 		<value condition="Skin.HasSetting(EnableBingieSearchAuto)">$LOCALIZE[31010]</value>
 		<value condition="!Skin.HasSetting(EnableBingieSearchAuto)">      $LOCALIZE[31010]</value>
+	</variable>
+	
+	<variable name="PVRBullet">
+		<value condition="!String.IsEmpty(ListItem.Episode) | !String.IsEmpty(ListItem.Season)"> • </value>
+		<value condition="String.IsEmpty(ListItem.Episode) | String.IsEmpty(ListItem.Season)"></value>
+	</variable>
+	
+	<variable name="PVRBullet2">
+		<value condition="[!String.IsEmpty(ListItem.Episode) | !String.IsEmpty(ListItem.Season)] + !String.IsEmpty(ListItem.EpisodeName)">‎ </value>
+		<value condition="String.IsEmpty(ListItem.Episode) + String.IsEmpty(ListItem.Season) + !String.IsEmpty(ListItem.EpisodeName)"> • </value>
 	</variable>
 	
 </includes>

@@ -55,7 +55,7 @@
 							<top>8</top>
 							<include>WatchedIndicatorSmall</include>
 						  </control>
-                        <include condition="Skin.HasSetting(View53_DetailsAutoTrailer)">LibraryAutoTrailerStopButton</include>
+                        <include>LibraryAutoTrailerStopButton</include>
 						<include content="LibraryAutoTrailerStartButton" condition="Skin.HasSetting(View53_DetailsAutoTrailer)">
 							<param name="interval" value="$INFO[Skin.String(details_auto_trailer_interval)]" />
 						</include>

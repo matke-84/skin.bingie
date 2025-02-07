@@ -45,6 +45,7 @@
                         </control>
                         <include>BannerLayout</include>
 					</control>
+					<include>LibraryAutoTrailerStopButton</include>
                 </focusedlayout>
 			</control>
  			<!--vertical Scollbar-->

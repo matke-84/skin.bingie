@@ -139,7 +139,7 @@
                         <top>8</top>
                         <include>WatchedIndicatorNormal</include>
                     </control>
-                    <include condition="Skin.HasSetting(View526_DetailsAutoTrailer)">LibraryAutoTrailerStopButton</include>
+                    <include>LibraryAutoTrailerStopButton</include>
 						<include content="LibraryAutoTrailerStartButton" condition="Skin.HasSetting(View526_DetailsAutoTrailer)">
 							<param name="interval" value="$INFO[Skin.String(details_auto_trailer_interval)]" />
 						</include>

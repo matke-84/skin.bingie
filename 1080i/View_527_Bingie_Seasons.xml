@@ -398,7 +398,7 @@
             <!-- fanart background image -->
             <include content="BingieSpotlightCornerImage">
 				<include>DialogInfoFanart_Animation_4</include>
-				<param name="visibility" value="!Player.HasVideo" />
+				<param name="visibility" value="!$EXP[IsRecognizedVideoContent]" />
 				<param name="image" value="$VAR[fanartBackground]" />
 				<animation effect="fade" start="100" end="0" time="400" condition="[Control.IsVisible(527) + Skin.HasSetting(View527_DisableFanArt)]">Conditional</animation>
             </include>
@@ -566,6 +566,7 @@
                                 <texture border="10" background="true" colordiffuse="$INFO[Skin.String(BingieButtonFocusTextColor)]">$INFO[Skin.String(thumbsborder_focused),bingie/border/default_button_fo_,.png]</texture>
                             </control>
 					</control>
+					<include>LibraryAutoTrailerStopButton</include>
 				</focusedlayout>
 				<focusedlayout height="65" width="565" condition="!Control.HasFocus(527)">
 					<control type="group">
@@ -599,6 +600,7 @@
                                 <texture border="10" background="true" colordiffuse="$INFO[Skin.String(BingieButtonTextColor)]">$INFO[Skin.String(thumbsborder_focused),bingie/border/default_button_fo_,.png]</texture>
                             </control>
 					</control>
+					<include>LibraryAutoTrailerStopButton</include>
 				</focusedlayout>
 			</control>
 			</control>

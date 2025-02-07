@@ -71,25 +71,25 @@
 					<control type="grouplist">
 						<visible>!String.IsEmpty(ListItem.Label)</visible>
 						<posy>6</posy>
-						<width>1460</width>
+						<width>1455</width>
 						<height>190</height>
 						<orientation>vertical</orientation>
 						<usecontrolcoords>true</usecontrolcoords>
 						<itemgap>20</itemgap>
 					<control type="label">
 						<!--title-->
-						<width>1460</width>
+						<width>1455</width>
 						<height>20</height>
 						<font>Reg28</font>
 						<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-						<label>[B]$INFO[ListItem.Label]$INFO[ListItem.EpisodeName, (,)][/B]$VAR[GetPVRTimings, (,)]</label>
+						<label>[B]$VAR[GetPVRTimings]$INFO[ListItem.Label, • ]$VAR[PVRBullet]$INFO[ListItem.Season,$LOCALIZE[31000],:]$INFO[ListItem.Episode,$LOCALIZE[31001],]$VAR[PVRBullet2]$INFO[ListItem.EpisodeName][/B]</label>
 						<aligny>top</aligny>
                         <wrapmultiline>false</wrapmultiline>
 					</control>
 					<control type="label">
 						<!--genre-->
 						<visible>!String.IsEmpty(Container(99950).ListItem.Genre)</visible>
-						<width>1460</width>
+						<width>1455</width>
 						<height>20</height>
 						<font>Reg28</font>
 						<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
