@@ -66,34 +66,8 @@
 					<onclick>Filter</onclick>
 				</control>
 					
-				<!-- VIEW SETTINGS START HERE -->
-				<control type="label" id="2001">
-					<!--empty space-->
-					<width>458</width>
-					<height>5</height>
-				</control>
-				<control type="image" id="2002">
-					<!--Seperator-->
-					<width>458</width>
-					<height>1</height>
-					<texture>colors/color_white.png</texture>
-					<colordiffuse>$INFO[Skin.String(SideBladeTextColor)]</colordiffuse>
-				</control>
-				<control type="label" id="14018">
-					<!--Label Menu-->
-					<textoffsetx>50</textoffsetx>
-					<textcolor>$INFO[Skin.String(SideBladeTextColor)]</textcolor>
-					<include>SideBladeMenuButton</include>
-					<label>$LOCALIZE[14018]:</label>
-				</control>
-				<control type="radiobutton" id="31423">
-				<!--swap poster in view-->
-					<visible>Control.IsVisible(50)</visible>
-					<include>SideBladeMenuButton</include>
-					<label>31423</label>
-					<onclick condition="Control.IsVisible(50)">Skin.ToggleSetting(View50_SwapPoster)</onclick>
-					<selected>Control.IsVisible(50) + Skin.HasSetting(View50_SwapPoster)</selected>
-				</control>
+				<include>SideBladeViewCommands</include>
+				
              </control>
         </control>
 		

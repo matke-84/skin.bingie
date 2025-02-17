@@ -8,18 +8,17 @@
 			<control type="panel" id="53">
                 <animation effect="slide" end="-628" time="0" condition="Skin.HasSetting(View53_ShowInfoRight)">Conditional</animation>
                 <right>51</right>
-				<bottom>168</bottom>
-                <height>705</height>
+				<bottom>156</bottom>
+                <height>717</height>
 				<width>1190</width>
 				<orientation>vertical</orientation>
                 <onup>53</onup>
                 <ondown>53</ondown>
                 <onleft>9000</onleft>
-				<onleft>CancelAlarm(preview_delay,silent)</onleft>
-				<onleft condition="[!String.IsEmpty(ListItem.Trailer) + [String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | !String.Contains(ListItem.Trailer,plugin)] | String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | String.IsEmpty(ListItem.Trailer) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)] + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)] + Skin.HasSetting(View53_DetailsAutoTrailer)">PlayerControl(Stop)</onleft>
 				<onback>CancelAlarm(preview_delay,silent)</onback>
-				<onback condition="[!String.IsEmpty(ListItem.Trailer) + [String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | !String.Contains(ListItem.Trailer,plugin)] | String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | String.IsEmpty(ListItem.Trailer) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)] + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)] + Skin.HasSetting(View53_DetailsAutoTrailer)">PlayerControl(Stop)</onback>
-                <onright condition="Skin.HasSetting(EnableQuickJump)">6000</onright>
+				<onback condition="!Player.HasAudio + $EXP[IsPlayingUnrecognizedContent] + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)] + Skin.HasSetting(View53_DetailsAutoTrailer)">PlayerControl(Stop)</onback>
+                <onback>ClearProperty(HideNowPlaying)</onback>
+				<onright condition="Skin.HasSetting(EnableQuickJump)">6000</onright>
                 <onright condition="!Skin.HasSetting(EnableQuickJump)">60</onright>
                 <pagecontrol>60</pagecontrol>
                 <viewtype label="31422">bigwrap</viewtype>
@@ -30,10 +29,10 @@
                 <focusposition>6</focusposition>
                 <preloaditems>2</preloaditems>
 				<!-- itemlayout movies -->
-                <itemlayout height="235" width="170" condition="Container.Content(MusicVideos) | Container.Content(tvshows) | Container.Content(Movies) | Container.Content(seasons)">
+                <itemlayout height="239" width="170" condition="Container.Content(MusicVideos) | Container.Content(tvshows) | Container.Content(Movies) | Container.Content(seasons)">
                     <control type="group">
                        <width>170</width>
-                       <height>235</height>
+                       <height>239</height>
 					   <include>SmallPosterPanelLayout</include>
 					   <control type="group">
 						 <!--Watched Overlay-->
@@ -44,10 +43,10 @@
                     </control>
                 </itemlayout>
                 <!-- focussed layout movies -->
-                <focusedlayout height="235" width="170" condition="Container.Content(MusicVideos) | Container.Content(tvshows) | Container.Content(Movies) | Container.Content(seasons)">
+                <focusedlayout height="239" width="170" condition="Container.Content(MusicVideos) | Container.Content(tvshows) | Container.Content(Movies) | Container.Content(seasons)">
                     <control type="group">
                         <width>170</width>
-                        <height>235</height>
+                        <height>239</height>
                         <include>SmallPosterPanelLayoutFocus</include>
 						  <control type="group">
 							<!--Watched Overlay-->
@@ -67,8 +66,8 @@
 		<control type="scrollbar" id="60">
 			<visible>Control.IsVisible(53) + Integer.IsGreater(Container.NumItems,0)</visible>
 			<right>15</right>
-			<bottom>176</bottom>
-			<height>689</height>
+			<bottom>164</bottom>
+			<height>701</height>
 			<onup>60</onup>
 			<ondown>6000</ondown>
 			<onleft>53</onleft>

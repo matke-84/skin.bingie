@@ -8,7 +8,7 @@
         <control type="image">
             <include>FullscreenDimensions</include>
             <texture>colors/color_white.png</texture>
-            <colordiffuse>ff000000</colordiffuse>
+            <colordiffuse>black</colordiffuse>
         </control>
       
         <!-- bgpanel -->
@@ -36,7 +36,6 @@
 			<label>$LOCALIZE[737]: $INFO[Container(6).ListItem.Label,, - ]$INFO[Container(6).ListItem.Label2,#,]</label>
             <align>left</align>
             <textcolor>white</textcolor>
-			<shadowcolor>black</shadowcolor>
         </control>
 			<!-- Color picker panel -->
 			<control type="panel" id="6">

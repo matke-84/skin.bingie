@@ -126,7 +126,7 @@
 
         <!--- ########## Right Layout ########## -->
         <control type="group" id="9900">
-            <left>648</left>
+            <left>652</left>
             <top>32</top>
             <height>70</height>
             <width>1215</width>
@@ -197,7 +197,7 @@
         <control type="group">
 			<visible>!Skin.HasSetting(EnableCustomBingieSearch)</visible>     
             <top>107</top>
-            <left>643</left>
+            <left>647</left>
             <width>1220</width>
             <height>auto</height>			
             <!-- By Title (Movies & TV Shows) -->
@@ -340,7 +340,7 @@
 		<visible>!Skin.HasSetting(EnableCustomBingieSearch)</visible>          		
 		<animation effect="slide" start="0" end="0,-45" condition="!ControlGroup(77777).HasFocus() | Control.HasFocus(500) | Control.IsVisible(500) + Control.HasFocus(1007) | [Control.HasFocus(900) + !String.IsEmpty(Window.Property(KeepSuggestions))]">Conditional</animation>
             <top>152</top>
-            <left>641</left>
+            <left>645</left>
 			<height>975</height>
             <orientation>vertical</orientation>
             <pagecontrol>666</pagecontrol>
@@ -522,9 +522,9 @@
             <include content="SearchResultWidget" condition="Skin.HasSetting(EnableBingieSearchAddons) + !Skin.HasSetting(EnableBingieSearchAuto)">
                 <param name="id" value="640" />
                 <param name="layout">SquarePosterPanel</param>
-                <param name="height" value="396" />
-				<param name="layoutwidth">396</param>
-				<param name="layoutheight">396</param>
+                <param name="height" value="394" />
+				<param name="layoutwidth">394</param>
+				<param name="layoutheight">394</param>
                 <param name="allow_showinfo_onclick" value="true" />
 				<param name="orientation" value="vertical" />
                 <param name="visibility" value="!String.IsEmpty(Skin.String(CustomSearchTerm))" />
@@ -537,7 +537,7 @@
                 <param name="id" value="650" />
                 <param name="layout">ThumbsViewBingie</param>
 				<param name="height" value="230" />
-				<param name="layoutwidth">396</param>
+				<param name="layoutwidth">394</param>
 				<param name="layoutheight">230</param>
                 <param name="allow_showinfo_onclick" value="false" />
 				<param name="orientation" value="vertical" />

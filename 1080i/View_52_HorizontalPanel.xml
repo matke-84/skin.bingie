@@ -20,11 +20,11 @@
             <focusposition>3</focusposition>
             <preloaditems>2</preloaditems>
             <orientation>horizontal</orientation>
-        <itemlayout height="348" width="258">
+        <itemlayout height="352" width="258">
             <!-- Poster UnFocus Layout -->
 			<control type="group">
                 <width>248</width>
-                <height>348</height>
+                <height>352</height>
                 <include>PosterPanelLayout</include>
 				<control type="group">
 					<!--Watched Overlay-->
@@ -35,11 +35,11 @@
             </control>
         </itemlayout>
         <!-- Poster Focus Layout -->
-		<focusedlayout height="348" width="258">
+		<focusedlayout height="352" width="258">
             <control type="group">
                 <width>248</width>
-                <height>348</height>
-                <animation effect="zoom" center="auto" start="100" end="106" time="160" tween="quadratic" condition="Skin.HasSetting(View52_EnableZoomEffect)">Focus</animation>
+                <height>352</height>
+                <animation effect="zoom" center="auto" start="100" end="107" time="160" tween="quadratic" condition="Skin.HasSetting(View52_EnableZoomEffect)">Focus</animation>
                 <include condition="Skin.HasSetting(View52_EnableZoomEffect)">PosterPanelLayoutFocus</include>
 				<include>PosterPanelLayout</include>
 				<control type="group">
@@ -79,7 +79,7 @@
                 <param name="containerid" value="52" />
                 <param name="top" value="577" />
                 <param name="width" value="248" />
-                <param name="height" value="348" />
+                <param name="height" value="352" />
                 <texture background="true" border="12">$INFO[Skin.String(thumbsborder_focused),bingie/border/poster_fo_,.png]</texture>
 				<bordersize>2</bordersize>
 				<posx>836</posx>

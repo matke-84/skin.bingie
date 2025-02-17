@@ -1869,7 +1869,6 @@
             <posy>60</posy>
             <label>31168</label>
             <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-            <shadowcolor>black</shadowcolor>
             <align>left</align>
             <aligny>top</aligny>
         </control>
@@ -1945,7 +1944,6 @@
             <posy>60</posy>
             <label>31171</label>
             <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-            <shadowcolor>black</shadowcolor>
             <align>left</align>
             <aligny>top</aligny>
         </control>

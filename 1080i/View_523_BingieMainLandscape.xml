@@ -47,7 +47,7 @@
 					<textureslidernibfocus colordiffuse="$INFO[Skin.String(ScrollbarFocusedColor)]">scrollbar/texturesliderbar_nib.png</textureslidernibfocus>
                     <visible>Control.IsVisible(523) + Integer.IsGreater(Container.NumItems,0)</visible>
                     <width>10</width>
-					<height>461</height>
+					<height>466</height>
                     <right>0</right>
                     <bottom>0</bottom>
                     <onleft>523</onleft>
@@ -67,7 +67,7 @@
                 <param name="viewtype" value="$LOCALIZE[31018]" />
             </include>
             <focusedposition>0</focusedposition>
-            <top>51</top>
+            <top>46</top>
             <width>1668</width>
             <height>470</height>
             <orientation>vertical</orientation>
@@ -81,11 +81,10 @@
 			<onleft>9000</onleft>
             <onup>523</onup>
             <ondown>523</ondown>
-			<onleft>CancelAlarm(preview_delay,silent)</onleft>
-			<onleft condition="[!String.IsEmpty(ListItem.Trailer) + [String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | !String.Contains(ListItem.Trailer,plugin)] | String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | String.IsEmpty(ListItem.Trailer) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)] + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)] + Skin.HasSetting(View523_DetailsAutoTrailer)">PlayerControl(Stop)</onleft>
 			<onback>CancelAlarm(preview_delay,silent)</onback>
-			<onback condition="[!String.IsEmpty(ListItem.Trailer) + [String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | !String.Contains(ListItem.Trailer,plugin)] | String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | String.IsEmpty(ListItem.Trailer) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)] + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)] + Skin.HasSetting(View523_DetailsAutoTrailer)">PlayerControl(Stop)</onback>
-            <itemlayout height="193" width="333">
+			<onback condition="!Player.HasAudio + $EXP[IsPlayingUnrecognizedContent] + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)] + Skin.HasSetting(View510_DetailsAutoTrailer)">PlayerControl(Stop)</onback>
+            <onback>ClearProperty(HideNowPlaying)</onback>
+			<itemlayout height="193" width="333">
                 <control type="group">
                     <width>335</width>
                     <height>195</height>

@@ -11,25 +11,7 @@
 			<control type="group">
 				<visible>Skin.HasSetting(LandscapeViewShowInfo)</visible>
 				<include>MovieDetailsTop</include>
-			</control>            
-            <!--CDART IMAGE-->
-            <control type="image">
-                <include condition="!Skin.HasSetting(View502_EnableZoomEffect)">CD_Width</include>
-                <include condition="Skin.HasSetting(View502_EnableZoomEffect)">CD_Width_Zoom</include>
-				<include condition="!Skin.HasSetting(View502_EnableZoomEffect)">CD_Height</include>
-                <include condition="Skin.HasSetting(View502_EnableZoomEffect)">CD_Height_Zoom</include>
-				<animation effect="slide" end="-23" condition="Skin.HasSetting(View502_EnableZoomEffect)">Conditional</animation>
-				<animation effect="slide" end="0,14" condition="Skin.HasSetting(View502_EnableZoomEffect)">Conditional</animation>
-                <bottom>157</bottom>
-                <posx>686</posx>
-                <texture background="true" diffuse="diffuse/cdmask_new.png" fallback="defaultcovers/cd_big.png">$VAR[DiscArtImage]</texture>
-                <aspectratio scalediffuse="false" align="center" aligny="top">scale</aspectratio>
-                <animation effect="fade" start="0" end="100" time="350" delay="1200" reversible="false" condition="!Container.OnNext + !Container.OnPrevious">Conditional</animation>
-				<animation effect="fade" start="0" end="100" time="350" delay="1200" reversible="false">Visible</animation>
-                <animation effect="rotate" end="-360" center="auto" time="20000" loop="true" reversible="false" condition="Skin.HasSetting(AnimateDiscArt)">Conditional</animation>
-				<visible>Skin.HasSetting(View502_ShowCDart) + Control.HasFocus(502) + !Container.OnNext + !Container.OnPrevious + !String.StartsWith(ListItem.Art(thumb),Default) + $EXP[IsMovieDBType] | Skin.HasSetting(View502_ShowCDart) + Control.HasFocus(502) + !Container.OnNext + !Container.OnPrevious + !String.StartsWith(ListItem.Art(thumb),Default) + Skin.HasSetting(EnableFakeDiscArt)</visible>
-                <visible>Integer.IsGreater(Container.NumItems,0)</visible>
-            </control>			
+			</control>            			
 			<control type="fixedlist" id="502">
 				<posx>62</posx>
 				<width>1796</width>
@@ -107,17 +89,5 @@
 				</control>
 			</control>			
 		</control>
-	</include>
-	<include name="CD_Width">
-		<width>548</width>
-	</include>
-	<include name="CD_Width_Zoom">
-		<width>594</width>
-	</include>
-	<include name="CD_Height">
-		<height>548</height>
-	</include>
-	<include name="CD_Height_Zoom">
-		<height>594</height>
-	</include>		
+	</include>	
 </includes>

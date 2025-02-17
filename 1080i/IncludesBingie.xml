@@ -71,15 +71,15 @@
     <include name="Fixed_Focus_Navigation_Factory">
         <include content="Fixed_Focus_Navigation" condition="String.IsEqual(Skin.String(widgetstyle),landscape) + !Window.IsActive(1116) + !Window.IsActive(1120)">
             <param name="widgetid" value="$PARAM[widgetid]"/>
-            <param name="FixedAnimationHeight" value="-252"/>
+            <param name="FixedAnimationHeight" value="-258"/>
         </include>
         <include content="Fixed_Focus_Navigation" condition="String.IsEqual(Skin.String(widgetstyle),poster) + !Window.IsActive(1116) + !Window.IsActive(1120)">
             <param name="widgetid" value="$PARAM[widgetid]"/>
-            <param name="FixedAnimationHeight" value="-371"/>
+            <param name="FixedAnimationHeight" value="-381"/>
         </include>
 		<include content="Fixed_Focus_Navigation" condition="Window.IsActive(1116) | Window.IsActive(1120)">
             <param name="widgetid" value="$PARAM[widgetid]"/>
-            <param name="FixedAnimationHeight" value="-282"/>
+            <param name="FixedAnimationHeight" value="-281"/>
         </include>
     </include>
 
@@ -1727,14 +1727,14 @@
 
 			<!--Main Menu Items 900-->
             <control type="list" id="900">
-                <top>199</top>
-				<animation effect="slide" end="0,42" condition="Integer.IsEqual(Container(900).NumItems,7)">Conditional</animation>
-				<animation effect="slide" end="0,84" condition="Integer.IsEqual(Container(900).NumItems,6)">Conditional</animation>
-				<animation effect="slide" end="0,126" condition="Integer.IsEqual(Container(900).NumItems,5)">Conditional</animation>
-				<animation effect="slide" end="0,168" condition="Integer.IsEqual(Container(900).NumItems,4)">Conditional</animation>
-				<animation effect="slide" end="0,210" condition="Integer.IsEqual(Container(900).NumItems,3)">Conditional</animation>
-				<animation effect="slide" end="0,252" condition="Integer.IsEqual(Container(900).NumItems,2)">Conditional</animation>
-				<animation effect="slide" end="0,294" condition="Integer.IsEqual(Container(900).NumItems,1)">Conditional</animation>
+                <top>205</top>
+				<animation effect="slide" end="0,41" condition="Integer.IsEqual(Container(900).NumItems,7)">Conditional</animation>
+				<animation effect="slide" end="0,82" condition="Integer.IsEqual(Container(900).NumItems,6)">Conditional</animation>
+				<animation effect="slide" end="0,123" condition="Integer.IsEqual(Container(900).NumItems,5)">Conditional</animation>
+				<animation effect="slide" end="0,164" condition="Integer.IsEqual(Container(900).NumItems,4)">Conditional</animation>
+				<animation effect="slide" end="0,205" condition="Integer.IsEqual(Container(900).NumItems,3)">Conditional</animation>
+				<animation effect="slide" end="0,246" condition="Integer.IsEqual(Container(900).NumItems,2)">Conditional</animation>
+				<animation effect="slide" end="0,287" condition="Integer.IsEqual(Container(900).NumItems,1)">Conditional</animation>
 				<width>bingie_menu_width</width>
                 <height>680</height>
                 <orientation>vertical</orientation>
@@ -1750,7 +1750,7 @@
 				<onback condition="Window.IsActive(1109)">9000</onback>
 				<onup condition="Control.IsVisible(40000)">40000</onup>
                 <ondown>40003</ondown>
-                <itemlayout height="84" width="bingie_menu_width" condition="[Control.HasFocus(900) | Control.HasFocus(4444) | Control.HasFocus(40000) | Control.HasFocus(40003)]">
+                <itemlayout height="82" width="bingie_menu_width" condition="[Control.HasFocus(900) | Control.HasFocus(4444) | Control.HasFocus(40000) | Control.HasFocus(40003)]">
                     <!--this red line just for slim menu-->
                     <include content="Bingie_Menu_Current_Indicator"> 
                          <param name="keepvisible" value="true" />
@@ -1770,7 +1770,7 @@
                         <param name="textcolor" value="$INFO[Skin.String(MainMenuTextColor)]" />
                     </include>
                 </itemlayout>
-				<itemlayout height="84" width="bingie_menu_width" condition="![Control.HasFocus(900) | Control.HasFocus(4444) | Control.HasFocus(40000) | Control.HasFocus(40003)]">
+				<itemlayout height="82" width="bingie_menu_width" condition="![Control.HasFocus(900) | Control.HasFocus(4444) | Control.HasFocus(40000) | Control.HasFocus(40003)]">
                     <!--this red line just for slim menu-->
                     <include content="Bingie_Menu_Current_Indicator"> 
                          <param name="keepvisible" value="true" />
@@ -1790,7 +1790,7 @@
                         <param name="textcolor" value="$INFO[Skin.String(MainMenuTextColor)]" />
                     </include>
                 </itemlayout>
-                <focusedlayout height="84" width="bingie_menu_width" condition="[Control.HasFocus(900) | Control.HasFocus(4444)]">
+                <focusedlayout height="82" width="bingie_menu_width" condition="[Control.HasFocus(900) | Control.HasFocus(4444)]">
                     <include content="Bingie_Menu_IconFOCUS">
                         <param name="includeAnimCond" value="false" />
                     </include>
@@ -1803,7 +1803,7 @@
                     <!-- home behavior onfocus -->
                     <include>HiddenHomeMenuButton</include>
                 </focusedlayout>
-				<focusedlayout height="84" width="bingie_menu_width" condition="[Control.HasFocus(40000) | Control.HasFocus(40003)]">
+				<focusedlayout height="82" width="bingie_menu_width" condition="[Control.HasFocus(40000) | Control.HasFocus(40003)]">
                     <include content="Bingie_Menu_Icon">
                         <param name="includeAnimCond" value="false" />
                     </include>
@@ -1816,7 +1816,7 @@
                     <!-- home behavior onfocus -->
                     <include>HiddenHomeMenuButton</include>
                 </focusedlayout>
-                <focusedlayout height="84" width="bingie_menu_width" condition="![Control.HasFocus(900) | Control.HasFocus(4444)]">
+                <focusedlayout height="82" width="bingie_menu_width" condition="![Control.HasFocus(900) | Control.HasFocus(4444)]">
 					<include content="Bingie_Menu_Current_Indicator"> 
                          <param name="keepvisible" value="true" />
                          <param name="visibility" value="$EXP[IsMenuEntryActive] + !$EXP[IsMainMenuOpened]" />
@@ -1876,14 +1876,14 @@
         <!-- submenu -->
         <control type="group">
             <posx>378</posx>
-            <posy>146</posy>
-			<animation effect="slide" end="0,42" condition="Integer.IsEqual(Container(900).NumItems,7)">Conditional</animation>
-			<animation effect="slide" end="0,84" condition="Integer.IsEqual(Container(900).NumItems,6)">Conditional</animation>
-			<animation effect="slide" end="0,126" condition="Integer.IsEqual(Container(900).NumItems,5)">Conditional</animation>
-			<animation effect="slide" end="0,168" condition="Integer.IsEqual(Container(900).NumItems,4)">Conditional</animation>
-			<animation effect="slide" end="0,210" condition="Integer.IsEqual(Container(900).NumItems,3)">Conditional</animation>
-			<animation effect="slide" end="0,252" condition="Integer.IsEqual(Container(900).NumItems,2)">Conditional</animation>
-			<animation effect="slide" end="0,294" condition="Integer.IsEqual(Container(900).NumItems,1)">Conditional</animation>
+            <posy>156</posy>
+			<animation effect="slide" end="0,41" condition="Integer.IsEqual(Container(900).NumItems,7)">Conditional</animation>
+			<animation effect="slide" end="0,82" condition="Integer.IsEqual(Container(900).NumItems,6)">Conditional</animation>
+			<animation effect="slide" end="0,123" condition="Integer.IsEqual(Container(900).NumItems,5)">Conditional</animation>
+			<animation effect="slide" end="0,164" condition="Integer.IsEqual(Container(900).NumItems,4)">Conditional</animation>
+			<animation effect="slide" end="0,205" condition="Integer.IsEqual(Container(900).NumItems,3)">Conditional</animation>
+			<animation effect="slide" end="0,246" condition="Integer.IsEqual(Container(900).NumItems,2)">Conditional</animation>
+			<animation effect="slide" end="0,287" condition="Integer.IsEqual(Container(900).NumItems,1)">Conditional</animation>
             <animation type="Conditional" condition="Control.IsVisible(4444)">
                 <effect type="slide" start="-10" end="0" time="200" delay="0" tween="cubic" easing="inout"/>
             </animation>
@@ -1897,19 +1897,31 @@
                 <effect type="slide" start="0" end="-300" time="5" delay="145" />
             </animation>
             <animation type="Conditional" condition="Integer.IsGreater(Container(900).Position,0)">
-                <effect type="slide" end="0,85" time="0" delay="0" />
+                <effect type="slide" end="0,82" time="0" delay="0" />
             </animation>
             <animation type="Conditional" condition="Integer.IsGreater(Container(900).Position,1)">
-                <effect type="slide" end="0,85" time="0" delay="0" />
+                <effect type="slide" end="0,82" time="0" delay="0" />
             </animation>
             <animation type="Conditional" condition="Integer.IsGreater(Container(900).Position,2)">
-                <effect type="slide" end="0,85" time="0" delay="0" />
+                <effect type="slide" end="0,82" time="0" delay="0" />
             </animation>
             <animation type="Conditional" condition="Integer.IsGreater(Container(900).Position,3)">
-                <effect type="slide" end="0,85" time="0" delay="0" />
+                <effect type="slide" end="0,82" time="0" delay="0" />
             </animation>
             <animation type="Conditional" condition="Integer.IsGreater(Container(900).Position,4)">
-                <effect type="slide" end="0,85" time="0" delay="0" />
+                <effect type="slide" end="0,82" time="0" delay="0" />
+            </animation>
+			<animation type="Conditional" condition="Integer.IsGreater(Container(900).Position,5)">
+                <effect type="slide" end="0,82" time="0" delay="0" />
+            </animation>
+			<animation type="Conditional" condition="Integer.IsGreater(Container(900).Position,6)">
+                <effect type="slide" end="0,82" time="0" delay="0" />
+            </animation>
+			<animation type="Conditional" condition="Integer.IsGreater(Container(900).Position,7)">
+                <effect type="slide" end="0,82" time="0" delay="0" />
+            </animation>
+			<animation type="Conditional" condition="Integer.IsGreater(Container(900).Position,8)">
+                <effect type="slide" end="0,82" time="0" delay="0" />
             </animation>
 
             <!--Panel on Home (submenu Panel) -->
@@ -1969,7 +1981,7 @@
                 <visible>$PARAM[visibility]</visible>
                 <left>$PARAM[left]</left>
                 <width>25</width>
-                <bottom>17</bottom>
+                <bottom>15</bottom>
 				<height>-7</height>
                 <texture>diffuse/panel2.png</texture>
                 <colordiffuse>$INFO[Skin.String(LineUnderMenuIconsColor)]</colordiffuse>
@@ -2139,7 +2151,7 @@
             <width>130</width>
             <aspectratio scalediffuse="true">scale</aspectratio>
             <texture border="2" background="true">bingie/sidediffuse.png</texture>
-            <colordiffuse>ff000000</colordiffuse>  
+            <colordiffuse>black</colordiffuse>  
 			<!-- Never Change or Remove / It will give everything a Grey Effect on Screen. It's very Hard to see on Smaller TV but Very Noticable on a Larger One -->
 			<visible>!$EXP[IsRecognizedVideoContent] + !$EXP[IsCurrentWidgetSpotlight]</visible>
 		</control>
@@ -2151,7 +2163,7 @@
         <control type="image">
             <nested />
             <visible>$PARAM[visibility]</visible>
-            <top>611</top>
+            <top>606</top>
             <include>No_Circular_Left</include>
             <left>0</left>
             <width>$PARAM[width]</width>
@@ -2167,14 +2179,14 @@
         <include content="Bingie_Screens_Fixed_Focus_Frame_Base" condition="String.IsEqual(Skin.String(widgetstyle),landscape)">
             <param name="visibility" value="ControlGroup(77777).HasFocus() + !String.IsEmpty(Container(77777).CurrentItem) + !String.IsEmpty(ListItem.Label) + ![$EXP[IsCurrentWidgetSpotlight] | Window.IsActive(1120)]"/>
             <param name="width" value="landscape_width"/>
-            <param name="height" value="210"/>
+            <param name="height" value="217"/>
             <texture background="true" border="10">$INFO[Skin.String(thumbsborder_focused),bingie/border/thumb_fo_,.png]</texture>
         </include>
 		<!-- Poster Fixed Frame -->
         <include content="Bingie_Screens_Fixed_Focus_Frame_Base" condition="String.IsEqual(Skin.String(widgetstyle),poster)">
             <param name="visibility" value="ControlGroup(77777).HasFocus() + !String.IsEmpty(Container(77777).CurrentItem) + !String.IsEmpty(ListItem.Label) + ![$EXP[IsCurrentWidgetSpotlight] | Window.IsActive(1120)]"/>
             <param name="width" value="240" />
-            <param name="height" value="330" />
+            <param name="height" value="340" />
             <texture background="true" border="12">$INFO[Skin.String(thumbsborder_focused),bingie/border/poster_fo_,.png]</texture>
         </include>
 		<!-- Square Fixed Frame -->
@@ -2215,7 +2227,7 @@
 			<onfocus>SetProperty(FullImage,1,Home)</onfocus>
 			<onunfocus>ClearProperty(FullImage,home)</onunfocus>
 			<onunfocus condition="System.HasAlarm(preview_delay)">CancelAlarm(preview_delay,silent)</onunfocus>
-			<onunfocus condition="Skin.HasSetting(BingieAutoTrailer) + $EXP[IsPlayingUnrecognizedContent] + String.IsEmpty(Window(Home).Property(KeepPlayingPreview))">PlayerControl(Stop)</onunfocus>
+			<onunfocus condition="Skin.HasSetting(SpotLightTrailers) + $EXP[IsPlayingUnrecognizedContent] + String.IsEmpty(Window(Home).Property(KeepPlayingPreview))">PlayerControl(Stop)</onunfocus>
 			<onfocus condition="!String.IsEmpty(Window(Home).Property(KeepPlayingPreview))">ClearProperty(KeepPlayingPreview,home)</onfocus>
 			<onfocus condition="!String.IsEmpty(Window(Home).Property(DelayTransition))">ClearProperty(DelayTransition,home)</onfocus>
             <onback>900</onback>
@@ -2334,27 +2346,27 @@
     <!-- Play Button Spotlight Color -->
     <variable name="SpotlightPlayButtonColor">
         <value condition="!String.IsEmpty(Window(Home).Property(spotlightinfo))">cc707070</value>
-        <value>ffffffff</value>
+        <value>white</value>
     </variable>
     <!-- Spotlight Info Button Color -->
 	<variable name="SpotlightInfoButtonColor">
-        <value condition="!String.IsEmpty(Window(Home).Property(spotlightinfo))">ffffffff</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(spotlightinfo))">white</value>
         <value>cc707070</value>
     </variable>
     <!-- Spotlight Play Text Button Color -->
     <variable name="SpotlightPlayTextButtonColor">
-        <value condition="!String.IsEmpty(Window(Home).Property(spotlightinfo))">ffffffff</value>
-        <value>ff000000</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(spotlightinfo))">white</value>
+        <value>black</value>
     </variable>
     <!-- Spotlight Info Text Button Color -->
 	<variable name="SpotlightInfoTextButtonColor">
-        <value condition="String.IsEmpty(Window(Home).Property(spotlightinfo))">ffffffff</value>
-        <value>ff000000</value>
+        <value condition="String.IsEmpty(Window(Home).Property(spotlightinfo))">white</value>
+        <value>black</value>
     </variable>
 	<!-- Logon Button Color -->
 	<variable name="LogonColor">
-        <value condition="Control.HasFocus(10034)">ff000000</value>
-        <value condition="!Control.HasFocus(10034)">ffffffff</value>
+        <value condition="Control.HasFocus(10034)">black</value>
+        <value condition="!Control.HasFocus(10034)">white</value>
     </variable>
 
     <!-- Bingie Spotlight Content -->
@@ -2400,7 +2412,7 @@
     <include name="BingieSpotlightCornerImage">
         <param name="top" default="0"/>
         <param name="right" default="-2"/>
-        <param name="width" default="1220"/>
+        <param name="width" default="1200"/>
         <param name="height" default="700"/>
 		<param name="fadetime" default="400"/>
         <definition>
@@ -2458,8 +2470,8 @@
         <param name="genre_adjust" default="false" />
         <definition>
             <control type="image" id="$PARAM[id]5">
-                <height>190</height>
-                <width>490</width>
+                <height>185</height>
+                <width>477</width>
                 <align>left</align>
                 <fadetime>350</fadetime>
                 <aspectratio align="left" aligny="center">keep</aspectratio>
@@ -2487,8 +2499,8 @@
         <param name="genre_adjust" default="false" />
         <definition>
             <control type="image" id="$PARAM[id]5">
-                <height>190</height>
-                <width>490</width>
+                <height>185</height>
+                <width>477</width>
                 <align>left</align>
                 <fadetime>350</fadetime>
                 <aspectratio align="left" aligny="center">keep</aspectratio>
@@ -2514,10 +2526,10 @@
     <include name="Preview_Window">
         <param name="top" default="0"/>
         <param name="right" default="0"/>
-        <param name="width" default="1200"/>
-        <param name="height" default="675"/>
+        <param name="width" default="1180"/>
+        <param name="height" default="664"/>
         <param name="overlaywidth" default="1200"/>
-        <param name="overlayheight" default="675"/>
+        <param name="overlayheight" default="664"/>
         <param name="videowindowVisibility" default="!Window.IsActive(DialogVideoInfo.xml) | !Window.IsActive(1190) | !Window.IsActive(1116)" />
         <param name="isFullscreen" default="false" />
         <definition>
@@ -2576,7 +2588,7 @@
                     <height>54</height>
                     <width>6</width>
                     <align>left</align>
-                    <texture background="true" colordiffuse="ffffffff">bingie/line.png</texture>
+                    <texture background="true" colordiffuse="white">bingie/line.png</texture>
                 </control>
 				<!-- Color Line on Right Home Screen -->
 				<control type="image">
@@ -2593,7 +2605,7 @@
                     <width>134</width>
                     <align>left</align>
                     <font>Bold28</font>
-                    <textcolor>ffffffff</textcolor>
+                    <textcolor>white</textcolor>
                     <label>$VAR[GetMPAA]</label>
                 </control>
             </control>
@@ -2646,7 +2658,7 @@
 <!-- Bingie Basic Inc/Vars -->
 <!-- Bingie Panel Color - Home Background Color-->
     <variable name="BingiePanelColor">
-        <value>ff000000</value>                           
+        <value>black</value>                           
     <!-- This Above Should Never Be Changed -->
 	</variable>
 

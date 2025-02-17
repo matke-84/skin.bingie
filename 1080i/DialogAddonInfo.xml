@@ -46,7 +46,6 @@
                 <width>1200</width>
 				<font>Bold45</font>
                 <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-				<shadowcolor>black</shadowcolor>
                 <align>left</align>
 				<height>100</height>
 				<label>24003</label>
@@ -130,7 +129,7 @@
                     <align>left</align>
 					<scroll>true</scroll>
                     <label>   $INFO[ListItem.AddonDisclaimer]</label>
-					<textcolor>red</textcolor>
+					<textcolor>FFFF0000</textcolor>
 					<visible>!String.IsEmpty(ListItem.AddonDisclaimer)</visible>
                 </control>
             </control>

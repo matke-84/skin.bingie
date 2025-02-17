@@ -166,7 +166,7 @@
 						<width>660</width>
 						<height>2</height>
 						<fadetime>400</fadetime>
-						<colordiffuse>list_separator</colordiffuse>
+						<colordiffuse>BBFFFFFF</colordiffuse>
 						<texture>common/separator.png</texture>
 					</control>
 				</itemlayout>

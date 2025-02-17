@@ -17,10 +17,9 @@
 				<onleft>9000</onleft>
 				<onright condition="Skin.HasSetting(EnableQuickJump)">6000</onright>
                 <onright condition="!Skin.HasSetting(EnableQuickJump)">60</onright>
-				<onleft>CancelAlarm(preview_delay,silent)</onleft>
-				<onleft condition="[!String.IsEmpty(ListItem.Trailer) + [String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | !String.Contains(ListItem.Trailer,plugin)] | String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | String.IsEmpty(ListItem.Trailer) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)] + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)] + Skin.HasSetting(View51_DetailsAutoTrailer)">PlayerControl(Stop)</onleft>
 				<onback>CancelAlarm(preview_delay,silent)</onback>
-				<onback condition="[!String.IsEmpty(ListItem.Trailer) + [String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | !String.Contains(ListItem.Trailer,plugin)] | String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | String.IsEmpty(ListItem.Trailer) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)] + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)] + Skin.HasSetting(View51_DetailsAutoTrailer)">PlayerControl(Stop)</onback>
+				<onback condition="!Player.HasAudio + $EXP[IsPlayingUnrecognizedContent] + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)] + Skin.HasSetting(View51_DetailsAutoTrailer)">PlayerControl(Stop)</onback>
+				<onback>ClearProperty(HideNowPlaying)</onback>
 				<viewtype label="31444">list</viewtype>
 				<include content="View_Forced">
 					<param name="viewtype" value="$LOCALIZE[31444]" />

@@ -120,8 +120,8 @@
 				<font>Reg32</font>
 				<textoffsetx>60</textoffsetx>
 				<textoffsety>8</textoffsety>
-				<textcolor>FFFFFFFF</textcolor>
-				<focusedcolor>FF000000</focusedcolor>
+				<textcolor>white</textcolor>
+				<focusedcolor>black</focusedcolor>
                 <texturefocus border="10" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">diffuse/panel-spot.png</texturefocus>
                 <texturenofocus border="10" colordiffuse="FF595959">diffuse/panel-spot.png</texturenofocus>
                 <onclick>ActivateWindow(1118)</onclick>

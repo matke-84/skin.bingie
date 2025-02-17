@@ -72,7 +72,7 @@
         </control>
     </include>
     <include name="PosterPanelBingieLayoutFocus">
-        <include condition="![Skin.HasSetting(EnableFixedFrameWidgets) + [[Window.IsActive(Home) | $EXP[IsBingieListsActive]] | [$EXP[IsBingieHubsActive2] + Skin.HasSetting(LockHubWidgets)] | Window.IsActive(videoosd) | Window.IsActive(1190)]] | [Window.IsActive(DialogVideoInfo.xml) + Skin.HasSetting(UseBingieInfoDialog)] | Window.IsActive(1109) | Window.IsActive(1108) | Window.IsActive(1106)">PosterThumbFOBingie</include>
+        <include condition="![Skin.HasSetting(EnableFixedFrameWidgets) + [[Window.IsActive(Home) | $EXP[IsBingieListsActive]] | [$EXP[IsBingieHubsActive2] + Skin.HasSetting(LockHubWidgets)] | Window.IsActive(videoosd)]] | [Window.IsActive(DialogVideoInfo.xml) + Skin.HasSetting(UseBingieInfoDialog)] | Window.IsActive(1109) | Window.IsActive(1108) | Window.IsActive(1106) | Window.IsActive(1190)">PosterThumbFOBingie</include>
         <include>PosterThumbBingieLayout</include>
         <include condition="!Window.IsActive(Home) + !$EXP[IsBingieHubsActive] + !Window.IsActive(1117) + !Window.IsActive(1109) + !Window.IsActive(1108) + !Window.IsActive(1106) + [Window.IsActive(1190) | Window.IsActive(1191) | !Window.IsActive(DialogVideoInfo.xml)]">PosterTagOverlayBingie</include>
         <control type="group">

@@ -48,7 +48,7 @@
 					<visible>$EXP[IsPlayingUnrecognizedContent] + [!Window.IsActive(DialogVideoInfo.xml) | !Window.IsActive(Custom_1190_TMDbHelperCast.xml)]</visible>
 					<!-- bg -->
 					<control type="image">
-						<texture colordiffuse="ff000000" background="true">diffuse/panel2.png</texture>
+						<texture colordiffuse="black" background="true">diffuse/panel2.png</texture>
 					</control>
 					<control type="videowindow"/>
 				</control>
@@ -155,7 +155,7 @@
 					<effect type="slide" start="0,0" end="-650,0" tween="sine" easing="out" time="300" delay="0" />
 					<effect type="fade" start="100" end="0" tween="sine" easing="out" time="300" delay="0" />
 				</animation>
-				<top>1100</top>
+				<top>1105</top>
 				<left>150</left>
 				<include content="Bingie_Headline_Item_2">
                     <param name="id" value="9005" />
@@ -206,16 +206,14 @@
 
     <!-- Poster Layout -->
     <include name="widget_layout_poster">
-        <height>331</height>
-		<onunfocus condition="System.HasAlarm(preview_delay)">CancelAlarm(preview_delay,silent)</onunfocus>
-        <onunfocus condition="$EXP[IsPlayingUnrecognizedContent]">PlayerControl(Stop)</onunfocus>	
-        <itemlayout height="330" width="238">
+        <height>341</height>
+        <itemlayout height="340" width="238">
             <control type="group">
                 <include content="left">
                     <param name="left" value="bingie_no_circular_posx"/>
                 </include>
                 <width>240</width>
-                <height>330</height>
+                <height>340</height>
                 <include>PosterPanelBingieLayout</include>
                 <control type="group">
                     <description>widget label overlay</description>
@@ -227,13 +225,13 @@
                <include>Poster_New_Episodes_Tag_Overlay</include>
             </control>
         </itemlayout>
-        <focusedlayout height="330" width="238" condition="Control.HasFocus($PARAM[widgetid])">
+        <focusedlayout height="340" width="238" condition="Control.HasFocus($PARAM[widgetid])">
             <control type="group">
                 <include content="left">
                     <param name="left" value="bingie_no_circular_posx"/>
                 </include>
                 <width>240</width>
-                <height>330</height>
+                <height>340</height>
                 <control type="image">
                     <visible>![Skin.HasSetting(EnableFixedFrameWidgets) + [[Window.IsActive(Home) | $EXP[IsBingieListsActive]] | [[$EXP[IsBingieHubsActive]] + [Skin.HasSetting(LockHubWidgets) | Window.IsActive(1114)]]]]</visible>
                     <visible>Control.HasFocus($PARAM[widgetid])</visible>
@@ -262,13 +260,13 @@
                 </include>
             </control>
         </focusedlayout>
-		        <focusedlayout height="330" width="238" condition="!Control.HasFocus($PARAM[widgetid])">
+		        <focusedlayout height="340" width="238" condition="!Control.HasFocus($PARAM[widgetid])">
             <control type="group">
                 <include content="left">
                     <param name="left" value="bingie_no_circular_posx"/>
                 </include>
                 <width>240</width>
-                <height>330</height>
+                <height>340</height>
                 <control type="image">
                     <visible>![Skin.HasSetting(EnableFixedFrameWidgets) + [[Window.IsActive(Home) | $EXP[IsBingieListsActive]] | [[$EXP[IsBingieHubsActive]] + [Skin.HasSetting(LockHubWidgets) | Window.IsActive(1114)]]]]</visible>
                     <visible>Control.HasFocus($PARAM[widgetid])</visible>
@@ -300,8 +298,8 @@
     
     <!-- widget square layout -->
     <include name="widget_layout_square">
-        <height>242</height>
-        <itemlayout height="250" width="238">
+        <height>241</height>
+        <itemlayout height="249" width="238">
             <control type="group">
                 <include content="left">
                     <param name="left" value="bingie_no_circular_posx"/>
@@ -318,7 +316,7 @@
                 </control>
             </control>
         </itemlayout>
-        <focusedlayout height="250" width="238" condition="!Control.HasFocus($PARAM[widgetid])">
+        <focusedlayout height="249" width="238" condition="!Control.HasFocus($PARAM[widgetid])">
             <control type="group">
                 <include content="left">
                     <param name="left" value="bingie_no_circular_posx"/>
@@ -339,7 +337,7 @@
                 <param name="widgetid" value="$PARAM[widgetid]"/>
             </include>
         </focusedlayout>
-		<focusedlayout height="250" width="238" condition="Control.HasFocus($PARAM[widgetid])">
+		<focusedlayout height="249" width="238" condition="Control.HasFocus($PARAM[widgetid])">
             <control type="group">
                 <include content="left">
                     <param name="left" value="bingie_no_circular_posx"/>
@@ -370,21 +368,19 @@
 
     <!-- widget landscape layout -->
     <include name="widget_layout_landscape">
-        <height>212</height>
-		<onunfocus condition="System.HasAlarm(preview_delay)">CancelAlarm(preview_delay,silent)</onunfocus>
-        <onunfocus condition="$EXP[IsPlayingUnrecognizedContent]">PlayerControl(Stop)</onunfocus>
-        <itemlayout width="364" height="212">
+        <height>218</height>
+        <itemlayout width="371" height="218">
             <control type="group">
                 <include content="left">
                     <param name="left" value="bingie_no_circular_posx"/>
                 </include>
                 <width>landscape_width</width>
-                <height>210</height>
+                <height>217</height>
                 <include>ThumbsViewBingieLayout</include>
 			<control type="image">
 				<!-- fallback logo image -->
-				<height>210</height>
-				<bottom>-54</bottom>
+				<height>217</height>
+				<bottom>-67</bottom>
 				<left>0</left>
 				<bordersize>65</bordersize>
 				<texture background="true">$VAR[ClearLogoFallback]</texture>
@@ -393,7 +389,7 @@
 				<visible>String.IsEmpty(ListItem.Property(defaultID))</visible>
 			</control>
 			<control type="label">
-				<height>210</height>
+				<height>217</height>
 				<align>center</align>
 				<aligny>center</aligny>
 				<font>Bold43</font> 
@@ -411,13 +407,13 @@
                 <include>New_Episodes_Tag_Overlay</include>
             </control>
         </itemlayout>
-        <focusedlayout width="364" height="212" condition="Control.HasFocus($PARAM[widgetid])">
+        <focusedlayout width="371" height="218" condition="Control.HasFocus($PARAM[widgetid])">
             <control type="group">
                 <include content="left">
                     <param name="left" value="bingie_no_circular_posx"/>
                 </include>
                 <width>landscape_width</width>
-                <height>210</height>
+                <height>217</height>
                 <control type="image">
                     <visible>![Skin.HasSetting(EnableFixedFrameWidgets) + [[Window.IsActive(Home) | $EXP[IsBingieListsActive]] | [[$EXP[IsBingieHubsActive]] + [Skin.HasSetting(LockHubWidgets) | Window.IsActive(1114)]]]]</visible>
                     <visible>Control.HasFocus($PARAM[widgetid])</visible>
@@ -427,8 +423,8 @@
                 <include>ThumbsViewItemBingieLayout</include>
 				<control type="image">
 					<!-- fallback logo image -->
-					<height>210</height>
-					<bottom>-54</bottom>
+					<height>217</height>
+					<bottom>-67</bottom>
 					<left>0</left>
 					<bordersize>65</bordersize>
 					<texture background="true">$VAR[ClearLogoFallback]</texture>
@@ -437,7 +433,7 @@
 					<visible>String.IsEmpty(ListItem.Property(defaultID))</visible>
 				</control>
 				<control type="label">
-					<height>210</height>
+					<height>217</height>
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>Bold43</font> 
@@ -460,13 +456,13 @@
                 </include>
             </control>
         </focusedlayout>
-		<focusedlayout width="364" height="212" condition="!Control.HasFocus($PARAM[widgetid])">
+		<focusedlayout width="371" height="218" condition="!Control.HasFocus($PARAM[widgetid])">
             <control type="group">
                 <include content="left">
                     <param name="left" value="bingie_no_circular_posx"/>
                 </include>
                 <width>landscape_width</width>
-                <height>210</height>
+                <height>217</height>
                 <control type="image">
                     <visible>![Skin.HasSetting(EnableFixedFrameWidgets) + [[Window.IsActive(Home) | $EXP[IsBingieListsActive]] | [[$EXP[IsBingieHubsActive]] + [Skin.HasSetting(LockHubWidgets) | Window.IsActive(1114)]]]]</visible>
                     <visible>Control.HasFocus($PARAM[widgetid])</visible>
@@ -476,8 +472,8 @@
                 <include>ThumbsViewItemBingieLayout</include>
 			<control type="image">
 				<!-- fallback logo image -->
-				<height>210</height>
-				<bottom>-54</bottom>
+				<height>217</height>
+				<bottom>-67</bottom>
 				<left>0</left>
 				<bordersize>65</bordersize>
 				<texture background="true">$VAR[ClearLogoFallback]</texture>
@@ -486,7 +482,7 @@
 				<visible>String.IsEmpty(ListItem.Property(defaultID))</visible>
 			</control>
 			<control type="label">
-				<height>210</height>
+				<height>220</height>
 				<align>center</align>
 				<aligny>center</aligny>
 				<font>Bold43</font> 
@@ -683,10 +679,10 @@
 				<onback condition="$EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(ForceVideoPlaybackStop)">PlayerControl(Stop)</onback>
 				<onup condition="Skin.HasSetting(BingieAutoTrailer)">noop</onup>
 				<ondown condition="Skin.HasSetting(BingieAutoTrailer)">noop</ondown>
-                <itemlayout height="330" width="238" condition="String.IsEqual(Skin.String(widgetstyle),poster)">
+                <itemlayout height="340" width="238" condition="String.IsEqual(Skin.String(widgetstyle),poster)">
                     <control type="group">
                         <width>240</width>
-                        <height>330</height>
+                        <height>340</height>
                         <include>PosterPanelBingieLayout</include>
                         <control type="group">
                             <include condition="!String.IsEqual(Skin.String(Widgets_DisplayTags),disable) + !String.IsEqual(Skin.String(Widgets_DisplayTags),override)">PosterTagOverlayBingie</include>
@@ -694,10 +690,10 @@
                         </control>
                     </control>
                 </itemlayout>
-                <focusedlayout height="330" width="238" condition="String.IsEqual(Skin.String(widgetstyle),poster)">
+                <focusedlayout height="340" width="238" condition="String.IsEqual(Skin.String(widgetstyle),poster)">
                     <control type="group">
                         <width>240</width>
-                        <height>330</height>
+                        <height>340</height>
                         <include>PosterPanelBingieLayoutFocus</include>
 						<include>Top250Indicator</include>
                         <control type="group">
@@ -753,10 +749,10 @@
             <orientation>vertical</orientation>
             <itemgap>0</itemgap>
             <usecontrolcoords>true</usecontrolcoords>
-            <height>250</height>
+            <height>260</height>
             <include>No_Circular_Left</include>
             <left>0</left>
-            <top>863</top>
+            <top>849</top>
             <control type="group">
 				<height>40</height>
 				<control type="textbox">
@@ -784,7 +780,7 @@
             <control type="image">
 				<visible>!Container(1508).IsUpdating + Integer.IsGreater(Container(1508).NumItems,0)</visible>
                 <left>0</left>
-                <height>210</height>
+                <height>220</height>
                 <width>landscape_width</width>
                 <bordersize>8</bordersize>
                 <texture background="true" diffuse="home/home_matte3.png">$VAR[SpotlightLandscapeImage]</texture>
@@ -804,10 +800,10 @@
             <orientation>vertical</orientation>
             <itemgap>0</itemgap>
             <usecontrolcoords>true</usecontrolcoords>
-            <height>370</height>
+            <height>380</height>
             <include>No_Circular_Left</include>
             <left>0</left>
-            <top>942</top>
+            <top>947</top>
 			<control type="group">
 				<height>40</height>
 				<control type="textbox">
@@ -835,7 +831,7 @@
             <control type="image">
 				<visible>!Container(1508).IsUpdating + Integer.IsGreater(Container(1508).NumItems,0)</visible>
                 <left>0</left>
-                <height>330</height>
+                <height>340</height>
                 <width>240</width>
                 <bordersize>8</bordersize>
                 <texture background="true" diffuse="diffuse/poster3.png">$VAR[SpotlightPosterImage]</texture>
@@ -857,7 +853,7 @@
             <height>370</height>
             <include>No_Circular_Left</include>
             <left>0</left>
-            <top>893</top>
+            <top>882</top>
             <control type="group">
 				<height>40</height>
 				<control type="textbox">

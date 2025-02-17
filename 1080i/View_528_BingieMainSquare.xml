@@ -45,7 +45,7 @@
 					<textureslidernibfocus colordiffuse="$INFO[Skin.String(ScrollbarFocusedColor)]">scrollbar/texturesliderbar_nib.png</textureslidernibfocus>
                     <visible>Control.IsVisible(528) + Integer.IsGreater(Container.NumItems,0)</visible>
                     <width>10</width>
-					<height>421</height>
+					<height>431</height>
                     <right>0</right>
                     <bottom>0</bottom>
                     <onleft>528</onleft>
@@ -65,7 +65,7 @@
                 <param name="viewtype" value="$LOCALIZE[31122]" />
             </include>
             <focusedposition>0</focusedposition>
-            <top>51</top>
+            <top>41</top>
             <width>1768</width>
             <height>470</height>
             <orientation>vertical</orientation>

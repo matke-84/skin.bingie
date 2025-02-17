@@ -739,8 +739,8 @@
 				<align>center</align>
 				<aligny>top</aligny>
 				<textwidth>140</textwidth> 
-				<textcolor>ffffffff</textcolor>
-				<disabledcolor>ffffffff</disabledcolor>
+				<textcolor>white</textcolor>
+				<disabledcolor>white</disabledcolor>
 				<texturenofocus border="10">bingie/usicons/usfooter/white.png</texturenofocus>
 				<texturefocus border="10">bingie/usicons/usfooter/white.png</texturefocus>
 				<textoffsetx>10</textoffsetx>
@@ -832,8 +832,8 @@
 				<align>center</align>
 				<aligny>top</aligny>
 				<textwidth>140</textwidth> 
-				<textcolor>ffffffff</textcolor>
-				<disabledcolor>ffffffff</disabledcolor>
+				<textcolor>white</textcolor>
+				<disabledcolor>white</disabledcolor>
 				<texturenofocus border="10">bingie/usicons/usfooter/white.png</texturenofocus>
 				<texturefocus border="10">bingie/usicons/usfooter/white.png</texturefocus>
 				<textoffsetx>10</textoffsetx>

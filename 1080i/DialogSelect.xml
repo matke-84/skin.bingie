@@ -111,7 +111,6 @@
                     <font>Reg22</font>
 					<label>$INFO[Container(6).ListItem.Label2,, ][CR]$INFO[Container(6).ListItem.AddonVersion,$LOCALIZE[24051] ]</label>
 					<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<aligny>top</aligny>
                     <visible>!String.IsEmpty(Container(6).ListItem.label2)</visible>
@@ -124,7 +123,6 @@
                     <font>Reg22</font>
 					<label>$INFO[Container(6).ListItem.AddonSummary,, ][CR]$INFO[Container(6).ListItem.AddonVersion,$LOCALIZE[24051] ]</label>
 					<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-					<shadowcolor>black</shadowcolor>
 					<align>left</align>
 					<aligny>top</aligny>
                     <visible>String.IsEmpty(Container(6).ListItem.label2)</visible>

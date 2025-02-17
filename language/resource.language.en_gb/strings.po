@@ -2355,7 +2355,7 @@ msgid "Select which details to show in video info"
 msgstr ""
 
 msgctxt "#31596"
-msgid "Set default 'Select' action to show information (only applies to widgets)"
+msgid "Open information instead of playing a movie/TV show (only applies to widgets)"
 msgstr ""
 
 msgctxt "#31597"

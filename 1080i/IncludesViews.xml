@@ -1063,7 +1063,7 @@
             <posy>8</posy>
             <width>609</width>
             <height>344</height>
-            <visible>[$EXP[IsPlayingUnrecognizedContent] + [Skin.HasSetting(View51_DetailsAutoTrailer) | Skin.HasSetting(View53_DetailsAutoTrailer) | Skin.HasSetting(View55_DetailsAutoTrailer) | Skin.HasSetting(View510_DetailsAutoTrailer) | Skin.HasSetting(View512_DetailsAutoTrailer) | Skin.HasSetting(View523_DetailsAutoTrailer) | Skin.HasSetting(View526_DetailsAutoTrailer)]] + [!Window.IsActive(DialogVideoInfo.xml) | !Window.IsActive(Custom_1190_TMDbHelperCast.xml)]</visible>
+            <visible>[$EXP[IsPlayingUnrecognizedContent] + [Skin.HasSetting(View51_DetailsAutoTrailer) | Skin.HasSetting(View53_DetailsAutoTrailer) | Skin.HasSetting(View55_DetailsAutoTrailer) | Skin.HasSetting(View510_DetailsAutoTrailer) | Skin.HasSetting(View512_DetailsAutoTrailer) | Skin.HasSetting(View523_DetailsAutoTrailer) | Skin.HasSetting(View526_DetailsAutoTrailer)]] + [!Window.IsActive(DialogVideoInfo.xml) | !Window.IsActive(Custom_1190_TMDbHelperCast.xml)] + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)]</visible>
             <control type="image">
                 <texture>colors/color_black.png</texture>
             </control>
@@ -1226,7 +1226,7 @@
 				[Window.IsActive(1108) + Skin.HasSetting(MovieDetailsHome)] | [Window.IsActive(1109) + Skin.HasSetting(MovieDetailsHome)] |
 				[Window.IsActive(1106) + Skin.HasSetting(MovieDetailsHome)]
 				</visible>
-                <visible>ListItem$PARAM[listitem].IsResumable + Skin.HasSetting(WatchedIndicator.Progress)</visible>
+                <visible>!Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,0) + Skin.HasSetting(WatchedIndicator.Progress)</visible>
                 <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
 				<visible>!$EXP[IsTvShowDBType]</visible>
                 <control type="image">

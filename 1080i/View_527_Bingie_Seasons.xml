@@ -426,8 +426,8 @@
                 <!-- clearlogo title -->
                 <control type="image" id="987767">
                     <left>15</left>
-					<height>190</height>
-                    <width>490</width>
+					<height>185</height>
+                    <width>477</width>
                     <align>left</align>
                     <top>0</top>
                     <fadetime>350</fadetime>

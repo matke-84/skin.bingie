@@ -3,7 +3,7 @@
     <defaultcontrol always="true">1297</defaultcontrol>
     <controls>
 		<control type="image">
-            <texture background="true" colordiffuse="ff000000">diffuse/panel2.png</texture>
+            <texture background="true" colordiffuse="black">diffuse/panel2.png</texture>
         </control> 
 
         <control type="list" id="1297">

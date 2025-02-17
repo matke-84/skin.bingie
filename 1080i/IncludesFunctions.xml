@@ -116,16 +116,18 @@
             AlarmClock(preview_delay,RunScript(script.bingie.helper,action=playtrailer,title=$INFO[ListItem.Title]$INFO[ListItem.Year]),00:$PARAM[interval],silent)</onfocus>
 		<onfocus condition="String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,tvshow) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)">
             AlarmClock(preview_delay,RunScript(script.bingie.helper,action=playtrailer,title=$VAR[TVShowTitle]$INFO[ListItem.Year],tvshow=true,youtube=$INFO[Skin.String(AutoYoutubeTrailer)]),00:$PARAM[interval],silent)</onfocus>	          
-        </control>
+        <onfocus condition="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)">SetProperty(HideNowPlaying,1)</onfocus>
+		</control>		
     </include>
 	
 	<include name="LibraryAutoTrailerStopButton">
         <control type="button">
-        <visible>false</visible>				          
+        <visible>false</visible>	
+			<onunfocus>ClearProperty(HideNowPlaying)</onunfocus>		
             <onunfocus condition="System.HasAlarm(preview_delay)">CancelAlarm(preview_delay,silent)</onunfocus>
-            <onunfocus condition="!String.IsEmpty(ListItem.Trailer) + [String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | !String.Contains(ListItem.Trailer,plugin)] + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)] | String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,tvshow) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)">PlayerControl(Stop)</onunfocus>
+            <onunfocus condition="$EXP[IsPlayingUnrecognizedContent] + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)]">PlayerControl(Stop)</onunfocus>
 			<onfocus condition="String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)">CancelAlarm(preview_delay,silent)</onfocus>
-			<onfocus condition="String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)">PlayerControl(Stop)</onfocus>
+			<onfocus condition="$EXP[IsPlayingUnrecognizedContent] + [String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)]">PlayerControl(Stop)</onfocus>
 		</control>
     </include>
 

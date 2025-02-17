@@ -5,7 +5,7 @@
     <include name="BingieSearchMiniKeyboard">
         <!-- Keyboard Edit -->
         <control type="edit" id="312">
-            <left>648</left>
+            <left>652</left>
             <top>29</top>
             <height>70</height>
             <width>1200</width>
@@ -507,7 +507,7 @@
                         <scroll>false</scroll>
                         <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
                         <selectedcolor>$INFO[Skin.String(ButtonTextColor)]</selectedcolor>
-                        <disabledcolor>midgrey</disabledcolor>
+                        <disabledcolor>FF686868</disabledcolor>
                     </control>
                 </control>
             </itemlayout>

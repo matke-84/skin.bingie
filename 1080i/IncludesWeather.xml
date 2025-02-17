@@ -1849,7 +1849,6 @@
 						<height>770</height>
 						<font>Reg36</font>
 						<textcolor>white</textcolor>
-						<shadowcolor>black</shadowcolor>
 						<align>center</align>
 						<label>$INFO[Window.Property(Alerts)]</label>
 						<autoscroll time="2000" delay="3000" repeat="5000">Container(50).HasFocus(11)</autoscroll>
@@ -1861,7 +1860,6 @@
 						<height>770</height>
 						<font>Reg36</font>
 						<textcolor>white</textcolor>
-						<shadowcolor>black</shadowcolor>
 						<align>center</align>
 						<aligny>center</aligny>
 						<label>31637</label>

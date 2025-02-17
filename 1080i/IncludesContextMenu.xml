@@ -133,6 +133,7 @@
 			<include>SideBladeMenuButton</include>
 			<label>1036</label>
 			<onclick>ActivateWindow(FavouritesBrowser)</onclick>
+			<visible>!Window.IsActive(favouritesbrowser)</visible>
 		</control>
         
         <!-- VIEW SETTINGS START HERE -->
@@ -162,7 +163,7 @@
             <label>$LOCALIZE[31305]$INFO[Container.Viewmode,: ,]</label>
             <include>Items_LockUnlock</include>
             <onclick>RunScript(script.bingie.toolbox,action=SETVIEW)</onclick>
-            <visible>!Window.IsActive(tvguide) + !Window.IsActive(tvchannels)</visible>
+            <visible>!Window.IsActive(tvguide) + !Window.IsActive(tvchannels) + !Window.IsActive(tvsearch) + !Window.IsActive(tvrecordings) + !Window.IsActive(tvtimers) + !Window.IsActive(favouritesbrowser)</visible>
         </control>
 
         <control type="radiobutton" id="4404">
@@ -211,7 +212,6 @@
             <onclick condition="Control.IsVisible(502)">Skin.ToggleSetting(LandscapeViewShowInfo)</onclick>
             <onclick condition="Control.IsVisible(503)">Skin.ToggleSetting(LogoViewShowInfo)</onclick>        
 			<onclick condition="Control.IsVisible(524)">Skin.reset(View524_ShowCDart)</onclick>
-			<onclick condition="Control.IsVisible(502)">Skin.reset(View502_ShowCDart)</onclick>
 			<selected>
             [Control.IsVisible(507) + Skin.HasSetting(FanArtViewShowInfo)] |
             [Control.IsVisible(524) + Skin.HasSetting(ShowCaseViewShowInfo)] |
@@ -220,9 +220,8 @@
             [Control.IsVisible(503) + Skin.HasSetting(LogoViewShowInfo)]
             </selected>
 			<visible>
-            Control.IsVisible(52) | Control.IsVisible(503) | Control.IsVisible(507) |
-            [Control.IsVisible(524) + !Skin.HasSetting(View524_ShowCDart) | Control.IsVisible(524) + !$EXP[IsMovieDBType] + !Skin.HasSetting(EnableFakeDiscArt)] |            
-            [Control.IsVisible(502) + !Skin.HasSetting(View502_ShowCDart) | Control.IsVisible(502) + !$EXP[IsMovieDBType] + !Skin.HasSetting(EnableFakeDiscArt)]
+            Control.IsVisible(52) | Control.IsVisible(503) | Control.IsVisible(507) | Control.IsVisible(502) |
+            [Control.IsVisible(524) + !Skin.HasSetting(View524_ShowCDart) | Control.IsVisible(524) + !$EXP[IsMovieDBType] + !Skin.HasSetting(EnableFakeDiscArt)]          
             </visible>
 		</control>
         
@@ -444,19 +443,17 @@
 			<!--Show discart-->
 			<include>SideBladeMenuButton</include>
 			<label>31200</label>
-            <onclick condition="Control.IsVisible(502)">Skin.ToggleSetting(View502_ShowCDart)</onclick>
             <onclick condition="Control.IsVisible(513)">Skin.ToggleSetting(View513_ShowCDart)</onclick>
             <onclick condition="Control.IsVisible(514)">Skin.ToggleSetting(View514_ShowCDart)</onclick>
 			<onclick condition="Control.IsVisible(524)">Skin.ToggleSetting(View524_ShowCDart)</onclick>
 			<selected>
-            [Control.IsVisible(502) + Skin.HasSetting(View502_ShowCDart)] | 
             [Control.IsVisible(513) + Skin.HasSetting(View513_ShowCDart)] | 
             [Control.IsVisible(514) + Skin.HasSetting(View514_ShowCDart)] |
 			[Control.IsVisible(524) + Skin.HasSetting(View524_ShowCDart)]
             </selected>
 			<visible>
 			Control.IsVisible(513) | Control.IsVisible(514) |
-            [Control.IsVisible(502) + !Skin.HasSetting(LandscapeViewShowInfo)] | [Control.IsVisible(524) + !Skin.HasSetting(ShowCaseViewShowInfo)]
+            [Control.IsVisible(524) + !Skin.HasSetting(ShowCaseViewShowInfo)]
             </visible>
             <visible>!Skin.String(View513_DisplayInfo,small) | Skin.String(View514_DisplayInfo,small)</visible>
 			<visible>$EXP[IsMovieDBType] | [$EXP[IsMovieDBType] + Skin.HasSetting(EnableFakeDiscArt)] | [!$EXP[IsMovieDBType] + Skin.HasSetting(EnableFakeDiscArt)] | Window.IsActive(Music)</visible>
@@ -470,7 +467,6 @@
 			<selected>Skin.HasSetting(AnimateDiscArt)</selected>
 			<visible>
 			Control.IsVisible(51) | Control.IsVisible(510) | 
-			[Control.IsVisible(502) + Skin.HasSetting(View502_ShowCDart)] |
             [Control.IsVisible(513) + Skin.HasSetting(View513_ShowCDart)] | 
             [Control.IsVisible(514) + Skin.HasSetting(View514_ShowCDart)] |
 			[Control.IsVisible(524) + Skin.HasSetting(View524_ShowCDart)]
@@ -478,7 +474,7 @@
 			<visible>
             Control.IsVisible(51) + Window.IsActive(Music) + !Skin.HasSetting(View51_DetailsShowInfo) |
             Control.IsVisible(510) + Window.IsActive(Music) + !Skin.HasSetting(View510_DetailsShowInfo) | Control.IsVisible(513) | Control.IsVisible(514) |
-            [Control.IsVisible(502) + !Skin.HasSetting(LandscapeViewShowInfo)] | [Control.IsVisible(524) + !Skin.HasSetting(ShowCaseViewShowInfo)]
+            [Control.IsVisible(524) + !Skin.HasSetting(ShowCaseViewShowInfo)]
             </visible>
             <visible>!Skin.String(View513_DisplayInfo,small) | Skin.String(View514_DisplayInfo,small)</visible>
 			<visible>$EXP[IsMovieDBType] | [$EXP[IsMovieDBType] + Skin.HasSetting(EnableFakeDiscArt)] | [!$EXP[IsMovieDBType] + Skin.HasSetting(EnableFakeDiscArt)] | Window.IsActive(Music)</visible>
@@ -551,6 +547,7 @@
             Control.IsVisible(511) | Control.IsVisible(512) | Control.IsVisible(514) | Control.IsVisible(523) | 
             Control.IsVisible(524) | Control.IsVisible(525) | Control.IsVisible(526) | Control.IsVisible(527) | Control.IsVisible(528)
             </visible>
+			<visible>!Window.IsActive(favouritesbrowser)</visible>
 		</control>
         <control type="radiobutton" id="19002">
 			<!--Disable extra fanart-->
@@ -792,7 +789,7 @@
 		<textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
 		<focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
 		<disabledcolor>77585858</disabledcolor>
-		<invalidcolor>red</invalidcolor>
+		<invalidcolor>FFFF0000</invalidcolor>
 		<pulseonselect>false</pulseonselect>
 		<texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="10">diffuse/panel.png</texturefocus>
         <texturenofocus/>

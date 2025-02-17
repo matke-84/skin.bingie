@@ -75,7 +75,7 @@
 							<width>545</width>
 							<height>60</height>
 							<font>Reg24</font>
-							<textcolor>blue</textcolor>
+							<textcolor>FF0000FF</textcolor>
 							<align>center</align>
 							<aligny>center</aligny>
 						</control>
@@ -87,7 +87,7 @@
 							<scroll>false</scroll>
 							<textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
 							<selectedcolor>$INFO[Skin.String(ButtonTextColor)]</selectedcolor>
-							<disabledcolor>midgrey</disabledcolor>
+							<disabledcolor>FF686868</disabledcolor>
 						</control>
 					</control>
 				</itemlayout>
@@ -99,7 +99,7 @@
 							<width>545</width>
 							<height>60</height>
 							<font>Reg24</font>
-							<textcolor>blue</textcolor>
+							<textcolor>FF0000FF</textcolor>
 							<align>center</align>
 							<aligny>center</aligny>
 							<visible>!Control.HasFocus(11)</visible>

@@ -4,49 +4,29 @@
         <control type="group">
             <posx>-45</posx>
             <posy>95</posy>
-            <width>385</width>
-            <height>545</height>
+            <width>380</width>
+            <height>549</height>
             <control type="image">
-                <aspectratio scalediffuse="true" aligny="center" align="center">stretch</aspectratio>
+                <aspectratio scalediffuse="true" aligny="center" align="center">scale</aspectratio>
                 <texture background="true" diffuse="diffuse/poster.png" fallback="DefaultVideo.png">$VAR[PosterThumbList]</texture>
                 <include>poster_shadow</include>
                 <bordersize>20</bordersize>
-				<visible>!String.IsEmpty(ListItem.Art(poster)) | !String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
             </control>
-			<control type="image">
-                <aspectratio scalediffuse="false" aligny="center" align="center">scale</aspectratio>
-                <texture background="false" diffuse="diffuse/poster.png" fallback="DefaultVideo.png">$VAR[PosterThumbList]</texture>
-                <include>poster_shadow</include>
-                <bordersize>20</bordersize>
-				<visible>String.IsEmpty(ListItem.Art(poster)) + String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
-            </control>
-
         </control>
         <control type="image">
-            <posx>-25</posx>
-            <posy>620</posy>
-            <width>345</width>
-            <height>505</height>
-            <aspectratio aligny="top" scalediffuse="false">stretch</aspectratio>
-            <texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[PosterThumbList]</texture>
-            <animation effect="fade" start="100" end="30" time="160">Focus</animation>
-            <animation effect="fade" start="30" end="100" time="160">UnFocus</animation>
-			<visible>!String.IsEmpty(ListItem.Art(poster)) | !String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
-        </control>
-		<control type="image">
-            <posx>-25</posx>
-            <posy>620</posy>
-            <width>345</width>
-            <height>505</height>
+            <posx>-45</posx>
+            <posy>600</posy>
+            <width>380</width>
+            <height>549</height>
+			<bordersize>20</bordersize>
             <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
             <texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[PosterThumbList]</texture>
             <animation effect="fade" start="100" end="30" time="160">Focus</animation>
             <animation effect="fade" start="30" end="100" time="160">UnFocus</animation>
-			<visible>String.IsEmpty(ListItem.Art(poster)) + String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
         </control>
 		<control type="group">
 			<!--Watched Overlay-->
-			<right>-5</right>
+			<right>-1</right>
 			<top>115</top>
 			<include>WatchedIndicatorNormal</include>
 		</control>
@@ -71,10 +51,10 @@
                 
                 <control type="image">
                     <!--cdart image-->
-                    <width>396</width>
-                    <height>396</height>
+                    <width>394</width>
+                    <height>394</height>
                     <posx>763</posx>
-					<bottom>501</bottom>
+					<bottom>502</bottom>
                     <texture background="true" diffuse="diffuse/cdmask_new.png" fallback="defaultcovers/cd_big.png">$VAR[DiscArtImage]</texture>
                     <aspectratio scalediffuse="false" align="center" aligny="center">scale</aspectratio>
                     <animation effect="fade" start="0" end="100" time="50" delay="800" reversible="false" condition="!Container.OnNext + !Container.OnPrevious">Conditional</animation>
@@ -85,7 +65,7 @@
                 </control>
                 
 				<control type="fixedlist" id="514">					
-					<posx>-130</posx>
+					<posx>-128</posx>
 					<bottom>60</bottom>
 					<width>2100</width>
 					<height>750</height>

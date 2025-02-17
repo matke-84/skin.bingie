@@ -27,7 +27,7 @@
 					<visible>[Player.HasVideo + ![VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(musicvideos) | VideoPlayer.Content(livetv) | Pvr.IsPlayingRecording]]</visible>
 					<!-- bg -->
 					<control type="image">
-						<texture colordiffuse="ff000000" background="true">diffuse/panel2.png</texture>
+						<texture colordiffuse="black" background="true">diffuse/panel2.png</texture>
 					</control>
 					<control type="videowindow"/>
 					<control type="image">
@@ -99,8 +99,8 @@
 					<usecontrolcoords>true</usecontrolcoords>
 					<orientation>vertical</orientation>
 					<control type="image" id="90005">
-						<height>190</height>
-						<width>490</width>
+						<height>185</height>
+						<width>477</width>
 						<align>left</align>
 						<aspectratio align="left" aligny="center">keep</aspectratio>
 						<texture background="true" fallback="colors/color_transparent.png">$VAR[BingieInfoClearlogo]</texture>
@@ -191,7 +191,7 @@
           	    <control type="fixedlist" id="50">
 					<include>Animation_Right_Delay_3</include>
 					<animation effect="fade" start="100" end="0" time="200" condition="String.IsEqual(Window.Property(AdditionalInfo),similar) | String.IsEqual(Window.Property(AdditionalInfo),cast)">Conditional</animation>
-					<top>730</top>
+					<top>720</top>
 					<width>1670</width>
 					<height>340</height>
                     <left>131</left>					
@@ -206,26 +206,26 @@
 					<onclick>RunScript(plugin.video.themoviedb.helper,add_path=$INFO[ListItem.FolderPath],call_auto=1190)</onclick>
 					<animation effect="fade" start="100" end="0" time="0" condition="Container(50).IsUpdating + ![Integer.IsGreater(Container(50).NumItems,0) + $EXP[IsPlayingUnrecognizedContent]]">Conditional</animation>	
 					<animation effect="fade" start="0" end="100" time="400" condition="!Container(50).IsUpdating | $EXP[IsPlayingUnrecognizedContent]">Conditional</animation>
-					<itemlayout height="337" width="238">
+					<itemlayout height="347" width="238">
 			        <control type="group">
 						<width>240</width>
-						<height>330</height>
+						<height>340</height>
 						<include>PosterPanelBingieLayout</include>
 						<include>PosterTagOverlayBingie</include>
 					</control>
 					</itemlayout>
-					<focusedlayout height="337" width="238" condition="!Control.HasFocus(50)">
+					<focusedlayout height="347" width="238" condition="!Control.HasFocus(50)">
 			        <control type="group">
 						<width>240</width>
-						<height>330</height>
+						<height>340</height>
 						<include>PosterPanelBingieLayout</include>
 						<include>PosterTagOverlayBingie</include>
 					</control>
 					</focusedlayout>
-					<focusedlayout height="337" width="238" condition="Control.HasFocus(50)">
+					<focusedlayout height="347" width="238" condition="Control.HasFocus(50)">
 					<control type="group">
 						<width>240</width>
-						<height>330</height>
+						<height>340</height>
 						<include>PosterPanelBingieLayoutFocus</include>
 						<include>PosterTagOverlayBingie</include>
 					</control>
@@ -239,13 +239,13 @@
 				<include content="Bingie_Main_View_Fixed_Frame">
 					<left>131</left>
 					<param name="containerid" value="50" />
-					<param name="top" value="730" />
+					<param name="top" value="720" />
 					<param name="width" value="240" />
-					<param name="height" value="330" />
+					<param name="height" value="340" />
 					<texture background="true" border="12">$INFO[Skin.String(thumbsborder_focused),bingie/border/poster_fo_,.png]</texture>
 					<bordersize>2</bordersize>
 					<param name="xAxisAnim" value="238" />
-					<param name="yAxisAnim" value="340" />
+					<param name="yAxisAnim" value="350" />
 					<param name="visibility" value="Skin.HasSetting(EnableFixedFrameWidgets)" />
 				</include>
 				</control>
@@ -254,7 +254,7 @@
 				
 				<!--Similar List-->
 				<control type="fixedlist" id="352">
-			        <top>730</top>
+			        <top>720</top>
 					<width>1670</width>
 					<height>340</height>
                     <left>131</left>
@@ -276,18 +276,18 @@
                     <animation effect="fade" start="100" end="0" time="0" condition="Container(352).IsUpdating">Conditional</animation>
 					<animation effect="fade" start="0" end="100" time="400" condition="!Container(352).IsUpdating">Conditional</animation>
 						<!-- itemlayout movies -->
-						<itemlayout height="337" width="238">
+						<itemlayout height="347" width="238">
 			                <control type="group">
 								<width>240</width>
-								<height>330</height>
+								<height>340</height>
 								<include>PosterPanelBingieLayout</include>
 								<include>PosterTagOverlayBingie</include>
 							</control>
 						</itemlayout>
-						<focusedlayout height="337" width="238">
+						<focusedlayout height="347" width="238">
 							<control type="group">
 								<width>240</width>
-								<height>330</height>
+								<height>340</height>
 								<include>PosterPanelBingieLayoutFocus</include>
 								<include>PosterTagOverlayBingie</include>
 							</control>
@@ -304,13 +304,13 @@
 				<include content="Bingie_Main_View_Fixed_Frame">
 					<left>131</left>
 					<param name="containerid" value="352" />
-					<param name="top" value="730" />
+					<param name="top" value="720" />
 					<param name="width" value="240" />
-					<param name="height" value="330" />
+					<param name="height" value="340" />
 					<texture background="true" border="12">$INFO[Skin.String(thumbsborder_focused),bingie/border/poster_fo_,.png]</texture>
 					<bordersize>2</bordersize>
 					<param name="xAxisAnim" value="238" />
-					<param name="yAxisAnim" value="340" />
+					<param name="yAxisAnim" value="350" />
 					<param name="visibility" value="Skin.HasSetting(EnableFixedFrameWidgets)" />
 				</include>
 				</control>
@@ -332,7 +332,7 @@
 							<width>1652</width>
 							<height>325</height>
                             <orientation>horizontal</orientation>
-							<top>674</top>
+							<top>664</top>
 							<left>139</left>
 							<itemgap>14</itemgap>
                             <onup>noop</onup>
@@ -913,7 +913,7 @@
 						<control type="image">
 							<width>224</width>
 							<height>52</height>
-							<top>674</top>
+							<top>664</top>
 							<left>139</left>
 							<texture border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texture>
 						</control>
@@ -956,7 +956,7 @@
 		<onleft>ClearProperty(DisablePosterFade)</onleft>
 		<onback>ClearProperty(DisablePosterFade)</onback>
         <orientation>horizontal</orientation>
-        <top>674</top>
+        <top>664</top>
         <left>139</left>
         <animation effect="fade" start="0" end="100" time="200">Visible</animation>
         <itemlayout width="238" height="52">
@@ -1062,7 +1062,7 @@
 	<control type="group" id="9000">
         <scrolltime tween="sine" easing="out">500</scrolltime>
 		<visible allowhiddenfocus="true">String.IsEqual(Window.Property(AdditionalInfo),cast)</visible>
-        <top>730</top>
+        <top>720</top>
         <left>131</left>
         <width>1900</width>
         <height>1040</height>
@@ -1077,7 +1077,7 @@
 		  <param name="widgetTags" value="WidgetTagOverlayEnable" />
           <param name="force_tags" value="true" />
 		  <param name="layoutwidth" value="240" />
-          <param name="layoutheight" value="330" />
+          <param name="layoutheight" value="340" />
 		  <param name="layout">PosterPanelBingie</param>
           <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31089])" /> <!-- Crew -->
 		  <onfocus>SetProperty(TMDbHelper.WidgetContainer,53002,Home)</onfocus>
@@ -1092,7 +1092,7 @@
 		  <param name="widgetTags" value="WidgetTagOverlayEnable" />
           <param name="force_tags" value="true" />
 		  <param name="layoutwidth" value="240" />
-          <param name="layoutheight" value="330" />
+          <param name="layoutheight" value="340" />
 		  <param name="layout">PosterPanelBingie</param>
           <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31540])" /> <!-- Director -->
 		  <onfocus>SetProperty(TMDbHelper.WidgetContainer,53005,Home)</onfocus>
@@ -1107,7 +1107,7 @@
 		  <param name="widgetTags" value="WidgetTagOverlayEnable" />
           <param name="force_tags" value="true" />
 		  <param name="layoutwidth" value="240" />
-          <param name="layoutheight" value="330" />
+          <param name="layoutheight" value="340" />
 		  <param name="layout">PosterPanelBingie</param>
           <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31488])" /> <!-- Writer -->
 		  <onfocus>SetProperty(TMDbHelper.WidgetContainer,53007,Home)</onfocus>
@@ -1122,7 +1122,7 @@
 		  <param name="widgetTags" value="WidgetTagOverlayEnable" />
           <param name="force_tags" value="true" />
 		  <param name="layoutwidth" value="240" />
-          <param name="layoutheight" value="330" />
+          <param name="layoutheight" value="340" />
 		  <param name="layout">PosterPanelBingie</param>
           <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31530])" /> <!-- Creator -->
 		  <onfocus>SetProperty(TMDbHelper.WidgetContainer,53009,Home)</onfocus>
@@ -1137,7 +1137,7 @@
 		  <param name="widgetTags" value="WidgetTagOverlayEnable" />
           <param name="force_tags" value="true" />
 		  <param name="layoutwidth" value="240" />
-          <param name="layoutheight" value="330" />
+          <param name="layoutheight" value="340" />
 		  <param name="layout">PosterPanelBingie</param>
           <param name="visible" value="[String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31525]) | String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31526])]" /> <!-- Studio -->
 		  <onfocus>SetProperty(TMDbHelper.WidgetContainer,53008,Home)</onfocus>
@@ -1152,7 +1152,7 @@
 		  <param name="widgetTags" value="WidgetTagOverlayEnable" />
           <param name="force_tags" value="true" />
 		  <param name="layoutwidth" value="240" />
-          <param name="layoutheight" value="330" />
+          <param name="layoutheight" value="340" />
 		  <param name="layout">PosterPanelBingie</param>
           <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31538])" /> <!-- Genre -->
 		  <onfocus>SetProperty(TMDbHelper.WidgetContainer,53003,Home)</onfocus>
@@ -1167,7 +1167,7 @@
 		  <param name="widgetTags" value="WidgetTagOverlayEnable" />
           <param name="force_tags" value="true" />
 		  <param name="layoutwidth" value="240" />
-          <param name="layoutheight" value="330" />
+          <param name="layoutheight" value="340" />
 		  <param name="layout">PosterPanelBingie</param>
           <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31528])" /> <!-- Year -->
 		  <onfocus>SetProperty(TMDbHelper.WidgetContainer,53006,Home)</onfocus>
@@ -1182,7 +1182,7 @@
 		  <param name="widgetTags" value="WidgetTagOverlayDisable" />
           <param name="force_tags" value="false" />
 		  <param name="layoutwidth" value="240" />
-          <param name="layoutheight" value="330" />
+          <param name="layoutheight" value="340" />
 		  <param name="layout">PosterPanelBingie</param>
           <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31529])" /> <!-- Poster -->
 		  <onfocus>SetProperty(TMDbHelper.WidgetContainer,53004,Home)</onfocus>
@@ -1194,7 +1194,7 @@
 		<control type="label">
 			<animation effect="fade" start="0" end="100" time="400">Visible</animation>
 			<include>Animation_Right_Delay</include>
-            <bottom>125</bottom>
+            <bottom>120</bottom>
             <width>1920</width>
             <height>120</height>
             <font>Reg40</font>
@@ -1215,7 +1215,7 @@
 			[Container(53007).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31488])] | [Container(53008).IsUpdating + [[String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31525])] | String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31526])]] | [Container(53009).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31530])] | 
 			[Container(53010).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31522])] | [Container(53011).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31753])]] + !Player.HasVideo</visible>
 				<control type="label">					
-					<bottom>125</bottom>
+					<bottom>120</bottom>
 					<height>120</height>
 					<align>center</align>
 					<label>$LOCALIZE[31215]...</label>
@@ -1313,7 +1313,7 @@
 					<visible>[Player.HasVideo + ![VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(musicvideos) | VideoPlayer.Content(livetv) | Pvr.IsPlayingRecording]]</visible>
 					<!-- bg -->
 					<control type="image">
-						<texture colordiffuse="ff000000" background="true">diffuse/panel2.png</texture>
+						<texture colordiffuse="black" background="true">diffuse/panel2.png</texture>
 					</control>
 					<control type="videowindow"/>
 					<control type="image">
@@ -1368,8 +1368,8 @@
 					<usecontrolcoords>true</usecontrolcoords>
 					<orientation>vertical</orientation>
 					<control type="image" id="90005">
-						<height>190</height>
-						<width>490</width>
+						<height>185</height>
+						<width>477</width>
 						<align>left</align>
 						<aspectratio align="left" aligny="center">keep</aspectratio>
 						<texture background="true" fallback="colors/color_transparent.png">$VAR[BingieInfoClearlogo]</texture>
@@ -1473,7 +1473,7 @@
 						<width>550</width>
 						<posx>1</posx>						
 						<animation effect="fade" start="100" end="0" time="300" condition="String.IsEqual(Window.Property(AdditionalInfo), trailers) | String.IsEqual(Window.Property(AdditionalInfo), plot) | String.IsEqual(Window.Property(AdditionalInfo),similar) | String.IsEqual(Window.Property(AdditionalInfo),cast)">Conditional</animation>
-						<animation effect="slide" start="0,0" end="0,41" time="0" delay="0" condition="String.IsEqual(Window.Property(AdditionalInfo),set)">Conditional</animation>												
+						<animation effect="slide" start="0,0" end="0,31" time="0" delay="0" condition="String.IsEqual(Window.Property(AdditionalInfo),set)">Conditional</animation>												
 						<animation type="WindowClose" reversible="false" condition="String.IsEmpty(Window(Home).Property(NoFadeOut))">
 						  <effect type="fade" start="100" end="0" time="0" tween="sine" easing="out" />
 						  <effect type="slide" start="0" end="-150" time="300" tween="cubic" easing="out" />
@@ -1633,7 +1633,7 @@
 							</control>
 							
 							<control type="grouplist" id="701">
-								<visible>Skin.HasSetting(videoinfo_button_myrating) + [Skin.HasSetting(AddRaitingTrakt) | String.IsEmpty(ListItem.DBID)] + !$EXP[IsEpisodeDBType]</visible>
+								<visible>Skin.HasSetting(videoinfo_button_myrating) + [Skin.HasSetting(AddRaitingTrakt) | String.IsEmpty(ListItem.DBID)] + !$EXP[IsEpisodeDBType] + !$EXP[IsSeasonDBType]</visible>
 								<height>64</height>
 								<width>800</width>
 								<orientation>horizontal</orientation>
@@ -2075,7 +2075,7 @@
 								<radioheight>25</radioheight>
 								<onclick condition="$EXP[IsTvShowDBType]">Runscript(plugin.video.themoviedb.helper,select_artwork,tmdb_id=$INFO[ListItem.UniqueID(tmdb)],tmdb_type=tv)</onclick>
 								<onclick condition="$EXP[IsMovieDBType]">Runscript(plugin.video.themoviedb.helper,select_artwork,tmdb_id=$INFO[ListItem.UniqueID(tmdb)],tmdb_type=movie)</onclick>
-								<onclick condition="$EXP[IsEpisodeDBType]">Runscript(plugin.video.themoviedb.helper,select_artwork,type=tv,tmdb_id=$INFO[ListItem.UniqueID(tvshow.tmdb)],query=$INFO[ListItem.TVShowTitle],season=$INFO[ListItem.Season],episode=$INFO[ListItem.Episode])</onclick>
+								<onclick condition="$EXP[IsEpisodeDBType] | $EXP[IsSeasonDBType]">Runscript(plugin.video.themoviedb.helper,select_artwork,type=tv,tmdb_id=$INFO[ListItem.UniqueID(tvshow.tmdb)],query=$INFO[ListItem.TVShowTitle],season=$INFO[ListItem.Season],episode=$INFO[ListItem.Episode])</onclick>
 							</control>
 
 							<!--Refresh-->
@@ -2211,7 +2211,7 @@
 			<animation effect="fade" start="0" end="100" time="300" delay="600">WindowOpen</animation>
 			<animation effect="fade" start="0" end="100" time="300" delay="600">Visible</animation>
 			<animation effect="fade" start="100" end="0" time="100">WindowClose</animation>
-			<animation effect="slide" start="0,0" end="0,-302" time="300" delay="0" condition="Control.HasFocus(353)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-312" time="300" delay="0" condition="Control.HasFocus(353)">Conditional</animation>
 				<control type="group">
 					<visible>Integer.IsGreater(Container(353).NumItems,0)</visible>
 					<top>970</top>
@@ -2250,7 +2250,7 @@
 				<control type="list" id="353">
 					<top>1031</top>
                     <posx>145</posx>
-                    <height>330</height>
+                    <height>340</height>
 					<width>1775</width>
 					<onclick>SetProperty(CloseInfoDialog,1,Home)</onclick>
 					<onclick>Close</onclick>					
@@ -2269,10 +2269,10 @@
 					<animation effect="fade" start="100" end="0" time="0" condition="Container(353).IsUpdating">Conditional</animation>
 					<animation effect="fade" start="0" end="100" time="300" condition="!Container(353).IsUpdating">Conditional</animation>
 					<!-- itemlayout movies -->
-					<itemlayout height="328" width="238">
+					<itemlayout height="338" width="238">
 						<control type="group">
 							<width>240</width>
-							<height>330</height>
+							<height>340</height>
 							<include>PosterPanelBingieLayout</include>
 							<control type="group">
 								<include content="PosterTagOverlayBingie">
@@ -2281,10 +2281,10 @@
 							</control>
 						</control>
 					</itemlayout>
-					<focusedlayout height="328" width="238" condition="!Control.HasFocus(353)">
+					<focusedlayout height="338" width="238" condition="!Control.HasFocus(353)">
 						<control type="group">
 							<width>240</width>
-							<height>330</height>
+							<height>340</height>
 							<include>PosterPanelBingieLayout</include>
 							<control type="group">
 								<include content="PosterTagOverlayBingie">
@@ -2293,10 +2293,10 @@
 							</control>
 						</control>
 					</focusedlayout>
-					<focusedlayout height="328" width="238" condition="Control.HasFocus(353)">
+					<focusedlayout height="338" width="238" condition="Control.HasFocus(353)">
 						<control type="group">
 							<width>240</width>
-							<height>330</height>
+							<height>340</height>
 							<include>PosterPanelBingieLayoutFocus</include>
 							<control type="group">
 								<include content="PosterTagOverlayBingie">
@@ -2945,7 +2945,7 @@
 			  <param name="widgetTags" value="WidgetTagOverlayEnable" />
 			  <param name="force_tags" value="true" />
 			  <param name="layoutwidth" value="264" />
-			  <param name="layoutheight" value="370" />
+			  <param name="layoutheight" value="374" />
 			  <param name="layout">PosterPanelBingie</param>
 			  <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[206])" /> <!-- Cast -->
 			  <onfocus>SetProperty(TMDbHelper.WidgetContainer,53001,Home)</onfocus>
@@ -2972,7 +2972,7 @@
 			  <param name="widgetTags" value="WidgetTagOverlayEnable" />
 			  <param name="force_tags" value="true" />
 			  <param name="layoutwidth" value="264" />
-			  <param name="layoutheight" value="370" />
+			  <param name="layoutheight" value="374" />
 			  <param name="layout">PosterPanelBingie</param>
 			  <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31089])" /> <!-- Crew -->
 			  <onfocus>SetProperty(TMDbHelper.WidgetContainer,53002,Home)</onfocus>
@@ -2987,7 +2987,7 @@
 			  <param name="widgetTags" value="WidgetTagOverlayEnable" />
 			  <param name="force_tags" value="true" />
 			  <param name="layoutwidth" value="264" />
-			  <param name="layoutheight" value="370" />
+			  <param name="layoutheight" value="374" />
 			  <param name="layout">PosterPanelBingie</param>
 			  <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31540])" /> <!-- Director -->
 			  <onfocus>SetProperty(TMDbHelper.WidgetContainer,53005,Home)</onfocus>
@@ -3002,7 +3002,7 @@
 			  <param name="widgetTags" value="WidgetTagOverlayEnable" />
 			  <param name="force_tags" value="true" />
 			  <param name="layoutwidth" value="264" />
-			  <param name="layoutheight" value="370" />
+			  <param name="layoutheight" value="374" />
 			  <param name="layout">PosterPanelBingie</param>
 			  <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31488])" /> <!-- Writer -->
 			  <onfocus>SetProperty(TMDbHelper.WidgetContainer,53007,Home)</onfocus>
@@ -3017,7 +3017,7 @@
 			  <param name="widgetTags" value="WidgetTagOverlayEnable" />
 			  <param name="force_tags" value="true" />
 			  <param name="layoutwidth" value="264" />
-			  <param name="layoutheight" value="370" />
+			  <param name="layoutheight" value="374" />
 			  <param name="layout">PosterPanelBingie</param>
 			  <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31530])" /> <!-- Creator -->
 			  <onfocus>SetProperty(TMDbHelper.WidgetContainer,53009,Home)</onfocus>
@@ -3032,7 +3032,7 @@
 			  <param name="widgetTags" value="WidgetTagOverlayEnable" />
 			  <param name="force_tags" value="true" />
 			  <param name="layoutwidth" value="264" />
-			  <param name="layoutheight" value="370" />
+			  <param name="layoutheight" value="374" />
 			  <param name="layout">PosterPanelBingie</param>
 			  <param name="visible" value="[String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31525]) | String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31526])]" /> <!-- Studio -->
 			  <onfocus>SetProperty(TMDbHelper.WidgetContainer,53008,Home)</onfocus>
@@ -3047,7 +3047,7 @@
 			  <param name="widgetTags" value="WidgetTagOverlayEnable" />
 			  <param name="force_tags" value="true" />
 			  <param name="layoutwidth" value="264" />
-			  <param name="layoutheight" value="370" />
+			  <param name="layoutheight" value="374" />
 			  <param name="layout">PosterPanelBingie</param>
 			  <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31538])" /> <!-- Genre -->
 			  <onfocus>SetProperty(TMDbHelper.WidgetContainer,53003,Home)</onfocus>
@@ -3062,7 +3062,7 @@
 			  <param name="widgetTags" value="WidgetTagOverlayEnable" />
 			  <param name="force_tags" value="true" />
 			  <param name="layoutwidth" value="264" />
-			  <param name="layoutheight" value="370" />
+			  <param name="layoutheight" value="374" />
 			  <param name="layout">PosterPanelBingie</param>
 			  <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31528])" /> <!-- Year -->
 			  <onfocus>SetProperty(TMDbHelper.WidgetContainer,53006,Home)</onfocus>
@@ -3077,7 +3077,7 @@
 			  <param name="widgetTags" value="WidgetTagOverlayDisable" />
 			  <param name="force_tags" value="false" />
 			  <param name="layoutwidth" value="264" />
-			  <param name="layoutheight" value="370" />
+			  <param name="layoutheight" value="374" />
 			  <param name="layout">PosterPanelBingie</param>
 			  <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31529])" /> <!-- Posters -->
 			  <onfocus>SetProperty(TMDbHelper.WidgetContainer,53004,Home)</onfocus>
@@ -3133,7 +3133,7 @@
 		
 		<!-- Cast busy image while widget loading -->
 		<include content="Busy_Spinner">
-			<param name="centerleft" value="63%"/>
+			<param name="centerleft" value="64%"/>
 			<param name="centertop" value="50%"/>
 			<param name="visibility" value="[[Container(4000).IsUpdating + String.IsEqual(Container(2999).ListItem.Label,$LOCALIZE[31519])] | [Container(4001).IsUpdating + String.IsEqual(Container(2999).ListItem.Label,$LOCALIZE[31508])] | [Container(4002).IsUpdating + String.IsEqual(Container(2999).ListItem.Label,$LOCALIZE[31509])] |
 				[Container(4003).IsUpdating + String.IsEqual(Container(2999).ListItem.Label,$LOCALIZE[31510])]]"/>
@@ -3321,8 +3321,8 @@
 							<control type="image">
 								<left>8</left>
 								<posy>0</posy>
-								<width>475</width>
-								<height>690</height>
+								<width>485</width>
+								<height>700</height>
 								<aspectratio align="center" aligny="center" scalediffuse="true">scale</aspectratio>
 								<texture background="true" diffuse="diffuse/poster3.png">$INFO[ListItem.Art(poster)]</texture>
 								<fadetime>300</fadetime>
@@ -3331,8 +3331,8 @@
 							<control type="image">
 								<left>8</left>
 								<posy>0</posy>
-								<width>475</width>
-								<height>690</height>
+								<width>485</width>
+								<height>700</height>
 								<aspectratio align="center" aligny="center" scalediffuse="true">scale</aspectratio>
 								<texture background="true" diffuse="diffuse/poster3.png">defaultactorposter.png</texture>
 								<fadetime>300</fadetime>
@@ -3342,8 +3342,8 @@
 							<control type="group" id="300">
 								<animation effect="fade" start="0" end="100" time="400">Visible</animation>
 								<visible>String.IsEqual(Container(2999).ListItem.Label,$LOCALIZE[31503])</visible>			
-								<top>0</top>
-								<left>543</left>
+								<top>8</top>
+								<left>553</left>
 								<control type="grouplist">
 									<orientation>vertical</orientation>
 									<usecontrolcoords>true</usecontrolcoords>
@@ -3363,7 +3363,7 @@
 									<control type="label">
 										<posx>40</posx>
 										<posy>0</posy>
-										<width>1238</width>
+										<width>1228</width>
 										<height>30</height>
 										<label>$INFO[ListItem.Property(Birthday),$LOCALIZE[31243]: ]$INFO[ListItem.Property(Deathday),  •  $LOCALIZE[31242]: ] $INFO[ListItem.Property(Age), ($LOCALIZE[31241] ,) ]</label>
 										<textcolor>$INFO[Skin.String(BingieDeatailsTextColor)]</textcolor>
@@ -3386,7 +3386,7 @@
 									<control type="label">
 										<posx>40</posx>
 										<posy>0</posy>
-										<width>1238</width>
+										<width>1228</width>
 										<height>30</height>
 										<label>$INFO[ListItem.Property(Born)]</label>
 										<textcolor>$INFO[Skin.String(BingieDeatailsTextColor)]</textcolor>
@@ -3397,7 +3397,7 @@
 									<control type="textbox">
 										<posx>0</posx>
 										<posy>14</posy>
-										<width>1265</width>
+										<width>1255</width>
 										<height>575</height>
 										<pagecontrol>90</pagecontrol>
 										<label fallback="19055">$INFO[ListItem.Property(Biography)]</label>
@@ -3433,8 +3433,8 @@
 							<!-- There are no matches text -->	
 							<control type="label">
 								<animation effect="fade" start="0" end="100" time="400" delay="300">Visible</animation>
-								<top>315</top>
-								<left>575</left>
+								<top>318</top>
+								<left>590</left>
 								<width>1200</width>
 								<height>auto</height>
 								<font>Reg42</font>
@@ -3459,7 +3459,7 @@
                 <onleft>2999</onleft>
                 <orientation>vertical</orientation>
                 <width>10</width>
-                <top>331</top>
+                <top>339</top>
                 <bottom>189</bottom>
                 <centerright>30</centerright>               
 				<visible>String.IsEqual(Container(2999).ListItem.Label,$LOCALIZE[31503])</visible>	
@@ -4312,7 +4312,7 @@
                 <onclick condition="[Control.HasFocus(53002) | Control.HasFocus(53003) | Control.HasFocus(53005) | Control.HasFocus(53006) | Control.HasFocus(53007) | Control.HasFocus(53008) | Control.HasFocus(53009)] + String.IsEqual(ListItem.DBTYPE,movie) + !String.IsEmpty(ListItem.IMDBNumber) + !String.StartsWith(ListItem.IMDBNumber,tt)">RunScript(plugin.video.themoviedb.helper,add_path=plugin://plugin.video.themoviedb.helper/?info=details&amp;type=movie&amp;tmdb_id=$INFO[ListItem.IMDBNumber],call_auto=1190)</onclick>
                 <onclick condition="[Control.HasFocus(53002) | Control.HasFocus(53003) | Control.HasFocus(53005) | Control.HasFocus(53006) | Control.HasFocus(53007) | Control.HasFocus(53008) | Control.HasFocus(53009)] + String.IsEqual(ListItem.DBTYPE,movie) + String.IsEmpty(ListItem.IMDBNumber)">RunScript(plugin.video.themoviedb.helper,add_path=plugin://plugin.video.themoviedb.helper/?info=details&amp;type=movie&amp;query='"$INFO[ListItem.Title]"',call_auto=1190)</onclick>
                 <onclick condition="[Control.HasFocus(53002) | Control.HasFocus(53003) | Control.HasFocus(53005) | Control.HasFocus(53006) | Control.HasFocus(53007) | Control.HasFocus(53008) | Control.HasFocus(53009)] + [String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,episode)]">RunScript(plugin.video.themoviedb.helper,add_path=plugin://plugin.video.themoviedb.helper/?info=details&amp;type=tv&amp;query=$INFO[ListItem.Title]&amp;year=$INFO[ListItem.Year],call_auto=1190)</onclick>
-                <itemlayout width="238" height="330">
+                <itemlayout width="238" height="340">
                     <control type="group">
                         <width>$PARAM[layoutwidth]</width>
                         <height>$PARAM[layoutheight]</height>
@@ -4325,7 +4325,7 @@
                         </control>
                     </control>
                 </itemlayout>
-				<focusedlayout width="238" height="330" condition="!Control.HasFocus($PARAM[id])">
+				<focusedlayout width="238" height="340" condition="!Control.HasFocus($PARAM[id])">
                     <control type="group">
                         <width>$PARAM[layoutwidth]</width>
                         <height>$PARAM[layoutheight]</height>
@@ -4338,7 +4338,7 @@
                         </control>
                     </control>
                 </focusedlayout>
-                <focusedlayout width="238" height="330" condition="Control.HasFocus($PARAM[id])">
+                <focusedlayout width="238" height="340" condition="Control.HasFocus($PARAM[id])">
                     <control type="group">
                         <width>$PARAM[layoutwidth]</width>
                         <height>$PARAM[layoutheight]</height>
@@ -4359,7 +4359,7 @@
                 <visible>Integer.IsGreater(Container($PARAM[id]).NumItems, 0) + Control.HasFocus($PARAM[id])</visible>
                 <top>0</top>
                 <width>240</width>
-                <height>330</height>
+                <height>340</height>
                 <texture background="true" border="12">$INFO[Skin.String(thumbsborder_focused),bingie/border/poster_fo_,.png]</texture>
                 <colordiffuse>$INFO[Skin.String(ViewDetailsBorderFocusColor)]</colordiffuse>
                 <bordersize>2</bordersize>
@@ -4399,10 +4399,10 @@
 				<animation effect="fade" start="0" end="100" time="400">Visible</animation>
 				<animation effect="fade" start="100" end="0" time="0" condition="Container($PARAM[id]).IsUpdating">Conditional</animation>
 				<animation effect="fade" start="0" end="100" time="400" condition="!Container($PARAM[id]).IsUpdating">Conditional</animation>
-					<left>535</left>
+					<left>545</left>
 					<posy>-8</posy>
 					<width>1300</width>
-					<height>715</height>
+					<height>720</height>
                     <onclick condition="!Skin.HasSetting(EnableOSDInfo)">Close</onclick>
                     <onclick condition="!Skin.HasSetting(EnableOSDInfo) + String.IsEqual(ListItem.DBTYPE,movie) + !String.IsEmpty(ListItem.IMDBNumber) + String.StartsWith(ListItem.IMDBNumber,tt)">RunScript(plugin.video.themoviedb.helper,add_path=plugin://plugin.video.themoviedb.helper/?info=details&amp;type=movie&amp;imdb_id=$INFO[ListItem.IMDBNumber],call_auto=1190)</onclick>
                     <onclick condition="!Skin.HasSetting(EnableOSDInfo) + String.IsEqual(ListItem.DBTYPE,movie) + !String.IsEmpty(ListItem.IMDBNumber) + !String.StartsWith(ListItem.IMDBNumber,tt)">RunScript(plugin.video.themoviedb.helper,add_path=plugin://plugin.video.themoviedb.helper/?info=details&amp;type=movie&amp;tmdb_id=$INFO[ListItem.IMDBNumber],call_auto=1190)</onclick>
@@ -4418,17 +4418,17 @@
 					<orientation>vertical</orientation>
 					<focusposition>0</focusposition>
 					<!-- itemlayout movies -->
-					<itemlayout height="355" width="257">
+					<itemlayout height="360" width="255">
 						<control type="group">
-							<width>253</width>
-							<height>351</height>
+							<width>251</width>
+							<height>356</height>
 							<include>PosterPanelBingieLayout</include>
 						</control>
 					</itemlayout>
-					<focusedlayout height="355" width="257">
+					<focusedlayout height="360" width="255">
 						<control type="group">
-							<width>253</width>
-							<height>351</height>
+							<width>251</width>
+							<height>356</height>
 							<include>PosterPanelBingieLayoutFocus</include>
 						</control>
 					</focusedlayout>

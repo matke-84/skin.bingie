@@ -17,7 +17,7 @@
 				<width>408</width>
 				<height>408</height>
 				<posx>69</posx>
-				<posy>145</posy>
+				<posy>144</posy>
 				<texture background="true" diffuse="diffuse/cdmask_new.png" fallback="defaultcovers/cd_big.png">$VAR[DiscArtImage]</texture>
                 <aspectratio scalediffuse="false" align="center" aligny="center">scale</aspectratio>
 				<animation effect="fade" start="0" end="100" time="50" delay="800" reversible="false" condition="!Container.OnNext + !Container.OnPrevious">Conditional</animation>
@@ -39,7 +39,7 @@
 						<!-- Hide Far Right Thumb On Move Previous -->
 						<control type="group">
 							<posx>1731</posx>
-							<posy>498</posy>
+							<posy>482</posy>
 							<width>216</width>
 							<height>506</height>
 							<visible>Container(513).OnPrevious</visible>
@@ -55,7 +55,7 @@
 									<width>200</width>
 									<height>282</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
-									<texture background="true" diffuse="diffuse/poster.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem9Var]</texture>
+									<texture background="true" diffuse="diffuse/poster4.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem9Var]</texture>
 									<include>poster_shadow</include>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
@@ -64,21 +64,22 @@
 									<posx>187</posx>
 									<posy>24</posy>
 									<width>100</width>
-									<height>242</height>
+									<height>241</height>
 									<texture flipx="true" border="1">diffuse/side_shadow.png</texture>
-									<visible>!String.IsEmpty(Container.ListItemNoWrap(10).FolderPath)</visible>
+									<visible>!String.IsEmpty(Container.ListItemNoWrap(9).FolderPath)</visible>
 								</control>
 								<control type="image">
-									<posx>27</posx>
-									<posy>264</posy>
-									<width>160</width>
-									<height>242</height>
-									<aspectratio aligny="top" align="right" scalediffuse="false">scale</aspectratio>
+									<posx>7</posx>
+									<posy>246</posy>
+									<width>200</width>
+									<height>282</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem9Var]</texture>
+									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="group">
-									<posx>158</posx>
+									<posx>170</posx>
 									<posy>24</posy>
 									<width>30</width>
 									<height>30</height>
@@ -89,11 +90,11 @@
 						<!-- Move Panel 8 to 9-->
 						<control type="group">
 							<posx>1617</posx>
-							<posy>468</posy>
+							<posy>454</posy>
 							<width>260</width>
 							<height>608</height>
 							<visible>Container(513).OnPrevious</visible>
-							<animation effect="zoom" start="1617,468,260,608" end="1731,498,216,506" time="200" reversible="false">Hidden</animation>
+							<animation effect="zoom" start="1617,454,260,608" end="1731,482,216,506" time="200" reversible="false">Hidden</animation>
 							<control type="group">
 								<visible>!String.IsEmpty(Container.ListItemNoWrap(8).FolderPath)</visible>
 								<control type="image">
@@ -102,30 +103,31 @@
 									<width>234</width>
 									<height>331</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
-									<texture background="true" diffuse="diffuse/poster.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem8Var]</texture>
+									<texture background="true" diffuse="diffuse/poster4.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem8Var]</texture>
 									<include>poster_shadow</include>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="image">
 									<posx>227</posx>
-									<posy>54</posy>
+									<posy>52</posy>
 									<width>100</width>
-									<height>243</height>
+									<height>242</height>
 									<texture flipx="true" border="1">diffuse/side_shadow.png</texture>
-									<visible>!String.IsEmpty(Container.ListItemNoWrap(9).FolderPath)</visible>
+									<visible>!String.IsEmpty(Container.ListItemNoWrap(8).FolderPath)</visible>
 								</control>
 								<control type="image">
-									<posx>33</posx>
-									<posy>318</posy>
-									<width>194</width>
-									<height>290</height>
-									<aspectratio aligny="top" align="right" scalediffuse="false">scale</aspectratio>
+									<posx>13</posx>
+									<posy>299</posy>
+									<width>234</width>
+									<height>331</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem8Var]</texture>
+									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="group">
-									<posx>193</posx>
+									<posx>192</posx>
 									<posy>28</posy>
 									<width>38</width>
 									<height>38</height>
@@ -136,11 +138,11 @@
 						<!-- Move Panel 7 to 8-->
 						<control type="group">
 							<posx>1488</posx>
-							<posy>436</posy>
+							<posy>424</posy>
 							<width>304</width>
 							<height>711</height>
 							<visible>Container(513).OnPrevious</visible>
-							<animation effect="zoom" start="1488,436,304,711" end="1617,468,260,608" time="200" reversible="false">Hidden</animation>
+							<animation effect="zoom" start="1488,424,304,711" end="1617,454,260,608" time="200" reversible="false">Hidden</animation>
 							<control type="group">
 								<visible>!String.IsEmpty(Container.ListItemNoWrap(7).FolderPath)</visible>
 								<control type="image">
@@ -149,30 +151,31 @@
 									<width>266</width>
 									<height>380</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
-									<texture background="true" diffuse="diffuse/poster.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem7Var]</texture>
+									<texture background="true" diffuse="diffuse/poster4.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem7Var]</texture>
 									<include>poster_shadow</include>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="image">
 									<posx>265</posx>
-									<posy>60</posy>
+									<posy>58</posy>
 									<width>100</width>
-									<height>292</height>
+									<height>291</height>
 									<texture flipx="true" border="1">diffuse/side_shadow.png</texture>
-									<visible>!String.IsEmpty(Container.ListItemNoWrap(8).FolderPath)</visible>
+									<visible>!String.IsEmpty(Container.ListItemNoWrap(7).FolderPath)</visible>
 								</control>
 								<control type="image">
-									<posx>39</posx>
-									<posy>372</posy>
-									<width>226</width>
-									<height>339</height>
-									<aspectratio aligny="top" align="right" scalediffuse="false">scale</aspectratio>
+									<posx>19</posx>
+									<posy>353</posy>
+									<width>266</width>
+									<height>380</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem7Var]</texture>
+									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="group">
-									<posx>224</posx>
+									<posx>223</posx>
 									<posy>33</posy>
 									<width>45</width>
 									<height>45</height>
@@ -183,44 +186,45 @@
 						<!-- Move Panel 6 to 7-->
 						<control type="group">
 							<posx>1335</posx>
-							<posy>406</posy>
+							<posy>395</posy>
 							<width>348</width>
 							<height>814</height>
 							<visible>Container(513).OnPrevious</visible>
-							<animation effect="zoom" start="1335,406,348,814" end="1488,436,304,711" time="200" reversible="false">Hidden</animation>
+							<animation effect="zoom" start="1335,395,348,814" end="1488,424,304,711" time="200" reversible="false">Hidden</animation>
 							<control type="group">
 								<visible>!String.IsEmpty(Container.ListItemNoWrap(6).FolderPath)</visible>
 								<control type="image">
 									<posx>25</posx>
-									<posy>19</posy>
+									<posy>18</posy>
 									<width>300</width>
-									<height>427</height>
+									<height>429</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
-									<texture background="true" diffuse="diffuse/poster.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem6Var]</texture>
+									<texture background="true" diffuse="diffuse/poster4.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem6Var]</texture>
 									<include>poster_shadow</include>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="image">
 									<posx>305</posx>
-									<posy>63</posy>
+									<posy>62</posy>
 									<width>100</width>
-									<height>341</height>
+									<height>340</height>
 									<texture flipx="true" border="1">diffuse/side_shadow.png</texture>
-									<visible>!String.IsEmpty(Container.ListItemNoWrap(7).FolderPath)</visible>
+									<visible>!String.IsEmpty(Container.ListItemNoWrap(6).FolderPath)</visible>
 								</control>
 								<control type="image">
-									<posx>45</posx>
-									<posy>426</posy>
-									<width>260</width>
-									<height>387</height>
-									<aspectratio aligny="top" align="right" scalediffuse="false">scale</aspectratio>
+									<posx>25</posx>
+									<posy>407</posy>
+									<width>300</width>
+									<height>429</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem6Var]</texture>
+									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="group">
-									<posx>255</posx>
-									<posy>39</posy>
+									<posx>256</posx>
+									<posy>38</posy>
 									<width>52</width>
 									<height>52</height>
 									<include>WatchedIndicatorNormal6</include>
@@ -230,11 +234,11 @@
 						<!-- Move Panel 5 to 6-->
 						<control type="group">
 							<posx>1152</posx>
-							<posy>375</posy>
+							<posy>364</posy>
 							<width>393</width>
 							<height>918</height>
 							<visible>Container(513).OnPrevious</visible>
-							<animation effect="zoom" start="1152,375,393,918" end="1335,406,348,814" time="200" reversible="false">Hidden</animation>
+							<animation effect="zoom" start="1152,364,393,918" end="1335,395,348,814" time="200" reversible="false">Hidden</animation>
 							<control type="group">
 								<visible>!String.IsEmpty(Container.ListItemNoWrap(5).FolderPath)</visible>
 								<control type="image">
@@ -243,30 +247,31 @@
 									<width>332</width>
 									<height>478</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
-									<texture background="true" diffuse="diffuse/poster.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem5Var]</texture>
+									<texture background="true" diffuse="diffuse/poster4.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem5Var]</texture>
 									<include>poster_shadow</include>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="image">
 									<posx>342</posx>
-									<posy>70</posy>
+									<posy>69</posy>
 									<width>100</width>
-									<height>388</height>
+									<height>389</height>
 									<texture flipx="true" border="1">diffuse/side_shadow.png</texture>
-									<visible>!String.IsEmpty(Container.ListItemNoWrap(6).FolderPath)</visible>
+									<visible>!String.IsEmpty(Container.ListItemNoWrap(5).FolderPath)</visible>
 								</control>
 								<control type="image">
-									<posx>50</posx>
-									<posy>480</posy>
-									<width>292</width>
-									<height>438</height>
-									<aspectratio aligny="top" align="right" scalediffuse="false">scale</aspectratio>
+									<posx>30</posx>
+									<posy>462</posy>
+									<width>332</width>
+									<height>478</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem5Var]</texture>
+									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="group">
-									<posx>285</posx>
+									<posx>283</posx>
 									<posy>44</posy>
 									<width>60</width>
 									<height>60</height>
@@ -277,18 +282,18 @@
 						<!-- Move Panel 4 to 5-->
 						<control type="group">
 							<posx>933</posx>
-							<posy>339</posy>
+							<posy>335</posy>
 							<width>436</width>
 							<height>1022</height>
 							<visible>Container(513).OnPrevious</visible>
-							<animation effect="zoom" start="933,339,436,1022" end="1152,375,393,918" time="200" reversible="false">Hidden</animation>
+							<animation effect="zoom" start="933,335,436,1022" end="1152,364,393,918" time="200" reversible="false">Hidden</animation>
 							<control type="group">
 								<visible>!String.IsEmpty(Container.ListItemNoWrap(4).FolderPath)</visible>
 								<control type="image">
 									<posx>36</posx>
-									<posy>28</posy>
+									<posy>27</posy>
 									<width>366</width>
-									<height>528</height>
+									<height>530</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/poster.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem4Var]</texture>
 									<include>poster_shadow</include>
@@ -297,24 +302,25 @@
 								</control>
 								<control type="image">
 									<posx>382</posx>
-									<posy>78</posy>
+									<posy>73</posy>
 									<width>100</width>
-									<height>442</height>
+									<height>438</height>
 									<texture flipx="true" border="1">diffuse/side_shadow.png</texture>
-									<visible>!String.IsEmpty(Container.ListItemNoWrap(5).FolderPath)</visible>
+									<visible>!String.IsEmpty(Container.ListItemNoWrap(4).FolderPath)</visible>
 								</control>
 								<control type="image">
-									<posx>56</posx>
-									<posy>534</posy>
-									<width>326</width>
-									<height>488</height>
-									<aspectratio aligny="top" align="right" scalediffuse="false">scale</aspectratio>
+									<posx>36</posx>
+									<posy>517</posy>
+									<width>366</width>
+									<height>530</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem4Var]</texture>
+									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="group">
-									<posx>317</posx>
-									<posy>48</posy>
+									<posx>315</posx>
+									<posy>47</posy>
 									<width>68</width>
 									<height>68</height>
 									<include>WatchedIndicatorNormal4</include>
@@ -324,11 +330,11 @@
 						<!-- Move Panel 3 to 4-->
 						<control type="group">
 							<posx>669</posx>
-							<posy>308</posy>
+							<posy>306</posy>
 							<width>482</width>
 							<height>1125</height>
 							<visible>Container(513).OnPrevious</visible>
-							<animation effect="zoom" start="669,308,482,1125" end="933,339,436,1022" time="200" reversible="false">Hidden</animation>
+							<animation effect="zoom" start="669,306,482,1125" end="933,335,436,1022" time="200" reversible="false">Hidden</animation>
 							<control type="group">
 								<visible>!String.IsEmpty(Container.ListItemNoWrap(3).FolderPath)</visible>
 								<control type="image">
@@ -344,23 +350,24 @@
 								</control>
 								<control type="image">
 									<posx>420</posx>
-									<posy>78</posy>
+									<posy>76</posy>
 									<width>100</width>
 									<height>490</height>
 									<texture flipx="true" border="1">diffuse/side_shadow.png</texture>
-									<visible>!String.IsEmpty(Container.ListItemNoWrap(4).FolderPath)</visible>
+									<visible>!String.IsEmpty(Container.ListItemNoWrap(3).FolderPath)</visible>
 								</control>
 								<control type="image">
-									<posx>62</posx>
-									<posy>588</posy>
-									<width>358</width>
-									<height>537</height>
-									<aspectratio aligny="top" align="right" scalediffuse="false">scale</aspectratio>
+									<posx>42</posx>
+									<posy>569</posy>
+									<width>398</width>
+									<height>577</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem3Var]</texture>
+									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="group">
-									<posx>349</posx>
+									<posx>346</posx>
 									<posy>52</posy>
 									<width>75</width>
 									<height>75</height>
@@ -371,18 +378,18 @@
 						<!-- Move Panel 2 to 3-->
 						<control type="group">
 							<posx>354</posx>
-							<posy>278</posy>
+							<posy>276</posy>
 							<width>525</width>
 							<height>1228</height>
 							<visible>Container(513).OnPrevious</visible>
-							<animation effect="zoom" start="354,278,525,1228" end="669,308,482,1125" time="200" reversible="false">Hidden</animation>
+							<animation effect="zoom" start="354,276,525,1228" end="669,306,482,1125" time="200" reversible="false">Hidden</animation>
 							<control type="group">
 								<visible>!String.IsEmpty(Container.ListItemNoWrap(2).FolderPath)</visible>
 								<control type="image">
 									<posx>48</posx>
-									<posy>37</posy>
+									<posy>36</posy>
 									<width>432</width>
-									<height>626</height>
+									<height>628</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/poster.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem2Var]</texture>
 									<include>poster_shadow</include>
@@ -393,22 +400,23 @@
 									<posx>460</posx>
 									<posy>82</posy>
 									<width>100</width>
-									<height>538</height>
+									<height>537</height>
 									<texture flipx="true" border="1">diffuse/side_shadow.png</texture>
-									<visible>!String.IsEmpty(Container.ListItemNoWrap(3).FolderPath)</visible>
+									<visible>!String.IsEmpty(Container.ListItemNoWrap(2).FolderPath)</visible>
 								</control>
 								<control type="image">
-									<posx>68</posx>
-									<posy>642</posy>
-									<width>392</width>
-									<height>586</height>
-									<aspectratio aligny="top" align="right" scalediffuse="false">scale</aspectratio>
+									<posx>48</posx>
+									<posy>624</posy>
+									<width>432</width>
+									<height>628</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem2Var]</texture>
+									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="group">
-									<posx>380</posx>
-									<posy>57</posy>
+									<posx>379</posx>
+									<posy>56</posy>
 									<width>82</width>
 									<height>82</height>
 									<include>WatchedIndicatorNormal2</include>
@@ -422,14 +430,14 @@
 							<width>570</width>
 							<height>1334</height>
 							<visible>Container(513).OnPrevious</visible>
-							<animation effect="zoom" start="-26,246,570,1334" end="354,278,525,1228" time="200" reversible="false">Hidden</animation>
+							<animation effect="zoom" start="-26,246,570,1334" end="354,276,525,1228" time="200" reversible="false">Hidden</animation>
 							<control type="group">
 								<visible>!String.IsEmpty(Container.ListItemNoWrap(1).FolderPath)</visible>
 								<control type="image">
 									<posx>54</posx>
-									<posy>42</posy>
+									<posy>41</posy>
 									<width>466</width>
-									<height>676</height>
+									<height>678</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/poster.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem1Var]</texture>
 									<include>poster_shadow</include>
@@ -438,24 +446,25 @@
 								</control>
 								<control type="image">
 									<posx>500</posx>
-									<posy>88</posy>
+									<posy>86</posy>
 									<width>100</width>
 									<height>588</height>
 									<texture flipx="true" border="1">diffuse/side_shadow.png</texture>
 									<visible>!String.IsEmpty(Container.ListItemNoWrap(2).FolderPath)</visible>
 								</control>
 								<control type="image">
-									<posx>74</posx>
-									<posy>698</posy>
-									<width>426</width>
-									<height>636</height>
-									<aspectratio aligny="top" align="right" scalediffuse="false">scale</aspectratio>
+									<posx>54</posx>
+									<posy>679</posy>
+									<width>466</width>
+									<height>678</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem1Var]</texture>
+									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="group">
-									<posx>413</posx>
-									<posy>62</posy>
+									<posx>410</posx>
+									<posy>61</posy>
 									<width>90</width>
 									<height>90</height>
 									<include>WatchedIndicatorNormal1</include>
@@ -478,9 +487,9 @@
 								<visible>!String.IsEmpty(Container.ListItemNoWrap(0).FolderPath)</visible>
 								<control type="image">
 									<posx>54</posx>
-									<posy>42</posy>
+									<posy>41</posy>
 									<width>466</width>
-									<height>676</height>
+									<height>678</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/poster.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem0Var]</texture>
 									<include>poster_shadow</include>
@@ -489,24 +498,25 @@
 								</control>
 								<control type="image">
 									<posx>500</posx>
-									<posy>88</posy>
+									<posy>86</posy>
 									<width>100</width>
 									<height>588</height>
 									<texture flipx="true" border="1">diffuse/side_shadow.png</texture>
 									<visible>!String.IsEmpty(Container.ListItemNoWrap(1).FolderPath)</visible>
 								</control>
 								<control type="image">
-									<posx>74</posx>
-									<posy>698</posy>
-									<width>426</width>
-									<height>636</height>
-									<aspectratio aligny="top" align="right" scalediffuse="false">scale</aspectratio>
+									<posx>54</posx>
+									<posy>679</posy>
+									<width>466</width>
+									<height>678</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem0Var]</texture>
+									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="group">
 									<posx>410</posx>
-									<posy>62</posy>
+									<posy>61</posy>
 									<width>90</width>
 									<height>90</height>
 									<include>WatchedIndicatorNormal</include>
@@ -520,7 +530,7 @@
 						<!-- Show Far Right Thumb On Move Next -->
 						<control type="group">
 							<posx>1731</posx>
-							<posy>498</posy>
+							<posy>482</posy>
 							<width>216</width>
 							<height>506</height>
 							<visible>Container(513).OnNext</visible>
@@ -537,7 +547,7 @@
 									<width>200</width>
 									<height>282</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
-									<texture background="true" diffuse="diffuse/poster.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem8Var]</texture>
+									<texture background="true" diffuse="diffuse/poster4.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem8Var]</texture>
 									<include>poster_shadow</include>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
@@ -546,21 +556,22 @@
 									<posx>187</posx>
 									<posy>24</posy>
 									<width>100</width>
-									<height>242</height>
+									<height>241</height>
 									<texture flipx="true" border="1">diffuse/side_shadow.png</texture>
 									<visible>!String.IsEmpty(Container.ListItemNoWrap(9).FolderPath)</visible>
 								</control>
 								<control type="image">
-									<posx>27</posx>
-									<posy>264</posy>
-									<width>160</width>
-									<height>242</height>
-									<aspectratio aligny="top" align="right" scalediffuse="false">scale</aspectratio>
+									<posx>7</posx>
+									<posy>246</posy>
+									<width>200</width>
+									<height>282</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem8Var]</texture>
+									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="group">
-									<posx>158</posx>
+									<posx>155</posx>
 									<posy>24</posy>
 									<width>30</width>
 									<height>30</height>
@@ -571,11 +582,11 @@
 						<!-- Move Panel 9 to 8-->
 						<control type="group">
 							<posx>1731</posx>
-							<posy>498</posy>
+							<posy>482</posy>
 							<width>216</width>
 							<height>506</height>
 							<visible>Container(513).OnNext</visible>
-							<animation effect="zoom" start="1731,498,216,506" end="1617,468,260,608" time="200" reversible="false">Hidden</animation>
+							<animation effect="zoom" start="1731,482,216,506" end="1617,454,260,608" time="200" reversible="false">Hidden</animation>
 							<control type="group">
 								<visible>!String.IsEmpty(Container.ListItemNoWrap(7).FolderPath)</visible>
 								<control type="image">
@@ -584,7 +595,7 @@
 									<width>200</width>
 									<height>282</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
-									<texture background="true" diffuse="diffuse/poster.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem7Var]</texture>
+									<texture background="true" diffuse="diffuse/poster4.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem7Var]</texture>
 									<include>poster_shadow</include>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
@@ -593,17 +604,18 @@
 									<posx>187</posx>
 									<posy>24</posy>
 									<width>100</width>
-									<height>242</height>
+									<height>241</height>
 									<texture flipx="true" border="1">diffuse/side_shadow.png</texture>
 									<visible>!String.IsEmpty(Container.ListItemNoWrap(8).FolderPath)</visible>
 								</control>
 								<control type="image">
-									<posx>27</posx>
-									<posy>264</posy>
-									<width>160</width>
-									<height>242</height>
-									<aspectratio aligny="top" align="right" scalediffuse="false">scale</aspectratio>
+									<posx>7</posx>
+									<posy>246</posy>
+									<width>200</width>
+									<height>282</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem7Var]</texture>
+									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="group">
@@ -618,11 +630,11 @@
 						<!-- Move Panel 8 to 7-->
 						<control type="group">
 							<posx>1617</posx>
-							<posy>468</posy>
+							<posy>454</posy>
 							<width>260</width>
 							<height>608</height>
 							<visible>Container(513).OnNext</visible>
-							<animation effect="zoom" start="1617,468,260,608" end="1488,436,304,711" time="200" reversible="false">Hidden</animation>
+							<animation effect="zoom" start="1617,454,260,608" end="1488,424,304,711" time="200" reversible="false">Hidden</animation>
 							<control type="group">
 								<visible>!String.IsEmpty(Container.ListItemNoWrap(6).FolderPath)</visible>
 								<control type="image">
@@ -631,30 +643,31 @@
 									<width>234</width>
 									<height>331</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
-									<texture background="true" diffuse="diffuse/poster.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem6Var]</texture>
+									<texture background="true" diffuse="diffuse/poster4.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem6Var]</texture>
 									<include>poster_shadow</include>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="image">
 									<posx>227</posx>
-									<posy>54</posy>
+									<posy>52</posy>
 									<width>100</width>
-									<height>243</height>
+									<height>242</height>
 									<texture flipx="true" border="1">diffuse/side_shadow.png</texture>
 									<visible>!String.IsEmpty(Container.ListItemNoWrap(7).FolderPath)</visible>
 								</control>
 								<control type="image">
-									<posx>33</posx>
-									<posy>318</posy>
-									<width>194</width>
-									<height>290</height>
-									<aspectratio aligny="top" align="right" scalediffuse="false">scale</aspectratio>
+									<posx>13</posx>
+									<posy>299</posy>
+									<width>234</width>
+									<height>331</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem6Var]</texture>
+									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="group">
-									<posx>193</posx>
+									<posx>190</posx>
 									<posy>28</posy>
 									<width>38</width>
 									<height>38</height>
@@ -665,11 +678,11 @@
 						<!-- Move Panel 7 to 6-->
 						<control type="group">
 							<posx>1488</posx>
-							<posy>436</posy>
+							<posy>424</posy>
 							<width>304</width>
 							<height>711</height>
 							<visible>Container(513).OnNext</visible>
-							<animation effect="zoom" start="1488,436,304,711" end="1335,406,348,814" time="200" reversible="false">Hidden</animation>
+							<animation effect="zoom" start="1488,424,304,711" end="1335,395,348,814" time="200" reversible="false">Hidden</animation>
 							<control type="group">
 								<visible>!String.IsEmpty(Container.ListItemNoWrap(5).FolderPath)</visible>
 								<control type="image">
@@ -678,30 +691,31 @@
 									<width>266</width>
 									<height>380</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
-									<texture background="true" diffuse="diffuse/poster.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem5Var]</texture>
+									<texture background="true" diffuse="diffuse/poster4.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem5Var]</texture>
 									<include>poster_shadow</include>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="image">
 									<posx>265</posx>
-									<posy>60</posy>
+									<posy>58</posy>
 									<width>100</width>
-									<height>292</height>
+									<height>291</height>
 									<texture flipx="true" border="1">diffuse/side_shadow.png</texture>
 									<visible>!String.IsEmpty(Container.ListItemNoWrap(6).FolderPath)</visible>
 								</control>
 								<control type="image">
-									<posx>39</posx>
-									<posy>372</posy>
-									<width>226</width>
-									<height>339</height>
-									<aspectratio aligny="top" align="right" scalediffuse="false">scale</aspectratio>
+									<posx>19</posx>
+									<posy>353</posy>
+									<width>266</width>
+									<height>380</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem5Var]</texture>
+									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="group">
-									<posx>224</posx>
+									<posx>221</posx>
 									<posy>33</posy>
 									<width>45</width>
 									<height>45</height>
@@ -712,44 +726,45 @@
 						<!-- Move Panel 6 to 5-->
 						<control type="group">
 							<posx>1335</posx>
-							<posy>406</posy>
+							<posy>395</posy>
 							<width>348</width>
 							<height>814</height>
 							<visible>Container(513).OnNext</visible>
-							<animation effect="zoom" start="1335,406,348,814" end="1152,375,393,918" time="200" reversible="false">Hidden</animation>
+							<animation effect="zoom" start="1335,395,348,814" end="1152,364,393,918" time="200" reversible="false">Hidden</animation>
 							<control type="group">
 								<visible>!String.IsEmpty(Container.ListItemNoWrap(4).FolderPath)</visible>
 								<control type="image">
 									<posx>25</posx>
-									<posy>19</posy>
+									<posy>18</posy>
 									<width>300</width>
-									<height>427</height>
+									<height>429</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
-									<texture background="true" diffuse="diffuse/poster.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem4Var]</texture>
+									<texture background="true" diffuse="diffuse/poster4.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem4Var]</texture>
 									<include>poster_shadow</include>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="image">
 									<posx>305</posx>
-									<posy>63</posy>
+									<posy>62</posy>
 									<width>100</width>
-									<height>341</height>
+									<height>340</height>
 									<texture flipx="true" border="1">diffuse/side_shadow.png</texture>
 									<visible>!String.IsEmpty(Container.ListItemNoWrap(5).FolderPath)</visible>
 								</control>
 								<control type="image">
-									<posx>45</posx>
-									<posy>426</posy>
-									<width>260</width>
-									<height>387</height>
-									<aspectratio aligny="top" align="right" scalediffuse="false">scale</aspectratio>
+									<posx>25</posx>
+									<posy>407</posy>
+									<width>300</width>
+									<height>429</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem4Var]</texture>
+									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="group">
-									<posx>255</posx>
-									<posy>39</posy>
+									<posx>252</posx>
+									<posy>38</posy>
 									<width>52</width>
 									<height>52</height>
 									<include>WatchedIndicatorNormal4</include>
@@ -759,11 +774,11 @@
 						<!-- Move Panel 5 to 4-->
 						<control type="group">
 							<posx>1152</posx>
-							<posy>375</posy>
+							<posy>364</posy>
 							<width>393</width>
 							<height>918</height>
 							<visible>Container(513).OnNext</visible>
-							<animation effect="zoom" start="1152,375,393,918" end="933,339,436,1022" time="200" reversible="false">Hidden</animation>
+							<animation effect="zoom" start="1152,364,393,918" end="933,335,436,1022" time="200" reversible="false">Hidden</animation>
 							<control type="group">
 								<visible>!String.IsEmpty(Container.ListItemNoWrap(3).FolderPath)</visible>
 								<control type="image">
@@ -772,30 +787,31 @@
 									<width>332</width>
 									<height>478</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
-									<texture background="true" diffuse="diffuse/poster.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem3Var]</texture>
+									<texture background="true" diffuse="diffuse/poster4.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem3Var]</texture>
 									<include>poster_shadow</include>
 									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="image">
 									<posx>342</posx>
-									<posy>70</posy>
+									<posy>69</posy>
 									<width>100</width>
-									<height>388</height>
+									<height>389</height>
 									<texture flipx="true" border="1">diffuse/side_shadow.png</texture>
 									<visible>!String.IsEmpty(Container.ListItemNoWrap(4).FolderPath)</visible>
 								</control>
 								<control type="image">
-									<posx>50</posx>
-									<posy>480</posy>
-									<width>292</width>
-									<height>438</height>
-									<aspectratio aligny="top" align="right" scalediffuse="false">scale</aspectratio>
+									<posx>30</posx>
+									<posy>462</posy>
+									<width>332</width>
+									<height>478</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem3Var]</texture>
+									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="group">
-									<posx>285</posx>
+									<posx>283</posx>
 									<posy>44</posy>
 									<width>60</width>
 									<height>60</height>
@@ -806,18 +822,18 @@
 						<!-- Move Panel 4 to 3-->
 						<control type="group">
 							<posx>933</posx>
-							<posy>339</posy>
+							<posy>335</posy>
 							<width>436</width>
 							<height>1022</height>
 							<visible>Container(513).OnNext</visible>
-							<animation effect="zoom" start="933,339,436,1022" end="669,308,482,1125" time="200" reversible="false">Hidden</animation>
+							<animation effect="zoom" start="933,335,436,1022" end="669,306,482,1125" time="200" reversible="false">Hidden</animation>
 							<control type="group">
 								<visible>!String.IsEmpty(Container.ListItemNoWrap(2).FolderPath)</visible>
 								<control type="image">
 									<posx>36</posx>
-									<posy>28</posy>
+									<posy>27</posy>
 									<width>366</width>
-									<height>528</height>
+									<height>530</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/poster.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem2Var]</texture>
 									<include>poster_shadow</include>
@@ -826,24 +842,25 @@
 								</control>
 								<control type="image">
 									<posx>382</posx>
-									<posy>78</posy>
+									<posy>73</posy>
 									<width>100</width>
-									<height>442</height>
+									<height>438</height>
 									<texture flipx="true" border="1">diffuse/side_shadow.png</texture>
 									<visible>!String.IsEmpty(Container.ListItemNoWrap(3).FolderPath)</visible>
 								</control>
 								<control type="image">
-									<posx>56</posx>
-									<posy>534</posy>
-									<width>326</width>
-									<height>488</height>
-									<aspectratio aligny="top" align="right" scalediffuse="false">scale</aspectratio>
+									<posx>36</posx>
+									<posy>517</posy>
+									<width>366</width>
+									<height>530</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem2Var]</texture>
+									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="group">
-									<posx>317</posx>
-									<posy>48</posy>
+									<posx>315</posx>
+									<posy>47</posy>
 									<width>68</width>
 									<height>68</height>
 									<include>WatchedIndicatorNormal2</include>
@@ -853,11 +870,11 @@
 						<!-- Move Panel 3 to 2-->
 						<control type="group">
 							<posx>669</posx>
-							<posy>308</posy>
+							<posy>306</posy>
 							<width>482</width>
 							<height>1125</height>
 							<visible>Container(513).OnNext</visible>
-							<animation effect="zoom" start="669,308,482,1125" end="354,278,525,1228" time="200" reversible="false">Hidden</animation>
+							<animation effect="zoom" start="669,306,482,1125" end="354,276,525,1228" time="200" reversible="false">Hidden</animation>
 							<control type="group">
 								<visible>!String.IsEmpty(Container.ListItemNoWrap(1).FolderPath)</visible>
 								<control type="image">
@@ -873,23 +890,24 @@
 								</control>
 								<control type="image">
 									<posx>420</posx>
-									<posy>78</posy>
+									<posy>76</posy>
 									<width>100</width>
 									<height>490</height>
 									<texture flipx="true" border="1">diffuse/side_shadow.png</texture>
 									<visible>!String.IsEmpty(Container.ListItemNoWrap(2).FolderPath)</visible>
 								</control>
 								<control type="image">
-									<posx>62</posx>
-									<posy>588</posy>
-									<width>358</width>
-									<height>537</height>
-									<aspectratio aligny="top" align="right" scalediffuse="false">scale</aspectratio>
+									<posx>42</posx>
+									<posy>569</posy>
+									<width>398</width>
+									<height>577</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem1Var]</texture>
+									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="group">
-									<posx>349</posx>
+									<posx>346</posx>
 									<posy>52</posy>
 									<width>75</width>
 									<height>75</height>
@@ -900,18 +918,18 @@
 						<!-- Move Panel 2 to 1-->
 						<control type="group">
 							<posx>354</posx>
-							<posy>278</posy>
+							<posy>276</posy>
 							<width>525</width>
 							<height>1228</height>
 							<visible>Container(513).OnNext</visible>
-							<animation effect="zoom" start="354,278,525,1228" end="-26,246,570,1334" time="200" reversible="false">Hidden</animation>
+							<animation effect="zoom" start="354,276,525,1228" end="-26,246,570,1334" time="200" reversible="false">Hidden</animation>
 							<control type="group">
 								<visible>!String.IsEmpty(Container.ListItemNoWrap(0).FolderPath)</visible>
 								<control type="image">
 									<posx>48</posx>
-									<posy>37</posy>
+									<posy>36</posy>
 									<width>432</width>
-									<height>626</height>
+									<height>628</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/poster.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem0Var]</texture>
 									<include>poster_shadow</include>
@@ -922,22 +940,23 @@
 									<posx>460</posx>
 									<posy>82</posy>
 									<width>100</width>
-									<height>538</height>
+									<height>537</height>
 									<texture flipx="true" border="1">diffuse/side_shadow.png</texture>
 									<visible>!String.IsEmpty(Container.ListItemNoWrap(1).FolderPath)</visible>
 								</control>
 								<control type="image">
-									<posx>68</posx>
-									<posy>642</posy>
-									<width>392</width>
-									<height>586</height>
-									<aspectratio aligny="top" align="right" scalediffuse="false">scale</aspectratio>
+									<posx>48</posx>
+									<posy>624</posy>
+									<width>432</width>
+									<height>628</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem0Var]</texture>
+									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="group">
-									<posx>380</posx>
-									<posy>57</posy>
+									<posx>379</posx>
+									<posy>56</posy>
 									<width>82</width>
 									<height>82</height>
 									<include>WatchedIndicatorNormal</include>
@@ -947,7 +966,7 @@
 						<!-- Hide Far Left Thumb On Move Next -->
 						<control type="group">
 							<posx>16</posx>
-							<posy>308</posy>
+							<posy>306</posy>
 							<width>484</width>
 							<height>1272</height>
 							<visible>Container(513).OnNext</visible>
@@ -969,16 +988,17 @@
 									<fadetime>0</fadetime>
 								</control>
 								<control type="image">
-									<posx>30</posx>
-									<posy>636</posy>
-									<width>426</width>
-									<height>636</height>
-									<aspectratio aligny="top" align="right" scalediffuse="false">scale</aspectratio>
+									<posx>0</posx>
+									<posy>616</posy>
+									<width>466</width>
+									<height>676</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem-1Var]</texture>
+									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="group">
-									<posx>369</posx>
+									<posx>356</posx>
 									<width>90</width>
 									<height>90</height>
 									<include>WatchedIndicatorNormal-1</include>
@@ -992,7 +1012,7 @@
 						<!-- Panel 9 -->
 						<control type="group">
 							<posx>1731</posx>
-							<posy>498</posy>
+							<posy>482</posy>
 							<width>216</width>
 							<height>506</height>
 							<control type="group">
@@ -1012,21 +1032,22 @@
 									<posx>187</posx>
 									<posy>24</posy>
 									<width>100</width>
-									<height>242</height>
+									<height>241</height>
 									<texture flipx="true" border="1">diffuse/side_shadow.png</texture>
 									<visible>!String.IsEmpty(Container.ListItemNoWrap(9).FolderPath)</visible>
 								</control>
 								<control type="image">
-									<posx>27</posx>
-									<posy>264</posy>
-									<width>160</width>
-									<height>242</height>
-									<aspectratio aligny="top" align="right" scalediffuse="false">scale</aspectratio>
+									<posx>7</posx>
+									<posy>246</posy>
+									<width>200</width>
+									<height>282</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem8Var]</texture>
+									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="group">
-									<posx>156</posx>
+									<posx>155</posx>
 									<posy>24</posy>
 									<width>30</width>
 									<height>30</height>
@@ -1037,7 +1058,7 @@
 						<!-- Panel 8 -->
 						<control type="group">
 							<posx>1617</posx>
-							<posy>468</posy>
+							<posy>454</posy>
 							<width>260</width>
 							<height>608</height>
 							<control type="group">
@@ -1055,23 +1076,24 @@
 								</control>
 								<control type="image">
 									<posx>227</posx>
-									<posy>54</posy>
+									<posy>52</posy>
 									<width>100</width>
-									<height>243</height>
+									<height>242</height>
 									<texture flipx="true" border="1">diffuse/side_shadow.png</texture>
 									<visible>!String.IsEmpty(Container.ListItemNoWrap(8).FolderPath)</visible>
 								</control>
 								<control type="image">
-									<posx>33</posx>
-									<posy>318</posy>
-									<width>194</width>
-									<height>290</height>
-									<aspectratio aligny="top" align="right" scalediffuse="false">scale</aspectratio>
+									<posx>13</posx>
+									<posy>299</posy>
+									<width>234</width>
+									<height>331</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem7Var]</texture>
+									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="group">
-									<posx>191</posx>
+									<posx>190</posx>
 									<posy>28</posy>
 									<width>38</width>
 									<height>38</height>
@@ -1082,7 +1104,7 @@
 						<!-- Panel 7 -->
 						<control type="group">
 							<posx>1488</posx>
-							<posy>436</posy>
+							<posy>424</posy>
 							<width>304</width>
 							<height>711</height>
 							<control type="group">
@@ -1100,23 +1122,24 @@
 								</control>
 								<control type="image">
 									<posx>265</posx>
-									<posy>60</posy>
+									<posy>58</posy>
 									<width>100</width>
-									<height>292</height>
+									<height>291</height>
 									<texture flipx="true" border="1">diffuse/side_shadow.png</texture>
 									<visible>!String.IsEmpty(Container.ListItemNoWrap(7).FolderPath)</visible>
 								</control>
 								<control type="image">
-									<posx>39</posx>
-									<posy>372</posy>
-									<width>226</width>
-									<height>339</height>
-									<aspectratio aligny="top" align="right" scalediffuse="false">scale</aspectratio>
+									<posx>19</posx>
+									<posy>353</posy>
+									<width>266</width>
+									<height>380</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem6Var]</texture>
+									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="group">
-									<posx>222</posx>
+									<posx>221</posx>
 									<posy>33</posy>
 									<width>45</width>
 									<height>45</height>
@@ -1127,16 +1150,16 @@
 						<!-- Panel 6 -->
 						<control type="group">
 							<posx>1335</posx>
-							<posy>406</posy>
+							<posy>395</posy>
 							<width>348</width>
 							<height>814</height>
 							<control type="group">
 								<visible>!String.IsEmpty(Container.ListItemNoWrap(5).FolderPath)</visible>
 								<control type="image">
 									<posx>25</posx>
-									<posy>19</posy>
+									<posy>18</posy>
 									<width>300</width>
-									<height>427</height>
+									<height>429</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/poster4.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem5Var]</texture>
 									<include>poster_shadow</include>
@@ -1145,24 +1168,25 @@
 								</control>
 								<control type="image">
 									<posx>305</posx>
-									<posy>63</posy>
+									<posy>62</posy>
 									<width>100</width>
-									<height>341</height>
+									<height>340</height>
 									<texture flipx="true" border="1">diffuse/side_shadow.png</texture>
 									<visible>!String.IsEmpty(Container.ListItemNoWrap(6).FolderPath)</visible>
 								</control>
 								<control type="image">
-									<posx>45</posx>
-									<posy>426</posy>
-									<width>260</width>
-									<height>387</height>
-									<aspectratio aligny="top" align="right" scalediffuse="false">scale</aspectratio>
+									<posx>25</posx>
+									<posy>407</posy>
+									<width>300</width>
+									<height>429</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem5Var]</texture>
+									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="group">
-									<posx>253</posx>
-									<posy>39</posy>
+									<posx>252</posx>
+									<posy>38</posy>
 									<width>52</width>
 									<height>52</height>
 									<include>WatchedIndicatorNormal5</include>
@@ -1172,7 +1196,7 @@
 						<!-- Panel 5 -->
 						<control type="group">
 							<posx>1152</posx>
-							<posy>375</posy>
+							<posy>364</posy>
 							<width>393</width>
 							<height>918</height>
 							<control type="group">
@@ -1190,19 +1214,20 @@
 								</control>
 								<control type="image">
 									<posx>342</posx>
-									<posy>70</posy>
+									<posy>69</posy>
 									<width>100</width>
-									<height>388</height>
+									<height>389</height>
 									<texture flipx="true" border="1">diffuse/side_shadow.png</texture>
 									<visible>!String.IsEmpty(Container.ListItemNoWrap(5).FolderPath)</visible>
 								</control>
 								<control type="image">
-									<posx>50</posx>
-									<posy>480</posy>
-									<width>292</width>
-									<height>438</height>
-									<aspectratio aligny="top" align="right" scalediffuse="false">scale</aspectratio>
+									<posx>30</posx>
+									<posy>462</posy>
+									<width>332</width>
+									<height>478</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem4Var]</texture>
+									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="group">
@@ -1217,16 +1242,16 @@
 						<!-- Panel 4 -->
 						<control type="group">
 							<posx>933</posx>
-							<posy>339</posy>
+							<posy>335</posy>
 							<width>436</width>
 							<height>1022</height>
 							<control type="group">
 								<visible>!String.IsEmpty(Container.ListItemNoWrap(3).FolderPath)</visible>
 								<control type="image">
 									<posx>36</posx>
-									<posy>28</posy>
+									<posy>27</posy>
 									<width>366</width>
-									<height>528</height>
+									<height>530</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/poster.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem3Var]</texture>
 									<include>poster_shadow</include>
@@ -1235,24 +1260,25 @@
 								</control>
 								<control type="image">
 									<posx>382</posx>
-									<posy>78</posy>
+									<posy>73</posy>
 									<width>100</width>
-									<height>442</height>
+									<height>438</height>
 									<texture flipx="true" border="1">diffuse/side_shadow.png</texture>
 									<visible>!String.IsEmpty(Container.ListItemNoWrap(4).FolderPath)</visible>
 								</control>
 								<control type="image">
-									<posx>56</posx>
-									<posy>534</posy>
-									<width>326</width>
-									<height>488</height>
-									<aspectratio aligny="top" align="right" scalediffuse="false">scale</aspectratio>
+									<posx>36</posx>
+									<posy>517</posy>
+									<width>366</width>
+									<height>530</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem3Var]</texture>
+									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="group">
 									<posx>315</posx>
-									<posy>48</posy>
+									<posy>47</posy>
 									<width>68</width>
 									<height>68</height>
 									<include>WatchedIndicatorNormal3</include>
@@ -1262,7 +1288,7 @@
 						<!-- Panel 3 -->
 						<control type="group">
 							<posx>669</posx>
-							<posy>308</posy>
+							<posy>306</posy>
 							<width>482</width>
 							<height>1125</height>
 							<control type="group">
@@ -1280,23 +1306,24 @@
 								</control>
 								<control type="image">
 									<posx>420</posx>
-									<posy>78</posy>
+									<posy>76</posy>
 									<width>100</width>
 									<height>490</height>
 									<texture flipx="true" border="1">diffuse/side_shadow.png</texture>
 									<visible>!String.IsEmpty(Container.ListItemNoWrap(3).FolderPath)</visible>
 								</control>
 								<control type="image">
-									<posx>62</posx>
-									<posy>588</posy>
-									<width>358</width>
-									<height>537</height>
-									<aspectratio aligny="top" align="right" scalediffuse="false">scale</aspectratio>
+									<posx>42</posx>
+									<posy>569</posy>
+									<width>398</width>
+									<height>577</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem2Var]</texture>
+									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="group">
-									<posx>347</posx>
+									<posx>346</posx>
 									<posy>52</posy>
 									<width>75</width>
 									<height>75</height>
@@ -1307,16 +1334,16 @@
 						<!-- Panel 2 -->
 						<control type="group">
 							<posx>354</posx>
-							<posy>278</posy>
+							<posy>276</posy>
 							<width>525</width>
 							<height>1228</height>
 							<control type="group">
 								<visible>!String.IsEmpty(Container.ListItemNoWrap(1).FolderPath)</visible>
 								<control type="image">
 									<posx>48</posx>
-									<posy>37</posy>
+									<posy>36</posy>
 									<width>432</width>
-									<height>626</height>
+									<height>628</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/poster.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem1Var]</texture>
 									<include>poster_shadow</include>
@@ -1327,22 +1354,23 @@
 									<posx>460</posx>
 									<posy>82</posy>
 									<width>100</width>
-									<height>538</height>
+									<height>537</height>
 									<texture flipx="true" border="1">diffuse/side_shadow.png</texture>
 									<visible>!String.IsEmpty(Container.ListItemNoWrap(2).FolderPath)</visible>
 								</control>
 								<control type="image">
-									<posx>68</posx>
-									<posy>642</posy>
-									<width>392</width>
-									<height>586</height>
-									<aspectratio aligny="top" align="right" scalediffuse="false">scale</aspectratio>
+									<posx>48</posx>
+									<posy>624</posy>
+									<width>432</width>
+									<height>628</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem1Var]</texture>
+									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="group">
 									<posx>379</posx>
-									<posy>57</posy>
+									<posy>56</posy>
 									<width>82</width>
 									<height>82</height>
 									<include>WatchedIndicatorNormal1</include>
@@ -1359,9 +1387,9 @@
 								<visible>!String.IsEmpty(Container.ListItemNoWrap(0).FolderPath)</visible>																
 								<control type="image">
 									<posx>54</posx>
-									<posy>42</posy>
+									<posy>41</posy>
 									<width>466</width>
-									<height>676</height>
+									<height>678</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" diffuse="diffuse/poster.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem0Var]</texture>
 									<include>poster_shadow</include>
@@ -1370,24 +1398,25 @@
 								</control>
 								<control type="image">
 									<posx>500</posx>
-									<posy>88</posy>
+									<posy>86</posy>
 									<width>100</width>
 									<height>588</height>
 									<texture flipx="true" border="1">diffuse/side_shadow.png</texture>
 									<visible>!String.IsEmpty(Container.ListItemNoWrap(1).FolderPath)</visible>
 								</control>
 								<control type="image">
-									<posx>74</posx>
-									<posy>698</posy>
-									<width>426</width>
-									<height>636</height>
-									<aspectratio aligny="top" align="right" scalediffuse="false">scale</aspectratio>
+									<posx>54</posx>
+									<posy>679</posy>
+									<width>466</width>
+									<height>678</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
 									<texture background="true" flipy="true" diffuse="diffuse/poster_reflect.png" fallback="DefaultVideo.png">$VAR[ShowcaseItem0Var]</texture>
+									<bordersize>20</bordersize>
 									<fadetime>0</fadetime>
 								</control>
 								<control type="group">
 									<posx>410</posx>
-									<posy>62</posy>
+									<posy>61</posy>
 									<width>90</width>
 									<height>90</height>
 									<include>WatchedIndicatorNormal</include>

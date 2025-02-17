@@ -240,7 +240,7 @@
 			<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
 			<include>Animation_Right_Home</include>
             <left>131</left>
-            <top>611</top>
+            <top>606</top>
             <width>1666</width>
             <!-- Content Header -->
             <control type="label">

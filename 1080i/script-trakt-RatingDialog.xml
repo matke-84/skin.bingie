@@ -62,7 +62,6 @@
                     <aligny>center</aligny>
                     <font>Bold38</font>
                     <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-					<shadowcolor>black</shadowcolor>
                     <scroll>true</scroll>
                 </control>
                 <control type="label" id="10012">
@@ -76,7 +75,7 @@
                     <aligny>center</aligny>
                     <font>Bold32</font>
                     <textcolor>black</textcolor>
-					<shadowcolor>grey</shadowcolor>
+					<shadowcolor>FFC0C2C2</shadowcolor>
                     <scroll>true</scroll>
                 </control>
                 <control type="label" id="10013">
@@ -90,7 +89,7 @@
                     <aligny>center</aligny>
                     <font>Bold34</font>
                     <textcolor>black</textcolor>
-					<shadowcolor>grey</shadowcolor>
+					<shadowcolor>FFC0C2C2</shadowcolor>
                 </control>
             </control>
             <!-- Dialogue Button content -->

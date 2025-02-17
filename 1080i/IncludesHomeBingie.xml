@@ -749,11 +749,12 @@
             <!-- Widgets -->
             <control type="grouplist" id="77777">
                 <animation time="300" effect="fade" start="100" end="70" reversible="true" easing="inout" condition="$EXP[IsMainMenuOpened] + !$EXP[IsPlayingRecognizedContent]">Conditional</animation>
-				<animation effect="slide" end="0,33" time="300" condition="$EXP[IsCurrentWidgetSpotlight]">Conditional</animation>
-				<animation effect="slide" end="0,40" time="300" condition="!$EXP[IsCurrentWidgetSpotlight] + [String.IsEqual(Skin.String(widgetstyle),landscape) + !Window.IsActive(1120)]">Conditional</animation>
-				<animation effect="slide" end="0,40" time="300" condition="Window.IsActive(1120)">Conditional</animation>
+				<animation effect="slide" end="0,38" time="300" condition="$EXP[IsCurrentWidgetSpotlight] + !Window.IsActive(1120)">Conditional</animation>
+				<animation effect="slide" end="0,3" time="300" condition="$EXP[IsCurrentWidgetSpotlight] + Window.IsActive(1120)">Conditional</animation>
+				<animation effect="slide" end="0,25" time="300" condition="!$EXP[IsCurrentWidgetSpotlight] + [String.IsEqual(Skin.String(widgetstyle),landscape) + !Window.IsActive(1120)]">Conditional</animation>
+				<animation effect="slide" end="0,35" time="300" condition="Window.IsActive(1120)">Conditional</animation>
                 <usecontrolcoords>true</usecontrolcoords>
-				<top>571</top>
+				<top>566</top>
                 <include condition="[Window.IsActive(Home) | [$EXP[IsBingieHubsActive] + [Skin.HasSetting(LockHubWidgets) | Window.IsActive(1114)]]]">Fixed_Focus_Bottom</include>
                 <bottom>0</bottom>
                 <include condition="[Window.IsActive(Home) | [$EXP[IsBingieHubsActive] + [Skin.HasSetting(LockHubWidgets) | Window.IsActive(1114)]]]">Fixed_Focus_Itemgap</include>
@@ -784,8 +785,8 @@
 			<!-- Fixed Focus Frame -->
 			<control type="group">
 				<include condition="Skin.HasSetting(EnableFixedFrameWidgets) + [Window.IsActive(Home) | $EXP[IsBingieHubsActive2] + Skin.HasSetting(LockHubWidgets)]">Bingie_Screens_Fixed_Focus_Frame</include>
-				<animation effect="slide" end="0,40" time="0" condition="!$EXP[IsCurrentWidgetSpotlight] + [String.IsEqual(Skin.String(widgetstyle),landscape) + !Window.IsActive(1120)]">Conditional</animation>
-				<animation effect="slide" end="0,40" time="300" condition="Window.IsActive(1120)">Conditional</animation>
+				<animation effect="slide" end="0,25" time="0" condition="!$EXP[IsCurrentWidgetSpotlight] + [String.IsEqual(Skin.String(widgetstyle),landscape) + !Window.IsActive(1120)]">Conditional</animation>
+				<animation effect="slide" end="0,35" time="300" condition="Window.IsActive(1120)">Conditional</animation>
 			</control>
 				<!-- gradient overlays on widgets -->
                 <include>Bingie_Left_Gradient</include>
@@ -809,8 +810,8 @@
 			<control type="image">
 				<visible>!Skin.HasSetting(DisableBingieLogo) + !Window.IsActive(1110) + !Window.IsActive(1111) + !Window.IsActive(1114) + !Window.IsActive(1115) + !Window.IsActive(1120)</visible>
 				<description>Bingie logo</description>
-				<right>321</right>
-				<bottom>12</bottom>
+				<right>316</right>
+				<bottom>7</bottom>
 				<width>0</width>
 				<height>165</height>
 				<align>right</align>
@@ -825,7 +826,7 @@
 				<width>300</width>
 				<itemgap>10</itemgap>
 				<right>130</right>
-				<top>973</top>
+				<top>975</top>
 				<align>right</align>
 			<control type="image">
 				<width>9</width>

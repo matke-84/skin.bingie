@@ -144,7 +144,6 @@
                             <aligny>center</aligny>
                             <textoffsetx>20</textoffsetx>
 							<textcolor>white</textcolor>
-							<focusedcolor>black</focusedcolor>
                             <include>DialogButton</include>
                             <label>19128</label>
                             <onright>16</onright>

@@ -47,7 +47,7 @@
 					<font>Reg24</font>
 					<autoscroll>false</autoscroll>
 					<align>left</align>
-					<textcolor>ffffffff</textcolor>
+					<textcolor>white</textcolor>
 					<aligny>top</aligny>
 					<pagecontrol>3000</pagecontrol>
 					<label>31395</label>
@@ -71,9 +71,9 @@
 						<textoffsetx>20</textoffsetx>
 						<aligny>center</aligny>
 						<align>center</align>
-						<texturefocus border="10" colordiffuse="ffffffff">bingie/border/slimframefo.png</texturefocus>
+						<texturefocus border="10" colordiffuse="white">bingie/border/slimframefo.png</texturefocus>
 						<texturenofocus border="10" colordiffuse="a6ffffff">bingie/border/slimframefo.png</texturenofocus>
-						<alttexturefocus border="10" colordiffuse="ffffffff">bingie/border/slimframefo.png</alttexturefocus>
+						<alttexturefocus border="10" colordiffuse="white">bingie/border/slimframefo.png</alttexturefocus>
 						<alttexturenofocus border="10" colordiffuse="a6ffffff">bingie/border/slimframefo.png</alttexturenofocus>
 						<label>$LOCALIZE[31396]</label>
 						<onclick>Skin.SetBool(BingieSecondStartupDone)</onclick>
@@ -94,9 +94,9 @@
 						<textoffsetx>20</textoffsetx>
 						<aligny>center</aligny>
 						<align>center</align>
-						<texturefocus border="10" colordiffuse="ffffffff">bingie/border/slimframefo.png</texturefocus>
+						<texturefocus border="10" colordiffuse="white">bingie/border/slimframefo.png</texturefocus>
 						<texturenofocus border="10" colordiffuse="a6ffffff">bingie/border/slimframefo.png</texturenofocus>
-						<alttexturefocus border="10" colordiffuse="ffffffff">bingie/border/slimframefo.png</alttexturefocus>
+						<alttexturefocus border="10" colordiffuse="white">bingie/border/slimframefo.png</alttexturefocus>
 						<alttexturenofocus border="10" colordiffuse="a6ffffff">bingie/border/slimframefo.png</alttexturenofocus>
 						<label>$LOCALIZE[31397]</label>
 						<onclick>Skin.SetBool(BingieSecondStartupDone)</onclick>

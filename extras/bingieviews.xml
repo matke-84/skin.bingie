@@ -1,7 +1,6 @@
 <views>
-    <view id="Simple List" value="10" languageid="31567" type="tvchannels,tvrecordings" excludefromdisable="true"/>
-    <view id="List" value="50" languageid="31443" type="all,!tvchannels,!tvrecordings" excludefromdisable="true"/>
-	<view id="List Details" value="51" languageid="31444" type="all,!images,!tvchannels,!tvrecordings,!favourites" />
+    <view id="List" value="50" languageid="31443" type="all" excludefromdisable="true"/>
+	<view id="List Details" value="51" languageid="31444" type="all,!images,!favourites" />
 	<view id="Bingie Main Poster" value="526" languageid="31027" type="movies,tvshows,seasons,sets,actors" />
     <view id="Bingie Main Landscape" value="523" languageid="31018" type="movies,tvshows,seasons,episodes,sets,musicvideos" />
 	<view id="Bingie Main Square" value="528" languageid="31122" type="songs,artists,albums" />	
@@ -11,8 +10,8 @@
     <view id="Panel details" value="53" languageid="31422" type="movies,tvshows,seasons,sets,actors" />
     <view id="Big Panel" value="57" languageid="31426" type="movies,tvshows,seasons,sets,actors" />
     <view id="Horizontal Panel" value="52" languageid="31445" type="movies,tvshows,seasons,sets,actors" />
-    <view id="Panel Square" value="509" languageid="31436" type="all,!tvchannels,!tvrecordings,!favourites" />	
-	<view id="Panel Square details" value="510" languageid="31437" type="all,!images,!tvchannels,!tvrecordings,!favourites" />	
+    <view id="Panel Square" value="509" languageid="31436" type="all,!favourites" />	
+	<view id="Panel Square details" value="510" languageid="31437" type="all,!images,!favourites" />	
     <view id="Thumbs" value="511" languageid="31438" type="movies,tvshows,seasons,episodes,sets,musicvideos,images" />
 	<view id="Thumbs details" value="512" languageid="31439" type="movies,tvshows,seasons,episodes,sets,musicvideos" />
     <view id="Landscape" value="501" languageid="31430" type="movies,tvshows,seasons,episodes,sets,musicvideos,images" />

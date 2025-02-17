@@ -134,8 +134,8 @@
             <pagecontrol>317</pagecontrol>
             <orientation>vertical</orientation>
             <width>100%</width>
+			<onleft>900</onleft>
             <onback condition="$EXP[IsPlayingRecognizedContent]">SetFocus(509)</onback>
-            <onback condition="$EXP[IsPlayingRecognizedContent]">SetProperty(KeepPlayingPreview,1,Home)</onback>
             <onback condition="!$EXP[IsPlayingRecognizedContent]">900</onback>
             <include>bingie_items_pvr</include>
         </control>

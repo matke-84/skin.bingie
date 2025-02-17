@@ -8,8 +8,8 @@
 			
 			<control type="panel" id="54">
                 <posx>50</posx>
-                <bottom>142</bottom>
-                <height>756</height>
+                <bottom>130</bottom>
+                <height>768</height>
                 <width>1860</width>
                 <onup>54</onup>
                 <ondown>54</ondown>
@@ -25,10 +25,10 @@
                 <orientation>vertical</orientation>
                 <preloaditems>2</preloaditems>
                 <!-- itemlayout movies -->
-                <itemlayout height="252" width="182">
+                <itemlayout height="256" width="182">
                     <control type="group">
                         <width>182</width>
-                        <height>252</height>
+                        <height>256</height>
                         <include>SmallPosterPanelLayout</include>
 				  <control type="group">
 					<!--Watched Overlay-->
@@ -39,10 +39,10 @@
                       </control>
                 </itemlayout>
                 <!-- focussed layout movies -->
-                <focusedlayout height="252" width="182">
+                <focusedlayout height="256" width="182">
                     <control type="group">
                         <width>182</width>
-                        <height>252</height>
+                        <height>256</height>
                         <include>SmallPosterPanelLayoutFocus</include>
 						  <control type="group">
 							<!--Watched Overlay-->
@@ -59,8 +59,8 @@
 			<control type="scrollbar" id="60">
 				<visible>Control.IsVisible(54) + Integer.IsGreater(Container.NumItems,0)</visible>
 				<right>7</right>
-				<bottom>150</bottom>
-				<height>740</height>
+				<bottom>138</bottom>
+				<height>752</height>
 				<onup>60</onup>
 				<ondown>6000</ondown>
 				<onleft>54</onleft>

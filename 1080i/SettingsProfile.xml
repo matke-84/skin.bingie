@@ -85,7 +85,7 @@
                         <align>left</align>
                         <aligny>center</aligny>
                         <info>ListItem.Label</info>
-                        <textcolor>FFFFFFFF</textcolor>
+                        <textcolor>white</textcolor>
                         <font>Reg28</font>
                         <animation effect="slide" start="0" end="75" time="0" condition="!String.IsEmpty(ListItem.Icon)">Conditional</animation>
                     </control>
@@ -97,7 +97,7 @@
                         <align>right</align>
                         <aligny>center</aligny>
                         <info>ListItem.Label2</info>
-                        <textcolor>FFFFFFFF</textcolor>
+                        <textcolor>white</textcolor>
                         <font>Reg28</font>
                     </control>
                 </itemlayout>
@@ -164,7 +164,7 @@
                             <align>left</align>
                             <aligny>center</aligny>
                             <info>ListItem.Label</info>
-                            <textcolor>FFFFFFFF</textcolor>
+                            <textcolor>white</textcolor>
                             <font>Reg28</font>
                             <animation effect="slide" start="0" end="75" time="0" condition="!String.IsEmpty(ListItem.Icon)">Conditional</animation>
                         </control>
@@ -176,7 +176,7 @@
                             <align>right</align>
                             <aligny>center</aligny>
                             <info>ListItem.Label2</info>
-                            <textcolor>FFFFFFFF</textcolor>
+                            <textcolor>white</textcolor>
                             <font>Reg28</font>
                         </control>
                     </control>

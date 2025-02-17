@@ -42,7 +42,7 @@
 					<width>100%</width>
 					<height>26</height>
 					<font>Bold28</font>
-					<textcolor>ffffffff</textcolor>
+					<textcolor>white</textcolor>
 					<scroll>false</scroll>
 					<align>left</align>
 					<aligny>top</aligny>
@@ -56,7 +56,7 @@
 					<font>Reg24</font>
 					<autoscroll>false</autoscroll>
 					<align>left</align>
-					<textcolor>ffffffff</textcolor>
+					<textcolor>white</textcolor>
 					<aligny>top</aligny>
 					<pagecontrol>3000</pagecontrol>
 					<label>$LOCALIZE[31388]</label>
@@ -75,14 +75,14 @@
 						<height>54</height>
 						<font>Reg24</font>
 						<textcolor>a6ffffff</textcolor>
-						<focusedcolor>ffffffff</focusedcolor>
-						<selectedcolor>ffffffff</selectedcolor>
+						<focusedcolor>white</focusedcolor>
+						<selectedcolor>white</selectedcolor>
 						<textoffsetx>20</textoffsetx>
 						<aligny>center</aligny>
 						<align>center</align>
-						<texturefocus border="10" colordiffuse="ffffffff">bingie/border/slimframefo.png</texturefocus>
+						<texturefocus border="10" colordiffuse="white">bingie/border/slimframefo.png</texturefocus>
 						<texturenofocus border="10" colordiffuse="a6ffffff">bingie/border/slimframefo.png</texturenofocus>
-						<alttexturefocus border="10" colordiffuse="ffffffff">bingie/border/slimframefo.png</alttexturefocus>
+						<alttexturefocus border="10" colordiffuse="white">bingie/border/slimframefo.png</alttexturefocus>
 						<alttexturenofocus border="10" colordiffuse="a6ffffff">bingie/border/slimframefo.png</alttexturenofocus>
 						<label>$LOCALIZE[31389]</label>
 						<onclick>Skin.SetBool(BingieFirstStartupDone)</onclick>
@@ -103,14 +103,14 @@
 						<height>54</height>
 						<font>Reg24</font>
 						<textcolor>a6ffffff</textcolor>
-						<focusedcolor>ffffffff</focusedcolor>
-						<selectedcolor>ffffffff</selectedcolor>
+						<focusedcolor>white</focusedcolor>
+						<selectedcolor>white</selectedcolor>
 						<textoffsetx>20</textoffsetx>
 						<aligny>center</aligny>
 						<align>center</align>
-						<texturefocus border="10" colordiffuse="ffffffff">bingie/border/slimframefo.png</texturefocus>
+						<texturefocus border="10" colordiffuse="white">bingie/border/slimframefo.png</texturefocus>
 						<texturenofocus border="10" colordiffuse="a6ffffff">bingie/border/slimframefo.png</texturenofocus>
-						<alttexturefocus border="10" colordiffuse="ffffffff">bingie/border/slimframefo.png</alttexturefocus>
+						<alttexturefocus border="10" colordiffuse="white">bingie/border/slimframefo.png</alttexturefocus>
 						<alttexturenofocus border="10" colordiffuse="a6ffffff">bingie/border/slimframefo.png</alttexturenofocus>
 						<label>$LOCALIZE[31390]</label>
 						<onclick>Skin.SetBool(BingieFirstStartupDone)</onclick>

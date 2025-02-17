@@ -69,7 +69,7 @@
                 <visible>Player.HasVideo</visible>
                 <!-- discart -->
                 <control type="image">
-                    <posx>65</posx>
+                    <posx>55</posx>
                     <posy>7</posy>
                     <width>286</width>
                     <height>286</height>
@@ -88,7 +88,7 @@
                 <control type="image">
                     <posx>40</posx>
                     <posy>20</posy>
-                    <width>190</width>
+                    <width>180</width>
                     <height>260</height>
                     <fadetime>200</fadetime>
                     <texture background="true">$VAR[OSDImageDefault]</texture>
@@ -133,13 +133,14 @@
             </control>
 			
 			<control type="group">
-				<animation effect="slide" end="42" time="0" condition="Player.HasAudio + Skin.HasSetting(HideOSDDisc)">Conditional</animation>
-				<animation effect="slide" end="-65" time="0" condition="Player.HasAudio + !Skin.HasSetting(HideOSDDisc)">Conditional</animation>
-				<animation effect="slide" end="-20" time="0" condition="Player.HasVideo + Skin.HasSetting(HideOSDDisc) + VideoPlayer.Content(Movies) | Player.HasVideo + Skin.HasSetting(HideOSDDisc) + !VideoPlayer.Content(Movies) + Skin.HasSetting(EnableFakeDiscArt)">Conditional</animation>
-				<animation effect="slide" end="-120" time="0" condition="Player.HasVideo + !Skin.HasSetting(HideOSDDisc) | Player.HasVideo + Skin.HasSetting(HideOSDDisc) + !VideoPlayer.Content(Movies) + !Skin.HasSetting(EnableFakeDiscArt)">Conditional</animation>
+				<animation effect="slide" end="52" time="0" condition="Player.HasAudio + Skin.HasSetting(HideOSDDisc)">Conditional</animation>
+				<animation effect="slide" end="-55" time="0" condition="Player.HasAudio + !Skin.HasSetting(HideOSDDisc)">Conditional</animation>
+				<animation effect="slide" end="-20" time="0" condition="Player.HasVideo + Skin.HasSetting(HideOSDDisc) + VideoPlayer.Content(Movies) | Player.HasVideo + Skin.HasSetting(HideOSDDisc) + VideoPlayer.Content(Episodes) + Skin.HasSetting(EnableFakeDiscArt)">Conditional</animation>
+				<animation effect="slide" end="-120" time="0" condition="Player.HasVideo + !Skin.HasSetting(HideOSDDisc) + [VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] | Player.HasVideo + Skin.HasSetting(HideOSDDisc) + VideoPlayer.Content(Episodes) + !Skin.HasSetting(EnableFakeDiscArt)">Conditional</animation>
+				<animation effect="slide" end="-110" time="0" condition="Player.HasVideo + ![VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)]">Conditional</animation>
 				<!-- OSDLabel1 -->
 				<control type="label">
-					<posx>390</posx>
+					<posx>380</posx>
 					<posy>20</posy>
 					<width>1000</width>
 					<align>left</align>
@@ -151,7 +152,7 @@
 				</control>
                 <!-- OSDLabel2 -->
 				<control type="label">
-					<posx>390</posx>
+					<posx>380</posx>
 					<posy>80</posy>
 					<width>980</width>
 					<align>left</align>
@@ -164,7 +165,7 @@
 
 				<control type="progress">
 					<description>ProgressbarCache</description>
-					<posx>525</posx>
+					<posx>515</posx>
 					<posy>160</posy>
 					<height>20</height>
 					<width>700</width>
@@ -179,7 +180,7 @@
 				</control>
 				<control type="progress" id="23">
 					<description>Progress Bar</description>
-					<posx>525</posx>
+					<posx>515</posx>
 					<posy>160</posy>
 					<height>20</height>
 					<width>700</width>
@@ -193,7 +194,7 @@
 				</control>
 				<control type="progress" id="23">
 					<description>Progress Bar</description>
-					<posx>525</posx>
+					<posx>515</posx>
 					<posy>160</posy>
 					<height>20</height>
 					<width>700</width>
@@ -207,7 +208,7 @@
 				</control>
 				<control type="image">
 					<description>Progress Bar Border</description>
-					<posx>525</posx>
+					<posx>515</posx>
 					<posy>160</posy>
 					<height>20</height>
 					<width>700</width>
@@ -216,7 +217,7 @@
 				</control>
                 <control type="slider" id="401">
                     <description>Seek Slider</description>
-                    <posx>525</posx>
+                    <posx>515</posx>
 					<posy>154</posy>
 					<height>16</height>
 					<width>700</width>
@@ -229,7 +230,7 @@
 				<!--Process/Seekbar-->
 				<control type="label">
 					<!--Play Time-->
-					<posx>390</posx>
+					<posx>380</posx>
 					<posy>139</posy>
 					<width>160</width>
 					<align>left</align>
@@ -240,7 +241,7 @@
 				</control>
 				<control type="label">
 					<!--Play Time-->
-					<posx>1248</posx>
+					<posx>1238</posx>
 					<posy>139</posy>
 					<width>160</width>
 					<align>left</align>
@@ -253,7 +254,7 @@
 				
 			<!-- media flags -->
 			<control type="group">
-                <posx>379</posx>
+                <posx>369</posx>
                 <posy>214</posy>
                 <include>mediaflags</include>
                 <visible>!Window.IsActive(videoosd)</visible>
@@ -262,7 +263,7 @@
 				<animation effect="fade" end="0" time="200" delay="0" reversible="true">Hidden</animation>
             </control>
             <control type="group">
-                <posx>390</posx>
+                <posx>380</posx>
                 <posy>217</posy>
                 <include>mediaflagsAudio</include>
                 <visible>!Window.IsActive(musicosd)</visible>
@@ -556,7 +557,7 @@
 			<param name="size" value="90" />
 			<param name="gap" value="7" />
 			<param name="iconspath" value="osd/slim/" />
-			<param name="posleft" value="303" />
+			<param name="posleft" value="293" />
 			<param name="posbottom" value="8" />
 		</include>
 	</include>
@@ -592,14 +593,15 @@
 			<onright>200</onright>
 			<onup>87</onup>
 			<orientation>horizontal</orientation>
-			<animation effect="slide" end="107,-8" time="0" condition="Player.HasAudio + Skin.HasSetting(HideOSDDisc)">Conditional</animation>
-			<animation effect="slide" end="0,-8" time="0" condition="Player.HasAudio + !Skin.HasSetting(HideOSDDisc)">Conditional</animation>
-			<animation effect="slide" end="-55,-8" time="0" condition="Player.HasVideo + !Skin.HasSetting(HideOSDDisc) | Player.HasVideo + Skin.HasSetting(HideOSDDisc) + !VideoPlayer.Content(Movies) + !Skin.HasSetting(EnableFakeDiscArt)">Conditional</animation>
-			<animation effect="slide" end="45,-8" time="0" condition="Player.HasVideo + Skin.HasSetting(HideOSDDisc) + VideoPlayer.Content(Movies) | Player.HasVideo + Skin.HasSetting(HideOSDDisc) + !VideoPlayer.Content(Movies) + Skin.HasSetting(EnableFakeDiscArt)">Conditional</animation>
+			<animation effect="slide" end="117,-8" time="0" condition="Player.HasAudio + Skin.HasSetting(HideOSDDisc)">Conditional</animation>
+			<animation effect="slide" end="10,-8" time="0" condition="Player.HasAudio + !Skin.HasSetting(HideOSDDisc)">Conditional</animation>
+			<animation effect="slide" end="45,-8" time="0" condition="Player.HasVideo + Skin.HasSetting(HideOSDDisc) + VideoPlayer.Content(Movies) | Player.HasVideo + Skin.HasSetting(HideOSDDisc) + VideoPlayer.Content(Episodes) + Skin.HasSetting(EnableFakeDiscArt)">Conditional</animation>
+			<animation effect="slide" end="-55,-8" time="0" condition="Player.HasVideo + !Skin.HasSetting(HideOSDDisc) + [VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)] | Player.HasVideo + Skin.HasSetting(HideOSDDisc) + VideoPlayer.Content(Episodes) + !Skin.HasSetting(EnableFakeDiscArt)">Conditional</animation>
+			<animation effect="slide" end="-45,-8" time="0" condition="Player.HasVideo + ![VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)]">Conditional</animation>
 			<animation effect="slide" end="4" time="0" condition="Player.HasVideo">Conditional</animation>
 			<animation effect="slide" end="4" time="0" condition="Player.HasAudio">Conditional</animation>
 			<control type="togglebutton" id="201">
-				<description>Skip Back or previous channel</description>
+				<description>Previous</description>
 				<width>$PARAM[size]</width>
 				<height>$PARAM[size]</height>
 				<label>210</label>
@@ -607,9 +609,8 @@
 				<font/>
 				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]prevtrack.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]prevtrack.png</texturenofocus>
-				<usealttexture>VideoPlayer.Content(livetv)</usealttexture>
-				<alttexturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]channelup.png</alttexturefocus>
-				<alttexturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]channelup.png</alttexturenofocus>
+				<alttexturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]prevtrack.png</alttexturefocus>
+				<alttexturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]prevtrack.png</alttexturenofocus>
 				<onclick condition="!VideoPlayer.Content(livetv)">PlayerControl(Previous)</onclick>
 				<onclick condition="VideoPlayer.Content(livetv)">ChannelUp</onclick>
 			</control>
@@ -638,7 +639,6 @@
 				<alttexturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]play.png</alttexturefocus>
 				<alttexturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]play.png</alttexturenofocus>
 				<onclick>PlayerControl(Play)</onclick>
-                <visible>Player.PauseEnabled</visible>
 			</control>
 			<control type="button" id="204">
 				<description>Stop</description>
@@ -669,9 +669,8 @@
 				<font/>
 				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]nexttrack.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]nexttrack.png</texturenofocus>
-				<usealttexture>VideoPlayer.Content(livetv)</usealttexture>
-				<alttexturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]channeldown.png</alttexturefocus>
-				<alttexturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]channeldown.png</alttexturenofocus>
+				<alttexturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]nexttrack.png</alttexturefocus>
+				<alttexturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]nexttrack.png</alttexturenofocus>
 				<onclick condition="!VideoPlayer.Content(livetv)">PlayerControl(Next)</onclick>
 				<onclick condition="VideoPlayer.Content(livetv)">ChannelDown</onclick>
 			</control>
@@ -943,7 +942,7 @@
 		
 		<include content="OSDInfoWidget">
 			<param name="id" value="50" />	
-			<param name="top" value="355" />			
+			<param name="top" value="345" />			
 			<param name="visible" value="Skin.HasSetting(EnableOSDInfo) + !Skin.HasSetting(EnableOSDCrewInfo) + !VideoPlayer.Content(livetv)" />
 			<param name="widgetTags" value="WidgetTagOverlayEnable" />
             <param name="force_tags" value="true" />
@@ -953,7 +952,7 @@
 
 		<include content="OSDInfoWidget">
 			<param name="id" value="51" />	
-			<param name="top" value="355" />			
+			<param name="top" value="345" />			
 			<param name="visible" value="Skin.HasSetting(EnableOSDInfo) + Skin.HasSetting(EnableOSDCrewInfo) + !Skin.HasSetting(EnableOSDCastInfo) + !VideoPlayer.Content(livetv)" />
 			<param name="widgetTags" value="WidgetTagOverlayEnable" />
             <param name="force_tags" value="true" />
@@ -1177,10 +1176,10 @@
                 <control type="image">
                     <visible>Skin.HasSetting(HideOSDDisc)</visible>
 					<visible>true</visible>
-					<posx>263</posx>
-                    <posy>219</posy>
-                    <width>304</width>
-                    <height>304</height>
+					<posx>264</posx>
+                    <posy>215</posy>
+                    <width>305</width>
+                    <height>305</height>
                     <aligny>center</aligny>
                     <fadetime>200</fadetime>
                     <bordersize>20</bordersize>
@@ -1195,12 +1194,12 @@
 			<!--Poster - Video Cover OSD Pause-->
 			<control type="image" id="39623">
 				<visible>!VideoPlayer.Content(livetv)</visible>
-				<posx>254</posx>
-				<posy>320</posy>
+				<posx>256</posx>
+				<posy>317</posy>
 				<align>left</align>
 				<aligny>center</aligny>
-				<width>322</width>
-				<height>440</height>
+				<width>320</width>
+				<height>445</height>
 				<fadetime>200</fadetime>
 				<texture background="true">$VAR[OSDImageDefault]</texture>
 				<bordersize>20</bordersize>
@@ -1211,11 +1210,11 @@
 			
 			<control type="image" id="39623">
 				<visible>VideoPlayer.Content(livetv)</visible>
-				<posx>254</posx>
-				<posy>341</posy>
+				<posx>256</posx>
+				<posy>338</posy>
 				<align>left</align>
 				<aligny>top</aligny>
-				<width>322</width>
+				<width>320</width>
 				<fadetime>200</fadetime>
 				<texture background="true">$VAR[OSDImageDefault]</texture>
 				<bordersize>20</bordersize>
@@ -1235,7 +1234,7 @@
 				<visible>!String.Contains(VideoPlayer.Title, -trailer.)</visible>
 				<animation end="-250,0" time="0" effect="slide" condition="String.Contains(Control.GetLabel(39623),DefaultVideo)">Conditional</animation>
 				<posx>581</posx>
-				<posy>275</posy>
+				<posy>272</posy>
 				<width>1380</width>
 				<height>610</height>
 				<orientation>vertical</orientation>
@@ -2012,7 +2011,7 @@
 		
 		<include content="OSDInfoWidget">
 			<param name="id" value="50" />	
-			<param name="top" value="375" />			
+			<param name="top" value="370" />			
 			<param name="visible" value="Skin.HasSetting(EnableOSDInfo) + Skin.HasSetting(EnableOSDCastInfo)" />
 			<param name="widgetTags" value="WidgetTagOverlayEnable" />
             <param name="force_tags" value="true" />
@@ -2022,7 +2021,7 @@
 
 		<include content="OSDInfoWidget">
 			<param name="id" value="51" />	
-			<param name="top" value="375" />			
+			<param name="top" value="370" />			
 			<param name="visible" value="Skin.HasSetting(EnableOSDInfo) + Skin.HasSetting(EnableOSDCrewInfo)" />
 			<param name="widgetTags" value="WidgetTagOverlayEnable" />
             <param name="force_tags" value="true" />
@@ -2125,7 +2124,7 @@
 					<animation effect="fade" start="0" end="100" time="350" condition="!Container($PARAM[id]).IsUpdating">Conditional</animation>
 					<top>$PARAM[top]</top>
 					<width>1670</width>
-					<height>340</height>
+					<height>350</height>
                     <left>126</left>					
 					<onleft>50</onleft>
 					<onright>50</onright>					
@@ -2138,10 +2137,10 @@
 					<onclick>SetProperty(DisableOSDCast,1,home)</onclick>
 					<onclick>Action(Close)</onclick>
 					<onclick>RunScript(plugin.video.themoviedb.helper,recommendations=oninfo,tmdb_type=person,tmdb_id=$INFO[Container($PARAM[id]).ListItem.UniqueID(tmdb)],window_id=1191)</onclick>
-					<itemlayout height="337" width="238">
+					<itemlayout height="347" width="238">
 			        <control type="group">
 						<width>240</width>
-						<height>330</height>
+						<height>340</height>
 						<include>PosterPanelBingieLayout</include>
 						<control type="group">
                             <include content="$PARAM[layout]Tags">
@@ -2151,10 +2150,10 @@
                         </control>
 					</control>
 					</itemlayout>
-					<focusedlayout height="337" width="238" condition="Control.HasFocus($PARAM[id])">
+					<focusedlayout height="347" width="238" condition="Control.HasFocus($PARAM[id])">
 					<control type="group">
 						<width>240</width>
-						<height>330</height>
+						<height>340</height>
 						<include>PosterPanelBingieLayoutFocus</include>
 						<control type="group">
                             <include content="$PARAM[layout]Tags">
@@ -2164,10 +2163,10 @@
                         </control>
 					</control>
 					</focusedlayout>
-					<focusedlayout height="337" width="238" condition="!Control.HasFocus($PARAM[id])">
+					<focusedlayout height="347" width="238" condition="!Control.HasFocus($PARAM[id])">
 					<control type="group">
 						<width>240</width>
-						<height>330</height>
+						<height>340</height>
 						<include>PosterPanelBingieLayout</include>
 						<control type="group">
                             <include content="$PARAM[layout]Tags">
@@ -2185,11 +2184,11 @@
 					<param name="containerid" value="$PARAM[id]" />
 					<param name="top" value="$PARAM[top]" />
 					<param name="width" value="240" />
-					<param name="height" value="330" />
+					<param name="height" value="340" />
 					<texture background="true" border="12">$INFO[Skin.String(thumbsborder_focused),bingie/border/poster_fo_,.png]</texture>
 					<bordersize>2</bordersize>
 					<param name="xAxisAnim" value="238" />
-					<param name="yAxisAnim" value="340" />
+					<param name="yAxisAnim" value="350" />
 					<animation effect="fade" start="100" end="0" time="350" condition="Container($PARAM[id]).IsUpdating">Conditional</animation>	
 					<animation effect="fade" start="0" end="100" time="350" condition="!Container($PARAM[id]).IsUpdating">Conditional</animation>
 					<param name="visibility" value="Skin.HasSetting(EnableFixedFrameWidgets)" />

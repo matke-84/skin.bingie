@@ -22,11 +22,9 @@
                 <onup>55</onup>
                 <ondown>55</ondown>
                 <onleft>9000</onleft>
-				<onleft>CancelAlarm(preview_delay,silent)</onleft>
-				<onleft>CancelAlarm(preview_delay,silent)</onleft>
-				<onleft condition="[!String.IsEmpty(ListItem.Trailer) + [String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | !String.Contains(ListItem.Trailer,plugin)] | String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | String.IsEmpty(ListItem.Trailer) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)] + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)] + Skin.HasSetting(View55_DetailsAutoTrailer)">PlayerControl(Stop)</onleft>
 				<onback>CancelAlarm(preview_delay,silent)</onback>
-				<onback condition="[!String.IsEmpty(ListItem.Trailer) + [String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | !String.Contains(ListItem.Trailer,plugin)] | String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | String.IsEmpty(ListItem.Trailer) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)] + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)] + Skin.HasSetting(View55_DetailsAutoTrailer)">PlayerControl(Stop)</onback>
+				<onback condition="!Player.HasAudio + $EXP[IsPlayingUnrecognizedContent] + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)] + Skin.HasSetting(View55_DetailsAutoTrailer)">PlayerControl(Stop)</onback>
+				<onback>ClearProperty(HideNowPlaying)</onback>
 				<onback>ClearProperty(ListAnimation,home)</onback>
                 <onright condition="Skin.HasSetting(EnableQuickJump)">6000</onright>
                 <onright condition="!Skin.HasSetting(EnableQuickJump)">60</onright>
@@ -53,7 +51,6 @@
                         <control type="image">
                             <texture>diffuse/banner.png</texture>
                             <colordiffuse>$INFO[Skin.String(ViewDetailsBorderFocusColor)]</colordiffuse>
-                            <aspectratio scalediffuse="false" align="left">stretch</aspectratio>
                             <include>thumbsborder_focused</include>
                         </control>
                         <include>BannerLayout</include>

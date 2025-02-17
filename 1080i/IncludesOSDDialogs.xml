@@ -235,7 +235,7 @@
                         <width>530</width>
                         <height>2</height>
                         <fadetime>400</fadetime>
-                        <colordiffuse>list_separator</colordiffuse>
+                        <colordiffuse>BBFFFFFF</colordiffuse>
                         <texture>common/separator.png</texture>
                     </control>
                 </itemlayout>
@@ -388,7 +388,7 @@
                         <width>530</width>
                         <height>2</height>
                         <fadetime>400</fadetime>
-                        <colordiffuse>list_separator</colordiffuse>
+                        <colordiffuse>BBFFFFFF</colordiffuse>
                         <texture>common/separator.png</texture>
                     </control>
                 </focusedlayout>
@@ -566,7 +566,7 @@
                         <height>2</height>
 						<width>1094</width>
                         <fadetime>400</fadetime>
-                        <colordiffuse>list_separator</colordiffuse>
+                        <colordiffuse>BBFFFFFF</colordiffuse>
                         <texture>common/separator.png</texture>
                     </control>
                     

@@ -35,7 +35,6 @@
 			<label>$ADDON[script.skin.helper.colorpicker 32011]</label>
             <align>left</align>
             <textcolor>white</textcolor>
-			<shadowcolor>black</shadowcolor>
         </control>      		       
         
         <!-- Color picker panel -->

@@ -59,7 +59,7 @@
 					<textureslidernibfocus colordiffuse="$INFO[Skin.String(ScrollbarFocusedColor)]">scrollbar/texturesliderbar_nib.png</textureslidernibfocus>
                     <visible>Control.IsVisible(526) + Integer.IsGreater(Container.NumItems,0) + !Skin.HasSetting(View_526_HorizontalNavigation)</visible>
                     <width>10</width>
-					<height>461</height>
+					<height>466</height>
                     <right>0</right>
                     <bottom>0</bottom>
                     <onleft>526</onleft>
@@ -97,7 +97,7 @@
             <include content="View_Forced">
                 <param name="viewtype" value="$LOCALIZE[31027]" />
             </include>
-            <top>11</top>
+            <top>6</top>
             <height>469</height>
             <width>1666</width>
             <itemgap>0</itemgap>
@@ -116,21 +116,20 @@
             <ondown condition="Skin.HasSetting(View_526_HorizontalNavigation) + Skin.HasSetting(EnableQuickJump) + !Control.IsVisible(7002)">noop</ondown>
             <ondown condition="Skin.HasSetting(View_526_HorizontalNavigation) + !Skin.HasSetting(EnableQuickJump)">60</ondown>
             <ondown condition="!Skin.HasSetting(View_526_HorizontalNavigation)">526</ondown>
-			<onleft>CancelAlarm(preview_delay,silent)</onleft>
-			<onleft condition="[!String.IsEmpty(ListItem.Trailer) + [String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | !String.Contains(ListItem.Trailer,plugin)] | String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | String.IsEmpty(ListItem.Trailer) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)] + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)] + Skin.HasSetting(View526_DetailsAutoTrailer)">PlayerControl(Stop)</onleft>
 			<onback>CancelAlarm(preview_delay,silent)</onback>
-			<onback condition="[!String.IsEmpty(ListItem.Trailer) + [String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | !String.Contains(ListItem.Trailer,plugin)] | String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(AutoYoutubeTrailer),true) | String.IsEmpty(ListItem.Trailer) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)] + String.IsEqual(Skin.String(AutoYoutubeTrailer),true)] + Skin.HasSetting(View526_DetailsAutoTrailer)">PlayerControl(Stop)</onback>
-            <itemlayout height="328" width="238">
+			<onback condition="!Player.HasAudio + $EXP[IsPlayingUnrecognizedContent] + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)] + Skin.HasSetting(View526_DetailsAutoTrailer)">PlayerControl(Stop)</onback>
+            <onback>ClearProperty(HideNowPlaying)</onback>
+		    <itemlayout height="338" width="238">
                 <control type="group">
                     <width>240</width>
-                    <height>330</height>
+                    <height>340</height>
                     <include>PosterPanelBingieLayout</include>
                 </control>
             </itemlayout>
-            <focusedlayout height="328" width="238">
+            <focusedlayout height="338" width="238">
                 <control type="group">
                     <width>240</width>
-                    <height>330</height>
+                    <height>340</height>
                     <include condition="!Skin.HasSetting(View526_UseFixedLayout) | !Skin.HasSetting(View_526_HorizontalNavigation)">PosterPanelBingieLayoutFocus</include>
 					<include condition="Skin.HasSetting(View526_UseFixedLayout) + Skin.HasSetting(View_526_HorizontalNavigation)">PosterPanelBingieLayout</include>
                     <control type="group">

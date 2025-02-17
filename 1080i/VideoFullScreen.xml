@@ -47,6 +47,7 @@
 				<height>50</height>
 				<font>Bold30</font>
 				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
 				<label/>
 			</control>
 
@@ -58,6 +59,7 @@
 				<height>50</height>
 				<font>Bold30</font>
 				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
 				<label/>
 			</control>
 		</control>

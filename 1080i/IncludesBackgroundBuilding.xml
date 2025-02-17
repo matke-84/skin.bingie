@@ -7,7 +7,7 @@
         <control type="image">
             <include>FullscreenDimensions</include>
             <texture>diffuse/background.png</texture>
-            <colordiffuse>aawhite</colordiffuse>
+            <colordiffuse>AAFFFFFF</colordiffuse>
             <visible>String.IsEmpty(Skin.String(BackgroundOverlayColor.base))</visible>
         </control>
         <control type="image">
@@ -418,13 +418,13 @@
 	</variable>
 	
 	<variable name="ColorDiffuseFanart">
-		<value condition="$EXP[AllBingieViews]">ff000000</value>
-        <value condition="Control.IsVisible(507)">ffffffff</value>
+		<value condition="$EXP[AllBingieViews]">black</value>
+        <value condition="Control.IsVisible(507)">white</value>
         <value>$INFO[Skin.String(BackgroundDiffuseColor)]</value>
     </variable>
 	
 	<variable name="ColorBackground">
-		<value condition="$EXP[AllBingieViews]">ff000000</value>
+		<value condition="$EXP[AllBingieViews]">black</value>
         <value>$INFO[Skin.String(BackgroundColor)]</value>
     </variable>
 	

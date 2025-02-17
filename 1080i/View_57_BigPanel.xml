@@ -11,7 +11,7 @@
           </include>
         <posx>50</posx>
         <bottom>146</bottom>
-        <height>740</height>
+        <height>738</height>
         <width>1834</width>
         <orientation>vertical</orientation>
         <onleft>9000</onleft>
@@ -22,10 +22,10 @@
         <preloaditems>4</preloaditems>
         <pagecontrol>60</pagecontrol>
 		<scrolltime tween="quadratic">400</scrolltime>
-        <itemlayout height="370" width="260">
+        <itemlayout height="369" width="260">
           <control type="group">
             <width>260</width>
-            <height>370</height>
+            <height>369</height>
             <include>PosterPanelLayout</include>
         <control type="group">
             <!--Watched Overlay-->
@@ -35,10 +35,10 @@
         </control>
           </control>
         </itemlayout>
-        <focusedlayout height="370" width="260">
+        <focusedlayout height="369" width="260">
           <control type="group">
             <width>260</width>
-            <height>370</height>
+            <height>369</height>
             <include>PosterPanelLayoutFocus</include>
         <control type="group">
             <!--Watched Overlay-->
@@ -56,7 +56,7 @@
 			<visible>Control.IsVisible(57) + Integer.IsGreater(Container.NumItems,0)</visible>
 			<right>10</right>
 			<bottom>154</bottom>
-			<height>724</height>
+			<height>722</height>
 			<onup>60</onup>
 			<ondown>6000</ondown>
 			<onleft>57</onleft>

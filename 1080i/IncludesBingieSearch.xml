@@ -1146,7 +1146,7 @@
             <param name="id" value="$PARAM[id]" />
             <param name="layout">ThumbsViewBingie</param>
 			<param name="height" value="230" />
-            <param name="layoutwidth">396</param>
+            <param name="layoutwidth">394</param>
 			<param name="layoutheight">230</param>
 			<param name="widgetTags" value="WidgetTagOverlayEnable" />
             <param name="force_tags" value="true" />
@@ -1163,7 +1163,7 @@
             <param name="id" value="$PARAM[id]" />
             <param name="layout">ThumbsViewBingie</param>
 			<param name="height" value="230" />
-            <param name="layoutwidth">396</param>
+            <param name="layoutwidth">394</param>
 			<param name="layoutheight">230</param>
 			<param name="widgetTags" value="WidgetTagOverlayEnable" />
             <param name="force_tags" value="true" />
@@ -1179,9 +1179,9 @@
         <include content="SearchResultWidget">
             <param name="id" value="$PARAM[id]" />
             <param name="layout">SquarePosterPanel</param>
-			<param name="height" value="396" />
-            <param name="layoutwidth">396</param>
-			<param name="layoutheight">396</param>
+			<param name="height" value="394" />
+            <param name="layoutwidth">394</param>
+			<param name="layoutheight">394</param>
 			<param name="widgetTags" value="WidgetTagOverlayEnable" />
             <param name="force_tags" value="true" />
             <param name="allow_showinfo_onclick" value="false" />
@@ -1196,9 +1196,9 @@
         <include content="SearchResultWidget">
             <param name="id" value="$PARAM[id]" />
             <param name="layout">SquarePosterPanel</param>
-			<param name="height" value="396" />
-            <param name="layoutwidth">396</param>
-			<param name="layoutheight">396</param>
+			<param name="height" value="394" />
+            <param name="layoutwidth">394</param>
+			<param name="layoutheight">394</param>
 			<param name="widgetTags" value="WidgetTagOverlayEnable" />
             <param name="force_tags" value="true" />
             <param name="allow_showinfo_onclick" value="false" />
@@ -1213,9 +1213,9 @@
         <include content="SearchResultWidget">
             <param name="id" value="$PARAM[id]" />
             <param name="layout">SquarePosterPanel</param>
-			<param name="height" value="396" />
-            <param name="layoutwidth">396</param>
-			<param name="layoutheight">396</param>
+			<param name="height" value="394" />
+            <param name="layoutwidth">394</param>
+			<param name="layoutheight">394</param>
 			<param name="widgetTags" value="WidgetTagOverlayEnable" />
             <param name="force_tags" value="true" />
             <param name="allow_showinfo_onclick" value="false" />
