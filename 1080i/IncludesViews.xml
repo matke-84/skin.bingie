@@ -1184,7 +1184,7 @@
             <top>0</top>
             <control type="group">
                 <description>Watched Overlay</description>
-                <visible>Integer.IsGreater(ListItem$PARAM[listitem].PlayCount,0) + Skin.HasSetting(WatchedIndicator.Watched) + !ListItem$PARAM[listitem].IsResumable</visible>
+                <visible>![!Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,0) + !Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,100)] + Integer.IsGreater(ListItem$PARAM[listitem].PlayCount,0) + Skin.HasSetting(WatchedIndicator.Watched) + !ListItem$PARAM[listitem].IsResumable</visible>
                 <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
                 <visible>![String.IsEqual(ListItem.DBTYPE, song) | String.IsEqual(ListItem.Property(DBTYPE), song) | Container.Content(songs)]</visible>
                 <visible>![String.IsEqual(ListItem.DBTYPE, album) | String.IsEqual(ListItem.Property(DBTYPE), album) | Container.Content(albums)]</visible>
@@ -1226,7 +1226,7 @@
 				[Window.IsActive(1108) + Skin.HasSetting(MovieDetailsHome)] | [Window.IsActive(1109) + Skin.HasSetting(MovieDetailsHome)] |
 				[Window.IsActive(1106) + Skin.HasSetting(MovieDetailsHome)]
 				</visible>
-                <visible>!Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,0) + Skin.HasSetting(WatchedIndicator.Progress)</visible>
+                <visible>!Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,0) + !Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,100) + Skin.HasSetting(WatchedIndicator.Progress)</visible>
                 <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
 				<visible>!$EXP[IsTvShowDBType]</visible>
                 <control type="image">
@@ -1265,9 +1265,9 @@
             </control>
             <control type="group">
                 <description>Movieset Overlay</description>
-                <visible>[ListItem$PARAM[listitem].IsCollection | String.Contains(ListItem$PARAM[listitem].Path,videodb://movies/sets/)] + Skin.HasSetting(WatchedIndicator.Sets)</visible>
-                <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
-                <control type="image">
+                <visible>[!String.IsEmpty(ListItem$PARAM[listitem].Set) | ListItem$PARAM[listitem].IsCollection | String.Contains(ListItem$PARAM[listitem].Path,videodb://movies/sets/)] + Skin.HasSetting(WatchedIndicator.Sets)</visible>
+                <visible>!Integer.IsGreater(ListItem$PARAM[listitem].PlayCount,0) + !ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
+				<control type="image">
                     <texture background="true">$PARAM[overlay_texture]</texture>
                     <colordiffuse>$INFO[Skin.String(WatchedIndicator.Sets.Color)]</colordiffuse>
                 </control>
@@ -1377,8 +1377,8 @@
     
 	<include name="WatchedIndicatorSmall">
         <include content="WatchedIndicatorLayout">
-            <param name="width" value="60" />
-            <param name="height" value="60" />
+            <param name="width" value="65" />
+            <param name="height" value="65" />
             <param name="font" value="indicator_small" />
             <param name="overlay" value="normal" />
             <param name="overlay_texture" value="diffuse/icon_overlay.png" />

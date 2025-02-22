@@ -33,13 +33,7 @@
             <!--Watched Overlay-->
             <right>8</right>
             <top>8</top>
-            <include content="WatchedIndicatorLayout">
-                <param name="width" value="60" />
-                <param name="height" value="60" />
-                <param name="font" value="indicator_small" />
-                <param name="overlay" value="normal" />
-                <param name="overlay_texture" value="diffuse/icon_overlay_landscape.png" />
-            </include>
+            <include>WatchedIndicatorSmall</include>
         </control>
     </include>
 	
@@ -74,13 +68,7 @@
             <!--Watched Overlay-->
             <right>8</right>
             <top>8</top>
-            <include content="WatchedIndicatorLayout">
-                <param name="width" value="60" />
-                <param name="height" value="60" />
-                <param name="font" value="indicator_small" />
-                <param name="overlay" value="normal" />
-                <param name="overlay_texture" value="diffuse/icon_overlay_landscape.png" />
-            </include>
+            <include>WatchedIndicatorSmall</include>
         </control>
     </include>
 
@@ -133,13 +121,7 @@
             <!--Watched Overlay-->
             <right>8</right>
             <top>8</top>
-            <include content="WatchedIndicatorLayout">
-                <param name="width" value="60" />
-                <param name="height" value="60" />
-                <param name="font" value="indicator_small" />
-                <param name="overlay" value="normal" />
-                <param name="overlay_texture" value="diffuse/icon_overlay_landscape.png" />
-            </include>
+            <include>WatchedIndicatorSmall</include>
         </control>
     </include>
 
@@ -192,15 +174,7 @@
 		<control type="group">
 			<right>8</right>
 			<top>8</top>
-			<include content="WatchedIndicatorLayout">
-                <param name="width" value="80" />
-                <param name="height" value="80" />
-                <param name="font" value="indicator_normal" />
-                <param name="labeloffsetx" value="-30" />
-                <param name="labeloffsety" value="-4" />
-                <param name="overlay" value="normal" />
-                <param name="overlay_texture" value="diffuse/icon_overlay_landscape.png" />
-            </include>
+			<include>WatchedIndicatorNormal</include>
 		 </control>
     </include>
     

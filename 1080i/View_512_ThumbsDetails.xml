@@ -12,8 +12,8 @@
               <param name="viewtype" value="$LOCALIZE[31439]" />
           </include>
         <right>28</right>
-        <bottom>169</bottom>
-        <height>704</height>
+        <bottom>173</bottom>
+        <height>700</height>
         <width>1212</width>
         <orientation>vertical</orientation>
         <onleft>9000</onleft>
@@ -28,17 +28,17 @@
         <preloaditems>4</preloaditems>
         <pagecontrol>60</pagecontrol>
 		<scrolltime tween="quadratic">400</scrolltime>
-          <itemlayout height="176" width="297">
+          <itemlayout height="175" width="297">
             <control type="group">
                 <width>297</width>
-                <height>176</height>
+                <height>175</height>
                 <include>ThumbsViewLayoutSmall</include>
             </control>
         </itemlayout>
-        <focusedlayout height="176" width="297">
+        <focusedlayout height="175" width="297">
 			<control type="group">
                 <width>297</width>
-                <height>176</height>
+                <height>175</height>
 				<include>ThumbsViewLayoutFocusSmall</include>
                 <include>LibraryAutoTrailerStopButton</include>
 						<include content="LibraryAutoTrailerStartButton" condition="Skin.HasSetting(View512_DetailsAutoTrailer)">
@@ -56,8 +56,8 @@
 		<control type="scrollbar" id="60">
 			<visible>Control.IsVisible(512) + Integer.IsGreater(Container.NumItems,0)</visible>
 			<right>15</right>
-			<bottom>177</bottom>
-            <height>688</height>
+			<bottom>181</bottom>
+            <height>684</height>
 			<onup>60</onup>
 			<ondown>6000</ondown>
 			<onleft>509</onleft>

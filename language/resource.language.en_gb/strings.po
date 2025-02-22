@@ -3013,3 +3013,7 @@ msgstr ""
 msgctxt "#31760"
 msgid "Volume indicator style"
 msgstr ""
+
+msgctxt "#31761"
+msgid "Reboot to android"
+msgstr ""

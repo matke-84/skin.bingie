@@ -354,6 +354,7 @@
 
         <!--Auto Trailer Interval-->
         <control type="radiobutton" id="31795">
+			<visible>Container.Content(movies) | Container.Content(tvshows)</visible>
             <include>SideBladeMenuButton</include>
             <textureradioonfocus colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]">common/settings1.png</textureradioonfocus>
             <textureradioofffocus colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]">common/settings1.png</textureradioofffocus>

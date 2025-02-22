@@ -30,7 +30,7 @@
 		<label2>Kodi Command</label2>
 		<icon>common/reboot1.png</icon>
 		<thumb />
-		<action>Reboot</action>
+		<action>Reset()</action>
 	</shortcut>
 	<shortcut>
 		<defaultID>13016</defaultID>
@@ -38,7 +38,7 @@
 		<label2>Kodi Command</label2>
 		<icon>common/shutdown1.png</icon>
 		<thumb />
-		<action>ShutDown</action>
+		<action>Powerdown()</action>
 	</shortcut>
 	<shortcut>
 		<defaultID>20126</defaultID>

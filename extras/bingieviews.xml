@@ -1,5 +1,6 @@
 <views>
-    <view id="List" value="50" languageid="31443" type="all" excludefromdisable="true"/>
+    <view id="Simple List" value="10" languageid="31567" type="!all" excludefromdisable="true"/>
+	<view id="List" value="50" languageid="31443" type="all" excludefromdisable="true"/>
 	<view id="List Details" value="51" languageid="31444" type="all,!images,!favourites" />
 	<view id="Bingie Main Poster" value="526" languageid="31027" type="movies,tvshows,seasons,sets,actors" />
     <view id="Bingie Main Landscape" value="523" languageid="31018" type="movies,tvshows,seasons,episodes,sets,musicvideos" />

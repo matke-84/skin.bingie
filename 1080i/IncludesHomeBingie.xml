@@ -738,7 +738,7 @@
 						<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
 						<include>Animation_Right_Home</include>
 						<include>Bingie_Footer</include>
-						<animation effect="slide" end="0,40" time="300" condition="!$EXP[IsCurrentWidgetSpotlight] + String.IsEqual(Skin.String(widgetstyle),landscape)">Conditional</animation>
+						<animation effect="slide" end="0,23" time="300" condition="!$EXP[IsCurrentWidgetSpotlight] + String.IsEqual(Skin.String(widgetstyle),landscape)">Conditional</animation>
 						<animation effect="fade" start="100" end="0" time="300" condition="[$EXP[IsCurrentWidgetSpotlight] + Skin.HasSetting(EnableFooterBarOnSpotlight)] | [!$EXP[IsCurrentWidgetSpotlight] + Skin.HasSetting(EnableFooterBarOnWidgets)] | [Skin.HasSetting(HideMediaFlagsTrailer) + $EXP[IsPlayingUnrecognizedContent]] | $EXP[IsCategoryDBType]">Conditional</animation>
 				</control>
             </control>
@@ -751,7 +751,7 @@
                 <animation time="300" effect="fade" start="100" end="70" reversible="true" easing="inout" condition="$EXP[IsMainMenuOpened] + !$EXP[IsPlayingRecognizedContent]">Conditional</animation>
 				<animation effect="slide" end="0,38" time="300" condition="$EXP[IsCurrentWidgetSpotlight] + !Window.IsActive(1120)">Conditional</animation>
 				<animation effect="slide" end="0,3" time="300" condition="$EXP[IsCurrentWidgetSpotlight] + Window.IsActive(1120)">Conditional</animation>
-				<animation effect="slide" end="0,25" time="300" condition="!$EXP[IsCurrentWidgetSpotlight] + [String.IsEqual(Skin.String(widgetstyle),landscape) + !Window.IsActive(1120)]">Conditional</animation>
+				<animation effect="slide" end="0,23" time="300" condition="!$EXP[IsCurrentWidgetSpotlight] + [String.IsEqual(Skin.String(widgetstyle),landscape) + !Window.IsActive(1120)]">Conditional</animation>
 				<animation effect="slide" end="0,35" time="300" condition="Window.IsActive(1120)">Conditional</animation>
                 <usecontrolcoords>true</usecontrolcoords>
 				<top>566</top>
@@ -785,7 +785,7 @@
 			<!-- Fixed Focus Frame -->
 			<control type="group">
 				<include condition="Skin.HasSetting(EnableFixedFrameWidgets) + [Window.IsActive(Home) | $EXP[IsBingieHubsActive2] + Skin.HasSetting(LockHubWidgets)]">Bingie_Screens_Fixed_Focus_Frame</include>
-				<animation effect="slide" end="0,25" time="0" condition="!$EXP[IsCurrentWidgetSpotlight] + [String.IsEqual(Skin.String(widgetstyle),landscape) + !Window.IsActive(1120)]">Conditional</animation>
+				<animation effect="slide" end="0,23" time="0" condition="!$EXP[IsCurrentWidgetSpotlight] + [String.IsEqual(Skin.String(widgetstyle),landscape) + !Window.IsActive(1120)]">Conditional</animation>
 				<animation effect="slide" end="0,35" time="300" condition="Window.IsActive(1120)">Conditional</animation>
 			</control>
 				<!-- gradient overlays on widgets -->

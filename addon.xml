@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- BINGIE -->
-<addon id="skin.bingie" version="1.0.2" name="Bingie" provider-name="matke">
+<addon id="skin.bingie" version="1.0.3" name="Bingie" provider-name="matke">
 	<requires>
 		<import version="5.17.0" addon="xbmc.gui"/>
 		<import addon="script.bingie.helper" version="1.1.2"/>

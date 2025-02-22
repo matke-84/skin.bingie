@@ -60,7 +60,7 @@
     <include file="IncludesDebugInfo.xml" condition="Skin.HasSetting(DebugGrid) | Skin.HasSetting(DebugInfo)" />
 
     <!-- Constants -->
-    <constant name="landscape_width">373</constant>
+    <constant name="landscape_width">374</constant>
     <constant name="bingie_no_circular_posx">130</constant>
     <constant name="bingie_no_circular_left_diff">65</constant>
     <constant name="search_widget_height">420</constant>

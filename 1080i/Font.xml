@@ -644,13 +644,13 @@
             <name>indicator_small</name>
             <filename>Netflix-sans-medium.ttf</filename>
  	  	 	<style>lighten</style>
-			<size>18</size>
+			<size>17</size>
 			</font>
 		<font>
             <name>indicator_normal</name>
             <filename>Netflix-sans-medium.ttf</filename>
  	  	 	<style>lighten</style>
-	        <size>21</size>
+	        <size>20</size>
 			</font>
 		<font>
             <name>indicator_large</name>
@@ -1393,12 +1393,12 @@
 		<font>
             <name>indicator_small</name>
             <filename>Arial.ttf</filename>
-			<size>17</size>
+			<size>16</size>
 			</font>
 		<font>
             <name>indicator_normal</name>
             <filename>Arial.ttf</filename>
-	        <size>20</size>
+	        <size>19</size>
 			</font>
 		<font>
             <name>indicator_large</name>

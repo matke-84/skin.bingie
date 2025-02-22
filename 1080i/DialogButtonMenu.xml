@@ -111,14 +111,14 @@
                     <icon>common/shutdown1.png</icon>
                     <visible>System.CanPowerDown + Window.IsActive(loginscreen)</visible>
                     <onclick condition="Window.IsActive(shutdownmenu)">Dialog.Close(all)</onclick>
-                    <onclick>PowerDown</onclick>
+                    <onclick>Powerdown()</onclick>
                 </item>
                 <item id="999">
                     <label>$LOCALIZE[13013]</label>
                     <icon>common/reboot1.png</icon>
                     <visible>System.CanReboot + Window.IsActive(loginscreen)</visible>
                     <onclick condition="Window.IsActive(shutdownmenu)">Dialog.Close(all)</onclick>
-                    <onclick>Reboot</onclick>
+                    <onclick>Reset()</onclick>
                 </item>
             </content>
         </control>

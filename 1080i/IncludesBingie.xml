@@ -71,7 +71,7 @@
     <include name="Fixed_Focus_Navigation_Factory">
         <include content="Fixed_Focus_Navigation" condition="String.IsEqual(Skin.String(widgetstyle),landscape) + !Window.IsActive(1116) + !Window.IsActive(1120)">
             <param name="widgetid" value="$PARAM[widgetid]"/>
-            <param name="FixedAnimationHeight" value="-258"/>
+            <param name="FixedAnimationHeight" value="-259"/>
         </include>
         <include content="Fixed_Focus_Navigation" condition="String.IsEqual(Skin.String(widgetstyle),poster) + !Window.IsActive(1116) + !Window.IsActive(1120)">
             <param name="widgetid" value="$PARAM[widgetid]"/>
@@ -1736,7 +1736,7 @@
 				<animation effect="slide" end="0,246" condition="Integer.IsEqual(Container(900).NumItems,2)">Conditional</animation>
 				<animation effect="slide" end="0,287" condition="Integer.IsEqual(Container(900).NumItems,1)">Conditional</animation>
 				<width>bingie_menu_width</width>
-                <height>680</height>
+                <height>656</height>
                 <orientation>vertical</orientation>
                 <itemgap>0</itemgap>
 				<onfocus>ClearProperty(StartupMask,Home)</onfocus>
@@ -1918,9 +1918,6 @@
                 <effect type="slide" end="0,82" time="0" delay="0" />
             </animation>
 			<animation type="Conditional" condition="Integer.IsGreater(Container(900).Position,7)">
-                <effect type="slide" end="0,82" time="0" delay="0" />
-            </animation>
-			<animation type="Conditional" condition="Integer.IsGreater(Container(900).Position,8)">
                 <effect type="slide" end="0,82" time="0" delay="0" />
             </animation>
 
@@ -2123,7 +2120,7 @@
 <!-- Bingie Elements / Footer on Home Transparent-->
     <include name="Bingie_Footer">
         <control type="group">
-            <animation effect="slide" end="0,283" time="300" condition="$EXP[IsCurrentWidgetSpotlight]">Conditional</animation>
+            <animation effect="slide" end="0,288" time="300" condition="$EXP[IsCurrentWidgetSpotlight]">Conditional</animation>
             <top>520</top>
             <width>100%</width>
 			<visible>!$EXP[IsMainMenuOpened]</visible>
@@ -2179,7 +2176,7 @@
         <include content="Bingie_Screens_Fixed_Focus_Frame_Base" condition="String.IsEqual(Skin.String(widgetstyle),landscape)">
             <param name="visibility" value="ControlGroup(77777).HasFocus() + !String.IsEmpty(Container(77777).CurrentItem) + !String.IsEmpty(ListItem.Label) + ![$EXP[IsCurrentWidgetSpotlight] | Window.IsActive(1120)]"/>
             <param name="width" value="landscape_width"/>
-            <param name="height" value="217"/>
+            <param name="height" value="218"/>
             <texture background="true" border="10">$INFO[Skin.String(thumbsborder_focused),bingie/border/thumb_fo_,.png]</texture>
         </include>
 		<!-- Poster Fixed Frame -->
