@@ -1,0 +1,581 @@
+# Kodi Media Center language file
+# Addon Name: Bingie
+# Addon id: skin.bingie
+# Addon Provider: matke
+msgid ""
+msgstr ""
+"Project-Id-Version: KODI Skins\n"
+"Report-Msgid-Bugs-To: http://trac.kodi.tv/\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: 0zd3m1r\n"
+"Language-Team: Turkish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr-tr\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# BINGIE Strings
+
+#. first letter of 'Season'
+msgctxt "#31000"
+msgid "S"
+msgstr "S"
+
+#. first letter of 'Episode'
+msgctxt "#31001"
+msgid "E"
+msgstr "B"
+
+#. short naming for 'Episode'
+msgctxt "#31002"
+msgid "Ep"
+msgstr "Böl"
+
+msgctxt "#31003"
+msgid "Header text color"
+msgstr "Başlık metin rengi"
+
+msgctxt "#31004"
+msgid "Moving focus frame"
+msgstr "Odak çerçevesini hareket ettirme"
+
+msgctxt "#31005"
+msgid "General skin settings"
+msgstr "Genel tema ayarları"
+
+msgctxt "#31006"
+msgid "Shadowcolor for unfocused lyrics text"
+msgstr "Odaklanmamış şarkı sözleri metni için gölge rengi"
+
+msgctxt "#31007"
+msgid "New Episodes"
+msgstr "Yeni Bölümler"
+
+msgctxt "#31008"
+msgid "color for indicator background"
+msgstr "Gösterge arka plan rengi"
+
+msgctxt "#31009"
+msgid "Use advanced layout"
+msgstr "Gelişmiş düzeni kullan"
+
+msgctxt "#31010"
+msgid "TMDb Helper search content"
+msgstr "TMDb Helper arama içeriği"
+
+msgctxt "#31011"
+msgid "Button focus text color (bordered focus)"
+msgstr "Düğme odak metin rengi (çerçeveli odak)"
+
+msgctxt "#31012"
+msgid "Up next addon option"
+msgstr "Sıradaki eklenti seçeneği"
+
+msgctxt "#31013"
+msgid "Configure shortcuts"
+msgstr "Kısayolları yapılandır"
+
+msgctxt "#31014"
+msgid "Edit menu shortcuts"
+msgstr "Menü kısayollarını düzenle"
+
+msgctxt "#31015"
+msgid "Button text color"
+msgstr "Düğme metin rengi"
+
+msgctxt "#31016"
+msgid "Bingie layout playback & OSD"
+msgstr "Bingie düzeni oynatma ve OSD"
+
+msgctxt "#31017"
+msgid "Use alternative video OSD layout"
+msgstr "Alternatif video OSD düzenini kullan"
+
+msgctxt "#31018"
+msgid "Bingie Main Landscape"
+msgstr "Bingie Ana Manzara"
+
+msgctxt "#31019"
+msgid "Progress bar color"
+msgstr "İlerleme çubuğu rengi"
+
+msgctxt "#31020"
+msgid "Progress bar background color"
+msgstr "İlerleme çubuğu arka plan rengi"
+
+msgctxt "#31021"
+msgid "Watch credits"
+msgstr "Jeneriği izle"
+
+msgctxt "#31022"
+msgid "Background settings"
+msgstr "Arka plan ayarları"
+
+msgctxt "#31023"
+msgid "Rated"
+msgstr "Derecelendirildi"
+
+msgctxt "#31024"
+msgid "Force stop playback when not in fullscreen mode (exc. live TV)"
+msgstr "Tam ekran modunda değilken oynatmayı durdur (canlı TV hariç)"
+
+msgctxt "#31025"
+msgid "Categories"
+msgstr "Kategoriler"
+
+msgctxt "#31026"
+msgid "Search for addons"
+msgstr "Eklentileri ara"
+
+msgctxt "#31027"
+msgid "Bingie Main Poster"
+msgstr "Bingie Ana Poster"
+
+msgctxt "#31028"
+msgid "Shadowcolor for focused lyrics text"
+msgstr "Odaklanmış şarkı sözleri metni için gölge rengi"
+
+msgctxt "#31029"
+msgid "Pink"
+msgstr "Pembe"
+
+msgctxt "#31030"
+msgid "Display weather"
+msgstr "Hava durumunu göster"
+
+msgctxt "#31031"
+msgid "Enable FanArt"
+msgstr "FanArt'ı etkinleştir"
+
+msgctxt "#31032"
+msgid "OSD progress bar background color"
+msgstr "OSD ilerleme çubuğu arka plan rengi"
+
+msgctxt "#31033"
+msgid "OSD progress bar color"
+msgstr "OSD ilerleme çubuğu rengi"
+
+msgctxt "#31034"
+msgid "items total"
+msgstr "toplam öğe"
+
+msgctxt "#31035"
+msgid "Movies in progress"
+msgstr "Devam eden filmler"
+
+msgctxt "#31036"
+msgid "Search by TV Shows"
+msgstr "TV Şovlarına göre ara"
+
+msgctxt "#31037"
+msgid "Set default limit for items in widgets"
+msgstr "Widget'lardaki öğeler için varsayılan sınırı belirle"
+
+msgctxt "#31038"
+msgid "Search Music Videos, Albums, Artists or Songs"
+msgstr "Müzik Videoları, Albümler, Sanatçılar veya Şarkılar Ara"
+
+msgctxt "#31039"
+msgid "Disable 'New Episodes' indicator"
+msgstr "'Yeni Bölümler' göstergesini devre dışı bırak"
+
+msgctxt "#31040"
+msgid "Now playing"
+msgstr "Şimdi oynatılıyor"
+
+msgctxt "#31041"
+msgid "Bingie splash image"
+msgstr "Bingie açılış görseli"
+
+msgctxt "#31042"
+msgid "Enable studio logo"
+msgstr "Stüdyo logosunu etkinleştir"
+
+msgctxt "#31043"
+msgid "OSD progress bar cache color"
+msgstr "OSD ilerleme çubuğu önbellek rengi"
+
+msgctxt "#31044"
+msgid "OSD text color"
+msgstr "OSD metin rengi"
+
+msgctxt "#31045"
+msgid "Enable air date"
+msgstr "Yayın tarihini etkinleştir"
+
+msgctxt "#31046"
+msgid "Anime"
+msgstr "Anime"
+
+msgctxt "#31047"
+msgid "Secondary text color"
+msgstr "İkincil metin rengi"
+
+msgctxt "#31048"
+msgid "Home main menu focus icon color"
+msgstr "Ana menü odak simge rengi"
+
+msgctxt "#31049"
+msgid "Music & Musicals"
+msgstr "Müzik & Müzikal"
+
+msgctxt "#31050"
+msgid "All Movies"
+msgstr "Tüm Filmler"
+
+msgctxt "#31051"
+msgid "All Shows"
+msgstr "Tüm Şovlar"
+
+msgctxt "#31052"
+msgid "Widget Content"
+msgstr "Widget İçeriği"
+
+msgctxt "#31053"
+msgid "Poster"
+msgstr "Poster"
+
+msgctxt "#31054"
+msgid "Artwork"
+msgstr "Sanat Eseri"
+
+msgctxt "#31055"
+msgid "Banner"
+msgstr "Afiş"
+
+msgctxt "#31056"
+msgid "Landscape"
+msgstr "Manzara"
+
+msgctxt "#31057"
+msgid "ClearArt"
+msgstr "ClearArt"
+
+msgctxt "#31058"
+msgid "Recently Added Albums"
+msgstr "Son Eklenen Albümler"
+
+msgctxt "#31059"
+msgid "remaining"
+msgstr "kalan"
+
+msgctxt "#31060"
+msgid "Show/hide OSD buttons"
+msgstr "OSD düğmelerini göster/gizle"
+
+msgctxt "#31061"
+msgid "for"
+msgstr "için"
+
+msgctxt "#31062"
+msgid "YouTube"
+msgstr "YouTube"
+
+msgctxt "#31063"
+msgid "To apply the settings you must leave the current media folder or addon."
+msgstr "Ayarları uygulamak için mevcut medya klasöründen veya eklentiden çıkmalısınız."
+
+msgctxt "#31064"
+msgid "No items in this category."
+msgstr "Bu kategoride öğe yok."
+
+msgctxt "#31065"
+msgid "Up Next"
+msgstr "Sıradaki"
+
+msgctxt "#31066"
+msgid "Watch"
+msgstr "İzle"
+
+msgctxt "#31067"
+msgid "Now"
+msgstr "Şimdi"
+
+msgctxt "#31068"
+msgid "Alternative layout playback & OSD"
+msgstr "Alternatif düzen oynatma ve OSD"
+
+msgctxt "#31069"
+msgid "PVR Hub"
+msgstr "PVR Merkezi"
+
+msgctxt "#31070"
+msgid "Watch Season"
+msgstr "Sezonu İzle"
+
+msgctxt "#31071"
+msgid "Setting level"
+msgstr "Ayar seviyesi"
+
+msgctxt "#31072"
+msgid "Enable autoclose video OSD"
+msgstr "Video OSD'yi otomatik kapatmayı etkinleştir"
+
+msgctxt "#31073"
+msgid "Lock view"
+msgstr "Görünümü kilitle"
+
+msgctxt "#31074"
+msgid "Unlock view"
+msgstr "Görünümün kilidini aç"
+
+msgctxt "#31075"
+msgid "Enable startup animation in 4K"
+msgstr "4K'da başlangıç animasyonunu etkinleştir"
+
+msgctxt "#31076"
+msgid "Switch Profiles"
+msgstr "Profilleri Değiştir"
+
+msgctxt "#31077"
+msgid "Home main menu icon color"
+msgstr "Ana menü simge rengi"
+
+msgctxt "#31078"
+msgid "Blockbuster Movies"
+msgstr "Gişe Rekortmeni Filmler"
+
+msgctxt "#31079"
+msgid "Bingeworthy TV Shows"
+msgstr "İzlemeye Değer TV Şovları"
+
+msgctxt "#31080"
+msgid "Watch It Again"
+msgstr "Tekrar İzle"
+
+msgctxt "#31081"
+msgid "Artists named"
+msgstr "Sanatçılar"
+
+msgctxt "#31082"
+msgid "Song titles related to"
+msgstr "İlgili şarkı başlıkları"
+
+msgctxt "#31083"
+msgid "Active"
+msgstr "Aktif"
+
+msgctxt "#31084"
+msgid "Video info additional info icon color"
+msgstr "Video bilgisi ek bilgi simge rengi"
+
+msgctxt "#31085"
+msgid "Flags text color"
+msgstr "Bayrak metin rengi"
+
+msgctxt "#31086"
+msgid "Add to My List"
+msgstr "Listeme Ekle"
+
+msgctxt "#31087"
+msgid "Notice"
+msgstr "Uyarı"
+
+msgctxt "#31088"
+msgid "Live TV"
+msgstr "Canlı TV"
+
+msgctxt "#31089"
+msgid "Crew"
+msgstr "Ekip"
+
+msgctxt "#31090"
+msgid "Large color icons"
+msgstr "Büyük renkli simgeler"
+
+msgctxt "#31091"
+msgid "Remove from My List"
+msgstr "Listemden Kaldır"
+
+msgctxt "#31092"
+msgid "Unwatched Episodes"
+msgstr "İzlenmemiş Bölümler"
+
+msgctxt "#31093"
+msgid "Progress bar text color"
+msgstr "İlerleme çubuğu metin rengi"
+
+msgctxt "#31094"
+msgid "Wikipedia"
+msgstr "Wikipedia"
+
+msgctxt "#31095"
+msgid "Bingie Seasons"
+msgstr "Bingie Sezonlar"
+
+msgctxt "#31096"
+msgid "OSD primary text color"
+msgstr "OSD birincil metin rengi"
+
+msgctxt "#31097"
+msgid "OSD details row text color"
+msgstr "OSD detay satırı metin rengi"
+
+msgctxt "#31098"
+msgid "Critically Acclaimed TV Shows"
+msgstr "Eleştirmenlerce Beğenilen TV Şovları"
+
+msgctxt "#31099"
+msgid "Square"
+msgstr "Kare"
+
+msgctxt "#31100"
+msgid "Starring"
+msgstr "Başrolde"
+
+msgctxt "#31101"
+msgid "Recently Added TV Shows"
+msgstr "Son Eklenen TV Şovları"
+
+msgctxt "#31102"
+msgid "Label text color"
+msgstr "Etiket metin rengi"
+
+msgctxt "#31103"
+msgid "OSD label text color"
+msgstr "OSD etiket metin rengi"
+
+msgctxt "#31104"
+msgid "Season Greetings"
+msgstr "Sezon Tebrikleri"
+
+msgctxt "#31105"
+msgid "color for indicator text"
+msgstr "Gösterge metin rengi"
+
+msgctxt "#31106"
+msgid "Formed"
+msgstr "Kuruldu"
+
+msgctxt "#31107"
+msgid "Disbanded"
+msgstr "Dağıldı"
+
+msgctxt "#31108"
+msgid "Released"
+msgstr "Yayınlandı"
+
+msgctxt "#31109"
+msgid "Album"
+msgstr "Albüm"
+
+msgctxt "#31110"
+msgid "Movies, TV Shows and People"
+msgstr "Filmler, TV Şovları ve İnsanlar"
+
+msgctxt "#31111"
+msgid "Written by"
+msgstr "Yazan"
+
+msgctxt "#31112"
+msgid "Finishes at"
+msgstr "Bitiş Saati"
+
+msgctxt "#31113"
+msgid "Auto show submenu"
+msgstr "Alt menüyü otomatik göster"
+
+msgctxt "#31114"
+msgid "Show extended info"
+msgstr "Genişletilmiş bilgiyi göster"
+
+msgctxt "#31115"
+msgid "Homescreen layout"
+msgstr "Ana ekran düzeni"
+
+msgctxt "#31116"
+msgid "Default"
+msgstr "Varsayılan"
+
+msgctxt "#31117"
+msgid "Enable custom search"
+msgstr "Özel aramayı etkinleştir"
+
+msgctxt "#31118"
+msgid "Ratings and studio logo visibility"
+msgstr "Derecelendirmeler ve stüdyo logosu görünürlüğü"
+
+msgctxt "#31119"
+msgid "Show large thumbnail"
+msgstr "Büyük küçük resmi göster"
+
+msgctxt "#31120"
+msgid "Enable details icons (cast, director, genre, etc...)"
+msgstr "Detay simgelerini etkinleştir (oyuncular, yönetmen, tür vb.)"
+
+msgctxt "#31121"
+msgid "Homescreen layout"
+msgstr "Ana ekran düzeni"
+
+msgctxt "#31122"
+msgid "Bingie Main Square"
+msgstr "Bingie Ana Kare"
+
+msgctxt "#31123"
+msgid "Enable moving focus frame in home & hubs"
+msgstr "Ana ekran ve merkezlerde hareketli odak çerçevesini etkinleştir"
+
+msgctxt "#31125"
+msgid "Always visible"
+msgstr "Her zaman görünür"
+
+msgctxt "#31126"
+msgid "Watchlist"
+msgstr "İzleme Listesi"
+
+msgctxt "#31127"
+msgid "Recently Added"
+msgstr "Son Eklenenler"
+
+msgctxt "#31128"
+msgid "Recently played"
+msgstr "Son Oynatılanlar"
+
+msgctxt "#31129"
+msgid "My TV Shows"
+msgstr "TV Şovlarım"
+
+msgctxt "#31130"
+msgid "My movies"
+msgstr "Filmlerim"
+
+msgctxt "#31131"
+msgid "Recently Added Artists"
+msgstr "Son Eklenen Sanatçılar"
+
+msgctxt "#31132"
+msgid "TV channels"
+msgstr "TV kanalları"
+
+msgctxt "#31133"
+msgid "Show plot in video infopanel or onscreen display"
+msgstr "Video bilgi panelinde veya ekranda konuyu göster"
+
+msgctxt "#31134"
+msgid "Profile"
+msgstr "Profil"
+
+msgctxt "#31135"
+msgid "Radio channels"
+msgstr "Radyo kanalları"
+
+msgctxt "#31136"
+msgid "New TV Shows"
+msgstr "Yeni TV Şovları"
+
+msgctxt "#31137"
+msgid "Settings for recordings"
+msgstr "Kayıtlar için ayarlar"
+
+msgctxt "#31138"
+msgid "Cancel recording of this episode only"
+msgstr "Yalnızca bu bölümün kaydını iptal et"
+
+msgctxt "#31139"
+msgid "Cancel recording of all episodes"
+msgstr "Tüm bölümlerin kaydını iptal et"
+
+msgctxt "#31140"
+msgid "
