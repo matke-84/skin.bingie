@@ -2203,7 +2203,6 @@
 			</control>	
 			<!--Collection List-->
 			<control type="group">
-			<animation effect="fade" start="100" end="0" time="500" condition="Player.HasVideo + ![VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(musicvideos) | VideoPlayer.Content(livetv) | Pvr.IsPlayingRecording]">Conditional</animation>
 			<visible>!Skin.HasSetting(VideoInfoButtonCollection)</visible>
 			<visible>!String.IsEqual(Window.Property(AdditionalInfo), trailers) + !String.IsEqual(Window.Property(AdditionalInfo),similar) + !String.IsEqual(Window.Property(AdditionalInfo),cast) + !String.IsEqual(Window.Property(AdditionalInfo),plot)</visible>
 			<visible>!String.IsEmpty(ListItem.Set)</visible>

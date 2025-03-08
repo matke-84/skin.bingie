@@ -16,7 +16,7 @@
 			<control type="image">
                 <posy>0</posy>
                 <posx>0</posx>
-                <width>550</width>
+                <width>572</width>
                 <height>100%</height>
                 <texture border="5">diffuse/panel2.png</texture>
                 <colordiffuse>$INFO[Skin.String(OSDPanelColor)]</colordiffuse>
@@ -25,9 +25,9 @@
 
             <!-- header -->
             <control type="label">
-                <posx>25</posx>
+                <posx>20</posx>
                 <posy>10</posy>
-                <width min="80" max="1100">auto</width>
+                <width min="80" max="530">auto</width>
                 <height>100</height>
                 <font>Bold45</font>
                 <align>left</align>
@@ -37,9 +37,9 @@
                 <visible>!pvr.IsPlayingRadio</visible>
             </control>
             <control type="label">
-                <posx>25</posx>
+                <posx>20</posx>
                 <posy>10</posy>
-                <width min="80" max="1100">auto</width>
+                <width min="80" max="530">auto</width>
                 <height>100</height>
                 <font>Bold45</font>
                 <align>left</align>
@@ -51,9 +51,9 @@
             
             <control type="label">
                 <!--Info Time Date-->
-                <posx>25</posx>
+                <posx>20</posx>
                 <posy>80</posy>
-                <width>600</width>
+                <width>530</width>
                 <height>50</height>
                 <font>Reg28</font>
                 <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
@@ -65,29 +65,18 @@
                 <!--Seperator-->
                 <posx>10</posx>
                 <posy>152</posy>
-                <width>530</width>
+                <width>552</width>
                 <height>10</height>
                 <align>left</align>
                 <texture border="10">common/menu-separator2.png</texture>
-            </control>
-             <!-- Scollbar behind panel for touch control-->
-            <control type="scrollbar" id="60">
-                <posx>0</posx>
-                <posy>160</posy>
-                <width>540</width>
-                <height>900</height>
-                <onup>60</onup>
-                <ondown>60</ondown>
-                <onleft>50</onleft>
-                <animation effect="fade" start="100" end="0" time="10" condition="true">Conditional</animation>
             </control>
             
             <!--List ID=11-->
             <control type="list" id="11">
                 <posx>10</posx>
                 <posy>155</posy>
-                <width>530</width>
-                <height>900</height>
+                <width>552</width>
+                <height>910</height>
                 <onleft>PreviousChannelGroup</onleft>
                 <onright>NextChannelGroup</onright>
                 <onup>11</onup>
@@ -95,7 +84,7 @@
                 <viewtype label="535">list</viewtype>
                 <pagecontrol>60</pagecontrol>
                 <scrolltime>200</scrolltime>
-                <itemlayout height="127" width="530">
+                <itemlayout height="130" width="552">
                     <control type="label">
                         <!--Channel Number-->
                         <posx>0</posx>
@@ -111,35 +100,43 @@
                     </control>
                     <control type="image">
                         <!--Rec-->
-                        <posx>100</posx>
-                        <posy>-2</posy>
+                        <posx>122</posx>
+                        <posy>-3</posy>
                         <width>51</width>
                         <height>51</height>
                         <texture>pvr/icons/pvr_record.png</texture>
                         <visible>ListItem.IsRecording</visible>
                     </control>
+					<control type="image">
+						<posx>122</posx>
+                        <posy>-3</posy>
+                        <width>51</width>
+                        <height>51</height>
+						<texture>pvr/icons/pvr_timer.png</texture>
+						<visible>!ListItem.IsRecording + ListItem.HasTimer + !ListItem.HasTimerSchedule</visible>
+					</control>
                     <control type="image">
                         <!--Now Playing Icon-->
-                        <posx>100</posx>
-                        <posy>-2</posy>
-                        <width>50</width>
-                        <height>50</height>
+                        <posx>114</posx>
+                        <posy>-9</posy>
+                        <width>64</width>
+                        <height>64</height>
                         <texture>pvr/icons/pvr_play.png</texture>
                         <visible>ListItem.Isplaying + !ListItem.IsRecording</visible>
                     </control>
                     <control type="image">
                         <!--Channel Icon-->
-                        <posx>15</posx>
-                        <posy>17</posy>
-                        <width>80</width>
-                        <height>90</height>
+                        <posx>10</posx>
+                        <posy>10</posy>
+                        <width>108</width>
+                        <height>108</height>
                         <texture fallback="defaulttvshows.png">$INFO[ListItem.Icon]</texture>
                         <aspectratio>keep</aspectratio>
                     </control>
                     <control type="label">
                         <!--Channel Name-->
-                        <posx>110</posx>
-                        <posy>10</posy>
+                        <posx>132</posx>
+                        <posy>9</posy>
                         <width>410</width>
                         <height>25</height>
                         <font>Reg28</font>
@@ -148,13 +145,13 @@
                         <align>left</align>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Label]</label>
-						<visible>!ListItem.Isplaying + !ListItem.IsRecording</visible>
+						<visible>!ListItem.Isplaying + !ListItem.IsRecording + !ListItem.HasTimer</visible>
                     </control>
 					<control type="label">
                         <!--Channel Name-->
-                        <posx>150</posx>
-                        <posy>10</posy>
-                        <width>360</width>
+                        <posx>172</posx>
+                        <posy>9</posy>
+                        <width>370</width>
                         <height>25</height>
                         <font>Reg28</font>
                         <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
@@ -162,12 +159,12 @@
                         <align>left</align>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Label]</label>
-						<visible>ListItem.Isplaying | ListItem.IsRecording</visible>
+						<visible>ListItem.Isplaying | ListItem.IsRecording | ListItem.HasTimer</visible>
                     </control>
                     <control type="label">
                         <!--Channel Now Playing (LEFT)-->
-                        <posx>110</posx>
-                        <posy>45</posy>
+                        <posx>132</posx>
+                        <posy>44</posy>
                         <width>630</width>
                         <height>20</height>
                         <font>Reg25</font>
@@ -179,8 +176,8 @@
                     </control>
                     <control type="label">
                         <!--Time: Start, End (RIGHT)-->
-                        <posx>110</posx>
-                        <posy>75</posy>
+                        <posx>132</posx>
+                        <posy>74</posy>
                         <width>110</width>
                         <height>20</height>
                         <font>Reg18</font>
@@ -193,8 +190,8 @@
                     </control>
                     <control type="progress">
                         <description>Progressbar</description>
-                        <left>215</left>
-                        <top>75</top>
+                        <left>237</left>
+                        <top>74</top>
                         <width>200</width>
                         <height>10</height>
                         <info>ListItem.Progress</info>
@@ -203,7 +200,7 @@
                     <control type="label">
                         <!--Time: Start, End (RIGHT)-->
                         <right>10</right>
-                        <posy>75</posy>
+                        <posy>73</posy>
                         <width>130</width>
                         <height>20</height>
                         <font>Reg18</font>
@@ -216,8 +213,8 @@
                     </control>
                     <control type="label">
                         <!--Next info-->
-                        <posx>110</posx>
-                        <posy>100</posy>
+                        <posx>132</posx>
+                        <posy>99</posy>
                         <width>630</width>
                         <height>20</height>
                         <font>Reg18</font>
@@ -231,20 +228,20 @@
                     <control type="image">
                         <!--Separator-->
                         <posx>0</posx>
-                        <posy>125</posy>
-                        <width>530</width>
+                        <posy>128</posy>
+                        <width>552</width>
                         <height>2</height>
                         <fadetime>400</fadetime>
                         <colordiffuse>BBFFFFFF</colordiffuse>
                         <texture>common/separator.png</texture>
                     </control>
                 </itemlayout>
-                <focusedlayout height="127" width="530">
+                <focusedlayout height="130" width="552">
                     <control type="image">
                         <posx>0</posx>
                         <posy>0</posy>
-                        <width>530</width>
-                        <height>125</height>
+                        <width>552</width>
+                        <height>128</height>
                         <texture border="10">diffuse/panel.png</texture>
                         <colordiffuse>$INFO[Skin.String(ButtonFocusColor)]</colordiffuse>
                     </control>
@@ -263,35 +260,43 @@
                     </control>
                     <control type="image">
                         <!--Rec-->
-                        <posx>100</posx>
-                        <posy>-2</posy>
+                        <posx>122</posx>
+                        <posy>-3</posy>
                         <width>51</width>
                         <height>51</height>
                         <texture>pvr/icons/pvr_record.png</texture>
                         <visible>ListItem.IsRecording</visible>
                     </control>
+					<control type="image">
+						<posx>122</posx>
+                        <posy>-3</posy>
+                        <width>51</width>
+                        <height>51</height>
+						<texture>pvr/icons/pvr_timer.png</texture>
+						<visible>!ListItem.IsRecording + ListItem.HasTimer + !ListItem.HasTimerSchedule</visible>
+					</control>
                     <control type="image">
                         <!--Now Playing Icon-->
-                        <posx>100</posx>
-                        <posy>-2</posy>
-                        <width>50</width>
-                        <height>50</height>
+                        <posx>114</posx>
+                        <posy>-9</posy>
+                        <width>64</width>
+                        <height>64</height>
                         <texture>pvr/icons/pvr_play.png</texture>
                         <visible>ListItem.Isplaying + !ListItem.IsRecording</visible>
                     </control>
                     <control type="image">
                         <!--Channel Icon-->
-                        <posx>15</posx>
-                        <posy>17</posy>
-                        <width>80</width>
-                        <height>90</height>
+                        <posx>10</posx>
+                        <posy>10</posy>
+                        <width>108</width>
+                        <height>108</height>
                         <texture fallback="defaulttvshows.png">$INFO[ListItem.Icon]</texture>
                         <aspectratio>keep</aspectratio>
                     </control>
                     <control type="label">
                         <!--Channel Name-->
-                        <posx>110</posx>
-                        <posy>10</posy>
+                        <posx>132</posx>
+                        <posy>9</posy>
                         <width>410</width>
                         <height>25</height>
                         <font>Reg28</font>
@@ -300,13 +305,13 @@
                         <align>left</align>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Label]</label>
-						<visible>!ListItem.Isplaying + !ListItem.IsRecording</visible>
+						<visible>!ListItem.Isplaying + !ListItem.IsRecording + !ListItem.HasTimer</visible>
                     </control>
 					<control type="label">
                         <!--Channel Name-->
-                        <posx>150</posx>
-                        <posy>10</posy>
-                        <width>360</width>
+                        <posx>172</posx>
+                        <posy>9</posy>
+                        <width>370</width>
                         <height>25</height>
                         <font>Reg28</font>
                         <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
@@ -314,12 +319,12 @@
                         <align>left</align>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Label]</label>
-						<visible>ListItem.Isplaying | ListItem.IsRecording</visible>
+						<visible>ListItem.Isplaying | ListItem.IsRecording | ListItem.HasTimer</visible>
                     </control>
                     <control type="label">
                         <!--Channel Now Playing (LEFT)-->
-                        <posx>110</posx>
-                        <posy>45</posy>
+                        <posx>132</posx>
+                        <posy>44</posy>
                         <width>630</width>
                         <height>20</height>
                         <font>Reg25</font>
@@ -332,8 +337,8 @@
                     </control>
                     <control type="label">
                         <!--Time: Start, End (RIGHT)-->
-                        <posx>110</posx>
-                        <posy>75</posy>
+                        <posx>132</posx>
+                        <posy>74</posy>
                         <width>110</width>
                         <height>20</height>
                         <font>Reg18</font>
@@ -346,8 +351,8 @@
                     </control>
                     <control type="progress">
                         <description>Progressbar</description>
-                        <left>215</left>
-                        <top>75</top>
+                        <left>237</left>
+                        <top>74</top>
                         <width>200</width>
                         <height>10</height>
                         <info>ListItem.Progress</info>
@@ -356,7 +361,7 @@
                     <control type="label">
                         <!--Time: Start, End (RIGHT)-->
                         <right>10</right>
-                        <posy>75</posy>
+                        <posy>73</posy>
                         <width>110</width>
                         <height>20</height>
                         <font>Reg18</font>
@@ -369,8 +374,8 @@
                     </control>
                     <control type="label">
                         <!--Next info-->
-                        <posx>110</posx>
-                        <posy>100</posy>
+                        <posx>132</posx>
+                        <posy>99</posy>
                         <width>630</width>
                         <height>20</height>
                         <font>Reg18</font>
@@ -384,8 +389,8 @@
                     <control type="image">
                         <!--Separator-->
                         <posx>0</posx>
-                        <posy>125</posy>
-                        <width>530</width>
+                        <posy>128</posy>
+                        <width>552</width>
                         <height>2</height>
                         <fadetime>400</fadetime>
                         <colordiffuse>BBFFFFFF</colordiffuse>
@@ -541,10 +546,10 @@
 					
                     <control type="image">
                         <!--Now Playing Icon-->
-                        <right>21</right>
-                        <posy>5</posy>
-                        <width>50</width>
-                        <height>50</height>
+                        <right>16</right>
+                        <posy>-2</posy>
+                        <width>64</width>
+                        <height>64</height>
                         <texture>pvr/icons/pvr_play.png</texture>
                         <visible>ListItem.Isplaying + !ListItem.IsRecording</visible>
                     </control>					
@@ -562,7 +567,7 @@
                     <control type="image">
                         <!--Separator-->
                         <posx>3</posx>
-                        <posy>59</posy>
+                        <posy>58</posy>
                         <height>2</height>
 						<width>1094</width>
                         <fadetime>400</fadetime>
@@ -624,10 +629,10 @@
 					
                     <control type="image">
                         <!--Now Playing Icon-->
-                        <right>21</right>
-                        <posy>5</posy>
-                        <width>50</width>
-                        <height>50</height>
+                        <right>16</right>
+                        <posy>-2</posy>
+                        <width>64</width>
+                        <height>64</height>
                         <texture>pvr/icons/pvr_play.png</texture>
                         <visible>ListItem.Isplaying + !ListItem.IsRecording</visible>
                     </control>					
@@ -640,6 +645,17 @@
                         <aspectratio>keep</aspectratio>
                         <visible>![ListItem.Isplaying | ListItem.IsRecording | ListItem.HasTimer]</visible>
                         <bordersize>8</bordersize>
+                    </control>
+					
+					<control type="image">
+                        <!--Separator-->
+                        <posx>3</posx>
+                        <posy>60</posy>
+                        <height>2</height>
+						<width>1094</width>
+                        <fadetime>400</fadetime>
+                        <colordiffuse>BBFFFFFF</colordiffuse>
+                        <texture>common/separator.png</texture>
                     </control>
                 </focusedlayout>
             </control>

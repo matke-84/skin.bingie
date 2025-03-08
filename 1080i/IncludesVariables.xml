@@ -191,6 +191,9 @@
         <value condition="Container.Content(addons) + String.Contains(ListItem.Label2,%)">$INFO[ListItem.Label]$INFO[ListItem.Label2, (,)]</value>
         <value condition="Container.Content(albums) + !String.IsEmpty(ListItem.Label2)">$INFO[ListItem.Label2] - $INFO[ListItem.Label]</value>
         <value condition="Container.Content(albums) + !String.IsEmpty(ListItem.Artist)">$INFO[ListItem.Artist] - $INFO[ListItem.Title]</value>
+		<value condition="Container.Content(movies) + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
+		<value condition="Container.Content(seasons) + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
+		<value condition="Container.Content(episodes) + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.Season,$LOCALIZE[31000],:]$INFO[ListItem.Episode,$LOCALIZE[31001], ]$INFO[ListItem.Title]</value>
         <value>$INFO[ListItem.Label]</value>
     </variable>
     
@@ -226,13 +229,10 @@
         <value condition="String.IsEmpty(ListItem.Property(submenuVisibility)) + String.Contains(ListItem.FolderPath, pvr)">$INFO[ListItem.Title][CR]$INFO[ListItem.label]</value>
 		<value condition="String.IsEmpty(ListItem.Property(submenuVisibility)) + [String.IsEqual(ListItem.Property(DBTYPE),weather) | String.Contains(Container(900).ListItem.Property(widgetPath), weather)]">$INFO[ListItem.label]$INFO[ListItem.label2, ,]</value>
 		<!-- normal items-->
-        <value condition="$EXP[IsTvShowDBType]">$INFO[ListItem.label]</value>
-        <value condition="Container.Content(seasons)">$INFO[ListItem.label]</value>
-		<value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Episode) + Integer.IsGreater(ListItem.Episode,9) + Integer.IsGreater(ListItem.Season,9)">$INFO[ListItem.Title][CR]$INFO[ListItem.TvShowTitle] • [UPPERCASE]S$INFO[ListItem.Season]E$INFO[ListItem.Episode][/UPPERCASE]</value>
-        <value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Episode) + Integer.IsGreater(ListItem.Episode,9)">$INFO[ListItem.Title][CR]$INFO[ListItem.TvShowTitle] • [UPPERCASE]S0$INFO[ListItem.Season]E$INFO[ListItem.Episode][/UPPERCASE]</value>
-        <value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Episode) + Integer.IsGreater(ListItem.Season,9)">$INFO[ListItem.Title][CR]$INFO[ListItem.TvShowTitle] • [UPPERCASE]S$INFO[ListItem.Season]E0$INFO[ListItem.Episode][/UPPERCASE]</value>
-        <value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Episode)">$INFO[ListItem.Title][CR]$INFO[ListItem.TvShowTitle] • [UPPERCASE]S0$INFO[ListItem.Season]E0$INFO[ListItem.Episode][/UPPERCASE]</value>
-		
+		<value condition="$EXP[IsMovieDBType] + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
+		<value condition="$EXP[IsSeasonDBType] + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
+        <value condition="$EXP[IsTvShowDBType] + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.label]</value>
+        <value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Episode) + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title][CR]$INFO[ListItem.TvShowTitle] • [UPPERCASE]S$INFO[ListItem.Season,,:]E$INFO[ListItem.Episode][/UPPERCASE]</value>		
         <value condition="Window.IsActive(tvchannels)">$INFO[ListItem.Title,[B],[/B]]$VAR[ListDatePVR,[CR]]</value>
         <value condition="[Window.IsActive(tvchannels) | Window.IsActive(tvguide) | Window.IsActive(tvtimers) | Window.IsActive(tvsearch) | Window.IsActive(tvrecordings)]">$INFO[ListItem.ChannelName,, • ]$VAR[ListDatePVR]</value>
 		<value condition="String.IsEmpty(ListItem.Property(submenuVisibility)) + !String.IsEmpty(ListItem.Year)">$INFO[ListItem.label][CR]$INFO[ListItem.Year]</value>
@@ -248,13 +248,10 @@
 		<value condition="String.IsEmpty(ListItem.Property(submenuVisibility)) + String.IsEqual(Container(900).ListItem.Property(widget), smart-pvr) + String.IsEqual(ListItem.Property(type),recorded)">$INFO[ListItem.label]</value>
 		<value condition="String.IsEmpty(ListItem.Property(submenuVisibility)) + [String.IsEqual(ListItem.Property(DBTYPE),weather) | String.Contains(Container(900).ListItem.Property(widgetPath), weather)]">$INFO[ListItem.label]$INFO[ListItem.label2, ,]</value>
 		<!-- normal items-->
-        <value condition="$EXP[IsTvShowDBType]">$INFO[ListItem.label]</value>
-        <value condition="Container.Content(seasons)">$INFO[ListItem.label]</value>
-		<value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Episode) + Integer.IsGreater(ListItem.Episode,9) + Integer.IsGreater(ListItem.Season,9)">$INFO[ListItem.TvShowTitle] [UPPERCASE]S$INFO[ListItem.Season]E$INFO[ListItem.Episode][/UPPERCASE]</value>
-        <value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Episode) + Integer.IsGreater(ListItem.Episode,9)">$INFO[ListItem.TvShowTitle] [UPPERCASE]S0$INFO[ListItem.Season]E$INFO[ListItem.Episode][/UPPERCASE]</value>
-        <value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Episode) + Integer.IsGreater(ListItem.Season,9)">$INFO[ListItem.TvShowTitle] [UPPERCASE]S$INFO[ListItem.Season]E0$INFO[ListItem.Episode][/UPPERCASE]</value>
-        <value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Episode)">$INFO[ListItem.TvShowTitle] [UPPERCASE]S0$INFO[ListItem.Season]E0$INFO[ListItem.Episode][/UPPERCASE]</value>
-		
+		<value condition="$EXP[IsMovieDBType] + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
+		<value condition="$EXP[IsSeasonDBType] + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
+        <value condition="$EXP[IsTvShowDBType] + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.label]</value>
+        <value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Episode)">$INFO[ListItem.TvShowTitle] [UPPERCASE]S$INFO[ListItem.Season,,:]E$INFO[ListItem.Episode][/UPPERCASE]</value>		
         <value condition="Window.IsActive(tvchannels)">$INFO[ListItem.Title,[B],[/B]] $VAR[ListDatePVR]</value>
         <value condition="[Window.IsActive(tvchannels) | Window.IsActive(tvguide) | Window.IsActive(tvtimers) | Window.IsActive(tvsearch) | Window.IsActive(tvrecordings)]">$INFO[ListItem.ChannelName] $VAR[ListDatePVR]</value>
         <value condition="!String.IsEmpty(ListItem.Property(character))">$INFO[ListItem.label] $INFO[ListItem.Property(character),(,)]</value>
@@ -271,13 +268,10 @@
 		<value condition="String.IsEmpty(ListItem.Property(submenuVisibility)) + String.IsEqual(Container(900).ListItem.Property(widget), smart-pvr) + String.IsEqual(ListItem.Property(type),recorded)">$INFO[ListItem.label]</value>
 		<value condition="String.IsEmpty(ListItem.Property(submenuVisibility)) + [String.IsEqual(ListItem.Property(DBTYPE),weather) | String.Contains(Container(900).ListItem.Property(widgetPath), weather)]">$INFO[ListItem.label]$INFO[ListItem.label2, ,]</value>
 		<!-- normal items-->
-        <value condition="$EXP[IsTvShowDBType]">$INFO[ListItem.label]</value>
-        <value condition="Container.Content(seasons)">$INFO[ListItem.label]</value>
-		<value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Episode) + Integer.IsGreater(ListItem.Episode,9) + Integer.IsGreater(ListItem.Season,9)">$INFO[ListItem.TvShowTitle] [UPPERCASE]S$INFO[ListItem.Season]E$INFO[ListItem.Episode][/UPPERCASE]</value>
-        <value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Episode) + Integer.IsGreater(ListItem.Episode,9)">$INFO[ListItem.TvShowTitle] [UPPERCASE]S0$INFO[ListItem.Season]E$INFO[ListItem.Episode][/UPPERCASE]</value>
-        <value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Episode) + Integer.IsGreater(ListItem.Season,9)">$INFO[ListItem.TvShowTitle] [UPPERCASE]S$INFO[ListItem.Season]E0$INFO[ListItem.Episode][/UPPERCASE]</value>
-        <value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Episode)">$INFO[ListItem.TvShowTitle] [UPPERCASE]S0$INFO[ListItem.Season]E0$INFO[ListItem.Episode][/UPPERCASE]</value>
-		
+		<value condition="$EXP[IsMovieDBType] + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
+		<value condition="$EXP[IsSeasonDBType] + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
+        <value condition="$EXP[IsTvShowDBType] + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.label]</value>
+        <value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Episode)">$INFO[ListItem.Title][CR]$INFO[ListItem.TvShowTitle] • [UPPERCASE]S$INFO[ListItem.Season,,:]E$INFO[ListItem.Episode][/UPPERCASE]</value>		
         <value condition="Window.IsActive(tvchannels)">$INFO[ListItem.Title,[B],[/B]] $VAR[ListDatePVR]</value>
         <value condition="[Window.IsActive(tvchannels) | Window.IsActive(tvguide) | Window.IsActive(tvtimers) | Window.IsActive(tvsearch) | Window.IsActive(tvrecordings)]">$INFO[ListItem.ChannelName] $VAR[ListDatePVR]</value>
         <value condition="!String.IsEmpty(ListItem.Property(character))">$INFO[ListItem.label] $INFO[ListItem.Property(character),(,)]</value>
@@ -291,7 +285,7 @@
 	<variable name="ListDetails">
 		<value condition="!Container.content(Addons) + Window.IsActive(pictures )">$INFO[ListItem.Date,, • ]$INFO[ListItem.Size]</value>
 		<value condition="Container.content(Albums) + !String.IsEmpty(ListItem.Property(Album_Duration))">$INFO[ListItem.Year,, • ]$INFO[ListItem.Property(Album_Duration)]</value>
-		<value condition="$EXP[IsMovieDBType] | $EXP[IsTvShowDBType] | $EXP[IsSeasonDBType] | $EXP[IsEpisodeDBType]">$VAR[RatingDecimalToPercentage,,% $LOCALIZE[31192] • ]$VAR[YearOrPremiered,, • ]$VAR[GetMPAA,, • ]$VAR[DurationOrTotalSECount]</value>
+		<value condition="$EXP[IsMovieDBType] | $EXP[IsTvShowDBType] | $EXP[IsSeasonDBType] | $EXP[IsEpisodeDBType]">$VAR[RatingDecimalToPercentage,,% $LOCALIZE[31192] • ]$VAR[YearOrPremiered]$VAR[GetMPAA, • ]$VAR[DurationOrTotalSECount, • ]</value>
 		<value condition="Container.Content(addons) + !String.IsEmpty(ListItem.AddonVersion) + String.IsEmpty(ListItem.Label2)">$LOCALIZE[24051] $INFO[ListItem.AddonVersion]  •  $LOCALIZE[21863]: $INFO[ListItem.AddonCreator]</value>
         <value condition="Container.Content(addons) + !String.IsEmpty(ListItem.AddonVersion) + !String.IsEmpty(ListItem.Label2)">$LOCALIZE[24051] $INFO[ListItem.AddonVersion]  •  $LOCALIZE[21863]: $INFO[ListItem.AddonCreator]  •  $INFO[ListItem.Label2]</value>
 		<value condition="Container.Content(songs)">$INFO[ListItem.Year,, • ]$INFO[ListItem.Genre,, • ]$INFO[ListItem.Album,, • ]$INFO[ListItem.Duration]</value>
@@ -584,6 +578,16 @@
 	<variable name="PVRBullet2">
 		<value condition="[!String.IsEmpty(ListItem.Episode) | !String.IsEmpty(ListItem.Season)] + !String.IsEmpty(ListItem.EpisodeName)">‎ </value>
 		<value condition="String.IsEmpty(ListItem.Episode) + String.IsEmpty(ListItem.Season) + !String.IsEmpty(ListItem.EpisodeName)"> • </value>
+	</variable>
+	
+	<variable name="PVRVideoBullet">
+		<value condition="!String.IsEmpty(VideoPlayer.Episode) | !String.IsEmpty(VideoPlayer.Season)"> • </value>
+		<value condition="String.IsEmpty(VideoPlayer.Episode) | String.IsEmpty(VideoPlayer.Season)"></value>
+	</variable>
+	
+	<variable name="PVRVideoBullet2">
+		<value condition="[!String.IsEmpty(VideoPlayer.Episode) | !String.IsEmpty(VideoPlayer.Season)] + !String.IsEmpty(VideoPlayer.EpisodeName)">‎ </value>
+		<value condition="String.IsEmpty(VideoPlayer.Episode) + String.IsEmpty(VideoPlayer.Season) + !String.IsEmpty(VideoPlayer.EpisodeName)"> • </value>
 	</variable>
 	
 </includes>

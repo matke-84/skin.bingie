@@ -241,8 +241,8 @@
                         <!--Now Playing Icon-->
                         <posx>145</posx>
                         <posy>16</posy>
-                        <width>50</width>
-                        <height>50</height>
+                        <width>64</width>
+                        <height>64</height>
                         <texture>pvr/icons/pvr_play.png</texture>
                         <visible>ListItem.Isplaying + !ListItem.IsRecording</visible>
                     </control>
@@ -260,13 +260,26 @@
                         <description>Channel Value</description>
                         <posx>155</posx>
                         <posy>0</posy>
-                        <width>250</width>
+                        <width>280</width>
                         <height>80</height>
                         <font>Reg28</font>
                         <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
                         <label>$INFO[ListItem.ChannelName]</label>
                         <visible>!ListItem.IsFolder</visible>
-						<animation effect="slide" end="45" time="0" condition="ListItem.IsRecording | ListItem.Isplaying + !ListItem.IsRecording">Conditional</animation>
+						<visible>![ListItem.IsRecording | ListItem.Isplaying + !ListItem.IsRecording]</visible>
+                    </control>
+					<control type="label">
+                        <!--Channel Name-->
+                        <description>Channel Value</description>
+                        <posx>195</posx>
+                        <posy>0</posy>
+                        <width>240</width>
+                        <height>80</height>
+                        <font>Reg28</font>
+                        <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
+                        <label>$INFO[ListItem.ChannelName]</label>
+                        <visible>!ListItem.IsFolder</visible>
+						<visible>ListItem.IsRecording | ListItem.Isplaying + !ListItem.IsRecording</visible>
                     </control>
                     <control type="label">
                         <!--Channel Show-->
@@ -319,10 +332,10 @@
                     </control>
                     <control type="image">
                         <!--Now Playing Icon-->
-                        <posx>145</posx>
-                        <posy>16</posy>
-                        <width>50</width>
-                        <height>50</height>
+                        <posx>137</posx>
+                        <posy>10</posy>
+                        <width>64</width>
+                        <height>64</height>
                         <texture>pvr/icons/pvr_play.png</texture>
                         <visible>ListItem.Isplaying + !ListItem.IsRecording</visible>
                     </control>
@@ -340,13 +353,25 @@
                         <!--Channel Name-->
                         <posx>155</posx>
                         <posy>0</posy>
-                        <width>250</width>
+                        <width>280</width>
                         <height>80</height>
                         <font>Reg28</font>
                         <textcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</textcolor>
                         <label>$INFO[ListItem.ChannelName]</label>
                         <visible>!ListItem.IsFolder</visible>
-						<animation effect="slide" end="45" time="0" condition="ListItem.IsRecording | ListItem.Isplaying + !ListItem.IsRecording">Conditional</animation>
+						<visible>![ListItem.IsRecording | ListItem.Isplaying + !ListItem.IsRecording]</visible>
+                    </control>
+					<control type="label">
+                        <!--Channel Name-->
+                        <posx>195</posx>
+                        <posy>0</posy>
+                        <width>240</width>
+                        <height>80</height>
+                        <font>Reg28</font>
+                        <textcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</textcolor>
+                        <label>$INFO[ListItem.ChannelName]</label>
+                        <visible>!ListItem.IsFolder</visible>
+						<visible>ListItem.IsRecording | ListItem.Isplaying + !ListItem.IsRecording</visible>
                     </control>
                     <control type="label">
                         <!--Channel Show-->

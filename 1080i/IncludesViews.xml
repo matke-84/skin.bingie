@@ -605,7 +605,6 @@
                     <height>110</height>
                     <posy>50</posy>
                     <label>$VAR[Plots]</label>
-                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 					<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                     <align>justify</align>
 					<font>Reg28</font>
@@ -1242,6 +1241,7 @@
                     <height>45%</height>
                     <label>$INFO[ListItem$PARAM[listitem].PercentPlayed]%</label>
                     <textcolor>$INFO[Skin.String(WatchedIndicator.Progress.TextColor)]</textcolor>
+					<shadowcolor>ff4d4d4d</shadowcolor>
                 </control>
             </control>
             <control type="group">
@@ -1261,12 +1261,13 @@
                     <height>45%</height>
                     <label>$INFO[ListItem$PARAM[listitem].Property(UnWatchedEpisodes)]</label>
                     <textcolor>$INFO[Skin.String(WatchedIndicator.Episodes.TextColor)]</textcolor>
+					<shadowcolor>ff4d4d4d</shadowcolor>
                 </control>
             </control>
             <control type="group">
                 <description>Movieset Overlay</description>
                 <visible>[!String.IsEmpty(ListItem$PARAM[listitem].Set) | ListItem$PARAM[listitem].IsCollection | String.Contains(ListItem$PARAM[listitem].Path,videodb://movies/sets/)] + Skin.HasSetting(WatchedIndicator.Sets)</visible>
-                <visible>!Integer.IsGreater(ListItem$PARAM[listitem].PlayCount,0) + !ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
+                <visible>!Integer.IsGreater(ListItem.PercentPlayed,0) + !Integer.IsGreater(ListItem$PARAM[listitem].PlayCount,0) + !ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
 				<control type="image">
                     <texture background="true">$PARAM[overlay_texture]</texture>
                     <colordiffuse>$INFO[Skin.String(WatchedIndicator.Sets.Color)]</colordiffuse>
@@ -1286,11 +1287,7 @@
                     <colordiffuse>$INFO[Skin.String(WatchedIndicator.Playing.Color)]</colordiffuse>
                 </control>
                 <control type="image">
-                    <texture>osd/slim/Play.png</texture>
-                    <left>36%</left>
-                    <top>-10%</top>
-                    <width>74%</width>
-                    <height>74%</height>
+                    <texture>overlays/$PARAM[overlay]/play.png</texture>
                     <colordiffuse>$INFO[Skin.String(WatchedIndicator.Playing.TextColor)]</colordiffuse>
                 </control>
             </control>
@@ -1433,15 +1430,6 @@
                 <height>64</height>
                 <texture>pvr/icons/pvr_timer.png</texture>
                 <visible>!ListItem.IsRecording + ListItem.HasTimer + !ListItem.HasTimerSchedule</visible>
-            </control>
-            <control type="image">
-                <description>Is Playing</description>
-                <right>5</right>
-                <top>2</top>
-                <width>60</width>
-                <height>60</height>
-                <texture>pvr/icons/pvr_play.png</texture>
-                <visible>ListItem.IsPlaying + !ListItem.IsRecording</visible>
             </control>
             <control type="group">
                 <description>PVR recurring timer</description>

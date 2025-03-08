@@ -540,7 +540,7 @@
 		<disabledcolor>ffaaaaaa</disabledcolor>
         <pulseonselect>false</pulseonselect>
         <texturefocus border="20">dialogs/keyboard/key-nf2.png</texturefocus>
-        <texturenofocus colordiffuse="ff1a1a1a" border="20">dialogs/keyboard/key-nf.png</texturenofocus>
+        <texturenofocus colordiffuse="ff1b1b1b" border="20">dialogs/keyboard/key-nf.png</texturenofocus>
     </include>
 	
 	<include name="SearchKeyDefs2">
@@ -554,7 +554,7 @@
 		<disabledcolor>ffaaaaaa</disabledcolor>
         <pulseonselect>false</pulseonselect>
         <texturefocus border="20">dialogs/keyboard/key-nf2.png</texturefocus>
-        <texturenofocus colordiffuse="ff1a1a1a" border="20">dialogs/keyboard/key-nf.png</texturenofocus>
+        <texturenofocus colordiffuse="ff1b1b1b" border="20">dialogs/keyboard/key-nf.png</texturenofocus>
     </include>
 
     <!-- Search Keyboard Row -->

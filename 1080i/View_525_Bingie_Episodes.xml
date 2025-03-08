@@ -596,7 +596,7 @@
                                 <align>left</align>
                                 <font>Reg32</font>
                                 <textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
-                                <label>$INFO[ListItem.Label]</label>
+                                <label>$VAR[View525MainLabel]</label>
                             </control>
                         </itemlayout>
                         <itemlayout height="65" width="565" condition="!Control.HasFocus(5250)">
@@ -621,7 +621,7 @@
                                 <align>left</align>
                                 <font>Reg32</font>
                                 <textcolor>$INFO[Skin.String(BingieButtonFocusTextColor)]</textcolor>
-                                <label>$INFO[ListItem.Label]</label>
+                                <label>$VAR[View525MainLabel]</label>
                             </control>
                             <!-- x Episodes label -->
                             <control type="label">
@@ -665,7 +665,7 @@
                                 <align>left</align>
                                 <font>Reg32</font>
                                 <textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
-                                <label>$INFO[ListItem.Label]</label>
+                                <label>$VAR[View525MainLabel]</label>
                             </control>
                             <!-- x Episodes label -->
                             <control type="label">

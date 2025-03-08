@@ -120,7 +120,7 @@
 						<!--Time-->
 						<posx>10</posx>
 						<posy>17</posy>
-						<width>120</width>
+						<width>130</width>
 						<height>25</height>
 						<font>Reg26</font>
 						<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>						
@@ -129,35 +129,51 @@
 					</control>
 					<control type="image">
 						<!--Rec-->
-						<posx>130</posx>
+						<animation effect="slide" start="0" end="50" time="0" reversible="false" condition="String.Contains(System.Time, AM) | String.Contains(System.Time, PM)">Conditional</animation>
+						<posx>90</posx>
 						<posy>3</posy>
 						<width>55</width>
 						<height>55</height>
 						<texture>pvr/icons/pvr_record.png</texture>
-						<visible>ListItem.IsRecording | ListItem.HasTimer</visible>
+						<visible>ListItem.IsRecording</visible>
 					</control>
 					<control type="image">
-						<!--Now Playing Icon-->
-						<posx>130</posx>
+						<!--Timer-->
+					    <animation effect="slide" start="0" end="50" time="0" reversible="false" condition="String.Contains(System.Time, AM) | String.Contains(System.Time, PM)">Conditional</animation>
+						<posx>90</posx>
 						<posy>3</posy>
 						<width>55</width>
 						<height>55</height>
-						<fadetime>600</fadetime>
-						<texture>pvr/icons/pvr_play.png</texture>
-						<visible>ListItem.IsPlaying + !ListItem.IsRecording + !ListItem.HasTimer</visible>
+						<texture>pvr/icons/pvr_timer.png</texture>
+						<visible>!ListItem.IsRecording + ListItem.HasTimer + !ListItem.HasTimerSchedule</visible>
 					</control>
 					<control type="label">
 						<!--Channel Name-->
-						<animation effect="slide" start="0" end="40" time="0" reversible="false" condition="ListItem.Isplaying | ListItem.IsRecording | ListItem.HasTimer">Conditional</animation>
-						<posx>140</posx>
+						<animation effect="slide" start="0" end="50" time="0" reversible="false" condition="String.Contains(System.Time, AM) | String.Contains(System.Time, PM)">Conditional</animation>
+						<posx>100</posx>
 						<posy>17</posy>
-						<width>450</width>
+						<width>490</width>
 						<height>25</height>
 						<font>Reg28</font>
 						<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>						
 						<align>left</align>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
+						<visible>!ListItem.Isplaying + !ListItem.IsRecording + !ListItem.HasTimer</visible>
+					</control>
+					<control type="label">
+						<!--Channel Name-->
+						<animation effect="slide" start="0" end="50" time="0" reversible="false" condition="String.Contains(System.Time, AM) | String.Contains(System.Time, PM)">Conditional</animation>
+						<posx>143</posx>
+						<posy>17</posy>
+						<width>490</width>
+						<height>25</height>
+						<font>Reg28</font>
+						<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>						
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>ListItem.Isplaying | ListItem.IsRecording | ListItem.HasTimer</visible>
 					</control>
 					<control type="image">
 						<!--Separator-->
@@ -183,7 +199,7 @@
 						<!--Time-->
 						<posx>10</posx>
 						<posy>10</posy>
-						<width>120</width>
+						<width>130</width>
 						<height>25</height>
 						<font>Reg26</font>
 						<textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
@@ -192,35 +208,51 @@
 					</control>
 					<control type="image">
 						<!--Rec-->
-						<posx>130</posx>
+						<animation effect="slide" start="0" end="50" time="0" reversible="false" condition="String.Contains(System.Time, AM) | String.Contains(System.Time, PM)">Conditional</animation>
+						<posx>90</posx>
 						<posy>-5</posy>
 						<width>55</width>
 						<height>55</height>
 						<texture>pvr/icons/pvr_record.png</texture>
-						<visible>ListItem.IsRecording | ListItem.HasTimer</visible>
+						<visible>ListItem.IsRecording</visible>
 					</control>
 					<control type="image">
-						<!--Now Playing Icon-->
-						<posx>130</posx>
+						<animation effect="slide" start="0" end="50" time="0" reversible="false" condition="String.Contains(System.Time, AM) | String.Contains(System.Time, PM)">Conditional</animation>
+						<!--Timer-->
+						<posx>90</posx>
 						<posy>-5</posy>
 						<width>55</width>
 						<height>55</height>
-						<fadetime>600</fadetime>
-						<texture>pvr/icons/pvr_play.png</texture>
-						<visible>ListItem.IsPlaying + !ListItem.IsRecording + !ListItem.HasTimer</visible>
+						<texture>pvr/icons/pvr_timer.png</texture>
+						<visible>!ListItem.IsRecording + ListItem.HasTimer + !ListItem.HasTimerSchedule</visible>
 					</control>
 					<control type="label">
 						<!--Channel Name-->
-						<animation effect="slide" start="0" end="40" time="0" reversible="false" condition="ListItem.Isplaying | ListItem.IsRecording | ListItem.HasTimer">Conditional</animation>
-						<posx>140</posx>
+						<animation effect="slide" start="0" end="50" time="0" reversible="false" condition="String.Contains(System.Time, AM) | String.Contains(System.Time, PM)">Conditional</animation>
+						<posx>100</posx>
 						<posy>10</posy>
-						<width>450</width>
+						<width>490</width>
 						<height>25</height>
 						<font>Reg28</font>
 						<textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
 						<align>left</align>
 						<aligny>center</aligny>
 						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<visible>!ListItem.Isplaying + !ListItem.IsRecording + !ListItem.HasTimer</visible>
+					</control>
+					<control type="label">
+						<!--Channel Name-->
+						<animation effect="slide" start="0" end="50" time="0" reversible="false" condition="String.Contains(System.Time, AM) | String.Contains(System.Time, PM)">Conditional</animation>
+						<posx>143</posx>
+						<posy>10</posy>
+						<width>490</width>
+						<height>25</height>
+						<font>Reg28</font>
+						<textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<visible>ListItem.Isplaying | ListItem.IsRecording | ListItem.HasTimer</visible>
 					</control>
 					<control type="textbox">
 						<!--Info Plot-->

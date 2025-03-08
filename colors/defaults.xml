@@ -1,5 +1,6 @@
 <!-- BINGIE -->
 <colors>
 	<color name="black">ff000000</color>
-	<color name="white">ffffffff</color>	
+	<color name="white">ffffffff</color>
+	<color name="None">00ffffff</color>	
 </colors>

@@ -509,17 +509,72 @@
 				
 				<!-- Live TV Info -->
 				<control type="label">
-					<posy>183</posy>
+					<posy>187</posy>
 					<posx>384</posx>
 					<width>1152</width>
 					<height>auto</height>
 					<aligny>top</aligny>
 					<font>Reg26</font>
 					<textcolor>$INFO[Skin.String(BingieOSDTextColor)]</textcolor>
-					<label>$INFO[Player.StartTime]$INFO[VideoPlayer.EndTime,-,] | $VAR[PlayerTitle][UPPERCASE]$INFO[VideoPlayer.Season,S,]$INFO[VideoPlayer.Episode,E,][/UPPERCASE]$INFO[VideoPlayer.EpisodeName, ","]$INFO[VideoPlayer.NextTitle, | $LOCALIZE[31065]: ,][CR]$INFO[VideoPlayer.ChannelName]</label>
+					<label>$INFO[VideoPlayer.ChannelName,, • ]$INFO[System.Time][CR]$INFO[VideoPlayer.StartTime]$INFO[VideoPlayer.EndTime,-,]$VAR[PlayerTitle, • ]$VAR[PVRVideoBullet][UPPERCASE]$INFO[VideoPlayer.Season,S,]$INFO[VideoPlayer.Episode,E,]$VAR[PVRVideoBullet2][/UPPERCASE]$INFO[VideoPlayer.EpisodeName]$INFO[VideoPlayer.NextTitle, • $LOCALIZE[31065]: ,]</label>
 					<scroll>false</scroll>
 					<visible>VideoPlayer.Content(livetv)</visible>
 				</control>
+				
+				<control type="group">
+					<visible>!VideoPlayer.Content(livetv)</visible>
+					<visible>Skin.HasSetting(EnableTimeInfo)</visible>
+					<animation effect="fade" time="350" delay="250" condition="Window.IsActive(videoosd)">Visible</animation>
+					<animation effect="fade" end="0" time="350" condition="Window.IsActive(videoosd)">Hidden</animation>
+				<!-- Finish Time OSD Info -->
+				<control type="label">
+					<description>Finish Time</description>
+					<animation end="-45,0" time="0" effect="slide" condition="[Player.Seeking + [!String.IsEqual(Player.SeekTime(hh),00) | [VideoPlayer.HasEpg + !String.IsEqual(PVR.EpgEventSeekTime(hh),00)]]] | [VideoPlayer.HasEPG + !String.IsEqual(PVR.EpgEventElapsedTime(hh),00)] | !String.IsEqual(Player.Time(hh),00)">Conditional</animation>
+					<include content="posx" condition="VideoPlayer.HasEpg">
+						<param name="posx" value="406" />
+					</include>
+					<bottom>25</bottom>
+					<left>258</left>
+					<width>400</width>
+					<align>left</align>
+					<font>Reg30</font>
+					<textcolor>$INFO[Skin.String(BingieOSDTextColor)]</textcolor>
+					<!--<label>$VAR[FinishTime, [B]$LOCALIZE[31112]: [/B]]</label>-->
+					<label>[B]$LOCALIZE[31112]: [/B] [B]$VAR[FinishTime][/B] </label>
+				</control>
+				
+				<!-- Current Time OSD Info-->
+				<control type="label">
+					<description>Current Time</description>
+					<visible>![Skin.HasSetting(EnableOSDInfo) + Window.IsActive(videoosd)] | [Player.ShowInfo + !Window.IsActive(videoosd)]</visible>
+					<animation effect="fade" time="350" delay="250" condition="Window.IsActive(videoosd)">Visible</animation>
+					<animation effect="fade" end="0" time="350" condition="Window.IsActive(videoosd)">Hidden</animation>
+					<animation effect="slide" end="0,-101" condition="Player.HasAudio">conditional</animation>
+					<bottom>25</bottom>
+					<posy>0</posy>
+					<width>1920</width>
+					<align>center</align>
+					<font>Bold30</font>
+					<textcolor>$INFO[Skin.String(BingieOSDTextColor)]</textcolor>
+					<info>System.Time</info>
+				</control>
+	
+				<!-- Total Duration OSD Info -->
+				<control type="label">
+					<description>Total Duration</description>
+					<animation end="-45,0" time="0" effect="slide" condition="[!String.IsEqual(Player.Duration(hh),00) + Player.Seeking + [String.IsEqual(Player.TimeRemaining(hh),00) | [VideoPlayer.HasEpg + String.IsEqual(PVR.EpgEventSeekTime(hh),00)]]] | [VideoPlayer.HasEPG + String.IsEqual(PVR.EpgEventElapsedTime(hh),00)] | !String.IsEqual(Player.Duration(hh),00) + String.IsEqual(Player.TimeRemaining(hh),00)">Conditional</animation>
+					<include content="posx" condition="VideoPlayer.HasEpg">
+						<param name="posx" value="406" />
+					</include>
+					<bottom>25</bottom>
+					<right>190</right>
+					<width>300</width>
+					<align>left</align>
+					<font>Reg30</font>
+					<textcolor>$INFO[Skin.String(BingieOSDTextColor)]</textcolor>
+					<label>[B]$LOCALIZE[180]: $VAR[TotalDuration][/B]</label>
+				</control>
+		</control>
 				
 
 			</control>
@@ -1334,38 +1389,16 @@
 		</control>
 	</include>
 	
-	<include name="OSDInfoPanelBingie2">
-		<control type="group">
-					<visible>VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(livetv)</visible>
+	<include name="OSDInfoPanelBingie2">				
+				<!-- Current Time OSD Info-->
+				<control type="label">
+					<visible>!VideoPlayer.Content(livetv)</visible>
 					<visible>[Skin.HasSetting(EnableOSDInfo) + Window.IsActive(videoosd)] | [Player.ShowInfo + !Window.IsActive(videoosd)]</visible>
-					<visible>!Window.IsActive(notification) + !Window.IsActive(extendedprogressdialog) + !Window.IsActive(DialogPlayerProcessInfo.xml)</visible>
+					<visible>Skin.HasSetting(EnableTimeInfo)</visible>
 					<include>HideOsdConditions</include>
 					<animation effect="fade" time="350" delay="250" condition="Window.IsActive(videoosd)">Visible</animation>
 					<animation effect="fade" end="0" time="350" condition="Window.IsActive(videoosd)">Hidden</animation>
-				<!-- Finish Time OSD Info -->
-				<control type="label">
-					<description>Finish Time</description>
-					<visible>Skin.HasSetting(EnableTimeInfo)</visible>
-					<visible>!VideoPlayer.Content(livetv)</visible>
-					<animation end="-45,0" time="0" effect="slide" condition="[Player.Seeking + [!String.IsEqual(Player.SeekTime(hh),00) | [VideoPlayer.HasEpg + !String.IsEqual(PVR.EpgEventSeekTime(hh),00)]]] | [VideoPlayer.HasEPG + !String.IsEqual(PVR.EpgEventElapsedTime(hh),00)] | !String.IsEqual(Player.Time(hh),00)">Conditional</animation>
-					<include content="posx" condition="VideoPlayer.HasEpg">
-						<param name="posx" value="406" />
-					</include>
-					<bottom>25</bottom>
-					<left>258</left>
-					<width>400</width>
-					<align>left</align>
-					<font>Reg30</font>
-					<textcolor>$INFO[Skin.String(BingieOSDTextColor)]</textcolor>
-					<!--<label>$VAR[FinishTime, [B]$LOCALIZE[31112]: [/B]]</label>-->
-					<label>[B]$LOCALIZE[31112]: [/B] [B]$VAR[FinishTime][/B] </label>
-				</control>
-				
-				<!-- Current Time OSD Info-->
-				<control type="label">
 					<description>Current Time</description>
-					<visible>Skin.HasSetting(EnableTimeInfo)</visible>
-					<visible>!VideoPlayer.Content(livetv)</visible>
 					<bottom>126</bottom>
 					<posy>0</posy>
 					<width>1920</width>
@@ -1374,25 +1407,6 @@
 					<textcolor>$INFO[Skin.String(BingieOSDTextColor)]</textcolor>
 					<info>System.Time</info>
 				</control>
-	
-				<!-- Total Duration OSD Info -->
-				<control type="label">
-					<description>Total Duration</description>
-					<visible>Skin.HasSetting(EnableTimeInfo)</visible>
-					<visible>!VideoPlayer.Content(livetv)</visible>
-					<animation end="-45,0" time="0" effect="slide" condition="[!String.IsEqual(Player.Duration(hh),00) + Player.Seeking + [String.IsEqual(Player.TimeRemaining(hh),00) | [VideoPlayer.HasEpg + String.IsEqual(PVR.EpgEventSeekTime(hh),00)]]] | [VideoPlayer.HasEPG + String.IsEqual(PVR.EpgEventElapsedTime(hh),00)] | !String.IsEqual(Player.Duration(hh),00) + String.IsEqual(Player.TimeRemaining(hh),00)">Conditional</animation>
-					<include content="posx" condition="VideoPlayer.HasEpg">
-						<param name="posx" value="406" />
-					</include>
-					<bottom>25</bottom>
-					<right>190</right>
-					<width>300</width>
-					<align>left</align>
-					<font>Reg30</font>
-					<textcolor>$INFO[Skin.String(BingieOSDTextColor)]</textcolor>
-					<label>[B]$LOCALIZE[180]: $VAR[TotalDuration][/B]</label>
-				</control>
-		</control>
 	</include>	
     
     <variable name="OSDImageDefault">

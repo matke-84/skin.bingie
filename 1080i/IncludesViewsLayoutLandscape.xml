@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- BINGIE -->
-<includes>
-    <!-- THUMBS LAYOUT (SMALL LANDSCAPE) -->
+<includes>    
     <include name="ThumbsViewLayout">
         <include>ThumbsViewItemLayout</include>
      </include>
@@ -37,6 +36,7 @@
         </control>
     </include>
 	
+	<!-- THUMBS LAYOUT (SMALL LANDSCAPE) -->
 	<include name="ThumbsViewLayoutSmall">
         <include>ThumbsViewItemLayoutSmall</include>
      </include>

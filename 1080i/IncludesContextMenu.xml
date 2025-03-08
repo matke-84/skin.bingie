@@ -280,6 +280,7 @@
 			<label>31119</label>
 			<onclick condition="Control.IsVisible(525)">Skin.ToggleSetting(View525_DetailsShowFanart)</onclick>
 			<onclick condition="Control.IsVisible(527)">Skin.ToggleSetting(View527_DetailsShowFanart)</onclick>
+			<onclick>ReloadSkin()</onclick>
 			<selected>[Control.IsVisible(525) + Skin.HasSetting(View525_DetailsShowFanart)] | [Control.IsVisible(527) + Skin.HasSetting(View527_DetailsShowFanart)]</selected>
             <visible>Control.IsVisible(525) | Control.IsVisible(527)</visible>
 		</control>
@@ -314,10 +315,10 @@
             <include>SideBladeMenuButton</include>
             <label>31511</label>
             <onclick condition="Control.IsVisible(526)">Skin.ToggleSetting(View526_UseFixedLayout)</onclick>
+			<onclick>ReloadSkin()</onclick>
             <selected>
                 [Control.IsVisible(526) + Skin.HasSetting(View526_UseFixedLayout)]
-            </selected>
-            <onclick>ReloadSkin()</onclick>
+            </selected>            
         </control>
 
         <control type="radiobutton" id="31751">
@@ -435,9 +436,9 @@
             <label>$LOCALIZE[31757]</label>
 			<onclick condition="Control.IsVisible(52)">Skin.ToggleSetting(View52_EnableZoomEffect)</onclick>
 			<onclick condition="Control.IsVisible(502)">Skin.ToggleSetting(View502_EnableZoomEffect)</onclick>
-            <selected>[Control.IsVisible(52) + Skin.HasSetting(View52_EnableZoomEffect)] | [Control.IsVisible(502) + Skin.HasSetting(View502_EnableZoomEffect)]</selected>
-            <visible>Control.IsVisible(52) | Control.IsVisible(502)</visible>
 			<onclick>ReloadSkin()</onclick>
+            <selected>[Control.IsVisible(52) + Skin.HasSetting(View52_EnableZoomEffect)] | [Control.IsVisible(502) + Skin.HasSetting(View502_EnableZoomEffect)]</selected>
+            <visible>Control.IsVisible(52) | Control.IsVisible(502)</visible>			
         </control>    
         
          <control type="radiobutton" id="3059">

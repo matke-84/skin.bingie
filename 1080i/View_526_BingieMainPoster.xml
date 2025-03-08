@@ -132,12 +132,6 @@
                     <height>340</height>
                     <include condition="!Skin.HasSetting(View526_UseFixedLayout) | !Skin.HasSetting(View_526_HorizontalNavigation)">PosterPanelBingieLayoutFocus</include>
 					<include condition="Skin.HasSetting(View526_UseFixedLayout) + Skin.HasSetting(View_526_HorizontalNavigation)">PosterPanelBingieLayout</include>
-                    <control type="group">
-                        <!--Watched Overlay-->
-                        <right>8</right>
-                        <top>8</top>
-                        <include>WatchedIndicatorNormal</include>
-                    </control>
                     <include>LibraryAutoTrailerStopButton</include>
 						<include content="LibraryAutoTrailerStartButton" condition="Skin.HasSetting(View526_DetailsAutoTrailer)">
 							<param name="interval" value="$INFO[Skin.String(details_auto_trailer_interval)]" />

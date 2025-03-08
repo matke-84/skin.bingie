@@ -380,7 +380,7 @@
 			<control type="image">
 				<!-- fallback logo image -->
 				<height>218</height>
-				<bottom>-62</bottom>
+				<bottom>-54</bottom>
 				<left>0</left>
 				<bordersize>65</bordersize>
 				<texture background="true">$VAR[ClearLogoFallback]</texture>
@@ -424,7 +424,7 @@
 				<control type="image">
 					<!-- fallback logo image -->
 					<height>218</height>
-					<bottom>-62</bottom>
+					<bottom>-54</bottom>
 					<left>0</left>
 					<bordersize>65</bordersize>
 					<texture background="true">$VAR[ClearLogoFallback]</texture>
@@ -473,7 +473,7 @@
 			<control type="image">
 				<!-- fallback logo image -->
 				<height>218</height>
-				<bottom>-62</bottom>
+				<bottom>-54</bottom>
 				<left>0</left>
 				<bordersize>65</bordersize>
 				<texture background="true">$VAR[ClearLogoFallback]</texture>
@@ -711,6 +711,17 @@
                         <width>335</width>
                         <height>195</height>
                         <include>ThumbsViewBingieLayout</include>
+						<control type="image">
+							<!-- fallback logo image -->
+							<height>195</height>
+							<bottom>-50</bottom>
+							<left>0</left>
+							<bordersize>61</bordersize>
+							<texture background="true">$VAR[ClearLogoFallback]</texture>
+							<aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
+							<visible>String.IsEmpty(Listitem.Art(landscape)) + String.IsEmpty(ListItem.Property(landscape)) + !String.IsEqual(ListItem.DBTYPE,episode) + !String.IsEqual(ListItem.Property(DBTYPE),episode) + !Container.Content(episodes) + !String.IsEqual(ListItem.DBTYPE,season) + !String.IsEqual(ListItem.Property(DBTYPE),season)</visible>
+							<visible>String.IsEmpty(ListItem.Property(defaultID))</visible>
+						</control>
                         <control type="group">
                             <include condition="!String.IsEqual(Skin.String(Widgets_DisplayTags),disable) + !String.IsEqual(Skin.String(Widgets_DisplayTags),override)">ThumbsTagOverlayBingie</include>
 							<include>New_Episodes_Tag_Overlay</include>
@@ -722,6 +733,17 @@
                         <width>335</width>
                         <height>195</height>
                         <include>ThumbsViewBingieLayoutFocus</include>
+							<control type="image">
+							<!-- fallback logo image -->
+							<height>195</height>
+							<bottom>-50</bottom>
+							<left>0</left>
+							<bordersize>61</bordersize>
+							<texture background="true">$VAR[ClearLogoFallback]</texture>
+							<aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
+							<visible>String.IsEmpty(Listitem.Art(landscape)) + String.IsEmpty(ListItem.Property(landscape)) + !String.IsEqual(ListItem.DBTYPE,episode) + !String.IsEqual(ListItem.Property(DBTYPE),episode) + !Container.Content(episodes) + !String.IsEqual(ListItem.DBTYPE,season) + !String.IsEqual(ListItem.Property(DBTYPE),season)</visible>
+							<visible>String.IsEmpty(ListItem.Property(defaultID))</visible>
+						</control>
 						<include>Top250Indicator</include>
                         <control type="group">
                             <include condition="!String.IsEqual(Skin.String(Widgets_DisplayTags),disable) + !String.IsEqual(Skin.String(Widgets_DisplayTags),override)">ThumbsTagOverlayBingie</include>

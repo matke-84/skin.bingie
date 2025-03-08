@@ -155,7 +155,7 @@
 			<shortcut label="14092" icon="common/toggle-debug.png">Skin.ToggleDebug</shortcut>
             <shortcut label="24034" icon="common/check-updates.png">UpdateAddonRepos</shortcut>
             <shortcut label="14111" icon="common/toggle-debug.png">ActivateWindow(eventlog)</shortcut>
-			<shortcut label="31761" icon="common/android.png" condition="System.Platform.Linux">RebootToAndroid</shortcut>
+			<shortcut label="31217" icon="common/android.png" condition="System.Platform.Linux">RebootToAndroid</shortcut>
 		</node>
 	</groupings>
     

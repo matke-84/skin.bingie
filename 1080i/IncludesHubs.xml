@@ -67,11 +67,69 @@
                 <param name="textoffsetx" value="20" />
             </include>
             <textoffsetx>65</textoffsetx>
-            <label>[$ADDON[script.skinshortcuts 32025]]</label>
+            <label>$ADDON[script.skinshortcuts 32025]: $INFO[Skin.String($PARAM[skinsetting].label)]</label>
             <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>           
             <onclick>Skin.SetString($PARAM[skinsetting].label)</onclick>
             <texturenofocus/>
             <visible>!Skin.HasSetting(LockHubWidgets) + !Window.IsActive(1114) + Skin.String($PARAM[skinsetting].label) + [String.IsEmpty(Container($PARAM[widgetid]).ListItem.Property(similartitle)) + String.IsEmpty(Container($PARAM[widgetid]).ListItem.Property(genretitle))]</visible>
+        </control>
+		<!-- widget sort by -->
+        <control type="button" id="$PARAM[widgetid]7">
+            <width>auto</width>
+            <height>40</height>
+            <align>left</align>
+			<aligny>center</aligny>
+			<left>130</left>
+            <font>Reg24</font>
+            <include content="textoffsetx">
+                <param name="textoffsetx" value="20" />
+            </include>
+            <textoffsetx>65</textoffsetx>
+            <label>$LOCALIZE[581]: $INFO[Skin.String($PARAM[skinsetting].LocalizedSortBy)]</label>
+            <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>           
+            <onclick>Skin.SetString($PARAM[skinsetting].sortby,random)</onclick>
+            <onclick condition="String.IsEqual(Skin.String($PARAM[skinsetting].sortby),random)">Skin.SetString($PARAM[skinsetting].sortby,year)</onclick>
+            <onclick condition="String.IsEqual(Skin.String($PARAM[skinsetting].sortby),year)">Skin.SetString($PARAM[skinsetting].sortby,dateadded)</onclick>
+            <onclick condition="String.IsEqual(Skin.String($PARAM[skinsetting].sortby),dateadded)">Skin.SetString($PARAM[skinsetting].sortby,title)</onclick>
+			<onclick condition="String.IsEqual(Skin.String($PARAM[skinsetting].sortby),title)">Skin.SetString($PARAM[skinsetting].sortby,playcount)</onclick>
+            <onclick condition="String.IsEqual(Skin.String($PARAM[skinsetting].sortby),playcount)">Skin.SetString($PARAM[skinsetting].sortby,lastplayed)</onclick>
+            <onclick condition="String.IsEqual(Skin.String($PARAM[skinsetting].sortby),lastplayed)">Skin.SetString($PARAM[skinsetting].sortby,rating)</onclick>
+			<onclick condition="String.IsEqual(Skin.String($PARAM[skinsetting].sortby),rating)">Skin.SetString($PARAM[skinsetting].sortby,userrating)</onclick>
+			<onclick condition="String.IsEqual(Skin.String($PARAM[skinsetting].sortby),userrating)">Skin.SetString($PARAM[skinsetting].sortby,votes)</onclick>
+			<onclick condition="String.IsEqual(Skin.String($PARAM[skinsetting].sortby),votes)">Skin.Reset($PARAM[skinsetting].sortby)</onclick>
+			<onclick>Skin.SetString($PARAM[skinsetting].LocalizedSortBy,$LOCALIZE[590])</onclick>
+			<onclick condition="String.IsEqual(Skin.String($PARAM[skinsetting].sortby),random)">Skin.SetString($PARAM[skinsetting].LocalizedSortBy,$LOCALIZE[562])</onclick>
+            <onclick condition="String.IsEqual(Skin.String($PARAM[skinsetting].sortby),year)">Skin.SetString($PARAM[skinsetting].LocalizedSortBy,$LOCALIZE[570])</onclick>
+            <onclick condition="String.IsEqual(Skin.String($PARAM[skinsetting].sortby),dateadded)">Skin.SetString($PARAM[skinsetting].LocalizedSortBy,$LOCALIZE[556])</onclick>
+			<onclick condition="String.IsEqual(Skin.String($PARAM[skinsetting].sortby),title)">Skin.SetString($PARAM[skinsetting].LocalizedSortBy,$LOCALIZE[567])</onclick>
+            <onclick condition="String.IsEqual(Skin.String($PARAM[skinsetting].sortby),playcount)">Skin.SetString($PARAM[skinsetting].LocalizedSortBy,$LOCALIZE[568])</onclick>
+            <onclick condition="String.IsEqual(Skin.String($PARAM[skinsetting].sortby),lastplayed)">Skin.SetString($PARAM[skinsetting].LocalizedSortBy,$LOCALIZE[563])</onclick>
+			<onclick condition="String.IsEqual(Skin.String($PARAM[skinsetting].sortby),rating)">Skin.SetString($PARAM[skinsetting].LocalizedSortBy,$LOCALIZE[38018])</onclick>
+			<onclick condition="String.IsEqual(Skin.String($PARAM[skinsetting].sortby),userrating)">Skin.SetString($PARAM[skinsetting].LocalizedSortBy,$LOCALIZE[205])</onclick>
+			<onclick condition="String.IsEqual(Skin.String($PARAM[skinsetting].sortby),votes)">Skin.SetString($PARAM[skinsetting].LocalizedSortBy,$LOCALIZE[16018])</onclick>
+            <texturenofocus/>
+            <visible>!Skin.HasSetting(LockHubWidgets) + !Window.IsActive(1114) + Skin.String($PARAM[skinsetting].label) + [String.IsEmpty(Container($PARAM[widgetid]).ListItem.Property(similartitle)) + String.IsEmpty(Container($PARAM[widgetid]).ListItem.Property(genretitle))]</visible>
+        </control>
+		<!-- widget sort order -->
+        <control type="button" id="$PARAM[widgetid]8">
+            <width>auto</width>
+            <height>40</height>
+            <align>left</align>
+			<aligny>center</aligny>
+			<left>130</left>
+            <font>Reg24</font>
+            <include content="textoffsetx">
+                <param name="textoffsetx" value="20" />
+            </include>
+            <textoffsetx>65</textoffsetx>
+            <label>$LOCALIZE[580]: $INFO[Skin.String($PARAM[skinsetting].LocalizedSortOrder)]</label>
+            <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>           
+            <onclick>Skin.SetString($PARAM[skinsetting].sortorder,descending)</onclick>
+            <onclick condition="String.IsEqual(Skin.String($PARAM[skinsetting].sortorder),descending)">Skin.SetString($PARAM[skinsetting].sortorder,ascending)</onclick>
+			<onclick>Skin.SetString($PARAM[skinsetting].LocalizedSortOrder,$LOCALIZE[21431])</onclick>
+			<onclick condition="String.IsEqual(Skin.String($PARAM[skinsetting].sortorder),descending)">Skin.SetString($PARAM[skinsetting].LocalizedSortOrder,$LOCALIZE[21430])</onclick>
+            <texturenofocus/>
+            <visible>!String.IsEqual(Skin.String($PARAM[skinsetting].sortby),) + !Skin.HasSetting(LockHubWidgets) + !Window.IsActive(1114) + Skin.String($PARAM[skinsetting].label) + [String.IsEmpty(Container($PARAM[widgetid]).ListItem.Property(similartitle)) + String.IsEmpty(Container($PARAM[widgetid]).ListItem.Property(genretitle))]</visible>
         </control>
         <include content="bingie_widget_hub">
             <param name="containerType" value="fixedlist" />
@@ -737,9 +795,6 @@
         <control type="panel" id="$PARAM[widgetid]">			
             <viewtype label="31018">panel</viewtype>
             <width>1666</width>
-			<include condition="Window.IsActive(1114) + String.IsEqual(Skin.String(widgetstyle),landscape) | Window.IsActive(1115) + String.IsEqual(Skin.String(widgetstyle),landscape)" content="height">
-                    <param name="height" value="390" />
-            </include>
             <height>469</height>			
             <itemgap>0</itemgap>
 			<posy>$PARAM[posy]</posy>
@@ -791,22 +846,44 @@
                     </include>
                 </control>
             </focusedlayout>
-			<itemlayout height="196" width="333" condition="String.IsEqual(Skin.String(widgetstyle),landscape)">
+			<itemlayout height="193" width="333" condition="String.IsEqual(Skin.String(widgetstyle),landscape)">
                 <control type="group">
                     <width>335</width>
-                        <height>198</height>
+                        <height>195</height>
                         <include>ThumbsViewBingieLayout</include>
+							<control type="image">
+							<!-- fallback logo image -->
+							<height>195</height>
+							<bottom>-50</bottom>
+							<left>0</left>
+							<bordersize>61</bordersize>
+							<texture background="true">$VAR[ClearLogoFallback]</texture>
+							<aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
+							<visible>String.IsEmpty(Listitem.Art(landscape)) + String.IsEmpty(ListItem.Property(landscape)) + !String.IsEqual(ListItem.DBTYPE,episode) + !String.IsEqual(ListItem.Property(DBTYPE),episode) + !Container.Content(episodes) + !String.IsEqual(ListItem.DBTYPE,season) + !String.IsEqual(ListItem.Property(DBTYPE),season)</visible>
+							<visible>String.IsEmpty(ListItem.Property(defaultID))</visible>
+						</control>
                         <control type="group">
                             <include condition="!String.IsEqual(Skin.String(Widgets_DisplayTags),disable)">ThumbsTagOverlayBingie</include>
 							<include>New_Episodes_Tag_Overlay</include>
                         </control>
                 </control>
             </itemlayout>
-            <focusedlayout height="196" width="333" condition="String.IsEqual(Skin.String(widgetstyle),landscape)">
+            <focusedlayout height="193" width="333" condition="String.IsEqual(Skin.String(widgetstyle),landscape)">
                 <control type="group">
                     <width>335</width>
-                        <height>198</height>
+                        <height>195</height>
                         <include>ThumbsViewBingieLayoutFocus</include>
+							<control type="image">
+							<!-- fallback logo image -->
+							<height>195</height>
+							<bottom>-50</bottom>
+							<left>0</left>
+							<bordersize>61</bordersize>
+							<texture background="true">$VAR[ClearLogoFallback]</texture>
+							<aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
+							<visible>String.IsEmpty(Listitem.Art(landscape)) + String.IsEmpty(ListItem.Property(landscape)) + !String.IsEqual(ListItem.DBTYPE,episode) + !String.IsEqual(ListItem.Property(DBTYPE),episode) + !Container.Content(episodes) + !String.IsEqual(ListItem.DBTYPE,season) + !String.IsEqual(ListItem.Property(DBTYPE),season)</visible>
+							<visible>String.IsEmpty(ListItem.Property(defaultID))</visible>
+						</control>
                         <control type="group">
                             <include condition="!String.IsEqual(Skin.String(Widgets_DisplayTags),disable)">ThumbsTagOverlayBingie</include>
 							<include>New_Episodes_Tag_Overlay</include>
@@ -824,36 +901,6 @@
                     </include>
                 </control>
             </focusedlayout>
-				<itemlayout height="185" width="185" condition="String.IsEqual(Skin.String(widgetstyle),square)">
-                    <control type="group">
-                        <width>187</width>
-                        <height>187</height>
-                        <include>SquarePosterPanelLayout</include>
-                        <control type="group">
-                            <include condition="!String.IsEqual(Skin.String(Widgets_DisplayTags),disable)">SquarePosterTagOverlay</include>
-                        </control>
-                    </control>
-                </itemlayout>
-                <focusedlayout height="185" width="185" condition="String.IsEqual(Skin.String(widgetstyle),square)">
-                    <control type="group">
-                        <width>187</width>
-                        <height>187</height>
-                        <include>SquarePosterPanelLayoutFocus</include>
-                        <control type="group">
-                            <include condition="!String.IsEqual(Skin.String(Widgets_DisplayTags),disable)">SquarePosterTagOverlay</include>
-                        </control>
-                    </control>
-                    <control type="button">
-						<visible>false</visible>
-						<include content="Bingie_Default_AutoPreview" condition="Skin.HasSetting(BingieAutoTrailer)">
-							<param name="widgetid" value="$PARAM[widgetid]" />
-							<param name="groupid" value="77777" />
-						</include>
-						<include content="WidgetProperties">
-							<param name="widgetid" value="$PARAM[widgetid]" />
-						</include>
-					</control>
-                </focusedlayout>
             <content target="$PARAM[contentTarget]">$PARAM[contentPath]</content>
         </control>
     </include>

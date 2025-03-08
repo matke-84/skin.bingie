@@ -3,7 +3,7 @@
 <window>
     <controls>
         <control type="group">
-			<visible>![[Skin.HasSetting(BingieAutoTrailer) | Skin.HasSetting(SpotLightTrailers)] + [$EXP[IsBingieViewsActive] | $EXP[IsBingieCategoriesActive]]]</visible>
+			<visible>![[Skin.HasSetting(BingieAutoTrailer) | Skin.HasSetting(SpotLightTrailers)] + [$EXP[IsBingieViewsActive] | $EXP[IsBingieCategoriesActive]] + !Window.IsActive(DialogVideoInfo.xml)]</visible>
             <visible>String.IsEmpty(Window(Home).Property(StartupMask))</visible>
 			<visible>String.IsEmpty(Window(Home).Property(CloseInfoDialog)) | !String.IsEmpty(Window(Home).Property(BusyInfoDialogTrailer))</visible>
             <include>Busy_Spinner</include>
