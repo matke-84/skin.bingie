@@ -9,6 +9,7 @@
 	<onload>ClearProperty(DisableOSDCast,Home)</onload>
 	<onload>CancelAlarm(OpenMPAATopBar,silent)</onload>
 	<onunload>AlarmClock(OpenMPAATopBar,SetProperty(DialogMPAATopBar,1,home),00:00,silent)</onunload>
+	<onload condition="Skin.HasSetting(OSDShowInfoOnPause) + !Skin.HasSetting(EnableOSDInfo)">Skin.ToggleSetting(EnableOSDInfo)</onload>
     <controls>		
         <control type="group">
             <include>OSDButtonsModern</include>

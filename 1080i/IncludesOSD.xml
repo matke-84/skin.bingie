@@ -498,7 +498,7 @@
 
 				<!--Player Seek Time Pop Up/Action Label-->
 				<control type="label" id="79591">
-					<visible>Skin.HasSetting(DisableJumpIndicator)</visible>     <!-- Added to Remove Jump Indicator -->
+					<visible>Skin.HasSetting(DisableJumpIndicator)</visible>
 					<posy>105</posy>
 					<width>1920</width>
 					<align>center</align>
@@ -1852,7 +1852,7 @@
 				<effect type="fade" start="100" end="0" delay="0" time="0" reversible="false"/>
 			</animation>
 			<animation type="WindowClose" condition="!Window.IsVisible(1158)">
-				<effect type="slide" start="0,0" end="0,300" tween="cubic" easing="out" delay="0" time="800" reversible="false"/>
+				<effect type="slide" start="0,0" end="0,400" tween="cubic" easing="out" delay="0" time="700" reversible="false"/>
 				<effect type="fade" start="100" end="0" delay="0" time="700" reversible="false"/>
 			</animation>
 			<animation end="-45,0" time="0" effect="slide" condition="[Player.Seeking + [!String.IsEqual(Player.SeekTime(hh),00) | [VideoPlayer.HasEpg + !String.IsEqual(PVR.EpgEventSeekTime(hh),00)]]] | [VideoPlayer.HasEPG + !String.IsEqual(PVR.EpgEventElapsedTime(hh),00)] | !String.IsEqual(Player.Time(hh),00)">Conditional</animation>

@@ -61,6 +61,7 @@
                         <font>Reg36</font>
 						<scroll>true</scroll>
                         <textcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</textcolor>
+						<selectedcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</selectedcolor>
                         <label>$VAR[ListTitle]</label>
                     </control>
                     <control type="label">
@@ -72,6 +73,7 @@
                         <font>Reg28</font>
 						<scroll>true</scroll>
                         <textcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</textcolor>
+						<selectedcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</selectedcolor>
                         <label>$VAR[ListDetails]</label>
                         <visible>!String.IsEqual(ListItem.Label,..)</visible>
                     </control>	

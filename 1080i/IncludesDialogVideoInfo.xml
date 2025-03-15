@@ -2203,6 +2203,7 @@
 			</control>	
 			<!--Collection List-->
 			<control type="group">
+			<animation effect="fade" start="100" end="0" time="500" condition="Player.HasVideo + ![VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(musicvideos) | VideoPlayer.Content(livetv) | Pvr.IsPlayingRecording]">Conditional</animation>
 			<visible>!Skin.HasSetting(VideoInfoButtonCollection)</visible>
 			<visible>!String.IsEqual(Window.Property(AdditionalInfo), trailers) + !String.IsEqual(Window.Property(AdditionalInfo),similar) + !String.IsEqual(Window.Property(AdditionalInfo),cast) + !String.IsEqual(Window.Property(AdditionalInfo),plot)</visible>
 			<visible>!String.IsEmpty(ListItem.Set)</visible>
@@ -2744,7 +2745,7 @@
 										<width>792</width>
 										<height>238</height>
 										<align>left</align>										
-										<textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
+										<textcolor>$INFO[Skin.String(BingiePrimaryTextColor)]</textcolor>
 										<font>critics</font>
 										<label>[B]$INFO[ListItem.Label][/B][CR]$INFO[ListItem.Plot]</label>
 										<autoscroll>false</autoscroll>
@@ -2763,7 +2764,7 @@
 										<width>792</width>
 										<height>238</height>
 										<align>left</align>										
-										<textcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</textcolor>
+										<textcolor>$INFO[Skin.String(BingiePrimaryTextColor)]</textcolor>
 										<font>critics</font>
 										<label>[B]$INFO[ListItem.Label][/B][CR]$INFO[ListItem.Plot]</label>
 										<autoscroll delay="6000" time="3000" repeat="10000">!Skin.HasSetting(DisablePlotAutoScroll)</autoscroll>

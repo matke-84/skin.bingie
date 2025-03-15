@@ -499,7 +499,7 @@
         <control type="button" id="43699">
             <include>SkinSettings_Button</include>
             <label>$LOCALIZE[31719]</label>
-            <label2>$LOCALIZE[31634]: $INFO[Skin.String(main_auto_trailer_interval.label)]</label2>
+            <label2>$INFO[Skin.String(main_auto_trailer_interval.label)]</label2>
             <visible>Skin.HasSetting(BingieAutoTrailer) | Skin.HasSetting(SpotLightTrailers)</visible>
             <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=main_auto_trailer_interval,header=$LOCALIZE[31634])</onclick>
         </control>		
@@ -1694,6 +1694,21 @@
             <param name="action" value="RunScript(script.bingie.toolbox,action=setskinsetting,setting=bingie_osd_buttons,header=$LOCALIZE[31060])" />
             <param name="visible" value="Skin.HasSetting(UseBingieOSD)" />
         </include>
+		<!-- Autoclose OSD -->
+		<control type="radiobutton" id="31072">
+            <include>SkinSettings_Button</include>
+            <label>31072</label>
+            <onclick>Skin.ToggleSetting(AutoCloseVideoOSD)</onclick>
+            <selected>Skin.HasSetting(AutoCloseVideoOSD)</selected>
+        </control>
+		<!-- Autoclose OSD Time -->
+		<control type="button" id="31762">
+            <include>SkinSettings_Button</include>
+            <label>      $LOCALIZE[31762]</label>
+			<label2>$INFO[Skin.String(AutoCloseVideoOSDTime,, $LOCALIZE[31231)]]</label2>
+            <onclick>Skin.SetNumeric(AutoCloseVideoOSDTime)</onclick>
+            <visible>Skin.HasSetting(AutoCloseVideoOSD)</visible>
+        </control>
         <!-- Volume Indicator Style -->
         <control type="button" id="31760">
             <include>SkinSettings_Button</include>
@@ -1760,12 +1775,6 @@
             <label>31724</label>
             <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
         </control>
-        <control type="radiobutton" id="31072">
-            <include>SkinSettings_Button</include>
-            <label>31072</label>
-            <onclick>Skin.ToggleSetting(AutoCloseVideoOSD)</onclick>
-            <selected>Skin.HasSetting(AutoCloseVideoOSD)</selected>
-        </control>
         <control type="radiobutton" id="31024">
             <include>SkinSettings_Button</include>
             <label>31024</label>
@@ -1783,6 +1792,12 @@
             <label>31592</label>
             <onclick>Skin.ToggleSetting(EnableAutoPauseOnOSD)</onclick>
             <selected>Skin.HasSetting(EnableAutoPauseOnOSD)</selected>
+        </control>
+		<control type="radiobutton" id="31761">
+            <include>SkinSettings_Button</include>
+            <label>31761</label>
+            <onclick>Skin.ToggleSetting(OSDShowInfoOnPause)</onclick>
+            <selected>Skin.HasSetting(OSDShowInfoOnPause)</selected>
         </control>
     </include>
 

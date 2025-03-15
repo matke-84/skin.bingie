@@ -1050,7 +1050,7 @@ msgid "Memory Usage"
 msgstr ""
 
 msgctxt "#31258"
-msgid "Enable finish time, current time, & total duration for OSD playback"
+msgid "Enable finish time, current time & total duration for OSD playback"
 msgstr ""
 
 msgctxt "#31259"
@@ -3012,4 +3012,12 @@ msgstr ""
 
 msgctxt "#31760"
 msgid "Volume indicator style"
+msgstr ""
+
+msgctxt "#31761"
+msgid "Show OSD info panel on pause"
+msgstr ""
+
+msgctxt "#31762"
+msgid "Autoclose OSD time"
 msgstr ""
