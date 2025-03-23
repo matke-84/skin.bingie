@@ -3021,3 +3021,7 @@ msgstr ""
 msgctxt "#31762"
 msgid "Autoclose OSD time"
 msgstr ""
+
+msgctxt "#31763"
+msgid "Show chapter marks"
+msgstr ""

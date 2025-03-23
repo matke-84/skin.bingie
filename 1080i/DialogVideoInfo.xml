@@ -22,7 +22,7 @@
     <controls>
 		<include>Defs_TMDbHelper_Loader</include>
         <include condition="Skin.HasSetting(UseBingieInfoDialog)">BingieInfo</include>
-        <include condition="!Skin.HasSetting(UseBingieInfoDialog)">TitanInfo</include>
+        <include condition="!Skin.HasSetting(UseBingieInfoDialog)">BingieAltInfo</include>
 		<include condition="String.IsEqual(ListItem.Property(item.type),person)">TMDB_Helper_Cast</include>
 		<include condition="Skin.HasSetting(DebugGrid) | Skin.HasSetting(DebugInfo)">DebugInfo</include>
 	</controls>

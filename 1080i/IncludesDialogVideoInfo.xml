@@ -1,7 +1,7 @@
  <?xml version="1.0" encoding="utf-8"?>
 <!-- BINGIE -->
 <includes>
-	<include name="TitanInfo">	
+	<include name="BingieAltInfo">	
 			<control type="group"> 				
 				<!-- background -->
 				<control type="group">
@@ -2203,7 +2203,7 @@
 			</control>	
 			<!--Collection List-->
 			<control type="group">
-			<animation effect="fade" start="100" end="0" time="500" condition="Player.HasVideo + ![VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(musicvideos) | VideoPlayer.Content(livetv) | Pvr.IsPlayingRecording]">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="500" delay="0" condition="[Player.HasVideo + ![VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(musicvideos) | VideoPlayer.Content(livetv) | Pvr.IsPlayingRecording]] + Control.HasFocus(70011)">Conditional</animation>
 			<visible>!Skin.HasSetting(VideoInfoButtonCollection)</visible>
 			<visible>!String.IsEqual(Window.Property(AdditionalInfo), trailers) + !String.IsEqual(Window.Property(AdditionalInfo),similar) + !String.IsEqual(Window.Property(AdditionalInfo),cast) + !String.IsEqual(Window.Property(AdditionalInfo),plot)</visible>
 			<visible>!String.IsEmpty(ListItem.Set)</visible>
@@ -2398,6 +2398,18 @@
 					<top>346</top>
 					<width>688</width>			
 				<control type="label">
+					<visible>Control.HasFocus(3522)</visible>
+					<height>63</height>
+					<aligny>center</aligny>
+					<align>right</align>
+					<font>Reg28</font>
+					<textoffsetx>20</textoffsetx>
+					<textoffsety>8</textoffsety>
+					<textcolor>$INFO[Skin.String(BingieButtonFocusTextColor)]</textcolor>
+					<label>$INFO[Container(352).NumItems] titles</label>
+				</control>
+				<control type="label">
+					<visible>!Control.HasFocus(3522)</visible>
 					<height>63</height>
 					<aligny>center</aligny>
 					<align>right</align>
@@ -2411,7 +2423,6 @@
 				
 				<!--Similar List Button-->	
 				<control type="list" id="3522">
-					<animation effect="fade" start="100" end="39" time="150" condition="Control.HasFocus(352)">Conditional</animation>
 					<onleft>ClearProperty(AdditionalInfo)</onleft>
 					<onback>ClearProperty(AdditionalInfo)</onback>
 					<onback>8000</onback>
@@ -2429,16 +2440,24 @@
 						<textoffsetx>20</textoffsetx>
 						<textoffsety>8</textoffsety>
 						<label>$INFO[ListItem.Label]</label>
-						<textcolor>$INFO[Skin.String(BingieButtonFocusTextColor)]</textcolor>
+						<textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
 					</control>			
 					</itemlayout>
 					<focusedlayout width="550" height="70">
 					<control type="image">
+						<visible>Control.HasFocus(3522)</visible>
 						<width>550</width>
 						<height>65</height>
-						<texture border="10" background="true" colordiffuse="$INFO[Skin.String(BingieButtonFocusTextColor)]">$INFO[Skin.String(thumbsborder_focused),bingie/border/default_button_fo_,.png]</texture>
+						<texture border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texture>
+					</control>
+					<control type="image">
+						<visible>!Control.HasFocus(3522)</visible>
+						<width>550</width>
+						<height>65</height>
+						<texture border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderUnfocusColor)]">bingie/border/default_button_focus.png</texture>
 					</control>
 					<control type="label">
+						<visible>Control.HasFocus(3522)</visible>
 						<height>63</height>
 						<aligny>center</aligny>
 						<align>left</align>
@@ -2446,14 +2465,52 @@
 						<textoffsetx>20</textoffsetx>
 						<textoffsety>8</textoffsety>
 						<label>$INFO[ListItem.Label]</label>
-						<textcolor>$INFO[Skin.String(BingieButtonFocusTextColor)]</textcolor>
-					</control>			
+						<textcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</textcolor>
+					</control>
+					<control type="label">
+						<visible>!Control.HasFocus(3522)</visible>
+						<height>63</height>
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>Plots</font>
+						<textoffsetx>20</textoffsetx>
+						<textoffsety>8</textoffsety>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
+					</control>							
 					</focusedlayout>
 					<content>
 					 <item id="1">
 						<label>$LOCALIZE[31622]</label>
 					</item>
 					</content>
+				</control>
+				
+				<control type="group">
+					<top>346</top>
+					<width>688</width>			
+				<control type="label">
+					<visible>Control.HasFocus(3522)</visible>
+					<height>63</height>
+					<aligny>center</aligny>
+					<align>right</align>
+					<font>Reg28</font>
+					<textoffsetx>20</textoffsetx>
+					<textoffsety>8</textoffsety>
+					<textcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</textcolor>
+					<label>$INFO[Container(352).NumItems] titles</label>
+				</control>
+				<control type="label">
+					<visible>!Control.HasFocus(3522)</visible>
+					<height>63</height>
+					<aligny>center</aligny>
+					<align>right</align>
+					<font>Reg28</font>
+					<textoffsetx>20</textoffsetx>
+					<textoffsety>8</textoffsety>
+					<textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
+					<label>$INFO[Container(352).NumItems] titles</label>
+				</control>
 				</control>
 								
 				<!-- fixed border moving with screen -->
@@ -2550,26 +2607,9 @@
 			<!-- Trailers & more -->
 			<control type="group">	
 				<visible>String.IsEqual(Window.Property(AdditionalInfo),trailers)</visible>
-				<include>Animation_Right_DialogInfo</include>
-				<control type="group">
-					<animation effect="fade" start="100" end="39" time="150" condition="Control.HasFocus(354)">Conditional</animation>
-					<top>346</top>
-					<width>688</width>		
-					<control type="label">
-						<height>63</height>
-						<aligny>center</aligny>
-						<align>right</align>
-						<font>Reg28</font>
-						<textoffsetx>20</textoffsetx>
-						<textoffsety>8</textoffsety>
-						<textcolor>$INFO[Skin.String(BingieButtonFocusTextColor)]</textcolor>
-						<label>$INFO[Container(354).NumItems] videos</label>
-					</control>
-				</control>
-				
+				<include>Animation_Right_DialogInfo</include>			
 				<!--Trailers List Button-->	
 				<control type="list" id="3541">
-					<animation effect="fade" start="100" end="39" time="150" condition="Control.HasFocus(354)">Conditional</animation>
 					<onleft>ClearProperty(AdditionalInfo)</onleft>
 					<onback>ClearProperty(AdditionalInfo)</onback>
 					<onback>8000</onback>
@@ -2587,16 +2627,24 @@
 						<textoffsetx>20</textoffsetx>
 						<textoffsety>8</textoffsety>
 						<label>$INFO[ListItem.Label]</label>
-						<textcolor>$INFO[Skin.String(BingieButtonFocusTextColor)]</textcolor>
+						<textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
 					</control>			
 					</itemlayout>
 					<focusedlayout width="550" height="70">
 					<control type="image">
+						<visible>Control.HasFocus(3541)</visible>
 						<width>550</width>
 						<height>65</height>
-						<texture border="10" background="true" colordiffuse="$INFO[Skin.String(BingieButtonFocusTextColor)]">$INFO[Skin.String(thumbsborder_focused),bingie/border/default_button_fo_,.png]</texture>
+						<texture border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texture>
+					</control>
+					<control type="image">
+						<visible>!Control.HasFocus(3541)</visible>
+						<width>550</width>
+						<height>65</height>
+						<texture border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderUnfocusColor)]">bingie/border/default_button_focus.png</texture>
 					</control>
 					<control type="label">
+						<visible>Control.HasFocus(3541)</visible>
 						<height>63</height>
 						<aligny>center</aligny>
 						<align>left</align>
@@ -2604,14 +2652,51 @@
 						<textoffsetx>20</textoffsetx>
 						<textoffsety>8</textoffsety>
 						<label>$INFO[ListItem.Label]</label>
-						<textcolor>$INFO[Skin.String(BingieButtonFocusTextColor)]</textcolor>
-					</control>			
+						<textcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</textcolor>
+					</control>
+					<control type="label">
+						<visible>!Control.HasFocus(3541)</visible>
+						<height>63</height>
+						<aligny>center</aligny>
+						<align>left</align>
+						<font>Plots</font>
+						<textoffsetx>20</textoffsetx>
+						<textoffsety>8</textoffsety>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
+					</control>							
 					</focusedlayout>
 					<content>
 					 <item id="1">
 						<label>$LOCALIZE[31247]</label>
 					</item>
 					</content>
+				</control>
+				<control type="group">
+					<top>346</top>
+					<width>688</width>		
+					<control type="label">
+						<visible>Control.HasFocus(3541)</visible>
+						<height>63</height>
+						<aligny>center</aligny>
+						<align>right</align>
+						<font>Reg28</font>
+						<textoffsetx>20</textoffsetx>
+						<textoffsety>8</textoffsety>
+						<textcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</textcolor>
+						<label>$INFO[Container(354).NumItems] videos</label>
+					</control>
+					<control type="label">
+						<visible>!Control.HasFocus(3541)</visible>
+						<height>63</height>
+						<aligny>center</aligny>
+						<align>right</align>
+						<font>Reg28</font>
+						<textoffsetx>20</textoffsetx>
+						<textoffsety>8</textoffsety>
+						<textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
+						<label>$INFO[Container(354).NumItems] videos</label>
+					</control>
 				</control>
 				<!-- fixed border moving with screen -->
                 <control type="image">

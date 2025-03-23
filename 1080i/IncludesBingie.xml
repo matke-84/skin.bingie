@@ -563,7 +563,7 @@
                 <width>auto</width>
 				<align>center</align>
 				<aligny>center</aligny>
-				<textwidth>158</textwidth> 
+				<textwidth>160</textwidth> 
 				<textcolor>$INFO[Skin.String(BingieDetailsFlagTextColor)]</textcolor>
 				<disabledcolor>$INFO[Skin.String(BingieDetailsFlagTextColor)]</disabledcolor>
 				<texturenofocus colordiffuse="$INFO[Skin.String(BingieDetailsFlagColor)]" border="10">bingie/square-rounded2.png</texturenofocus>
@@ -571,7 +571,7 @@
 				<textoffsetx>8</textoffsetx>
 				<textoffsety>2</textoffsety>
 				<font>Reg24</font>
-				<label>[B]HDR[/B]</label>
+				<label>[B]$VAR[VideoHDRVar][/B]</label>
 				<enable>false</enable>
             </control>
 	</include>		

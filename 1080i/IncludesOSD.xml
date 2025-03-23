@@ -215,6 +215,26 @@
 					<visible>Player.HasDuration</visible>
 					<texture border="10" colordiffuse="$INFO[Skin.String(OSDProgressBarBorderColor)]">diffuse/thinborder.png</texture>
 				</control>
+				<control type="ranges">
+					<posx>515</posx>
+					<posy>160</posy>
+					<width>700</width>
+					<height>32</height>
+					<texturebg colordiffuse="00FFFFFF">diffuse/osd_panel_trans.png</texturebg>
+					<midtexture colordiffuse="$INFO[Skin.String(OSDPrimaryTextColor)]">diffuse/osd_range.png</midtexture>
+					<info>Player.Cutlist</info>
+					<visible>Skin.HasSetting(ChapterMarks)</visible>
+				</control>
+				<control type="ranges">
+					<posx>515</posx>
+					<posy>160</posy>
+					<width>700</width>
+					<height>32</height>
+					<texturebg colordiffuse="00FFFFFF">diffuse/osd_panel_trans.png</texturebg>
+					<righttexture colordiffuse="$INFO[Skin.String(OSDPrimaryTextColor)]">diffuse/osd_range.png</righttexture>
+					<info>Player.Chapters</info>
+					<visible>Skin.HasSetting(ChapterMarks)</visible>
+				</control>	
                 <control type="slider" id="401">
                     <description>Seek Slider</description>
                     <posx>515</posx>
@@ -225,7 +245,7 @@
                     <textureslidernib colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">diffuse/seekslider.png</textureslidernib>
                     <textureslidernibfocus>colors/color_white.png</textureslidernibfocus>
                     <visible>Player.Seeking + !Player.HasAudio</visible>
-                </control>
+                </control>		
 
 				<!--Process/Seekbar-->
 				<control type="label">
@@ -447,6 +467,26 @@
 					<righttexture/>
 					<overlaytexture/>
 				</control>
+				<control type="ranges">
+					<posx>384</posx>
+					<posy>165</posy>
+					<width>1152</width>
+					<height>24</height>
+					<texturebg colordiffuse="00FFFFFF">diffuse/panel2.png</texturebg>
+					<midtexture colordiffuse="$INFO[Skin.String(BingieOSDTextColor)]">diffuse/osd_range.png</midtexture>
+					<info>Player.Cutlist</info>
+					<visible>Skin.HasSetting(ChapterMarks)</visible>
+				</control>
+				<control type="ranges">
+					<posx>384</posx>
+					<posy>165</posy>
+					<width>1152</width>
+					<height>24</height>
+					<texturebg colordiffuse="00FFFFFF">diffuse/panel2.png</texturebg>
+					<righttexture colordiffuse="$INFO[Skin.String(BingieOSDTextColor)]">diffuse/osd_range.png</righttexture>
+					<info>Player.Chapters</info>
+					<visible>Skin.HasSetting(ChapterMarks)</visible>
+				</control>	
 				<control type="slider" id="401">
 					<description>Seek Slider</description>
 					<posx>384</posx>
@@ -456,7 +496,7 @@
 					<texturesliderbar>colors/color_transparent.png</texturesliderbar>
 					<textureslidernib colordiffuse="$INFO[Skin.String(BingieOSDProgressBarColor)]">common/slider/slider_button_nofocus.png</textureslidernib>
 					<visible>Player.SeekEnabled + Player.Seeking + !Player.HasAudio</visible>
-				</control>
+				</control>	
 
 				<!-- Play Time / Remaining Time -->
 				<control type="label">
@@ -1259,6 +1299,23 @@
 				<texture background="true">$VAR[OSDImageDefault]</texture>
 				<bordersize>20</bordersize>
 				<aspectratio align="center" aligny="center">stretch</aspectratio>
+				<visible>[!String.IsEmpty(ListItem.Art(poster)) | !String.IsEmpty(ListItem.Art(tvshow.poster))]</visible>
+				<!-- Animation to Move Poster to the Left when Playtime hits> 1 hour -->
+				<animation end="-45,0" time="0" effect="slide" condition="[Player.Seeking + [!String.IsEqual(Player.SeekTime(hh),00)]] | !String.IsEqual(Player.Time(hh),00)">Conditional</animation>
+			</control>
+			<control type="image" id="39623">
+				<visible>!VideoPlayer.Content(livetv)</visible>
+				<posx>256</posx>
+				<posy>317</posy>
+				<align>left</align>
+				<aligny>center</aligny>
+				<width>320</width>
+				<height>445</height>
+				<fadetime>200</fadetime>
+				<texture background="true">$VAR[OSDImageDefault]</texture>
+				<bordersize>20</bordersize>
+				<aspectratio align="center" aligny="center">scale</aspectratio>
+				<visible>String.IsEmpty(ListItem.Art(poster)) + String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
 				<!-- Animation to Move Poster to the Left when Playtime hits> 1 hour -->
 				<animation end="-45,0" time="0" effect="slide" condition="[Player.Seeking + [!String.IsEqual(Player.SeekTime(hh),00)]] | !String.IsEqual(Player.Time(hh),00)">Conditional</animation>
 			</control>
@@ -1273,7 +1330,7 @@
 				<fadetime>200</fadetime>
 				<texture background="true">$VAR[OSDImageDefault]</texture>
 				<bordersize>20</bordersize>
-				<aspectratio align="center" aligny="top">keep</aspectratio>
+				<aspectratio align="left" aligny="top">keep</aspectratio>
 				<!-- Animation to Move Poster to the Left when Playtime hits> 1 hour -->
 				<animation end="-45,0" time="0" effect="slide" condition="[Player.Seeking + [!String.IsEqual(Player.SeekTime(hh),00)]] | !String.IsEqual(Player.Time(hh),00)">Conditional</animation>
 				<include content="posx" condition="VideoPlayer.HasEpg">
@@ -1285,9 +1342,6 @@
 			<control type="grouplist">
 				<!-- Animation to Move Whole Control to the Left when Playtime hits> 1 hour -->
 				<animation end="-45,0" time="0" effect="slide" condition="[Player.Seeking + [!String.IsEqual(Player.SeekTime(hh),00)]] | !String.IsEqual(Player.Time(hh),00)">Conditional</animation>
-				<!-- hide for trailers -->
-				<visible>!String.Contains(VideoPlayer.Title, -trailer.)</visible>
-				<animation end="-250,0" time="0" effect="slide" condition="String.Contains(Control.GetLabel(39623),DefaultVideo)">Conditional</animation>
 				<posx>581</posx>
 				<posy>272</posy>
 				<width>1380</width>
@@ -1758,6 +1812,17 @@
 					<visible>!VideoPlayer.Content(livetv)</visible>
 					<visible>Skin.HasSetting(bingie_osd_buttons_bookmarks)</visible>
 					<visible>Player.HasVideo</visible>
+				</control>
+				<control type="button" id="215">
+					<description>pvrguide</description>
+					<width>$PARAM[topsize]</width>
+					<height>$PARAM[topsize]</height>
+					<label/>
+					<font/>
+					<texturefocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsFocusColor)]">$PARAM[iconspath]epg_fo.png</texturefocus>
+					<texturenofocus colordiffuse="$INFO[Skin.String(OSDBingieButtonsColor)]">$PARAM[iconspath]epg.png</texturenofocus>
+					<onclick>PlayerControl(ShowVideoMenu)</onclick>
+					<visible>VideoPlayer.HasMenu</visible>
 				</control>
 				<control type="button" id="209">
 					<description>Play From Beginning</description>

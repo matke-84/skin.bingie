@@ -1787,12 +1787,20 @@
             <onclick>Skin.ToggleSetting(EnableBufferingProgressOSD)</onclick>
             <selected>Skin.HasSetting(EnableBufferingProgressOSD)</selected>
         </control>
+		<!-- Show chapter marks -->
+		<control type="radiobutton" id="31763">
+            <include>SkinSettings_Button</include>
+            <label>31763</label>
+            <onclick>Skin.ToggleSetting(ChapterMarks)</onclick>
+            <selected>Skin.HasSetting(ChapterMarks)</selected>
+        </control>
 		<control type="radiobutton" id="2036">
             <include>SkinSettings_Button</include>
             <label>31592</label>
             <onclick>Skin.ToggleSetting(EnableAutoPauseOnOSD)</onclick>
             <selected>Skin.HasSetting(EnableAutoPauseOnOSD)</selected>
         </control>
+		<!-- Show Info on Pause -->
 		<control type="radiobutton" id="31761">
             <include>SkinSettings_Button</include>
             <label>31761</label>

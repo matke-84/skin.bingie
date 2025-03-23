@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- BINGIE -->
 <window type="dialog" id="1158">
-    <visible>Skin.HasSetting(AutoCloseVideoOSD) + ![Skin.HasSetting(EnableOSDInfo) | Window.IsActive(OSDVideoSettings) | Window.IsActive(OSDAudioSettings) | Window.IsActive(OSDSubtitleSettings) | Window.IsActive(videobookmarks) | Window.IsActive(pvrchannelguide)]</visible>
-	<visible>[Window.IsActive(videoosd) | Window.IsActive(musicosd)] + Player.Playing</visible>
+    <visible>System.IdleTime(1) + Skin.HasSetting(AutoCloseVideoOSD) + ![Skin.HasSetting(EnableOSDInfo) | Window.IsActive(OSDVideoSettings) | Window.IsActive(OSDAudioSettings) | Window.IsActive(OSDSubtitleSettings) | Window.IsActive(videobookmarks) | Window.IsActive(pvrchannelguide)]</visible>
+	<visible>System.IdleTime(1) + [Window.IsActive(videoosd) | Window.IsActive(musicosd)] + Player.Playing</visible>
     <onload>AlarmClock(CloseVideoOSD, Dialog.Close(videoosd),$INFO[Skin.String(AutoCloseVideoOSDTime),00:,],silent)</onload>
     <onload>AlarmClock(CloseMusicOSD, Dialog.Close(musicosd),$INFO[Skin.String(AutoCloseVideoOSDTime),00:,],silent)</onload>
+	<onunload condition="System.HasAlarm(CloseVideoOSD)">CancelAlarm(CloseVideoOSD,true)</onunload>
+	<onunload condition="System.HasAlarm(CloseMusicOSD)">CancelAlarm(CloseMusicOSD,true)</onunload>
     <controls />
 </window>
