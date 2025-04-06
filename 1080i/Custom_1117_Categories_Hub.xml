@@ -151,8 +151,8 @@
 							<orientation>horizontal</orientation>
 							<visible>!$EXP[IsMainMenuOpened]</visible>
 							<visible>!$EXP[IsEpisodeDBType]</visible>
-							<visible>!Skin.HasSetting(DisableTop250) + Skin.HasSetting(EnableRatings) + !String.IsEmpty(Control.GetLabel(8231)) + !Integer.IsGreater(ListItem.PercentPlayed,1) | !Skin.HasSetting(DisableTop250) + Skin.HasSetting(EnableRatings) + !String.IsEmpty(Control.GetLabel(823)) + $EXP[IsTVShowInLastEpisodes] + !Integer.IsGreater(ListItem.PercentPlayed,1) | 
-							!Skin.HasSetting(DisableTop250) + Skin.HasSetting(EnableRatings) + !String.IsEmpty(Control.GetLabel(8231)) + !Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1)</visible>
+							<visible>Skin.HasSetting(EnableTop250) + Skin.HasSetting(EnableRatings) + !String.IsEmpty(Control.GetLabel(8231)) + !Integer.IsGreater(ListItem.PercentPlayed,1) | Skin.HasSetting(EnableTop250) + Skin.HasSetting(EnableRatings) + !String.IsEmpty(Control.GetLabel(823)) + $EXP[IsTVShowInLastEpisodes] + !Integer.IsGreater(ListItem.PercentPlayed,1) | 
+							Skin.HasSetting(EnableTop250) + Skin.HasSetting(EnableRatings) + !String.IsEmpty(Control.GetLabel(8231)) + !Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1)</visible>
 							<animation effect="fade" time="150">Visible</animation>
 							<height>55</height>
 							<width>800</width>
@@ -221,7 +221,7 @@
 					<control type="group">
 						<top>5</top>
                     <include content="Bingie_Additional_Info">
-                       <param name="visibility" value="!$EXP[IsEpisodeDBType] + !$EXP[IsCategoryDBType] + !$EXP[IsMainMenuOpened] + !$EXP[IsTVShowInLastEpisodes] | [Skin.HasSetting(DisableTop250) | !Skin.HasSetting(EnableRatings)] + !$EXP[IsEpisodeDBType] + !$EXP[IsCategoryDBType] + !$EXP[IsMainMenuOpened] | Container.Content(episodes)"/>
+                       <param name="visibility" value="!$EXP[IsEpisodeDBType] + !$EXP[IsCategoryDBType] + !$EXP[IsMainMenuOpened] + !$EXP[IsTVShowInLastEpisodes] | [!Skin.HasSetting(EnableTop250) | !Skin.HasSetting(EnableRatings)] + !$EXP[IsEpisodeDBType] + !$EXP[IsCategoryDBType] + !$EXP[IsMainMenuOpened] | Container.Content(episodes)"/>
                     </include>	
 					</control>					
                 </control>

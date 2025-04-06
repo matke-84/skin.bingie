@@ -80,7 +80,7 @@
 				<top>98</top>
 				<font>reg30</font> 
 				<textcolor>$INFO[Skin.String(BingiePrimaryTextColor)]</textcolor>
-				<label>$LOCALIZE[31474]</label>
+				<label>$LOCALIZE[13012]</label>
 				<visible>Container(1510).HasNext | Container(1510).HasPrevious</visible>
 			</control>
 			<control type="image">
@@ -177,14 +177,14 @@
 					<top>270</top>
 					<font>reg30</font> 
 					<textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor>
-					<label>$LOCALIZE[31240] [LOWERCASE]$INFO[Container(99950).ListItem.Property(Genre.1.Name)][/LOWERCASE] $LOCALIZE[31236]</label>
+					<label>$LOCALIZE[31240] [LOWERCASE]$INFO[Container(99950).ListItem.Property(Genre.1.Name)][/LOWERCASE] $LOCALIZE[36900]</label>
 					<visible>[String.IsEmpty(Control.GetLabel(823155)) | String.IsEmpty(Control.GetLabel(823157))] + $EXP[IsMovieDBType] + !String.IsEmpty(Container(99950).ListItem.Property(Genre.1.Name))</visible>
 				</control>
 				<control type="label" id="823157">
 					<top>270</top>
 					<font>reg30</font> 
 					<textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor>
-					<label>$LOCALIZE[31240] [LOWERCASE]$INFO[Container(99950).ListItem.Property(Genre.1.Name)][/LOWERCASE] $LOCALIZE[31235]</label>
+					<label>$LOCALIZE[31240] [LOWERCASE]$INFO[Container(99950).ListItem.Property(Genre.1.Name)][/LOWERCASE] [CAPITALIZE]$LOCALIZE[20364][/CAPITALIZE]</label>
 					<visible>[String.IsEmpty(Control.GetLabel(823155)) | String.IsEmpty(Control.GetLabel(823156))] + $EXP[IsTvShowDBType] + !String.IsEmpty(Container(99950).ListItem.Property(Genre.1.Name))</visible>
 				</control>
 			</control>			
@@ -917,49 +917,49 @@
     <include name="StaticWidget_pvr">
         <content>
             <item id="1">
-                <label>$LOCALIZE[31687]</label>
+                <label>[CAPITALIZE]$LOCALIZE[10700][/CAPITALIZE]</label>
                 <thumb>diffuse/category.png</thumb>
                 <property name="DBTYPE">category</property>
                 <property name="path"></property>
                 <onclick>ActivateWindow(tvchannels,return)</onclick>
             </item>
             <item id="2">
-                <label>$LOCALIZE[31676]</label>
+                <label>[CAPITALIZE]$LOCALIZE[4][/CAPITALIZE]</label>
                 <thumb>diffuse/category.png</thumb>
                 <property name="DBTYPE">category</property>
                 <property name="path"></property>
                 <onclick>ActivateWindow(tvguide,return)</onclick>
             </item>
             <item id="3">
-                <label>$LOCALIZE[31677]</label>
+                <label>[CAPITALIZE]$LOCALIZE[10704][/CAPITALIZE]</label>
                 <thumb>diffuse/category.png</thumb>
                 <property name="DBTYPE">category</property>
                 <property name="path"></property>
                 <onclick>ActivateWindow(tvsearch,return)</onclick>
             </item>
             <item id="4">
-                <label>$LOCALIZE[31678]</label>
+                <label>[CAPITALIZE]$LOCALIZE[10701][/CAPITALIZE]</label>
                 <thumb>diffuse/category.png</thumb>
                 <property name="DBTYPE">category</property>
                 <property name="path"></property>
                 <onclick>ActivateWindow(tvrecordings,return)</onclick>
             </item>
             <item id="5">
-                <label>$LOCALIZE[19040]</label>
+                <label>[CAPITALIZE]$LOCALIZE[19040][/CAPITALIZE]</label>
                 <thumb>diffuse/category.png</thumb>
                 <property name="DBTYPE">category</property>
                 <property name="path"></property>
                 <onclick>ActivateWindow(tvtimers,return)</onclick>
             </item>
             <item id="6">
-                <label>$LOCALIZE[31674]</label>
+                <label>[CAPITALIZE]$LOCALIZE[19138][/CAPITALIZE]</label>
                 <thumb>diffuse/category.png</thumb>
                 <property name="DBTYPE">category</property>
                 <property name="path"></property>
                 <onclick>ActivateWindow(tvtimerrules,return)</onclick>
             </item>
             <item id="7">
-                <label>$LOCALIZE[31660]</label>
+                <label>[CAPITALIZE]$LOCALIZE[10705][/CAPITALIZE]</label>
                 <thumb>diffuse/category.png</thumb>
                 <property name="DBTYPE">category</property>
                 <property name="path"></property>

@@ -27,9 +27,9 @@
                 <onup>50</onup>
                 <ondown>50</ondown>
                 <pagecontrol>60</pagecontrol>
-                <viewtype label="31443">list</viewtype>
+                <viewtype label="535">list</viewtype>
                 <include content="View_Forced">
-                    <param name="viewtype" value="$LOCALIZE[31443]" />
+                    <param name="viewtype" value="$LOCALIZE[535]" />
                 </include>
                 <scrolltime tween="quadratic">400</scrolltime>
                 <itemlayout width="1290" height="63">

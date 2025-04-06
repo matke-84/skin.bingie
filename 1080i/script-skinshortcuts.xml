@@ -377,7 +377,7 @@
 						<left>5</left>
 						<width>500</width>
 						<height>25</height>
-						<label>[B]$LOCALIZE[31501]:[/B]</label>
+						<label>[B]$LOCALIZE[15217]:[/B]</label>
                         <font>Reg24</font>
 						<scrollspeed>160</scrollspeed>
 						<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
@@ -554,7 +554,7 @@
 					<width>510</width>
 					<height>58</height>
 					<align>center</align>
-					<label>31683</label>
+					<label>31666</label>
 					<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 				</control>
 				
@@ -574,12 +574,12 @@
 				</control>              
 				
 				<!--widget style-->
-                <control type="button" id="31618"> 
+                <control type="button" id="31507"> 
 					<width>510</width>
 					<height>58</height>
-					<label>$LOCALIZE[31618]</label>
+					<label>$LOCALIZE[31507]</label>
 					<align>center</align>
-                    <onclick>RunScript(script.bingie.toolbox,action=setskinshortcutsproperty,setting=layout,header=$LOCALIZE[31618],property=layout)</onclick>
+                    <onclick>RunScript(script.bingie.toolbox,action=setskinshortcutsproperty,setting=layout,header=$LOCALIZE[31507],property=layout)</onclick>
 					<visible>String.IsEqual(Window.Property(groupname),searchmenu)</visible>
                 </control>
 				
@@ -616,7 +616,7 @@
 				<control type="button" id="2404"> 
 					<width>510</width>
 					<height>58</height>
-					<label>$LOCALIZE[31308]</label>
+					<label>$LOCALIZE[15067]</label>
 					<align>center</align>
 					<onclick>back</onclick>
 				</control>

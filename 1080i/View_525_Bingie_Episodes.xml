@@ -29,7 +29,7 @@
 
     <!-- workaround for Total Season/s IN EPISODE LEVEL -->
     <variable name="View525TotalSeasons">
-        <value condition="Integer.IsGreater(Container(5250).NumItems,1)">$INFO[Container(5250).NumItems,, $LOCALIZE[31224]]</value>
+        <value condition="Integer.IsGreater(Container(5250).NumItems,1)">$INFO[Container(5250).NumItems,, $LOCALIZE[33054]]</value>
         <value>$INFO[Container(5250).NumItems,, $LOCALIZE[20373]]</value>
     </variable>
 

@@ -742,11 +742,11 @@
 				  <visible>!Skin.HasSetting(EnableCastThumb) | [Skin.HasSetting(EnableCastThumb) + Container.Content(seasons)]</visible>
 				  <visible>$PARAM[visibility]</visible>
                   <visible>$EXP[IsMovieDBType] | $EXP[IsTvShowDBType] | $EXP[IsSeasonDBType] | [String.IsEqual(ListItem.DBTYPE,artist) | String.IsEqual(ListItem.DBTYPE,album)] + [!String.IsEmpty(ListItem.Property(Album_Description)) | !String.IsEmpty(ListItem.Property(Artist_Description))] | String.Contains(ListItem.Path,videodb://movies/sets/)</visible>
-				  <visible>!Skin.HasSetting(DisableTop250) + Skin.HasSetting(EnableRatings) + String.IsEmpty(Control.GetLabel(8231)) + !Integer.IsGreater(ListItem.PercentPlayed,1) | [$EXP[IsMainMenuOpened] + Integer.IsGreater(Window(Home).Property(ListItem.PercentPlayed),1)] | 
-				  !Skin.HasSetting(DisableTop250) + Skin.HasSetting(EnableRatings) + String.IsEmpty(Control.GetLabel(8231)) + !Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1) | 
-				  [Skin.HasSetting(DisableTop250) | !Skin.HasSetting(EnableRatings)] + !Skin.HasSetting(MovieDetailsHome) | 
-				  [Skin.HasSetting(DisableTop250) | !Skin.HasSetting(EnableRatings)] + Skin.HasSetting(MovieDetailsHome) + !Integer.IsGreater(ListItem.PercentPlayed,1) |
-				  !Skin.HasSetting(DisableTop250) + Skin.HasSetting(EnableRatings) + !String.IsEmpty(Control.GetLabel(8231)) + !Integer.IsGreater(ListItem.PercentPlayed,1) + Container.Content(seasons)
+				  <visible>Skin.HasSetting(EnableTop250) + Skin.HasSetting(EnableRatings) + String.IsEmpty(Control.GetLabel(8231)) + !Integer.IsGreater(ListItem.PercentPlayed,1) | [$EXP[IsMainMenuOpened] + Integer.IsGreater(Window(Home).Property(ListItem.PercentPlayed),1)] | 
+				  Skin.HasSetting(EnableTop250) + Skin.HasSetting(EnableRatings) + String.IsEmpty(Control.GetLabel(8231)) + !Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1) | 
+				  [!Skin.HasSetting(EnableTop250) | !Skin.HasSetting(EnableRatings)] + !Skin.HasSetting(MovieDetailsHome) | 
+				  [!Skin.HasSetting(EnableTop250) | !Skin.HasSetting(EnableRatings)] + Skin.HasSetting(MovieDetailsHome) + !Integer.IsGreater(ListItem.PercentPlayed,1) |
+				  Skin.HasSetting(EnableTop250) + Skin.HasSetting(EnableRatings) + !String.IsEmpty(Control.GetLabel(8231)) + !Integer.IsGreater(ListItem.PercentPlayed,1) + Container.Content(seasons)
 				  </visible>
                   <top>$PARAM[top]</top>
                   <height>115</height>
@@ -798,10 +798,10 @@
 				  <visible>Skin.HasSetting(EnableCastThumb) + !Container.Content(seasons)</visible>
 				  <visible>$PARAM[visibility]</visible>
                   <visible>$EXP[IsMovieDBType] | $EXP[IsTvShowDBType] | $EXP[IsSeasonDBType] | [String.IsEqual(ListItem.DBTYPE,artist) | String.IsEqual(ListItem.DBTYPE,album)] + [!String.IsEmpty(ListItem.Property(Album_Description)) | !String.IsEmpty(ListItem.Property(Artist_Description))] | String.Contains(ListItem.Path,videodb://movies/sets/)</visible>
-				  <visible>!Skin.HasSetting(DisableTop250) + Skin.HasSetting(EnableRatings) + String.IsEmpty(Control.GetLabel(8231)) + !Integer.IsGreater(ListItem.PercentPlayed,1) | [$EXP[IsMainMenuOpened] + Integer.IsGreater(Window(Home).Property(ListItem.PercentPlayed),1)] | 
-				  !Skin.HasSetting(DisableTop250) + Skin.HasSetting(EnableRatings) + String.IsEmpty(Control.GetLabel(8231)) + !Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1) | 
-				  [Skin.HasSetting(DisableTop250) | !Skin.HasSetting(EnableRatings)] + !Skin.HasSetting(MovieDetailsHome) | 
-				  [Skin.HasSetting(DisableTop250) | !Skin.HasSetting(EnableRatings)] + Skin.HasSetting(MovieDetailsHome) + !Integer.IsGreater(ListItem.PercentPlayed,1)
+				  <visible>Skin.HasSetting(EnableTop250) + Skin.HasSetting(EnableRatings) + String.IsEmpty(Control.GetLabel(8231)) + !Integer.IsGreater(ListItem.PercentPlayed,1) | [$EXP[IsMainMenuOpened] + Integer.IsGreater(Window(Home).Property(ListItem.PercentPlayed),1)] | 
+				  Skin.HasSetting(EnableTop250) + Skin.HasSetting(EnableRatings) + String.IsEmpty(Control.GetLabel(8231)) + !Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1) | 
+				  [!Skin.HasSetting(EnableTop250) | !Skin.HasSetting(EnableRatings)] + !Skin.HasSetting(MovieDetailsHome) | 
+				  [!Skin.HasSetting(EnableTop250) | !Skin.HasSetting(EnableRatings)] + Skin.HasSetting(MovieDetailsHome) + !Integer.IsGreater(ListItem.PercentPlayed,1)
 				  </visible>
                   <top>$PARAM[top]</top>
                   <height>115</height>
@@ -1019,7 +1019,7 @@
         String.IsEqual(Window(Home).Property(LatestMovie.3.Title),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestMovie.4.Title),ListItem.Title) |
         String.IsEqual(Window(Home).Property(LatestMovie.5.Title),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestMovie.6.Title),ListItem.Title) |
         String.IsEqual(Window(Home).Property(LatestMovie.7.Title),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestMovie.8.Title),ListItem.Title) |
-        String.IsEqual(Window(Home).Property(LatestMovie.9.Title),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestMovie.10.Title),ListItem.Title)">$LOCALIZE[31193]</value>
+        String.IsEqual(Window(Home).Property(LatestMovie.9.Title),ListItem.Title) | String.IsEqual(Window(Home).Property(LatestMovie.10.Title),ListItem.Title)">$LOCALIZE[842]</value>
     </variable>
 
     <!-- New TVShow -->
@@ -1034,7 +1034,7 @@
         [String.IsEqual(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.Title) + String.IsEqual(Window(Home).Property(LatestEpisode.4.EpisodeSeason),1)] |
         [String.IsEqual(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.Title) + String.IsEqual(Window(Home).Property(LatestEpisode.3.EpisodeSeason),1)] |
         [String.IsEqual(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.Title) + String.IsEqual(Window(Home).Property(LatestEpisode.2.EpisodeSeason),1)] |
-        [String.IsEqual(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.Title) + String.IsEqual(Window(Home).Property(LatestEpisode.1.EpisodeSeason),1)]">$LOCALIZE[31193]</value>
+        [String.IsEqual(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.Title) + String.IsEqual(Window(Home).Property(LatestEpisode.1.EpisodeSeason),1)]">$LOCALIZE[842]</value>
     </variable>
 
     <!-- New Episode -->
@@ -1049,20 +1049,20 @@
         [String.IsEqual(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) + String.IsEqual(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TVShowTitle)] |
         [String.IsEqual(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) + String.IsEqual(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TVShowTitle)] |
         [String.IsEqual(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) + String.IsEqual(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TVShowTitle)] |
-        [String.IsEqual(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title) + String.IsEqual(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TVShowTitle)]">$LOCALIZE[31193]</value>
+        [String.IsEqual(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title) + String.IsEqual(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TVShowTitle)]">$LOCALIZE[842]</value>
     </variable>
 
 	<!-- Choose Year / Premiered -->
 	<variable name="YearOrPremiered">
-		<value condition="$EXP[IsEpisodeDBType] + Skin.HasSetting(EnableAirDate)">$VAR[GetPremiered]</value>
+		<value condition="[$EXP[IsMovieDBType] + Skin.HasSetting(AirDateMovies)] | [$EXP[IsTvShowDBType] + Skin.HasSetting(AirDateShows)] | [$EXP[IsSeasonDBType] + Skin.HasSetting(AirDateSeasons)] | [$EXP[IsEpisodeDBType] + Skin.HasSetting(AirDateEpisodes)]">$VAR[GetPremiered]</value>
 		<value>$VAR[GetYear]</value>
 	</variable>
 	
 	<!-- Music Artist Year -->
 	<variable name="MusicArtistYear">       
-		<value condition="[!String.IsEmpty(ListItem.Property(Artist_Formed)) | !String.IsEmpty(ListItem.Property(Artist_Disbanded))] + !String.IsEqual(ListItem.Property(Artist_Type),person)">$INFO[ListItem.Property(Artist_Formed),$LOCALIZE[31106]: ]$INFO[ListItem.Property(Artist_Disbanded),  •  $LOCALIZE[31107]: ]</value>
-		<value condition="[!String.IsEmpty(ListItem.Property(Artist_Born)) | !String.IsEmpty(ListItem.Property(Artist_Died))] + String.IsEqual(ListItem.Property(Artist_Type),person)">$INFO[ListItem.Property(Artist_Born),$LOCALIZE[31243]: ]$INFO[ListItem.Property(Artist_Died),  •  $LOCALIZE[31242]: ]</value>
-		<value condition="!String.IsEmpty(ListItem.Property(Artist_YearsActive))">$INFO[ListItem.Property(Artist_YearsActive),$LOCALIZE[31083]: ]</value>
+		<value condition="[!String.IsEmpty(ListItem.Property(Artist_Formed)) | !String.IsEmpty(ListItem.Property(Artist_Disbanded))] + !String.IsEqual(ListItem.Property(Artist_Type),person)">$INFO[ListItem.Property(Artist_Formed),$LOCALIZE[21894]: ]$INFO[ListItem.Property(Artist_Disbanded),  •  $LOCALIZE[21896]: ]</value>
+		<value condition="[!String.IsEmpty(ListItem.Property(Artist_Born)) | !String.IsEmpty(ListItem.Property(Artist_Died))] + String.IsEqual(ListItem.Property(Artist_Type),person)">$INFO[ListItem.Property(Artist_Born),$LOCALIZE[21893]: ]$INFO[ListItem.Property(Artist_Died),  •  $LOCALIZE[21897]: ]</value>
+		<value condition="!String.IsEmpty(ListItem.Property(Artist_YearsActive))">$INFO[ListItem.Property(Artist_YearsActive),$LOCALIZE[19074]: ]</value>
 	</variable>
 	
 	<!-- Music Year -->
@@ -1072,7 +1072,7 @@
 	
 	<!-- Music Duration -->	
 	<variable name="MusicDuration">
-		<value condition="!String.IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration,$LOCALIZE[31213]: ,  •]</value>        
+		<value condition="!String.IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration,$LOCALIZE[180]: ,  •]</value>        
 	</variable>
 	
 	<!-- Music Disambiguation -->
@@ -1084,7 +1084,7 @@
 	
 	<!-- Music Label -->
 	<variable name="AlbumTitle">
-		<value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title,$LOCALIZE[31109]: ]</value>        
+		<value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title,$LOCALIZE[558]: ]</value>        
 	</variable>
 	
 	<!-- Choose Duration Or Total Seasons/Episodes count -->
@@ -1140,24 +1140,24 @@
     <!-- Total Seasons/Episodes Info -->
     <variable name="GetTotalSeasonEpisodeCount">
         <!--normal-->
-        <value condition="Integer.IsGreater(ListItem.Property(TotalEpisodes),1) + Integer.IsGreater(ListItem.Property(TotalSeasons),1)">$INFO[ListItem.Property(TotalSeasons),, $LOCALIZE[31224]]</value>
+        <value condition="Integer.IsGreater(ListItem.Property(TotalEpisodes),1) + Integer.IsGreater(ListItem.Property(TotalSeasons),1)">$INFO[ListItem.Property(TotalSeasons),, $LOCALIZE[33054]]</value>
         <value condition="Integer.IsGreater(ListItem.Property(TotalEpisodes),1) + Integer.IsEqual(ListItem.Property(TotalSeasons),1)">$INFO[ListItem.Property(TotalSeasons),, $LOCALIZE[20373]]</value>
         <value condition="!String.IsEmpty(ListItem.Property(TotalEpisodes)) + Integer.IsEqual(ListItem.Property(TotalEpisodes),1)">$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20359]]</value>
         <value condition="!String.IsEmpty(ListItem.Property(TotalEpisodes)) + Integer.IsGreater(ListItem.Property(TotalEpisodes),1)">$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]</value>
-		<value condition="Integer.IsGreater(ListItem.Episode,1) + Integer.IsGreater(ListItem.Season,1)">$INFO[ListItem.Season,, $LOCALIZE[31224]]</value>
+		<value condition="Integer.IsGreater(ListItem.Episode,1) + Integer.IsGreater(ListItem.Season,1)">$INFO[ListItem.Season,, $LOCALIZE[33054]]</value>
         <value condition="Integer.IsGreater(ListItem.Episode,1) + Integer.IsEqual(ListItem.Season,1)">$INFO[ListItem.Season,, $LOCALIZE[20373]]</value>
         <value condition="!String.IsEmpty(ListItem.Episode) + Integer.IsEqual(ListItem.Episode,1)">$INFO[ListItem.Episode,, $LOCALIZE[20359]]</value>
         <value condition="!String.IsEmpty(ListItem.Episode) + Integer.IsGreater(ListItem.Episode,0)">$INFO[ListItem.Episode,, $LOCALIZE[20360]]</value>
-		<value condition="Integer.IsGreater(Container(99950).ListItem.Episode,1) + Integer.IsGreater(Container(99950).ListItem.Season,1)">$INFO[Container(99950).ListItem.Season,, $LOCALIZE[31224]]</value>
+		<value condition="Integer.IsGreater(Container(99950).ListItem.Episode,1) + Integer.IsGreater(Container(99950).ListItem.Season,1)">$INFO[Container(99950).ListItem.Season,, $LOCALIZE[33054]]</value>
         <value condition="Integer.IsGreater(Container(99950).ListItem.Episode,1) + Integer.IsEqual(Container(99950).ListItem.Season,1)">$INFO[Container(99950).ListItem.Season,, $LOCALIZE[20373]]</value>
         <value condition="!String.IsEmpty(Container(99950).ListItem.Episode) + Integer.IsEqual(Container(99950).ListItem.Episode,1)">$INFO[Container(99950).ListItem.Episode,, $LOCALIZE[20359]]</value>
         <value condition="!String.IsEmpty(Container(99950).ListItem.Episode) + Integer.IsGreater(Container(99950).ListItem.Episode,0)">$INFO[Container(99950).ListItem.Episode,, $LOCALIZE[20360]]</value>
         <!-- fallback -->
-        <value condition="$EXP[IsMainMenuOpened] + Integer.IsGreater(Window(Home).Property(ListItem.TotalEpisodes),1) + Integer.IsGreater(Window(Home).Property(ListItem.TotalSeasons),1)">$INFO[Window(Home).Property(ListItem.TotalSeasons),, $LOCALIZE[31224]]</value>
+        <value condition="$EXP[IsMainMenuOpened] + Integer.IsGreater(Window(Home).Property(ListItem.TotalEpisodes),1) + Integer.IsGreater(Window(Home).Property(ListItem.TotalSeasons),1)">$INFO[Window(Home).Property(ListItem.TotalSeasons),, $LOCALIZE[33054]]</value>
         <value condition="$EXP[IsMainMenuOpened] + Integer.IsGreater(Window(Home).Property(ListItem.TotalEpisodes),1) + Integer.IsEqual(Window(Home).Property(ListItem.TotalSeasons),1)">$INFO[Window(Home).Property(ListItem.TotalSeasons),, $LOCALIZE[20373]]</value>
         <value condition="$EXP[IsMainMenuOpened] + !String.IsEmpty(Window(Home).Property(ListItem.TotalEpisodes)) + Integer.IsEqual(Window(Home).Property(ListItem.TotalEpisodes),1)">$INFO[Window(Home).Property(ListItem.TotalEpisodes),, $LOCALIZE[20359]]</value>
         <value condition="$EXP[IsMainMenuOpened] + !String.IsEmpty(Window(Home).Property(ListItem.TotalEpisodes)) + Integer.IsGreater(Window(Home).Property(ListItem.TotalEpisodes),1)">$INFO[Window(Home).Property(ListItem.TotalEpisodes),, $LOCALIZE[20360]]</value>
-		<value condition="$EXP[IsMainMenuOpened] + Integer.IsGreater(Window(Home).Property(ListItem.Episode),1) + Integer.IsGreater(Window(Home).Property(ListItem.Season),1)">$INFO[Window(Home).Property(ListItem.Season),, $LOCALIZE[31224]]</value>
+		<value condition="$EXP[IsMainMenuOpened] + Integer.IsGreater(Window(Home).Property(ListItem.Episode),1) + Integer.IsGreater(Window(Home).Property(ListItem.Season),1)">$INFO[Window(Home).Property(ListItem.Season),, $LOCALIZE[33054]]</value>
         <value condition="$EXP[IsMainMenuOpened] + Integer.IsGreater(Window(Home).Property(ListItem.Episode),1) + Integer.IsEqual(Window(Home).Property(ListItem.Season),1)">$INFO[Window(Home).Property(ListItem.Season),, $LOCALIZE[20373]]</value>
         <value condition="$EXP[IsMainMenuOpened] + !String.IsEmpty(Window(Home).Property(ListItem.Episode)) + Integer.IsEqual(Window(Home).Property(ListItem.Episode),1)">$INFO[Window(Home).Property(ListItem.Episode),, $LOCALIZE[20359]]</value>
         <value condition="$EXP[IsMainMenuOpened] + !String.IsEmpty(Window(Home).Property(ListItem.Episode)) + Integer.IsGreater(Window(Home).Property(ListItem.Episode),1)">$INFO[Window(Home).Property(ListItem.Episode),, $LOCALIZE[20360]]</value>
@@ -1353,7 +1353,7 @@
 	<variable name="ScreensaverWidget">
         <value condition="!String.IsEmpty(Skin.String(screensaver.bingie.path))">$INFO[Skin.String(screensaver.bingie.path)]</value>
         <value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">plugin://script.bingie.widgets/?action=random&amp;mediatype=media&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
-		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.themoviedb.helper/?info=random_popular&amp;tmdb_type=both&amp;widget=true&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
+		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.themoviedb.helper/?info=random_popular&amp;tmdb_type=both&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbHelper.Widgets.Reload)]</value>
     </variable>
 
     <!-- bingie home clearlogo -->
@@ -1418,8 +1418,8 @@
 
     <!-- Bingie Sublabel - tagline/watch now/album or song/pvr -->
     <variable name="BingieSublabel">
-        <value condition="$EXP[IsTvShowDBTypeNoFallback] + $EXP[IsTVShowInLastEpisodes]">$VAR[GetNewEpisodesTVShowSeason,$LOCALIZE[31070] , $LOCALIZE[31067]]</value>
-        <value condition="$EXP[IsMainMenuOpened] + $EXP[IsTvShowDBType] + $EXP[IsTVShowInLastEpisodesBasedOnProps]">$VAR[GetNewEpisodesTVShowSeasonBasedOnProps,$LOCALIZE[31070] , $LOCALIZE[31067]]</value>
+        <value condition="$EXP[IsTvShowDBTypeNoFallback] + $EXP[IsTVShowInLastEpisodes]">$VAR[GetNewEpisodesTVShowSeason,$LOCALIZE[31070] , $LOCALIZE[19030]]</value>
+        <value condition="$EXP[IsMainMenuOpened] + $EXP[IsTvShowDBType] + $EXP[IsTVShowInLastEpisodesBasedOnProps]">$VAR[GetNewEpisodesTVShowSeasonBasedOnProps,$LOCALIZE[31070] , $LOCALIZE[19030]]</value>
         <value condition="$EXP[IsTvShowDBTypeNoFallback] + !String.IsEmpty(ListItem.Property(TotalSeasons)) + !Integer.IsEqual(ListItem.Property(TotalSeasons),0) + !Integer.IsEqual(ListItem.Property(TotalSeasons),1) + String.IsEqual(ListItem.Property(UnWatchedEpisodes),ListItem.Property(TotalEpisodes))">$LOCALIZE[31161]</value>
         <value condition="$EXP[IsMainMenuOpened] + !String.IsEmpty(Window(Home).Property(ListItem.TotalSeasons)) + !Integer.IsEqual(Window(Home).Property(ListItem.TotalSeasons),0) + !Integer.IsEqual(Window(Home).Property(ListItem.TotalSeasons),1) + String.IsEqual(Window(Home).Property(ListItem.UnWatchedEpisodes),Window(Home).Property(ListItem.TotalEpisodes))">$LOCALIZE[31161]</value>
         <value condition="[String.IsEqual(ListItem.DBTYPE,album)  | String.IsEqual(Window(Home).Property(ListItem.DBTYPE),album)]">$INFO[ListItem.Album]</value>
@@ -1462,9 +1462,9 @@
     </variable>
 
     <variable name="BingieSpotlightSublabel">
-        <value condition="String.IsEqual(Container(1508).ListItem.DBTYPE,tvshow) + Integer.IsGreater(Container(15081).NumItems,0)">$INFO[Container(15081).ListItem.Season,$LOCALIZE[31070] , $LOCALIZE[31067]]</value>  <!--removed a few [B][/B] for better control of bold use in fonts.xml instead-->
+        <value condition="String.IsEqual(Container(1508).ListItem.DBTYPE,tvshow) + Integer.IsGreater(Container(15081).NumItems,0)">$INFO[Container(15081).ListItem.Season,$LOCALIZE[31070] , $LOCALIZE[19030]]</value>  <!--removed a few [B][/B] for better control of bold use in fonts.xml instead-->
         <value condition="String.IsEqual(Container(1508).ListItem.DBTYPE,episode) + !String.IsEmpty(Container(1508).ListItem.Season) + !String.IsEmpty(Container(1508).ListItem.Episode) +
-        !String.IsEmpty(Container(1508).ListItem.Title)">$LOCALIZE[31066] [UPPERCASE]$INFO[Container(1508).ListItem.Season,$LOCALIZE[31000],]$INFO[Container(1508).ListItem.Episode,$LOCALIZE[31001],][/UPPERCASE]$INFO[Container(1508).ListItem.Title, ","] $LOCALIZE[31067]</value>
+        !String.IsEmpty(Container(1508).ListItem.Title)">$LOCALIZE[31066] [UPPERCASE]$INFO[Container(1508).ListItem.Season,$LOCALIZE[31000],]$INFO[Container(1508).ListItem.Episode,$LOCALIZE[31001],][/UPPERCASE]$INFO[Container(1508).ListItem.Title, ","] $LOCALIZE[19030]</value>
         <value>$LOCALIZE[31190]</value>
     </variable>
 
@@ -1494,8 +1494,8 @@
     <!-- Bingie More Details (pseudo-random) -->
     <variable name="BingieMoreDetails">		
         <value condition="Integer.IsLessOrEqual(System.Time(ss),15) + !String.IsEmpty(Container(99950).ListItem.Property(Awards))">$INFO[Container(99950).ListItem.Property(Awards)]</value>       
-        <value condition="Integer.IsLessOrEqual(System.Time(ss),30) + !String.IsEmpty(Container(99950).ListItem.Director) + !String.IsEmpty(Container(99950).ListItem.Cast) + $EXP[IsMovieDBType]">$INFO[Container(99950).ListItem.Director,$LOCALIZE[31541] ] $LOCALIZE[31543] $INFO[Container(99950).ListItem.Property(cast.1.name)]$INFO[Container(99950).ListItem.Property(cast.2.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.3.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.4.name), $LOCALIZE[31544] ] $LOCALIZE[31545].</value>	
-		<value condition="Integer.IsLessOrEqual(System.Time(ss),30) + !String.IsEmpty(Container(99950).ListItem.Property(Network.1.name)) + !String.IsEmpty(Container(99950).ListItem.Cast) + !$EXP[IsMovieDBType]">$INFO[Container(99950).ListItem.Property(Network.1.name)] $LOCALIZE[31546] $INFO[Container(99950).ListItem.Property(cast.1.name)]$INFO[Container(99950).ListItem.Property(cast.2.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.3.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.4.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.5.name), $LOCALIZE[31544] ] $LOCALIZE[31545].</value>
+        <value condition="Integer.IsLessOrEqual(System.Time(ss),30) + !String.IsEmpty(Container(99950).ListItem.Director) + !String.IsEmpty(Container(99950).ListItem.Cast) + $EXP[IsMovieDBType]">$INFO[Container(99950).ListItem.Director,$LOCALIZE[31541] ] $LOCALIZE[31149] $INFO[Container(99950).ListItem.Property(cast.1.name)]$INFO[Container(99950).ListItem.Property(cast.2.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.3.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.4.name), $LOCALIZE[31150] ] $LOCALIZE[31545].</value>	
+		<value condition="Integer.IsLessOrEqual(System.Time(ss),30) + !String.IsEmpty(Container(99950).ListItem.Property(Network.1.name)) + !String.IsEmpty(Container(99950).ListItem.Cast) + !$EXP[IsMovieDBType]">$INFO[Container(99950).ListItem.Property(Network.1.name)] $LOCALIZE[31546] $INFO[Container(99950).ListItem.Property(cast.1.name)]$INFO[Container(99950).ListItem.Property(cast.2.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.3.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.4.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.5.name), $LOCALIZE[31150] ] $LOCALIZE[31545].</value>
 		<value condition="Integer.IsLessOrEqual(System.Time(ss),45) + !String.IsEmpty(ListItem.Tagline)">$INFO[ListItem.Tagline]</value>
         <value condition="[!String.IsEmpty(ListItem.Genre) | !String.IsEmpty(Container(99950).ListItem.Property(Set.Genres))] + Integer.IsLessOrEqual(System.Time(ss),60) + !String.Contains(ListItem.Genre,unknown)">$VAR[GetGenres]</value>
     </variable>
@@ -1511,8 +1511,8 @@
 	
 	<!-- Bingie More Details Spotlight(pseudo-random) -->
     <variable name="BingieMoreDetailsSpotlight">		    
-        <value condition="Integer.IsLessOrEqual(System.Time(ss),20) + !String.IsEmpty(Container(99950).ListItem.Director) + !String.IsEmpty(Container(99950).ListItem.Cast) + $EXP[IsMovieDBType]">$INFO[Container(99950).ListItem.Director,$LOCALIZE[31541] ] $LOCALIZE[31543] $INFO[Container(99950).ListItem.Property(cast.1.name)]$INFO[Container(99950).ListItem.Property(cast.2.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.3.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.4.name), $LOCALIZE[31544] ] $LOCALIZE[31545].</value>	
-		<value condition="Integer.IsLessOrEqual(System.Time(ss),20) + !String.IsEmpty(Container(99950).ListItem.Property(Network.1.name)) + !String.IsEmpty(Container(99950).ListItem.Cast) + !$EXP[IsMovieDBType]">$INFO[Container(99950).ListItem.Property(Network.1.name)] $LOCALIZE[31546] $INFO[Container(99950).ListItem.Property(cast.1.name)]$INFO[Container(99950).ListItem.Property(cast.2.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.3.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.4.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.5.name), $LOCALIZE[31544] ] $LOCALIZE[31545].</value>
+        <value condition="Integer.IsLessOrEqual(System.Time(ss),20) + !String.IsEmpty(Container(99950).ListItem.Director) + !String.IsEmpty(Container(99950).ListItem.Cast) + $EXP[IsMovieDBType]">$INFO[Container(99950).ListItem.Director,$LOCALIZE[31541] ] $LOCALIZE[31149] $INFO[Container(99950).ListItem.Property(cast.1.name)]$INFO[Container(99950).ListItem.Property(cast.2.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.3.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.4.name), $LOCALIZE[31150] ] $LOCALIZE[31545].</value>	
+		<value condition="Integer.IsLessOrEqual(System.Time(ss),20) + !String.IsEmpty(Container(99950).ListItem.Property(Network.1.name)) + !String.IsEmpty(Container(99950).ListItem.Cast) + !$EXP[IsMovieDBType]">$INFO[Container(99950).ListItem.Property(Network.1.name)] $LOCALIZE[31546] $INFO[Container(99950).ListItem.Property(cast.1.name)]$INFO[Container(99950).ListItem.Property(cast.2.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.3.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.4.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.5.name), $LOCALIZE[31150] ] $LOCALIZE[31545].</value>
 		<value condition="Integer.IsLessOrEqual(System.Time(ss),40) + !String.IsEmpty(Container(1508).ListItem.Tagline)">$INFO[Container(1508).ListItem.Tagline]</value>
         <value condition="!String.IsEmpty(Container(1508).ListItem.Genre) + Integer.IsLessOrEqual(System.Time(ss),60) + !String.Contains(Container(1508).ListItem.Genre,unknown)">$INFO[Container(1508).ListItem.Genre]</value>
     </variable>
@@ -1743,8 +1743,8 @@
 				<onunfocus>AlarmClock(CancelTrailerAlarm,CancelAlarm(preview_delay,silent),00:01,silent)</onunfocus>
                 <onright condition="Integer.IsGreater(Container(4445).NumItems,0)">4444</onright>
                 <onright condition="Integer.IsEqual(Container(4445).NumItems,0)">ClearProperty(ShowViewSubMenu,Home)</onright>
-                <onright condition="Integer.IsEqual(Container(4445).NumItems,0) + ![Window.IsActive(1109) | Window.IsActive(1119)]">77777</onright>
-                <onright condition="Integer.IsEqual(Container(4445).NumItems,0) + [Window.IsActive(1109) | Window.IsActive(1119)]">9000</onright>
+                <onright condition="Integer.IsEqual(Container(4445).NumItems,0) + !Window.IsActive(1109)">77777</onright>
+                <onright condition="Integer.IsEqual(Container(4445).NumItems,0) + Window.IsActive(1109)">9000</onright>
                 <onback>ClearProperty(ShowViewSubMenu,Home)</onback>
                 <onback condition="!Window.IsActive(1109)">77777</onback>
 				<onback condition="Window.IsActive(1109)">9000</onback>
@@ -2060,7 +2060,7 @@
         <aligny>center</aligny>
         <font>Reg34</font>
 		<textcolor>$INFO[Skin.String(MainMenuTextColor)]</textcolor>
-        <label>$INFO[ListItem.Label]</label>
+        <label>[CAPITALIZE]$INFO[ListItem.Label][/CAPITALIZE]</label>
         <animation effect="fade" start="100" end="0" time="300" condition="!$EXP[IsMainMenuOpened]">Conditional</animation>
     </include>
 
@@ -2086,7 +2086,7 @@
 		<aligny>center</aligny>
         <font>Bold34</font>
 		<textcolor>$INFO[Skin.String(MainMenuFocusTextColor)]</textcolor>
-        <label>$INFO[ListItem.Label]</label>
+        <label>[CAPITALIZE]$INFO[ListItem.Label][/CAPITALIZE]</label>
         <animation effect="fade" start="100" end="0" time="300" condition="!$EXP[IsMainMenuOpened]">Conditional</animation>
 		</control>
     </include>
@@ -2326,7 +2326,7 @@
                     <textcolor>$VAR[SpotlightInfoTextButtonColor]</textcolor>
                     <texturenofocus colordiffuse="$VAR[SpotlightInfoButtonColor]" border="10">diffuse/panel-spot.png</texturenofocus>
 					<font>Reg30</font>
-                    <label>[B]$LOCALIZE[31187][/B]</label>
+                    <label>[CAPITALIZE][B]$LOCALIZE[31187][/B][/CAPITALIZE]</label>
                 </control>
             </control>
 			<control type="image">
@@ -2837,8 +2837,8 @@
 				<control type="grouplist">
 						<orientation>horizontal</orientation>
 						<visible>!Container.Content(episodes) + !Container.Content(seasons)</visible>
-						<visible>!Skin.HasSetting(DisableTop250) + Skin.HasSetting(EnableRatings) + !String.IsEmpty(Control.GetLabel(8231)) + !Integer.IsGreater(ListItem.PercentPlayed,1) | !Skin.HasSetting(DisableTop250) + Skin.HasSetting(EnableRatings) + !String.IsEmpty(Control.GetLabel(823)) + $EXP[IsTVShowInLastEpisodes] + !Integer.IsGreater(ListItem.PercentPlayed,1) | 
-						!Skin.HasSetting(DisableTop250) + Skin.HasSetting(EnableRatings) + !String.IsEmpty(Control.GetLabel(8231)) + !Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1)
+						<visible>Skin.HasSetting(EnableTop250) + Skin.HasSetting(EnableRatings) + !String.IsEmpty(Control.GetLabel(8231)) + !Integer.IsGreater(ListItem.PercentPlayed,1) | Skin.HasSetting(EnableTop250) + Skin.HasSetting(EnableRatings) + !String.IsEmpty(Control.GetLabel(823)) + $EXP[IsTVShowInLastEpisodes] + !Integer.IsGreater(ListItem.PercentPlayed,1) | 
+						Skin.HasSetting(EnableTop250) + Skin.HasSetting(EnableRatings) + !String.IsEmpty(Control.GetLabel(8231)) + !Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1)
 						</visible>
 						<height>55</height>
 						<width>800</width>
@@ -2871,7 +2871,7 @@
 						
 					<control type="label" id="8231">
 						<visible>!String.IsEmpty(Control.GetLabel(8231))</visible>
-						<visible>!Skin.HasSetting(DisableTop250) + Skin.HasSetting(EnableRatings)</visible>
+						<visible>Skin.HasSetting(EnableTop250) + Skin.HasSetting(EnableRatings)</visible>
 						<font>bold29</font> 
 						<textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor> 
 						<label>$VAR[IMDBTop250SubLabel,#, $LOCALIZE[31311]]</label>
@@ -2907,7 +2907,7 @@
 				<control type="group">
 					<top>5</top>
 					<include content="Bingie_Additional_Info">
-						<param name="visibility" value="!$EXP[IsTVShowInLastEpisodes] + !$EXP[IsEpisodeDBType] | [Skin.HasSetting(DisableTop250) | !Skin.HasSetting(EnableRatings)] + !$EXP[IsEpisodeDBType]" />
+						<param name="visibility" value="!$EXP[IsTVShowInLastEpisodes] + !$EXP[IsEpisodeDBType] | [!Skin.HasSetting(EnableTop250) | !Skin.HasSetting(EnableRatings)] + !$EXP[IsEpisodeDBType]" />
 					</include>
 				</control>
             </control>
@@ -3964,7 +3964,7 @@
 	<variable name="HubNames">
         <value condition="Window.IsActive(1110)">$LOCALIZE[31590]</value>
         <value condition="Window.IsActive(1111)">$LOCALIZE[342]</value>
-		<value condition="Window.IsActive(1114)">$LOCALIZE[31534]</value>
+		<value condition="Window.IsActive(1114)">[CAPITALIZE]$LOCALIZE[31534][/CAPITALIZE]</value>
 		<value condition="Window.IsActive(1115)">$INFO[Skin.String(mycustom.label)]</value>
 		<value condition="Window.IsActive(1120)">$LOCALIZE[2]</value>
     </variable>

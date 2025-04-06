@@ -17,9 +17,9 @@
                 <onright condition="Skin.HasSetting(EnableQuickJump)">6000</onright>
                 <onright condition="!Skin.HasSetting(EnableQuickJump)">60</onright>
                 <pagecontrol>60</pagecontrol>
-                <viewtype label="31680">icons</viewtype>
+                <viewtype label="31134">icons</viewtype>
                 <include content="View_Forced">
-                    <param name="viewtype" value="$LOCALIZE[31680]" />
+                    <param name="viewtype" value="$LOCALIZE[31134]" />
                 </include>
                <scrolltime tween="quadratic">400</scrolltime>
                 <orientation>vertical</orientation>

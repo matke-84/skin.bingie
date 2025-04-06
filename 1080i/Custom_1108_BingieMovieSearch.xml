@@ -257,7 +257,7 @@
             <include content="SearchResultWidgetTopLabel">
                 <param name="groupid" value="6600" />
                 <param name="id" value="660" />
-                <param name="label" value="$LOCALIZE[31589]" />
+                <param name="label" value="$LOCALIZE[342]" />
                 <visible>Control.HasFocus(660) + !Container(660).IsUpdating</visible>
             </include>	
 			<!-- TMDB Helper Collections Results -->

@@ -135,7 +135,7 @@
 			<shortcut label="20077" icon="common/skin-settings.png">ActivateWindow(SkinSettings)</shortcut>
 			<shortcut label="10004" icon="common/settings1.png">ActivateWindow(Settings)</shortcut>
 			<shortcut label="20126" icon="common/lock.png">System.LogOff</shortcut>
-            <shortcut label="31706" icon="common/reload-skin.png">ReloadSkin</shortcut>
+            <shortcut label="31501" icon="common/reload-skin.png">ReloadSkin</shortcut>
 			<shortcut label="13012" icon="common/exit1.png">Quit</shortcut>
 			<shortcut label="13015" icon="common/shutdown1.png">Shutdown</shortcut>
 			<shortcut label="13013" icon="common/reboot1.png">Reset</shortcut>

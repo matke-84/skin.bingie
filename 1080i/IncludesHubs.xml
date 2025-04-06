@@ -702,7 +702,7 @@
             </include>
             <textoffsetx>65</textoffsetx>
             <textwidth>900</textwidth>
-            <label>31384</label>
+            <label>[CAPITALIZE]$LOCALIZE[20333][/CAPITALIZE]</label>
             <label2>$INFO[Skin.String(mycustom.label)]</label2>
             <onclick condition="Skin.String(mycustom.label)">Skin.Reset(mycustom.label)</onclick>
             <onclick condition="Skin.String(mycustom.path)">Skin.Reset(mycustom.path)</onclick>
@@ -737,7 +737,6 @@
                 <visible>Integer.IsEqual(Container(1510).NumItems,0) + !Container(1510).IsUpdating + Integer.IsEqual(Container(1520).NumItems,0) + !Container(1520).IsUpdating</visible>
                 <align>left</align>
 				<left>-6</left>
-				<animation effect="slide" end="131" time="0" condition="[Skin.HasSetting(AddToWatchlist) | !Library.HasContent(Movies) + !Library.HasContent(TVShows)] + Window.IsActive(1114)">Conditional</animation>
                 <include content="textoffsetx">
                     <param name="textoffsetx" value="25" />
                 </include>
@@ -925,7 +924,7 @@
             <include>widget_header_leftalign</include>
             <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
             <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
-            <label>31686</label>
+            <label>31058</label>
         </control>
 
         <control type="grouplist" id="1502">

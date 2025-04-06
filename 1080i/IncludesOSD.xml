@@ -494,7 +494,7 @@
 					<height>11</height>
 					<width>1152</width>
 					<texturesliderbar>colors/color_transparent.png</texturesliderbar>
-					<textureslidernib colordiffuse="$INFO[Skin.String(BingieOSDProgressBarColor)]">common/slider/slider_button_nofocus.png</textureslidernib>
+					<textureslidernib colordiffuse="$INFO[Skin.String(OSDBingieButtonsFocusColor)]">common/slider/slider_button_nofocus.png</textureslidernib>
 					<visible>Player.SeekEnabled + Player.Seeking + !Player.HasAudio</visible>
 				</control>	
 
@@ -699,8 +699,7 @@
 				<description>Previous</description>
 				<width>$PARAM[size]</width>
 				<height>$PARAM[size]</height>
-				<label>210</label>
-                <altlabel>210</altlabel>
+				<label/>
 				<font/>
 				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]prevtrack.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]prevtrack.png</texturenofocus>
@@ -715,7 +714,7 @@
 				<width>$PARAM[size]</width>
 				<height>$PARAM[size]</height>
 				<font/>
-                <label>209</label>
+                <label/>
 				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]rewind.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]rewind.png</texturenofocus>
 				<onclick>PlayerControl(Rewind)</onclick>
@@ -727,7 +726,7 @@
 				<width>$PARAM[size]</width>
 				<height>$PARAM[size]</height>
 				<font/>
-                <label>208</label>
+                <label/>
 				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]pause.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]pause.png</texturenofocus>
 				<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
@@ -740,7 +739,7 @@
 				<width>$PARAM[size]</width>
 				<height>$PARAM[size]</height>
 				<font/>
-                <label>36036</label>
+                <label/>
 				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]stop.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]stop.png</texturenofocus>
 				<onclick>PlayerControl(Stop)</onclick>
@@ -750,7 +749,7 @@
 				<width>$PARAM[size]</width>
 				<height>$PARAM[size]</height>
 				<font/>
-                <label>210</label>
+                <label/>
 				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]forward.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]forward.png</texturenofocus>
 				<onclick>PlayerControl(Forward)</onclick>
@@ -760,7 +759,7 @@
 				<description>Next</description>
 				<width>$PARAM[size]</width>
 				<height>$PARAM[size]</height>
-				<label>209</label>
+				<label/>
 				<font/>
 				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]nexttrack.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]nexttrack.png</texturenofocus>
@@ -771,8 +770,8 @@
 			</control>
 			<control type="button" id="207">
 			  <width>$PARAM[size]</width>
-				<height>$PARAM[size]</height>
-			  <label>$LOCALIZE[486]$INFO[Playlist.Repeat, : ]</label>
+			  <height>$PARAM[size]</height>
+			  <label/>
 			  <font/>
 			  <texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]repeat.png</texturefocus>
 			  <texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]repeat.png</texturenofocus>
@@ -791,7 +790,7 @@
 			</control>
 			<control type="button" id="210">
 			  <width>$PARAM[size]</width>
-				<height>$PARAM[size]</height>
+			  <height>$PARAM[size]</height>
 			  <texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]repeatall.png</texturefocus>
 			  <texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]repeatall.png</texturenofocus>
 			  <visible>Playlist.IsRepeat</visible>
@@ -801,8 +800,7 @@
 			<control type="togglebutton" id="212">
 			  <width>$PARAM[size]</width>
               <height>$PARAM[size]</height>
-			  <label>$LOCALIZE[590]$INFO[Playlist.Random, : ]</label>
-			  <altlabel>$LOCALIZE[590] : $LOCALIZE[16041]</altlabel>
+			  <label/>
 			  <font/>
 			  <texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]randomoff.png</texturefocus>
 			  <texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]randomoff.png</texturenofocus>
@@ -816,7 +814,7 @@
 				<description>Record</description>
 				<width>$PARAM[size]</width>
 				<height>$PARAM[size]</height>
-				<label>209</label>
+				<label/>
 				<font/>
 				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]recordoff.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]recordoff.png</texturenofocus>
@@ -830,7 +828,7 @@
 				<description>bookmarks</description>
 				<width>$PARAM[size]</width>
 				<height>$PARAM[size]</height>
-				<label>209</label>
+				<label/>
 				<font/>
 				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]bookmarks.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]bookmarks.png</texturenofocus>
@@ -842,7 +840,7 @@
 				<description>disc menu</description>
 				<width>$PARAM[size]</width>
 				<height>$PARAM[size]</height>
-				<label>209</label>
+				<label/>
 				<font/>
 				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]dvd.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]dvd.png</texturenofocus>
@@ -853,7 +851,7 @@
 				<description>stereoscopic</description>
 				<width>$PARAM[size]</width>
 				<height>$PARAM[size]</height>
-				<label>209</label>
+				<label/>
 				<font/>
 				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]stereoscopic.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]stereoscopic.png</texturenofocus>
@@ -864,7 +862,7 @@
 				<description>Audio Settings</description>
 				<width>$PARAM[size]</width>
 				<height>$PARAM[size]</height>
-				<label>13396</label>
+				<label/>
 				<font/>
 				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]audio.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]audio.png</texturenofocus>
@@ -886,7 +884,7 @@
 				<description>Subtitles</description>
 			    <width>$PARAM[size]</width>
 				<height>$PARAM[size]</height>
-				<label>287</label>
+				<label/>
 				<font/>
 				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]subtitles.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]subtitles.png</texturenofocus>
@@ -897,7 +895,7 @@
 				<description>teletext</description>
 				<width>$PARAM[size]</width>
 				<height>$PARAM[size]</height>
-				<label>287</label>
+				<label/>
 				<font/>
 				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]teletext.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]teletext.png</texturenofocus>
@@ -909,7 +907,7 @@
 				<description> lyrics </description>
 				<width>$PARAM[size]</width>
 				<height>$PARAM[size]</height>
-				<label>31128</label>
+				<label/>
 				<font/>
 				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]lyrics.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]lyrics.png</texturenofocus>
@@ -926,7 +924,7 @@
 				<description> vizualisation addon </description>
 				<width>$PARAM[size]</width>
 				<height>$PARAM[size]</height>
-				<label>12006</label>
+				<label/>
 				<font/>
 				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]viz.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]viz.png</texturenofocus>
@@ -936,7 +934,7 @@
 				<description> vizualisation settings </description>
 				<width>$PARAM[size]</width>
 				<height>$PARAM[size]</height>
-				<label>$LOCALIZE[250] $LOCALIZE[21417]</label>
+				<label/>
 				<font/>
 				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]settings.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]settings.png</texturenofocus>
@@ -947,7 +945,7 @@
 				<description> vizualisation presets </description>
 				<width>$PARAM[size]</width>
 				<height>$PARAM[size]</height>
-				<label>$LOCALIZE[250] $LOCALIZE[21417]</label>
+				<label/>
 				<font/>
 				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]epg.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]epg.png</texturenofocus>
@@ -958,7 +956,7 @@
 				<description> pvr </description>
 				<width>$PARAM[size]</width>
 				<height>$PARAM[size]</height>
-				<label>12006</label>
+				<label/>
 				<font/>
 				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]channellist.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]channellist.png</texturenofocus>
@@ -969,7 +967,7 @@
 				<description> pvr </description>
 				<width>$PARAM[size]</width>
 				<height>$PARAM[size]</height>
-				<label>12006</label>
+				<label/>
 				<font/>
 				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]epg.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]epg.png</texturenofocus>
@@ -980,7 +978,7 @@
 				<description> playlist </description>
 				<width>$PARAM[size]</width>
 				<height>$PARAM[size]</height>
-				<label>12006</label>
+				<label/>
 				<font/>
 				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]teletext.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]teletext.png</texturenofocus>
@@ -993,7 +991,7 @@
 				<description> infopanel </description>
 				<width>$PARAM[size]</width>
 				<height>$PARAM[size]</height>
-				<label>31133</label>
+				<label/>
 				<font/>
 				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]info.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]info.png</texturenofocus>
@@ -1582,9 +1580,9 @@
      
      <variable name="PlayerActionLabel">
 		<value condition="[Player.Paused + Player.Caching] + !Player.Seeking">[B]$LOCALIZE[15107]:[/B] $INFO[Player.CacheLevel]%</value>
-		<value condition="!String.IsEmpty(Player.SeekStepSize) + ![Player.Forwarding | Player.Rewinding] + Player.seeking">[B]$LOCALIZE[31255][/B] $INFO[Player.SeekStepSize]</value>
-		<value condition="Player.DisplayAfterSeek  + ![Player.Forwarding | Player.Rewinding] + !String.IsEmpty(Player.SeekOffset)">[B]$LOCALIZE[31255][/B] $INFO[Player.SeekOffset]</value>
-		<value condition="Player.seeking">[B]$LOCALIZE[31255][/B] $VAR[SeekTime] - $VAR[TotalDuration]</value>
+		<value condition="!String.IsEmpty(Player.SeekStepSize) + ![Player.Forwarding | Player.Rewinding] + Player.seeking">[UPPERCASE][B]$LOCALIZE[773][/B][/UPPERCASE] $INFO[Player.SeekStepSize]</value>
+		<value condition="Player.DisplayAfterSeek  + ![Player.Forwarding | Player.Rewinding] + !String.IsEmpty(Player.SeekOffset)">[UPPERCASE][B]$LOCALIZE[773][/B][/UPPERCASE] $INFO[Player.SeekOffset]</value>
+		<value condition="Player.seeking">[UPPERCASE][B]$LOCALIZE[773][/B][UPPERCASE] $VAR[SeekTime] - $VAR[TotalDuration]</value>
 		<value condition="Player.Forwarding2x">[B]$LOCALIZE[31253][/B] x2</value>
 		<value condition="Player.Forwarding4x">[B]$LOCALIZE[31253][/B] x4</value>
 		<value condition="Player.Forwarding8x">[B]$LOCALIZE[31253][/B] x8</value>

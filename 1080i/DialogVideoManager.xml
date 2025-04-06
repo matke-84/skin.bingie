@@ -137,7 +137,7 @@
 				</include>
 				<include content="DefaultDialogButton">
 					<param name="id" value="27" />
-					<param name="label" value="$LOCALIZE[13511]" />
+					<param name="label" value="[CAPITALIZE]$LOCALIZE[13511][/CAPITALIZE]" />
 				</include>
 				<include content="DefaultDialogButton">
 					<param name="id" value="24" />

@@ -1,13 +1,13 @@
 <views>
     <view id="Simple List" value="10" languageid="31567" type="!all" excludefromdisable="true"/>
-	<view id="List" value="50" languageid="31443" type="all" excludefromdisable="true"/>
+	<view id="List" value="50" languageid="535" type="all" excludefromdisable="true"/>
 	<view id="List Details" value="51" languageid="31444" type="all,!images,!favourites" />
 	<view id="Bingie Main Poster" value="526" languageid="31027" type="movies,tvshows,seasons,sets,actors" />
     <view id="Bingie Main Landscape" value="523" languageid="31018" type="movies,tvshows,seasons,episodes,sets,musicvideos" />
 	<view id="Bingie Main Square" value="528" languageid="31122" type="songs,artists,albums" />	
 	<view id="Bingie Seasons" value="527" languageid="31095" type="seasons" />	
     <view id="Bingie Episodes" value="525" languageid="31318" type="episodes" />
-    <view id="Panel" value="54" languageid="31680" type="movies,tvshows,seasons,sets,actors" />
+    <view id="Panel" value="54" languageid="31134" type="movies,tvshows,seasons,sets,actors" />
     <view id="Panel details" value="53" languageid="31422" type="movies,tvshows,seasons,sets,actors" />
     <view id="Big Panel" value="57" languageid="31426" type="movies,tvshows,seasons,sets,actors" />
     <view id="Horizontal Panel" value="52" languageid="31445" type="movies,tvshows,seasons,sets,actors" />
@@ -23,5 +23,5 @@
 	<view id="Poster Shift" value="514" languageid="31441" type="movies,tvshows,seasons,sets,actors" />
 	<view id="Showcase" value="524" languageid="31429" type="movies,tvshows,seasons,sets,actors" />
 	<view id="Logos" value="503" languageid="31461" type="movies,tvshows,musicvideos" />
-	<view id="FanArt" value="507" languageid="31434" type="movies,tvshows,seasons,sets,musicvideos,images" />
+	<view id="FanArt" value="507" languageid="20445" type="movies,tvshows,seasons,sets,musicvideos,images" />
 </views>

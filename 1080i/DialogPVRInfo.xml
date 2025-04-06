@@ -157,7 +157,7 @@
 					<disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
                     <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                     <texturenofocus/>
-                    <label>$LOCALIZE[31225]:</label>
+                    <label>$LOCALIZE[563]:</label>
                     <label2>$VAR[GetMPAA]</label2>
                     <enable>false</enable>
                 </control>

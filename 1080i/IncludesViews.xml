@@ -1246,7 +1246,7 @@
             </control>
             <control type="group">
                 <description>Episodes count Overlay</description>
-                <visible>Integer.IsGreater(ListItem$PARAM[listitem].Property(UnWatchedEpisodes),0) + Skin.HasSetting(WatchedIndicator.Episodes)</visible>
+                <visible>!Integer.IsEqual(ListItem$PARAM[listitem].Property(UnWatchedEpisodes),0) + Skin.HasSetting(WatchedIndicator.Episodes) + !Integer.IsEqual(ListItem$PARAM[listitem].Property(WatchedEpisodes),0)</visible>
                 <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
                 <control type="image">
                     <texture background="true">$PARAM[overlay_texture]</texture>

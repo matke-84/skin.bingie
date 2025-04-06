@@ -9,15 +9,15 @@
 		<action>ActivateWindow(Settings)</action>
 	</shortcut>
 	<shortcut>
-		<defaultID>31706</defaultID>
-		<label>31706</label>
+		<defaultID>31501</defaultID>
+		<label>31501</label>
 		<label2>Kodi Command</label2>
 		<icon>common/reload-skin.png</icon>
 		<thumb />
 		<action>ReloadSkin()</action>
 	</shortcut>
 	<shortcut>
-		<defaultID>13012</defaultID>
+		<defaultID>31629</defaultID>
 		<label>31629</label>
 		<label2>Kodi Command</label2>
 		<icon>common/exit1.png</icon>
@@ -26,7 +26,7 @@
 	</shortcut>
 	<shortcut>
 		<defaultID>13013</defaultID>
-		<label>31630</label>
+		<label>13013</label>
 		<label2>Kodi Command</label2>
 		<icon>common/reboot1.png</icon>
 		<thumb />
@@ -34,7 +34,7 @@
 	</shortcut>
 	<shortcut>
 		<defaultID>13016</defaultID>
-		<label>31631</label>
+		<label>13016</label>
 		<label2>Kodi Command</label2>
 		<icon>common/shutdown1.png</icon>
 		<thumb />

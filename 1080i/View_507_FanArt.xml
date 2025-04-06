@@ -27,9 +27,9 @@
                 <onleft>507</onleft>
                 <onright>507</onright>
 				<onback>ClearProperty(ListAnimation,home)</onback>
-                <viewtype label="31434">fanart</viewtype>
+                <viewtype label="20445">fanart</viewtype>
 				<include content="View_Forced">
-					<param name="viewtype" value="$LOCALIZE[31434]" />
+					<param name="viewtype" value="$LOCALIZE[20445]" />
 				</include>
                 <scrolltime tween="quadratic">400</scrolltime>
                 <focusposition>0</focusposition>

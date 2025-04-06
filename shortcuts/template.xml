@@ -408,14 +408,14 @@
 			
 			<!-- widget 10 -->
             <include content="widget_header_multi" condition="$PYTHON['true' if widgetPath10 else 'false']">
-                <param name="widgetid" value="$SKINSHORTCUTS[id]5100" />
+                <param name="widgetid" value="$SKINSHORTCUTS[id]600" />
                 <param name="submenuid" value="$SKINSHORTCUTS[submenuid]" />
                 <param name="widgetName" value="$SKINSHORTCUTS[widgetName10]" />
             </include>
             <include content="widget_base" condition="$PYTHON['true' if widgetPath10 else 'false']">
                 <param name="containerType" value="$PYTHON['fixedlist' if widgetStyle10 in 'details' or 'enabled' in widgetFixedFocus10 else 'panel']" />
                 <param name="contentStyle" value="$SKINSHORTCUTS[contentStyle10]" />
-                <param name="widgetid" value="$SKINSHORTCUTS[id]5100" />
+                <param name="widgetid" value="$SKINSHORTCUTS[id]600" />
                 <param name="widgetName" value="$SKINSHORTCUTS[widgetName10]" />
                 <param name="submenuid" value="$SKINSHORTCUTS[submenuid]" />
                 <param name="widgetTags" value="$SKINSHORTCUTS[widgetTags10]" />

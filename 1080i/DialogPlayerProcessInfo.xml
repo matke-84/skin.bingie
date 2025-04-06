@@ -320,7 +320,7 @@
 					<top>10</top>
 					<width>565</width>
 					<height>25</height>
-					<label>$LOCALIZE[31740]</label> 
+					<label>$LOCALIZE[31235]</label> 
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>Bold26</font>
@@ -332,7 +332,7 @@
 					<top>40</top>
 					<width>250</width>
 					<height>25</height>
-					<label>$LOCALIZE[31741]: </label> 
+					<label>$LOCALIZE[31589]: </label> 
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>Reg26</font>
@@ -357,7 +357,7 @@
 					<top>40</top>
 					<width>490</width>
 					<height>25</height>
-					<label>$LOCALIZE[31742]</label> 
+					<label>$LOCALIZE[31147]</label> 
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>Reg26</font>
@@ -371,7 +371,7 @@
 					<top>65</top>
 					<width>250</width>
 					<height>25</height>
-					<label>$LOCALIZE[31743]: </label> 
+					<label>$LOCALIZE[31305]: </label> 
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>Reg26</font>
@@ -443,7 +443,7 @@
 					<top>145</top>
 					<width>565</width>
 					<height>25</height>
-					<label>$LOCALIZE[31744]</label> 
+					<label>$LOCALIZE[31380]</label> 
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>Bold26</font>
@@ -455,7 +455,7 @@
 					<top>175</top>
 					<width>250</width>
 					<height>25</height>
-					<label>$LOCALIZE[31743]: </label> 
+					<label>$LOCALIZE[31305]: </label> 
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>Reg26</font>
@@ -626,7 +626,7 @@
 					<width>auto</width>
 					<height>100</height>
 					<textoffsetx>40</textoffsetx>
-					<label>$LOCALIZE[31745]</label> 
+					<label>$LOCALIZE[31651]</label> 
 				</control>
 			</control>
 		</control>

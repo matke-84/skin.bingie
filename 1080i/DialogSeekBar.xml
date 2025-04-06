@@ -140,7 +140,7 @@
 					<top>30</top>
 					<width>550</width>
 					<height>50</height>
-					<label>$LOCALIZE[31758]</label>
+					<label>$LOCALIZE[31133]</label>
 					<font>Bold28</font>
 					<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
 					<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>

@@ -160,7 +160,7 @@
         <control type="button" id="4403">
             <!--Set View new method-->
             <include>SideBladeMenuButton</include>
-            <label>$LOCALIZE[31305]$INFO[Container.Viewmode,: ,]</label>
+            <label>$LOCALIZE[21483]$INFO[Container.Viewmode,: ,]</label>
             <include>Items_LockUnlock</include>
             <onclick>RunScript(script.bingie.toolbox,action=SETVIEW)</onclick>
             <visible>!Window.IsActive(tvguide) + !Window.IsActive(tvchannels) + !Window.IsActive(tvsearch) + !Window.IsActive(tvrecordings) + !Window.IsActive(tvtimers) + !Window.IsActive(favouritesbrowser)</visible>
@@ -228,16 +228,16 @@
         <!-- show info for poster row-->
         <control type="button" id="317491">
             <include>SideBladeMenuButton</include>
-            <label>$LOCALIZE[31727]: $INFO[Skin.String(View513_DisplayInfo.label)]</label>
-            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,id=View_DisplayInfo,setting=View513_DisplayInfo,header=$LOCALIZE[31727])</onclick>
+            <label>$LOCALIZE[31083]: $INFO[Skin.String(View513_DisplayInfo.label)]</label>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,id=View_DisplayInfo,setting=View513_DisplayInfo,header=$LOCALIZE[31083])</onclick>
             <visible>Control.IsVisible(513)</visible>
         </control>
         
         <!-- show info for poster shift-->
         <control type="button" id="317492">
             <include>SideBladeMenuButton</include>
-            <label>$LOCALIZE[31727]: $INFO[Skin.String(View514_DisplayInfo.label)]</label>
-            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,id=View_DisplayInfo,setting=View514_DisplayInfo,header=$LOCALIZE[31727])</onclick>
+            <label>$LOCALIZE[31083]: $INFO[Skin.String(View514_DisplayInfo.label)]</label>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,id=View_DisplayInfo,setting=View514_DisplayInfo,header=$LOCALIZE[31083])</onclick>
             <visible>Control.IsVisible(514)</visible>
         </control>
         
@@ -321,11 +321,11 @@
             </selected>            
         </control>
 
-        <control type="radiobutton" id="31751">
+        <control type="radiobutton" id="31524">
             <!--auto play trailer-->
             <visible>Container.Content(movies) | Container.Content(tvshows)</visible>
             <include>SideBladeMenuButton</include>
-            <label>31751</label>
+            <label>31524</label>
             <onclick>Skin.ToggleSetting(DetailsAutoTrailer)</onclick>
 			<onclick condition="Control.IsVisible(512)">Skin.ToggleSetting(View512_DetailsAutoTrailer)</onclick>
             <onclick condition="Control.IsVisible(510)">Skin.ToggleSetting(View510_DetailsAutoTrailer)</onclick>
@@ -433,7 +433,7 @@
         <control type="radiobutton" id="3056">
             <!-- enable zoom effect -->
             <include>SideBladeMenuButton</include>
-            <label>$LOCALIZE[31757]</label>
+            <label>$LOCALIZE[31136]</label>
 			<onclick condition="Control.IsVisible(52)">Skin.ToggleSetting(View52_EnableZoomEffect)</onclick>
 			<onclick condition="Control.IsVisible(502)">Skin.ToggleSetting(View502_EnableZoomEffect)</onclick>
 			<onclick>ReloadSkin()</onclick>

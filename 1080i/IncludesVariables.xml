@@ -30,7 +30,7 @@
         <value condition="String.IsEqual(Window(Home).Property(SkinSettingSection),14)">$LOCALIZE[31271]</value>
         <value condition="String.IsEqual(Window(Home).Property(SkinSettingSection),15)">$LOCALIZE[31462]</value>
         <value condition="String.IsEqual(Window(Home).Property(SkinSettingSection),20)">$LOCALIZE[31667]</value>
-        <value condition="String.IsEqual(Window(Home).Property(SkinSettingSection),31)">$LOCALIZE[31696]</value>
+        <value condition="String.IsEqual(Window(Home).Property(SkinSettingSection),31)">$LOCALIZE[31631]</value>
     </variable>
 	
 	<variable name="mediatitle">
@@ -437,7 +437,7 @@
 
 	 <variable name="VideoHWDecoder">
  		<value condition="Player.Process(videohwdecoder)">$LOCALIZE[13281]</value>
- 		<value>$LOCALIZE[31746]</value>
+ 		<value>$LOCALIZE[13419]</value>
  	 </variable>
     
     <variable name="musicrating_stars">
@@ -498,7 +498,7 @@
 	
 	<variable name="MyListLabel">
         <value condition="!Skin.HasSetting(AddToWatchlist) + [Library.HasContent(Movies) | Library.HasContent(TVShows)]">$LOCALIZE[31371]</value>
-        <value condition="Skin.HasSetting(AddToWatchlist) | !Library.HasContent(Movies) + !Library.HasContent(TVShows)">$LOCALIZE[31699]</value>
+        <value condition="Skin.HasSetting(AddToWatchlist) | !Library.HasContent(Movies) + !Library.HasContent(TVShows)">$LOCALIZE[31543]</value>
     </variable>
 	
 	<variable name="VideoResolutionTypeVar">
@@ -546,8 +546,9 @@
 	</variable>
 	
 	<variable name="RemoveRatingLabel">
-		<value condition="$EXP[IsMovieDBType]">$LOCALIZE[31711]</value>
-		<value condition="$EXP[IsTvShowDBType]">$LOCALIZE[31710]</value>
+		<value condition="$EXP[IsMovieDBType]">$LOCALIZE[31310]</value>
+		<value condition="$EXP[IsTvShowDBType]">$LOCALIZE[31384]</value>
+		<value condition="$EXP[IsEpisodeDBType]">$LOCALIZE[31678]</value>
 	</variable>
 	
 	<variable name="SettingsButton">

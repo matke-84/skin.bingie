@@ -484,8 +484,8 @@
                     <ondown>13</ondown>
                     <control type="togglebutton" id="34">
                         <description>TV/Radio Button</description>
-                        <label>31135</label>
-                        <altlabel>31132</altlabel>
+                        <label>10705</label>
+                        <altlabel>10700</altlabel>
 						<width>300</width>
                         <usealttexture>!String.IsEmpty(Window.Property(IsRadio))</usealttexture>
                         <include>DialogButtonOther</include>

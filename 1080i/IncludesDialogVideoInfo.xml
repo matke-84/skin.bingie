@@ -480,7 +480,7 @@
 								<textoffsetx>52</textoffsetx>
 								<textoffsety>7</textoffsety>
 								<textwidth>163</textwidth>											
-                                <label>$LOCALIZE[31697]</label>
+                                <label>[CAPITALIZE]$LOCALIZE[31630][/CAPITALIZE]</label>
                                 <radioposx>13</radioposx>
                                 <radiowidth>22</radiowidth>
                                 <radioheight>22</radioheight>
@@ -530,7 +530,7 @@
 								<align>left</align>
 								<textoffsetx>57</textoffsetx>
 								<textoffsety>7</textoffsety>	
-                                <label>31481</label>
+                                <label>20360</label>
                                 <radioposx>15</radioposx>
                                 <radiowidth>24</radiowidth>
                                 <radioheight>24</radioheight>
@@ -567,7 +567,7 @@
 								<disabledcolor>ffaaaaaa</disabledcolor>
 								<texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
 								<texturenofocus/>
-                                <label>31523</label>
+                                <label>20410</label>
 								<height>52</height>
 								<width>224</width>
 								<aligny>center</aligny>
@@ -613,13 +613,13 @@
 								<height>52</height>
 								<width>224</width>	
 								<textwidth>159</textwidth>			
-                                <label>$LOCALIZE[31691]</label>
+                                <label>$LOCALIZE[31677]</label>
                                 <radioposx>13</radioposx>
                                 <radiowidth>24</radiowidth>
                                 <radioheight>24</radioheight>
 								<onfocus>SetProperty(Path.Similar,"$VAR[Path_Similar]")</onfocus>
                                 <onclick>SetProperty(AdditionalInfo, similar)</onclick>
-								<onclick>SetProperty(subtitle, $LOCALIZE[31691])</onclick>
+								<onclick>SetProperty(subtitle, $LOCALIZE[31677])</onclick>
                                 <onclick>SetFocus(352)</onclick>
                             </control> 
 
@@ -638,7 +638,7 @@
 								<disabledcolor>ffaaaaaa</disabledcolor>
 								<texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
 								<texturenofocus/>
-                                <label>31534</label>
+                                <label>[CAPITALIZE]$LOCALIZE[31534][/CAPITALIZE]</label>
                              	<height>52</height>
 								<width>224</width>	
 								<textwidth>161</textwidth>			
@@ -667,7 +667,7 @@
 								<disabledcolor>ffaaaaaa</disabledcolor>
 								<texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
 								<texturenofocus/>
-                                <label>31534</label>
+                                <label>[CAPITALIZE]$LOCALIZE[31534][/CAPITALIZE]</label>
 								<height>52</height>
 								<width>224</width>								
                                 <aligny>center</aligny>
@@ -749,7 +749,7 @@
 								<disabledcolor>ffaaaaaa</disabledcolor>
 								<texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
 								<texturenofocus/>
-                                <label>$LOCALIZE[31187]</label>
+                                <label>[CAPITALIZE]$LOCALIZE[31187][/CAPITALIZE]</label>
 								<height>52</height>
 								<width>224</width>	
 								<textwidth>174</textwidth>			
@@ -763,7 +763,7 @@
                                 <radioheight>24</radioheight>
 								<onfocus>SetProperty(Path.Crew,"$VAR[Path_Crew]")</onfocus>
 								<onclick>SetProperty(AdditionalInfo, cast)</onclick>
-								<onclick>SetProperty(subtitle, $LOCALIZE[31246])</onclick>
+								<onclick>SetProperty(subtitle, [CAPITALIZE]$LOCALIZE[31246][/CAPITALIZE])</onclick>
                                 <onclick>SetFocus(8999,0)</onclick>	
 							</control>
 							
@@ -811,7 +811,7 @@
 								<textoffsetx>57</textoffsetx>
 								<textoffsety>7</textoffsety>	
 								<textwidth>158</textwidth>			
-								<label>31054</label>
+								<label>39123</label>
 								<radioposx>15</radioposx>
 								<radiowidth>25</radiowidth>
 								<radioheight>25</radioheight>								
@@ -836,7 +836,7 @@
 								<textoffsetx>57</textoffsetx>
 								<textoffsety>7</textoffsety>	
 								<textwidth>158</textwidth>			
-								<label>31054</label>
+								<label>39123</label>
 								<radioposx>15</radioposx>
 								<radiowidth>25</radiowidth>
 								<radioheight>25</radioheight>
@@ -930,7 +930,7 @@
 								<focusedcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</focusedcolor>
 								<disabledcolor>ffaaaaaa</disabledcolor>
 								<texturenofocus/>
-                                <label>31523</label>
+                                <label>20410</label>
 								<height>52</height>
 								<width>220</width>
 								<top>674</top>
@@ -1000,13 +1000,13 @@
 			<control type="button">
                 <visible>false</visible>
 				<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31089])">SetProperty(Path.Crew,"$VAR[Path_Crew]")</onfocus>
-				<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31528])">SetProperty(Path.FromYear,"$VAR[Path_FromYear]")</onfocus>
-				<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31538])">SetProperty(Path.FromGenre,"$VAR[Path_FromGenre]")</onfocus>
-				<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31525]) | String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31526])">SetProperty(Path.FromStudio,"$VAR[Path_FromStudio]")</onfocus>
-				<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31540])">SetProperty(Path.FromDirector,"$VAR[Path_FromDirector]")</onfocus>
+				<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[345])">SetProperty(Path.FromYear,"$VAR[Path_FromYear]")</onfocus>
+				<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[135])">SetProperty(Path.FromGenre,"$VAR[Path_FromGenre]")</onfocus>
+				<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[572]) | String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[705])">SetProperty(Path.FromStudio,"$VAR[Path_FromStudio]")</onfocus>
+				<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[20339])">SetProperty(Path.FromDirector,"$VAR[Path_FromDirector]")</onfocus>
 				<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31488])">SetProperty(Path.FromWriter,"$VAR[Path_FromWriter]")</onfocus>
 				<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31530])">SetProperty(Path.FromCreator,"$VAR[Path_FromCreator]")</onfocus>
-				<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31540])">SetProperty(Director,$VAR[Path_FromDirector_Name])</onfocus>
+				<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[20339])">SetProperty(Director,$VAR[Path_FromDirector_Name])</onfocus>
 				<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31488])">SetProperty(Writer,$VAR[Path_FromWriter_Screenplay])</onfocus>
 				<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31530])">SetProperty(Creator,$VAR[Path_FromCreator_Name])</onfocus>
 				<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31529])">SetProperty(Posters,$VAR[Path_Posters])</onfocus>
@@ -1020,7 +1020,7 @@
 			</item>
 			
 			<item id="2">
-				<label>$LOCALIZE[31540]</label> <!-- Director -->
+				<label>$LOCALIZE[20339]</label> <!-- Director -->
 				<visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode)</visible>
 			</item>
 
@@ -1035,21 +1035,21 @@
 			</item>	
 
 			<item id="5">
-				<label>$LOCALIZE[31525]</label> <!-- Studio -->
+				<label>$LOCALIZE[572]</label> <!-- Studio -->
 				<visible>String.IsEqual(ListItem.DBType,movie)</visible>
 			</item>	
 
 			<item id="6">
-				<label>$LOCALIZE[31526]</label> <!-- Network -->
+				<label>$LOCALIZE[705]</label> <!-- Network -->
 				<visible>String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)</visible>
 			</item>
 
 			<item id="7">
-				<label>$LOCALIZE[31538]</label> <!-- Genre -->
+				<label>$LOCALIZE[135]</label> <!-- Genre -->
 			</item>		
 			
 			<item id="8">
-				<label>$LOCALIZE[31528]</label> <!-- Year -->
+				<label>$LOCALIZE[345]</label> <!-- Year -->
 			</item>	
 
 			<item id="9">
@@ -1094,7 +1094,7 @@
 		  <param name="layoutwidth" value="240" />
           <param name="layoutheight" value="340" />
 		  <param name="layout">PosterPanelBingie</param>
-          <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31540])" /> <!-- Director -->
+          <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[20339])" /> <!-- Director -->
 		  <onfocus>SetProperty(TMDbHelper.WidgetContainer,53005,Home)</onfocus>
         </include>
 		
@@ -1139,7 +1139,7 @@
 		  <param name="layoutwidth" value="240" />
           <param name="layoutheight" value="340" />
 		  <param name="layout">PosterPanelBingie</param>
-          <param name="visible" value="[String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31525]) | String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31526])]" /> <!-- Studio -->
+          <param name="visible" value="[String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[572]) | String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[705])]" /> <!-- Studio -->
 		  <onfocus>SetProperty(TMDbHelper.WidgetContainer,53008,Home)</onfocus>
         </include>
 		
@@ -1154,7 +1154,7 @@
 		  <param name="layoutwidth" value="240" />
           <param name="layoutheight" value="340" />
 		  <param name="layout">PosterPanelBingie</param>
-          <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31538])" /> <!-- Genre -->
+          <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[135])" /> <!-- Genre -->
 		  <onfocus>SetProperty(TMDbHelper.WidgetContainer,53003,Home)</onfocus>
         </include>
 		
@@ -1169,7 +1169,7 @@
 		  <param name="layoutwidth" value="240" />
           <param name="layoutheight" value="340" />
 		  <param name="layout">PosterPanelBingie</param>
-          <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31528])" /> <!-- Year -->
+          <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[345])" /> <!-- Year -->
 		  <onfocus>SetProperty(TMDbHelper.WidgetContainer,53006,Home)</onfocus>
         </include>
 		
@@ -1202,18 +1202,18 @@
             <wrapmultiline>true</wrapmultiline>
             <textcolor>$INFO[Skin.String(BingiePrimaryTextColor)]</textcolor>
             <label>$LOCALIZE[31558]</label>
-            <visible>String.IsEqual(Window.Property(AdditionalInfo),cast) + [[!Container(53001).IsUpdating + !Integer.IsGreater(Container(53001).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[206])] | [!Container(53002).IsUpdating + !Integer.IsGreater(Container(53002).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31089])] | [!Container(53003).IsUpdating + !Integer.IsGreater(Container(53003).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31538])] | [!Container(53004).IsUpdating + !Integer.IsGreater(Container(53004).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31529])] | 
-					 [!Container(53005).IsUpdating + !Integer.IsGreater(Container(53005).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31540])] | [!Container(53006).IsUpdating + !Integer.IsGreater(Container(53006).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31528])] | [!Container(53007).IsUpdating + !Integer.IsGreater(Container(53007).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31488])] | [!Container(53008).IsUpdating + !Integer.IsGreater(Container(53008).NumItems,0) + [String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31526]) | String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31525])]] |
-					 [!Container(53009).IsUpdating + !Integer.IsGreater(Container(53009).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31530])] | [!Container(53010).IsUpdating + !Integer.IsGreater(Container(53010).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31522])] | [!Container(53011).IsUpdating + !Integer.IsGreater(Container(53011).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31753])]] + !Player.HasVideo | [!Container(50).IsUpdating + !Integer.IsGreater(Container(50).NumItems,0) + !Player.HasVideo] | [!Container(352).IsUpdating + !Integer.IsGreater(Container(352).NumItems,0) + String.IsEqual(Window.Property(AdditionalInfo),similar) + !Player.HasVideo]</visible>
+            <visible>String.IsEqual(Window.Property(AdditionalInfo),cast) + [[!Container(53001).IsUpdating + !Integer.IsGreater(Container(53001).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[206])] | [!Container(53002).IsUpdating + !Integer.IsGreater(Container(53002).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31089])] | [!Container(53003).IsUpdating + !Integer.IsGreater(Container(53003).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[135])] | [!Container(53004).IsUpdating + !Integer.IsGreater(Container(53004).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31529])] | 
+					 [!Container(53005).IsUpdating + !Integer.IsGreater(Container(53005).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[20339])] | [!Container(53006).IsUpdating + !Integer.IsGreater(Container(53006).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[345])] | [!Container(53007).IsUpdating + !Integer.IsGreater(Container(53007).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31488])] | [!Container(53008).IsUpdating + !Integer.IsGreater(Container(53008).NumItems,0) + [String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[705]) | String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[572])]] |
+					 [!Container(53009).IsUpdating + !Integer.IsGreater(Container(53009).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31530])] | [!Container(53010).IsUpdating + !Integer.IsGreater(Container(53010).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31522])] | [!Container(53011).IsUpdating + !Integer.IsGreater(Container(53011).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31493])]] + !Player.HasVideo | [!Container(50).IsUpdating + !Integer.IsGreater(Container(50).NumItems,0) + !Player.HasVideo] | [!Container(352).IsUpdating + !Integer.IsGreater(Container(352).NumItems,0) + String.IsEqual(Window.Property(AdditionalInfo),similar) + !Player.HasVideo]</visible>
         </control>
 			
 		<control type="group">
 			<animation effect="fade" start="0" end="100" time="400">Visible</animation>
 			<include>Animation_Right_Delay_3</include>
-			<visible>[Container(50).IsUpdating + !String.IsEqual(Window.Property(AdditionalInfo),similar) + !String.IsEqual(Window.Property(AdditionalInfo),cast) + !Player.HasVideo] | [Container(352).IsUpdating + String.IsEqual(Window.Property(AdditionalInfo),similar) + !Player.HasVideo] | String.IsEqual(Window.Property(AdditionalInfo),cast) + [[Container(53001).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[206])] | [Container(53002).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31089])] | [Container(53003).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31538])] |
-			[Container(53004).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31529])] + String.IsEmpty(Window.Property(DisablePosterFade)) | [Container(53005).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31540])] | [Container(53006).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31528])] |
-			[Container(53007).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31488])] | [Container(53008).IsUpdating + [[String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31525])] | String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31526])]] | [Container(53009).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31530])] | 
-			[Container(53010).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31522])] | [Container(53011).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31753])]] + !Player.HasVideo</visible>
+			<visible>[Container(50).IsUpdating + !String.IsEqual(Window.Property(AdditionalInfo),similar) + !String.IsEqual(Window.Property(AdditionalInfo),cast) + !Player.HasVideo] | [Container(352).IsUpdating + String.IsEqual(Window.Property(AdditionalInfo),similar) + !Player.HasVideo] | String.IsEqual(Window.Property(AdditionalInfo),cast) + [[Container(53001).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[206])] | [Container(53002).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31089])] | [Container(53003).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[135])] |
+			[Container(53004).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31529])] + String.IsEmpty(Window.Property(DisablePosterFade)) | [Container(53005).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[20339])] | [Container(53006).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[345])] |
+			[Container(53007).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31488])] | [Container(53008).IsUpdating + [[String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[572])] | String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[705])]] | [Container(53009).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31530])] | 
+			[Container(53010).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31522])] | [Container(53011).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31493])]] + !Player.HasVideo</visible>
 				<control type="label">					
 					<bottom>120</bottom>
 					<height>120</height>
@@ -1633,7 +1633,7 @@
 							</control>
 							
 							<control type="grouplist" id="701">
-								<visible>Skin.HasSetting(videoinfo_button_myrating) + [Skin.HasSetting(AddRaitingTrakt) | String.IsEmpty(ListItem.DBID)] + !$EXP[IsEpisodeDBType] + !$EXP[IsSeasonDBType]</visible>
+								<visible>Skin.HasSetting(videoinfo_button_myrating) + [Skin.HasSetting(AddRaitingTrakt) | String.IsEmpty(ListItem.DBID)] + !$EXP[IsSeasonDBType]</visible>
 								<height>64</height>
 								<width>800</width>
 								<orientation>horizontal</orientation>
@@ -1656,10 +1656,12 @@
 									<textureradioofffocus colordiffuse="$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]">bingie/rate/thumbs_up.png</textureradioofffocus>
 									<textureradioonnofocus colordiffuse="$INFO[Skin.String(BingieButtonTextColor)]">bingie/rate/thumbs_up.png</textureradioonnofocus>
 									<textureradiooffnofocus colordiffuse="$INFO[Skin.String(BingieButtonTextColor)]">bingie/rate/thumbs_up.png</textureradiooffnofocus>
-								    <onclick>RunScript(plugin.video.themoviedb.helper,sync_trakt,tmdb_id=$INFO[Container(99950).ListItem.Property(tmdb_id)],$VAR[Path_Param_Type],sync_type=like)</onclick>
-									<onup>RunScript(script.bingie.toolbox,action=dialogyesno,header=$LOCALIZE[31652],message=$VAR[RemoveRatingLabel],yesaction=RunScript(plugin.video.themoviedb.helper,sync_trakt,tmdb_id=$INFO[Container(99950).ListItem.Property(tmdb_id)],$VAR[Path_Param_Type],sync_type=reset),noaction=noop)</onup>
+								    <onclick condition="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)">RunScript(plugin.video.themoviedb.helper,sync_trakt,tmdb_id=$INFO[Container(99950).ListItem.Property(tmdb_id)],$VAR[Path_Param_Type],sync_type=like)</onclick>
+									<onclick condition="String.IsEqual(ListItem.DBType,episode)">RunScript(plugin.video.themoviedb.helper,sync_trakt,tmdb_id=$INFO[Container(99950).ListItem.Property(tmdb_id)],type=tv,tmdb_id=$INFO[ListItem.UniqueID(tvshow.tmdb)],query=$INFO[ListItem.TVShowTitle],season=$INFO[ListItem.Season],episode=$INFO[ListItem.Episode],sync_type=like)</onclick>
+									<onup condition="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)">RunScript(script.bingie.toolbox,action=dialogyesno,header=$LOCALIZE[31652],message=$VAR[RemoveRatingLabel],yesaction=RunScript(plugin.video.themoviedb.helper,sync_trakt,tmdb_id=$INFO[Container(99950).ListItem.Property(tmdb_id)],$VAR[Path_Param_Type],sync_type=reset),noaction=noop)</onup>
+									<onup condition="String.IsEqual(ListItem.DBType,episode)">RunScript(script.bingie.toolbox,action=dialogyesno,header=$LOCALIZE[31652],message=$VAR[RemoveRatingLabel],yesaction=RunScript(plugin.video.themoviedb.helper,sync_trakt,tmdb_id=$INFO[Container(99950).ListItem.Property(tmdb_id)],type=tv,tmdb_id=$INFO[ListItem.UniqueID(tvshow.tmdb)],query=$INFO[ListItem.TVShowTitle],season=$INFO[ListItem.Season],episode=$INFO[ListItem.Episode],sync_type=reset),noaction=noop)</onup>
 									<ondown>51</ondown>
-								</control>										
+								</control>
 
 								<control type="radiobutton" id="7033">
 									<left>30</left>
@@ -1678,8 +1680,10 @@
 									<textureradioofffocus flipy="true" colordiffuse="$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]">bingie/rate/thumbs_up.png</textureradioofffocus>
 									<textureradioonnofocus flipy="true" colordiffuse="$INFO[Skin.String(BingieButtonTextColor)]">bingie/rate/thumbs_up.png</textureradioonnofocus>
 									<textureradiooffnofocus flipy="true" colordiffuse="$INFO[Skin.String(BingieButtonTextColor)]">bingie/rate/thumbs_up.png</textureradiooffnofocus>
-								    <onclick>RunScript(plugin.video.themoviedb.helper,sync_trakt,tmdb_id=$INFO[Container(99950).ListItem.Property(tmdb_id)],$VAR[Path_Param_Type],sync_type=dislike)</onclick>
-									<onup>RunScript(script.bingie.toolbox,action=dialogyesno,header=$LOCALIZE[31652],message=$VAR[RemoveRatingLabel],yesaction=RunScript(plugin.video.themoviedb.helper,sync_trakt,tmdb_id=$INFO[Container(99950).ListItem.Property(tmdb_id)],$VAR[Path_Param_Type],sync_type=reset),noaction=noop)</onup>
+								    <onclick condition="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)">RunScript(plugin.video.themoviedb.helper,sync_trakt,tmdb_id=$INFO[Container(99950).ListItem.Property(tmdb_id)],$VAR[Path_Param_Type],sync_type=dislike)</onclick>
+									<onclick condition="String.IsEqual(ListItem.DBType,episode)">RunScript(plugin.video.themoviedb.helper,sync_trakt,tmdb_id=$INFO[Container(99950).ListItem.Property(tmdb_id)],type=tv,tmdb_id=$INFO[ListItem.UniqueID(tvshow.tmdb)],query=$INFO[ListItem.TVShowTitle],season=$INFO[ListItem.Season],episode=$INFO[ListItem.Episode],sync_type=dislike)</onclick>
+									<onup condition="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)">RunScript(script.bingie.toolbox,action=dialogyesno,header=$LOCALIZE[31652],message=$VAR[RemoveRatingLabel],yesaction=RunScript(plugin.video.themoviedb.helper,sync_trakt,tmdb_id=$INFO[Container(99950).ListItem.Property(tmdb_id)],$VAR[Path_Param_Type],sync_type=reset),noaction=noop)</onup>
+									<onup condition="String.IsEqual(ListItem.DBType,episode)">RunScript(script.bingie.toolbox,action=dialogyesno,header=$LOCALIZE[31652],message=$VAR[RemoveRatingLabel],yesaction=RunScript(plugin.video.themoviedb.helper,sync_trakt,tmdb_id=$INFO[Container(99950).ListItem.Property(tmdb_id)],type=tv,tmdb_id=$INFO[ListItem.UniqueID(tvshow.tmdb)],query=$INFO[ListItem.TVShowTitle],season=$INFO[ListItem.Season],episode=$INFO[ListItem.Episode],sync_type=reset),noaction=noop)</onup>
 									<ondown>51</ondown>
 								</control>								
 								
@@ -1771,7 +1775,7 @@
                                 <include content="Bingie_InfoDialog_Button_Texture">
                                     <param name="radiotexture" value="dialogs/videoinfo/info/play_beginning.png"/>
                                 </include>
-                                <label>$LOCALIZE[31697]</label>
+                                <label>[CAPITALIZE]$LOCALIZE[31630][/CAPITALIZE]</label>
                                 <radioposx>19</radioposx>
 								<radioposy>22</radioposy>
                                 <radiowidth>22</radiowidth>
@@ -1846,7 +1850,7 @@
                                 <include content="Bingie_InfoDialog_Button_Texture">
                                     <param name="radiotexture" value="dialogs/videoinfo/info/play2.png"/>
                                 </include>
-                                <label>$LOCALIZE[31480]</label>
+                                <label>[CAPITALIZE]$LOCALIZE[31480][/CAPITALIZE]</label>
 								<radioposx>19</radioposx>
 								<radioposy>22</radioposy>
                                 <radiowidth>22</radiowidth>
@@ -1875,7 +1879,7 @@
                                 <include content="Bingie_InfoDialog_Button_Texture">
                                     <param name="radiotexture" value="dialogs/videoinfo/tvstudio-icon.png"/>
                                 </include>
-                                <label>$LOCALIZE[31247]</label>
+                                <label>[CAPITALIZE]$LOCALIZE[31247][/CAPITALIZE]</label>
 								<radioposy>17</radioposy>
                                 <radioposx>15</radioposx>
                                 <radiowidth>27</radiowidth>
@@ -1936,7 +1940,7 @@
                                 <include content="Bingie_InfoDialog_Button_Texture">
                                     <param name="radiotexture" value="dialogs/videoinfo/info/plus.png"/>
                                 </include>
-                                <label>$LOCALIZE[31155]</label>
+                                <label>[CAPITALIZE]$LOCALIZE[31155][/CAPITALIZE]</label>
                                 <radioposx>19</radioposx>
 								<radioposy>22</radioposy>
                                 <radiowidth>22</radiowidth>
@@ -1947,9 +1951,7 @@
 							
 							<!-- Trakt Manager -->
                             <control type="radiobutton" id="562">
-								<visible>!$EXP[IsEpisodeDBType]</visible>
                                 <visible>Skin.HasSetting(videoinfo_button_trakt)</visible>
-                                <visible>$EXP[IsTvShowDBTypeNoFallback] | $EXP[IsMovieDBTypeNoFallback]</visible>
 								<include>Bingie_InfoDialog_Button_Default_Defs</include>
                                 <include content="Bingie_InfoDialog_Button_Texture">
                                     <param name="radiotexture" value="dialogs/videoinfo/info/trakt.png"/>
@@ -1959,8 +1961,12 @@
 								<radioposy>21</radioposy>
                                 <radiowidth>26</radiowidth>
                                 <radioheight>26</radioheight>
-                                <onclick condition="!String.IsEmpty(ListItem.Property(tmdb_id))">RunScript(plugin.video.themoviedb.helper,sync_trakt,tmdb_id=$INFO[ListItem.Property(tmdb_id)],$VAR[Path_Param_Type],cache_refresh)</onclick>
-								<onclick condition="String.IsEmpty(ListItem.Property(tmdb_id))">RunScript(plugin.video.themoviedb.helper,sync_trakt,tmdb_id=$INFO[Container(99950).ListItem.Property(tmdb_id)],$VAR[Path_Param_Type],cache_refresh)</onclick>
+                                <onclick condition="[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)] + !String.IsEmpty(ListItem.Property(tmdb_id))">RunScript(plugin.video.themoviedb.helper,sync_trakt,tmdb_id=$INFO[ListItem.Property(tmdb_id)],$VAR[Path_Param_Type],cache_refresh)</onclick>
+								<onclick condition="[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)] + String.IsEmpty(ListItem.Property(tmdb_id))">RunScript(plugin.video.themoviedb.helper,sync_trakt,tmdb_id=$INFO[Container(99950).ListItem.Property(tmdb_id)],$VAR[Path_Param_Type],cache_refresh)</onclick>
+								<onclick condition="String.IsEqual(ListItem.DBType,season) + !String.IsEmpty(ListItem.Property(tmdb_id))">RunScript(plugin.video.themoviedb.helper,sync_trakt,tmdb_id=$INFO[ListItem.Property(tmdb_id)],$VAR[Path_Param_Type],season=$INFO[ListItem.Season],cache_refresh)</onclick>
+								<onclick condition="String.IsEqual(ListItem.DBType,season) + String.IsEmpty(ListItem.Property(tmdb_id))">RunScript(plugin.video.themoviedb.helper,sync_trakt,tmdb_id=$INFO[Container(99950).ListItem.Property(tmdb_id)],$VAR[Path_Param_Type],season=$INFO[ListItem.Season],cache_refresh)</onclick>
+								<onclick condition="String.IsEqual(ListItem.DBType,episode) + !String.IsEmpty(ListItem.Property(tmdb_id))">RunScript(plugin.video.themoviedb.helper,sync_trakt,tmdb_id=$INFO[ListItem.Property(tmdb_id)],$VAR[Path_Param_Type],season=$INFO[ListItem.Season],episode=$INFO[ListItem.Episode],cache_refresh)</onclick>
+								<onclick condition="String.IsEqual(ListItem.DBType,episode) + String.IsEmpty(ListItem.Property(tmdb_id))">RunScript(plugin.video.themoviedb.helper,sync_trakt,tmdb_id=$INFO[Container(99950).ListItem.Property(tmdb_id)],$VAR[Path_Param_Type],season=$INFO[ListItem.Season],episode=$INFO[ListItem.Episode],cache_refresh)</onclick>
                             </control>
 
 							<!--Plot & Critics-->
@@ -1971,7 +1977,7 @@
                                 <include content="Bingie_InfoDialog_Button_Texture">
                                     <param name="radiotexture" value="dialogs/videoinfo/info/plot.png"/>
                                 </include>
-                                <label>$LOCALIZE[31615]</label>
+                                <label>[CAPITALIZE]$LOCALIZE[31615][/CAPITALIZE]</label>
                                 <radioposx>18</radioposx>
 								<radioposy>22</radioposy>
                                 <radiowidth>25</radiowidth>
@@ -1988,7 +1994,7 @@
                                 <include content="Bingie_InfoDialog_Button_Texture">
                                     <param name="radiotexture" value="dialogs/videoinfo/info/cast.png"/>
                                 </include>
-                                <label>$LOCALIZE[31246]</label>
+                                <label>[CAPITALIZE]$LOCALIZE[31246][/CAPITALIZE]</label>
                                 <radioposx>18</radioposx>
 								<radioposy>22</radioposy>
                                 <radiowidth>26</radiowidth>
@@ -2020,7 +2026,7 @@
                                 <include content="Bingie_InfoDialog_Button_Texture">
                                     <param name="radiotexture" value="dialogs/videoinfo/info/similar.png"/>
                                 </include>
-                                <label>$LOCALIZE[31622]</label>
+                                <label>[CAPITALIZE]$LOCALIZE[31622][/CAPITALIZE]</label>
                                 <radioposx>18</radioposx>
 								<radioposy>22</radioposy>
                                 <radiowidth>24</radiowidth>
@@ -2038,7 +2044,7 @@
 								<include content="Bingie_InfoDialog_Button_Texture">
 									<param name="radiotexture" value="dialogs/videoinfo/info/video_versions.png"/>
 								</include>
-								<label>$LOCALIZE[31413]</label>
+								<label>[CAPITALIZE]$LOCALIZE[40013][/CAPITALIZE]</label>
 								<radioposy>20</radioposy>
 								<radioposx>17</radioposx>
 								<radiowidth>26</radiowidth>
@@ -2053,7 +2059,7 @@
 								<include content="Bingie_InfoDialog_Button_Texture">
 									<param name="radiotexture" value="dialogs/videoinfo/info/artwork.png"/>
 								</include>
-								<label>$LOCALIZE[31694]</label>
+								<label>[CAPITALIZE]$LOCALIZE[13511][/CAPITALIZE]</label>
 								<radioposx>17</radioposx>
 								<radioposy>22</radioposy>
 								<radiowidth>25</radiowidth>
@@ -2068,7 +2074,7 @@
 								<include content="Bingie_InfoDialog_Button_Texture">
 									<param name="radiotexture" value="dialogs/videoinfo/info/artwork.png"/>
 								</include>
-								<label>$LOCALIZE[31694]</label>
+								<label>[CAPITALIZE]$LOCALIZE[13511][/CAPITALIZE]</label>
 								<radioposx>17</radioposx>
 								<radioposy>22</radioposy>
 								<radiowidth>25</radiowidth>
@@ -2109,6 +2115,7 @@
 								<radioheight>22</radioheight>
 								<onclick condition="$EXP[IsTvShowDBType]">Runscript(plugin.video.themoviedb.helper,refresh_details,tmdb_id=$INFO[ListItem.UniqueID(tmdb)],tmdb_type=tv)</onclick>
 								<onclick condition="$EXP[IsMovieDBType]">Runscript(plugin.video.themoviedb.helper,refresh_details,tmdb_id=$INFO[ListItem.UniqueID(tmdb)],tmdb_type=movie)</onclick>
+								<onclick condition="$EXP[IsSeasonDBType]">Runscript(plugin.video.themoviedb.helper,refresh_details,type=tv,tmdb_id=$INFO[ListItem.UniqueID(tvshow.tmdb)],query=$INFO[ListItem.TVShowTitle],season=$INFO[ListItem.Season])</onclick>
 								<onclick condition="$EXP[IsEpisodeDBType]">Runscript(plugin.video.themoviedb.helper,refresh_details,type=tv,tmdb_id=$INFO[ListItem.UniqueID(tvshow.tmdb)],query=$INFO[ListItem.TVShowTitle],season=$INFO[ListItem.Season],episode=$INFO[ListItem.Episode])</onclick>
 							</control>
 						</control>
@@ -2177,7 +2184,7 @@
 									<include content="Bingie_InfoDialog_Trailer_Button_Texture">
 										<param name="radiotexture" value="dialogs/videoinfo/info/play2.png"/>
 									</include>
-									<label>$LOCALIZE[31480]</label>
+									<label>[CAPITALIZE]$LOCALIZE[31480][/CAPITALIZE]</label>
 									<radioposx>19</radioposx>
 									<radioposy>22</radioposy>
 									<radiowidth>22</radiowidth>
@@ -2191,7 +2198,7 @@
 									<include content="Bingie_InfoDialog_Trailer_Button_Texture">
 										<param name="radiotexture" value="dialogs/videoinfo/tvstudio-icon.png"/>
 									</include>
-									<label>$LOCALIZE[31247]</label>
+									<label>[CAPITALIZE]$LOCALIZE[31247][/CAPITALIZE]</label>
 									<radioposy>17</radioposy>
 									<radioposx>15</radioposx>
 									<radiowidth>27</radiowidth>
@@ -2481,7 +2488,7 @@
 					</focusedlayout>
 					<content>
 					 <item id="1">
-						<label>$LOCALIZE[31622]</label>
+						<label>[CAPITALIZE]$LOCALIZE[31622][/CAPITALIZE]</label>
 					</item>
 					</content>
 				</control>
@@ -2668,7 +2675,7 @@
 					</focusedlayout>
 					<content>
 					 <item id="1">
-						<label>$LOCALIZE[31247]</label>
+						<label>[CAPITALIZE]$LOCALIZE[31247][/CAPITALIZE]</label>
 					</item>
 					</content>
 				</control>
@@ -2793,7 +2800,7 @@
 									<font>Reg40</font>
 									<align>center</align>
 									<textcolor>$INFO[Skin.String(BingiePrimaryTextColor)]</textcolor>
-									<label>$LOCALIZE[31698]</label>
+									<label>$LOCALIZE[31544]</label>
 									<scroll>true</scroll>
 									<visible>!Container(1050).IsUpdating + !Integer.IsGreater(Container(1050).NumItems,0)</visible>
 								</control>
@@ -2877,9 +2884,9 @@
             <wrapmultiline>true</wrapmultiline>
             <textcolor>$INFO[Skin.String(BingiePrimaryTextColor)]</textcolor>
             <label>$LOCALIZE[31558]</label>
-            <visible>[!Container(53001).IsUpdating + !Integer.IsGreater(Container(53001).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[206])] | [!Container(53002).IsUpdating + !Integer.IsGreater(Container(53002).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31089])] | [!Container(53003).IsUpdating + !Integer.IsGreater(Container(53003).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31538])] | [!Container(53004).IsUpdating + !Integer.IsGreater(Container(53004).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31529])] | 
-					 [!Container(53005).IsUpdating + !Integer.IsGreater(Container(53005).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31540])] | [!Container(53006).IsUpdating + !Integer.IsGreater(Container(53006).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31528])] | [!Container(53007).IsUpdating + !Integer.IsGreater(Container(53007).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31488])] | [!Container(53008).IsUpdating + !Integer.IsGreater(Container(53008).NumItems,0) + [String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31526]) | String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31525])]] |
-					 [!Container(53009).IsUpdating + !Integer.IsGreater(Container(53009).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31530])] | [!Container(53010).IsUpdating + !Integer.IsGreater(Container(53010).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31522])] | [!Container(53011).IsUpdating + !Integer.IsGreater(Container(53011).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31753])]</visible>
+            <visible>[!Container(53001).IsUpdating + !Integer.IsGreater(Container(53001).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[206])] | [!Container(53002).IsUpdating + !Integer.IsGreater(Container(53002).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31089])] | [!Container(53003).IsUpdating + !Integer.IsGreater(Container(53003).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[135])] | [!Container(53004).IsUpdating + !Integer.IsGreater(Container(53004).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31529])] | 
+					 [!Container(53005).IsUpdating + !Integer.IsGreater(Container(53005).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[20339])] | [!Container(53006).IsUpdating + !Integer.IsGreater(Container(53006).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[345])] | [!Container(53007).IsUpdating + !Integer.IsGreater(Container(53007).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31488])] | [!Container(53008).IsUpdating + !Integer.IsGreater(Container(53008).NumItems,0) + [String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[705]) | String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[572])]] |
+					 [!Container(53009).IsUpdating + !Integer.IsGreater(Container(53009).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31530])] | [!Container(53010).IsUpdating + !Integer.IsGreater(Container(53010).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31522])] | [!Container(53011).IsUpdating + !Integer.IsGreater(Container(53011).NumItems,0) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31493])]</visible>
         </control>		
 		<control type="list" id="8999">
 			<onleft>ClearProperty(AdditionalInfo)</onleft>
@@ -2937,13 +2944,13 @@
 				<control type="button">
 					<visible>false</visible>
 					<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31089])">SetProperty(Path.Crew,"$VAR[Path_Crew]")</onfocus>
-					<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31528])">SetProperty(Path.FromYear,"$VAR[Path_FromYear]")</onfocus>
-					<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31538])">SetProperty(Path.FromGenre,"$VAR[Path_FromGenre]")</onfocus>
-					<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31525]) | String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31526])">SetProperty(Path.FromStudio,"$VAR[Path_FromStudio]")</onfocus>
-					<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31540])">SetProperty(Path.FromDirector,"$VAR[Path_FromDirector]")</onfocus>
+					<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[345])">SetProperty(Path.FromYear,"$VAR[Path_FromYear]")</onfocus>
+					<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[135])">SetProperty(Path.FromGenre,"$VAR[Path_FromGenre]")</onfocus>
+					<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[572]) | String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[705])">SetProperty(Path.FromStudio,"$VAR[Path_FromStudio]")</onfocus>
+					<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[20339])">SetProperty(Path.FromDirector,"$VAR[Path_FromDirector]")</onfocus>
 					<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31488])">SetProperty(Path.FromWriter,"$VAR[Path_FromWriter]")</onfocus>
 					<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31530])">SetProperty(Path.FromCreator,"$VAR[Path_FromCreator]")</onfocus>
-					<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31540])">SetProperty(Director,$VAR[Path_FromDirector_Name])</onfocus>
+					<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[20339])">SetProperty(Director,$VAR[Path_FromDirector_Name])</onfocus>
 					<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31488])">SetProperty(Writer,$VAR[Path_FromWriter_Screenplay])</onfocus>
 					<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31530])">SetProperty(Creator,$VAR[Path_FromCreator_Name])</onfocus>
 					<onfocus condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31529])">SetProperty(Posters,$VAR[Path_Posters])</onfocus>
@@ -2961,7 +2968,7 @@
 				</item>
 				
 				<item id="3">
-					<label>$LOCALIZE[31540]</label> <!-- Director -->
+					<label>$LOCALIZE[20339]</label> <!-- Director -->
 					<visible>String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode)</visible>
 				</item>
 
@@ -2976,21 +2983,21 @@
 				</item>	
 
 				<item id="6">
-					<label>$LOCALIZE[31525]</label> <!-- Studio -->
+					<label>$LOCALIZE[572]</label> <!-- Studio -->
 					<visible>String.IsEqual(ListItem.DBType,movie)</visible>
 				</item>	
 
 				<item id="7">
-					<label>$LOCALIZE[31526]</label> <!-- Network -->
+					<label>$LOCALIZE[705]</label> <!-- Network -->
 					<visible>String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)</visible>
 				</item>
 
 				<item id="8">
-					<label>$LOCALIZE[31538]</label> <!-- Genre -->
+					<label>$LOCALIZE[135]</label> <!-- Genre -->
 				</item>		
 				
 				<item id="9">
-					<label>$LOCALIZE[31528]</label> <!-- Year -->
+					<label>$LOCALIZE[345]</label> <!-- Year -->
 				</item>	
 
 				<item id="10">
@@ -3074,7 +3081,7 @@
 			  <param name="layoutwidth" value="264" />
 			  <param name="layoutheight" value="374" />
 			  <param name="layout">PosterPanelBingie</param>
-			  <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31540])" /> <!-- Director -->
+			  <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[20339])" /> <!-- Director -->
 			  <onfocus>SetProperty(TMDbHelper.WidgetContainer,53005,Home)</onfocus>
 			</include>
 			
@@ -3119,7 +3126,7 @@
 			  <param name="layoutwidth" value="264" />
 			  <param name="layoutheight" value="374" />
 			  <param name="layout">PosterPanelBingie</param>
-			  <param name="visible" value="[String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31525]) | String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31526])]" /> <!-- Studio -->
+			  <param name="visible" value="[String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[572]) | String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[705])]" /> <!-- Studio -->
 			  <onfocus>SetProperty(TMDbHelper.WidgetContainer,53008,Home)</onfocus>
 			</include>
 			
@@ -3134,7 +3141,7 @@
 			  <param name="layoutwidth" value="264" />
 			  <param name="layoutheight" value="374" />
 			  <param name="layout">PosterPanelBingie</param>
-			  <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31538])" /> <!-- Genre -->
+			  <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[135])" /> <!-- Genre -->
 			  <onfocus>SetProperty(TMDbHelper.WidgetContainer,53003,Home)</onfocus>
 			</include>
 			
@@ -3149,7 +3156,7 @@
 			  <param name="layoutwidth" value="264" />
 			  <param name="layoutheight" value="374" />
 			  <param name="layout">PosterPanelBingie</param>
-			  <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31528])" /> <!-- Year -->
+			  <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[345])" /> <!-- Year -->
 			  <onfocus>SetProperty(TMDbHelper.WidgetContainer,53006,Home)</onfocus>
 			</include>	
 
@@ -3174,10 +3181,10 @@
 		<include content="Busy_Spinner">
 				<param name="centerleft" value="70%"/>
 				<param name="centertop" value="50%"/>
-				<param name="visibility" value="[[Container(53001).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[206])] | [Container(53002).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31089])] | [Container(53003).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31538])] |
-				[Container(53004).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31529]) + String.IsEmpty(Window.Property(DisablePosterFade))] | [Container(53005).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31540])] | [Container(53006).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31528])] |
-				[Container(53007).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31488])] | [Container(53008).IsUpdating + [[String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31525])] | String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31526])]] | [Container(53009).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31530])] | 
-				[Container(53010).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31522])] | [Container(53011).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31753])]]"/>
+				<param name="visibility" value="[[Container(53001).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[206])] | [Container(53002).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31089])] | [Container(53003).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[135])] |
+				[Container(53004).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31529]) + String.IsEmpty(Window.Property(DisablePosterFade))] | [Container(53005).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[20339])] | [Container(53006).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[345])] |
+				[Container(53007).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31488])] | [Container(53008).IsUpdating + [[String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[572])] | String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[705])]] | [Container(53009).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31530])] | 
+				[Container(53010).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31522])] | [Container(53011).IsUpdating + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31493])]]"/>
 				<param name="size" value="100"/>
 		</include>
 	</control>
@@ -3233,8 +3240,8 @@
 				<onleft>ClearProperty(AdditionalInfo)</onleft>
 				<onback>ClearProperty(AdditionalInfo)</onback>
 				<onback>8000</onback>
-				<onup condition="String.IsEqual(Container(2999).ListItem.Label,$LOCALIZE[31503]) + Control.IsVisible(90)">90</onup>
-				<onup condition="!String.IsEqual(Container(2999).ListItem.Label,$LOCALIZE[31503])">3000</onup>
+				<onup condition="String.IsEqual(Container(2999).ListItem.Label,$LOCALIZE[14116]) + Control.IsVisible(90)">90</onup>
+				<onup condition="!String.IsEqual(Container(2999).ListItem.Label,$LOCALIZE[14116])">3000</onup>
 				<onright>2999</onright>
 				<onleft>2999</onleft>
 				<orientation>horizontal</orientation>
@@ -3292,7 +3299,7 @@
 				<content>
 				
 					<item id="1">
-						<label>$LOCALIZE[31503]</label> <!-- Info -->
+						<label>$LOCALIZE[14116]</label> <!-- Info -->
 					</item>
 
 					<item id="2">
@@ -3426,7 +3433,7 @@
 							<!-- Info -->
 							<control type="group" id="300">
 								<animation effect="fade" start="0" end="100" time="400">Visible</animation>
-								<visible>String.IsEqual(Container(2999).ListItem.Label,$LOCALIZE[31503])</visible>			
+								<visible>String.IsEqual(Container(2999).ListItem.Label,$LOCALIZE[14116])</visible>			
 								<top>8</top>
 								<left>553</left>
 								<control type="grouplist">
@@ -3450,7 +3457,7 @@
 										<posy>0</posy>
 										<width>1228</width>
 										<height>30</height>
-										<label>$INFO[ListItem.Property(Birthday),$LOCALIZE[31243]: ]$INFO[ListItem.Property(Deathday),  •  $LOCALIZE[31242]: ] $INFO[ListItem.Property(Age), ($LOCALIZE[31241] ,) ]</label>
+										<label>$INFO[ListItem.Property(Birthday),$LOCALIZE[21893]: ]$INFO[ListItem.Property(Deathday),  •  $LOCALIZE[21897]: ] $INFO[ListItem.Property(Age), ($LOCALIZE[31241] ,) ]</label>
 										<textcolor>$INFO[Skin.String(BingieDeatailsTextColor)]</textcolor>
 										<align>justify</align>
 										<font>Reg30</font>
@@ -3547,7 +3554,7 @@
                 <top>339</top>
                 <bottom>189</bottom>
                 <centerright>30</centerright>               
-				<visible>String.IsEqual(Container(2999).ListItem.Label,$LOCALIZE[31503])</visible>	
+				<visible>String.IsEqual(Container(2999).ListItem.Label,$LOCALIZE[14116])</visible>	
 				<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(90) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_hide)] | !String.IsEqual(Skin.String(scrollbar_visibility),always_hide)">Conditional</animation>
 				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(90) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_hide)] | String.IsEqual(Skin.String(scrollbar_visibility),always_hide)">Conditional</animation>				
 			</control>
@@ -3749,7 +3756,7 @@
                 <param name="icon_image" value="dialogs/videoinfo/director-icon.png"/>
             </include>
             <include content="More_Details_Object_Label">
-                <param name="label" value="$VAR[BingieInfoDirector,[CAPITALIZE]$LOCALIZE[20348]: [/CAPITALIZE],]" />
+                <param name="label" value="$VAR[BingieInfoDirector,[CAPITALIZE]$LOCALIZE[20339]: [/CAPITALIZE],]" />
             </include>
         </control>
     </include>
@@ -3841,7 +3848,7 @@
     <!-- play/resume Sxx: ep. xx label -->
     <variable name="PlayOrResumeSeasonEpisodeLabel">
         <value condition="Integer.IsGreater(Container(5050).NumItems,0) + !Container(5050).IsUpdating + Container(5050).ListItem.IsResumable">$LOCALIZE[13404]$INFO[Container(5050).ListItem.Season, $LOCALIZE[31000],: ]$INFO[Container(5050).ListItem.Episode,$LOCALIZE[31002]. ,]</value>
-        <value condition="Integer.IsGreater(Container(5050).NumItems,0) + !Container(5050).IsUpdating">$LOCALIZE[208]$INFO[Container(5050).ListItem.Season, $LOCALIZE[31689] ,: ]$INFO[Container(5050).ListItem.Episode,$LOCALIZE[31690] ,]</value>
+        <value condition="Integer.IsGreater(Container(5050).NumItems,0) + !Container(5050).IsUpdating">$LOCALIZE[208]$INFO[Container(5050).ListItem.Season, $LOCALIZE[20373] ,: ]$INFO[Container(5050).ListItem.Episode,$LOCALIZE[20359] ,]</value>
 		<value>$LOCALIZE[31209]</value>
    </variable>
 	
@@ -3853,7 +3860,7 @@
 	
 	<variable name="PlayOrResumeSeasonEpisodeLabel3">
         <value condition="!Container(1234).IsUpdating + !Integer.IsEqual(Container(1234).NumItems,0) + Container(1234).ListItem.IsResumable">$LOCALIZE[13404]$INFO[Container(1234).ListItem.Season, $LOCALIZE[31000],: ]$INFO[Container(1234).ListItem.Episode,$LOCALIZE[31002]. ,]</value>
-        <value condition="!Container(1234).IsUpdating + !Integer.IsEqual(Container(1234).NumItems,0)">$LOCALIZE[208]$INFO[Container(1234).ListItem.Season, $LOCALIZE[31689] ,: ]$INFO[Container(1234).ListItem.Episode,$LOCALIZE[31690] ,]</value>
+        <value condition="!Container(1234).IsUpdating + !Integer.IsEqual(Container(1234).NumItems,0)">$LOCALIZE[208]$INFO[Container(1234).ListItem.Season, $LOCALIZE[20373] ,: ]$INFO[Container(1234).ListItem.Episode,$LOCALIZE[20359] ,]</value>
 		<value>$LOCALIZE[31209]</value>
     </variable>
 	

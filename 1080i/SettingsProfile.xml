@@ -35,7 +35,7 @@
                 <posx>90</posx>
                 <posy>30</posy>
                 <width>450</width>
-                <label>31310</label>
+                <label>128</label>
                 <onup>2</onup>
 				<onright>2</onright>
 				<onfocus>SetProperty(SkinSettingSection,155,Home)</onfocus>
