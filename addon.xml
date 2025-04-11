@@ -17,7 +17,9 @@
     </extension>
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en_GB">Kodi skin with Netflix layout.</summary>
-		<description>Bingie – The home of your favorite movies and shows!</description>
+		<summary lang="zh_CN">Netflix布局Kodi皮肤。</summary>
+		<description lang="en_GB">Bingie – The home of your favorite movies and shows!</description>
+		<description lang="zh_CN">Bingie -你最喜欢的电影和节目的家！</description>
 		<platform>all</platform>
 		<license>GPL v2.0</license>
 		<forum></forum>
