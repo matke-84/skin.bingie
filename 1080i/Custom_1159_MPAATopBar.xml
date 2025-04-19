@@ -44,7 +44,6 @@
                     <aligny>center</aligny>
                     <font>Reg34</font>
                     <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-                    <shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
                     <label>$VAR[VideoRatingTopBarLabel]</label>
                 </control>
             </control>

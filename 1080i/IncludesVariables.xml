@@ -548,7 +548,7 @@
 	<variable name="RemoveRatingLabel">
 		<value condition="$EXP[IsMovieDBType]">$LOCALIZE[31310]</value>
 		<value condition="$EXP[IsTvShowDBType]">$LOCALIZE[31384]</value>
-		<value condition="$EXP[IsEpisodeDBType]">$LOCALIZE[31678]</value>
+		<value condition="$EXP[IsEpisodeDBType]">$LOCALIZE[31223]</value>
 	</variable>
 	
 	<variable name="SettingsButton">

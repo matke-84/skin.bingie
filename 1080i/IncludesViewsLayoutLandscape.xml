@@ -5,7 +5,7 @@
         <include>ThumbsViewItemLayout</include>
      </include>
     <include name="ThumbsViewLayoutFocus">
-        <include condition="![Skin.HasSetting(EnableFixedFrameWidgets) + [[Window.IsActive(Home) | $EXP[IsBingieListsActive]] | [[$EXP[IsBingieHubsActive]] + Skin.HasSetting(LockHubWidgets)]]]">ThumbsFO</include>
+        <include>ThumbsFO</include>
         <include>ThumbsViewItemLayout</include>
     </include>
     <include name="ThumbsViewItemLayout">
@@ -27,7 +27,7 @@
             <visible>String.IsEmpty(Listitem.Art(landscape)) + String.IsEmpty(ListItem.Property(landscape)) + !String.IsEqual(ListItem.DBTYPE,episode) + !String.IsEqual(ListItem.Property(DBTYPE),episode) + !Container.Content(episodes) + !String.IsEqual(ListItem.DBTYPE,season) + !String.IsEqual(ListItem.Property(DBTYPE),season)</visible>
             <visible>String.IsEmpty(ListItem.Property(defaultID))</visible>
         </control>
-        <include condition="!$EXP[IsBingieViewsActive]">ThumbsTagOverlay</include>
+        <include>ThumbsTagOverlay</include>
         <control type="group">
             <!--Watched Overlay-->
             <right>8</right>
@@ -41,7 +41,7 @@
         <include>ThumbsViewItemLayoutSmall</include>
      </include>
     <include name="ThumbsViewLayoutFocusSmall">
-        <include condition="![Skin.HasSetting(EnableFixedFrameWidgets) + [[Window.IsActive(Home) | $EXP[IsBingieListsActive]] | [[$EXP[IsBingieHubsActive]] + Skin.HasSetting(LockHubWidgets)]]]">ThumbsFO</include>
+        <include>ThumbsFO</include>
         <include>ThumbsViewItemLayoutSmall</include>
     </include>
     <include name="ThumbsViewItemLayoutSmall">
@@ -63,7 +63,7 @@
             <visible>String.IsEmpty(Listitem.Art(landscape)) + String.IsEmpty(ListItem.Property(landscape)) + !String.IsEqual(ListItem.DBTYPE,episode) + !String.IsEqual(ListItem.Property(DBTYPE),episode) + !Container.Content(episodes) + !String.IsEqual(ListItem.DBTYPE,season) + !String.IsEqual(ListItem.Property(DBTYPE),season)</visible>
             <visible>String.IsEmpty(ListItem.Property(defaultID))</visible>
         </control>
-        <include condition="!$EXP[IsBingieViewsActive]">ThumbsTagOverlaySmall</include>
+        <include>ThumbsTagOverlaySmall</include>
         <control type="group">
             <!--Watched Overlay-->
             <right>8</right>
@@ -94,7 +94,7 @@
         <include>ThumbsViewItemBingieLayout</include>
      </include>
     <include name="ThumbsViewBingieLayoutFocus">
-        <include condition="![Skin.HasSetting(EnableFixedFrameWidgets) + [[Window.IsActive(Home) | $EXP[IsBingieListsActive]] | [$EXP[IsBingieHubsActive2] + Skin.HasSetting(LockHubWidgets)]]]">ThumbsFOBingie</include>
+        <include condition="![Skin.HasSetting(EnableFixedFrameWidgets) + [Window.IsActive(Home) | [$EXP[IsBingieHubsActive2] + Skin.HasSetting(LockHubWidgets)]]]">ThumbsFOBingie</include>
         <include>ThumbsViewItemBingieLayout</include>
     </include>
 	<include name="ThumbsViewBingieLayoutFocusInfo">
@@ -170,7 +170,7 @@
             <visible>String.IsEmpty(Listitem.Art(landscape)) + String.IsEmpty(ListItem.Property(landscape)) + !String.IsEqual(ListItem.DBTYPE,episode) + !String.IsEqual(ListItem.Property(DBTYPE),episode) + !Container.Content(episodes) + !String.IsEqual(ListItem.DBTYPE,season) + !String.IsEqual(ListItem.Property(DBTYPE),season)</visible>
             <visible>String.IsEmpty(ListItem.Property(defaultID))</visible>
         </control>
-        <include condition="!Window.IsActive(Home) + !$EXP[IsBingieHubsActive] + !Window.IsActive(1117)">LandscapeTagOverlay</include>
+        <include>LandscapeTagOverlay</include>
 		<control type="group">
 			<right>8</right>
 			<top>8</top>
@@ -198,7 +198,7 @@
 			<bottom>0</bottom>
             <height>78</height>
             <texture>diffuse/home_overlay.png</texture>
-            <include condition="!Window.IsActive(Home) + !$EXP[IsBingieHubsActive] + !Window.IsActive(1117)">LandscapeTagOverlayVisibility</include>
+            <include>LandscapeTagOverlayVisibility</include>
             <colordiffuse>$INFO[Skin.String(TagOverlaysPanelColor)]</colordiffuse>
         </control>
         <control type="textbox">
@@ -215,7 +215,7 @@
 			<autoscroll>false</autoscroll>
 			<visible>!String.IsEqual(System.CurrentControl,ListItem.Label)</visible>
             <textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
-            <include condition="!Window.IsActive(Home) + !$EXP[IsBingieHubsActive] + !Window.IsActive(1117)">LandscapeTagOverlayVisibility</include>
+            <include>LandscapeTagOverlayVisibility</include>
         </control>
 		<control type="textbox">
             <!--Label-->
@@ -231,7 +231,7 @@
 			<autoscroll delay="2000" time="2000" repeat="500">true</autoscroll>
 			<visible>String.IsEqual(System.CurrentControl,ListItem.Label)</visible>
             <textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
-            <include condition="!Window.IsActive(Home) + !$EXP[IsBingieHubsActive] + !Window.IsActive(1117)">LandscapeTagOverlayVisibility</include>
+            <include>LandscapeTagOverlayVisibility</include>
         </control>
     </include>
 	<include name="ThumbsTagOverlayBingie">
@@ -287,7 +287,7 @@
 			<bottom>0</bottom>
             <height>74</height>
             <texture>diffuse/home_overlay_small.png</texture>
-            <include condition="!Window.IsActive(Home) + !$EXP[IsBingieHubsActive] + !Window.IsActive(1117)">LandscapeTagOverlayVisibility</include>
+            <include>LandscapeTagOverlayVisibility</include>
             <colordiffuse>$INFO[Skin.String(TagOverlaysPanelColor)]</colordiffuse>
         </control>
         <control type="textbox">
@@ -304,7 +304,7 @@
 			<autoscroll>false</autoscroll>
 			<visible>!String.IsEqual(System.CurrentControl,ListItem.Label)</visible>
             <textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
-            <include condition="!Window.IsActive(Home) + !$EXP[IsBingieHubsActive] + !Window.IsActive(1117)">LandscapeTagOverlayVisibility</include>
+            <include>LandscapeTagOverlayVisibility</include>
         </control>
 		<control type="textbox">
             <!--Label-->
@@ -320,7 +320,7 @@
 			<autoscroll delay="2000" time="2000" repeat="500">true</autoscroll>
 			<visible>String.IsEqual(System.CurrentControl,ListItem.Label)</visible>
             <textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
-            <include condition="!Window.IsActive(Home) + !$EXP[IsBingieHubsActive] + !Window.IsActive(1117)">LandscapeTagOverlayVisibility</include>
+            <include>LandscapeTagOverlayVisibility</include>
         </control>
     </include>
     <include name="LandscapeTagOverlay">
@@ -330,7 +330,7 @@
 			<bottom>0</bottom>
             <height>97</height>
             <texture>home/home_overlay.png</texture>
-            <include condition="!Window.IsActive(Home) + !$EXP[IsBingieHubsActive] + !Window.IsActive(1117)">LandscapeTagOverlayVisibility</include>
+            <include>LandscapeTagOverlayVisibility</include>
             <colordiffuse>$INFO[Skin.String(TagOverlaysPanelColor)]</colordiffuse>
         </control>
         <control type="textbox">
@@ -347,7 +347,7 @@
 			<autoscroll>false</autoscroll>
 			<visible>!String.IsEqual(System.CurrentControl,ListItem.Label)</visible>
             <textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
-            <include condition="!Window.IsActive(Home) + !$EXP[IsBingieHubsActive] + !Window.IsActive(1117)">LandscapeTagOverlayVisibility</include>
+            <include>LandscapeTagOverlayVisibility</include>
         </control>
 		<control type="textbox">
             <!--Label-->
@@ -363,7 +363,7 @@
 			<autoscroll delay="2000" time="2000" repeat="500">true</autoscroll>
 			<visible>String.IsEqual(System.CurrentControl,ListItem.Label)</visible>
             <textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
-            <include condition="!Window.IsActive(Home) + !$EXP[IsBingieHubsActive] + !Window.IsActive(1117)">LandscapeTagOverlayVisibility</include>
+            <include>LandscapeTagOverlayVisibility</include>
         </control>
     </include>
 

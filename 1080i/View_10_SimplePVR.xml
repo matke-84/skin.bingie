@@ -35,7 +35,6 @@
                 <height>50</height>
                 <font>Bold40</font>
                 <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-                <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                 <label>$VAR[ListTitlePVR]</label>
             </control>
             <control type="grouplist">
@@ -50,7 +49,6 @@
                         <posx>0</posx>
                         <posy>0</posy>
                         <width>180</width>
-                        <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 						<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                         <label>$LOCALIZE[142]</label>
                     </control>
@@ -58,7 +56,6 @@
                         <posx>160</posx>
                         <posy>0</posy>
                         <width>500</width>
-                        <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                         <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                         <label>$VAR[ListDateInfoPVR]</label>
                         <scroll>true</scroll>
@@ -72,7 +69,6 @@
                         <posx>0</posx>
                         <posy>0</posy>
                         <width>180</width>
-                        <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                         <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                         <label>$LOCALIZE[180]:</label>
                     </control>
@@ -80,7 +76,6 @@
                         <posx>160</posx>
                         <posy>0</posy>
                         <width>300</width>
-                        <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                         <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                         <label>$VAR[ListItemDuration]</label>
                     </control>
@@ -93,7 +88,6 @@
                         <posx>0</posx>
                         <posy>0</posy>
                         <width>180</width>
-                        <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                         <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                         <label>$LOCALIZE[135]:</label>
                     </control>
@@ -101,7 +95,6 @@
                         <posx>160</posx>
                         <posy>0</posy>
                         <width>400</width>
-                        <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                         <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                         <label>$INFO[Container(99950).ListItem.Genre]</label>
                     </control>
@@ -114,7 +107,6 @@
                         <posx>0</posx>
                         <posy>0</posy>
                         <width>180</width>
-                        <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                         <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                         <label>$LOCALIZE[467]:</label>
                     </control>
@@ -122,7 +114,6 @@
                         <posx>160</posx>
                         <posy>0</posy>
                         <width>500</width>
-                        <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                         <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                         <label>$INFO[ListItem.Timertype]</label>
                     </control>
@@ -134,7 +125,6 @@
                 <posy>102</posy>
                 <width>700</width>
                 <height>186</height>
-                <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                 <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                 <label fallback="195">$VAR[BingiePlot]</label>
 				<visible>String.IsEmpty(ListItem.NextTitle)</visible>
@@ -145,7 +135,6 @@
                 <posy>102</posy>
                 <width>700</width>
                 <height>115</height>
-                <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                 <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                 <label fallback="195">$VAR[BingiePlot]</label>
 				<visible>!String.IsEmpty(ListItem.NextTitle)</visible>
@@ -156,7 +145,6 @@
                 <posy>245</posy>
                 <width>700</width>
                 <height>40</height>
-                <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                 <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                 <label>$INFO[Container.ListItem.NextTitle,[B]$LOCALIZE[19031]: [/B]]</label>
             </control>

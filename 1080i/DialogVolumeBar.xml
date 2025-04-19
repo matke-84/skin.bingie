@@ -192,7 +192,6 @@
 						<label>$INFO[Control.GetLabel(1)]</label>
 						<visible>!Integer.IsGreater(player.volume,99)</visible>
 						<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-						<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 					</control>
 					
 					<control type="label">
@@ -206,7 +205,6 @@
 						<label>$INFO[Control.GetLabel(1)]</label>
 						<visible>Integer.IsGreater(player.volume,99)</visible>
 						<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-						<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 					</control>
 				</control>
 
@@ -520,7 +518,6 @@
 						<label>$INFO[Control.GetLabel(1)]</label>
 						<visible>!Integer.IsGreater(player.volume,99)</visible>
 						<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-						<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 					</control>
 					
 					<control type="label">
@@ -533,7 +530,6 @@
 						<label>$INFO[Control.GetLabel(1)]</label>
 						<visible>Integer.IsGreater(player.volume,99)</visible>
 						<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-						<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 					</control>
 			</control>
 				

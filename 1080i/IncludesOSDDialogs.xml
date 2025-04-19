@@ -433,7 +433,6 @@
 				<label>$LOCALIZE[19023] - $INFO[VideoPlayer.ChannelGroup]</label>
                 <altlabel>$LOCALIZE[19024] - $INFO[MusicPlayer.ChannelGroup]</altlabel>
                 <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-                <shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
                 <onclick>PreviousChannelGroup</onclick>
                 <texturenofocus/>
                 <usealttexture>pvr.IsPlayingRadio</usealttexture>

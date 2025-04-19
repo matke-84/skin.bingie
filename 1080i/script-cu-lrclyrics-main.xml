@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
+	<animation type="WindowOpen" reversible="false">
+        <effect type="fade" start="0" end="100" time="200"/>
+    </animation>	
+	<animation type="WindowClose" reversible="false">
+        <effect type="fade" start="100" end="0" time="200"/>
+    </animation>	
     <controls>
 	
 		<control type="label" id="2">
@@ -21,13 +27,8 @@
 			<posy>-100</posy>
 			<visible>false</visible>
 		</control>
-			
-		<control type="group">
-			<animation type="WindowOpen" reversible="false">
-                <effect type="fade" start="0" end="100" time="150"/>
-            </animation>					
+						
 			<control type="group">
-
 				<!-- ** Required ** Do not change <id> or <type> (Smooth scrolling list for lyrics) -->
                 <control type="list" id="110">
 					<posx>0</posx>
@@ -50,7 +51,6 @@
 							<font>Reg56</font>
 							<align>center</align>
 							<textcolor>$INFO[Skin.String(LyricsTextColor)]</textcolor>
-                            <shadowcolor>$INFO[Skin.String(LyricsTextShadowColor)]</shadowcolor>
 						</control>
 					</itemlayout>
 					<focusedlayout width="1920" height="85">
@@ -63,7 +63,6 @@
 							<font>Reg62</font>
 							<align>center</align>
 							<textcolor>$INFO[Skin.String(LyricsFocusTextColor)]</textcolor>
-                            <shadowcolor>$INFO[Skin.String(LyricsFocusTextShadowColor)]</shadowcolor>
                             <scroll>true</scroll>
 						</control>
 					</focusedlayout>
@@ -91,7 +90,6 @@
 							<font>Reg56</font>
 							<align>center</align>
 							<textcolor>$INFO[Skin.String(LyricsTextColor)]</textcolor>
-                            <shadowcolor>$INFO[Skin.String(LyricsTextShadowColor)]</shadowcolor>
 						</control>
 					</itemlayout>
 					<focusedlayout width="1920" height="85">
@@ -104,12 +102,10 @@
 							<font>Reg62</font>
 							<align>center</align>
 							<textcolor>$INFO[Skin.String(LyricsFocusTextColor)]</textcolor>
-                            <shadowcolor>$INFO[Skin.String(LyricsFocusTextShadowColor)]</shadowcolor>
                             <scroll>true</scroll>
 						</control>
 					</focusedlayout>
 				</control>
 			</control>
-		</control>
     </controls>
 </window>

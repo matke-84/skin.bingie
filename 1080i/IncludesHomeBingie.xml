@@ -74,6 +74,7 @@
 
             <!-- Details Section -->
             <control type="group">
+				<visible>![!Skin.HasSetting(LockHubWidgets) + [$EXP[IsBingieHubsActive2] | $EXP[IsBingieListsActive]]]</visible>
                 <width>1920</width>
                 <height>525</height>
                 <include content="Preview_Window">
@@ -765,7 +766,7 @@
                 <onback condition="!$EXP[IsPlayingRecognizedContent] + $EXP[IsBingieViewsActive]">900</onback>
                 <onleft condition="$EXP[IsBingieViewsActive] + $EXP[IsPlayingUnrecognizedContent]">SetProperty(KeepPlayingPreview,1,Home)</onleft>
                 <onleft condition="$EXP[IsBingieViewsActive]">900</onleft>
-                <include content="BingieSpotlightWidget" condition="[Window.IsActive(Home) | $EXP[IsBingieHubsActive]] + !Skin.HasSetting(DisableSpotlightContent)">
+                <include content="BingieSpotlightWidget" condition="[Window.IsActive(Home) | $EXP[IsBingieHubsActive2] + Skin.HasSetting(LockHubWidgets)] + !Skin.HasSetting(DisableSpotlightContent)">
                     <param name="widgetid" value="1508"/>
                 </include>
                 <include condition="Window.IsActive(Home)">skinshortcuts-template-Widgets</include>

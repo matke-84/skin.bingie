@@ -17,41 +17,7 @@
         <include>GlobalBackground</include>
         <!-- hidden submenu for count calculations -->
         <include condition="!Skin.HasSetting(DisableAllSubmenus)">hiddenSubmenu</include>
-        <include>HomeBingie</include>
-        <!-- Fixed Frame -->
-		<control type="group">
-			<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>			
-			<include>Animation_Right_Home</include>
-			<animation effect="slide" end="0,48" time="0" condition="!Skin.HasSetting(LockHubWidgets)">Conditional</animation>
-        <include content="Bingie_Main_View_Fixed_Frame" condition="String.IsEqual(Skin.String(widgetstyle),poster)">
-			<left>130</left>
-            <param name="containerid" value="1510" />
-            <param name="top" value="611" />
-			<param name="width" value="240" />
-			<param name="height" value="330" />
-			<texture background="true" border="12">$INFO[Skin.String(thumbsborder_focused),bingie/border/poster_fo_,.png]</texture>
-			<bordersize>2</bordersize>
-			<param name="xAxisAnim" value="238" />
-			<param name="yAxisAnim" value="340" />
-        </include>
-		</control>
-		<!-- Fixed Frame -->
-		<control type="group">
-			<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>			
-			<include>Animation_Right_Home</include>
-			<animation effect="slide" end="0,48" time="0" condition="!Skin.HasSetting(LockHubWidgets)">Conditional</animation>
-        <include content="Bingie_Main_View_Fixed_Frame" condition="String.IsEqual(Skin.String(widgetstyle),landscape)">
-			<left>130</left>
-            <param name="containerid" value="1510" />
-            <param name="top" value="651" />
-			<param name="width" value="335" />
-			<param name="height" value="198" />
-			<texture background="true" border="12">$INFO[Skin.String(thumbsborder_focused),bingie/border/thumb_fo_,.png]</texture>
-			<bordersize>2</bordersize>
-			<param name="xAxisAnim" value="333" />
-			<param name="yAxisAnim" value="196" />
-        </include>
-		</control>
+        <include>HomeBingie</include>       
         <!-- Loading Suggestions -->
         <include content="Busy_Spinner">
             <param name="centerleft" value="50%"/>

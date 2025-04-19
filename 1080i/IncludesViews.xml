@@ -369,7 +369,6 @@
                         <width>600</width>
                         <align>left</align>
                         <label>$VAR[YearOrPremiered]</label>
-						<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                         <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                         <scroll>false</scroll>
                     </control>
@@ -392,7 +391,6 @@
                         <posy>0</posy>
                         <width>600</width>
                         <label>$VAR[ListItemDuration]</label>
-						<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                         <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                         <scroll>false</scroll>
                     </control>
@@ -416,7 +414,6 @@
                         <width>800</width>
                         <align>left</align>
                         <label>$VAR[GetGenres]</label>
-						<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                         <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                         <scroll>false</scroll>
                     </control>
@@ -440,7 +437,6 @@
                         <width>800</width>
                         <align>left</align>
                         <label>$VAR[BingieInfoDirector]</label>
-						<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                         <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                         <scroll>false</scroll>
                     </control>
@@ -464,7 +460,6 @@
                         <width>800</width>
                         <align>left</align>
                         <label>$VAR[BingieInfoWriter]</label>
-						<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                         <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                         <scroll>false</scroll>
                     </control>
@@ -488,7 +483,6 @@
                         <width>800</width>
                         <align>left</align>
                         <label>$INFO[Container(99950).ListItem.Property(Creator)]</label>
-						<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                         <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                         <scroll>false</scroll>
                     </control>
@@ -512,7 +506,6 @@
                         <width>800</width>
                         <align>left</align>
                         <label>$VAR[BingieInfoStudio]</label>
-						<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                         <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                         <scroll>false</scroll>
                     </control>
@@ -532,7 +525,6 @@
 					<posy>0</posy>
 					<posx>0</posx>
 					<label>$INFO[ListItem.Tagline]</label>
-					<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 					<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 					<font>Bold28</font>
 					<scroll>false</scroll>
@@ -543,7 +535,6 @@
                     <width>830</width>
                     <height>260</height>
                     <label>$VAR[Plots]</label>
-                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 					<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                     <align>justify</align>
                 </control>
@@ -679,7 +670,6 @@
                     <posy>0</posy>
                     <align>left</align>
                     <label>$VAR[YearOrPremiered]</label>
-                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                     <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                     <scroll>false</scroll>
                 </control>
@@ -701,7 +691,6 @@
                     <posy>0</posy>
                     <align>left</align>
                     <label>$VAR[ListItemDuration]</label>
-                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                     <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                     <scroll>false</scroll>
                 </control>
@@ -724,7 +713,6 @@
                     <posy>0</posy>
                     <align>left</align>
                     <label>$VAR[GetGenres]</label>
-                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                     <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                     <scroll>false</scroll>
                 </control>
@@ -747,7 +735,6 @@
                     <posy>0</posy>
                     <align>left</align>
                     <label>$VAR[BingieInfoDirector]</label>
-                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                     <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                     <scroll>false</scroll>
                 </control>
@@ -770,7 +757,6 @@
                     <posy>0</posy>
                     <align>left</align>
                     <label>$VAR[BingieInfoWriter]</label>
-                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                     <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                     <scroll>false</scroll>
                 </control>
@@ -793,7 +779,6 @@
                     <posy>0</posy>
                     <align>left</align>
                     <label>$INFO[Container(99950).ListItem.Property(Creator)]</label>
-                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                     <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                     <scroll>false</scroll>
                 </control>
@@ -816,7 +801,6 @@
                     <posy>0</posy>
                     <align>left</align>
                     <label>$VAR[BingieInfoStudio]</label>
-                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                     <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                     <scroll>false</scroll>
                 </control>
@@ -831,7 +815,6 @@
                     <posy>0</posy>
                     <align>left</align>
                     <label>$LOCALIZE[146]</label>
-                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                     <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                     <scroll>false</scroll>
                 </control>
@@ -841,7 +824,6 @@
                     <align>right</align>
                     <width>350</width>
                     <label>$INFO[ListItem.AddonType]</label>
-                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                     <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                     <scroll>false</scroll>
                 </control>
@@ -856,7 +838,6 @@
                     <posy>0</posy>
                     <align>left</align>
                     <label>$LOCALIZE[21863]:</label>
-                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                     <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                     <scroll>false</scroll>
                 </control>
@@ -866,7 +847,6 @@
                     <align>right</align>
                     <width>350</width>
                     <label>$INFO[ListItem.AddonCreator]</label>
-                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                     <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                     <scroll>false</scroll>
                 </control>
@@ -881,7 +861,6 @@
                     <posy>0</posy>
                     <align>left</align>
                     <label>$LOCALIZE[24051]</label>
-                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                     <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                     <scroll>false</scroll>
                 </control>
@@ -891,7 +870,6 @@
                     <align>right</align>
                     <width>350</width>
                     <label>$INFO[ListItem.AddonVersion]</label>
-                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                     <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                     <scroll>false</scroll>
                 </control>
@@ -906,7 +884,6 @@
                     <posy>0</posy>
                     <align>left</align>
                     <label>$LOCALIZE[126]:</label>
-                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                     <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                     <scroll>false</scroll>
                 </control>
@@ -916,7 +893,6 @@
                     <align>right</align>
                     <width>350</width>
                     <label>$INFO[ListItem.Label2]</label>
-                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                     <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                     <scroll>false</scroll>
                 </control>
@@ -946,7 +922,6 @@
 				<posy>33</posy>
 				<posx>7</posx>
                 <label>$INFO[ListItem.AddonSummary]</label>
-                <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                 <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 				<font>Bold28</font>
                 <scroll>false</scroll>
@@ -957,7 +932,6 @@
 				<posy>33</posy>
 				<posx>7</posx>
                 <label>$INFO[ListItem.Tagline]</label>
-                <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                 <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 				<font>Bold28</font>
                 <scroll>false</scroll>
@@ -971,7 +945,6 @@
 				<label>$VAR[Plots]</label>
 				<font>Reg28</font>
 				<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-				<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 				<align>justify</align>
 			</control>
 			<control type="textbox">
@@ -982,7 +955,6 @@
 				<label>$VAR[Plots]</label>
 				<font>Reg28</font>
 				<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-				<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 				<align>justify</align>
 			</control>
 			</control>
@@ -1096,7 +1068,6 @@
 				<width>607</width>
 				<font>Bold26</font>
 				<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-				<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 				<label>$VAR[ListDetails]</label>
 				<include>Animation.TestOut</include>
 			</control>
@@ -1106,7 +1077,6 @@
 				<width>607</width>
 				<font>Bold26</font>
 				<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-				<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 				<label>$VAR[Details]</label>
 			</control>
 			<control type="label" id="51053">
@@ -1115,7 +1085,6 @@
 				<width>607</width>
 				<font>Bold26</font>
 				<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-				<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 				<label>$VAR[Details]</label>
 				<include>Animation.TestIn</include>
 			</control>
@@ -1129,7 +1098,6 @@
 			  <align>justify</align>
 			  <font>Reg24</font>
 			  <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-			  <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 			  <label>$VAR[Plots]</label>
 			</control>
 		</control>

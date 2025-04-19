@@ -20,7 +20,7 @@
             <include>WatchedIndicatorSmall</include>
         </control>
         <!--Label Overlay-->
-        <include condition="!Window.IsActive(settings) + !Window.IsActive(Home) + !$EXP[IsBingieHubsActive] + !Window.IsActive(1117) + !Window.IsActive(1109) + !Window.IsActive(1107) + !Window.IsActive(DialogVideoInfo.xml)">SquarePosterTagOverlay</include>
+        <include condition="!Window.IsActive(settings) + !$EXP[IsBingieHubsActive] + !Window.IsActive(1109) + !Window.IsActive(1107) + !Window.IsActive(DialogVideoInfo.xml)">SquarePosterTagOverlay</include>
     </include>
     <include name="SquarePosterPanelLayoutFocus">
         <control type="image">
@@ -43,7 +43,7 @@
             <include>WatchedIndicatorSmall</include>
         </control>
         <!--Label Overlay-->
-        <include condition="!Window.IsActive(settings) + !Window.IsActive(Home) + !$EXP[IsBingieHubsActive] + !Window.IsActive(1117) + !Window.IsActive(1109) + !Window.IsActive(1107) + !Window.IsActive(DialogVideoInfo.xml)">SquarePosterTagOverlay</include>
+        <include condition="!Window.IsActive(settings) + !$EXP[IsBingieHubsActive] + !Window.IsActive(1109) + !Window.IsActive(1107) + !Window.IsActive(DialogVideoInfo.xml)">SquarePosterTagOverlay</include>
 
     </include>
 
@@ -76,7 +76,7 @@
     </include>
     <include name="SquarePosterTagOverlay">
         <control type="group">
-            <include condition="!Window.IsActive(Home) + !$EXP[IsBingieHubsActive] + !Window.IsActive(1117) + !Window.IsActive(1109) + !Window.IsActive(1107) + !Window.IsActive(DialogVideoInfo.xml)">SquarePosterTagOverlayVisibility</include>
+            <include condition="!$EXP[IsBingieHubsActive] + !Window.IsActive(1109) + !Window.IsActive(1107) + !Window.IsActive(DialogVideoInfo.xml)">SquarePosterTagOverlayVisibility</include>
             <control type="image">
                 <bottom>0</bottom>
                 <height>74</height>

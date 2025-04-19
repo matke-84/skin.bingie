@@ -4,12 +4,12 @@
     <!-- POSTER LAYOUT -->
     <include name="PosterPanelLayout">
         <include>PosterThumbLayout</include>
-        <include condition="!Window.IsActive(Home)">PosterTagOverlay</include>
+        <include>PosterTagOverlay</include>
     </include>
     <include name="PosterPanelLayoutFocus">
-        <include condition="![Skin.HasSetting(EnableFixedFrameWidgets) + [[Window.IsActive(Home) | $EXP[IsBingieListsActive]] | [[$EXP[IsBingieHubsActive]] + Skin.HasSetting(LockHubWidgets)]]] | Window.IsActive(movieinformation)">PosterThumbFO</include>
+        <include>PosterThumbFO</include>
 		<include>PosterThumbLayout</include>
-        <include condition="!Window.IsActive(Home)">PosterTagOverlay</include>
+        <include>PosterTagOverlay</include>
     </include>
     
     <include name="PosterThumbLayout">
@@ -72,7 +72,7 @@
         </control>
     </include>
     <include name="PosterPanelBingieLayoutFocus">
-        <include condition="![Skin.HasSetting(EnableFixedFrameWidgets) + [[Window.IsActive(Home) | $EXP[IsBingieListsActive]] | [$EXP[IsBingieHubsActive2] + Skin.HasSetting(LockHubWidgets)] | Window.IsActive(videoosd)]] | [Window.IsActive(DialogVideoInfo.xml) + Skin.HasSetting(UseBingieInfoDialog)] | Window.IsActive(1109) | Window.IsActive(1108) | Window.IsActive(1106) | Window.IsActive(1190)">PosterThumbFOBingie</include>
+        <include condition="![Skin.HasSetting(EnableFixedFrameWidgets) + [Window.IsActive(Home) | [$EXP[IsBingieHubsActive2] + Skin.HasSetting(LockHubWidgets)] | Window.IsActive(videoosd)]] | [Window.IsActive(DialogVideoInfo.xml) + Skin.HasSetting(UseBingieInfoDialog)] | Window.IsActive(1109) | Window.IsActive(1108) | Window.IsActive(1106) | Window.IsActive(1190)">PosterThumbFOBingie</include>
         <include>PosterThumbBingieLayout</include>
         <include condition="!Window.IsActive(Home) + !$EXP[IsBingieHubsActive] + !Window.IsActive(1117) + !Window.IsActive(1109) + !Window.IsActive(1108) + !Window.IsActive(1106) + [Window.IsActive(1190) | Window.IsActive(1191) | !Window.IsActive(DialogVideoInfo.xml)]">PosterTagOverlayBingie</include>
         <control type="group">
@@ -118,12 +118,12 @@
     <!-- SMALL POSTER LAYOUT -->
     <include name="SmallPosterPanelLayout">
           <include>SmallPosterThumbLayout</include>
-          <include condition="!Window.IsActive(Home)">SmallPosterTagOverlay</include>
+          <include>SmallPosterTagOverlay</include>
     </include>
     <include name="SmallPosterPanelLayoutFocus">
-        <include condition="![Skin.HasSetting(EnableFixedFrameWidgets) + [[Window.IsActive(Home) | $EXP[IsBingieListsActive]] | [[$EXP[IsBingieHubsActive]] + Skin.HasSetting(LockHubWidgets)]]]">SmallPosterFo</include>
+        <include>SmallPosterFo</include>
         <include>SmallPosterThumbLayout</include>
-        <include condition="!Window.IsActive(Home)">SmallPosterTagOverlay</include>
+        <include>SmallPosterTagOverlay</include>
     </include>
 
     <include name="SmallPosterFo">
@@ -173,7 +173,7 @@
     </include>
     <include name="PosterTagOverlay">
         <control type="group">
-            <include condition="!Window.IsActive(Home) + !$EXP[IsBingieHubsActive] + !Window.IsActive(1117)">PosterTagOverlayVisibility</include>
+            <include>PosterTagOverlayVisibility</include>
             <!--Panel-->
             <control type="image">
                 <bottom>0</bottom>
@@ -257,7 +257,7 @@
     </include>
     <include name="SmallPosterTagOverlay">
         <control type="group">
-            <include condition="!Window.IsActive(Home) + !$EXP[IsBingieHubsActive] + !Window.IsActive(1117)">PosterTagOverlayVisibility</include>
+            <include>PosterTagOverlayVisibility</include>
                 <!--Panel-->
                 <control type="image">
                 <bottom>0</bottom>

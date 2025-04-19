@@ -107,7 +107,6 @@
 				<align>center</align>
 				<font>Bold26</font>
 				<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-				<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 			</control>
 			<control type="label" id="26">
 				<description>buffering label</description>

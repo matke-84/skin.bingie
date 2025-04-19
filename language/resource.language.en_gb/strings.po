@@ -46,7 +46,7 @@ msgid "General skin settings"
 msgstr ""
 
 msgctxt "#31006"
-msgid "Shadowcolor for unfocused lyrics text"
+msgid "Configure ratings list"
 msgstr ""
 
 msgctxt "#31007"
@@ -134,7 +134,7 @@ msgid "Bingie Main Poster"
 msgstr ""
 
 msgctxt "#31028"
-msgid "Shadowcolor for focused lyrics text"
+msgid "Display tags on widgets"
 msgstr ""
 
 msgctxt "#31029"
@@ -910,7 +910,7 @@ msgid "Media details text color"
 msgstr ""
 
 msgctxt "#31223"
-msgid "Media details text shadow color"
+msgid "Are you sure you want to remove the rating for episode?"
 msgstr ""
 
 msgctxt "#31224"
@@ -1138,7 +1138,7 @@ msgid "Very dark grey"
 msgstr ""
 
 msgctxt "#31280"
-msgid "Buffering spinner color"
+msgid "OSD buffering spinner color"
 msgstr ""
 
 msgctxt "#31281"
@@ -1891,7 +1891,7 @@ msgid "OSD text color"
 msgstr ""
 
 msgctxt "#31479"
-msgid "OSD text shadow color"
+msgid "Similar"
 msgstr ""
 
 msgctxt "#31480"
@@ -2671,17 +2671,5 @@ msgid "Home main menu line under icon"
 msgstr ""
 
 msgctxt "#31675"
-msgid "Display tags on widgets"
-msgstr ""
-
-msgctxt "#31676"
-msgid "Configure ratings list"
-msgstr ""
-
-msgctxt "#31677"
-msgid "Similar"
-msgstr ""
-
-msgctxt "#31678"
-msgid "Are you sure you want to remove the rating for episode?"
+msgid "Lyrics colors"
 msgstr ""

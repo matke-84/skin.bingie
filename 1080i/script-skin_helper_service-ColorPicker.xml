@@ -34,7 +34,7 @@
             <font>Bold45</font>
 			<label>$ADDON[script.skin.helper.colorpicker 32011]</label>
             <align>left</align>
-            <textcolor>white</textcolor>
+            <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
         </control>      		       
         
         <!-- Color picker panel -->
@@ -175,8 +175,7 @@
 					<align>left</align>
 					<textwidth>114</textwidth>
 					<label>$ADDON[script.skin.helper.colorpicker 32049]:</label>
-                    <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
-                    <shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                    <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
 					<scroll>true</scroll>
 				</control>
 				<control type="slider" id="3015">
@@ -197,8 +196,7 @@
 					<right>26</right>
 					<align>right</align>
 					<label>$INFO[Control.Getlabel(3015)]</label>
-                    <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
-                    <shadowcolor>$INFO[Skin.String(FooterTextShadowColor)]</shadowcolor>
+                    <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
 				</control>
 			</control>
 		</control>		

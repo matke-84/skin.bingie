@@ -146,7 +146,6 @@
 					<align>left</align>
 					<font>Reg40</font>
 					<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-					<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 					<label>$VAR[OSDLabel1]</label>
 					<scroll>false</scroll>
 				</control>
@@ -158,7 +157,6 @@
 					<align>left</align>
 					<font>Reg42</font>
 					<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-					<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 					<label>[B]$VAR[OSDLabel2][/B]</label>
 					<scroll>false</scroll>
 				</control>
@@ -256,7 +254,6 @@
 					<align>left</align>
 					<font>Reg28</font>
 					<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-					<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 					<label>$VAR[PlayTime]</label>
 				</control>
 				<control type="label">
@@ -267,7 +264,6 @@
 					<align>left</align>
 					<font>Reg28</font>
 					<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-					<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 					<label>$VAR[RemainingTime,- ]</label>
 					<visible>Player.HasDuration</visible>					
 				</control>
@@ -318,7 +314,6 @@
 				<align>right</align>
 				<font>Reg30</font>
 				<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-				<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 				<label>$VAR[PlayerActionLabel]</label>				
 			</control>
 			
@@ -333,7 +328,6 @@
 				<align>right</align>
 				<font>Reg28</font>
 				<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-				<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 				<label>$VAR[TotalDuration,[B]$LOCALIZE[180]: [/B]]</label>
 			</control>
             
@@ -350,7 +344,6 @@
                 <height>30</height>
                 <align>right</align>
                 <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-				<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
                 <label>$VAR[OSDLabel3]</label>
             </control>
 			<!-- pause img -->
@@ -399,9 +392,7 @@
                 <info>System.Time</info>
                 <font>Reg60</font>
                 <aligny>center</aligny>
-                <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-                <shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
-                
+                <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>                
                 <animation type="Conditional" condition="Player.Paused | Player.Forwarding | Player.Rewinding">
                     <effect type="slide" start="0,0" end="-160,0" time="200" tween="cubic" easing="inout" delay="0" />
                 </animation>
@@ -1128,7 +1119,6 @@
                 <font>Bold30</font>
                  <!-- colors should be hardcoded because display on video -->
                 <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-                <shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
                 <align>right</align>
                 <label>$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits]</label>
                 <visible>Weather.IsFetched</visible>
@@ -1142,7 +1132,6 @@
                 <font>Reg26</font>
                  <!-- colors should be hardcoded because display on video -->
                 <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-                <shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
                 <align>right</align>
                 <label>$INFO[Window(Weather).Property(Current.Condition)]</label>
                 <visible>Weather.IsFetched</visible>
@@ -1203,7 +1192,6 @@
 						 <visible>[!String.IsEmpty(VideoPlayer.Premiered) | !String.IsEmpty(VideoPlayer.Duration) | !String.IsEmpty(VideoPlayer.RatingAndVotes)] + [!String.IsEmpty(Player.Art(clearlogo)) | !String.IsEmpty(Player.Art(clearart)) | !String.IsEmpty(Player.Art(tvshow.clearlogo)) | !String.IsEmpty(Player.Art(tvshow.clearart)) | !String.IsEmpty(Window(home).Property(TMDbHelper.Player.clearart)) | !String.IsEmpty(Window(home).Property(TMDbHelper.Player.clearlogo))]</visible>
 						 <label fallback="19055">[B]$INFO[VideoPlayer.Premiered,,  •  ]$INFO[VideoPlayer.Duration]$INFO[VideoPlayer.RatingAndVotes,  •  ][/B]</label>
 						 <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-						 <shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 						 <align>justify</align>
 						 <font>Reg28</font>
 					 </control>
@@ -1213,7 +1201,6 @@
 						 <visible>!String.IsEmpty(VideoPlayer.Plot) + [!String.IsEmpty(Player.Art(clearlogo)) | !String.IsEmpty(Player.Art(clearart)) | !String.IsEmpty(Player.Art(tvshow.clearlogo)) | !String.IsEmpty(Player.Art(tvshow.clearart)) | !String.IsEmpty(Window(home).Property(TMDbHelper.Player.clearart)) | !String.IsEmpty(Window(home).Property(TMDbHelper.Player.clearlogo))]</visible>
 						 <label fallback="19055">$INFO[VideoPlayer.Plot]</label>
 						 <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-						 <shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 						 <align>justify</align>
 						 <font>Reg28</font>
 					 </control>
@@ -1224,7 +1211,6 @@
 						 <visible>[!String.IsEmpty(VideoPlayer.Premiered) | !String.IsEmpty(VideoPlayer.Duration) | !String.IsEmpty(VideoPlayer.RatingAndVotes)] + ![!String.IsEmpty(Player.Art(clearart)) | !String.IsEmpty(Player.Art(tvshow.clearart)) | !String.IsEmpty(Player.Art(clearlogo)) | !String.IsEmpty(Player.Art(tvshow.clearlogo)) | !String.IsEmpty(Window(home).Property(TMDbHelper.Player.clearart)) | !String.IsEmpty(Window(home).Property(TMDbHelper.Player.clearlogo))]</visible>
 						 <label fallback="19055">[B]$INFO[VideoPlayer.Premiered,,  •  ]$INFO[VideoPlayer.Duration]$INFO[VideoPlayer.RatingAndVotes,  •  ][/B]</label>
 						 <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-						 <shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 						 <align>justify</align>
 						 <font>Reg28</font>
 					 </control>
@@ -1235,7 +1221,6 @@
 						 <visible>!String.IsEmpty(VideoPlayer.Plot) + ![!String.IsEmpty(Player.Art(clearart)) | !String.IsEmpty(Player.Art(tvshow.clearart)) | !String.IsEmpty(Player.Art(clearlogo)) | !String.IsEmpty(Player.Art(tvshow.clearlogo)) | !String.IsEmpty(Window(home).Property(TMDbHelper.Player.clearart)) | !String.IsEmpty(Window(home).Property(TMDbHelper.Player.clearlogo))]</visible>
 						 <label fallback="19055">$INFO[VideoPlayer.Plot]</label>
 						 <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-						 <shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 						 <align>justify</align>
 						 <font>Reg28</font>
 					 </control>

@@ -143,7 +143,6 @@
 					<label>$LOCALIZE[31133]</label>
 					<font>Bold28</font>
 					<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-					<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 					<aligny>center</aligny>
 					<align>Left</align>
 					<visible>!String.IsEmpty(Player.SeekNumeric)</visible>
@@ -156,7 +155,6 @@
 					<label>$INFO[Player.SeekNumeric(hh:mm:ss)]</label>
 					<font>Bold28</font>
 					<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-					<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 					<aligny>center</aligny>
 					<align>left</align>
 					<visible>!String.IsEmpty(Player.SeekNumeric)</visible>
@@ -168,7 +166,6 @@
 					<label>$INFO[PVR.ChannelNumberInput,$LOCALIZE[19029]: [B],[/B]]</label>
 					<font>Reg44</font>
 					<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-					<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 					<aligny>center</aligny>
 					<align>center</align>
 					<visible>!String.IsEmpty(PVR.ChannelNumberInput)</visible>

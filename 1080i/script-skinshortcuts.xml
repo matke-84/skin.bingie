@@ -594,12 +594,12 @@
                 </control>
 				
 				<!--widget tags-->
-				<control type="button" id="31675">
+				<control type="button" id="31028">
                     <width>510</width>
 					<height>58</height>
-					<label>$LOCALIZE[31675]</label>
+					<label>$LOCALIZE[31028]</label>
 					<align>center</align>
-					<onclick>RunScript(script.bingie.toolbox,action=setskinshortcutsproperty,header=$LOCALIZE[31675],property=force_tags,setting=force_tags)</onclick>
+					<onclick>RunScript(script.bingie.toolbox,action=setskinshortcutsproperty,header=$LOCALIZE[31028],property=force_tags,setting=force_tags)</onclick>
 					<visible>String.IsEqual(Window.Property(groupname),searchmenu)</visible>
                 </control>
                 

@@ -69,7 +69,6 @@
 				<font>Reg36</font>
 				<align>left</align>
 				<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-                <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 				<label>$INFO[ListItem.Label]$VAR[PVRBullet]$INFO[ListItem.Season,$LOCALIZE[31000],:]$INFO[ListItem.Episode,$LOCALIZE[31001],]$VAR[PVRBullet2]$INFO[ListItem.EpisodeName]</label>
 			</control>
             <control type="group">
@@ -177,7 +176,6 @@
                 <height>323</height>
                 <align>justify</align>
                 <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-				<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                 <pagecontrol>60</pagecontrol>
                 <label fallback="161">$VAR[Plots]</label>
                 <visible>String.IsEmpty(Container(99950).ListItem.Art(poster))</visible>
@@ -190,7 +188,6 @@
                 <height>360</height>
                 <align>justify</align>
                 <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-				<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                 <pagecontrol>61</pagecontrol>
                 <label fallback="161">$VAR[Plots]</label>
                 <visible>!String.IsEmpty(Container(99950).ListItem.Art(poster))</visible>

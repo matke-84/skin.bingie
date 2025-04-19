@@ -79,10 +79,10 @@
             <height>45</height>
             <align>left</align>
             <font>Reg22</font>
-            <label>$LOCALIZE[31675]:</label>
+            <label>$LOCALIZE[31028]:</label>
             <label2>$INFO[Container(211).ListItem.Property(widgetTags$PARAM[widgetprop])]</label2>
             <textoffsetx>20</textoffsetx>
-            <onclick>RunScript(script.bingie.toolbox,action=setskinshortcutsproperty,header=$LOCALIZE[31675],property=widgetTags$PARAM[widgetprop],setting=Widgets_DisplayTags)</onclick>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinshortcutsproperty,header=$LOCALIZE[31028],property=widgetTags$PARAM[widgetprop],setting=Widgets_DisplayTags)</onclick>
             <visible>!String.IsEmpty(Container(211).ListItem.Property(widget$PARAM[widgetprop]))</visible>
             <visible>String.IsEqual(Skin.String(Widgets_DisplayTags),override)</visible>
             <visible>!String.Contains(Container(211).ListItem.Property(widgetstyle$PARAM[widgetprop]),box) + ![String.IsEmpty(Container(211).ListItem.Property(widgetstyle$PARAM[widgetprop])) + String.Contains(Skin.String(widgetstyle),box)]</visible>

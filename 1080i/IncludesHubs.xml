@@ -61,7 +61,7 @@
             <height>40</height>
             <align>left</align>
 			<aligny>center</aligny>
-			<left>130</left>
+			<left>134</left>
             <font>Reg24</font>
             <include content="textoffsetx">
                 <param name="textoffsetx" value="20" />
@@ -79,7 +79,7 @@
             <height>40</height>
             <align>left</align>
 			<aligny>center</aligny>
-			<left>130</left>
+			<left>134</left>
             <font>Reg24</font>
             <include content="textoffsetx">
                 <param name="textoffsetx" value="20" />
@@ -116,7 +116,7 @@
             <height>40</height>
             <align>left</align>
 			<aligny>center</aligny>
-			<left>130</left>
+			<left>134</left>
             <font>Reg24</font>
             <include content="textoffsetx">
                 <param name="textoffsetx" value="20" />
@@ -170,7 +170,7 @@
             <param name="id" value="$PARAM[widgetid]5" />
             <param name="skinsetting" value="$PARAM[skinsetting]" />
         </include>        
-        <include content="bingie_widget_hub">
+        <include content="bingie_widget_hub" condition="Skin.HasSetting(LockHubWidgets)">
             <param name="containerType" value="fixedlist" />
             <param name="widgetid" value="$PARAM[widgetid]" />
             <param name="widgetStyle" value="$PARAM[widgetStyle]" />
@@ -639,7 +639,6 @@
             <font>Bold31</font>
             <include>widget_header_leftalign</include>
             <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-            <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
             <label>$PARAM[label]</label>
             <animation effect="slide" end="50" time="0" condition="Container($PARAM[widgetid]).IsUpdating + Integer.IsEqual(Container($PARAM[widgetid]).NumItems,0)">Conditional</animation>
         </control>
@@ -655,7 +654,8 @@
             <width>auto</width>
             <height>46</height>
             <align>left</align>
-			<left>130</left>
+			<left>134</left>
+			<animation effect="slide" time="0" start="0" end="10" condition="Window.IsActive(1118)">Conditional</animation>
 			<aligny>center</aligny>
             <font>Reg32</font>
             <label>$PARAM[label]</label>
@@ -671,7 +671,7 @@
             <width>auto</width>
             <height>46</height>
             <align>left</align>
-			<left>130</left>
+			<left>134</left>
             <aligny>center</aligny>
             <font>Reg32</font>
             <include content="textoffsetx">
@@ -696,6 +696,7 @@
             <height>46</height>
             <align>left</align>
             <aligny>center</aligny>
+			<left>4</left>
             <font>Reg32</font>
             <include content="textoffsetx">
                 <param name="textoffsetx" value="20" />
@@ -724,7 +725,6 @@
 				<left>7</left>
 				<posy>0</posy>
                 <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-                <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                 <label>$PARAM[label]</label>
             </control>
         </definition>
@@ -748,7 +748,6 @@
                 <font>Bold31</font>
                 <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                 <focusedcolor>$INFO[Skin.String(ViewDetailsTextColor)]</focusedcolor>
-                <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                 <label>$PARAM[label]</label>
             </control>
         </definition>
@@ -914,7 +913,7 @@
                 + [Integer.IsEqual(Container(1570).NumItems,0) + !Container(1570).IsUpdating] + [Integer.IsEqual(Container(1580).NumItems,0) + !Container(1580).IsUpdating]
 				+ [Integer.IsEqual(Container(1590).NumItems,0) + !Container(1590).IsUpdating] + [Integer.IsEqual(Container(15100).NumItems,0) + !Container(15100).IsUpdating]</visible>
             <animation effect="slide" time="0" start="0" end="65" condition="true">Conditional</animation>
-			<animation effect="slide" time="0" start="0" end="-104,50" condition="Window.IsActive(1118)">Conditional</animation>
+			<animation effect="slide" time="0" start="0" end="-105,3" condition="Window.IsActive(1118)">Conditional</animation>
 			<animation effect="slide" time="0" start="0" end="-130" condition="Window.IsActive(1115)">Conditional</animation>
             <include>No_Circular_Slide_Animation</include>
             <height>45</height>
@@ -923,15 +922,14 @@
             <font>Bold31</font>
             <include>widget_header_leftalign</include>
             <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-            <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
             <label>31058</label>
         </control>
 
         <control type="grouplist" id="1502">
             <visible>Control.IsVisible(1501)</visible>
             <animation effect="slide" time="0" start="0" end="65" condition="true">Conditional</animation>
-			<animation effect="slide" time="0" start="0" end="-119,50" condition="Window.IsActive(1118)">Conditional</animation>
-			<animation effect="slide" time="0" start="0" end="-130" condition="Window.IsActive(1115)">Conditional</animation>
+			<animation effect="slide" time="0" start="0" end="-120,-2" condition="Window.IsActive(1118)">Conditional</animation>
+			<animation effect="slide" time="0" start="0" end="-130,-2" condition="Window.IsActive(1115)">Conditional</animation>
             <include>No_Circular_Slide_Animation</include>
             <height>132</height>
             <width>100%</width>
@@ -946,7 +944,7 @@
                 <height>132</height>
                 <width>600</width>
                 <orientation>vertical</orientation>
-                <itemgap>2</itemgap>
+                <itemgap>0</itemgap>
                 <align>left</align>
                 <onright>noop</onright>
                 <onleft>900</onleft>
@@ -992,7 +990,6 @@
                     <font>Reg26</font>
                     <aligny>top</aligny>
                     <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-                    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                     <label>$VAR[NoItemsInHubButtonsInfo]</label>
                 </control>
             </control>

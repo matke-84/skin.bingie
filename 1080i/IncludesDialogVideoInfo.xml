@@ -613,13 +613,13 @@
 								<height>52</height>
 								<width>224</width>	
 								<textwidth>159</textwidth>			
-                                <label>$LOCALIZE[31677]</label>
+                                <label>$LOCALIZE[31479]</label>
                                 <radioposx>13</radioposx>
                                 <radiowidth>24</radiowidth>
                                 <radioheight>24</radioheight>
 								<onfocus>SetProperty(Path.Similar,"$VAR[Path_Similar]")</onfocus>
                                 <onclick>SetProperty(AdditionalInfo, similar)</onclick>
-								<onclick>SetProperty(subtitle, $LOCALIZE[31677])</onclick>
+								<onclick>SetProperty(subtitle, $LOCALIZE[31479])</onclick>
                                 <onclick>SetFocus(352)</onclick>
                             </control> 
 

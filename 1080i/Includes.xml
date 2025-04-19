@@ -457,7 +457,6 @@
         <texturenofocus>dialogs/default/separator.png</texturenofocus>
         <textoffsetx>0</textoffsetx>
         <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-        <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
         <enable>false</enable>
     </include>
 	
@@ -557,8 +556,7 @@
 					<width>160</width>
 					<align>left</align>
 					<font>Reg30</font>
-					<textcolor>$INFO[Skin.String(BingieOSDTextColor)]</textcolor>
-					<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
+					<textcolor>$INFO[Skin.String(BingieOSDTextColor)]</textcolor>					
 					<label>$VAR[TimeRemainingFormat]</label>
 				</control>
 				<!-- Forwarding/Rewinding Indicators -->
@@ -617,7 +615,6 @@
 					<align>left</align>
 					<font>Reg40</font>
 					<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-					<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 					<label>$VAR[OSDLabel1]</label>
 					<scroll>false</scroll>
 				</control>
@@ -629,7 +626,6 @@
 					<align>left</align>
 					<font>Reg42</font>
 					<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-					<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 					<label>[B]$VAR[OSDLabel2][/B]</label>
 					<scroll>false</scroll>
 				</control>
@@ -706,7 +702,6 @@
 					<align>left</align>
 					<font>Reg28</font>
 					<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-					<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 					<label>$VAR[PlayTime]</label>
 				</control>
 				<control type="label">
@@ -717,7 +712,6 @@
 					<align>left</align>
 					<font>Reg28</font>
 					<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-					<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 					<label>$VAR[RemainingTime,- ]</label>
 					<visible>Player.HasDuration</visible>					
 				</control>				
@@ -735,7 +729,6 @@
 				<align>right</align>
 				<font>Reg30</font>
 				<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-				<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 				<label>$VAR[PlayerActionLabel]</label>				
 			</control>
 			
@@ -750,7 +743,6 @@
 				<align>right</align>
 				<font>Reg28</font>
 				<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-				<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
 				<label>$VAR[TotalDuration,[B]$LOCALIZE[180]: [/B]]</label>
 			</control>
             
@@ -800,8 +792,7 @@
                 <info>System.Time</info>
                 <font>Reg60</font>
                 <aligny>center</aligny>
-                <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
-                <shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>             
+                <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>            
                 <animation type="Conditional" condition="Player.Paused | Player.Forwarding | Player.Rewinding">
                     <effect type="slide" start="0,0" end="-160,0" time="200" tween="cubic" easing="inout" delay="0" />
                 </animation>

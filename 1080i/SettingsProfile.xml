@@ -48,7 +48,6 @@
 				<posy>30</posy>
 				<include>SkinSettings_Header</include>
 				<label>10130</label>
-				<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
 			</control>
 			
             <control type="list" id="2">

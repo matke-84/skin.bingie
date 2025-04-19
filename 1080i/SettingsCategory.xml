@@ -89,7 +89,6 @@
         </control>
         <control type="label" id="14">
             <include>SkinSettings_Header</include>
-            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
         </control>
         <control type="spincontrolex" id="9">
             <description>Default Spin Control</description>

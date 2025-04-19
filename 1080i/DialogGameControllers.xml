@@ -33,7 +33,6 @@
 				<top>20</top>
 				<font>Bold30</font>
 				<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-				<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 				<align>center</align>
 				<label>[B]$LOCALIZE[35058][/B]</label>
 			</control>
@@ -70,7 +69,6 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-					<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 				</control>
 				<control type="grouplist" id="3">
 					<description>Controller profiles grouplist</description>
@@ -127,7 +125,6 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-					<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 				</control>
 				<control type="grouplist" id="5">
 					<description>Features grouplist</description>
@@ -228,7 +225,6 @@
 					<right>10</right>
 					<description>Controller description</description>
 					<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-					<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 				</control>
 			</control>
 		</control>
