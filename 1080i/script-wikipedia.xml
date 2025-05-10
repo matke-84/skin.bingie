@@ -76,7 +76,7 @@
 					<control type="textbox" id="9904">
 						<left>60</left>
 						<align>left</align>
-						<textcolor>$INFO[Skin.String(BingiePrimaryTextColor)]</textcolor>
+						<textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
 						<font>Reg22</font>
 						<bottom>20</bottom>
 						<height>66</height>
@@ -88,7 +88,7 @@
 							<top>89</top>
 							<aligny>center</aligny>
 							<height>80</height>
-							<textcolor>$INFO[Skin.String(BingieLabelTextColor)]</textcolor>
+							<textcolor>$INFO[Skin.String(BingieHeaderTextColor)]</textcolor>
 							<font>Bold42</font>
 						</control>
 						<control type="textbox" id="9903">

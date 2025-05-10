@@ -73,6 +73,9 @@
             </control>
 			<control type="image">
 			    <width>-7</width>
+				<height>80</height>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<animation effect="fade" time="200">VisibleChange</animation>
 				<visible>!String.IsEmpty(ListItem.VideoAspect)</visible>
             </control>
 			<control type="group">
@@ -142,6 +145,9 @@
             </control>
 			<control type="image">
 			    <width>-7</width>
+				<height>80</height>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<animation effect="fade" time="200">VisibleChange</animation>
 				<visible>!String.IsEmpty(VideoPlayer.VideoAspect)</visible>
             </control>
             <control type="group">
@@ -349,7 +355,7 @@
             <control type="image">
                 <width>32</width>
                 <height>34</height>
-                <colordiffuse>$VAR[mediaFlagsFontColor]</colordiffuse>
+                <colordiffuse>$INFO[Skin.String(OSDPrimaryTextColor)]</colordiffuse>
                 <texture>flags/video.png</texture>
                 <bordersize>3</bordersize>
                 <visible>!String.IsEmpty(Control.GetLabel(44223))</visible>
@@ -359,7 +365,7 @@
                 <width>auto</width>
                 <height>30</height>
                 <label>$VAR[VideoFileTypeVar]$VAR[VideoCodecVar, • ]$VAR[VideoAspectVar, • ]$VAR[VideoResolutionVar, • ]</label>
-                <textcolor>$VAR[mediaFlagsFontColor]</textcolor>
+                <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
                 <visible>!String.IsEmpty(Control.GetLabel(44223))</visible>
             </control>
 
@@ -374,7 +380,7 @@
             <control type="image">
                 <width>35</width>
                 <height>38</height>
-                <colordiffuse>$VAR[mediaFlagsFontColor]</colordiffuse>
+                <colordiffuse>$INFO[Skin.String(OSDPrimaryTextColor)]</colordiffuse>
                 <texture>flags/audio.png</texture>
                 <bordersize>3</bordersize>
                 <visible>!String.IsEmpty(Control.GetLabel(44224))</visible>
@@ -383,7 +389,7 @@
                 <font>flags</font>
                 <width>auto</width>
                 <height>26</height>
-                <textcolor>$VAR[mediaFlagsFontColor]</textcolor>
+                <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
                 <label>$VAR[AudioCodecVar]$VAR[AudioChannelsVar, • ]$VAR[AudioLanguageVar, • ]</label>
                 <visible>!String.IsEmpty(Control.GetLabel(44224))</visible>
             </control>
@@ -398,7 +404,7 @@
 			<control type="image">
                 <width>44</width>
                 <height>33</height>
-                <colordiffuse>$VAR[mediaFlagsFontColor]</colordiffuse>
+                <colordiffuse>$INFO[Skin.String(OSDPrimaryTextColor)]</colordiffuse>
                 <texture>flags/subtitles.png</texture>
                 <visible>!String.IsEmpty(Control.GetLabel(44230))</visible>
                 <visible>![Window.IsActive(Home) + Skin.String(widgetstyle, single box)]</visible>
@@ -407,7 +413,7 @@
                 <font>flags</font>
                 <width>auto</width>
                 <height>26</height>
-                <textcolor>$VAR[mediaFlagsFontColor]</textcolor>
+                <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
                 <label>$VAR[SubtitleLanguageVar]</label>
                 <visible>!String.IsEmpty(Control.GetLabel(44230))</visible>
                 <visible>![Window.IsActive(Home) + Skin.String(widgetstyle, single box)]</visible>
@@ -423,7 +429,7 @@
             <control type="image">
                 <width>36</width>
                 <height>36</height>
-                <colordiffuse>$VAR[mediaFlagsFontColor]</colordiffuse>
+                <colordiffuse>$INFO[Skin.String(OSDPrimaryTextColor)]</colordiffuse>
                 <texture>flags/mpaa.png</texture>
                 <bordersize>3</bordersize>
                 <visible>!String.IsEmpty(Control.GetLabel(44225))</visible>
@@ -433,7 +439,7 @@
                 <font>flags</font>
                 <height>30</height>
                 <width>auto</width>
-                <textcolor>$VAR[mediaFlagsFontColor]</textcolor>
+                <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
                 <label>$VAR[GetMPAAOSD]</label>
                 <visible>!String.IsEmpty(Control.GetLabel(44225))</visible>
                 <visible>!String.StartsWith(ListItem.Path,videodb://movies/sets/)</visible>
@@ -448,7 +454,7 @@
             <control type="image">
                 <width>36</width>
                 <height>36</height>
-                <colordiffuse>$VAR[mediaFlagsFontColor]</colordiffuse>
+                <colordiffuse>$INFO[Skin.String(OSDPrimaryTextColor)]</colordiffuse>
                 <texture>flags/audio.png</texture>
                 <bordersize>3</bordersize>
                 <visible>!String.IsEmpty(Control.GetLabel(44224))</visible>
@@ -457,7 +463,7 @@
                 <font>flags</font>
                 <width>auto</width>
                 <height>24</height>
-                <textcolor>$VAR[mediaFlagsFontColor]</textcolor>
+                <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
                 <label>$VAR[AudioCodecVar,, • ]$VAR[AudioChannelsVar]$INFO[MusicPlayer.BitRate, • , kbps]</label>
                 <visible>!String.IsEmpty(Control.GetLabel(44224))</visible>
             </control>
@@ -465,8 +471,8 @@
     </include>
 	
     <variable name="mediaFlagsFontColor">
-        <value condition="String.StartsWith(Window.Property(xmlfile),My)">$INFO[Skin.String(FooterTextColor)]</value>
-        <value condition="Window.IsActive(fullscreenvideo)">$INFO[Skin.String(OSDPrimaryTextColor)]</value>
+        <value condition="String.StartsWith(Window.Property(xmlfile),My)">$INFO[Skin.String(FooterIconColor)]</value>
+        <value condition="Window.IsActive(fullscreenvideo)">$INFO[Skin.String(OSDMediaInfoColor)]</value>
         <value>$INFO[Skin.String(ViewDetailsTextColor)]</value>
     </variable>   
 	
@@ -739,10 +745,10 @@
 				<align>center</align>
 				<aligny>top</aligny>
 				<textwidth>140</textwidth> 
-				<textcolor>white</textcolor>
-				<disabledcolor>white</disabledcolor>
-				<texturenofocus border="10">bingie/usicons/usfooter/white.png</texturenofocus>
-				<texturefocus border="10">bingie/usicons/usfooter/white.png</texturefocus>
+				<textcolor>$VAR[mediaFlagsFontColor]</textcolor>
+				<disabledcolor>$VAR[mediaFlagsFontColor]</disabledcolor>
+				<texturenofocus border="10" colordiffuse="$VAR[mediaFlagsFontColor]">bingie/usicons/usfooter/white.png</texturenofocus>
+				<texturefocus border="10" colordiffuse="$VAR[mediaFlagsFontColor]">bingie/usicons/usfooter/white.png</texturefocus>
 				<textoffsetx>10</textoffsetx>
 				<textoffsety>-1</textoffsety>
 				<font>footer_mpaa</font>
@@ -832,10 +838,10 @@
 				<align>center</align>
 				<aligny>top</aligny>
 				<textwidth>140</textwidth> 
-				<textcolor>white</textcolor>
-				<disabledcolor>white</disabledcolor>
-				<texturenofocus border="10">bingie/usicons/usfooter/white.png</texturenofocus>
-				<texturefocus border="10">bingie/usicons/usfooter/white.png</texturefocus>
+				<textcolor>$VAR[mediaFlagsFontColor]</textcolor>
+				<disabledcolor>$VAR[mediaFlagsFontColor]</disabledcolor>
+				<texturenofocus border="10" colordiffuse="$VAR[mediaFlagsFontColor]">bingie/usicons/usfooter/white.png</texturenofocus>
+				<texturefocus border="10" colordiffuse="$VAR[mediaFlagsFontColor]">bingie/usicons/usfooter/white.png</texturefocus>
 				<textoffsetx>10</textoffsetx>
 				<textoffsety>-1</textoffsety>
 				<font>footer_mpaa</font>

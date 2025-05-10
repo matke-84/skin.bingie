@@ -62,7 +62,7 @@
 				<height>100</height>
 				<font>Bold45</font>
 				<align>left</align>
-				<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
+				<textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
 				<label>$LOCALIZE[19222]$INFO[VideoPlayer.ChannelName, • ,]</label>
 				<visible>!Window.IsActive(notification) + !Window.IsActive(extendedprogressdialog)</visible>
 				<animation effect="slide" end="0,19" time="0" reversible="false" condition="String.IsEmpty(ListItem.StartDate)">Conditional</animation>
@@ -75,7 +75,7 @@
 				<width>524</width>
 				<height>50</height>
 				<font>Reg28</font>
-				<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
+				<textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
 				<label>$INFO[Container(11).ListItem.StartDate]</label>				
 			</control>
 			

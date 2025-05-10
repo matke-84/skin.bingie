@@ -43,7 +43,7 @@
             <height>100</height>
             <font>Bold45</font>
             <align>center</align>
-            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+            <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
             <label>$LOCALIZE[298] ($INFO[Container(11).NumItems])</label>
 			<visible>!Window.IsActive(notification) + !Window.IsActive(extendedprogressdialog)</visible>
         </control>

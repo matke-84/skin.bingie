@@ -31,7 +31,7 @@
             <height>100</height>
             <font>Bold45</font>
             <align>left</align>
-            <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
+            <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
             <label>[UPPERCASE]$LOCALIZE[33061][/UPPERCASE]</label>
         </control>
             <!--Label Menu: -->
@@ -97,7 +97,7 @@
             <height>100</height>
             <font>Bold45</font>
             <align>left</align>
-            <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
+            <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
             <label>[UPPERCASE]$LOCALIZE[33063][/UPPERCASE]</label>
         </control>
 		<control type="image">

@@ -81,9 +81,9 @@
     </variable>
 	
 	<!-- Variable for sorting out Season or TV Show Landscape -->
-	<variable name="View527SeasonOrShowLandscape">
-		<value condition="!String.IsEmpty(ListItem.Art(season.landscape))">$INFO[ListItem.Art(season.landscape)]</value>
+	<variable name="View527SeasonOrShowLandscape">		
 		<value condition="!String.IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(tvshow.landscape))">$INFO[ListItem.Art(tvshow.landscape)]</value>
 		<value>$INFO[ListItem.Art(tvshow.fanart)]</value>
 	</variable>
 	

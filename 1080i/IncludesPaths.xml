@@ -49,29 +49,6 @@
         <value>plugin://plugin.video.themoviedb.helper?info=videos&amp;nextpage=false$VAR[Path_Param_Type,&amp;,]$VAR[Path_Param_Query]</value>
     </variable>
 	
-	<variable name="Path_Youtube_Query">
-        <value condition="[String.IsEqual(ListItem.DBType,set) | ListItem.IsCollection] + !String.IsEmpty(ListItem.Set)">$INFO[ListItem.Set]</value>
-        <value condition="String.IsEqual(ListItem.DBType,movie) + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]$INFO[ListItem.Year, ,] Movie</value>
-        <value condition="String.IsEqual(ListItem.DBType,tvshow) + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]$INFO[ListItem.Year, ,]</value>
-        <value condition="String.IsEqual(ListItem.DBType,season) + !String.IsEmpty(ListItem.TVShowTitle)">$INFO[ListItem.TVShowTitle]$INFO[ListItem.Season, Season ,]</value>
-        <value condition="String.IsEqual(ListItem.DBType,episode) + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.TVShowTitle,, ]$INFO[ListItem.Title]</value>
-        <value condition="[String.IsEqual(ListItem.DBType,actor) | String.IsEqual(ListItem.Property(item.type),person)] + !String.IsEmpty(ListItem.Label)">$INFO[ListItem.Label]</value>
-        <value condition="String.IsEqual(ListItem.DBType,artist) + !String.IsEmpty(ListItem.AlbumArtist)">$INFO[ListItem.AlbumArtist] Music</value>
-        <value condition="String.IsEqual(ListItem.DBType,artist) + !String.IsEmpty(ListItem.Artist)">$INFO[ListItem.Artist] Music</value>
-        <value condition="String.IsEqual(ListItem.DBType,album) + !String.IsEmpty(ListItem.Album)">$INFO[ListItem.AlbumArtist,, ]$INFO[ListItem.Album] Music</value>
-        <value condition="String.IsEqual(ListItem.DBType,song) + !String.IsEmpty(ListItem.Title) + !String.IsEmpty(ListItem.AlbumArtist)">$INFO[ListItem.AlbumArtist,, ]$INFO[ListItem.Title] Music</value>
-        <value condition="String.IsEqual(ListItem.DBType,song) + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.Artist,, ]$INFO[ListItem.Title] Music</value>
-        <value condition="!String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
-        <value condition="!String.IsEmpty(ListItem.AlbumArtist)">$INFO[ListItem.AlbumArtist]</value>
-        <value condition="!String.IsEmpty(ListItem.Artist)">$INFO[ListItem.Artist]</value>
-        <value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
-        <value condition="!String.IsEmpty(ListItem.Label)">$INFO[ListItem.Label]</value>
-    </variable>
-
-    <variable name="Path_Youtube">
-        <value condition="Skin.HasSetting(PreferYoutubeTrailers)">$VAR[Path_Youtube_Query,plugin://plugin.video.youtube/search/?q=,&amp;search_type=notvalid]</value>
-    </variable>
-	
 	 <variable name="Path_FromGenre">
         <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Genre.1.TMDb_ID))">plugin://plugin.video.themoviedb.helper?info=discover&amp;with_genres=$INFO[Container(99950).ListItem.Property(Genre.1.TMDb_ID)]&amp;with_id=True$VAR[Path_Param_Type,&amp;,]$VAR[Path_Param_Database]$VAR[Path_Param_Digital_Release]&amp;nextpage=false</value>
     </variable>
@@ -159,7 +136,8 @@
     </variable>
 	
 	<variable name="Path_Collection">
-        <value condition="String.IsEqual(ListItem.DBType,movie) + !String.IsEmpty(ListItem.Set) + !Skin.HasSetting(VideoInfoButtonCollection)">plugin://plugin.video.themoviedb.helper?info=collection&amp;tmdb_type=collection&amp;query=$INFO[ListItem.Set]&amp;nextpage=false$VAR[Path_Param_Database]$VAR[Path_Param_Digital_Release]$VAR[Path_Param_Premiered]</value>
+		<value condition="!String.IsEqual(ListItem.Path,plugin://plugin.video.themoviedb.helper/) + String.IsEqual(ListItem.DBType,movie) + !String.IsEmpty(ListItem.Set) + !Skin.HasSetting(VideoInfoButtonCollection)">plugin://plugin.video.themoviedb.helper?info=collection&amp;tmdb_type=collection&amp;query=$INFO[ListItem.Set]&amp;nextpage=false$VAR[Path_Param_Database]$VAR[Path_Param_Digital_Release]$VAR[Path_Param_Premiered]</value>
+        <value condition="String.IsEqual(ListItem.Path,plugin://plugin.video.themoviedb.helper/) + String.IsEqual(ListItem.DBType,movie) + !String.IsEmpty(ListItem.Set) + !Skin.HasSetting(VideoInfoButtonCollection)">plugin://plugin.video.themoviedb.helper?info=collection&amp;tmdb_type=collection&amp;tmdb_id=$INFO[ListItem.Property(set.tmdb_id)]&amp;nextpage=false$VAR[Path_Param_Database]$VAR[Path_Param_Digital_Release]$VAR[Path_Param_Premiered]</value>
     </variable>
 	
 	<variable name="Path_MyList">
@@ -346,11 +324,6 @@
 	<variable name="MysteryTVShows">
 		<value condition="String.IsEqual(Skin.String(categories_types),Auto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | String.IsEqual(Skin.String(categories_types),LibraryList)">special://skin/extras/categories/tvmysteries.xsp</value>
         <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=9648&amp;with_id=True&amp;with_separator=AND&amp;without_genres=16$VAR[Path_Param_Categories_Digital_Release]</value>
-    </variable>
-	
-	<variable name="InfoDialogTrailers">
-		<value condition="!Skin.HasSetting(PreferYoutubeTrailers)">$INFO[Window.Property(Path.Videos)]</value>
-        <value condition="Skin.HasSetting(PreferYoutubeTrailers)">$INFO[Window.Property(Path.Youtube)]</value>
     </variable>
 	
 	<variable name="DefSpotlightWidgetContent">

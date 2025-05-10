@@ -2,25 +2,22 @@
 <!-- BINGIE -->
 <includes>
 
+    <!-- dim screen overlay used in certain dialogs -->
     <include name="DialogOverlayExtra">
-        <!-- dim screen overlay used in certain dialogs -->
         <control type="image">
             <include>FullscreenDimensions</include>
-            <texture>diffuse/background.png</texture>
-            <colordiffuse>AAFFFFFF</colordiffuse>
-            <visible>String.IsEmpty(Skin.String(BackgroundOverlayColor.base))</visible>
+            <texture>diffuse/panel2.png</texture>
+            <colordiffuse>$INFO[Skin.String(BackgroundOverlayColor)]</colordiffuse>
         </control>
         <control type="image">
             <include>FullscreenDimensions</include>
-            <texture>diffuse/background.png</texture>
-            <colordiffuse>aa0f0f0f</colordiffuse>
-            <visible>String.IsEmpty(Skin.String(BackgroundOverlayColor.base))</visible>
+            <texture>diffuse/panel2.png</texture>
+            <colordiffuse>$INFO[Skin.String(BackgroundOverlayColor)]</colordiffuse>
         </control>
         <control type="image">
             <include>FullscreenDimensions</include>
-            <texture>diffuse/background.png</texture>
-            <colordiffuse>$INFO[Skin.String(BackgroundOverlayColor.base)]</colordiffuse>
-            <visible>Skin.String(BackgroundOverlayColor.base)</visible>
+            <texture>diffuse/panel2.png</texture>
+            <colordiffuse>$INFO[Skin.String(BackgroundOverlayColor)]</colordiffuse>
         </control>
     </include>
 

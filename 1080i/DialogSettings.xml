@@ -41,7 +41,7 @@
                     <description>Heading</description>
                     <width>100%</width>
                     <font>Bold42</font>
-                    <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                    <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
                     <align>left</align>
                     <height>100</height>
                     <label>20333</label>

@@ -184,7 +184,6 @@
                         <label2 fallback="231">$INFO[Container(211).Listitem.Property(widgetName)]</label2>
                         <enable>false</enable>
                         <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-                        <visible>!String.IsEqual(Skin.String(HomeLayout),3)</visible>
 						<visible>!String.IsEqual(Container(211).ListItem.Property(labelid),137)</visible>
 					</control>
 					
@@ -203,7 +202,6 @@
                         <label2 fallback="231">$INFO[Container(211).Listitem.Property(widgetName.1)]</label2>
                         <enable>false</enable>
                         <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-                        <visible>!String.IsEqual(Skin.String(HomeLayout),3)</visible>
 						<visible>!String.IsEqual(Container(211).ListItem.Property(labelid),137)</visible>
 					</control>
 					
@@ -222,7 +220,6 @@
                         <label2 fallback="231">$INFO[Container(211).Listitem.Property(widgetName.2)]</label2>
                         <enable>false</enable>
                         <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-                        <visible>!String.IsEqual(Skin.String(HomeLayout),3)</visible>
 						<visible>!String.IsEqual(Container(211).ListItem.Property(labelid),137)</visible>
 					</control>
 					
@@ -241,7 +238,6 @@
                         <label2 fallback="231">$INFO[Container(211).Listitem.Property(widgetName.3)]</label2>
                         <enable>false</enable>
                         <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-                        <visible>!String.IsEqual(Skin.String(HomeLayout),3)</visible>
 						<visible>!String.IsEqual(Container(211).ListItem.Property(labelid),137)</visible>
 					</control>
 					
@@ -260,7 +256,6 @@
                         <label2 fallback="231">$INFO[Container(211).Listitem.Property(widgetName.4)]</label2>
                         <enable>false</enable>
                         <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-                        <visible>!String.IsEqual(Skin.String(HomeLayout),3)</visible>
                         <visible>!String.IsEmpty(Container(211).Listitem.Property(widgetName.4))</visible>
 						<visible>!!String.IsEqual(Container(211).ListItem.Property(labelid),137)</visible>
 					</control>
@@ -280,7 +275,6 @@
                         <label2 fallback="231">$INFO[Container(211).Listitem.Property(widgetName.5)]</label2>
                         <enable>false</enable>
                         <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-                        <visible>!String.IsEqual(Skin.String(HomeLayout),3)</visible>
                         <visible>!String.IsEmpty(Container(211).Listitem.Property(widgetName.5))</visible>
 						<visible>!String.IsEqual(Container(211).ListItem.Property(labelid),137)</visible>
 					</control>
@@ -300,7 +294,6 @@
                         <label2 fallback="231">$INFO[Container(211).Listitem.Property(widgetName.6)]</label2>
                         <enable>false</enable>
                         <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-                        <visible>!String.IsEqual(Skin.String(HomeLayout),3)</visible>
                         <visible>!String.IsEmpty(Container(211).Listitem.Property(widgetName.6))</visible>
 						<visible>!String.IsEqual(Container(211).ListItem.Property(labelid),137)</visible>
 					</control>
@@ -320,7 +313,6 @@
                         <label2 fallback="231">$INFO[Container(211).Listitem.Property(widgetName.7)]</label2>
                         <enable>false</enable>
                         <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-                        <visible>!String.IsEqual(Skin.String(HomeLayout),3)</visible>
                         <visible>!String.IsEmpty(Container(211).Listitem.Property(widgetName.7))</visible>
 						<visible>!String.IsEqual(Container(211).ListItem.Property(labelid),137)</visible>
 					</control>
@@ -340,7 +332,6 @@
                         <label2 fallback="231">$INFO[Container(211).Listitem.Property(widgetName.8)]</label2>
                         <enable>false</enable>
                         <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-                        <visible>!String.IsEqual(Skin.String(HomeLayout),3)</visible>
                         <visible>!String.IsEmpty(Container(211).Listitem.Property(widgetName.8))</visible>
 						<visible>!String.IsEqual(Container(211).ListItem.Property(labelid),137)</visible>
 					</control>
@@ -360,7 +351,6 @@
                         <label2 fallback="231">$INFO[Container(211).Listitem.Property(widgetName.9)]</label2>
                         <enable>false</enable>
                         <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-                        <visible>!String.IsEqual(Skin.String(HomeLayout),3)</visible>
                         <visible>!String.IsEmpty(Container(211).Listitem.Property(widgetName.9))</visible>
 						<visible>!String.IsEqual(Container(211).ListItem.Property(labelid),137)</visible>
 					</control>
@@ -451,7 +441,6 @@
                     <onclick>SetFocus(9000,1)</onclick>
 					<label>31564</label>
                     <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-                    <visible>!String.IsEqual(Skin.String(HomeLayout),3)</visible>
 					<visible>!String.IsEqual(Container(211).ListItem.Property(labelid),137)</visible>
 				</control>
 				

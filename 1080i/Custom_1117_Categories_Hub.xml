@@ -36,7 +36,7 @@
                     <height>600</height>
                     <orientation>vertical</orientation>
                     <usecontrolcoords>true</usecontrolcoords>
-                    <itemgap>10</itemgap>
+                    <itemgap>0</itemgap>
                     <!-- Movies and Episodes Info Slide-down -->
                     <animation effect="slide" start="0" end="0,130" time="0" condition="Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1) | [$EXP[IsMainMenuOpened] + Integer.IsGreater(Window(Home).Property(ListItem.PercentPlayed),1)]">Conditional</animation>
 
@@ -51,69 +51,17 @@
 					<visible>!$EXP[IsMainMenuOpened]</visible>
                         <visible>Skin.HasSetting(MovieDetailsHome) + !Integer.IsGreater(ListItem.PercentPlayed,1) | !Skin.HasSetting(MovieDetailsHome)</visible>
                         <include>Default_Visible_Fade</include>
-                        <top>-7</top>
+                        <top>3</top>
                         <width>1000</width>
-                        <height>55</height>
+                        <height>60</height>
                         <include>SpotlightRowDetails</include>
-                    </control>
-
-                    <!-- TV shows Seasons and Episodes -->
-                    <control type="grouplist">
-					<visible>!Skin.HasSetting(MovieDetailsHome)</visible>
-					<visible>!$EXP[IsMainMenuOpened]</visible>
-                        <visible>$EXP[IsEpisodeDBType]</visible>
-                        <include>Default_Visible_Fade</include>
-                        <orientation>vertical</orientation>
-                        <top>0</top>
-						<height>200</height>
-						<width>650</width>
-						<itemgap>20</itemgap>
-						<usecontrolcoords>true</usecontrolcoords>
-                        <!--Season/Episode label-->
-                        <control type="label">
-                            <height>50</height>
-                            <width>650</width>
-                            <align>left</align>
-							<posx>-6</posx>
-							<posy>-5</posy>
-                            <aligny>center</aligny>
-                            <font>bold29</font>
-                         	<textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor>
-                            <label>$VAR[BingieEpisodeInfoHeader]</label>
-                        </control>
-                    </control>
-					
-					<!-- TV shows Seasons and Episodes for Continue Watching -->
-                    <control type="grouplist">
-					<visible>Skin.HasSetting(MovieDetailsHome)</visible>
-					<visible>!$EXP[IsMainMenuOpened]</visible>
-                        <visible>$EXP[IsEpisodeDBType]</visible>
-                        <include>Default_Visible_Fade</include>
-                        <orientation>vertical</orientation>
-                        <top>0</top>
-						<height>200</height>
-						<width>650</width>
-						<itemgap>20</itemgap>
-						<usecontrolcoords>true</usecontrolcoords>
-                        <!--Season/Episode label-->
-                        <control type="label">
-                            <height>28</height>
-                            <width>650</width>
-                            <align>left</align>
-							<posx>-9</posx>
-							<posy>2</posy>
-                            <aligny>center</aligny>
-                            <font>Reg36</font>
-                         	<textcolor>$INFO[Skin.String(BingieSecondaryTextColor)]</textcolor>
-                            <label>$VAR[BingieEpisodeInfoHeader]</label>
-                        </control>
-                    </control>
+                    </control>                 
 				
 				<!-- Movie and TV Show Continue Watching -->
                         <control type="group">
                             <visible>Skin.HasSetting(MovieDetailsHome)</visible>
 							<visible>Integer.IsGreater(ListItem.PercentPlayed,1) | [$EXP[IsMainMenuOpened] + Integer.IsGreater(Window(Home).Property(ListItem.PercentPlayed),1)]</visible>
-                            <top>29</top>
+                            <top>39</top>
 							<left>1</left>
 							<width>650</width>
                             <height>30</height>
@@ -129,11 +77,11 @@
                             </control>
                             <control type="label">
                                 <top>-11</top>
-                                <left>210</left>
+                                <left>214</left>
                                 <height>25</height>
                                 <width>450</width>
                                 <font>Reg26</font>
-                                <textcolor>$INFO[Skin.String(BingieSecondaryTextColor)]</textcolor>
+                                <textcolor>$INFO[Skin.String(BingieHomeProgressBarTextColor)]</textcolor>
                                 <label>$VAR[PercentRemained,,% $LOCALIZE[31059]]</label>
                             </control>
                         </control>
@@ -208,7 +156,6 @@
 					<visible>!$EXP[IsMainMenuOpened]</visible>
                         <visible>Skin.HasSetting(MovieDetailsHome) + !Integer.IsGreater(ListItem.PercentPlayed,1) | !Skin.HasSetting(MovieDetailsHome)</visible>
                         <include>Default_Visible_Fade</include>
-						<top>5</top>
 						<height min="30" max="121">auto</height>
                         <width max="820">auto</width>
                         <align>left</align>
@@ -248,10 +195,10 @@
 			<top>-39</top>
                 <include condition="Skin.HasSetting(EnableRatings)">FooterON</include>
 				<include condition="!Skin.HasSetting(EnableRatings)">FooterOFF</include>
-                <height>40</height>
+                <height>36</height>
                 <font>Reg29</font>
                 <align>left</align>
-                <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                <textcolor>$INFO[Skin.String(BingieHeaderTextColor)]</textcolor>
                 <label>[CAPITALIZE][B]$INFO[Window(Home).Property(category)][/B][/CAPITALIZE]</label>
                 <visible>Integer.IsGreater(Container(117).NumItems,0)</visible>
             </control>

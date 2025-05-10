@@ -56,7 +56,6 @@
 		<onfocus>ClearProperty(StartupMask,Home)</onfocus>
         <onfocus>ClearProperty(submenu,Home)</onfocus>
         <onfocus>ClearProperty(ShowViewSubMenu,Home)</onfocus>
-        <onfocus>SetProperty(ShowWidget,1,Home)</onfocus>
         <onfocus>SetProperty(widgetstyle,$PARAM[widgetstyle],Home)</onfocus>
 		<onfocus>SetProperty(TMDbHelper.WidgetContainer,Home)</onfocus>
         <onfocus>SetProperty(LastFocusWidgetPos,$INFO[Container($PARAM[widgetid]).CurrentItem],Home)</onfocus>

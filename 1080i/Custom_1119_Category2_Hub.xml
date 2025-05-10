@@ -58,7 +58,7 @@
 				<left>1310</left>
 				<control type="textbox" id="9006">
 					<visible>String.EndsWith(Control.GetLabel(9005),color_transparent.png)</visible>
-					<height>184</height>
+					<height>194</height>
 					<width>540</width>
 					<font>title</font> 
 					<align>right</align>
@@ -561,6 +561,8 @@
 			
         </content>
     </control>
+	<!--Header-->
+	<include>Header</include>
 	    <include content="Dim_Overlay">
             <param name="visibility" value="$EXP[IsMainMenuOpened]" />
         </include>

@@ -21,8 +21,7 @@
 				<posy>-40</posy>
 				<width>2000</width>
 				<height>410</height>
-				<texture>diffuse/panel2.png</texture>
-				
+				<texture>diffuse/panel2.png</texture>				
 				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
 			</control>
 			
@@ -31,8 +30,7 @@
 				<posy>-40</posy>
 				<width>2000</width>
 				<height>410</height>
-				<texture>diffuse/panel2.png</texture>
-				
+				<texture>diffuse/panel2.png</texture>				
 				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
 			</control>
 			
@@ -70,6 +68,7 @@
 				<label/>
 				<width>1000</width>
 				<font>Bold55</font>
+				<textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
 			</control>
 
 			<control type="textbox" id="9">

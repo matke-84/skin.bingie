@@ -591,4 +591,9 @@
 		<value condition="String.IsEmpty(VideoPlayer.Episode) + String.IsEmpty(VideoPlayer.Season) + !String.IsEmpty(VideoPlayer.EpisodeName)"> • </value>
 	</variable>
 	
+	<variable name="FooterIconColor">
+		<value condition="!Skin.HasSetting(PreferWhiteFooter)">white</value>
+		<value condition="Skin.HasSetting(PreferWhiteFooter)">$INFO[Skin.String(FooterIconColor)]</value>
+	</variable>
+	
 </includes>

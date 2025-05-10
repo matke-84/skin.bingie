@@ -508,7 +508,7 @@
 
 	<!-- Widget header width -->
 	<include name="FooterON">
-		<width>540</width>
+		<width>470</width>
 	</include>
 		
 	<include name="FooterOFF">
@@ -524,7 +524,7 @@
             </include>
             <include condition="Skin.HasSetting(EnableRatings)">FooterON</include>
 			<include condition="!Skin.HasSetting(EnableRatings)">FooterOFF</include>
-            <height>40</height>
+            <height>42</height>
             <!-- fixed focus navigation -->
             <include content="SetFixedVerticalNavigationProps">
                 <param name="widgetid" value="$PARAM[widgetid]"/>
@@ -535,7 +535,7 @@
             <control type="label">
                 <height>100%</height>
                 <width>100%</width>
-				<left>67</left>
+				<top>-1</top>
                 <font>Bold31</font>
                 <include>widget_header_leftalign</include>
 				<textcolor>$INFO[Skin.String(BingieHeaderTextColor)]</textcolor>
@@ -546,7 +546,7 @@
             <control type="label">
                 <height>100%</height>
                 <width>100%</width>
-				<left>67</left>
+				<top>-1</top>
                 <font>Bold31</font>
                 <include>widget_header_leftalign</include>
 				<textcolor>$INFO[Skin.String(BingieHeaderTextColor)]</textcolor>
@@ -557,8 +557,7 @@
             <control type="multiimage">
                 <width>100%</width>
                 <height>30</height>
-                <top>7</top>
-				<left>67</left>
+                <top>5</top>
                 <include>widget_header_leftalign</include>
                 <aspectratio align="left">keep</aspectratio>
                 <imagepath background="true">spinner/widgets_busy_loader/</imagepath>
@@ -571,7 +570,7 @@
     </include>
     <include name="widget_header_leftalign">
         <include content="left">
-            <param name="left" value="65" />
+            <param name="left" value="68" />
         </include>
     </include>
 
@@ -621,7 +620,6 @@
             </include>
             <include>WidgetsBaseAnimation</include>
 			<onfocus>ClearProperty(Animation,home)</onfocus>
-            <onfocus>SetProperty(ShowWidget,1,home)</onfocus>
             <include content="$PARAM[widgetStyle]">
                 <param name="widgetid" value="$PARAM[widgetid]" />
                 <param name="widgetTags" value="$PARAM[widgetTags]" />
@@ -664,7 +662,7 @@
                 <focusedposition>0</focusedposition>
                 <itemgap>0</itemgap>
                 <width>1666</width>
-                <height>469</height>
+                <height>474</height>
                 <orientation>vertical</orientation>
                 <itemgap>0</itemgap>
                 <preloaditems>4</preloaditems>
@@ -772,12 +770,11 @@
             <usecontrolcoords>true</usecontrolcoords>
             <height>260</height>
             <include>No_Circular_Left</include>
-            <left>0</left>
             <top>848</top>
             <control type="group">
-				<height>40</height>
+				<height>42</height>
 				<control type="textbox">
-					<left>8</left>
+					<left>7</left>
 					<width>100%</width>
 					<font>Bold31</font>
 					<textcolor>$INFO[Skin.String(BingieHeaderTextColor)]</textcolor>
@@ -788,8 +785,7 @@
 					<width>100%</width>
 					<height>30</height>
 					<top>7</top>
-					<left>8</left>
-					<include>widget_header_leftalign</include>
+					<left>7</left>
 					<aspectratio align="left">keep</aspectratio>
 					<imagepath background="true">spinner/widgets_busy_loader/</imagepath>
 					<timeperimage>85</timeperimage>
@@ -822,12 +818,11 @@
             <usecontrolcoords>true</usecontrolcoords>
             <height>380</height>
             <include>No_Circular_Left</include>
-            <left>0</left>
             <top>947</top>
 			<control type="group">
-				<height>40</height>
+				<height>42</height>
 				<control type="textbox">
-					<left>8</left>
+					<left>7</left>
 					<width>100%</width>
 					<font>Bold31</font>
 					<textcolor>$INFO[Skin.String(BingieHeaderTextColor)]</textcolor>
@@ -838,8 +833,7 @@
 					<width>100%</width>
 					<height>30</height>
 					<top>7</top>
-					<left>8</left>
-					<include>widget_header_leftalign</include>
+					<left>7</left>
 					<aspectratio align="left">keep</aspectratio>
 					<imagepath background="true">spinner/widgets_busy_loader/</imagepath>
 					<timeperimage>85</timeperimage>
@@ -872,12 +866,11 @@
             <usecontrolcoords>true</usecontrolcoords>
             <height>370</height>
             <include>No_Circular_Left</include>
-            <left>0</left>
             <top>882</top>
             <control type="group">
-				<height>40</height>
+				<height>42</height>
 				<control type="textbox">
-					<left>8</left>
+					<left>7</left>
 					<width>100%</width>
 					<font>Bold31</font>
 					<textcolor>$INFO[Skin.String(BingieHeaderTextColor)]</textcolor>
@@ -888,8 +881,7 @@
 					<width>100%</width>
 					<height>30</height>
 					<top>7</top>
-					<left>8</left>
-					<include>widget_header_leftalign</include>
+					<left>7</left>
 					<aspectratio align="left">keep</aspectratio>
 					<imagepath background="true">spinner/widgets_busy_loader/</imagepath>
 					<timeperimage>85</timeperimage>

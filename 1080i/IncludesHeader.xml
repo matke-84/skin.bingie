@@ -10,29 +10,31 @@
     <include name="Header_Normal">
         <!-- Header Normal -->
         <control type="group">
-            <visible>!Window.IsActive(notification) + !Window.IsActive(extendedprogressdialog) + !Control.IsVisible(77551) + !Control.IsVisible(88883)</visible>
-            <visible>![[String.Contains(Skin.String(HomeLayout), 2) | String.Contains(Skin.String(HomeLayout), 1)] + !String.IsEmpty(Window(Home).Property(ShowWidget))]</visible>
-            <visible>!Control.IsVisible(525) | !Control.IsVisible(527)</visible>        
+            <visible>!Window.IsActive(notification) + !Window.IsActive(extendedprogressdialog) + !Control.IsVisible(88883)</visible>
+            <visible>!Control.IsVisible(525) | !Control.IsVisible(527)</visible> 			 		
             
             <!-- Time right -->
             <control type="group">
                 <include condition="[![Window.IsActive(Home) | $EXP[IsBingieHubsActive] | $EXP[IsBingieCategoriesActive]] + String.Contains(Skin.String(general_header),time)] | [[Window.IsActive(Home) | $EXP[IsBingieHubsActive] | $EXP[IsBingieCategoriesActive]] + String.Contains(Skin.String(home_header),time)]">TimeInfo</include>
                 <include>animation_fade_visible</include>
-                <visible>![Window.IsActive(volumebar) | Control.IsVisible(881)]</visible>
+                <visible>!Window.IsActive(volumebar)</visible>
+				<visible>![$EXP[AllNoneBingieViews] + Skin.String(ClearLogoLocation, topright) + [Window.IsVisible(DialogContextMenu.xml) | ControlGroup(9000).HasFocus()]]</visible>
             </control>                      
             
             <!-- Weather right -->
             <control type="group">
                 <include condition="[![Window.IsActive(Home) | $EXP[IsBingieHubsActive] | $EXP[IsBingieCategoriesActive]] + String.Contains(Skin.String(general_header),-weather)] | [[Window.IsActive(Home) | $EXP[IsBingieHubsActive] | $EXP[IsBingieCategoriesActive]] + String.Contains(Skin.String(home_header),-weather)]">WeatherInfoRight</include>
                 <include>animation_fade_visible</include>
-                <visible>![Window.IsActive(volumebar) | Control.IsVisible(881)]</visible>
+                <visible>!Window.IsActive(volumebar)</visible>
+				<visible>![$EXP[AllNoneBingieViews] + Skin.String(ClearLogoLocation, topright) + [Window.IsVisible(DialogContextMenu.xml) | ControlGroup(9000).HasFocus()]]</visible>
             </control>
             
             <!-- Weather + clock right -->
             <control type="group">
                 <include condition="[![Window.IsActive(Home) | $EXP[IsBingieHubsActive] | $EXP[IsBingieCategoriesActive]] + String.Contains(Skin.String(general_header),-weathclock)] | [[Window.IsActive(Home) | $EXP[IsBingieHubsActive] | $EXP[IsBingieCategoriesActive]] + String.Contains(Skin.String(home_header),-weathclock)]">WeatherClockInfoRight</include>
                 <include>animation_fade_visible</include>
-                <visible>![Window.IsActive(volumebar) | Control.IsVisible(881)]</visible>
+                <visible>!Window.IsActive(volumebar)</visible>
+				<visible>![$EXP[AllNoneBingieViews] + Skin.String(ClearLogoLocation, topright) + [Window.IsVisible(DialogContextMenu.xml) | ControlGroup(9000).HasFocus()]]</visible>
             </control>           
             
         </control>
@@ -43,32 +45,35 @@
         <control type="group">
             <visible>Skin.HasSetting(CompactHeader)</visible>
             <include>animation_fade_visible</include>
-            <visible>!Window.IsActive(notification) + !Window.IsActive(extendedprogressdialog) + !Control.IsVisible(77551) + !Control.IsVisible(88883)</visible>
-            <visible>!Control.IsVisible(525) | !Control.IsVisible(527)</visible>       
+            <visible>!Window.IsActive(notification) + !Window.IsActive(extendedprogressdialog) + !Control.IsVisible(88883)</visible>
+            <visible>!Control.IsVisible(525) | !Control.IsVisible(527)</visible>			
             
             <!-- Time right -->
             <control type="group">
                 <include>TimeInfoCompact</include>
                 <include>animation_fade_visible</include>
-                <visible>![Window.IsActive(volumebar) | Control.IsVisible(881)]</visible>
+                <visible>!Window.IsActive(volumebar)</visible>
                 <visible>[![Window.IsActive(Home) | $EXP[IsBingieHubsActive] | $EXP[IsBingieCategoriesActive]] + String.Contains(Skin.String(general_header),time)] | [[Window.IsActive(Home) | $EXP[IsBingieHubsActive] | $EXP[IsBingieCategoriesActive]] + String.Contains(Skin.String(home_header),time)]</visible>
+				<visible>![$EXP[AllNoneBingieViews] + Skin.String(ClearLogoLocation, topright) + [Window.IsVisible(DialogContextMenu.xml) | ControlGroup(9000).HasFocus()]]</visible>
             </control>                       
             
             <!-- Weather right -->
             <control type="group">
                 <include>WeatherInfoCompactRight</include>
                 <include>animation_fade_visible</include>
-                <visible>![Window.IsActive(volumebar) | Control.IsVisible(881)]</visible>
+                <visible>!Window.IsActive(volumebar)</visible>
                 <animation effect="slide" end="-180,0" time="400" tween="cubic" easing="inout" delay="0" condition="Window.IsActive(volumebar)">Conditional</animation>
                 <visible>[![Window.IsActive(Home) | $EXP[IsBingieHubsActive] | $EXP[IsBingieCategoriesActive]] + String.Contains(Skin.String(general_header),-weather)] | [[Window.IsActive(Home) | $EXP[IsBingieHubsActive] | $EXP[IsBingieCategoriesActive]] + String.Contains(Skin.String(home_header),-weather)]</visible>
+				<visible>![$EXP[AllNoneBingieViews] + Skin.String(ClearLogoLocation, topright) + [Window.IsVisible(DialogContextMenu.xml) | ControlGroup(9000).HasFocus()]]</visible>
             </control>
 
             <!-- Weather + clock right -->
             <control type="group">
                 <include>WeatherClockInfoRightCompact</include>
                 <include>animation_fade_visible</include>
-                <visible>![Window.IsActive(volumebar) | Control.IsVisible(881) | Control.IsVisible(77551)]</visible>
+                <visible>!Window.IsActive(volumebar)</visible>
                 <visible>[![Window.IsActive(Home) | $EXP[IsBingieHubsActive] | $EXP[IsBingieCategoriesActive]] + String.Contains(Skin.String(general_header),-weathclock)] | [[Window.IsActive(Home) | $EXP[IsBingieHubsActive] | $EXP[IsBingieCategoriesActive]] + String.Contains(Skin.String(home_header),-weathclock)]</visible>
+				<visible>![$EXP[AllNoneBingieViews] + Skin.String(ClearLogoLocation, topright) + [Window.IsVisible(DialogContextMenu.xml) | ControlGroup(9000).HasFocus()]]</visible>
             </control>
             
         </control>
@@ -98,7 +103,7 @@
 					<control type="textbox">
                         <visible>String.EndsWith(Control.GetLabel(881),color_transparent.png) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(sets) | Window.IsActive(tvchannels) |  Window.IsActive(tvguide) | Window.IsActive(tvrecordings) | Window.IsActive(tvtimers) | Window.IsActive(tvsearch)]</visible>
 						<right>60</right>
-						<top>10</top>
+						<top>15</top>
 						<width>430</width>
 						<height>115</height>
 						<fadetime>350</fadetime>
@@ -136,7 +141,7 @@
 					<control type="textbox">
                         <visible>String.EndsWith(Control.GetLabel(882),color_transparent.png) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(sets) | Window.IsActive(tvchannels) |  Window.IsActive(tvguide) | Window.IsActive(tvrecordings) | Window.IsActive(tvtimers) | Window.IsActive(tvsearch)]</visible>
 						<left>60</left>
-						<top>10</top>
+						<top>15</top>
 						<width>430</width>
 						<height>115</height>
 						<fadetime>350</fadetime>
@@ -170,7 +175,7 @@
 					<control type="textbox">
                         <visible>String.EndsWith(Control.GetLabel(883),color_transparent.png) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(sets) | Window.IsActive(tvchannels) |  Window.IsActive(tvguide) | Window.IsActive(tvrecordings) | Window.IsActive(tvtimers) | Window.IsActive(tvsearch)]</visible>
 						<left>744</left>
-						<top>10</top>
+						<top>15</top>
 						<width>430</width>
 						<height>115</height>
 						<fadetime>350</fadetime>
@@ -190,6 +195,7 @@
 	
 	<include name="TimeInfo">
         <control type="group">
+			<visible>![Skin.String(ClearLogoLocation, topright) + $EXP[AllNoneBingieViews]]</visible>
             <!--Time-->
             <control type="label">
                 <right>60</right>
@@ -208,7 +214,7 @@
             <control type="label">
                 <right>60</right>
                 <align>right</align>
-                <posy>73</posy>
+                <posy>68</posy>
                 <width>600</width>
                 <height>50</height>
                 <info>System.Date()</info>
@@ -237,7 +243,67 @@
             <control type="label">
                 <right>60</right>
                 <align>right</align>
-                <posy>73</posy>
+                <posy>68</posy>
+                <width>600</width>
+                <height>50</height>
+				<label>$VAR[NowPlayingLabel]</label>
+                <font>Reg30</font>
+                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+                <shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+				<include>HeaderChangeAnimation</include>
+				<visible>System.IdleTime(3) + [[Player.HasVideo + !String.IsEmpty(VideoPlayer.Title)] | [Player.HasAudio + !String.IsEmpty(MusicPlayer.Title)] | Player.IsInternetStream]</visible>
+            </control>
+        </control>
+		<control type="group">
+			<visible>Skin.String(ClearLogoLocation, topright) + $EXP[AllNoneBingieViews]</visible>
+            <!--Time-->
+            <control type="label">
+                <left>60</left>
+                <posy>-2</posy>
+                <width>600</width>
+                <height>100</height>
+                <align>left</align>
+                <info>System.Time()</info>
+                <font>Bold55</font>
+                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+                <shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+				<include>HeaderChangeAnimation</include>
+				<visible>!Control.IsVisible(555)</visible>
+            </control>
+            <!--Date-->
+            <control type="label">
+                <left>60</left>
+                <align>left</align>
+                <posy>68</posy>
+                <width>600</width>
+                <height>50</height>
+                <info>System.Date()</info>
+                <font>Reg30</font>
+                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+                <shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+				<include>HeaderChangeAnimation</include>
+				<visible>!Control.IsVisible(555)</visible>
+            </control>
+			<!--Now Playing Title-->
+			<control type="label" id="555">
+                <left>60</left>
+                <posy>-2</posy>
+                <width>600</width>
+                <height>100</height>
+                <align>left</align>
+                <label>$VAR[NowPlayingTitle]</label>
+                <font>Bold55</font>
+				<scroll>true</scroll>
+                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+                <shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+				<include>HeaderChangeAnimation</include>
+				<visible>System.IdleTime(3) + [[Player.HasVideo + !String.IsEmpty(VideoPlayer.Title)] | [Player.HasAudio + !String.IsEmpty(MusicPlayer.Title)] | Player.IsInternetStream]</visible>
+            </control>
+            <!--Now Playing Label-->
+            <control type="label">
+                <left>60</left>
+                <align>left</align>
+                <posy>68</posy>
                 <width>600</width>
                 <height>50</height>
 				<label>$VAR[NowPlayingLabel]</label>
@@ -252,10 +318,11 @@
     
     <include name="TimeInfoCompact">
         <control type="group">
+			<visible>![Skin.String(ClearLogoLocation, topright) + $EXP[AllNoneBingieViews]]</visible>
 			<!--Time-->
             <control type="label">
                 <right>60</right>
-                <top>18</top>
+                <top>27</top>
                 <align>right</align>
                 <width>600</width>
                 <info>System.Time</info>
@@ -268,7 +335,7 @@
 			<!--Date-->
             <control type="label">
                 <right>60</right>
-                <top>48</top>
+                <top>57</top>
                 <align>right</align>
                 <width>600</width>
                 <info>System.Date</info>
@@ -281,7 +348,7 @@
 			<!--Now Playing Title-->
 			<control type="label" id="557">
                 <right>60</right>
-                <top>18</top>
+                <top>27</top>
                 <align>right</align>
                 <width>600</width>
                 <label>$VAR[NowPlayingTitle]</label>
@@ -294,9 +361,67 @@
             </control>
 			<!--Now Playing Label-->
             <control type="label">
+				<include condition="Skin.String(ClearLogoLocation, topright) + !Window.IsActive(Home)">Header_Time_Left</include>
                 <right>60</right>
-                <top>48</top>
+                <top>57</top>
+				<include condition="Skin.String(ClearLogoLocation, topright) + !Window.IsActive(Home)">Header_Align_Left</include>
                 <align>right</align>
+                <width>600</width>
+                <label>$VAR[NowPlayingLabel]</label>
+                <font>Reg26</font>
+                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+                <shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+				<include>HeaderChangeAnimation</include>
+				<visible>System.IdleTime(3) + [[Player.HasVideo + !String.IsEmpty(VideoPlayer.Title)] | [Player.HasAudio + !String.IsEmpty(MusicPlayer.Title)] | Player.IsInternetStream]</visible>
+            </control>
+        </control>
+		<control type="group">
+			<visible>Skin.String(ClearLogoLocation, topright) + $EXP[AllNoneBingieViews]</visible>
+			<!--Time-->
+            <control type="label">
+                <left>60</left>
+                <top>27</top>
+                <align>left</align>
+                <width>600</width>
+                <info>System.Time</info>
+                <font>Bold30</font>
+                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+                <shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+				<include>HeaderChangeAnimation</include>
+				<visible>!Control.IsVisible(557)</visible>
+            </control>
+			<!--Date-->
+            <control type="label">
+                <left>60</left>
+                <top>57</top>
+                <align>left</align>
+                <width>600</width>
+                <info>System.Date</info>
+                <font>Reg26</font>
+                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+                <shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+				<include>HeaderChangeAnimation</include>
+				<visible>!Control.IsVisible(557)</visible>
+            </control>
+			<!--Now Playing Title-->
+			<control type="label" id="557">
+                <left>60</left>
+                <top>27</top>
+                <align>left</align>
+                <width>600</width>
+                <label>$VAR[NowPlayingTitle]</label>
+                <font>Bold30</font>
+				<scroll>true</scroll>
+                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+                <shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+				<include>HeaderChangeAnimation</include>
+				<visible>System.IdleTime(3) + [[Player.HasVideo + !String.IsEmpty(VideoPlayer.Title)] | [Player.HasAudio + !String.IsEmpty(MusicPlayer.Title)] | Player.IsInternetStream]</visible>
+            </control>
+			<!--Now Playing Label-->
+            <control type="label">
+                <left>60</left>
+                <top>57</top>
+                <align>left</align>
                 <width>600</width>
                 <label>$VAR[NowPlayingLabel]</label>
                 <font>Reg26</font>
@@ -310,19 +435,16 @@
     
     <include name="WeatherInfoRight">
         <!-- weather info -->
-        <control type="group" id="667711">
-            <right>40</right>
-            <posy>0</posy>
-            <width>350</width>
-            <height>300</height>
+        <control type="group">
             <visible>!String.IsEmpty(Window(Weather).Property(Current.FanartCode)) + Skin.String(WeatherIconPack.path)</visible>
+			<visible>![Skin.String(ClearLogoLocation, topright) + $EXP[AllNoneBingieViews]]</visible>
             <!--Weather Today-->
             <control type="multiimage">
                 <!--Icon-->
                 <imagepath>$INFO[Skin.String(WeatherIconPack.path)]$INFO[Window(Weather).Property(Current.FanartCode)]$INFO[Skin.String(WeatherIconPack.ext)]</imagepath>
                 <width>136</width>
                 <height>136</height>
-                <right>-6</right>
+                <right>34</right>
                 <posy>-2</posy>
                 <aspectratio align="right" aligny="bottom">keep</aspectratio>
             </control>
@@ -330,7 +452,7 @@
                 <!--Temp-->
                 <width>160</width>
                 <height>40</height>
-                <right>139</right>
+                <right>184</right>
                 <posy>28</posy>
                 <font>Bold55</font>
                 <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
@@ -344,7 +466,7 @@
                 <!--Temp-->
                 <width>400</width>
                 <height>40</height>
-                <right>139</right>
+                <right>185</right>
                 <posy>73</posy>
                 <font>Reg30</font>
                 <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
@@ -358,7 +480,7 @@
                 <!--Now Playing Title-->
                 <width>500</width>
                 <height>40</height>
-                <right>139</right>
+                <right>184</right>
                 <posy>28</posy>
                 <font>Bold55</font>
 				<scroll>true</scroll>
@@ -373,7 +495,7 @@
                 <!--Now Playing Label-->
                 <width>400</width>
                 <height>40</height>
-                <right>139</right>
+                <right>185</right>
                 <posy>73</posy>
                 <font>Reg30</font>
                 <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
@@ -384,24 +506,96 @@
 				<visible>System.IdleTime(3) + [[Player.HasVideo + !String.IsEmpty(VideoPlayer.Title)] | [Player.HasAudio + !String.IsEmpty(MusicPlayer.Title)] | Player.IsInternetStream]</visible>
             </control>
         </control>
+		<control type="group">
+        <visible>!String.IsEmpty(Window(Weather).Property(Current.FanartCode)) + Skin.String(WeatherIconPack.path)</visible>
+		<visible>Skin.String(ClearLogoLocation, topright) + $EXP[AllNoneBingieViews]</visible>
+            <!--Weather Today-->
+            <control type="multiimage">
+                <!--Icon-->
+                <imagepath>$INFO[Skin.String(WeatherIconPack.path)]$INFO[Window(Weather).Property(Current.FanartCode)]$INFO[Skin.String(WeatherIconPack.ext)]</imagepath>
+                <width>136</width>
+                <height>136</height>
+                <left>34</left>
+                <posy>-2</posy>
+                <aspectratio align="left" aligny="bottom">keep</aspectratio>
+            </control>
+            <control type="label">
+                <!--Temp-->
+                <width>160</width>
+                <height>40</height>
+                <left>184</left>
+                <posy>28</posy>
+                <font>Bold55</font>
+                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+                <align>left</align>
+                <label>$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits]</label>
+				<shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+				<include>HeaderChangeAnimation</include>
+				<visible>!Control.IsVisible(559)</visible>
+            </control>
+            <control type="label">
+                <!--Temp-->
+                <width>400</width>
+                <height>40</height>
+                <left>185</left>
+                <posy>73</posy>
+                <font>Reg30</font>
+                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+                <align>left</align>
+                <label>$INFO[Window(Weather).Property(Current.Condition)]</label>
+				<include>HeaderChangeAnimation</include>
+				<visible>!Control.IsVisible(559)</visible>
+            </control>
+			<control type="label" id="559">
+                <!--Now Playing Title-->
+                <width>500</width>
+                <height>40</height>
+                <left>184</left>
+                <posy>28</posy>
+                <font>Bold55</font>
+				<scroll>true</scroll>
+                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+                <align>left</align>
+                <label>$VAR[NowPlayingTitle]</label>
+				<shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+				<include>HeaderChangeAnimation</include>
+				<visible>System.IdleTime(3) + [[Player.HasVideo + !String.IsEmpty(VideoPlayer.Title)] | [Player.HasAudio + !String.IsEmpty(MusicPlayer.Title)] | Player.IsInternetStream]</visible>
+            </control>
+            <control type="label">
+                <!--Now Playing Label-->
+                <width>400</width>
+                <height>40</height>
+                <left>185</left>
+                <posy>73</posy>
+                <font>Reg30</font>
+                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+                <align>left</align>
+                <label>$VAR[NowPlayingLabel]</label>
+				<include>HeaderChangeAnimation</include>
+				<visible>System.IdleTime(3) + [[Player.HasVideo + !String.IsEmpty(VideoPlayer.Title)] | [Player.HasAudio + !String.IsEmpty(MusicPlayer.Title)] | Player.IsInternetStream]</visible>
+            </control>
+        </control>
     </include>
     
     <include name="WeatherInfoCompactRight">
         <control type="group">
             <visible>!String.IsEmpty(Window(Weather).Property(Current.FanartCode)) + Skin.String(WeatherIconPack.path)</visible>
+			<visible>![Skin.String(ClearLogoLocation, topright) + $EXP[AllNoneBingieViews]]</visible>
             <control type="multiimage">
                 <right>43</right>
-                <top>16</top>
+                <top>25</top>
                 <imagepath>$INFO[Skin.String(WeatherIconPack.path)]$INFO[Window(Weather).Property(Current.FanartCode)]$INFO[Skin.String(WeatherIconPack.ext)]</imagepath>
                 <width>92</width>
                 <height>92</height>
-                <aspectratio>keep</aspectratio>
+                <aspectratio align="right" aligny="bottom">keep</aspectratio>
                 <visible>!String.IsEmpty(Window(Weather).Property(Current.FanartCode)) + Skin.String(WeatherIconPack.path)</visible> 
             </control>
             <!-- current temp -->
             <control type="label">
                 <right>145</right>
-                <top>17</top>
+                <top>27</top>
                 <align>right</align>
                 <width>500</width>
                 <label>$INFO[Window(Weather).Property(Current.Temperature)]  $INFO[System.TemperatureUnits]</label>
@@ -414,7 +608,7 @@
             <!-- weather conditions -->
             <control type="label">
                 <right>145</right>
-                <top>48</top>
+                <top>57</top>
                 <align>right</align>
                 <width>500</width>
                 <label>$INFO[Window(Weather).Property(Current.Condition)]</label>
@@ -427,7 +621,7 @@
 			<!--Now Playing Title-->
             <control type="label" id="560">
                 <right>145</right>
-                <top>17</top>
+                <top>27</top>
                 <align>right</align>
                 <width>500</width>
                 <label>$VAR[NowPlayingTitle]</label>
@@ -441,8 +635,74 @@
             <!--Now Playing Label-->
             <control type="label">
                 <right>145</right>
-                <top>48</top>
+                <top>57</top>
                 <align>right</align>
+                <width>500</width>
+                <label>$VAR[NowPlayingLabel]</label>
+                <font>Reg26</font>
+                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+                <shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+				<include>HeaderChangeAnimation</include>
+				<visible>System.IdleTime(3) + [[Player.HasVideo + !String.IsEmpty(VideoPlayer.Title)] | [Player.HasAudio + !String.IsEmpty(MusicPlayer.Title)] | Player.IsInternetStream]</visible>
+            </control>
+        </control>
+		<control type="group">
+            <visible>!String.IsEmpty(Window(Weather).Property(Current.FanartCode)) + Skin.String(WeatherIconPack.path)</visible>
+			<visible>Skin.String(ClearLogoLocation, topright) + $EXP[AllNoneBingieViews]</visible>
+            <control type="multiimage">
+                <left>43</left>
+                <top>25</top>
+                <imagepath>$INFO[Skin.String(WeatherIconPack.path)]$INFO[Window(Weather).Property(Current.FanartCode)]$INFO[Skin.String(WeatherIconPack.ext)]</imagepath>
+                <width>92</width>
+                <height>92</height>
+                <aspectratio align="left" aligny="bottom">keep</aspectratio>
+                <visible>!String.IsEmpty(Window(Weather).Property(Current.FanartCode)) + Skin.String(WeatherIconPack.path)</visible> 
+            </control>
+            <!-- current temp -->
+            <control type="label">
+                <left>145</left>
+                <top>27</top>
+                <align>left</align>
+                <width>500</width>
+                <label>$INFO[Window(Weather).Property(Current.Temperature)]  $INFO[System.TemperatureUnits]</label>
+                <font>Bold30</font>
+                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+                <shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+				<include>HeaderChangeAnimation</include>
+				<visible>!Control.IsVisible(560)</visible>
+            </control>
+            <!-- weather conditions -->
+            <control type="label">
+                <left>145</left>
+                <top>57</top>
+                <align>left</align>
+                <width>500</width>
+                <label>$INFO[Window(Weather).Property(Current.Condition)]</label>
+                <font>Reg26</font>
+                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+                <shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+				<include>HeaderChangeAnimation</include>
+				<visible>!Control.IsVisible(560)</visible>
+            </control>
+			<!--Now Playing Title-->
+            <control type="label" id="560">
+                <left>145</left>
+                <top>27</top>
+                <align>left</align>
+                <width>500</width>
+                <label>$VAR[NowPlayingTitle]</label>
+                <font>Bold30</font>
+				<scroll>true</scroll>
+                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+                <shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+				<include>HeaderChangeAnimation</include>
+				<visible>System.IdleTime(3) + [[Player.HasVideo + !String.IsEmpty(VideoPlayer.Title)] | [Player.HasAudio + !String.IsEmpty(MusicPlayer.Title)] | Player.IsInternetStream]</visible>
+            </control>
+            <!--Now Playing Label-->
+            <control type="label">
+                <left>145</left>
+                <top>57</top>
+                <align>left</align>
                 <width>500</width>
                 <label>$VAR[NowPlayingLabel]</label>
                 <font>Reg26</font>
@@ -456,18 +716,19 @@
     
     <include name="WeatherClockInfoRightCompact">
         <control type="group">
+			<visible>![Skin.String(ClearLogoLocation, topright) + $EXP[AllNoneBingieViews]]</visible>
             <control type="multiimage">
                 <right>43</right>
-                <top>16</top>
+                <top>25</top>
                 <imagepath>$INFO[Skin.String(WeatherIconPack.path)]$INFO[Window(Weather).Property(Current.FanartCode)]$INFO[Skin.String(WeatherIconPack.ext)]</imagepath>
                 <width>92</width>
                 <height>92</height>
-                <aspectratio>keep</aspectratio>
+                <aspectratio align="right" aligny="bottom">keep</aspectratio>
             </control>
             <!-- time + date -->
             <control type="label">
                 <right>145</right>
-                <top>18</top>
+                <top>27</top>
                 <align>right</align>
                 <width>500</width>
                 <label>$INFO[System.Time]</label>
@@ -480,7 +741,7 @@
             <!-- weather conditions -->
             <control type="label">
                 <right>145</right>
-                <top>48</top>
+                <top>57</top>
                 <align>right</align>
                 <width>500</width>
                 <label>$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits] $INFO[Window(Weather).Property(Current.Condition)]</label>
@@ -493,7 +754,7 @@
 			<!--Now Playing Title-->
             <control type="label" id="558">
                 <right>145</right>
-                <top>18</top>
+                <top>27</top>
                 <align>right</align>
                 <width>500</width>
                 <label>$VAR[NowPlayingTitle]</label>
@@ -507,8 +768,72 @@
             <!--Now Playing Label-->
             <control type="label">
                 <right>145</right>
-                <top>48</top>
+                <top>57</top>
                 <align>right</align>
+                <width>500</width>
+                <label>$VAR[NowPlayingLabel]</label>
+                <font>Reg26</font>
+                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+                <shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+				<include>HeaderChangeAnimation</include>
+				<visible>System.IdleTime(3) + [[Player.HasVideo + !String.IsEmpty(VideoPlayer.Title)] | [Player.HasAudio + !String.IsEmpty(MusicPlayer.Title)] | Player.IsInternetStream]</visible>
+            </control>
+        </control>
+		<control type="group">
+			<visible>Skin.String(ClearLogoLocation, topright) + $EXP[AllNoneBingieViews]</visible>
+            <control type="multiimage">
+                <left>43</left>
+                <top>25</top>
+                <imagepath>$INFO[Skin.String(WeatherIconPack.path)]$INFO[Window(Weather).Property(Current.FanartCode)]$INFO[Skin.String(WeatherIconPack.ext)]</imagepath>
+                <width>92</width>
+                <height>92</height>
+                <aspectratio align="left" aligny="bottom">keep</aspectratio>
+            </control>
+            <!-- time + date -->
+            <control type="label">
+                <left>145</left>
+                <top>27</top>
+                <align>left</align>
+                <width>500</width>
+                <label>$INFO[System.Time]</label>
+                <font>Bold30</font>
+                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+                <shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+				<include>HeaderChangeAnimation</include>
+				<visible>!Control.IsVisible(558)</visible>
+            </control>
+            <!-- weather conditions -->
+            <control type="label">
+                <left>145</left>
+                <top>57</top>
+                <align>left</align>
+                <width>500</width>
+                <label>$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits] $INFO[Window(Weather).Property(Current.Condition)]</label>
+                <font>Reg26</font>
+                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+                <shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+				<include>HeaderChangeAnimation</include>
+				<visible>!Control.IsVisible(558)</visible>
+            </control>
+			<!--Now Playing Title-->
+            <control type="label" id="558">
+                <left>145</left>
+                <top>27</top>
+                <align>left</align>
+                <width>500</width>
+                <label>$VAR[NowPlayingTitle]</label>
+                <font>Bold30</font>
+				<scroll>true</scroll>
+                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+                <shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+				<include>HeaderChangeAnimation</include>
+				<visible>System.IdleTime(3) + [[Player.HasVideo + !String.IsEmpty(VideoPlayer.Title)] | [Player.HasAudio + !String.IsEmpty(MusicPlayer.Title)] | Player.IsInternetStream]</visible>
+            </control>
+            <!--Now Playing Label-->
+            <control type="label">
+                <left>145</left>
+                <top>57</top>
+                <align>left</align>
                 <width>500</width>
                 <label>$VAR[NowPlayingLabel]</label>
                 <font>Reg26</font>
@@ -522,6 +847,7 @@
     
     <include name="WeatherClockInfoRight">
         <control type="group">
+				<visible>![Skin.String(ClearLogoLocation, topright) + $EXP[AllNoneBingieViews]]</visible>
 		        <!--Weather Today-->
 				<control type="multiimage">
 					<!--Icon-->
@@ -583,6 +909,77 @@
 					<width>500</width>
 					<height>50</height>
 					<align>right</align>
+					<label>$VAR[NowPlayingLabel]</label>
+					<font>Reg30</font>
+					<textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+					<shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+					<include>HeaderChangeAnimation</include>
+					<visible>System.IdleTime(3) + [[Player.HasVideo + !String.IsEmpty(VideoPlayer.Title)] | [Player.HasAudio + !String.IsEmpty(MusicPlayer.Title)] | Player.IsInternetStream]</visible>
+				</control>
+		</control>
+		<control type="group">
+				<visible>Skin.String(ClearLogoLocation, topright) + $EXP[AllNoneBingieViews]</visible>
+		        <!--Weather Today-->
+				<control type="multiimage">
+					<!--Icon-->
+					<imagepath>$INFO[Skin.String(WeatherIconPack.path)]$INFO[Window(Weather).Property(Current.FanartCode)]$INFO[Skin.String(WeatherIconPack.ext)]</imagepath>
+					<width>136</width>
+					<height>136</height>
+					<left>34</left>
+					<posy>-2</posy>
+					<aspectratio align="left" aligny="bottom">keep</aspectratio>
+					<visible>!String.IsEmpty(Window(Weather).Property(Current.FanartCode)) + Skin.String(WeatherIconPack.path)</visible>
+				</control>  
+                <control type="label">
+                    <!--Time-->
+					<left>184</left>
+					<posy>-2</posy>
+					<align>left</align>
+                    <width>500</width>
+                    <height>100</height>
+                    <label>$INFO[System.Time]</label>
+                    <font>Bold55</font>
+                    <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+					<shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+					<include>HeaderChangeAnimation</include>
+					<visible>!Control.IsVisible(556)</visible>
+                </control>
+				<control type="label">
+					<!--weather info-->
+					<left>185</left>
+					<posy>68</posy>
+					<width>600</width>
+					<height>50</height>
+					<align>left</align>
+					<label>$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits] $INFO[Window(Weather).Property(Current.Condition)]</label>
+					<font>Reg30</font>				
+					<textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+					<shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+					<include>HeaderChangeAnimation</include>
+					<visible>!Control.IsVisible(556)</visible>
+				</control>
+				<control type="label" id="556">
+                    <!--Now Playing Title-->
+                    <left>184</left>
+					<posy>-2</posy>
+					<align>left</align>
+                    <width>500</width>
+                    <height>100</height>
+                    <label>$VAR[NowPlayingTitle]</label>
+                    <font>Bold55</font>
+					<scroll>true</scroll>
+                    <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
+					<shadowcolor>$INFO[Skin.String(HeaderTextShadowColor)]</shadowcolor>
+					<include>HeaderChangeAnimation</include>
+					<visible>System.IdleTime(3) + [[Player.HasVideo + !String.IsEmpty(VideoPlayer.Title)] | [Player.HasAudio + !String.IsEmpty(MusicPlayer.Title)] | Player.IsInternetStream]</visible>
+                </control>
+				<control type="label">
+					<!--Now Playing Label-->
+					<left>185</left>
+					<posy>68</posy>
+					<width>500</width>
+					<height>50</height>
+					<align>left</align>
 					<label>$VAR[NowPlayingLabel]</label>
 					<font>Reg30</font>
 					<textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>

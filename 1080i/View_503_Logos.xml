@@ -32,6 +32,7 @@
 					<onup>9000</onup>
 					<ondown condition="Skin.HasSetting(EnableQuickJump)">7000</ondown>
 					<ondown condition="!Skin.HasSetting(EnableQuickJump)">60</ondown>
+					<onback>ClearProperty(ListAnimation,home)</onback>
 					<focusposition>1</focusposition>
 					<pagecontrol>60</pagecontrol>
 					<preloaditems>2</preloaditems>
@@ -58,7 +59,7 @@
 						<control type="group">
 							<animation effect="zoom" center="196,288" start="100" end="190" time="480" tween="back" reversible="false">Focus</animation>
 							<animation effect="zoom" center="196,288" start="190" end="100" time="160" tween="back" reversible="false">UnFocus</animation>
-					<!-- LOGO IMAGE Center Position -->
+							<!-- LOGO IMAGE Center Position -->
 							<control type="image">
 								<left>0</left>
 								<top>178</top>
@@ -69,6 +70,11 @@
 							</control>
 						</control>
 						<include>LibraryAutoTrailerStopButton</include>
+						<control type="button">
+							<visible>false</visible>	
+							<onfocus>AlarmClock(SetList,ClearProperty(ListAnimation,home),00:00,silent)</onfocus>
+							<onfocus>AlarmClock(SetList,SetProperty(ListAnimation,1,home),00:00,silent)</onfocus>					
+						</control>
 					</focusedlayout>
 			</control>		
                 <control type="scrollbar" id="60">

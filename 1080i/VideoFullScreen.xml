@@ -8,6 +8,7 @@
 	<onunload condition="!VideoPlayer.Content(livetv) + Skin.HasSetting(ForceVideoPlaybackStop) + ![Skin.HasSetting(EnableOSDInfo)]">AlarmClock(StopPlayback,PlayerControl(Stop),00:00,silent)</onunload>
 	<onunload>AlarmClock(LastPlayed,CancelAlarm(preview_delay,silent),00:01,silent)</onunload>
 	<onunload>ClearProperty(DialogMPAATopBar,home)</onunload>
+	<onunload>ClearProperty(HideDialogMPAATopBar,home)</onunload>
 	<onunload>CancelAlarm(OpenMPAATopBar,silent)</onunload>
 
 	<controls>

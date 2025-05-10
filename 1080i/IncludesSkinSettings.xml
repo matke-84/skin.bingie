@@ -937,14 +937,6 @@
             <selected>!Skin.HasSetting(EnableStudioLogoInfoDialog)</selected>
             <visible>Skin.HasSetting(UseBingieInfoDialog)</visible>
         </control>
-        <!-- prefer youtube trailers -->
-        <control type="radiobutton" id="46653">
-            <include>SkinSettings_Button</include>
-            <label>31619</label>
-            <onclick>Skin.ToggleSetting(PreferYoutubeTrailers)</onclick>
-            <selected>Skin.HasSetting(PreferYoutubeTrailers)</selected>
-            <visible>Skin.HasSetting(UseBingieInfoDialog)</visible>
-        </control>
         <!-- Show next/resumable ep. info instead of tvshow's -->
         <control type="radiobutton" id="39275">
             <include>SkinSettings_Button</include>
@@ -1057,12 +1049,12 @@
             <param name="id" value="5169" />
             <param name="label" value="$LOCALIZE[31520]" />
             <param name="skinsetting" value="WidgetSpinnerTextureColor" />
-        </include>				
+        </include>
 		<include content="SkinSettings_ColorButton">
             <param name="id" value="31003" />
             <param name="label" value="$LOCALIZE[31003]" />
             <param name="skinsetting" value="BingieHeaderTextColor" />
-        </include>
+        </include>		
 		<include content="SkinSettings_ColorButton">
             <param name="id" value="31015" />
             <param name="label" value="$LOCALIZE[31015]" />
@@ -1179,6 +1171,34 @@
             <param name="id" value="31220" />
             <param name="label" value="$LOCALIZE[31220]" />
             <param name="skinsetting" value="HeaderTextShadowColor" />
+        </include>
+    </include>
+	
+	<!-- Custom Colors Footer Settings -->
+    <include name="CustomColors_Footer_Colors_Settings">
+        <!-- general color settings -->
+        <control type="label" id="13012">
+            <include>SkinSettings_Header</include>
+            <label>31365</label>
+        </control>
+		 <!--footer icon color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31676" />
+            <param name="label" value="$LOCALIZE[31676]" />
+            <param name="skinsetting" value="FooterIconColor" />
+			<param name="visible" value="Skin.String(mediaflagsstyle,large) | Skin.HasSetting(PreferWhiteFooter) | Library.HasContent(music)" />
+        </include>
+        <!--footer text color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31455" />
+            <param name="label" value="$LOCALIZE[31455]" />
+            <param name="skinsetting" value="FooterTextColor" />
+        </include>
+        <!--footer shadow text color-->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31477" />
+            <param name="label" value="$LOCALIZE[31477]" />
+            <param name="skinsetting" value="FooterTextShadowColor" />
         </include>
     </include>
 
@@ -1326,8 +1346,8 @@
         </include>
 		<!--Line Under Home Menu Icons-->
         <include content="SkinSettings_ColorButton">
-            <param name="id" value="31674" />
-            <param name="label" value="31674" />
+            <param name="id" value="31619" />
+            <param name="label" value="31619" />
             <param name="skinsetting" value="LineUnderMenuIconsColor" />
         </include>
         <!--sideblade panel color-->
@@ -1335,27 +1355,6 @@
             <param name="id" value="31601" />
             <param name="label" value="$LOCALIZE[31601]" />
             <param name="skinsetting" value="SideBladePanelColor" />
-        </include>
-    </include>
-
-    <!-- Custom Colors Footer Settings -->
-    <include name="CustomColors_Footer_Colors_Settings">
-        <!-- general color settings -->
-        <control type="label" id="13012">
-            <include>SkinSettings_Header</include>
-            <label>31365</label>
-        </control>
-        <!--footer text color-->
-        <include content="SkinSettings_ColorButton">
-            <param name="id" value="31455" />
-            <param name="label" value="$LOCALIZE[31455]" />
-            <param name="skinsetting" value="FooterTextColor" />
-        </include>
-        <!--footer shadow text color-->
-        <include content="SkinSettings_ColorButton">
-            <param name="id" value="31477" />
-            <param name="label" value="$LOCALIZE[31477]" />
-            <param name="skinsetting" value="FooterTextShadowColor" />
         </include>
     </include>
 
@@ -1453,6 +1452,13 @@
             <param name="label" value="$LOCALIZE[31485]" />
             <param name="skinsetting" value="OSDButtonsFocusColor" />
 			<param name="visible" value="!Skin.HasSetting(UseBingieOSD)" />
+        </include>
+		<!--osd media/codec info color -->
+        <include content="SkinSettings_ColorButton">
+            <param name="id" value="31677" />
+            <param name="label" value="$LOCALIZE[31677]" />
+            <param name="skinsetting" value="OSDMediaInfoColor" />
+			<param name="visible" value="!Skin.HasSetting(UseBingieOSD) + Skin.String(osdmediaflagsstyle,large)" />
         </include>
 		<!-- OSD bingie colors -->
         <control type="label" id="31016">
@@ -1561,6 +1567,12 @@
             <param name="id" value="31481" />
             <param name="label" value="$LOCALIZE[31481]" />
             <param name="skinsetting" value="PVRGuideItemTextColorUnfocus" />
+			<param name="visible" value="PVR.HasTVChannels" />
+        </include>
+		<include content="SkinSettings_ColorButton">
+            <param name="id" value="31674" />
+            <param name="label" value="$LOCALIZE[31674]" />
+            <param name="skinsetting" value="PVRGuideProgressIndicatorColor" />
 			<param name="visible" value="PVR.HasTVChannels" />
         </include>
     </include>

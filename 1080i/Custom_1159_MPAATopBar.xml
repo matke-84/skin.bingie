@@ -11,7 +11,7 @@
     
     <controls>
         <control type="group">
-            <visible>!Window.IsActive(videoosd) + Window.IsVisible(fullscreenvideo)</visible>
+            <visible>!Window.IsActive(videoosd) + Window.IsVisible(fullscreenvideo) + String.IsEmpty(Window(Home).Property(HideDialogMPAATopBar))</visible>
             <visible>!String.IsEmpty(VideoPlayer.MPAA) + !String.Contains(VideoPlayer.MPAA,not rated) + !String.Contains(VideoPlayer.MPAA,n/a) + !String.Contains(VideoPlayer.MPAA,nr)</visible>
 			<width>auto</width>
 			<height>290</height>

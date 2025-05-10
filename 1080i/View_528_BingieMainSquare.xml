@@ -21,7 +21,7 @@
                     <width>100%</width>
                     <height>40</height>
 					<posx>7</posx>
-					<top>11</top>
+					<top>-1</top>
                     <font>Bold31</font>
                     <align>left</align>
                     <textcolor>$INFO[Skin.String(BingieHeaderTextColor)]</textcolor>

@@ -475,7 +475,7 @@
                     <height>600</height>
                     <orientation>vertical</orientation>
                     <usecontrolcoords>true</usecontrolcoords>
-                    <itemgap>10</itemgap>
+                    <itemgap>0</itemgap>
                     <!-- Movies and Episodes Info Slide-down -->
                     <animation effect="slide" start="0" end="0,130" time="0" condition="Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1) | [$EXP[IsMainMenuOpened] + Integer.IsGreater(Window(Home).Property(ListItem.PercentPlayed),1)]">Conditional</animation>
 					<animation effect="slide" start="0" end="0,180" time="0" condition="$EXP[IsCategoryDBType]">Conditional</animation>
@@ -492,9 +492,9 @@
 					<visible>!$EXP[IsCategoryDBType] + !$EXP[IsMusicDBType]</visible>
                         <visible>Skin.HasSetting(MovieDetailsHome) + !Integer.IsGreater(ListItem.PercentPlayed,1) | !Skin.HasSetting(MovieDetailsHome)</visible>						
                         <include>Default_Visible_Fade</include>
-                        <top>-7</top>
+                        <top>3</top>
                         <width>1000</width>
-                        <height>55</height>
+                        <height>60</height>
                         <include>SpotlightRowDetails</include>
                     </control>
 					
@@ -503,9 +503,9 @@
 					<visible>!$EXP[IsMainMenuOpened]</visible>
 					<visible>$EXP[IsMusicDBType]</visible>					
                         <include>Default_Visible_Fade</include>
-                        <top>-7</top>
+                        <top>3</top>
                         <width>1000</width>
-                        <height>55</height>
+                        <height>60</height>
                         <include>MusicRowDetails</include>
                     </control>
 
@@ -516,7 +516,7 @@
 						<visible>!$EXP[IsMainMenuOpened]</visible>
                         <visible>$EXP[IsEpisodeDBType]</visible>
                         <include>Default_Visible_Fade</include>
-						<height>45</height>
+						<height>55</height>
 						<width>650</width>
                     <control type="group">
 						<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
@@ -545,7 +545,7 @@
                         <visible>$EXP[IsEpisodeDBType]</visible>
 						<visible>![Integer.IsGreater(ListItem.PercentPlayed,1) | [$EXP[IsMainMenuOpened] + Integer.IsGreater(Window(Home).Property(ListItem.PercentPlayed),1)]]</visible>
                         <include>Default_Visible_Fade</include>
-						<height>45</height>
+						<height>55</height>
 						<width>650</width>
                     <control type="group">
 						<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
@@ -570,7 +570,8 @@
 					<control type="group">
 						<visible>String.IsEqual(ListItem.DBTYPE,song)</visible>
                         <include>Default_Visible_Fade</include>
-						<height>45</height>
+						<top>2</top>
+						<height>55</height>
 						<width>650</width>
                     <control type="group">
 						<height>45</height>
@@ -596,7 +597,7 @@
                         <visible>$EXP[IsEpisodeDBType]</visible>
 						<visible>Integer.IsGreater(ListItem.PercentPlayed,1) | [$EXP[IsMainMenuOpened] + Integer.IsGreater(Window(Home).Property(ListItem.PercentPlayed),1)]</visible>
                         <include>Default_Visible_Fade</include>
-						<height>28</height>
+						<height>38</height>
 						<width>650</width>
                         <!--Season/Episode label-->
                         <control type="label">
@@ -604,7 +605,7 @@
                             <width>650</width>
                             <align>left</align>
 							<posx>-9</posx>
-							<posy>2</posy>
+							<posy>12</posy>
                             <aligny>center</aligny>
                             <font>Reg36</font>
                          	<textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor>
@@ -617,7 +618,7 @@
 							<visible>!$EXP[IsCategoryDBType]</visible>
                             <visible>Skin.HasSetting(MovieDetailsHome)</visible>
 							<visible>Integer.IsGreater(ListItem.PercentPlayed,1) | [$EXP[IsMainMenuOpened] + Integer.IsGreater(Window(Home).Property(ListItem.PercentPlayed),1)]</visible>
-                            <top>29</top>
+                            <top>39</top>
 							<left>1</left>
 							<width>650</width>
                             <height>30</height>
@@ -659,8 +660,8 @@
 							Skin.HasSetting(EnableTop250) + Skin.HasSetting(EnableRatings) + !String.IsEmpty(Control.GetLabel(8231)) + !Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1)</visible>
 							<animation effect="fade" time="150">Visible</animation>
 							<height>55</height>
-							<width>800</width>
 							<top>-5</top>
+							<width>800</width>
 							<aligny>center</aligny> 
 							<usecontrolcoords>true</usecontrolcoords>
 							<itemgap>15</itemgap>
@@ -716,7 +717,6 @@
                         <visible>Skin.HasSetting(MovieDetailsHome) + !Integer.IsGreater(ListItem.PercentPlayed,1) | !Skin.HasSetting(MovieDetailsHome)</visible>
 						<visible>!String.IsEqual(ListItem.DBTYPE,song)</visible>
                         <include>Default_Visible_Fade</include>
-						<top>5</top>
 						<height min="30" max="121">auto</height>
                         <width max="820">auto</width>
                         <align>left</align>
@@ -755,7 +755,7 @@
 				<animation effect="slide" end="0,23" time="300" condition="!$EXP[IsCurrentWidgetSpotlight] + [String.IsEqual(Skin.String(widgetstyle),landscape) + !Window.IsActive(1120)]">Conditional</animation>
 				<animation effect="slide" end="0,35" time="300" condition="Window.IsActive(1120)">Conditional</animation>
                 <usecontrolcoords>true</usecontrolcoords>
-				<top>566</top>
+				<top>564</top>
                 <include condition="[Window.IsActive(Home) | [$EXP[IsBingieHubsActive] + [Skin.HasSetting(LockHubWidgets) | Window.IsActive(1114)]]]">Fixed_Focus_Bottom</include>
                 <bottom>0</bottom>
                 <include condition="[Window.IsActive(Home) | [$EXP[IsBingieHubsActive] + [Skin.HasSetting(LockHubWidgets) | Window.IsActive(1114)]]]">Fixed_Focus_Itemgap</include>
@@ -811,8 +811,8 @@
 			<control type="image">
 				<visible>!Skin.HasSetting(DisableBingieLogo) + !Window.IsActive(1110) + !Window.IsActive(1111) + !Window.IsActive(1114) + !Window.IsActive(1115) + !Window.IsActive(1120)</visible>
 				<description>Bingie logo</description>
-				<right>316</right>
-				<bottom>7</bottom>
+				<right>314</right>
+				<bottom>5</bottom>
 				<width>0</width>
 				<height>165</height>
 				<align>right</align>
@@ -827,7 +827,7 @@
 				<width>300</width>
 				<itemgap>10</itemgap>
 				<right>130</right>
-				<top>975</top>
+				<top>977</top>
 				<align>right</align>
 			<control type="image">
 				<width>9</width>

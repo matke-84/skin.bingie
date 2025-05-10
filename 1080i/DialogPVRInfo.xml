@@ -56,7 +56,7 @@
                 <posy>10</posy>
                 <width>1200</width>
 				<font>Bold45</font>
-				<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+				<textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
                 <label>19047</label>
                 <align>left</align>
 				<height>100</height>

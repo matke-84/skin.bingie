@@ -31,7 +31,7 @@
                 <height>100</height>
                 <font>Bold45</font>
                 <align>left</align>
-                <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
+                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
                 <label>$INFO[VideoPlayer.ChannelGroup]</label>
                 <visible>!Window.IsActive(notification) + !Window.IsActive(extendedprogressdialog)</visible>
                 <visible>!pvr.IsPlayingRadio</visible>
@@ -43,7 +43,7 @@
                 <height>100</height>
                 <font>Bold45</font>
                 <align>left</align>
-                <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
+                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
                 <label>[UPPERCASE]$LOCALIZE[19024][/UPPERCASE]</label>
                 <visible>!Window.IsActive(notification) + !Window.IsActive(extendedprogressdialog)</visible>
                 <visible>pvr.IsPlayingRadio</visible>
@@ -56,7 +56,7 @@
                 <width>530</width>
                 <height>50</height>
                 <font>Reg28</font>
-                <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
+                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
                 <label>$INFO[System.Date(DDD)], $INFO[System.Date(d)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)] | $INFO[System.Time]</label>
             </control>
             

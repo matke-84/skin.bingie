@@ -42,7 +42,7 @@
                     <width>1100</width>
                     <height>100</height>
                     <label>$LOCALIZE[13406]</label>
-                    <include>DialogHeader_Alt</include>
+                    <include>DialogHeader</include>
                     <align>center</align>
                     <wrapmultiline>true</wrapmultiline>
                 </control>

@@ -26,32 +26,32 @@
         <!--Views-->
         <control type="group" id="5000">
             <visible>!Window.IsActive(virtualkeyboard)</visible>
-            <include>animation_window_open_close</include>           
-            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.50)">View_50_List</include>
-            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.10) + [Window.IsActive(MyPVRChannels.xml) | Window.IsActive(MyPVRRecordings.xml) | Window.IsActive(MyPVRSearch.xml) | Window.IsActive(MyPVRTimers.xml)]">View_10_SimplePVR</include>
+            <include>animation_window_open_close</include>  
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.10) + [Window.IsActive(MyPVRChannels.xml) | Window.IsActive(MyPVRRecordings.xml) | Window.IsActive(MyPVRSearch.xml) | Window.IsActive(MyPVRTimers.xml)]">View_10_SimplePVR</include>			
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.50) + ![Window.IsActive(MyPVRChannels.xml) | Window.IsActive(MyPVRRecordings.xml) | Window.IsActive(MyPVRSearch.xml) | Window.IsActive(MyPVRTimers.xml)]">View_50_List</include>
             <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.51)">View_51_ListDetails</include>      
             <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.52)">View_52_HorizontalPanel</include>
             <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.53)">View_53_PanelDetails</include>
             <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.54)">View_54_Panel</include>
+			<include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.55)">View_55_BannerList</include>
+			<include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.56)">View_56_BannerPlex</include>
             <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.57)">View_57_BigPanel</include>  
             <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.501)">View_501_Landscape</include>
             <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.502)">View_502_LandscapeSingle</include>
+			<include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.503)">View_503_Logos</include>
+			<include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.507)">View_507_FanArt</include>  
+			<include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.509)">View_509_PanelSquare</include>
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.510)">View_510_PanelSquareDetails</include>    
             <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.511)">View_511_Thumbs</include>
-            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.512)">View_512_ThumbsDetails</include>            
-            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.509)">View_509_PanelSquare</include>
-            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.510)">View_510_PanelSquareDetails</include>            
-            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.513) + Window.IsActive(MyVideoNav.xml)">View_513_PosterRow</include>
-            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.514) + Window.IsActive(MyVideoNav.xml)">View_514_PosterShift</include>                
-            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.507) + [Window.IsActive(MyVideoNav.xml) | Window.IsActive(MyPics.xml)]">View_507_FanArt</include>           
-            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.524) + Window.IsActive(MyVideoNav.xml)">View_524_Showcase</include>
-            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.56) + Window.IsActive(MyVideoNav.xml)">View_56_BannerPlex</include>
-            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.55) + Window.IsActive(MyVideoNav.xml)">View_55_BannerList</include>
-            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.503) + Window.IsActive(MyVideoNav.xml)">View_503_Logos</include>
-            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.523) + Window.IsActive(MyVideoNav.xml)">View_523_Bingie_Main_Landscape</include>
-            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.526) + Window.IsActive(MyVideoNav.xml)">View_526_Bingie_Main_Poster</include>
-            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.525) + Window.IsActive(MyVideoNav.xml)">View_525_Episodes</include>
-			<include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.527) + Window.IsActive(MyVideoNav.xml)">View_527_Seasons</include>
-			<include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.528) + Window.IsActive(MyMusicNav.xml)">View_528_Bingie_Main_Square</include>
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.512)">View_512_ThumbsDetails</include>                    
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.513)">View_513_PosterRow</include>
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.514)">View_514_PosterShift</include> 
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.523)">View_523_Bingie_Main_Landscape</include>			
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.524)">View_524_Showcase</include>
+			<include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.525)">View_525_Episodes</include>
+            <include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.526)">View_526_Bingie_Main_Poster</include>
+			<include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.527)">View_527_Seasons</include>
+			<include condition="!Skin.HasSetting(BingieToolbox.View.Disabled.528)">View_528_Bingie_Main_Square</include>
         </control>
         
         <!-- footer bar -->
@@ -309,7 +309,7 @@
     </include>
 
     <include name="EpgProgressIndicatorNormal">
-        <progresstexture colordiffuse="$INFO[Skin.String(ViewDetailsHighlightTextColor)]" border="0,48,18,15">pvr/PVR-EpgProgressIndicator.png</progresstexture>
+        <progresstexture colordiffuse="$INFO[Skin.String(PVRGuideProgressIndicatorColor)]" border="0,48,18,15">pvr/PVR-EpgProgressIndicator.png</progresstexture>
     </include>
    
     <include name="EpgProgressIndicatorAlt">
@@ -1155,6 +1155,7 @@
                 <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
                 <visible>![String.IsEqual(ListItem.DBTYPE, song) | String.IsEqual(ListItem.Property(DBTYPE), song) | Container.Content(songs)]</visible>
                 <visible>![String.IsEqual(ListItem.DBTYPE, album) | String.IsEqual(ListItem.Property(DBTYPE), album) | Container.Content(albums)]</visible>
+				<visible>![[!String.IsEmpty(ListItem$PARAM[listitem].Set) | ListItem$PARAM[listitem].IsCollection | String.Contains(ListItem$PARAM[listitem].Path,videodb://movies/sets/)] + Skin.HasSetting(WatchedIndicator.Sets)]</visible>
                 <control type="image">
                     <texture background="true">$PARAM[overlay_texture]</texture>
                     <colordiffuse>$INFO[Skin.String(WatchedIndicator.Watched.Color)]</colordiffuse>
@@ -1180,19 +1181,7 @@
             </control>
             <control type="group">
                 <description>In progress Overlay</description>
-				<visible>!Skin.HasSetting(MovieDetailsHome) | 
-				[Control.IsVisible(10) + Skin.HasSetting(MovieDetailsHome)] | [Control.IsVisible(50) + Skin.HasSetting(MovieDetailsHome)] | [Control.IsVisible(51) + Skin.HasSetting(MovieDetailsHome)] |
-				[Control.IsVisible(52) + Skin.HasSetting(MovieDetailsHome)] | [Control.IsVisible(53) + Skin.HasSetting(MovieDetailsHome)] | [Control.IsVisible(54) + Skin.HasSetting(MovieDetailsHome)] |
-				[Control.IsVisible(55) + Skin.HasSetting(MovieDetailsHome)] | [Control.IsVisible(56) + Skin.HasSetting(MovieDetailsHome)] | [Control.IsVisible(57) + Skin.HasSetting(MovieDetailsHome)] |
-				[Control.IsVisible(501) + Skin.HasSetting(MovieDetailsHome)] | [Control.IsVisible(502) + Skin.HasSetting(MovieDetailsHome)] |
-				[Control.IsVisible(503) + Skin.HasSetting(MovieDetailsHome)] |
-				[Control.IsVisible(507) + Skin.HasSetting(MovieDetailsHome)] | [Control.IsVisible(509) + Skin.HasSetting(MovieDetailsHome)] |
-				[Control.IsVisible(510) + Skin.HasSetting(MovieDetailsHome)] | [Control.IsVisible(511) + Skin.HasSetting(MovieDetailsHome)] | [Control.IsVisible(512) + Skin.HasSetting(MovieDetailsHome)] |
-				[Control.IsVisible(513) + Skin.HasSetting(MovieDetailsHome)] | [Control.IsVisible(514) + Skin.HasSetting(MovieDetailsHome)] |
-				[Control.IsVisible(524) + Skin.HasSetting(MovieDetailsHome)] | 
-				[Window.IsActive(1108) + Skin.HasSetting(MovieDetailsHome)] | [Window.IsActive(1109) + Skin.HasSetting(MovieDetailsHome)] |
-				[Window.IsActive(1106) + Skin.HasSetting(MovieDetailsHome)]
-				</visible>
+				<visible>![Skin.HasSetting(MovieDetailsHome) + $EXP[BingieIndicatorsViews] + !Window.IsActive(DialogVideoInfo.xml)]</visible>
                 <visible>!Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,0) + !Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,100) + Skin.HasSetting(WatchedIndicator.Progress)</visible>
                 <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
 				<visible>!$EXP[IsTvShowDBType]</visible>
@@ -1235,10 +1224,19 @@
             <control type="group">
                 <description>Movieset Overlay</description>
                 <visible>[!String.IsEmpty(ListItem$PARAM[listitem].Set) | ListItem$PARAM[listitem].IsCollection | String.Contains(ListItem$PARAM[listitem].Path,videodb://movies/sets/)] + Skin.HasSetting(WatchedIndicator.Sets)</visible>
-                <visible>!Integer.IsGreater(ListItem.PercentPlayed,0) + !Integer.IsGreater(ListItem$PARAM[listitem].PlayCount,0) + !ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
+				<visible>![[Skin.HasSetting(WatchedIndicator.Progress) + !Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,0) + !Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,100)] + [$EXP[BingieIndicatorsViews] + !Window.IsActive(DialogVideoInfo.xml) + !Skin.HasSetting(MovieDetailsHome)]]</visible>
+				<visible>![[Skin.HasSetting(WatchedIndicator.Progress) + !Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,0) + !Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,100)] + ![$EXP[BingieIndicatorsViews] + !Window.IsActive(DialogVideoInfo.xml) + Skin.HasSetting(MovieDetailsHome)]]</visible>
+                <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
 				<control type="image">
+					<visible>![![!Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,0) + !Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,100)] + Integer.IsGreater(ListItem$PARAM[listitem].PlayCount,0) +
+					!ListItem$PARAM[listitem].IsResumable] | !Skin.HasSetting(WatchedIndicator.Watched)</visible>
                     <texture background="true">$PARAM[overlay_texture]</texture>
                     <colordiffuse>$INFO[Skin.String(WatchedIndicator.Sets.Color)]</colordiffuse>
+                </control>
+				<control type="image">
+					<visible>![!Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,0) + !Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,100)] + Integer.IsGreater(ListItem$PARAM[listitem].PlayCount,0) + !ListItem$PARAM[listitem].IsResumable + Skin.HasSetting(WatchedIndicator.Watched)</visible>
+                    <texture background="true">$PARAM[overlay_texture]</texture>
+                    <colordiffuse>$INFO[Skin.String(WatchedIndicator.Watched.Color)]</colordiffuse>
                 </control>
                 <control type="image">
                     <texture>overlays/$PARAM[overlay]/discset.png</texture>

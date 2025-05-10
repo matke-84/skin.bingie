@@ -674,7 +674,7 @@
             <filename>Netflix-sans-medium.ttf</filename>
 			<style>lighten</style>
 			<linespacing>0.8</linespacing>
-            <size>80</size>
+            <size>84</size>
         </font>
 		<font>
             <name>title2</name> <!--Clearlogo spotlight content fallback-->
@@ -1420,7 +1420,7 @@
             <name>title</name> <!--Clearlogo fallback-->
             <filename>Arial.ttf</filename>
 			<linespacing>1</linespacing>
-            <size>72</size>
+            <size>76</size>
         </font>
 		<font>
             <name>title2</name> <!--Clearlogo spotlight content fallback-->

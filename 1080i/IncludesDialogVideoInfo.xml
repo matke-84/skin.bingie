@@ -78,7 +78,7 @@
 				<visible>!String.IsEmpty(Window.Property(AdditionalInfo))</visible>
 				<include>animation_fade_visible_hidden</include>
 				<right>128</right>
-				<posy>60</posy>
+				<posy>51</posy>
 				<width min="80" max="1400">auto</width>
 				<height>100</height>
 				<font>Bold45</font>
@@ -92,8 +92,7 @@
 					<top>10</top>
 					<width>1200</width>
 					<usecontrolcoords>true</usecontrolcoords>
-					<orientation>vertical</orientation>
-					<animation effect="slide" end="0,5" time="0" condition="String.IsEmpty(ListItem.Art(clearlogo))">Conditional</animation>					
+					<orientation>vertical</orientation>					
 				<control type="grouplist">
 					<include>Animation_Right_Delay_2</include>
 					<usecontrolcoords>true</usecontrolcoords>
@@ -108,8 +107,8 @@
 					<!-- Movie Title with no Clearlogo -->
 					<control type="textbox" id="90006">
 						<visible>String.EndsWith(Control.GetLabel(90005),color_transparent.png)</visible>
-						<top>-189</top>
-						<height>184</height>
+						<top>-199</top>
+						<height>194</height>
 						<width max="650">auto</width>
 						<font>title</font> 
 						<align>left</align>
@@ -128,7 +127,7 @@
 				</control>
 				
 				<control type="grouplist">
-					<top>233</top>
+					<top>223</top>
 					<include>Animation_Right_Delay</include>
 					<usecontrolcoords>true</usecontrolcoords>
 					<orientation>vertical</orientation>
@@ -149,8 +148,8 @@
 						<visible>!String.IsEmpty(Control.GetLabel(823))</visible>
 						<visible>!$EXP[IsMovieDBType]</visible>
 						<animation effect="fade" start="100" end="0" time="200" condition="!String.IsEmpty(Window.Property(AdditionalInfo))">Conditional</animation>
-						<top>34</top>
-						<height>12</height>
+						<top>33</top>
+						<height>15</height>
 						<width>100%</width>
 						<font>Plots</font>
 						<align>left</align>
@@ -163,7 +162,7 @@
 					<control type="textbox">
 						<animation effect="fade" start="100" end="0" time="200">Conditional</animation>
 						<width>820</width>
-						<top>19</top>
+						<top>14</top>
 						<height min="50" max="120">auto</height>
 						<textcolor>$INFO[Skin.String(BingiePlotTextColor)]</textcolor>
 						<align>left</align>
@@ -1225,7 +1224,12 @@
 				</control>
 		</control>
 	</control>	      
-</control>	
+</control>
+		<!--Header-->
+		<control type="group">
+			<visible>String.IsEmpty(Window.Property(AdditionalInfo))</visible>
+			<include>Header</include>
+		</control>		
 		<!-- Snow Effect -->
         <control type="group">
             <include condition="String.IsEqual(Skin.String(season_greetings),snow_animation)">snow</include>
@@ -1377,8 +1381,8 @@
 					<!-- Movie Title with no Clearlogo -->
 					<control type="textbox" id="90006">
 						<visible>String.EndsWith(Control.GetLabel(90005),color_transparent.png)</visible>
-						<top>-189</top>
-						<height>184</height>
+						<top>-199</top>
+						<height>194</height>
 						<width max="650">auto</width>
 						<font>title</font> 
 						<align>left</align>
@@ -1396,7 +1400,7 @@
 					</control>
 				</control>
 				<control type="grouplist">
-					<top>228</top>
+					<top>218</top>
 					<include>Animation_Right_Delay</include>
 					<usecontrolcoords>true</usecontrolcoords>
 					<orientation>vertical</orientation>
@@ -1417,8 +1421,8 @@
 						<visible>!String.IsEmpty(Control.GetLabel(823))</visible>
 						<visible>!$EXP[IsMovieDBType]</visible>
 						<animation effect="fade" start="100" end="0" time="300" condition="!String.IsEmpty(Window.Property(AdditionalInfo))">Conditional</animation>
-						<top>34</top>
-						<height>12</height>
+						<top>33</top>
+						<height>15</height>
 						<width>100%</width>
 						<font>Plots</font>
 						<align>left</align>
@@ -1432,7 +1436,7 @@
 						<visible>[String.IsEmpty(ListItem.Set) + !Skin.HasSetting(VideoInfoButtonCollection)] | Skin.HasSetting(VideoInfoButtonCollection)</visible>
 						<animation effect="fade" start="100" end="0" time="300" condition="String.IsEqual(Window.Property(AdditionalInfo), trailers) | String.IsEqual(Window.Property(AdditionalInfo),similar) | String.IsEqual(Window.Property(AdditionalInfo),cast) | String.IsEqual(Window.Property(AdditionalInfo),plot)">Conditional</animation>
 						<width>820</width>
-						<top>19</top>
+						<top>14</top>
 						<height min="50" max="120">auto</height>
 						<textcolor>$INFO[Skin.String(BingiePlotTextColor)]</textcolor>
 						<align>left</align>
@@ -1444,7 +1448,7 @@
 						<visible>[!String.IsEmpty(ListItem.Set) + !Skin.HasSetting(VideoInfoButtonCollection)]</visible>
 						<animation effect="fade" start="100" end="0" time="300" condition="String.IsEqual(Window.Property(AdditionalInfo), trailers) | String.IsEqual(Window.Property(AdditionalInfo),similar) | String.IsEqual(Window.Property(AdditionalInfo),cast) | String.IsEqual(Window.Property(AdditionalInfo),plot)">Conditional</animation>
 						<width>820</width>
-						<top>19</top>
+						<top>14</top>
 						<height>120</height>
 						<textcolor>$INFO[Skin.String(BingiePlotTextColor)]</textcolor>
 						<align>left</align>
@@ -1469,11 +1473,11 @@
 
 					<!-- buttons -->
 					<control type="group">
-						<top>33</top>
+						<top>38</top>
 						<width>550</width>
 						<posx>1</posx>						
 						<animation effect="fade" start="100" end="0" time="300" condition="String.IsEqual(Window.Property(AdditionalInfo), trailers) | String.IsEqual(Window.Property(AdditionalInfo), plot) | String.IsEqual(Window.Property(AdditionalInfo),similar) | String.IsEqual(Window.Property(AdditionalInfo),cast)">Conditional</animation>
-						<animation effect="slide" start="0,0" end="0,31" time="0" delay="0" condition="String.IsEqual(Window.Property(AdditionalInfo),set)">Conditional</animation>												
+						<animation effect="slide" start="0,0" end="0,41" time="0" delay="0" condition="String.IsEqual(Window.Property(AdditionalInfo),set)">Conditional</animation>												
 						<animation type="WindowClose" reversible="false" condition="String.IsEmpty(Window(Home).Property(NoFadeOut))">
 						  <effect type="fade" start="100" end="0" time="0" tween="sine" easing="out" />
 						  <effect type="slide" start="0" end="-150" time="300" tween="cubic" easing="out" />
@@ -1884,8 +1888,7 @@
                                 <radioposx>15</radioposx>
                                 <radiowidth>27</radiowidth>
                                 <radioheight>27</radioheight>
-								<onfocus condition="!Skin.HasSetting(PreferYoutubeTrailers)">SetProperty(Path.Videos,"$VAR[Path_Videos]")</onfocus>
-								<onfocus condition="Skin.HasSetting(PreferYoutubeTrailers)">SetProperty(Path.Youtube,"$VAR[Path_Youtube]")</onfocus>
+								<onfocus>SetProperty(Path.Videos,"$VAR[Path_Videos]")</onfocus>
                                 <onclick>SetProperty(AdditionalInfo, trailers)</onclick>
                                 <onclick>SetFocus(354)</onclick>
 								<onfocus>ClearProperty(TrailerPlayIcon)</onfocus>
@@ -2217,7 +2220,7 @@
 			<visible>!String.IsEqual(ListItem.Property(item.type),person)</visible>
 			<animation effect="fade" start="0" end="100" time="300" delay="600">WindowOpen</animation>
 			<animation effect="fade" start="0" end="100" time="300" delay="600">Visible</animation>
-			<animation effect="fade" start="100" end="0" time="100">WindowClose</animation>
+			<animation effect="fade" start="100" end="0" time="0">WindowClose</animation>
 			<animation effect="slide" start="0,0" end="0,-312" time="300" delay="0" condition="Control.HasFocus(353)">Conditional</animation>
 				<control type="group">
 					<visible>Integer.IsGreater(Container(353).NumItems,0)</visible>
@@ -2608,7 +2611,7 @@
                         <!-- details content -->
                         <include>View_354_Details_Defs_Focus</include>
                     </focusedlayout>
-					<content limit="20">$VAR[InfoDialogTrailers]</content>
+					<content limit="20">$INFO[Window.Property(Path.Videos)]</content>
 				</control>
 		
 			<!-- Trailers & more -->
@@ -3189,6 +3192,8 @@
 		</include>
 	</control>
 </control>
+		<!--Header-->
+		<include>Header</include>
 		<!-- Snow Effect -->
         <control type="group">
             <include condition="String.IsEqual(Skin.String(season_greetings),snow_animation)">snow</include>
@@ -3342,7 +3347,7 @@
 							<height>50</height>
 							<width>auto</width>
 							<aligny>top</aligny>
-							<textcolor>$INFO[Skin.String(BingieLabelTextColor)]</textcolor>
+							<textcolor>$INFO[Skin.String(BingieHeaderTextColor)]</textcolor>
 							<font>Bold60</font>
 						</control>
 					</control>	
@@ -3361,7 +3366,7 @@
 							<width>auto</width>
 							<height>30</height>
 							<label>$INFO[ListItem.Property(Gender)]  •  </label>
-							<textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor>
+							<textcolor>$INFO[Skin.String(BingieHeaderTextColor)]</textcolor>
 							<align>left</align>
 							<font>Reg40</font>
 							<visible>!ControlGroup(4100).HasFocus</visible>
@@ -3373,7 +3378,7 @@
 							<width>auto</width>
 							<height>30</height>
 							<label>$INFO[ListItem.Property(Department)]</label>
-							<textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor>				
+							<textcolor>$INFO[Skin.String(BingieHeaderTextColor)]</textcolor>				
 							<align>left</align>
 							<font>Reg40</font>
 							<visible>!ControlGroup(4100).HasFocus</visible>
@@ -3385,7 +3390,7 @@
 							  <height>30</height>
 							  <width>auto</width>
 							  <align>left</align>
-							  <textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor>
+							  <textcolor>$INFO[Skin.String(BingieHeaderTextColor)]</textcolor>
 							  <font>Reg40</font>
 							  <visible>ControlGroup(4100).HasFocus</visible>
 						</control>
@@ -3396,7 +3401,7 @@
 							  <height>30</height>
 							  <width>auto</width>
 							  <align>left</align>
-							  <textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor>
+							  <textcolor>$INFO[Skin.String(BingieHeaderTextColor)]</textcolor>
 							  <font>Reg40</font>
 							  <visible>ControlGroup(4100).HasFocus</visible>
 						</control>				
@@ -4094,8 +4099,7 @@
             <width>600</width>
             <!-- item title -->
             <control type="label">
-				<animation effect="slide" start="0,0" end="0,26" time="0" condition="!Skin.HasSetting(PreferYoutubeTrailers)">Conditional</animation>
-                <top>88</top>
+                <top>114</top>
                 <width>100%</width>
                 <aligny>center</aligny>
                 <height>35</height>
@@ -4104,17 +4108,6 @@
                 <textcolor>$INFO[Skin.String(BingieLabelTextColor)]</textcolor>
                 <label>$VAR[BingieInfoLabel]</label>
                 <scroll>false</scroll>
-            </control>
-			 <!-- duration -->
-            <control type="label">
-				<visible>Skin.HasSetting(PreferYoutubeTrailers)</visible>
-                <width>100%</width>
-                <bottom>88</bottom>
-                <height>35</height>
-                <align>left</align>
-                <font>Reg26</font>
-                <textcolor>$INFO[Skin.String(BingieSecondaryTextColor)]</textcolor>
-                <label>$INFO[ListItem.Duration(mins),(,m)]</label>
             </control>
         </control>
     </include>
@@ -4129,8 +4122,7 @@
             <width>600</width>
             <!-- item title -->
             <control type="label">
-				<animation effect="slide" start="0,0" end="0,26" time="0" condition="!Skin.HasSetting(PreferYoutubeTrailers)">Conditional</animation>
-                <top>88</top>
+                <top>114</top>
                 <width>100%</width>
                 <aligny>center</aligny>
                 <height>35</height>
@@ -4139,17 +4131,6 @@
                 <textcolor>$INFO[Skin.String(BingieLabelTextColor)]</textcolor>
                 <label>$VAR[BingieInfoLabel]</label>
                 <scroll>false</scroll>
-            </control>
-			 <!-- duration -->
-            <control type="label">
-				<visible>Skin.HasSetting(PreferYoutubeTrailers)</visible>
-                <width>100%</width>
-                <bottom>88</bottom>
-                <height>35</height>
-                <align>left</align>
-                <font>Reg26</font>
-                <textcolor>$INFO[Skin.String(BingieSecondaryTextColor)]</textcolor>
-                <label>$INFO[ListItem.Duration(mins),(,m)]</label>
             </control>
         </control>
     </include>

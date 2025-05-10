@@ -17,6 +17,7 @@
                 <onleft>9000</onleft>
                 <onright condition="Skin.HasSetting(EnableQuickJump)">6000</onright>
                 <onright condition="!Skin.HasSetting(EnableQuickJump)">60</onright>
+				<onback>ClearProperty(ListAnimation,home)</onback>
 				<pagecontrol>60</pagecontrol>
 				<viewtype label="31430">thumbnail</viewtype>
 				<include content="View_Forced">
@@ -40,6 +41,11 @@
 						<include>LandscapeLayoutFocus</include>
 					</control>
 					<include>LibraryAutoTrailerStopButton</include>
+					<control type="button">
+						<visible>false</visible>	
+						<onfocus>AlarmClock(SetList,ClearProperty(ListAnimation,home),00:00,silent)</onfocus>
+						<onfocus>AlarmClock(SetList,SetProperty(ListAnimation,1,home),00:00,silent)</onfocus>					
+					</control>
 				</focusedlayout>
 			</control>
 

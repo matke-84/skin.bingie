@@ -33,7 +33,7 @@
 				<width>1920</width>
 				<height>100</height>
 				<label/>
-				<include>DialogHeader_Alt</include>
+				<include>DialogHeader</include>
 				<align>center</align>
 				<scroll>true</scroll>
 			</control>

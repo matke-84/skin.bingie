@@ -1134,7 +1134,7 @@ msgid "Hide ratings and studio logo while trailer is playing"
 msgstr ""
 
 msgctxt "#31279"
-msgid "Very dark grey"
+msgid "Dark grey"
 msgstr ""
 
 msgctxt "#31280"
@@ -2447,7 +2447,7 @@ msgid "Focused/active color for radiobuttons and spin controls"
 msgstr ""
 
 msgctxt "#31619"
-msgid "Prefer trailers from YouTube in 'Trailers & More'"
+msgid "Home main menu line under icon"
 msgstr ""
 
 msgctxt "#31620"
@@ -2667,9 +2667,21 @@ msgid "Do not display channel logo in the guide"
 msgstr ""
 
 msgctxt "#31674"
-msgid "Home main menu line under icon"
+msgid "PVR Guide progress indicator color"
 msgstr ""
 
 msgctxt "#31675"
 msgid "Lyrics colors"
+msgstr ""
+
+msgctxt "#31676"
+msgid "Icon color for footer"
+msgstr ""
+
+msgctxt "#31677"
+msgid "OSD media/codec info color"
+msgstr ""
+
+msgctxt "#31678"
+msgid "Letterboxd Rating"
 msgstr ""

@@ -22,7 +22,7 @@
                 <posy>122</posy>
                 <align>center</align>
                 <font>Reg46</font>
-                <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
                 <label>31172</label>
             </control>
             

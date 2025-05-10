@@ -35,7 +35,7 @@
             <font>Bold45</font>
 			<label>$LOCALIZE[737]: $INFO[Container(6).ListItem.Label,, - ]$INFO[Container(6).ListItem.Label2,#,]</label>
             <align>left</align>
-            <textcolor>white</textcolor>
+            <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
         </control>
 			<!-- Color picker panel -->
 			<control type="panel" id="6">

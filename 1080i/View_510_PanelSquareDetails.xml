@@ -20,6 +20,7 @@
 		<onback>CancelAlarm(preview_delay,silent)</onback>
 		<onback condition="!Player.HasAudio + $EXP[IsPlayingUnrecognizedContent] + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)] + Skin.HasSetting(View510_DetailsAutoTrailer)">PlayerControl(Stop)</onback>
         <onback>ClearProperty(HideNowPlaying)</onback>
+		<onback>ClearProperty(ListAnimation,home)</onback>
 		<onright condition="Skin.HasSetting(EnableQuickJump)">6000</onright>
         <onright condition="!Skin.HasSetting(EnableQuickJump)">60</onright>
         <onup>510</onup>

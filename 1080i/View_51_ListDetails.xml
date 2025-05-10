@@ -20,6 +20,7 @@
 				<onback>CancelAlarm(preview_delay,silent)</onback>
 				<onback condition="!Player.HasAudio + $EXP[IsPlayingUnrecognizedContent] + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)] + Skin.HasSetting(View51_DetailsAutoTrailer)">PlayerControl(Stop)</onback>
 				<onback>ClearProperty(HideNowPlaying)</onback>
+				<onback>ClearProperty(ListAnimation,home)</onback>
 				<viewtype label="31444">list</viewtype>
 				<include content="View_Forced">
 					<param name="viewtype" value="$LOCALIZE[31444]" />
@@ -73,7 +74,12 @@
 					<include>LibraryAutoTrailerStopButton</include>
 					<include content="LibraryAutoTrailerStartButton" condition="Skin.HasSetting(View51_DetailsAutoTrailer)">
 						<param name="interval" value="$INFO[Skin.String(details_auto_trailer_interval)]" />
-					</include>					
+					</include>
+					<control type="button">
+						<visible>false</visible>	
+						<onfocus>AlarmClock(SetList,ClearProperty(ListAnimation,home),00:00,silent)</onfocus>
+						<onfocus>AlarmClock(SetList,SetProperty(ListAnimation,1,home),00:00,silent)</onfocus>					
+					</control>							
                 </focusedlayout>
 			</control>
             <!-- info panel -->

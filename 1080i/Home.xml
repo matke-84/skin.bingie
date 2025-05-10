@@ -14,7 +14,6 @@
     
 	<!-- BINGIE -->
     <onload condition="!String.IsEmpty(Skin.String(CustomSearchTerm))">Skin.Reset(CustomSearchTerm)</onload>
-    <onload>SetProperty(bingieviews,1,Home)</onload>
     <onload>Skin.SetString(TMDbHelper.MonitorContainer,99950)</onload>
 	<onload condition="!Skin.HasSetting(EnableRatings)">Skin.SetBool(TMDbHelper.DisableRatings)</onload>
     <onload condition="Skin.HasSetting(EnableRatings)">Skin.Reset(TMDbHelper.DisableRatings)</onload>
@@ -29,9 +28,7 @@
     <onunload>SetProperty(SectionBackground,$ESCINFO[Control.GetLabel(99004)])</onunload>
     <onunload condition="System.HasAlarm(preview_delay)">CancelAlarm(preview_delay,silent)</onunload>
     <onunload>ClearProperty(submenu,Home)</onunload>
-    <onunload>ClearProperty(ShowWidget,Home)</onunload>
     <onunload>ClearProperty(ShowViewSubMenu,Home)</onunload>
-    <onunload>ClearProperty(bingieviews,Home)</onunload>
     <include>BingieViews_WindowOpen_Fade</include>
 
 	<controls>

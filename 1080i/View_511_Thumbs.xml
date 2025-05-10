@@ -19,6 +19,7 @@
         <onright condition="!Skin.HasSetting(EnableQuickJump)">60</onright>
         <onup>511</onup>
         <ondown>511</ondown>
+		<onback>ClearProperty(ListAnimation,home)</onback>
         <preloaditems>4</preloaditems>
         <pagecontrol>60</pagecontrol>
 		<scrolltime tween="quadratic">400</scrolltime>
@@ -36,6 +37,11 @@
 				<include>ThumbsViewLayoutFocus</include>
 			</control>
 			<include>LibraryAutoTrailerStopButton</include>
+			<control type="button">
+				<visible>false</visible>	
+				<onfocus>AlarmClock(SetList,ClearProperty(ListAnimation,home),00:00,silent)</onfocus>
+				<onfocus>AlarmClock(SetList,SetProperty(ListAnimation,1,home),00:00,silent)</onfocus>					
+			</control>
         </focusedlayout>
 	  </control>    
 	  <!--vertical Scollbar-->

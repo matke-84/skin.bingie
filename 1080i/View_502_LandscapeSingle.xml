@@ -22,6 +22,7 @@
                 <ondown condition="!Skin.HasSetting(EnableQuickJump)">60</ondown>
 				<onleft>502</onleft>
 				<onright>502</onright>
+				<onback>ClearProperty(ListAnimation,home)</onback>
 				<pagecontrol>60</pagecontrol>
 				<viewtype label="31431">thumbnail</viewtype>
 				<include content="View_Forced">
@@ -47,6 +48,11 @@
                         <include>LandscapeLayoutFocus</include>
                     </control>
 					<include>LibraryAutoTrailerStopButton</include>
+					<control type="button">
+						<visible>false</visible>	
+						<onfocus>AlarmClock(SetList,ClearProperty(ListAnimation,home),00:00,silent)</onfocus>
+						<onfocus>AlarmClock(SetList,SetProperty(ListAnimation,1,home),00:00,silent)</onfocus>					
+					</control>
 				</focusedlayout>
 				<focusedlayout width="607" height="340" condition="!Skin.HasSetting(View502_EnableZoomEffect)">
                     <control type="group">
@@ -55,6 +61,11 @@
                         <include>LandscapeLayout</include>
                     </control>
 					<include>LibraryAutoTrailerStopButton</include>
+					<control type="button">
+						<visible>false</visible>	
+						<onfocus>AlarmClock(SetList,ClearProperty(ListAnimation,home),00:00,silent)</onfocus>
+						<onfocus>AlarmClock(SetList,SetProperty(ListAnimation,1,home),00:00,silent)</onfocus>					
+					</control>
 				</focusedlayout>
 			</control>	
 			<include content="Bingie_Main_View_Fixed_Frame">

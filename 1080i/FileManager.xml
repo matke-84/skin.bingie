@@ -43,7 +43,7 @@
 					<width>700</width>
 					<align>left</align>
 					<label/>
-					<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+					<textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
 					<font>Bold36</font>
 				</control>
                 
@@ -229,7 +229,7 @@
 					<width>700</width>
 					<align>left</align>
 					<label/>
-					<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+					<textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
 					<font>Bold38</font>
 				</control>
 				<control type="list" id="21">

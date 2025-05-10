@@ -61,7 +61,7 @@
 
     <!-- Constants -->
     <constant name="landscape_width">374</constant>
-    <constant name="bingie_no_circular_posx">130</constant>
+    <constant name="bingie_no_circular_posx">131</constant>
     <constant name="bingie_no_circular_left_diff">65</constant>
     <constant name="search_widget_height">420</constant>
     <constant name="search_widget_thumb_width">295</constant>
@@ -83,6 +83,10 @@
     <expression name="IsBingieCategoriesActive">Window.IsActive(1117)</expression>
 	
 	<expression name="AllBingieViews">Window.IsActive(Home) | Window.IsActive(1106) | Window.IsActive(1107) | Window.IsActive(1108) | Window.IsActive(1109) | Window.IsActive(1110) | Window.IsActive(1111) | Window.IsActive(1112) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(1116) | Window.IsActive(1117) | Window.IsActive(1118) | Window.IsActive(1119) | Window.IsActive(1120) | Control.IsVisible(523) | Control.IsVisible(525) | Control.IsVisible(526) | Control.IsVisible(527) | Control.IsVisible(528)</expression>
+	
+	<expression name="AllNoneBingieViews">Control.IsVisible(52) | Control.IsVisible(507) | Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(53) | Control.IsVisible(57) | Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(56) | Control.IsVisible(501) | Control.IsVisible(502) | Control.IsVisible(509) | Control.IsVisible(510) | Control.IsVisible(511) | Control.IsVisible(512) | Control.IsVisible(524) | Control.IsVisible(51) | Control.IsVisible(503) | Control.IsVisible(50)</expression>
+	
+	<expression name="BingieIndicatorsViews">Window.IsActive(Home) | Window.IsActive(1110) | Window.IsActive(1111) | Window.IsActive(1112) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(1117) | Window.IsActive(1120) | Control.IsVisible(523) | Control.IsVisible(526) | Control.IsVisible(528)</expression>
 
     <expression name="IsRecognizedVideoContent">VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(livetv) | VideoPlayer.Content(musicvideos) | Pvr.IsPlayingRecording</expression>
 
@@ -208,12 +212,7 @@
     <include name="DialogHeader">
         <!--Dialog Header-->
         <font>Bold38</font>
-        <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-    </include>
-	<include name="DialogHeader_Alt">
-        <!--Dialog Header-->
-        <font>Bold38</font>
-        <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+        <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
     </include>
     <include name="DialogButton">
         <!--Dialog Button-->
