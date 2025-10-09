@@ -1,6 +1,3 @@
-Oto poprawiona wersja pliku z tłumaczeniem. Wprowadzone zmiany mają na celu poprawę błędów gramatycznych i stylistycznych, a także zapewnienie, że tłumaczenie jest bardziej naturalne dla języka polskiego i spójne w całym pliku, zwłaszcza w kontekście interfejsu aplikacji multimedialnej.
-
-```
 # Kodi Media Center language file
 # Addon Name: Bingie
 # Addon id: skin.bingie
