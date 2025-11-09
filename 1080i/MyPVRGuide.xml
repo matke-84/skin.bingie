@@ -6,7 +6,7 @@
     <menucontrol>9000</menucontrol>
     <onunload>ClearProperty(pvrGuideOnFullscreenVideo,Home)</onunload>
     <controls>
-		<include>Defs_TMDbHelper_Loader</include>
+		<include>Defs_TMDbBingieHelper_Loader</include>
 		<!--Global Background-->
 		<include>GlobalBackground</include>
 		<!-- Now Playing -->
@@ -88,12 +88,12 @@
 					</control>
 					<control type="label">
 						<!--genre-->
-						<visible>!String.IsEmpty(Container(99950).ListItem.Genre)</visible>
+						<visible>!String.IsEmpty(Container(17195).ListItem.Genre)</visible>
 						<width>1455</width>
 						<height>20</height>
 						<font>Reg28</font>
 						<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-						<label>$INFO[Container(99950).ListItem.Genre]</label>
+						<label>$INFO[Container(17195).ListItem.Genre]</label>
 						<aligny>top</aligny>
 					</control>
 					<control type="textbox">

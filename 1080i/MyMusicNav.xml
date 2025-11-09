@@ -66,13 +66,6 @@
 					<onclick>right</onclick>
 					<onclick>Filter</onclick>
 				</control>
-                <control type="button" id="388">
-                    <!--Button Search-->
-                    <include>SideBladeMenuButton</include>
-                    <label>137</label>
-                    <onclick>ActivateWindow(1107,return)</onclick>
-                    <visible>!String.Contains(Container.FolderPath,plugin://plugin.audio)</visible>
-                </control>
                 <control type="button" id="4401">
                     <!--current playlist-->
                     <include>SideBladeMenuButton</include>

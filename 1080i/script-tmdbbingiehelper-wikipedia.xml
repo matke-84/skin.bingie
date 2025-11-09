@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog">
     <defaultcontrol always="true">9902</defaultcontrol>
-	<onload>Skin.SetString(Wikipedia.Format.Link,{})</onload>
-	<onload>Skin.SetString(Wikipedia.Format.Emphasis,{})</onload>
-	<onload>Skin.SetString(Wikipedia.Format.Superscript,{})</onload>
+	<onload>Skin.SetString(TMDbBingieHelper.Wikipedia.Format.Link,{})</onload>
+	<onload>Skin.SetString(TMDbBingieHelper.Wikipedia.Format.Emphasis,{})</onload>
+	<onload>Skin.SetString(TMDbBingieHelper.Wikipedia.Format.Superscript,{})</onload>
     <controls>
     <control type="group">
 		<!--Global Background-->
@@ -21,7 +21,7 @@
 					<orientation>vertical</orientation>
 					<top>183</top>
 					<left>60</left>
-					<height>720</height>
+					<height>704</height>
 					<animation effect="fade" start="0" end="100" time="400">Visible</animation>
 					<itemlayout width="550" height="64">
 					  <control type="label">

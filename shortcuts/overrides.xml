@@ -17,7 +17,6 @@
 			<shortcut label="31025" grouping="32029" icon="shortcuts/categories.png">ActivateWindow(1119,return)</shortcut>
 			<shortcut label="31534" grouping="32029" icon="shortcuts/mylist.png">ActivateWindow(1114,return)</shortcut>
 			<shortcut label="31252" grouping="32029" icon="shortcuts/widget.png">ActivateWindow(1113,return)</shortcut>
-			<shortcut label="31383" grouping="32029" icon="shortcuts/widget.png">ActivateWindow(1115,return)</shortcut>
 			<shortcut label="31069" grouping="32029" icon="shortcuts/antenna.png">ActivateWindow(1116,return)</shortcut>
 			<shortcut label="2" grouping="32029" icon="shortcuts/music.png">ActivateWindow(1120,return)</shortcut>
 			<shortcut label="342" grouping="32029" icon="shortcuts/clapperboard.png">ActivateWindow(Videos,videodb://movies/titles/,return)</shortcut>
@@ -40,8 +39,6 @@
 
 		<!-- video library-->
 		<node label="32030" condition="Library.HasContent(video)">
-			<shortcut label="31183" grouping="1212" type="1212" icon="defaultaddonssearch.png">ActivateWindow(1108,return)</shortcut>
-			<shortcut label="31205" grouping="1212" type="1212" icon="defaultaddonssearch.png">ActivateWindow(1106,return)</shortcut>
 			<content>video</content>
 			<node label="32040">
 				<content>playlist-video</content>
@@ -58,7 +55,6 @@
 		
 		<!-- music -->
 		<node label="32031" condition="Library.HasContent(music)">
-		    <shortcut label="31206" grouping="1211" type="1211" icon="defaultaddonssearch.png">ActivateWindow(1107,return)</shortcut>
 			<shortcut label="2" grouping="32029" icon="defaultaddonmusic.png">ActivateWindow(10502,musicdb://,return)</shortcut>
 			<shortcut label="19021" grouping="32029" icon="defaultaddonlyrics.png">ActivateWindow(radiochannels,return)</shortcut>
 			<shortcut label="589" grouping="1211" type="1211" icon="defaultalbumcover.png">PlayerControl(Partymode(music))</shortcut>
@@ -157,6 +153,32 @@
             <shortcut label="14111" icon="common/toggle-debug.png">ActivateWindow(eventlog)</shortcut>
 			<shortcut label="31217" icon="common/android.png" condition="System.Platform.Linux">RebootToAndroid</shortcut>
 		</node>
+		
+		<!-- customsearch -->
+		<node label="137">
+			<shortcut label="342" type="571" icon="">DefaultSearch-Movies</shortcut>
+			<shortcut label="31590" type="571" icon="">DefaultSearch-TvShows</shortcut>
+			<shortcut label="20360" type="571" icon="">DefaultSearch-Episodes</shortcut>
+			<shortcut label="20459" type="571" icon="">DefaultSearch-Tags</shortcut>
+			<shortcut label="135" type="571" icon="">DefaultSearch-Genres</shortcut>
+			<shortcut label="345" type="571" icon="">DefaultSearch-Year</shortcut>
+			<shortcut label="572" type="571" icon="">DefaultSearch-Studio</shortcut>
+			<shortcut label="574" type="571" icon="">DefaultSearch-Country</shortcut>
+			<shortcut label="20337" type="571" icon="">DefaultSearch-Actor</shortcut>
+			<shortcut label="20339" type="571" icon="">DefaultSearch-Director</shortcut>
+			<shortcut label="132" type="571" icon="">DefaultSearch-Albums</shortcut>
+			<shortcut label="133" type="571" icon="">DefaultSearch-Artists</shortcut>
+			<shortcut label="134" type="571" icon="">DefaultSearch-Songs</shortcut>
+			<shortcut label="20389" type="571" icon="">DefaultSearch-MusicVideos</shortcut>
+			<shortcut label="31206" type="571" icon="">DefaultSearch-MusicVideoArtists</shortcut>
+			<shortcut label="31062" type="571" icon="">DefaultSearch-Youtube</shortcut>
+			<shortcut label="31183" type="571" icon="">$VAR[SearchTMDBMovies]</shortcut>
+			<shortcut label="31165" type="571" icon="">$VAR[SearchTMDBShows]</shortcut>
+			<shortcut label="31234" type="571" icon="">$VAR[SearchTMDBCollections]</shortcut>
+			<shortcut label="31591" type="571" icon="">$VAR[SearchTMDBPeople]</shortcut>
+			<shortcut label="31110" type="571" icon="">$VAR[SearchTMDBAll]</shortcut>
+		</node>
+		
 	</groupings>
     
     <widget-groupings>
@@ -209,45 +231,6 @@
 		</node>
 	</widget-groupings>
 
-    <!-- home widgets -->
-	<propertydefault defaultID="10000" property="widget">widget1</propertydefault>
-	<propertydefault defaultID="10000" property="widgetTarget">videos</propertydefault>
-	<propertydefault defaultID="10000" property="widgetType">video</propertydefault>
-	<propertydefault defaultID="10000" property="widgetPath">$VAR[DefWidgetContent]</propertydefault>
-	<propertydefault defaultID="10000" property="widgetName">$VAR[DefWidgetName]</propertydefault>
-
-	<propertydefault defaultID="10000" property="widget.1">widget2</propertydefault>
-	<propertydefault defaultID="10000" property="widgetTarget.1">videos</propertydefault>
-	<propertydefault defaultID="10000" property="widgetType.1">video</propertydefault>
-	<propertydefault defaultID="10000" property="widgetPath.1">$VAR[DefWidget1Content]</propertydefault>
-	<propertydefault defaultID="10000" property="widgetName.1">$VAR[DefWidget1Name]</propertydefault>
-
-	<propertydefault defaultID="10000" property="widget.2">widget3</propertydefault>
-	<propertydefault defaultID="10000" property="widgetTarget.2">videos</propertydefault>
-	<propertydefault defaultID="10000" property="widgetType.2">tvshows</propertydefault>
-	<propertydefault defaultID="10000" property="widgetPath.2">$VAR[DefWidget2Content]</propertydefault>
-	<propertydefault defaultID="10000" property="widgetName.2">$VAR[DefWidget2Name]</propertydefault>
-
-	<propertydefault defaultID="10000" property="widget.3">widget4</propertydefault>
-	<propertydefault defaultID="10000" property="widgetTarget.3">videos</propertydefault>
-	<propertydefault defaultID="10000" property="widgetType.3">video</propertydefault>
-	<propertydefault defaultID="10000" property="widgetPath.3">$VAR[DefWidget3Content]</propertydefault>
-	<propertydefault defaultID="10000" property="widgetName.3">$VAR[DefWidget3Name]</propertydefault>
-
-	<propertydefault defaultID="10000" property="widget.4">widget5</propertydefault>
-	<propertydefault defaultID="10000" property="widgetTarget.4">videos</propertydefault>
-	<propertydefault defaultID="10000" property="widgetType.4">movies</propertydefault>
-	<propertydefault defaultID="10000" property="widgetPath.4">$VAR[DefWidget4Content]</propertydefault>
-	<propertydefault defaultID="10000" property="widgetName.4">$VAR[DefWidget4Name]</propertydefault>
-
-	<propertydefault defaultID="10000" property="widget.5">widget6</propertydefault>
-	<propertydefault defaultID="10000" property="widgetTarget.5">videos</propertydefault>
-	<propertydefault defaultID="10000" property="widgetType.5">video</propertydefault>
-	<propertydefault defaultID="10000" property="widgetPath.5">$VAR[DefWidget5Content]</propertydefault>
-	<propertydefault defaultID="10000" property="widgetName.5">$VAR[DefWidget5Name]</propertydefault>
-
-    <widgetRename>False</widgetRename> 
-
 	<!-- Action Overrides -->
 	<!-- SubMenu-->
 	<override action="submenu">
@@ -275,6 +258,10 @@
 
 	<!-- Power Menu -->
 	<groupoverride group="powermenu" condition="Window.IsActive(DialogButtonMenu.xml)">Close</groupoverride>
+	
+	<!-- Default Widgets Set for Search -->
+    <propertydefault labelID="20360" group="searchmenu" property="layout">ThumbsViewBingie</propertydefault>
+	<propertydefault labelID="20360" group="searchmenu" property="widgetTags">enable</propertydefault>
 
 </overrides>
 

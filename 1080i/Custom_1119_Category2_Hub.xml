@@ -6,7 +6,7 @@
     <include>CustomBingieWinProps</include>
     <include>BingieViews_WindowOpen_Fade</include>
     <controls>
-		<include>Defs_TMDbHelper_Loader</include>
+		<include>Defs_TMDbBingieHelper_Loader</include>
 		<!-- Global Background -->
 		<include>GlobalBackground</include>
         <!--NowPlaying-->
@@ -73,8 +73,9 @@
         <orientation>vertical</orientation>
         <top>81</top>
         <left>137</left>
-		<onleft>900</onleft>
-		<onback>900</onback>
+		<onleft condition="$EXP[IsBingieViewsActive]">SetFocus(900,$INFO[Window(Home).Property(menupos)])</onleft>
+		<onback condition="$EXP[IsBingieViewsActive]">900</onback>
+		<onback condition="$EXP[IsBingieViewsActive]">SetFocus(900,$INFO[Window(Home).Property(menupos)])</onback>
         <animation effect="fade" start="0" end="100" time="400">Visible</animation>
         <itemlayout width="600" height="90">
           <control type="label">
@@ -337,226 +338,226 @@
 			<item id="1">
                 <label>$LOCALIZE[31469]</label>
                 <property name="DBTYPE">category</property>
-                <property name="path">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=28%20%2f%2012&amp;with_id=True&amp;with_separator=OR&amp;without_genres=16$VAR[Path_Param_Categories_Digital_Release]</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=28%20%2f%2012&amp;with_id=True&amp;with_separator=OR&amp;without_genres=16&amp;length=1&amp;limit=3&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</property>
                 <onclick>SetProperty(category,action &amp; adventure,home)</onclick>
                 <onclick>ActivateWindow(1117,return)</onclick>
-				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)]  + Skin.HasSetting(categories_list_action)</visible>
+				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)]  + Skin.HasSetting(categories_list_action)</visible>
             </item>
 			<item id="2">
                 <label>$LOCALIZE[31456]</label>
                 <property name="DBTYPE">category</property>
-                <property name="path">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=18&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=18&amp;with_id=True&amp;with_separator=AND&amp;length=1&amp;limit=3&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</property>
                 <onclick>SetProperty(category,dramas,home)</onclick>
                 <onclick>ActivateWindow(1117,return)</onclick>
-				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)] + Skin.HasSetting(categories_list_dramas)</visible>
+				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)] + Skin.HasSetting(categories_list_dramas)</visible>
             </item>
 			<item id="3">
                 <label>$LOCALIZE[31457]</label>
                 <property name="DBTYPE">category</property>
-                <property name="path">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=35&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=35&amp;with_id=True&amp;with_separator=AND&amp;length=1&amp;limit=3&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</property>
                 <onclick>SetProperty(category,comedies,home)</onclick>
                 <onclick>ActivateWindow(1117,return)</onclick>
-				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)] + Skin.HasSetting(categories_list_comedies)</visible>
+				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)] + Skin.HasSetting(categories_list_comedies)</visible>
             </item>
 			<item id="4">
                 <label>$LOCALIZE[31451]</label>
                 <property name="DBTYPE">category</property>
-                <property name="path">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=10751&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=10751&amp;with_id=True&amp;with_separator=AND&amp;length=1&amp;limit=3&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</property>
                 <onclick>SetProperty(category,kids &amp; family,home)</onclick>
                 <onclick>ActivateWindow(1117,return)</onclick>
-				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)] + Skin.HasSetting(categories_list_family)</visible>
+				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)] + Skin.HasSetting(categories_list_family)</visible>
             </item>
 			<item id="5">
                 <label>$LOCALIZE[31452]</label>
                 <property name="DBTYPE">category</property>
-                <property name="path">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=27&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=27&amp;with_id=True&amp;with_separator=AND&amp;length=1&amp;limit=3&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</property>
                 <onclick>SetProperty(category,horror,home)</onclick>
                 <onclick>ActivateWindow(1117,return)</onclick>
-				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)] + Skin.HasSetting(categories_list_horror)</visible>
+				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)] + Skin.HasSetting(categories_list_horror)</visible>
             </item>
 			<item id="6">
                 <label>$LOCALIZE[31159]</label>
                 <property name="DBTYPE">category</property>
-                <property name="path">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=99&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=99&amp;with_id=True&amp;with_separator=AND&amp;length=1&amp;limit=3&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</property>
                 <onclick>SetProperty(category,documentaries,home)</onclick>
                 <onclick>ActivateWindow(1117,return)</onclick>
-				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)] + Skin.HasSetting(categories_list_documentaries)</visible>
+				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)] + Skin.HasSetting(categories_list_documentaries)</visible>
             </item>
 			<item id="7">
                 <label>$LOCALIZE[31046]</label>
                 <property name="DBTYPE">category</property>
-                <property name="path">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_id=True&amp;with_keywords=210024&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_id=True&amp;with_keywords=210024&amp;with_separator=AND&amp;length=1&amp;limit=3&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</property>
                 <onclick>SetProperty(category,anime,home)</onclick>
                 <onclick>ActivateWindow(1117,return)</onclick>
-				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)] + Skin.HasSetting(categories_list_anime)</visible>
+				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)] + Skin.HasSetting(categories_list_anime)</visible>
             </item>
 			<item id="8">
                 <label>$LOCALIZE[31448]</label>
                 <property name="DBTYPE">category</property>
-                <property name="path">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=80&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=80&amp;with_id=True&amp;with_separator=AND&amp;length=1&amp;limit=3&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</property>
                 <onclick>SetProperty(category,crime,home)</onclick>
                 <onclick>ActivateWindow(1117,return)</onclick>
-				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)] + Skin.HasSetting(categories_list_crime)</visible>
+				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)] + Skin.HasSetting(categories_list_crime)</visible>
             </item>
 			<item id="9">
                 <label>$LOCALIZE[31446]</label>
                 <property name="DBTYPE">category</property>
-                <property name="path">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=14&amp;with_id=True&amp;with_separator=AND&amp;without_genres=16$VAR[Path_Param_Categories_Digital_Release]</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=14&amp;with_id=True&amp;with_separator=AND&amp;without_genres=16&amp;length=1&amp;limit=3&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</property>
                 <onclick>SetProperty(category,fantasy,home)</onclick>
                 <onclick>ActivateWindow(1117,return)</onclick>
-				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)] + Skin.HasSetting(categories_list_fantasy)</visible>
+				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)] + Skin.HasSetting(categories_list_fantasy)</visible>
             </item>
 			<item id="10">
                 <label>$LOCALIZE[31442]</label>
                 <property name="DBTYPE">category</property>
-                <property name="path">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=36%20%2f%2010752&amp;with_id=True&amp;with_separator=OR$VAR[Path_Param_Categories_Digital_Release]</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=36%20%2f%2010752&amp;with_id=True&amp;with_separator=OR&amp;length=1&amp;limit=3&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</property>
                 <onclick>SetProperty(category,history &amp; war,home)</onclick>
                 <onclick>ActivateWindow(1117,return)</onclick>
-				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)] + Skin.HasSetting(categories_list_history)</visible>
+				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)] + Skin.HasSetting(categories_list_history)</visible>
             </item>
 			<item id="11">
                 <label>$LOCALIZE[31435]</label>
                 <property name="DBTYPE">category</property>
-                <property name="path">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=16&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=16&amp;with_id=True&amp;with_separator=AND&amp;length=1&amp;limit=3&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</property>
                 <onclick>SetProperty(category,animations,home)</onclick>
                 <onclick>ActivateWindow(1117,return)</onclick>
-				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)] + Skin.HasSetting(categories_list_animations)</visible>
+				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)] + Skin.HasSetting(categories_list_animations)</visible>
             </item>
 			<item id="12">
                 <label>$LOCALIZE[31049]</label>
                 <property name="DBTYPE">category</property>
-                <property name="path">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=10402&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=10402&amp;with_id=True&amp;with_separator=AND&amp;length=1&amp;limit=3&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</property>
                 <onclick>SetProperty(category,music &amp; musicals,home)</onclick>
                 <onclick>ActivateWindow(1117,return)</onclick>
-				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)] + Skin.HasSetting(categories_list_musicals)</visible>
+				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)] + Skin.HasSetting(categories_list_musicals)</visible>
             </item>
 			<item id="13">
                 <label>$LOCALIZE[31427]</label>
                 <property name="DBTYPE">category</property>
-                <property name="path">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=10749&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=10749&amp;with_id=True&amp;with_separator=AND&amp;length=1&amp;limit=3&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</property>
                 <onclick>SetProperty(category,romance,home)</onclick>
                 <onclick>ActivateWindow(1117,return)</onclick>
-				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)] + Skin.HasSetting(categories_list_romance)</visible>
+				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)] + Skin.HasSetting(categories_list_romance)</visible>
             </item>
 			<item id="14">
                 <label>$LOCALIZE[31428]</label>
                 <property name="DBTYPE">category</property>
-                <property name="path">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=878&amp;with_id=True&amp;with_separator=AND&amp;without_genres=16$VAR[Path_Param_Categories_Digital_Release]</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=878&amp;with_id=True&amp;with_separator=AND&amp;without_genres=16&amp;length=1&amp;limit=3&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</property>
                 <onclick>SetProperty(category,sci-fi,home)</onclick>
                 <onclick>ActivateWindow(1117,return)</onclick>
-				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)] + Skin.HasSetting(categories_list_sci-fi)</visible>
+				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)] + Skin.HasSetting(categories_list_sci-fi)</visible>
             </item>
 			<item id="15">
                 <label>$LOCALIZE[31414]</label>
                 <property name="DBTYPE">category</property>
-                <property name="path">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=9648&amp;with_id=True&amp;with_separator=AND&amp;without_genres=16$VAR[Path_Param_Categories_Digital_Release]</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=9648&amp;with_id=True&amp;with_separator=AND&amp;without_genres=16&amp;length=1&amp;limit=3&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</property>
                 <onclick>SetProperty(category,mysteries,home)</onclick>
                 <onclick>ActivateWindow(1117,return)</onclick>
-				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)] + Skin.HasSetting(categories_list_mysteries)</visible>
+				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)] + Skin.HasSetting(categories_list_mysteries)</visible>
             </item>
 			<item id="16">
                 <label>$LOCALIZE[31398]</label>
                 <property name="DBTYPE">category</property>
-                <property name="path">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=53&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=53&amp;with_id=True&amp;with_separator=AND&amp;length=1&amp;limit=3&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</property>
                 <onclick>SetProperty(category,thriller,home)</onclick>
                 <onclick>ActivateWindow(1117,return)</onclick>
-				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)] + Skin.HasSetting(categories_list_thriller)</visible>
+				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)] + Skin.HasSetting(categories_list_thriller)</visible>
             </item>
 			<item id="17">
                 <label>$LOCALIZE[31399]</label>
                 <property name="DBTYPE">category</property>
-                <property name="path">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=37&amp;with_id=True&amp;with_separator=AND&amp;without_genres=16$VAR[Path_Param_Categories_Digital_Release]</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=37&amp;with_id=True&amp;with_separator=AND&amp;without_genres=16&amp;length=1&amp;limit=3&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</property>
                 <onclick>SetProperty(category,westerns,home)</onclick>
                 <onclick>ActivateWindow(1117,return)</onclick>
-				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)] + Skin.HasSetting(categories_list_westerns)</visible>
+				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)] + Skin.HasSetting(categories_list_westerns)</visible>
             </item>
 			<item id="18">
                 <label>$LOCALIZE[31386]</label>
                 <property name="DBTYPE">category</property>
-                <property name="path">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=10759&amp;with_id=True&amp;with_separator=AND&amp;without_genres=16%20%2f%2010766$VAR[Path_Param_Categories_Digital_Release]</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=10759&amp;with_id=True&amp;with_separator=AND&amp;without_genres=16%20%2f%2010766&amp;length=1&amp;limit=3&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</property>
                 <onclick>SetProperty(category,TV action &amp; adventure,home)</onclick>
                 <onclick>ActivateWindow(1117,return)</onclick>
-				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)] + Skin.HasSetting(categories_list_tvaction)</visible>
+				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)] + Skin.HasSetting(categories_list_tvaction)</visible>
             </item>
 			<item id="19">
                 <label>$LOCALIZE[31381]</label>
                 <property name="DBTYPE">category</property>
-                <property name="path">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=18&amp;with_id=True&amp;with_separator=AND&amp;without_genres=10766$VAR[Path_Param_Categories_Digital_Release]</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=18&amp;with_id=True&amp;with_separator=AND&amp;without_genres=10766&amp;length=1&amp;limit=3&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</property>
                 <onclick>SetProperty(category,TV dramas,home)</onclick>
                 <onclick>ActivateWindow(1117,return)</onclick>
-				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)] + Skin.HasSetting(categories_list_tvdramas)</visible>
+				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)] + Skin.HasSetting(categories_list_tvdramas)</visible>
             </item>
 			<item id="20">
                 <label>$LOCALIZE[31382]</label>
                 <property name="DBTYPE">category</property>
-                <property name="path">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=35&amp;with_id=True&amp;with_separator=AND&amp;without_genres=10766$VAR[Path_Param_Categories_Digital_Release]</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=35&amp;with_id=True&amp;with_separator=AND&amp;without_genres=10766&amp;length=1&amp;limit=3&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</property>
                 <onclick>SetProperty(category,TV comedies,home)</onclick>
                 <onclick>ActivateWindow(1117,return)</onclick>
-				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)] + Skin.HasSetting(categories_list_tvcomedies)</visible>
+				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)] + Skin.HasSetting(categories_list_tvcomedies)</visible>
             </item>
 			<item id="21">
                 <label>$LOCALIZE[31376]</label>
                 <property name="DBTYPE">category</property>
-                <property name="path">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=10751%20%2f%2010762&amp;with_id=True&amp;with_separator=OR&amp;without_genres=10766$VAR[Path_Param_Categories_Digital_Release]</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=10751%20%2f%2010762&amp;with_id=True&amp;with_separator=OR&amp;without_genres=10766&amp;length=1&amp;limit=3&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</property>
                 <onclick>SetProperty(category,TV kids &amp; family,home)</onclick>
                 <onclick>ActivateWindow(1117,return)</onclick>
-				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)] + Skin.HasSetting(categories_list_tvfamily)</visible>
+				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)] + Skin.HasSetting(categories_list_tvfamily)</visible>
             </item>
 			<item id="22">
                 <label>$LOCALIZE[31377]</label>
                 <property name="DBTYPE">category</property>
-                <property name="path">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=99&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=99&amp;with_id=True&amp;with_separator=AND&amp;length=1&amp;limit=3&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</property>
                 <onclick>SetProperty(category,TV documentaries,home)</onclick>
                 <onclick>ActivateWindow(1117,return)</onclick>
-				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)] + Skin.HasSetting(categories_list_tvdocumentaries)</visible>
+				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)] + Skin.HasSetting(categories_list_tvdocumentaries)</visible>
             </item>
 			<item id="23">
                 <label>$LOCALIZE[31372]</label>
                 <property name="DBTYPE">category</property>
-                <property name="path">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=80&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=80&amp;with_id=True&amp;with_separator=AND&amp;length=1&amp;limit=3&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</property>
                 <onclick>SetProperty(category,TV crime,home)</onclick>
                 <onclick>ActivateWindow(1117,return)</onclick>
-				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)] + Skin.HasSetting(categories_list_tvcrime)</visible>
+				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)] + Skin.HasSetting(categories_list_tvcrime)</visible>
             </item>
 			<item id="24">
                 <label>$LOCALIZE[31373]</label>
                 <property name="DBTYPE">category</property>
-                <property name="path">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=10765&amp;with_id=True&amp;with_separator=AND&amp;without_genres=16$VAR[Path_Param_Categories_Digital_Release]</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=10765&amp;with_id=True&amp;with_separator=AND&amp;without_genres=16&amp;length=1&amp;limit=3&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</property>
                 <onclick>SetProperty(category,TV sci-fi &amp; fantasy,home)</onclick>
                 <onclick>ActivateWindow(1117,return)</onclick>
-				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)] + Skin.HasSetting(categories_list_tvfantasy)</visible>
+				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)] + Skin.HasSetting(categories_list_tvfantasy)</visible>
             </item>
 			<item id="25">
                 <label>$LOCALIZE[31374]</label>
                 <property name="DBTYPE">category</property>
-                <property name="path">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=10768&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=10768&amp;with_id=True&amp;with_separator=AND&amp;length=1&amp;limit=3&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</property>
                 <onclick>SetProperty(category,TV war &amp; politics,home)</onclick>
                 <onclick>ActivateWindow(1117,return)</onclick>
-				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)] + Skin.HasSetting(categories_list_tvwar)</visible>
+				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)] + Skin.HasSetting(categories_list_tvwar)</visible>
             </item>
 			<item id="26">
                 <label>$LOCALIZE[31364]</label>
                 <property name="DBTYPE">category</property>
-                <property name="path">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=16&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=16&amp;with_id=True&amp;with_separator=AND&amp;length=1&amp;limit=3&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</property>
                 <onclick>SetProperty(category,TV animations,home)</onclick>
                 <onclick>ActivateWindow(1117,return)</onclick>
-				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)] + Skin.HasSetting(categories_list_tvanimations)</visible>
+				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)] + Skin.HasSetting(categories_list_tvanimations)</visible>
             </item>
 			<item id="27">
                 <label>$LOCALIZE[31352]</label>
                 <property name="DBTYPE">category</property>
-                <property name="path">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=9648&amp;with_id=True&amp;with_separator=AND&amp;without_genres=16$VAR[Path_Param_Categories_Digital_Release]</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=9648&amp;with_id=True&amp;with_separator=AND&amp;without_genres=16&amp;length=1&amp;limit=3&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</property>
                 <onclick>SetProperty(category,TV mysteries,home)</onclick>
                 <onclick>ActivateWindow(1117,return)</onclick>
-				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)] + Skin.HasSetting(categories_list_tvmysteries)</visible>
+				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)] + Skin.HasSetting(categories_list_tvmysteries)</visible>
             </item>
 			<item id="28">
                 <label>$LOCALIZE[31353]</label>
                 <property name="DBTYPE">category</property>
-                <property name="path">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=37&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=37&amp;with_id=True&amp;with_separator=AND&amp;length=1&amp;limit=3&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</property>
                 <onclick>SetProperty(category,TV westerns,home)</onclick>
                 <onclick>ActivateWindow(1117,return)</onclick>
-				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)] + Skin.HasSetting(categories_list_tvwesterns)</visible>
+				<visible>[String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)] + Skin.HasSetting(categories_list_tvwesterns)</visible>
             </item>
 			
         </content>

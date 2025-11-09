@@ -7,7 +7,7 @@
     <include>BingieViews_WindowOpen_Fade</include>
 
     <controls>
-		<include>Defs_TMDbHelper_Loader</include>
+		<include>Defs_TMDbBingieHelper_Loader</include>
         <include>GlobalBackground</include>
 		<!-- Now Playing -->
         <include>NowPlayingBackground</include>
@@ -134,7 +134,7 @@
         <control type="grouplist" id="77777">
             <usecontrolcoords>true</usecontrolcoords>
             <left>0</left>
-            <top>599</top>
+            <top>564</top>
             <include>Fixed_Focus_Bottom</include>
             <bottom>0</bottom>
             <include>Fixed_Focus_Itemgap</include>
@@ -142,26 +142,27 @@
             <pagecontrol>317</pagecontrol>
             <orientation>vertical</orientation>
             <width>100%</width>
-			<onleft>900</onleft>
             <onback condition="$EXP[IsPlayingRecognizedContent]">SetFocus(509)</onback>
-            <onback condition="!$EXP[IsPlayingRecognizedContent]">900</onback>
+            <onleft condition="!$EXP[IsPlayingRecognizedContent]">SetFocus(900,$INFO[Window(Home).Property(menupos)])</onleft>
+			<onback condition="!$EXP[IsPlayingRecognizedContent]">900</onback>
+			<onback condition="!$EXP[IsPlayingRecognizedContent]">SetFocus(900,$INFO[Window(Home).Property(menupos)])</onback>
             <include>bingie_items_pvr</include>
         </control>
 
         <include content="Bingie_Screens_Fixed_Focus_Frame_Base" condition="Skin.HasSetting(EnableFixedFrameWidgets)">
             <visible>[Control.HasFocus(1510) | String.IsEqual(Window(Home).Property(CurrentWidgetID),1510)] | [Control.HasFocus(1520) | String.IsEqual(Window(Home).Property(CurrentWidgetID),1520)] | [Control.HasFocus(1530) | String.IsEqual(Window(Home).Property(CurrentWidgetID),1530)]</visible>
             <param name="visibility" value="ControlGroup(77777).HasFocus() + !String.IsEmpty(Container(77777).CurrentItem) + !String.IsEmpty(ListItem.Label)"/>
-			<top>641</top>
-            <param name="width" value="240"/>
-            <param name="height" value="240"/>
+			<top>606</top>
+            <param name="width" value="280"/>
+            <param name="height" value="280"/>
             <texture background="true" border="10">$INFO[Skin.String(thumbsborder_focused),bingie/border/thumb_fo_,.png]</texture>
         </include>
         <include content="Bingie_Screens_Fixed_Focus_Frame_Base" condition="Skin.HasSetting(EnableFixedFrameWidgets)">
             <visible>[Control.HasFocus(1540) | String.IsEqual(Window(Home).Property(CurrentWidgetID),1540)]</visible>
-			<top>641</top>
+			<top>606</top>
             <param name="visibility" value="ControlGroup(77777).HasFocus() + !String.IsEmpty(Container(77777).CurrentItem) + !String.IsEmpty(ListItem.Label)"/>
-            <param name="width" value="landscape_width"/>
-            <param name="height" value="218"/>
+            <param name="width" value="419"/>
+            <param name="height" value="242"/>
             <texture background="true" border="10">$INFO[Skin.String(thumbsborder_focused),bingie/border/thumb_fo_,.png]</texture>
         </include>
 		

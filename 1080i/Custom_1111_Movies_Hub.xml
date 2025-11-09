@@ -7,7 +7,7 @@
     <include>BingieViews_WindowOpen_Fade</include>
 	<onload>Skin.TimerStart(spotlightanimation)</onload>
     <controls>
-		<include>Defs_TMDbHelper_Loader</include>
+		<include>Defs_TMDbBingieHelper_Loader</include>
         <!-- fake go-to-fullscreen button -->
         <control type="button" id="509">
             <visible allowhiddenfocus="true">false</visible>

@@ -152,26 +152,23 @@
             <visible>!String.IsEmpty(Container(525).ListItem.Season) + !String.IsEmpty(Container(5250).ListItem.Season) + String.IsEqual(Container(5250).ListItem.Season,Container(525).ListItem.Season) + [Control.HasFocus(525) | Control.HasFocus(60)]</visible>
             <width>565</width>
             <height>65</height>
-            <aligny>top</aligny>
-            <align>left</align>
-            <aspectratio align="left" aligny="top">stretch</aspectratio>
-            <texture border="10" background="true" colordiffuse="$INFO[Skin.String(BingieButtonTextColor)]">$INFO[Skin.String(thumbsborder_focused),bingie/border/default_button_fo_,.png]</texture>
+            <texture border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderUnfocusColor)]">bingie/border/default_button_focus.png</texture>
         </control>
         <!-- Season x label -->
         <control type="label">
-            <left>18</left>
+            <left>20</left>
             <width>280</width>
-            <height>61</height>
+            <height>63</height>
             <aligny>center</aligny>
             <align>left</align>
-            <font>Reg32</font>
+            <font>Plots</font>
             <textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
             <label>$INFO[ListItem.Label]</label>
         </control>
         <!-- x Episodes label -->
         <control type="label">
             <visible>String.IsEqual(Container(5250).ListItem.Season,Container(525).ListItem.Season) + [Control.HasFocus(525) | Control.HasFocus(60)]</visible>
-            <right>19</right>
+            <right>21</right>
             <width>250</width>
             <height>63</height>
             <aligny>center</aligny>
@@ -569,7 +566,6 @@
                         <visible allowhiddenfocus="true">Container(525).Content(episodes) + !String.IsEmpty(Container(525).ListItem.DBID)</visible>
                         <visible>Integer.IsGreater(Container(5250).NumItems,0) + !Container(5250).IsUpdating</visible>
                         <animation effect="fade" start="0" end="100" time="250">Visible</animation>
-                        <animation effect="fade" start="100" end="60" time="150" condition="!Control.HasFocus(5250)">Conditional</animation>
                         <left>15</left>
                         <top>9</top>
                         <width>565</width>
@@ -586,91 +582,82 @@
                         <onclick condition="!String.IsEmpty(Window(Home).Property(BaseWindow))">ReplaceWindow(Videos,$ESCINFO[Container(5250).ListItem.FolderPath],return)</onclick>
                         <onclick condition="String.IsEmpty(Window(Home).Property(BaseWindow))">ReplaceWindow(Videos,$ESCINFO[Container(5250).ListItem.FolderPath])</onclick>
                         <include>ScrollTime</include>
-                        <itemlayout height="65" width="565" condition="Control.HasFocus(5250)">
+                        <itemlayout height="70" width="565" condition="Control.HasFocus(5250)">
                             <!-- Season x label -->
                             <control type="label">
-                                <left>18</left>
+                                <left>20</left>
                                 <width>280</width>
-                                <height>61</height>
+                                <height>63</height>
                                 <aligny>center</aligny>
                                 <align>left</align>
-                                <font>Reg32</font>
+                                <font>Plots</font>
                                 <textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
                                 <label>$VAR[View525MainLabel]</label>
                             </control>
                         </itemlayout>
-                        <itemlayout height="65" width="565" condition="!Control.HasFocus(5250)">
+                        <itemlayout height="70" width="565" condition="!Control.HasFocus(5250)">
                             <include>View_525_Seasons_List_No_Focus</include>
                         </itemlayout>
-                        <focusedlayout height="65" width="565" condition="Control.HasFocus(5250)">
+                        <focusedlayout height="70" width="565" condition="Control.HasFocus(5250)">
                             <!-- bingie button border -->
                             <control type="image">
                                 <width>565</width>
                                 <height>65</height>
-                                <aligny>top</aligny>
-                                <align>left</align>
-                                <aspectratio align="left" aligny="top">stretch</aspectratio>
-                                <texture border="10" background="true" colordiffuse="$INFO[Skin.String(BingieButtonFocusTextColor)]">$INFO[Skin.String(thumbsborder_focused),bingie/border/default_button_fo_,.png]</texture>
+                                <texture border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texture>
                             </control>
                             <!-- Season x label -->
                             <control type="label">
-                                <left>18</left>
+                                <left>20</left>
                                 <width>280</width>
-                                <height>61</height>
+                                <height>63</height>
                                 <aligny>center</aligny>
                                 <align>left</align>
-                                <font>Reg32</font>
-                                <textcolor>$INFO[Skin.String(BingieButtonFocusTextColor)]</textcolor>
+                                <font>Plots</font>
+                                <textcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</textcolor>
                                 <label>$VAR[View525MainLabel]</label>
                             </control>
                             <!-- x Episodes label -->
                             <control type="label">
-                                <right>19</right>
+                                <right>21</right>
                                 <width>250</width>
                                 <height>63</height>
                                 <aligny>center</aligny>
                                 <align>right</align>
                                 <font>Reg28</font>
-                                <textcolor>$INFO[Skin.String(BingieButtonFocusTextColor)]</textcolor>
+                                <textcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</textcolor>
                                 <label>[LOWERCASE]$VAR[View525TotalEpisodes][/LOWERCASE]</label>
                             </control>
                         </focusedlayout>
-						<focusedlayout height="65" width="565" condition="!Control.HasFocus(5250)">
+						<focusedlayout height="70" width="565" condition="!Control.HasFocus(5250)">
                             <!-- bingie button border -->
                             <control type="image">
                                 <visible>!String.IsEmpty(Container(525).ListItem.Season) + !String.IsEmpty(Container(5250).ListItem.Season) + String.IsEqual(Container(5250).ListItem.Season,Container(525).ListItem.Season) + [Control.HasFocus(525) | Control.HasFocus(60)]</visible>
                                 <width>565</width>
                                 <height>65</height>
-                                <aligny>top</aligny>
-                                <align>left</align>
-                                <aspectratio align="left" aligny="top">stretch</aspectratio>
-                                <texture border="10" background="true" colordiffuse="$INFO[Skin.String(BingieButtonTextColor)]">$INFO[Skin.String(thumbsborder_focused),bingie/border/default_button_fo_,.png]</texture>
+                                <texture border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderUnfocusColor)]">bingie/border/default_button_focus.png</texture>
                             </control>
 							<!-- bingie button border -->
                             <control type="image">
                                 <visible>![Control.HasFocus(525) | Control.HasFocus(60)]</visible>
                                 <width>565</width>
                                 <height>65</height>
-                                <aligny>top</aligny>
-                                <align>left</align>
-                                <aspectratio align="left" aligny="top">stretch</aspectratio>
-                                <texture border="10" background="true" colordiffuse="$INFO[Skin.String(BingieButtonTextColor)]">$INFO[Skin.String(thumbsborder_focused),bingie/border/default_button_fo_,.png]</texture>
+                                <texture border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderUnfocusColor)]">bingie/border/default_button_focus.png</texture>
                             </control>
                             <!-- Season x label -->
                             <control type="label">
-                                <left>18</left>
+                                <left>20</left>
                                 <width>280</width>
-                                <height>61</height>
+                                <height>63</height>
                                 <aligny>center</aligny>
                                 <align>left</align>
-                                <font>Reg32</font>
+                                <font>Plots</font>
                                 <textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
                                 <label>$VAR[View525MainLabel]</label>
                             </control>
                             <!-- x Episodes label -->
                             <control type="label">
                                 <visible>String.IsEqual(Container(5250).ListItem.Season,Container(525).ListItem.Season) + [Control.HasFocus(525) | Control.HasFocus(60)]</visible>
-                                <right>19</right>
+                                <right>21</right>
                                 <width>250</width>
                                 <height>63</height>
                                 <aligny>center</aligny>
@@ -682,7 +669,7 @@
 							<!-- x Episodes label -->
                             <control type="label">
                                 <visible>![Control.HasFocus(525) | Control.HasFocus(60)]</visible>
-                                <right>19</right>
+                                <right>21</right>
                                 <width>250</width>
                                 <height>63</height>
                                 <aligny>center</aligny>

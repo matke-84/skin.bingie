@@ -502,7 +502,6 @@
 			
 			<!-- left list -->
 			<control type="list" id="527">
-                <animation effect="fade" start="100" end="60" time="150" condition="!Control.HasFocus(527)">Conditional</animation>
 				<viewtype label="31095">wide</viewtype>
                 <include content="View_Forced">
                     <param name="viewtype" value="$LOCALIZE[31095]" />
@@ -519,71 +518,76 @@
 				<onup>527</onup>
 				<ondown>527</ondown>
 				<include>ScrollTime</include>
-				<itemlayout height="65" width="565" condition="Container.Content(seasons)">
+				<itemlayout height="70" width="565">
 					<control type="group">
 						<!-- Season x label -->
                             <control type="label">
-                                <left>18</left>
+                                <left>20</left>
                                 <width>280</width>
-                                <height>61</height>
+                                <height>63</height>
                                 <aligny>center</aligny>
                                 <align>left</align>
-                                <font>Reg32</font>
+                                <font>Plots</font>
                                 <textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
                                 <label>$VAR[View527MainLabel]</label>
                             </control>
 					</control>
 				</itemlayout>
-				<focusedlayout height="65" width="565" condition="Control.HasFocus(527)">
+				<focusedlayout height="70" width="565" condition="Control.HasFocus(527)">
 					<control type="group">
+						<!-- bingie button border -->
+                            <control type="image">                         
+                                <width>565</width>
+                                <height>65</height>
+                                <texture border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texture>
+                            </control>
 						<!-- Season x label -->
                             <control type="label">
-                                <left>18</left>
+                                <left>20</left>
                                 <width>280</width>
-                                <height>61</height>
+                                <height>63</height>
                                 <aligny>center</aligny>
                                 <align>left</align>
-                                <font>Reg32</font>
-                                <textcolor>$INFO[Skin.String(BingieButtonFocusTextColor)]</textcolor>
+                                <font>Plots</font>
+                                <textcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</textcolor>
                                 <label>$VAR[View527MainLabel]</label>
                             </control>
 						<!-- x Episodes label -->
                             <control type="label">
-                                <right>19</right>
+                                <right>21</right>
                                 <width>250</width>
                                 <height>63</height>
                                 <aligny>center</aligny>
                                 <align>right</align>
                                 <font>Reg28</font>
-                                <textcolor>$INFO[Skin.String(BingieButtonFocusTextColor)]</textcolor>
+                                <textcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</textcolor>
                                 <label>[LOWERCASE]$VAR[View527TotalEpisodes][/LOWERCASE]</label>
-                            </control>
-						<!-- bingie button border -->
-                            <control type="image">                         
-                                <width>565</width>
-                                <height>65</height>
-                                <aspectratio align="left" aligny="top">stretch</aspectratio>
-                                <texture border="10" background="true" colordiffuse="$INFO[Skin.String(BingieButtonFocusTextColor)]">$INFO[Skin.String(thumbsborder_focused),bingie/border/default_button_fo_,.png]</texture>
                             </control>
 					</control>
 					<include>LibraryAutoTrailerStopButton</include>
 				</focusedlayout>
-				<focusedlayout height="65" width="565" condition="!Control.HasFocus(527)">
+				<focusedlayout height="70" width="565" condition="!Control.HasFocus(527)">
 					<control type="group">
+						<!-- bingie button border -->
+                            <control type="image">                         
+                                <width>565</width>
+                                <height>65</height>
+                                <texture border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderUnfocusColor)]">bingie/border/default_button_focus.png</texture>
+                            </control>
 						<!-- Season x label -->
                             <control type="label">
-                                <left>18</left>
+                                <left>20</left>
                                 <width>280</width>
-                                <height>61</height>
+                                <height>63</height>
                                 <aligny>center</aligny>
                                 <align>left</align>
-                                <font>Reg32</font>
+                                <font>Plots</font>
                                 <textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
                                 <label>$VAR[View527MainLabel]</label>
                             </control>
 						<!-- x Episodes label -->
                             <control type="label">
-                                <right>19</right>
+                                <right>21</right>
                                 <width>250</width>
                                 <height>63</height>
                                 <aligny>center</aligny>
@@ -591,13 +595,6 @@
                                 <font>Reg28</font>
                                 <textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
                                 <label>[LOWERCASE]$VAR[View527TotalEpisodes][/LOWERCASE]</label>
-                            </control>
-						<!-- bingie button border -->
-                            <control type="image">                         
-                                <width>565</width>
-                                <height>65</height>
-                                <aspectratio align="left" aligny="top">stretch</aspectratio>
-                                <texture border="10" background="true" colordiffuse="$INFO[Skin.String(BingieButtonTextColor)]">$INFO[Skin.String(thumbsborder_focused),bingie/border/default_button_fo_,.png]</texture>
                             </control>
 					</control>
 					<include>LibraryAutoTrailerStopButton</include>

@@ -74,7 +74,6 @@
 
             <!-- Details Section -->
             <control type="group">
-				<visible>![!Skin.HasSetting(LockHubWidgets) + [$EXP[IsBingieHubsActive2] | $EXP[IsBingieListsActive]]]</visible>
                 <width>1920</width>
                 <height>525</height>
                 <include content="Preview_Window">
@@ -112,21 +111,21 @@
 					<!--  CLEARLOGO SPOTLIGHT -->
                     <control type="image" id="150885">
                         <include>Default_Visible_Fade</include>
-						<animation type="conditional" condition="[$EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + !Skin.HasSetting(AutoHidePlotOnIdle) | $EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + Skin.HasSetting(AutoHidePlotOnIdle) | Skin.HasSetting(AutoHidePlotOnIdle) + !Skin.HasSetting(SpotLightTrailers)] + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + !Window.IsActive(1120) + !$EXP[IsMainMenuOpened]" reversible="false">
-							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="5000" />
-							<effect type="slide" end="0,276" tween="sine" easing="in" time="400" delay="5000" />
+						<animation type="conditional" condition="[$EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + !Skin.HasSetting(AutoHidePlotOnIdle) | $EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + Skin.HasSetting(AutoHidePlotOnIdle) | Skin.HasSetting(AutoHidePlotOnIdle) + !Skin.HasSetting(SpotLightTrailers)] + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + !$EXP[IsMusicDBType] + !$EXP[IsMainMenuOpened]" reversible="false">
+							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="6000" />
+							<effect type="slide" end="0,276" tween="sine" easing="in" time="400" delay="6000" />
                         </animation>
-						<animation type="conditional" condition="Window.IsActive(1120) + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + [String.IsEqual(Container(1508).ListItem.DBTYPE,artist) | String.IsEqual(Container(1508).ListItem.DBTYPE,album)] + [!String.IsEmpty(Container(1508).ListItem.Property(Album_Description)) | !String.IsEmpty(Container(1508).ListItem.Property(Artist_Description))] + !$EXP[IsMainMenuOpened]" reversible="false">
-							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="5000" />
-							<effect type="slide" end="0,276" tween="sine" easing="in" time="400" delay="5000" />
+						<animation type="conditional" condition="$EXP[IsMusicDBType] + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + [String.IsEqual(Container(1508).ListItem.DBTYPE,artist) | String.IsEqual(Container(1508).ListItem.DBTYPE,album)] + [!String.IsEmpty(Container(1508).ListItem.Property(Album_Description)) | !String.IsEmpty(Container(1508).ListItem.Property(Artist_Description))] + !$EXP[IsMainMenuOpened]" reversible="false">
+							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="6000" />
+							<effect type="slide" end="0,276" tween="sine" easing="in" time="400" delay="6000" />
                         </animation>
-						<animation type="conditional" condition="Window.IsActive(1120) + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + [String.IsEqual(Container(1508).ListItem.DBTYPE,artist) | String.IsEqual(Container(1508).ListItem.DBTYPE,album)] + ![!String.IsEmpty(Container(1508).ListItem.Property(Album_Description)) | !String.IsEmpty(Container(1508).ListItem.Property(Artist_Description))] + !$EXP[IsMainMenuOpened]" reversible="false">
-							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="5000" />
-							<effect type="slide" end="0,94" tween="sine" easing="in" time="400" delay="5000" />
+						<animation type="conditional" condition="$EXP[IsMusicDBType] + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + [String.IsEqual(Container(1508).ListItem.DBTYPE,artist) | String.IsEqual(Container(1508).ListItem.DBTYPE,album)] + ![!String.IsEmpty(Container(1508).ListItem.Property(Album_Description)) | !String.IsEmpty(Container(1508).ListItem.Property(Artist_Description))] + !$EXP[IsMainMenuOpened]" reversible="false">
+							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="6000" />
+							<effect type="slide" end="0,94" tween="sine" easing="in" time="400" delay="6000" />
                         </animation>
-						<animation type="conditional" condition="Window.IsActive(1120) + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + String.IsEqual(Container(1508).ListItem.DBTYPE,song) + !$EXP[IsMainMenuOpened]" reversible="false">
-							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="5000" />
-							<effect type="slide" end="0,94" tween="sine" easing="in" time="400" delay="5000" />
+						<animation type="conditional" condition="$EXP[IsMusicDBType] + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + String.IsEqual(Container(1508).ListItem.DBTYPE,song) + !$EXP[IsMainMenuOpened]" reversible="false">
+							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="6000" />
+							<effect type="slide" end="0,94" tween="sine" easing="in" time="400" delay="6000" />
                         </animation>
 						<height>230</height>                         
                         <width>594</width>                          
@@ -137,21 +136,21 @@
                     </control>
                     <control type="textbox">
                         <visible>String.EndsWith(Control.GetLabel(150885),color_transparent.png)</visible>
-						<animation type="conditional" condition="[$EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + !Skin.HasSetting(AutoHidePlotOnIdle) | $EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + Skin.HasSetting(AutoHidePlotOnIdle) | Skin.HasSetting(AutoHidePlotOnIdle) + !Skin.HasSetting(SpotLightTrailers)] + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + !Window.IsActive(1120) + !$EXP[IsMainMenuOpened]" reversible="false">
-							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="5000" />
-							<effect type="slide" end="0,294" tween="sine" easing="in" time="400" delay="5000" />
+						<animation type="conditional" condition="[$EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + !Skin.HasSetting(AutoHidePlotOnIdle) | $EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + Skin.HasSetting(AutoHidePlotOnIdle) | Skin.HasSetting(AutoHidePlotOnIdle) + !Skin.HasSetting(SpotLightTrailers)] + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + !$EXP[IsMusicDBType] + !$EXP[IsMainMenuOpened]" reversible="false">
+							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="6000" />
+							<effect type="slide" end="0,294" tween="sine" easing="in" time="400" delay="6000" />
                         </animation>
-						<animation type="conditional" condition="Window.IsActive(1120) + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + [String.IsEqual(Container(1508).ListItem.DBTYPE,artist) | String.IsEqual(Container(1508).ListItem.DBTYPE,album)] + [!String.IsEmpty(Container(1508).ListItem.Property(Album_Description)) | !String.IsEmpty(Container(1508).ListItem.Property(Artist_Description))] + !$EXP[IsMainMenuOpened]" reversible="false">
-							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="5000" />
-							<effect type="slide" end="0,294" tween="sine" easing="in" time="400" delay="5000" />
+						<animation type="conditional" condition="$EXP[IsMusicDBType] + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + [String.IsEqual(Container(1508).ListItem.DBTYPE,artist) | String.IsEqual(Container(1508).ListItem.DBTYPE,album)] + [!String.IsEmpty(Container(1508).ListItem.Property(Album_Description)) | !String.IsEmpty(Container(1508).ListItem.Property(Artist_Description))] + !$EXP[IsMainMenuOpened]" reversible="false">
+							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="6000" />
+							<effect type="slide" end="0,294" tween="sine" easing="in" time="400" delay="6000" />
                         </animation>
-						<animation type="conditional" condition="Window.IsActive(1120) + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + [String.IsEqual(Container(1508).ListItem.DBTYPE,artist) | String.IsEqual(Container(1508).ListItem.DBTYPE,album)] + ![!String.IsEmpty(Container(1508).ListItem.Property(Album_Description)) | !String.IsEmpty(Container(1508).ListItem.Property(Artist_Description))] + !$EXP[IsMainMenuOpened]" reversible="false">
-							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="5000" />
-							<effect type="slide" end="0,78" tween="sine" easing="in" time="400" delay="5000" />
+						<animation type="conditional" condition="$EXP[IsMusicDBType] + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + [String.IsEqual(Container(1508).ListItem.DBTYPE,artist) | String.IsEqual(Container(1508).ListItem.DBTYPE,album)] + ![!String.IsEmpty(Container(1508).ListItem.Property(Album_Description)) | !String.IsEmpty(Container(1508).ListItem.Property(Artist_Description))] + !$EXP[IsMainMenuOpened]" reversible="false">
+							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="6000" />
+							<effect type="slide" end="0,78" tween="sine" easing="in" time="400" delay="6000" />
                         </animation>
-						<animation type="conditional" condition="Window.IsActive(1120) + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + String.IsEqual(Container(1508).ListItem.DBTYPE,song) + !$EXP[IsMainMenuOpened]" reversible="false">
-							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="5000" />
-							<effect type="slide" end="0,78" tween="sine" easing="in" time="400" delay="5000" />
+						<animation type="conditional" condition="$EXP[IsMusicDBType] + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + String.IsEqual(Container(1508).ListItem.DBTYPE,song) + !$EXP[IsMainMenuOpened]" reversible="false">
+							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="6000" />
+							<effect type="slide" end="0,78" tween="sine" easing="in" time="400" delay="6000" />
                         </animation>
                         <top>-185</top>
                         <height>195</height>
@@ -168,8 +167,8 @@
 						<visible>!$EXP[IsMainMenuOpened]</visible>
 						<visible>Skin.HasSetting(EnableSpotlightTop250) + Skin.HasSetting(EnableRatings)</visible>
 						<visible>!String.IsEmpty(Control.GetLabel(823100)) | !String.IsEmpty(Control.GetLabel(82300)) + $EXP[IsTVShowInLastEpisodes]</visible>
-						<visible>!Window.IsActive(1120)</visible>
-						<animation effect="slide" end="0,125" tween="sine" easing="in" time="400" delay="5000" condition="[$EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + !Skin.HasSetting(AutoHidePlotOnIdle) | $EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + Skin.HasSetting(AutoHidePlotOnIdle) | Skin.HasSetting(AutoHidePlotOnIdle) + !Skin.HasSetting(SpotLightTrailers)] + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + !$EXP[IsMainMenuOpened]" reversible="false">Conditional</animation>
+						<visible>!$EXP[IsMusicDBType]</visible>
+						<animation effect="slide" end="0,125" tween="sine" easing="in" time="400" delay="6000" condition="[$EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + !Skin.HasSetting(AutoHidePlotOnIdle) | $EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + Skin.HasSetting(AutoHidePlotOnIdle) | Skin.HasSetting(AutoHidePlotOnIdle) + !Skin.HasSetting(SpotLightTrailers)] + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + !$EXP[IsMainMenuOpened]" reversible="false">Conditional</animation>
 						<orientation>horizontal</orientation>
 						<usecontrolcoords>true</usecontrolcoords>
 						<height>56</height>
@@ -236,10 +235,10 @@
 					<!-- Plot - Spotlight -->
                     <control type="textbox">
 						<visible>!$EXP[IsMainMenuOpened]</visible>
-						<visible>!Window.IsActive(1120)</visible>
+						<visible>!$EXP[IsMusicDBType]</visible>
                      	<animation type="conditional" condition="[$EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + !Skin.HasSetting(AutoHidePlotOnIdle) | $EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + Skin.HasSetting(AutoHidePlotOnIdle) | Skin.HasSetting(AutoHidePlotOnIdle) + !Skin.HasSetting(SpotLightTrailers)] + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + !$EXP[IsMainMenuOpened]" reversible="false">
-                        <effect type="Fade" start="100" end="0" time="100" delay="5200" />
-                        <effect type="slide" start="0,0" end="0,75" tween="sine" easing="in" time="400" delay="5000" />
+                        <effect type="Fade" start="100" end="0" time="100" delay="6200" />
+                        <effect type="slide" start="0,0" end="0,75" tween="sine" easing="in" time="400" delay="6000" />
                         </animation>
 						<include>Default_Visible_Fade</include>
                         <bottom></bottom>
@@ -253,10 +252,10 @@
 					<!-- Plot - Music Spotlight -->
 					<control type="textbox">
 						<visible>!$EXP[IsMainMenuOpened]</visible>
-						<visible>Window.IsActive(1120) + [String.IsEqual(Container(1508).ListItem.DBTYPE,artist) | String.IsEqual(Container(1508).ListItem.DBTYPE,album)] + [!String.IsEmpty(Container(1508).ListItem.Property(Album_Description)) | !String.IsEmpty(Container(1508).ListItem.Property(Artist_Description))]</visible>
+						<visible>$EXP[IsMusicDBType] + [String.IsEqual(Container(1508).ListItem.DBTYPE,artist) | String.IsEqual(Container(1508).ListItem.DBTYPE,album)] + [!String.IsEmpty(Container(1508).ListItem.Property(Album_Description)) | !String.IsEmpty(Container(1508).ListItem.Property(Artist_Description))]</visible>
                      	<animation type="conditional" condition="[$EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + !Skin.HasSetting(AutoHidePlotOnIdle) | $EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + Skin.HasSetting(AutoHidePlotOnIdle) | Skin.HasSetting(AutoHidePlotOnIdle) + !Skin.HasSetting(SpotLightTrailers)] + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + !$EXP[IsMainMenuOpened]" reversible="false">
-                        <effect type="Fade" start="100" end="0" time="100" delay="5200" />
-                        <effect type="slide" start="0,0" end="0,75" tween="sine" easing="in" time="400" delay="5000" />
+                        <effect type="Fade" start="100" end="0" time="100" delay="6200" />
+                        <effect type="slide" start="0,0" end="0,75" tween="sine" easing="in" time="400" delay="6000" />
                         </animation>
 						<include>Default_Visible_Fade</include>
                         <bottom></bottom>
@@ -273,7 +272,7 @@
 						<visible>!$EXP[IsMainMenuOpened]</visible>
 						<visible>!Skin.HasSetting(EnableCastThumb)</visible>
 						<visible>![!String.IsEmpty(Control.GetLabel(823100)) | !String.IsEmpty(Control.GetLabel(82300)) + $EXP[IsTVShowInLastEpisodes]] | !String.IsEmpty(Control.GetLabel(823100)) + [!Skin.HasSetting(EnableSpotlightTop250) | !Skin.HasSetting(EnableRatings)]</visible>
-						<visible>!Window.IsActive(1120)</visible>
+						<visible>!$EXP[IsMusicDBType]</visible>
 						<orientation>horizontal</orientation>
 						<usecontrolcoords>true</usecontrolcoords>
 						<top>14</top>
@@ -324,7 +323,7 @@
 						<visible>!$EXP[IsMainMenuOpened]</visible>
 						<visible>Skin.HasSetting(EnableCastThumb)</visible>
 						<visible>![!String.IsEmpty(Control.GetLabel(823100)) | !String.IsEmpty(Control.GetLabel(82300)) + $EXP[IsTVShowInLastEpisodes]] | !String.IsEmpty(Control.GetLabel(823100)) + [!Skin.HasSetting(EnableSpotlightTop250) | !Skin.HasSetting(EnableRatings)]</visible>
-						<visible>!Window.IsActive(1120)</visible>
+						<visible>!$EXP[IsMusicDBType]</visible>
 						<orientation>horizontal</orientation>
 						<usecontrolcoords>true</usecontrolcoords>
 						<top>14</top>
@@ -335,7 +334,7 @@
 					<control type="image">
 						<visible>Skin.HasSetting(EnableColorDetailsIcons)</visible>
 						<visible>!String.IsEmpty(Control.GetLabel(31002))</visible>
-						<visible>[String.IsEmpty(Container(99950).ListItem.Property(Cast.1.Thumb)) + [[String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),9)]]] | ![[String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),9)]]</visible>
+						<visible>[String.IsEmpty(Container(17195).ListItem.Property(Cast.1.Thumb)) + [[String.StartsWith(Container(17195).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(17195).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(17195).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(Trakt_Rating),9)]]] | ![[String.StartsWith(Container(17195).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(17195).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(17195).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(Trakt_Rating),9)]]</visible>
 						<posy>14</posy>
 						<left>1</left>
 						<height>70</height>
@@ -347,7 +346,7 @@
 					<control type="image">
 						<visible>!Skin.HasSetting(EnableColorDetailsIcons)</visible>
 						<visible>!String.IsEmpty(Control.GetLabel(31002))</visible>
-						<visible>[String.IsEmpty(Container(99950).ListItem.Property(Cast.1.Thumb)) + [[String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),9)]]] | ![[String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),9)]]</visible>
+						<visible>[String.IsEmpty(Container(17195).ListItem.Property(Cast.1.Thumb)) + [[String.StartsWith(Container(17195).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(17195).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(17195).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(Trakt_Rating),9)]]] | ![[String.StartsWith(Container(17195).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(17195).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(17195).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(Trakt_Rating),9)]]</visible>
 						<posy>14</posy>
 						<left>1</left>
 						<height>70</height>
@@ -358,7 +357,7 @@
 					</control>	
 					<!-- Cast Thumb -->
 					<control type="group">
-						<visible>!String.IsEmpty(Container(99950).ListItem.Property(Cast.1.Thumb)) + [[String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),9)]]</visible>
+						<visible>!String.IsEmpty(Container(17195).ListItem.Property(Cast.1.Thumb)) + [[String.StartsWith(Container(17195).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(17195).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(17195).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(Trakt_Rating),9)]]</visible>
 						<height>70</height> 
 						<width>70</width>
 					<control type="image">						
@@ -377,13 +376,13 @@
 						<height>64</height>
 						<width>64</width>
 						<aspectratio scalediffuse="false" align="center" aligny="center">scale</aspectratio>
-                        <texture diffuse="diffuse/circle_diffuse.png">$INFO[Container(99950).ListItem.Property(Cast.1.Thumb)]</texture>
+                        <texture diffuse="diffuse/circle_diffuse.png">$INFO[Container(17195).ListItem.Property(Cast.1.Thumb)]</texture>
 					</control>
 					</control>					
 					<!-- Home Spotlight Additional Details Text -->
 					<control type="textbox" id="31002">
 						<visible>!String.IsEmpty(Control.GetLabel(31002))</visible>
-						<visible>[String.IsEmpty(Container(99950).ListItem.Property(Cast.1.Thumb)) + [[String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),9)]]] | ![[String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),9)]]</visible>
+						<visible>[String.IsEmpty(Container(17195).ListItem.Property(Cast.1.Thumb)) + [[String.StartsWith(Container(17195).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(17195).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(17195).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(Trakt_Rating),9)]]] | ![[String.StartsWith(Container(17195).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(17195).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(17195).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(Trakt_Rating),9)]]</visible>
 						<height>115</height>
 						<width>650</width>
 						<left>10</left>			
@@ -397,7 +396,7 @@
 					</control>
 					<control type="textbox" id="31002">
 						<visible>!String.IsEmpty(Control.GetLabel(31002))</visible>
-						<visible>!String.IsEmpty(Container(99950).ListItem.Property(Cast.1.Thumb)) + [[String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),9)]]</visible>
+						<visible>!String.IsEmpty(Container(17195).ListItem.Property(Cast.1.Thumb)) + [[String.StartsWith(Container(17195).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(17195).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(17195).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(Trakt_Rating),9)]]</visible>
 						<height>115</height>
 						<width>650</width>
 						<left>10</left>			
@@ -405,7 +404,7 @@
 						<align>left</align>
 						<aligny>center</aligny>
 						<font>Reg28</font> 
-						<label>$INFO[Container(99950).ListItem.Property(Cast.1.Name),$LOCALIZE[31100] ]</label>
+						<label>$INFO[Container(17195).ListItem.Property(Cast.1.Name),$LOCALIZE[31100] ]</label>
 						<autoscroll>false</autoscroll>					
 						<label>$VAR[BingieMoreDetailsSpotlight]</label>
 					</control>
@@ -414,7 +413,7 @@
 					<!-- Spotlight Additional Details Grouplist for Music Hub -->
 					<control type="grouplist">
 						<visible>!$EXP[IsMainMenuOpened]</visible>
-						<visible>Window.IsActive(1120)</visible>
+						<visible>$EXP[IsMusicDBType]</visible>
 						<orientation>horizontal</orientation>
 						<usecontrolcoords>true</usecontrolcoords>
 						<top>14</top>
@@ -739,7 +738,6 @@
 						<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
 						<include>Animation_Right_Home</include>
 						<include>Bingie_Footer</include>
-						<animation effect="slide" end="0,23" time="300" condition="!$EXP[IsCurrentWidgetSpotlight] + String.IsEqual(Skin.String(widgetstyle),landscape)">Conditional</animation>
 						<animation effect="fade" start="100" end="0" time="300" condition="[$EXP[IsCurrentWidgetSpotlight] + Skin.HasSetting(EnableFooterBarOnSpotlight)] | [!$EXP[IsCurrentWidgetSpotlight] + Skin.HasSetting(EnableFooterBarOnWidgets)] | [Skin.HasSetting(HideMediaFlagsTrailer) + $EXP[IsPlayingUnrecognizedContent]] | $EXP[IsCategoryDBType]">Conditional</animation>
 				</control>
             </control>
@@ -750,44 +748,39 @@
             <!-- Widgets -->
             <control type="grouplist" id="77777">
                 <animation time="300" effect="fade" start="100" end="70" reversible="true" easing="inout" condition="$EXP[IsMainMenuOpened] + !$EXP[IsPlayingRecognizedContent]">Conditional</animation>
-				<animation effect="slide" end="0,38" time="300" condition="$EXP[IsCurrentWidgetSpotlight] + !Window.IsActive(1120)">Conditional</animation>
-				<animation effect="slide" end="0,3" time="300" condition="$EXP[IsCurrentWidgetSpotlight] + Window.IsActive(1120)">Conditional</animation>
-				<animation effect="slide" end="0,23" time="300" condition="!$EXP[IsCurrentWidgetSpotlight] + [String.IsEqual(Skin.String(widgetstyle),landscape) + !Window.IsActive(1120)]">Conditional</animation>
-				<animation effect="slide" end="0,35" time="300" condition="Window.IsActive(1120)">Conditional</animation>
+				<animation effect="slide" end="0,38" time="300" condition="$EXP[IsCurrentWidgetSpotlight]">Conditional</animation>
                 <usecontrolcoords>true</usecontrolcoords>
 				<top>564</top>
-                <include condition="[Window.IsActive(Home) | [$EXP[IsBingieHubsActive] + [Skin.HasSetting(LockHubWidgets) | Window.IsActive(1114)]]]">Fixed_Focus_Bottom</include>
+                <include condition="Window.IsActive(Home) | $EXP[IsBingieHubsActive]">Fixed_Focus_Bottom</include>
                 <bottom>0</bottom>
-                <include condition="[Window.IsActive(Home) | [$EXP[IsBingieHubsActive] + [Skin.HasSetting(LockHubWidgets) | Window.IsActive(1114)]]]">Fixed_Focus_Itemgap</include>
+                <include condition="Window.IsActive(Home) | $EXP[IsBingieHubsActive]">Fixed_Focus_Itemgap</include>
                 <itemgap>2</itemgap>
                 <pagecontrol>317</pagecontrol>
                 <width>2070</width>
+				<onback condition="$EXP[IsBingieViewsActive]">900</onback>
+				<onleft condition="$EXP[IsBingieViewsActive]">SetFocus(900,$INFO[Window(Home).Property(menupos)])</onleft>
+				<onback condition="$EXP[IsBingieViewsActive]">SetFocus(900,$INFO[Window(Home).Property(menupos)])</onback>
                 <onback condition="$EXP[IsPlayingRecognizedContent]">SetFocus(509)</onback>
-                <onback condition="!$EXP[IsPlayingRecognizedContent] + $EXP[IsBingieViewsActive]">900</onback>
                 <onleft condition="$EXP[IsBingieViewsActive] + $EXP[IsPlayingUnrecognizedContent]">SetProperty(KeepPlayingPreview,1,Home)</onleft>
-                <onleft condition="$EXP[IsBingieViewsActive]">900</onleft>
-                <include content="BingieSpotlightWidget" condition="[Window.IsActive(Home) | $EXP[IsBingieHubsActive2] + Skin.HasSetting(LockHubWidgets)] + !Skin.HasSetting(DisableSpotlightContent)">
+                <include content="BingieSpotlightWidget" condition="[Window.IsActive(Home) | $EXP[IsBingieHubsActive2]] + !Skin.HasSetting(DisableSpotlightContent)">
                     <param name="widgetid" value="1508"/>
                 </include>
                 <include condition="Window.IsActive(Home)">skinshortcuts-template-Widgets</include>
-                <include condition="Window.IsActive(1110)">bingie_items_tvshows</include>
-                <include condition="Window.IsActive(1111)">bingie_items_movies</include>
-                <include condition="Window.IsActive(1112)">bingie_items_new</include>
-                <include condition="Window.IsActive(1113)">bingie_items_myhub</include>
+                <include condition="Window.IsActive(1110)">skinshortcuts-template-tvshowhub</include>
+                <include condition="Window.IsActive(1111)">skinshortcuts-template-moviehub</include>
+                <include condition="Window.IsActive(1112)">skinshortcuts-template-newhub</include>
+                <include condition="Window.IsActive(1113)">skinshortcuts-template-customhub</include>
                 <include condition="Window.IsActive(1114)">bingie_items_mylist</include>
-                <include condition="Window.IsActive(1115)">bingie_items_mycustom</include>
-				<include condition="Window.IsActive(1120)">bingie_items_music</include>				
+				<include condition="Window.IsActive(1120)">skinshortcuts-template-musichub</include>				
             </control>
 			
-			<include condition="String.IsEqual(Skin.String(widgetstyle),poster) + !Skin.HasSetting(DisableDummySpotlight) + !Window.IsActive(1120)">SpotlightDummyPosterWidget</include>
-            <include condition="String.IsEqual(Skin.String(widgetstyle),landscape) + !Skin.HasSetting(DisableDummySpotlight) + !Window.IsActive(1120)">SpotlightDummyLandscapeWidget</include>
-			<include condition="!Skin.HasSetting(DisableDummySpotlight) + Window.IsActive(1120)">SpotlightDummySquareWidget</include>
+			<include condition="String.IsEqual(Skin.String(widgetstyle),poster) + !Skin.HasSetting(DisableDummySpotlight)">SpotlightDummyPosterWidget</include>
+			<include condition="String.IsEqual(Skin.String(widgetstyle),landscape) + !Skin.HasSetting(DisableDummySpotlight)">SpotlightDummyLandscapeWidget</include>
+			<include condition="[String.IsEqual(Skin.String(widgetstyle),square) | Window.IsActive(1120)] + !Skin.HasSetting(DisableDummySpotlight)">SpotlightDummySquareWidget</include>
          			
 			<!-- Fixed Focus Frame -->
 			<control type="group">
-				<include condition="Skin.HasSetting(EnableFixedFrameWidgets) + [Window.IsActive(Home) | $EXP[IsBingieHubsActive2] + Skin.HasSetting(LockHubWidgets)]">Bingie_Screens_Fixed_Focus_Frame</include>
-				<animation effect="slide" end="0,23" time="0" condition="!$EXP[IsCurrentWidgetSpotlight] + [String.IsEqual(Skin.String(widgetstyle),landscape) + !Window.IsActive(1120)]">Conditional</animation>
-				<animation effect="slide" end="0,35" time="300" condition="Window.IsActive(1120)">Conditional</animation>
+				<include condition="Skin.HasSetting(EnableFixedFrameWidgets) + [Window.IsActive(Home) | $EXP[IsBingieHubsActive2]]">Bingie_Screens_Fixed_Focus_Frame</include>
 			</control>
 				<!-- gradient overlays on widgets -->
                 <include>Bingie_Left_Gradient</include>
@@ -795,7 +788,7 @@
 	
 			<!--Bingie Logo Diffuse-->
 			<control type="image">
-				<visible>!Skin.HasSetting(DisableBingieLogo) + [Window.IsActive(Home) | Window.IsActive(1110) | Window.IsActive(1111) | Window.IsActive(1112) | Window.IsActive(1113) | Window.IsActive(1120) | [Window.IsActive(1114) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),poster)]]]</visible> 
+				<visible>!Skin.HasSetting(DisableBingieLogo) + [Window.IsActive(Home) | Window.IsActive(1110) | Window.IsActive(1111) | Window.IsActive(1112) | Window.IsActive(1113) | Window.IsActive(1120) | Window.IsActive(1114)]</visible> 
 				<description>diffuse behind Bingie logo</description>
 				<animation effect="slide" end="-66" time="0" condition="Window.IsActive(1110) | Window.IsActive(1111) | Window.IsActive(1114)">Conditional</animation>
 				<right>470</right>
@@ -809,7 +802,7 @@
 			</control>
 			<!--Bingie Logo-->
 			<control type="image">
-				<visible>!Skin.HasSetting(DisableBingieLogo) + !Window.IsActive(1110) + !Window.IsActive(1111) + !Window.IsActive(1114) + !Window.IsActive(1115) + !Window.IsActive(1120)</visible>
+				<visible>!Skin.HasSetting(DisableBingieLogo) + !Window.IsActive(1110) + !Window.IsActive(1111) + !Window.IsActive(1114) + !Window.IsActive(1120)</visible>
 				<description>Bingie logo</description>
 				<right>314</right>
 				<bottom>5</bottom>
@@ -821,12 +814,12 @@
 			</control>
 
 			<control type="grouplist">
-				<visible>!Skin.HasSetting(DisableBingieLogo) + [Window.IsActive(1110) | Window.IsActive(1111) | Window.IsActive(1120) | Window.IsActive(1114) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),poster)]]</visible>
+				<visible>!Skin.HasSetting(DisableBingieLogo) + [Window.IsActive(1110) | Window.IsActive(1111) | Window.IsActive(1120) | Window.IsActive(1114)]</visible>
 				<orientation>horizontal</orientation>
 				<height>56</height>
 				<width>300</width>
 				<itemgap>10</itemgap>
-				<right>130</right>
+				<right>124</right>
 				<top>977</top>
 				<align>right</align>
 			<control type="image">

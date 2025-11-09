@@ -11,9 +11,9 @@
     </variable>
 	
 	<variable name="Path_Param_Type">
-        <value condition="String.IsEqual(ListItem.DBType,movie) | ListItem.IsCollection | String.IsEqual(ListItem.DBType,set)">type=movie</value>
-        <value condition="String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)">type=tv</value>
-        <value condition="$EXP[Exp_IsPersonInfo]">type=person</value>
+        <value condition="$EXP[IsMovieDBType] | $EXP[IsSetDBType]">tmdb_type=movie</value>
+        <value condition="$EXP[IsTvShowDBType] | $EXP[IsSeasonDBType] | $EXP[IsEpisodeDBType]">tmdb_type=tv</value>
+        <value condition="$EXP[Exp_IsPersonInfo]">tmdb_type=person</value>
     </variable>
 	
 	<variable name="Path_Param_EpisodeSpecific">
@@ -21,144 +21,126 @@
         <value condition="String.IsEqual(ListItem.DBType,episode)">$INFO[ListItem.Season,&amp;season=,]$INFO[ListItem.Episode,&amp;episode=,]</value>
     </variable>
 	
-	<variable name="Path_Param_Database">
-        <value condition="String.IsEqual(Skin.String(list_filter),library_filter)">&amp;exclude_key=dbid&amp;exclude_value=is_empty</value>
-    </variable>
-	
-	<variable name="Path_Param_Digital_Release">
-        <value condition="String.IsEqual(Skin.String(list_filter),digital_filter)">&amp;exclude_key=providers&amp;exclude_value=is_empty</value>
-    </variable>
-	
-	<variable name="Path_Param_Premiered">
-        <value condition="!String.IsEqual(Skin.String(list_filter),library_filter) + !String.IsEqual(Skin.String(list_filter),digital_filter)">&amp;exclude_key=premiered&amp;exclude_value=is_empty</value>
-    </variable>
-	
-	<variable name="Path_Param_Categories_Digital_Release">
-        <value condition="Skin.HasSetting(EnableDigitalFilter)">&amp;exclude_key=providers&amp;exclude_value=is_empty</value>
-    </variable>
-	
 	<variable name="Path_Cast">
-        <value>plugin://plugin.video.themoviedb.helper?info=cast&amp;nextpage=false&amp;aggregate=true$VAR[Path_Param_Type,&amp;,]$VAR[Path_Param_Query]$VAR[Path_Param_EpisodeSpecific]</value>
+        <value condition="String.IsEqual(Window.Property(AdditionalInfo),cast)">plugin://plugin.video.tmdb.bingie.helper?info=cast&amp;nextpage=false&amp;cacheonly=true&amp;aggregate=true$VAR[Path_Param_Type,&amp;,]$VAR[Path_Param_Query]$VAR[Path_Param_EpisodeSpecific]</value>
     </variable>
 	
     <variable name="Path_Crew">
-        <value>plugin://plugin.video.themoviedb.helper?info=crew&amp;nextpage=false&amp;aggregate=true$VAR[Path_Param_Type,&amp;,]$VAR[Path_Param_Query]$VAR[Path_Param_EpisodeSpecific]</value>
+        <value condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31089])">plugin://plugin.video.tmdb.bingie.helper?info=crew&amp;nextpage=false&amp;cacheonly=true&amp;aggregate=true$VAR[Path_Param_Type,&amp;,]$VAR[Path_Param_Query]$VAR[Path_Param_EpisodeSpecific]</value>
     </variable>
 	
 	<variable name="Path_Videos">
-        <value>plugin://plugin.video.themoviedb.helper?info=videos&amp;nextpage=false$VAR[Path_Param_Type,&amp;,]$VAR[Path_Param_Query]</value>
+        <value condition="Control.HasFocus(541)">plugin://plugin.video.tmdb.bingie.helper?info=videos&amp;nextpage=false&amp;cacheonly=true$VAR[Path_Param_Type,&amp;,]$VAR[Path_Param_Query]</value>
     </variable>
 	
 	 <variable name="Path_FromGenre">
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Genre.1.TMDb_ID))">plugin://plugin.video.themoviedb.helper?info=discover&amp;with_genres=$INFO[Container(99950).ListItem.Property(Genre.1.TMDb_ID)]&amp;with_id=True$VAR[Path_Param_Type,&amp;,]$VAR[Path_Param_Database]$VAR[Path_Param_Digital_Release]&amp;nextpage=false</value>
+        <value condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[135]) + !String.IsEmpty(Container(17195).ListItem.Property(Genre.1.TMDb_ID))">plugin://plugin.video.tmdb.bingie.helper?info=discover&amp;with_genres=$INFO[Container(17195).ListItem.Property(Genre.1.TMDb_ID)]&amp;with_id=True$VAR[Path_Param_Type,&amp;,]&amp;nextpage=false&amp;cacheonly=true&amp;length=1&amp;vote_count.gte=50&amp;without_keywords=155477&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="Path_FromDirector_Name">
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Director.1.name)) + !String.IsEmpty(Container(99950).ListItem.Property(Director.1.job)) + String.IsEqual(Container(99950).ListItem.Property(Director.1.job),Director)">$INFO[Container(99950).ListItem.Property(Director.1.name)]</value>
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Director.2.name)) + !String.IsEmpty(Container(99950).ListItem.Property(Director.2.job)) + String.IsEqual(Container(99950).ListItem.Property(Director.2.job),Director)">$INFO[Container(99950).ListItem.Property(Director.2.name)]</value>
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Director.3.name)) + !String.IsEmpty(Container(99950).ListItem.Property(Director.3.job)) + String.IsEqual(Container(99950).ListItem.Property(Director.3.job),Director)">$INFO[Container(99950).ListItem.Property(Director.3.name)]</value>
-		<value condition="!String.IsEmpty(Container(99950).ListItem.Property(Director.4.name)) + !String.IsEmpty(Container(99950).ListItem.Property(Director.4.job)) + String.IsEqual(Container(99950).ListItem.Property(Director.4.job),Director)">$INFO[Container(99950).ListItem.Property(Director.4.name)]</value>
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Director.5.name)) + !String.IsEmpty(Container(99950).ListItem.Property(Director.5.job)) + String.IsEqual(Container(99950).ListItem.Property(Director.5.job),Director)">$INFO[Container(99950).ListItem.Property(Director.5.name)]</value>
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Director.1.name))">$INFO[Container(99950).ListItem.Property(Director.1.name)]</value>
+        <value condition="!String.IsEmpty(Container(17195).ListItem.Property(Director.1.name))">$INFO[Container(17195).ListItem.Property(Director.1.name)]</value>
+        <value condition="!String.IsEmpty(Container(17195).ListItem.Property(Director.2.name))">$INFO[Container(17195).ListItem.Property(Director.2.name)]</value>
+        <value condition="!String.IsEmpty(Container(17195).ListItem.Property(Director.3.name))">$INFO[Container(17195).ListItem.Property(Director.3.name)]</value>
+		<value condition="!String.IsEmpty(Container(17195).ListItem.Property(Director.4.name))">$INFO[Container(17195).ListItem.Property(Director.4.name)]</value>
+        <value condition="!String.IsEmpty(Container(17195).ListItem.Property(Director.5.name))">$INFO[Container(17195).ListItem.Property(Director.5.name)]</value>
     </variable>
 	
 	<variable name="Path_FromDirector_TMDb">
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Director.1.TMDb_ID)) + !String.IsEmpty(Container(99950).ListItem.Property(Director.1.job)) + String.IsEqual(Container(99950).ListItem.Property(Director.1.job),Director)">$INFO[Container(99950).ListItem.Property(Director.1.TMDb_ID),&amp;tmdb_id=,]</value>
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Director.2.TMDb_ID)) + !String.IsEmpty(Container(99950).ListItem.Property(Director.2.job)) + String.IsEqual(Container(99950).ListItem.Property(Director.2.job),Director)">$INFO[Container(99950).ListItem.Property(Director.2.TMDb_ID),&amp;tmdb_id=,]</value>
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Director.3.TMDb_ID)) + !String.IsEmpty(Container(99950).ListItem.Property(Director.3.job)) + String.IsEqual(Container(99950).ListItem.Property(Director.3.job),Director)">$INFO[Container(99950).ListItem.Property(Director.3.TMDb_ID),&amp;tmdb_id=,]</value>
-		<value condition="!String.IsEmpty(Container(99950).ListItem.Property(Director.4.TMDb_ID)) + !String.IsEmpty(Container(99950).ListItem.Property(Director.4.job)) + String.IsEqual(Container(99950).ListItem.Property(Director.4.job),Director)">$INFO[Container(99950).ListItem.Property(Director.4.TMDb_ID),&amp;tmdb_id=,]</value>
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Director.5.TMDb_ID)) + !String.IsEmpty(Container(99950).ListItem.Property(Director.5.job)) + String.IsEqual(Container(99950).ListItem.Property(Director.5.job),Director)">$INFO[Container(99950).ListItem.Property(Director.5.TMDb_ID),&amp;tmdb_id=,]</value>
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Director.1.TMDb_ID))">$INFO[Container(99950).ListItem.Property(Director.1.TMDb_ID),&amp;tmdb_id=,]</value>
+        <value condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[20339]) + !String.IsEmpty(Container(17195).ListItem.Property(Director.1.TMDb_ID))">$INFO[Container(17195).ListItem.Property(Director.1.TMDb_ID),&amp;tmdb_id=,]</value>
+        <value condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[20339]) + !String.IsEmpty(Container(17195).ListItem.Property(Director.2.TMDb_ID))">$INFO[Container(17195).ListItem.Property(Director.2.TMDb_ID),&amp;tmdb_id=,]</value>
+        <value condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[20339]) + !String.IsEmpty(Container(17195).ListItem.Property(Director.3.TMDb_ID))">$INFO[Container(17195).ListItem.Property(Director.3.TMDb_ID),&amp;tmdb_id=,]</value>
+		<value condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[20339]) + !String.IsEmpty(Container(17195).ListItem.Property(Director.4.TMDb_ID))">$INFO[Container(17195).ListItem.Property(Director.4.TMDb_ID),&amp;tmdb_id=,]</value>
+        <value condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[20339]) + !String.IsEmpty(Container(17195).ListItem.Property(Director.5.TMDb_ID))">$INFO[Container(17195).ListItem.Property(Director.5.TMDb_ID),&amp;tmdb_id=,]</value>
     </variable>
 	
 	<variable name="Path_FromDirector">
-        <value condition="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode)">plugin://plugin.video.themoviedb.helper?info=crew_in_both&amp;type=person&amp;filter_key=job&amp;filter_value=Director$VAR[Path_FromDirector_TMDb,&amp;query=,]$VAR[Path_Param_Database]$VAR[Path_Param_Digital_Release]&amp;nextpage=false</value>
+        <value condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[20339]) + String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode)">plugin://plugin.video.tmdb.bingie.helper?info=crew_in_both&amp;tmdb_type=person&amp;filter_key=job&amp;filter_value=Director$VAR[Path_FromDirector_TMDb,&amp;query=,]&amp;nextpage=false&amp;cacheonly=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="Path_FromCreator_Name">
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Creator.1.name))">$INFO[Container(99950).ListItem.Property(Creator.1.name)]</value>
-		<value condition="!String.IsEmpty(Container(99950).ListItem.Property(Creator.2.name))">$INFO[Container(99950).ListItem.Property(Creator.2.name)]</value>
-		<value condition="!String.IsEmpty(Container(99950).ListItem.Property(Creator.3.name))">$INFO[Container(99950).ListItem.Property(Creator.3.name)]</value>
+        <value condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31530]) + !String.IsEmpty(Container(17195).ListItem.Property(Creator.1.name))">$INFO[Container(17195).ListItem.Property(Creator.1.name)]</value>
+		<value condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31530]) + !String.IsEmpty(Container(17195).ListItem.Property(Creator.2.name))">$INFO[Container(17195).ListItem.Property(Creator.2.name)]</value>
+		<value condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31530]) + !String.IsEmpty(Container(17195).ListItem.Property(Creator.3.name))">$INFO[Container(17195).ListItem.Property(Creator.3.name)]</value>
     </variable>
 	
 	<variable name="Path_FromCreator_TMDb">
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Creator.1.TMDb_ID))">$INFO[Container(99950).ListItem.Property(Creator.1.TMDb_ID),&amp;tmdb_id=,]</value>
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Creator.2.TMDb_ID))">$INFO[Container(99950).ListItem.Property(Creator.2.TMDb_ID),&amp;tmdb_id=,]</value>
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Creator.3.TMDb_ID))">$INFO[Container(99950).ListItem.Property(Creator.3.TMDb_ID),&amp;tmdb_id=,]</value>
+        <value condition="!String.IsEmpty(Container(17195).ListItem.Property(Creator.1.TMDb_ID))">$INFO[Container(17195).ListItem.Property(Creator.1.TMDb_ID),&amp;tmdb_id=,]</value>
+        <value condition="!String.IsEmpty(Container(17195).ListItem.Property(Creator.2.TMDb_ID))">$INFO[Container(17195).ListItem.Property(Creator.2.TMDb_ID),&amp;tmdb_id=,]</value>
+        <value condition="!String.IsEmpty(Container(17195).ListItem.Property(Creator.3.TMDb_ID))">$INFO[Container(17195).ListItem.Property(Creator.3.TMDb_ID),&amp;tmdb_id=,]</value>
     </variable>
 	
 	<variable name="Path_FromCreator">
-        <value condition="String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)">plugin://plugin.video.themoviedb.helper?info=crew_in_both&amp;type=person&amp;filter_key=job&amp;filter_value=Creator$VAR[Path_FromCreator_TMDb,&amp;query=,]$VAR[Path_Param_Database]$VAR[Path_Param_Digital_Release]&amp;nextpage=false</value>
+        <value condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31530]) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)]">plugin://plugin.video.tmdb.bingie.helper?info=crew_in_both&amp;tmdb_type=person&amp;filter_key=job&amp;filter_value=Creator$VAR[Path_FromCreator_TMDb,&amp;query=,]&amp;nextpage=false&amp;cacheonly=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="Path_Posters">
-        <value>plugin://plugin.video.themoviedb.helper?info=posters$VAR[Path_Param_Type,&amp;,]$VAR[Path_Param_Query]&amp;nextpage=false</value>
+        <value condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31529])">plugin://plugin.video.tmdb.bingie.helper?info=posters$VAR[Path_Param_Type,&amp;,]$VAR[Path_Param_Query]&amp;nextpage=false&amp;limit=20&amp;cacheonly=true</value>
     </variable>
 	
 	<variable name="Path_FromWriter_Screenplay">
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Writer.1.name)) + !String.IsEmpty(Container(99950).ListItem.Property(Writer.1.job)) + String.IsEqual(Container(99950).ListItem.Property(Writer.1.job),Screenplay)">$INFO[Container(99950).ListItem.Property(Writer.1.name)]</value>
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Writer.2.name)) + !String.IsEmpty(Container(99950).ListItem.Property(Writer.2.job)) + String.IsEqual(Container(99950).ListItem.Property(Writer.2.job),Screenplay)">$INFO[Container(99950).ListItem.Property(Writer.2.name)]</value>
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Writer.3.name)) + !String.IsEmpty(Container(99950).ListItem.Property(Writer.3.job)) + String.IsEqual(Container(99950).ListItem.Property(Writer.3.job),Screenplay)">$INFO[Container(99950).ListItem.Property(Writer.3.name)]</value>
-		<value condition="!String.IsEmpty(Container(99950).ListItem.Property(Writer.4.name)) + !String.IsEmpty(Container(99950).ListItem.Property(Writer.4.job)) + String.IsEqual(Container(99950).ListItem.Property(Writer.4.job),Screenplay)">$INFO[Container(99950).ListItem.Property(Writer.4.name)]</value>
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Writer.5.name)) + !String.IsEmpty(Container(99950).ListItem.Property(Writer.5.job)) + String.IsEqual(Container(99950).ListItem.Property(Writer.5.job),Screenplay)">$INFO[Container(99950).ListItem.Property(Writer.5.name)]</value>
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Writer.1.name))">$INFO[Container(99950).ListItem.Property(Writer.1.name)]</value>
+        <value condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31488]) + !String.IsEmpty(Container(17195).ListItem.Property(Writer.1.name)) + !String.IsEmpty(Container(17195).ListItem.Property(Writer.1.job)) + String.IsEqual(Container(17195).ListItem.Property(Writer.1.job),Screenplay)">$INFO[Container(17195).ListItem.Property(Writer.1.name)]</value>
+        <value condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31488]) + !String.IsEmpty(Container(17195).ListItem.Property(Writer.2.name)) + !String.IsEmpty(Container(17195).ListItem.Property(Writer.2.job)) + String.IsEqual(Container(17195).ListItem.Property(Writer.2.job),Screenplay)">$INFO[Container(17195).ListItem.Property(Writer.2.name)]</value>
+        <value condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31488]) + !String.IsEmpty(Container(17195).ListItem.Property(Writer.3.name)) + !String.IsEmpty(Container(17195).ListItem.Property(Writer.3.job)) + String.IsEqual(Container(17195).ListItem.Property(Writer.3.job),Screenplay)">$INFO[Container(17195).ListItem.Property(Writer.3.name)]</value>
+		<value condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31488]) + !String.IsEmpty(Container(17195).ListItem.Property(Writer.4.name)) + !String.IsEmpty(Container(17195).ListItem.Property(Writer.4.job)) + String.IsEqual(Container(17195).ListItem.Property(Writer.4.job),Screenplay)">$INFO[Container(17195).ListItem.Property(Writer.4.name)]</value>
+        <value condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31488]) + !String.IsEmpty(Container(17195).ListItem.Property(Writer.5.name)) + !String.IsEmpty(Container(17195).ListItem.Property(Writer.5.job)) + String.IsEqual(Container(17195).ListItem.Property(Writer.5.job),Screenplay)">$INFO[Container(17195).ListItem.Property(Writer.5.name)]</value>
+        <value condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31488]) + !String.IsEmpty(Container(17195).ListItem.Property(Writer.1.name))">$INFO[Container(17195).ListItem.Property(Writer.1.name)]</value>
     </variable>
 	
 	<variable name="Path_FromWriter_TMDb">
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Writer.1.TMDb_ID)) + !String.IsEmpty(Container(99950).ListItem.Property(Writer.1.job)) + String.IsEqual(Container(99950).ListItem.Property(Writer.1.job),Screenplay)">$INFO[Container(99950).ListItem.Property(Writer.1.TMDb_ID),&amp;tmdb_id=,]</value>
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Writer.2.TMDb_ID)) + !String.IsEmpty(Container(99950).ListItem.Property(Writer.2.job)) + String.IsEqual(Container(99950).ListItem.Property(Writer.2.job),Screenplay)">$INFO[Container(99950).ListItem.Property(Writer.2.TMDb_ID),&amp;tmdb_id=,]</value>
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Writer.3.TMDb_ID)) + !String.IsEmpty(Container(99950).ListItem.Property(Writer.3.job)) + String.IsEqual(Container(99950).ListItem.Property(Writer.3.job),Screenplay)">$INFO[Container(99950).ListItem.Property(Writer.3.TMDb_ID),&amp;tmdb_id=,]</value>
-		<value condition="!String.IsEmpty(Container(99950).ListItem.Property(Writer.4.TMDb_ID)) + !String.IsEmpty(Container(99950).ListItem.Property(Writer.4.job)) + String.IsEqual(Container(99950).ListItem.Property(Writer.4.job),Screenplay)">$INFO[Container(99950).ListItem.Property(Writer.4.TMDb_ID),&amp;tmdb_id=,]</value>
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Writer.5.TMDb_ID)) + !String.IsEmpty(Container(99950).ListItem.Property(Writer.5.job)) + String.IsEqual(Container(99950).ListItem.Property(Writer.5.job),Screenplay)">$INFO[Container(99950).ListItem.Property(Writer.5.TMDb_ID),&amp;tmdb_id=,]</value>
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(Writer.1.TMDb_ID))">$INFO[Container(99950).ListItem.Property(Writer.1.TMDb_ID),&amp;tmdb_id=,]</value>
+        <value condition="!String.IsEmpty(Container(17195).ListItem.Property(Writer.1.TMDb_ID)) + !String.IsEmpty(Container(17195).ListItem.Property(Writer.1.job)) + String.IsEqual(Container(17195).ListItem.Property(Writer.1.job),Screenplay)">$INFO[Container(17195).ListItem.Property(Writer.1.TMDb_ID),&amp;tmdb_id=,]</value>
+        <value condition="!String.IsEmpty(Container(17195).ListItem.Property(Writer.2.TMDb_ID)) + !String.IsEmpty(Container(17195).ListItem.Property(Writer.2.job)) + String.IsEqual(Container(17195).ListItem.Property(Writer.2.job),Screenplay)">$INFO[Container(17195).ListItem.Property(Writer.2.TMDb_ID),&amp;tmdb_id=,]</value>
+        <value condition="!String.IsEmpty(Container(17195).ListItem.Property(Writer.3.TMDb_ID)) + !String.IsEmpty(Container(17195).ListItem.Property(Writer.3.job)) + String.IsEqual(Container(17195).ListItem.Property(Writer.3.job),Screenplay)">$INFO[Container(17195).ListItem.Property(Writer.3.TMDb_ID),&amp;tmdb_id=,]</value>
+		<value condition="!String.IsEmpty(Container(17195).ListItem.Property(Writer.4.TMDb_ID)) + !String.IsEmpty(Container(17195).ListItem.Property(Writer.4.job)) + String.IsEqual(Container(17195).ListItem.Property(Writer.4.job),Screenplay)">$INFO[Container(17195).ListItem.Property(Writer.4.TMDb_ID),&amp;tmdb_id=,]</value>
+        <value condition="!String.IsEmpty(Container(17195).ListItem.Property(Writer.5.TMDb_ID)) + !String.IsEmpty(Container(17195).ListItem.Property(Writer.5.job)) + String.IsEqual(Container(17195).ListItem.Property(Writer.5.job),Screenplay)">$INFO[Container(17195).ListItem.Property(Writer.5.TMDb_ID),&amp;tmdb_id=,]</value>
+        <value condition="!String.IsEmpty(Container(17195).ListItem.Property(Writer.1.TMDb_ID))">$INFO[Container(17195).ListItem.Property(Writer.1.TMDb_ID),&amp;tmdb_id=,]</value>
     </variable>
 	
 	<variable name="Path_FromWriter">
-        <value condition="String.IsEqual(ListItem.DBType,movie)">plugin://plugin.video.themoviedb.helper?info=crew_in_both&amp;type=person&amp;filter_key=job&amp;filter_value=Writer$VAR[Path_FromWriter_TMDb,&amp;query=,]$VAR[Path_Param_Database]$VAR[Path_Param_Digital_Release]&amp;nextpage=false</value>
+        <value condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31488]) + String.IsEqual(ListItem.DBType,movie)">plugin://plugin.video.tmdb.bingie.helper?info=crew_in_both&amp;tmdb_type=person&amp;filter_key=job&amp;filter_value=Writer$VAR[Path_FromWriter_TMDb,&amp;query=,]&amp;nextpage=false&amp;cacheonly=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
     <variable name="Path_FromStudio">
-        <value condition="String.IsEqual(ListItem.DBType,movie) + !String.IsEmpty(Container(99950).ListItem.Property(Studio.1.TMDB_ID))">plugin://plugin.video.themoviedb.helper?info=discover&amp;type=movie&amp;with_companies=$INFO[Container(99950).ListItem.Property(Studio.1.TMDB_ID)]&amp;with_id=True$VAR[Path_Param_Query]$VAR[Path_Param_Database]$VAR[Path_Param_Digital_Release]&amp;nextpage=false</value>
-        <value condition="[String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)] + !String.IsEmpty(Container(99950).ListItem.Property(Network.1.TMDB_ID))">plugin://plugin.video.themoviedb.helper?info=discover&amp;type=tv&amp;with_networks=$INFO[Container(99950).ListItem.Property(Network.1.TMDB_ID)]&amp;with_id=True$VAR[Path_Param_Query]$VAR[Path_Param_Database]$VAR[Path_Param_Digital_Release]&amp;nextpage=false</value>
+        <value condition="[String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[572]) | String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[705])] + String.IsEqual(ListItem.DBType,movie) + !String.IsEmpty(Container(17195).ListItem.Property(Studio.1.TMDB_ID))">plugin://plugin.video.tmdb.bingie.helper?info=discover&amp;tmdb_type=movie&amp;with_companies=$INFO[Container(17195).ListItem.Property(Studio.1.TMDB_ID)]&amp;with_id=True$VAR[Path_Param_Query]&amp;nextpage=false&amp;cacheonly=true&amp;length=1&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
+        <value condition="[String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[572]) | String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[705])] + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)] + !String.IsEmpty(Container(17195).ListItem.Property(Network.1.TMDB_ID))">plugin://plugin.video.tmdb.bingie.helper?info=discover&amp;tmdb_type=tv&amp;with_networks=$INFO[Container(17195).ListItem.Property(Network.1.TMDB_ID)]&amp;with_id=True$VAR[Path_Param_Query]&amp;nextpage=false&amp;cacheonly=true&amp;length=1&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="Path_FromYear">
-        <value condition="String.IsEqual(ListItem.DBType,movie) + !String.IsEmpty(ListItem.Year)">plugin://plugin.video.themoviedb.helper?info=discover&amp;type=movie&amp;primary_release_year=$INFO[ListItem.Year]$VAR[Path_Param_Query]$VAR[Path_Param_Database]$VAR[Path_Param_Digital_Release]&amp;nextpage=false</value>
-        <value condition="[String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)] + !String.IsEmpty(ListItem.Year)">plugin://plugin.video.themoviedb.helper?info=discover&amp;type=tv&amp;first_air_date_year=$INFO[ListItem.Year]$VAR[Path_Param_Query]$VAR[Path_Param_Database]$VAR[Path_Param_Digital_Release]&amp;nextpage=false</value>
+        <value condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[345]) + String.IsEqual(ListItem.DBType,movie) + !String.IsEmpty(ListItem.Year)">plugin://plugin.video.tmdb.bingie.helper?info=discover&amp;tmdb_type=movie&amp;primary_release_year=$INFO[ListItem.Year]$VAR[Path_Param_Query]&amp;nextpage=false&amp;cacheonly=true&amp;length=1&amp;vote_count.gte=50&amp;without_keywords=155477&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
+        <value condition="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[345]) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode)] + !String.IsEmpty(ListItem.Year)">plugin://plugin.video.tmdb.bingie.helper?info=discover&amp;tmdb_type=tv&amp;first_air_date_year=$INFO[ListItem.Year]$VAR[Path_Param_Query]&amp;nextpage=false&amp;cacheonly=true&amp;length=1&amp;vote_count.gte=50&amp;without_keywords=155477&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="Path_Similar">
-        <value>plugin://plugin.video.themoviedb.helper?info=recommendations&amp;nextpage=false$VAR[Path_Param_Type,&amp;,]$VAR[Path_Param_Query]$VAR[Path_Param_Database]$VAR[Path_Param_Digital_Release]</value>
+        <value condition="Control.HasFocus(62)">plugin://plugin.video.tmdb.bingie.helper?info=recommendations&amp;nextpage=false&amp;length=1$VAR[Path_Param_Type,&amp;,]$VAR[Path_Param_Query]&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="Path_Reviews">
-        <value>plugin://plugin.video.themoviedb.helper?info=trakt_comments$VAR[Path_Param_Type,&amp;,]$VAR[Path_Param_Query]</value>
+        <value condition="Control.HasFocus(60)">plugin://plugin.video.tmdb.bingie.helper?info=trakt_comments$VAR[Path_Param_Type,&amp;,]$VAR[Path_Param_Query]&amp;cacheonly=true&amp;limit=20</value>
     </variable>
 	
 	<variable name="Path_Collection">
-		<value condition="!String.IsEqual(ListItem.Path,plugin://plugin.video.themoviedb.helper/) + String.IsEqual(ListItem.DBType,movie) + !String.IsEmpty(ListItem.Set) + !Skin.HasSetting(VideoInfoButtonCollection)">plugin://plugin.video.themoviedb.helper?info=collection&amp;tmdb_type=collection&amp;query=$INFO[ListItem.Set]&amp;nextpage=false$VAR[Path_Param_Database]$VAR[Path_Param_Digital_Release]$VAR[Path_Param_Premiered]</value>
-        <value condition="String.IsEqual(ListItem.Path,plugin://plugin.video.themoviedb.helper/) + String.IsEqual(ListItem.DBType,movie) + !String.IsEmpty(ListItem.Set) + !Skin.HasSetting(VideoInfoButtonCollection)">plugin://plugin.video.themoviedb.helper?info=collection&amp;tmdb_type=collection&amp;tmdb_id=$INFO[ListItem.Property(set.tmdb_id)]&amp;nextpage=false$VAR[Path_Param_Database]$VAR[Path_Param_Digital_Release]$VAR[Path_Param_Premiered]</value>
+		<value condition="!String.IsEqual(ListItem.Path,plugin://plugin.video.tmdb.bingie.helper/) + String.IsEqual(ListItem.DBType,movie) + !String.IsEmpty(ListItem.Set) + !Skin.HasSetting(VideoInfoButtonCollection)">plugin://plugin.video.tmdb.bingie.helper?info=collection&amp;tmdb_type=collection&amp;query=$INFO[ListItem.Set]&amp;nextpage=false&amp;cacheonly=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
+        <value condition="String.IsEqual(ListItem.Path,plugin://plugin.video.tmdb.bingie.helper/) + String.IsEqual(ListItem.DBType,movie) + !String.IsEmpty(ListItem.Set) + !Skin.HasSetting(VideoInfoButtonCollection)">plugin://plugin.video.tmdb.bingie.helper?info=collection&amp;tmdb_type=collection&amp;tmdb_id=$INFO[ListItem.Property(set.tmdb_id)]&amp;nextpage=false&amp;cacheonly=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="Path_MyList">
         <value condition="!Skin.HasSetting(AddToWatchlist) + [Library.HasContent(Movies) | Library.HasContent(TVShows)]">plugin://script.bingie.widgets/?action=mylist&amp;mediatype=media&amp;limit=100&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
-		<value condition="Skin.HasSetting(AddToWatchlist) | !Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.themoviedb.helper?info=trakt_watchlist&amp;type=both&amp;widget=true&amp;sort_by=added&amp;sort_how=desc&amp;reload=$INFO[Window(Home).Property(TMDbHelper.Widgets.Reload)])</value>
+		<value condition="Skin.HasSetting(AddToWatchlist) | !Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.tmdb.bingie.helper?info=trakt_favorites&amp;tmdb_type=both&amp;widget=true&amp;sort_by=added&amp;sort_how=desc&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)])</value>
     </variable>
 	
 	<variable name="Path_CastInMovies">
-        <value>plugin://plugin.video.themoviedb.helper?info=stars_in_movies&amp;limit=$INFO[Skin.String(cast_number)]$VAR[Path_Param_Type,&amp;,]$VAR[Path_Param_Query]$VAR[Path_Param_Database]$VAR[Path_Param_Digital_Release]&amp;nextpage=false</value>
+        <value condition="String.IsEqual(Container(2999).ListItem.Label,$LOCALIZE[31519])">plugin://plugin.video.tmdb.bingie.helper?info=stars_in_movies&amp;limit=$INFO[Skin.String(cast_number)]$VAR[Path_Param_Type,&amp;,]$VAR[Path_Param_Query]&amp;nextpage=false&amp;cacheonly=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
     <variable name="Path_CastInShows">
-        <value>plugin://plugin.video.themoviedb.helper?info=stars_in_tvshows&amp;limit=$INFO[Skin.String(cast_number)]$VAR[Path_Param_Type,&amp;,]$VAR[Path_Param_Query]$VAR[Path_Param_Database]$VAR[Path_Param_Digital_Release]&amp;nextpage=false</value>
+        <value condition="String.IsEqual(Container(2999).ListItem.Label,$LOCALIZE[31508])">plugin://plugin.video.tmdb.bingie.helper?info=stars_in_tvshows&amp;limit=$INFO[Skin.String(cast_number)]$VAR[Path_Param_Type,&amp;,]$VAR[Path_Param_Query]&amp;nextpage=false&amp;cacheonly=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
     <variable name="Path_CrewInMovies">
-        <value>plugin://plugin.video.themoviedb.helper?info=crew_in_movies&amp;limit=$INFO[Skin.String(cast_number)]$VAR[Path_Param_Type,&amp;,]$VAR[Path_Param_Query]$VAR[Path_Param_Database]$VAR[Path_Param_Digital_Release]&amp;nextpage=false</value>
+        <value condition="String.IsEqual(Container(2999).ListItem.Label,$LOCALIZE[31509])">plugin://plugin.video.tmdb.bingie.helper?info=crew_in_movies&amp;limit=$INFO[Skin.String(cast_number)]$VAR[Path_Param_Type,&amp;,]$VAR[Path_Param_Query]&amp;nextpage=false&amp;cacheonly=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
     <variable name="Path_CrewInShows">
-        <value>plugin://plugin.video.themoviedb.helper?info=crew_in_tvshows&amp;limit=$INFO[Skin.String(cast_number)]$VAR[Path_Param_Type,&amp;,]$VAR[Path_Param_Query]$VAR[Path_Param_Database]$VAR[Path_Param_Digital_Release]&amp;nextpage=false</value>
+        <value condition="String.IsEqual(Container(2999).ListItem.Label,$LOCALIZE[31510])">plugin://plugin.video.tmdb.bingie.helper?info=crew_in_tvshows&amp;limit=$INFO[Skin.String(cast_number)]$VAR[Path_Param_Type,&amp;,]$VAR[Path_Param_Query]&amp;nextpage=false&amp;cacheonly=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="Path_Wikipedia_Title">
@@ -175,165 +157,180 @@
     </variable>
 	
 	<variable name="Path_OSD_Cast">
-        <value condition="VideoPlayer.Content(movies) + !String.IsEmpty(VideoPlayer.IMDBNumber) + String.StartsWith(VideoPlayer.IMDBNumber,tt)">plugin://plugin.video.themoviedb.helper/?info=cast&amp;type=movie$INFO[VideoPlayer.IMDBNumber,&amp;imdb_id=,]</value>
-        <value condition="VideoPlayer.Content(movies)">plugin://plugin.video.themoviedb.helper/?info=cast&amp;type=movie$INFO[Window(Home).Property(TMDbHelper.Player.TMDb_ID),&amp;tmdb_id=,]$INFO[Player.Title,&amp;query=,]$INFO[VideoPlayer.Year,&amp;year=,]</value>
-        <value condition="VideoPlayer.Content(episodes)">plugin://plugin.video.themoviedb.helper/?info=cast&amp;type=tv$INFO[Window(Home).Property(TMDbHelper.Player.TVShow.TMDb_ID),&amp;tmdb_id=,]$INFO[VideoPlayer.TVShowTitle,&amp;query=,]$INFO[VideoPlayer.Season,&amp;season=,]$INFO[VideoPlayer.Episode,&amp;episode=,]$INFO[VideoPlayer.Year,&amp;episode_year=,]</value>   
+        <value condition="VideoPlayer.Content(movies) + !String.IsEmpty(VideoPlayer.IMDBNumber) + String.StartsWith(VideoPlayer.IMDBNumber,tt)">plugin://plugin.video.tmdb.bingie.helper/?info=cast&amp;tmdb_type=movie$INFO[VideoPlayer.IMDBNumber,&amp;imdb_id=,]&amp;cacheonly=true</value>
+        <value condition="VideoPlayer.Content(movies)">plugin://plugin.video.tmdb.bingie.helper/?info=cast&amp;tmdb_type=movie$INFO[Window(Home).Property(TMDbBingieHelper.Player.TMDb_ID),&amp;tmdb_id=,]$INFO[Player.Title,&amp;query=,]$INFO[VideoPlayer.Year,&amp;year=,]&amp;cacheonly=true</value>
+        <value condition="VideoPlayer.Content(episodes)">plugin://plugin.video.tmdb.bingie.helper/?info=cast&amp;tmdb_type=tv$INFO[Window(Home).Property(TMDbBingieHelper.Player.TVShow.TMDb_ID),&amp;tmdb_id=,]$INFO[VideoPlayer.TVShowTitle,&amp;query=,]$INFO[VideoPlayer.Season,&amp;season=,]$INFO[VideoPlayer.Episode,&amp;episode=,]$INFO[VideoPlayer.Year,&amp;episode_year=,]&amp;cacheonly=true</value>   
 	</variable>
 	
 	<variable name="Path_OSD_Crew">   
-	    <value condition="VideoPlayer.Content(movies) + !String.IsEmpty(VideoPlayer.IMDBNumber) + String.StartsWith(VideoPlayer.IMDBNumber,tt)">plugin://plugin.video.themoviedb.helper/?info=crew&amp;type=movie$INFO[VideoPlayer.IMDBNumber,&amp;imdb_id=,]</value>
-        <value condition="VideoPlayer.Content(movies)">plugin://plugin.video.themoviedb.helper/?info=crew&amp;type=movie$INFO[Window(Home).Property(TMDbHelper.Player.TMDb_ID),&amp;tmdb_id=,]$INFO[Player.Title,&amp;query=,]$INFO[VideoPlayer.Year,&amp;year=,]</value>
-        <value condition="VideoPlayer.Content(episodes)">plugin://plugin.video.themoviedb.helper/?info=crew&amp;type=tv$INFO[Window(Home).Property(TMDbHelper.Player.TVShow.TMDb_ID),&amp;tmdb_id=,]$INFO[VideoPlayer.TVShowTitle,&amp;query=,]$INFO[VideoPlayer.Season,&amp;season=,]$INFO[VideoPlayer.Episode,&amp;episode=,]$INFO[VideoPlayer.Year,&amp;episode_year=,]</value>
+	    <value condition="VideoPlayer.Content(movies) + !String.IsEmpty(VideoPlayer.IMDBNumber) + String.StartsWith(VideoPlayer.IMDBNumber,tt)">plugin://plugin.video.tmdb.bingie.helper/?info=crew&amp;tmdb_type=movie$INFO[VideoPlayer.IMDBNumber,&amp;imdb_id=,]&amp;cacheonly=true</value>
+        <value condition="VideoPlayer.Content(movies)">plugin://plugin.video.tmdb.bingie.helper/?info=crew&amp;tmdb_type=movie$INFO[Window(Home).Property(TMDbBingieHelper.Player.TMDb_ID),&amp;tmdb_id=,]$INFO[Player.Title,&amp;query=,]$INFO[VideoPlayer.Year,&amp;year=,]&amp;cacheonly=true</value>
+        <value condition="VideoPlayer.Content(episodes)">plugin://plugin.video.tmdb.bingie.helper/?info=crew&amp;tmdb_type=tv$INFO[Window(Home).Property(TMDbBingieHelper.Player.TVShow.TMDb_ID),&amp;tmdb_id=,]$INFO[VideoPlayer.TVShowTitle,&amp;query=,]$INFO[VideoPlayer.Season,&amp;season=,]$INFO[VideoPlayer.Episode,&amp;episode=,]$INFO[VideoPlayer.Year,&amp;episode_year=,]&amp;cacheonly=true</value>
 	</variable>
 	
 	<variable name="ActionAdvantureMovies">
 		<value condition="String.IsEqual(Skin.String(categories_types),Auto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | String.IsEqual(Skin.String(categories_types),LibraryList)">special://skin/extras/categories/actionadventure.xsp</value>
-        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=28%20%2f%2012&amp;with_id=True&amp;with_separator=OR&amp;without_genres=16$VAR[Path_Param_Categories_Digital_Release]</value>
+        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=28%20%2f%2012&amp;with_id=True&amp;with_separator=OR&amp;without_genres=16&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="ActionAdvantureTVShows">
 		<value condition="String.IsEqual(Skin.String(categories_types),Auto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | String.IsEqual(Skin.String(categories_types),LibraryList)">special://skin/extras/categories/tvactionadventure.xsp</value>
-        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=10759&amp;with_id=True&amp;with_separator=AND&amp;without_genres=16%20%2f%2010766$VAR[Path_Param_Categories_Digital_Release]</value>
+        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=10759&amp;with_id=True&amp;with_separator=AND&amp;without_genres=16%20%2f%2010766&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="DramaMovies">
 		<value condition="String.IsEqual(Skin.String(categories_types),Auto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | String.IsEqual(Skin.String(categories_types),LibraryList)">special://skin/extras/categories/dramas.xsp</value>
-        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=18&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</value>
+        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=18&amp;with_id=True&amp;with_separator=AND&amp;vote_count.gte=50&amp;without_keywords=155477&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="DramaTVShows">
 		<value condition="String.IsEqual(Skin.String(categories_types),Auto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | String.IsEqual(Skin.String(categories_types),LibraryList)">special://skin/extras/categories/tvdramas.xsp</value>
-        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=18&amp;with_id=True&amp;with_separator=AND&amp;without_genres=10766$VAR[Path_Param_Categories_Digital_Release]</value>
+        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=18&amp;with_id=True&amp;with_separator=AND&amp;without_genres=10766&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="ComedyMovies">
 		<value condition="String.IsEqual(Skin.String(categories_types),Auto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | String.IsEqual(Skin.String(categories_types),LibraryList)">special://skin/extras/categories/comedies.xsp</value>
-        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=35&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</value>
+        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=35&amp;with_id=True&amp;with_separator=AND&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="ComedyTVShow">
 		<value condition="String.IsEqual(Skin.String(categories_types),Auto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | String.IsEqual(Skin.String(categories_types),LibraryList)">special://skin/extras/categories/tvcomedies.xsp</value>
-        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=35&amp;with_id=True&amp;with_separator=AND&amp;without_genres=10766$VAR[Path_Param_Categories_Digital_Release]</value>
+        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=35&amp;with_id=True&amp;with_separator=AND&amp;without_genres=10766&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="HorrorMovies">
 		<value condition="String.IsEqual(Skin.String(categories_types),Auto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | String.IsEqual(Skin.String(categories_types),LibraryList)">special://skin/extras/categories/horror.xsp</value>
-        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=27&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</value>
+        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=27&amp;with_id=True&amp;with_separator=AND&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="DocumentaryMovies">
 		<value condition="String.IsEqual(Skin.String(categories_types),Auto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | String.IsEqual(Skin.String(categories_types),LibraryList)">special://skin/extras/categories/documentaries.xsp</value>
-        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=99&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</value>
+        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=99&amp;with_id=True&amp;with_separator=AND&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="DocumentaryTVShows">
 		<value condition="String.IsEqual(Skin.String(categories_types),Auto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | String.IsEqual(Skin.String(categories_types),LibraryList)">special://skin/extras/categories/tvdocumentaries.xsp</value>
-        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=99&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</value>
+        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=99&amp;with_id=True&amp;with_separator=AND&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="CrimeMovies">
 		<value condition="String.IsEqual(Skin.String(categories_types),Auto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | String.IsEqual(Skin.String(categories_types),LibraryList)">special://skin/extras/categories/crime.xsp</value>
-        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=80&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</value>
+        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=80&amp;with_id=True&amp;with_separator=AND&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="CrimeTVShows">
 		<value condition="String.IsEqual(Skin.String(categories_types),Auto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | String.IsEqual(Skin.String(categories_types),LibraryList)">special://skin/extras/categories/tvcrime.xsp</value>
-        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=80&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</value>
+        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=80&amp;with_id=True&amp;with_separator=AND&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="FantasyMovies">
 		<value condition="String.IsEqual(Skin.String(categories_types),Auto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | String.IsEqual(Skin.String(categories_types),LibraryList)">special://skin/extras/categories/fantasy.xsp</value>
-        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=14&amp;with_id=True&amp;with_separator=AND&amp;without_genres=16$VAR[Path_Param_Categories_Digital_Release]</value>
+        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=14&amp;with_id=True&amp;with_separator=AND&amp;without_genres=16&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="SciFiFantasyTVShows">
 		<value condition="String.IsEqual(Skin.String(categories_types),Auto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | String.IsEqual(Skin.String(categories_types),LibraryList)">special://skin/extras/categories/tvscififantasy.xsp</value>
-        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=10765&amp;with_id=True&amp;with_separator=AND&amp;without_genres=16$VAR[Path_Param_Categories_Digital_Release]</value>
+        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=10765&amp;with_id=True&amp;with_separator=AND&amp;without_genres=16&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="MusicMovies">
 		<value condition="String.IsEqual(Skin.String(categories_types),Auto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | String.IsEqual(Skin.String(categories_types),LibraryList)">special://skin/extras/categories/musicandmusical.xsp</value>
-        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=10402&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</value>
+        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=10402&amp;with_id=True&amp;with_separator=AND&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="RomanceMovies">
 		<value condition="String.IsEqual(Skin.String(categories_types),Auto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | String.IsEqual(Skin.String(categories_types),LibraryList)">special://skin/extras/categories/romance.xsp</value>
-        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=10749&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</value>
+        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=10749&amp;with_id=True&amp;with_separator=AND&amp;vote_count.gte=50&amp;without_keywords=155477&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="SciFiMovies">
 		<value condition="String.IsEqual(Skin.String(categories_types),Auto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | String.IsEqual(Skin.String(categories_types),LibraryList)">special://skin/extras/categories/scifi.xsp</value>
-        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=878&amp;with_id=True&amp;with_separator=AND&amp;without_genres=16$VAR[Path_Param_Categories_Digital_Release]</value>
+        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=878&amp;with_id=True&amp;with_separator=AND&amp;without_genres=16&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="ThrillerMovies">
 		<value condition="String.IsEqual(Skin.String(categories_types),Auto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | String.IsEqual(Skin.String(categories_types),LibraryList)">special://skin/extras/categories/thriller.xsp</value>
-        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=53&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</value>
+        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=53&amp;with_id=True&amp;with_separator=AND&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="WesternMovies">
 		<value condition="String.IsEqual(Skin.String(categories_types),Auto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | String.IsEqual(Skin.String(categories_types),LibraryList)">special://skin/extras/categories/westerns.xsp</value>
-        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=37&amp;with_id=True&amp;with_separator=AND&amp;without_genres=16$VAR[Path_Param_Categories_Digital_Release]</value>
+        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=37&amp;with_id=True&amp;with_separator=AND&amp;without_genres=16&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="WesternTVShows">
 		<value condition="String.IsEqual(Skin.String(categories_types),Auto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | String.IsEqual(Skin.String(categories_types),LibraryList)">special://skin/extras/categories/tvwesterns.xsp</value>
-        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=37&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</value>
+        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=37&amp;with_id=True&amp;with_separator=AND&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="AnimationMovies">
 		<value condition="String.IsEqual(Skin.String(categories_types),Auto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | String.IsEqual(Skin.String(categories_types),LibraryList)">special://skin/extras/categories/animations.xsp</value>
-        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=16&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</value>
+        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=16&amp;with_id=True&amp;with_separator=AND&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="AnimationTVShows">
 		<value condition="String.IsEqual(Skin.String(categories_types),Auto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | String.IsEqual(Skin.String(categories_types),LibraryList)">special://skin/extras/categories/tvanimations.xsp</value>
-        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=16&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</value>
+        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=16&amp;with_id=True&amp;with_separator=AND&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="AnimeMovies">
 		<value condition="String.IsEqual(Skin.String(categories_types),Auto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | String.IsEqual(Skin.String(categories_types),LibraryList)">special://skin/extras/categories/anime.xsp</value>
-        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_id=True&amp;with_keywords=210024&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</value>
+        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_id=True&amp;with_keywords=210024&amp;with_separator=AND&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="FamilyMovies">
 		<value condition="String.IsEqual(Skin.String(categories_types),Auto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | String.IsEqual(Skin.String(categories_types),LibraryList)">special://skin/extras/categories/kidsandfamily.xsp</value>
-        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=10751&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</value>
+        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=10751&amp;with_id=True&amp;with_separator=AND&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="FamilyTVShows">
 		<value condition="String.IsEqual(Skin.String(categories_types),Auto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | String.IsEqual(Skin.String(categories_types),LibraryList)">special://skin/extras/categories/tvkidsandfamily.xsp</value>
-        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=10751%20%2f%2010762&amp;with_id=True&amp;with_separator=OR&amp;without_genres=10766$VAR[Path_Param_Categories_Digital_Release]</value>
+        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=10751%20%2f%2010762&amp;with_id=True&amp;with_separator=OR&amp;without_genres=10766&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="HistoryWarMovies">
 		<value condition="String.IsEqual(Skin.String(categories_types),Auto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | String.IsEqual(Skin.String(categories_types),LibraryList)">special://skin/extras/categories/historywar.xsp</value>
-        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=36%20%2f%2010752&amp;with_id=True&amp;with_separator=OR$VAR[Path_Param_Categories_Digital_Release]</value>
+        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=36%20%2f%2010752&amp;with_id=True&amp;with_separator=OR&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="WarPoliticsTVShows">
 		<value condition="String.IsEqual(Skin.String(categories_types),Auto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | String.IsEqual(Skin.String(categories_types),LibraryList)">special://skin/extras/categories/tvwarpolitics.xsp</value>
-        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=10768&amp;with_id=True&amp;with_separator=AND$VAR[Path_Param_Categories_Digital_Release]</value>
+        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=10768&amp;with_id=True&amp;with_separator=AND&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="MysteryMovies">
 		<value condition="String.IsEqual(Skin.String(categories_types),Auto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | String.IsEqual(Skin.String(categories_types),LibraryList)">special://skin/extras/categories/mysteries.xsp</value>
-        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=9648&amp;with_id=True&amp;with_separator=AND&amp;without_genres=16$VAR[Path_Param_Categories_Digital_Release]</value>
+        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=movie&amp;with_genres=9648&amp;with_id=True&amp;with_separator=AND&amp;without_genres=16&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="MysteryTVShows">
 		<value condition="String.IsEqual(Skin.String(categories_types),Auto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | String.IsEqual(Skin.String(categories_types),LibraryList)">special://skin/extras/categories/tvmysteries.xsp</value>
-        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbHelperList)">plugin://plugin.video.themoviedb.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=9648&amp;with_id=True&amp;with_separator=AND&amp;without_genres=16$VAR[Path_Param_Categories_Digital_Release]</value>
+        <value condition="String.IsEqual(Skin.String(categories_types),Auto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | String.IsEqual(Skin.String(categories_types),TMDbBingieHelperList)">plugin://plugin.video.tmdb.bingie.helper/?info=discover&amp;sort_by=popularity.desc&amp;tmdb_id=None&amp;tmdb_type=tv&amp;with_genres=9648&amp;with_id=True&amp;with_separator=AND&amp;without_genres=16&amp;vote_count.gte=50&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="DefSpotlightWidgetContent">
-		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">plugin://script.bingie.widgets/?action=random&amp;mediatype=media&amp;limit=5&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
-        <value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.themoviedb.helper/?info=random_popular&amp;tmdb_type=both&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbHelper.Widgets.Reload)]</value>
+		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">plugin://script.bingie.widgets/?action=random&amp;mediatype=media&amp;limit=5&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
+        <value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.tmdb.bingie.helper/?info=random_popular&amp;tmdb_type=both&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
+    </variable>
+	
+	<variable name="DefSpotlightMovieHubContent">
+		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">special://skin/extras/widgetplaylists/randommovies.xsp</value>
+        <value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.tmdb.bingie.helper/?info=random_popular&amp;tmdb_type=movie&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
+    </variable>
+	
+	<variable name="DefSpotlightTVShowHubContent">
+		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">special://skin/extras/widgetplaylists/randomtvshows.xsp</value>
+        <value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.tmdb.bingie.helper/?info=random_popular&amp;tmdb_type=tv&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
+    </variable>
+	
+	<variable name="DefSpotlightNewHubContent">
+		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">plugin://script.bingie.widgets/?action=newrelease&amp;mediatype=media&amp;limit=5&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
+        <value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.tmdb.bingie.helper/?info=random_trending&amp;tmdb_type=both&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="DefWidgetContent">
 		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">plugin://script.bingie.widgets/?action=inprogressnextepisode&amp;mediatype=media&amp;limit=25&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
-        <value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.themoviedb.helper?info=trakt_trending&amp;type=movie&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbHelper.Widgets.Reload)]</value>
+        <value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.tmdb.bingie.helper?info=trakt_trending&amp;tmdb_type=movie&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="DefWidgetName">
@@ -343,7 +340,7 @@
 	
 	<variable name="DefWidget1Content">
 		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">plugin://script.bingie.widgets/?action=recent&amp;mediatype=media&amp;limit=25&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
-        <value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.themoviedb.helper?info=trakt_trending&amp;type=tv&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbHelper.Widgets.Reload)]</value>
+        <value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.tmdb.bingie.helper?info=trakt_trending&amp;tmdb_type=tv&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="DefWidget1Name">
@@ -353,7 +350,7 @@
 	
 	<variable name="DefWidget2Content">
 		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">special://skin/playlists/bingeworthyshows.xsp</value>
-        <value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.themoviedb.helper?info=trakt_popular&amp;type=movie&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbHelper.Widgets.Reload)]</value>
+        <value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.tmdb.bingie.helper?info=trakt_popular&amp;tmdb_type=movie&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="DefWidget2Name">
@@ -363,7 +360,7 @@
 	
 	<variable name="DefWidget3Content">
 		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">plugin://script.bingie.widgets/?action=forgenre&amp;mediatype=media&amp;limit=25&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
-        <value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.themoviedb.helper?info=trakt_popular&amp;type=tv&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbHelper.Widgets.Reload)]</value>
+        <value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.tmdb.bingie.helper?info=trakt_popular&amp;tmdb_type=tv&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="DefWidget3Name">
@@ -373,7 +370,7 @@
 	
 	<variable name="DefWidget4Content">
 		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">special://skin/playlists/criticallyacclaimedmovies.xsp</value>
-		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.themoviedb.helper/?info=trakt_userlist&amp;list_name=IMDB:+Top+Rated+Movies&amp;list_slug=imdb-top-rated-movies&amp;user_slug=justin&amp;plugin_category=IMDB:+Top+Rated+Movies&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbHelper.Widgets.Reload)]</value>
+		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.tmdb.bingie.helper/?info=trakt_userlist&amp;list_name=IMDB:+Top+Rated+Movies&amp;list_slug=imdb-top-rated-movies&amp;user_slug=justin&amp;plugin_category=IMDB:+Top+Rated+Movies&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 	
 	<variable name="DefWidget4Name">
@@ -383,12 +380,122 @@
 	
 	<variable name="DefWidget5Content">
 		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">plugin://script.bingie.widgets/?action=similar&amp;mediatype=media&amp;limit=25&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
-		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.themoviedb.helper/?info=trakt_userlist&amp;list_name=IMDB:+Top+Rated+TV+Shows&amp;list_slug=imdb-top-rated-tv-shows&amp;user_slug=justin&amp;plugin_category=IMDB:+Top+Rated+TV+Shows&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbHelper.Widgets.Reload)]</value>
+		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.tmdb.bingie.helper/?info=trakt_userlist&amp;list_name=IMDB:+Top+Rated+TV+Shows&amp;list_slug=imdb-top-rated-tv-shows&amp;user_slug=justin&amp;plugin_category=IMDB:+Top+Rated+TV+Shows&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
 	</variable>
 	
 	<variable name="DefWidget5Name">
 		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">$ADDON[script.bingie.widgets 32011]</value>
 		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">$LOCALIZE[31443]</value>
+    </variable>
+	
+	<variable name="DefMovieHubContent">
+		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">special://skin/extras/widgetplaylists/inprogressmovies.xsp</value>
+		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.tmdb.bingie.helper?info=trakt_trending&amp;tmdb_type=movie&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
+	</variable>
+	
+	<variable name="DefMovieHubName">
+		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">[CAPITALIZE]$LOCALIZE[13362][/CAPITALIZE] $VAR[ForCurrentProfileNameLabel]</value>
+		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">$LOCALIZE[31337]</value>
+    </variable>
+	
+	<variable name="DefMovieHub1Content">
+		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">special://skin/extras/widgetplaylists/recentlyaddedmovies.xsp</value>
+		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.tmdb.bingie.helper?info=trakt_popular&amp;tmdb_type=movie&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
+	</variable>
+	
+	<variable name="DefMovieHub1Name">
+		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">[CAPITALIZE]$LOCALIZE[20382][/CAPITALIZE]</value>
+		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">$LOCALIZE[31326]</value>
+    </variable>
+	
+	<variable name="DefMovieHub2Content">
+		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">special://skin/extras/widgetplaylists/randommovies.xsp</value>
+		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.tmdb.bingie.helper/?info=trakt_userlist&amp;list_name=IMDB:+Top+Rated+Movies&amp;list_slug=imdb-top-rated-movies&amp;user_slug=justin&amp;plugin_category=IMDB:+Top+Rated+Movies&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
+	</variable>
+	
+	<variable name="DefMovieHub2Name">
+		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">$LOCALIZE[31562]</value>
+		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">$LOCALIZE[31277]</value>
+    </variable>
+	
+	<variable name="DefTVShowHubContent">
+		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">plugin://script.bingie.widgets/?action=inprogress&amp;mediatype=episodes&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
+		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.tmdb.bingie.helper?info=trakt_trending&amp;tmdb_type=tv&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
+	</variable>
+	
+	<variable name="DefTVShowHubName">
+		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">[CAPITALIZE]$LOCALIZE[13362][/CAPITALIZE] $VAR[ForCurrentProfileNameLabel]</value>
+		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">$LOCALIZE[31328]</value>
+    </variable>
+	
+	<variable name="DefTVShowHub1Content">
+		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">special://skin/extras/widgetplaylists/recentlyaddedtvshows.xsp</value>
+		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.tmdb.bingie.helper?info=trakt_popular&amp;tmdb_type=tv&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
+	</variable>
+	
+	<variable name="DefTVShowHub1Name">
+		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">[CAPITALIZE]$LOCALIZE[20382][/CAPITALIZE]</value>
+		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">$LOCALIZE[31319]</value>
+    </variable>
+	
+	<variable name="DefTVShowHub2Content">
+		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">special://skin/extras/widgetplaylists/randomtvshows.xsp</value>
+		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.tmdb.bingie.helper/?info=trakt_userlist&amp;list_name=IMDB:+Top+Rated+TV+Shows&amp;list_slug=imdb-top-rated-tv-shows&amp;user_slug=justin&amp;plugin_category=IMDB:+Top+Rated+TV+Shows&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
+	</variable>
+	
+	<variable name="DefTVShowHub2Name">
+		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">$LOCALIZE[31385]</value>
+		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">$LOCALIZE[31443]</value>
+    </variable>
+	
+	<variable name="DefNewHubContent">
+		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">plugin://script.bingie.widgets/?action=recent&amp;mediatype=media&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
+		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.tmdb.bingie.helper/?info=trakt_userlist&amp;list_name=Latest+Releases&amp;list_slug=latest-releases&amp;user_slug=giladg&amp;plugin_category=Latest+Releases&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
+	</variable>
+	
+	<variable name="DefNewHubName">
+		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">[CAPITALIZE]$LOCALIZE[20382][/CAPITALIZE]</value>
+		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">$LOCALIZE[31334]</value>
+    </variable>
+	
+	<variable name="DefNewHub1Content">
+		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">plugin://script.bingie.widgets/?action=popular&amp;mediatype=media&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
+		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.tmdb.bingie.helper/?info=trakt_userlist&amp;list_name=Latest+TV+Shows&amp;list_slug=latest-tv-shows&amp;user_slug=garycrawfordgc&amp;plugin_category=Latest+TV+Shows&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
+	</variable>
+	
+	<variable name="DefNewHub1Name">
+		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">$LOCALIZE[31563]</value>
+		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">$LOCALIZE[31633]</value>
+    </variable>
+	
+	<variable name="DefNewHub2Content">
+		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.tmdb.bingie.helper/?info=trending_day&amp;tmdb_type=movie&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
+	</variable>
+	
+	<variable name="DefNewHub2Name">
+		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">$LOCALIZE[31332]</value>
+    </variable>
+	
+	<variable name="DefNewHub3Content">
+		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.tmdb.bingie.helper/?info=trending_day&amp;tmdb_type=tv&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
+	</variable>
+	
+	<variable name="DefNewHub3Name">
+		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">$LOCALIZE[31256]</value>
+    </variable>
+	
+	<variable name="DefMusicHub3Name">
+		<value>[CAPITALIZE]$LOCALIZE[359][/CAPITALIZE]</value>
+    </variable>
+	
+	<variable name="DefSomethingHubContent">
+		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">plugin://script.bingie.widgets/?action=random&amp;mediatype=media&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
+		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.tmdb.bingie.helper/?info=random_popular&amp;tmdb_type=both&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
+	</variable>
+	
+	<variable name="DefSomethingHubName">
+		<value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">$LOCALIZE[31620]</value>
+		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">$LOCALIZE[31620]</value>
     </variable>
 	
 </includes>

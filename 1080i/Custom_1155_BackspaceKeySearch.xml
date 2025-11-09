@@ -2,7 +2,7 @@
 <!-- BINGIE -->
 <window type="dialog" id="1155">
 	<visible>!String.IsEmpty(Window(home).Property(BackspaceSearchTerm))</visible>
-	<visible>Window.IsVisible(virtualkeyboard) + [Window.IsActive(1109) | Window.IsActive(1108) | Window.IsActive(1106) | Window.IsActive(1107)]</visible>
+	<visible>Window.IsVisible(virtualkeyboard) + Window.IsActive(1109)</visible>
 	<!-- backspace action-->
 	<onload>SendClick(10103,8)</onload>
 	<!-- done action-->

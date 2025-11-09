@@ -22,7 +22,7 @@
                 <control type="label">
                     <width>100%</width>
                     <height>40</height>
-					<posx>7</posx>
+					<posx>8</posx>
 					<top>4</top>
                     <font>Bold31</font>
                     <align>left</align>
@@ -68,8 +68,8 @@
             </include>
             <focusedposition>0</focusedposition>
             <top>46</top>
-            <width>1668</width>
-            <height>470</height>
+            <width>1672</width>
+            <height>474</height>
             <orientation>vertical</orientation>
             <itemgap>0</itemgap>
             <preloaditems>4</preloaditems>
@@ -84,55 +84,99 @@
 			<onback>CancelAlarm(preview_delay,silent)</onback>
 			<onback condition="!Player.HasAudio + $EXP[IsPlayingUnrecognizedContent] + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)] + Skin.HasSetting(View510_DetailsAutoTrailer)">PlayerControl(Stop)</onback>
             <onback>ClearProperty(HideNowPlaying)</onback>
-			<itemlayout height="193" width="333">
+			<itemlayout height="339" width="418">
                 <control type="group">
-                    <width>335</width>
-                    <height>195</height>
+                    <width>419</width>
+                    <height>242</height>
                     <include>ThumbsViewItemBingieLayout</include>
 					<control type="image">
 						<!-- fallback logo image -->
-						<height>195</height>
-						<bottom>-50</bottom>
+						<height>242</height>
+						<bottom>-68</bottom>
 						<left>0</left>
-						<bordersize>61</bordersize>
+						<bordersize>82</bordersize>
 						<texture background="true">$VAR[ClearLogoFallback]</texture>
 						<aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
 						<visible>String.IsEmpty(Listitem.Art(landscape)) + String.IsEmpty(ListItem.Property(landscape)) + !String.IsEqual(ListItem.DBTYPE,episode) + !String.IsEqual(ListItem.Property(DBTYPE),episode) + !Container.Content(episodes) + !String.IsEqual(ListItem.DBTYPE,season) + !String.IsEqual(ListItem.Property(DBTYPE),season)</visible>
 						<visible>String.IsEmpty(ListItem.Property(defaultID))</visible>
 					</control>
+						<control type="label">
+							<!--Label-->
+							<left>8</left>
+							<right>8</right>
+							<bottom>-47</bottom>
+							<height>61</height>
+							<include condition="Skin.HasSetting(ThumbsLabelAlignmentCenter)">align_center</include>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>[B]$VAR[ThumbListDetails_2][/B]</label>
+							<font>Reg26</font>
+							<textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
+						</control>
+						<control type="label">
+							<!--Label-->
+							<left>8</left>
+							<right>8</right>
+							<bottom>-80</bottom>
+							<height>61</height>
+							<include condition="Skin.HasSetting(ThumbsLabelAlignmentCenter)">align_center</include>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$VAR[ThumbListDetails_3]</label>
+							<font>Reg26</font>
+							<textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
+						</control>
                 </control>
             </itemlayout>
-            <focusedlayout height="193" width="333">
+            <focusedlayout height="339" width="418">
                 <control type="group">
-                    <width>335</width>
-                    <height>195</height>
+                    <width>419</width>
+                    <height>242</height>
                     <include>ThumbsViewBingieLayoutFocus</include>
 					<control type="image">
 						<!-- fallback logo image -->
-						<height>195</height>
-						<bottom>-50</bottom>
+						<height>242</height>
+						<bottom>-68</bottom>
 						<left>0</left>
-						<bordersize>61</bordersize>
+						<bordersize>82</bordersize>
 						<texture background="true">$VAR[ClearLogoFallback]</texture>
 						<aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
 						<visible>String.IsEmpty(Listitem.Art(landscape)) + String.IsEmpty(ListItem.Property(landscape)) + !String.IsEqual(ListItem.DBTYPE,episode) + !String.IsEqual(ListItem.Property(DBTYPE),episode) + !Container.Content(episodes) + !String.IsEqual(ListItem.DBTYPE,season) + !String.IsEqual(ListItem.Property(DBTYPE),season)</visible>
 						<visible>String.IsEmpty(ListItem.Property(defaultID))</visible>
 					</control>
+						<control type="label">
+							<!--Label-->
+							<left>8</left>
+							<right>8</right>
+							<bottom>-47</bottom>
+							<height>61</height>
+							<include condition="Skin.HasSetting(ThumbsLabelAlignmentCenter)">align_center</include>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>[B]$VAR[ThumbListDetails_2][/B]</label>
+							<font>Reg26</font>
+							<autoscroll>false</autoscroll>
+							<textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
+						</control>
+						<control type="label">
+							<!--Label-->
+							<left>8</left>
+							<right>8</right>
+							<bottom>-80</bottom>
+							<height>61</height>
+							<include condition="Skin.HasSetting(ThumbsLabelAlignmentCenter)">align_center</include>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$VAR[ThumbListDetails_3]</label>
+							<font>Reg26</font>
+							<autoscroll>false</autoscroll>
+							<textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
+						</control>
                     <include>LibraryAutoTrailerStopButton</include>
 						<include content="LibraryAutoTrailerStartButton" condition="Skin.HasSetting(View523_DetailsAutoTrailer)">
 							<param name="interval" value="$INFO[Skin.String(details_auto_trailer_interval)]" />
 						</include>
                 </control>
-				<!--Top 250 1-->
-				<control type="image">
-				<visible>!Container.Content(episodes) + !Container.Content(seasons) + !String.IsEmpty(Control.GetLabel(8231)) + !Skin.HasSetting(DisableTop250Indicator) + Skin.HasSetting(EnableRatings)</visible>
-				<posy>8</posy>
-				<left>8</left>
-                <height>60</height>
-                <width>50</width>
-				<aspectratio>keep</aspectratio>
-                <texture>bingie/top250p.png</texture>
-		        </control>
             </focusedlayout>
         </control>
     </include>

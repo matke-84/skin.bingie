@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<shortcuts>
+    <shortcut>
+        <label>$VAR[DefNewHubName]</label>
+        <label2 />
+        <icon />
+        <thumb />
+        <action>$VAR[DefNewHubContent]</action>
+    </shortcut>
+    <shortcut>
+        <label>$VAR[DefNewHub1Name]</label>
+        <label2 />
+        <icon />
+        <thumb />
+        <action>$VAR[DefNewHub1Content]</action>
+    </shortcut>
+    <shortcut>
+        <label>$VAR[DefNewHub2Name]</label>
+        <label2 />
+        <icon />
+        <thumb />
+        <action>$VAR[DefNewHub2Content]</action>
+		<visible>!Library.HasContent(Movies) + !Library.HasContent(TVShows)</visible>
+    </shortcut>
+	<shortcut>
+        <label>$VAR[DefNewHub3Name]</label>
+        <label2 />
+        <icon />
+        <thumb />
+        <action>$VAR[DefNewHub3Content]</action>
+		<visible>!Library.HasContent(Movies) + !Library.HasContent(TVShows)</visible>
+    </shortcut>
+    
+</shortcuts>

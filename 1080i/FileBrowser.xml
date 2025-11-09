@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- BINGIE -->
 <window>
-	<zorder>5</zorder>
+	<zorder>4</zorder>
     <defaultcontrol always="true">450</defaultcontrol>
     <coordinates>
 		<system>1</system>

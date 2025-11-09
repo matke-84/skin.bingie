@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<shortcuts>
+    <shortcut>
+        <label>$VAR[DefWidgetName]</label>
+        <label2 />
+        <icon />
+        <thumb />
+        <action>$VAR[DefWidgetContent]</action>
+    </shortcut>
+    <shortcut>
+        <label>$VAR[DefWidget1Name]</label>
+        <label2 />
+        <icon />
+        <thumb />
+        <action>$VAR[DefWidget1Content]</action>
+    </shortcut>
+    <shortcut>
+        <label>$VAR[DefWidget2Name]</label>
+        <label2 />
+        <icon />
+        <thumb />
+        <action>$VAR[DefWidget2Content]</action>
+    </shortcut>
+	<shortcut>
+        <label>$VAR[DefWidget3Name]</label>
+        <label2 />
+        <icon />
+        <thumb />
+        <action>$VAR[DefWidget3Content]</action>
+    </shortcut>
+	<shortcut>
+        <label>$VAR[DefWidget4Name]</label>
+        <label2 />
+        <icon />
+        <thumb />
+        <action>$VAR[DefWidget4Content]</action>
+    </shortcut>
+	<shortcut>
+        <label>$VAR[DefWidget5Name]</label>
+        <label2 />
+        <icon />
+        <thumb />
+        <action>$VAR[DefWidget5Content]</action>
+    </shortcut>
+    
+</shortcuts>

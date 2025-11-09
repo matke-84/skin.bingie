@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<shortcuts>
+	<shortcut>
+		<label>$LOCALIZE[31110]</label>
+		<label2 />
+        <icon />
+        <thumb />
+		<action>$VAR[SearchTMDBAll]</action>
+	</shortcut>
+</shortcuts>

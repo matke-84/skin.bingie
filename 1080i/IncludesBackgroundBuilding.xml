@@ -140,7 +140,7 @@
 			<!-- common visibility conditions -->
 			<visible>Skin.HasSetting(EnableNativeExtraFanart)</visible>
 			<visible>
-                [Window.IsActive(Home) + [Control.HasFocus(77777) | ControlGroup(77777).HasFocus()]] | $EXP[IsBingieHubsActive] | $EXP[IsBingieListsActive] | Window.IsActive(DialogVideoInfo.xml) | Window.IsActive(script-wikipedia.xml) |
+                [Window.IsActive(Home) + [Control.HasFocus(77777) | ControlGroup(77777).HasFocus()]] | $EXP[IsBingieHubsActive] | Window.IsActive(DialogVideoInfo.xml) | Window.IsActive(script-tmdbbingiehelper-wikipedia.xml) |
 				[$EXP[IsBingieCategoriesActive] + [Control.HasFocus(117) | ControlGroup(117).HasFocus()]] |
                 [Container.Content(Genres) + Skin.String(moviegenrefanart.path) + !String.IsEmpty(ListItem.label) + !String.IsEqual(ListItem.label,..)] | 
                 [Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(musicvideos) | Container.Content(albums) | Container.Content(songs) | Container.Content(artists)]
@@ -358,15 +358,16 @@
 
     <variable name="fanartBackground">
 		<!-- pvr -->
-		<value condition="!String.IsEmpty(Container(99950).ListItem.Art(fanart)) + [Window.IsActive(tvchannels) | Window.IsActive(tvguide) | Window.IsActive(tvrecordings) | Window.IsActive(tvtimers) | Window.IsActive(tvsearch)]">$INFO[Container(99950).ListItem.Art(fanart)]</value> 
+		<value condition="!String.IsEmpty(Container(17195).ListItem.Art(fanart)) + [Window.IsActive(tvchannels) | Window.IsActive(tvguide) | Window.IsActive(tvrecordings) | Window.IsActive(tvtimers) | Window.IsActive(tvsearch)]">$INFO[Container(17195).ListItem.Art(fanart)]</value> 
 		<!-- extra fanart -->
 		<value condition="Control.IsVisible(99008) + !String.IsEmpty(Control.GetLabel(99008))">$INFO[Control.GetLabel(99008)]</value>
         <!-- genre fanart -->
         <value condition="Container.Content(Genres) + Skin.String(moviegenrefanart.path) + !String.IsEmpty(ListItem.label) + !String.IsEqual(ListItem.label,..)">$INFO[Skin.String(moviegenrefanart.path)]$INFO[ListItem.Label,,.jpg]</value>
         <!-- categories fanart -->
         <value condition="$EXP[IsCategoryDBType]">$VAR[CategoriesRandomArt]</value>
-        <!-- normal fanart backgrounds -->
+        <!-- normal fanart backgrounds -->		
         <value condition="!String.IsEmpty(ListItem.PicturePath) + !Window.IsVisible(SettingsProfile.xml)">$INFO[ListItem.PicturePath]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(thumb)) + $EXP[IsEpisodeDBType] + Skin.HasSetting(PreferTvShowThumbWidget)">$INFO[ListItem.Art(thumb)]</value>
         <value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="!String.IsEmpty(Container.ListItem.Art(fanart))">$INFO[Container.ListItem.Art(fanart)]</value>
         <value condition="!String.IsEmpty(Container.ListItem.Art(season.fanart))">$INFO[Container.ListItem.Art(season.fanart)]</value>
@@ -375,6 +376,7 @@
         <value condition="!String.IsEmpty(Container.ListItem.Art(albumartist.fanart))">$INFO[Container.ListItem.Art(albumartist.fanart)]</value>
 		<value condition="!String.IsEmpty(ListItem.Property(fanart)) + !String.IsEmpty(Window(Weather).Property(Current.FanartCode)) + Skin.String(WeatherIconPack.path)">$INFO[ListItem.Property(fanart)]</value>
         <!-- fallback for bingie in menu -->
+		<value condition="!String.IsEmpty(Window(Home).Property(ListItem.Art.thumb)) + $EXP[IsBingieViewsActive]">$INFO[Window(Home).Property(ListItem.Art.thumb)]</value>
         <value condition="!String.IsEmpty(Window(Home).Property(ListItem.Art.fanart)) + $EXP[IsBingieViewsActive]">$INFO[Window(Home).Property(ListItem.Art.fanart)]</value>
     </variable>
 	
@@ -410,7 +412,7 @@
     </variable>
 	
    <variable name="bingiePVRThumb">
-		<value condition="!String.IsEmpty(Container(99950).ListItem.Art(fanart))">$INFO[Container(99950).ListItem.Art(fanart)]</value>    
+		<value condition="!String.IsEmpty(Container(17195).ListItem.Art(fanart))">$INFO[Container(17195).ListItem.Art(fanart)]</value>    
 		<value condition="!String.IsEmpty(Window(Home).Property(ListItem.Icon))">special://skin/extras/media/backgrounds/pvr.jpg</value>
 	</variable>
 	

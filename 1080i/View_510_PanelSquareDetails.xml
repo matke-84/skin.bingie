@@ -33,6 +33,7 @@
                 <width>238</width>
                 <height>238</height>
                 <include>SquarePosterPanelLayout</include>
+				<include>SquarePosterTagOverlay</include>
             </control>
         </itemlayout>
         <focusedlayout height="238" width="238">
@@ -40,7 +41,8 @@
                 <width>238</width>
                 <height>238</height>
                 <include>SquarePosterPanelLayoutFocus</include>
-              <include>LibraryAutoTrailerStopButton</include>
+				<include>SquarePosterTagOverlay</include>
+				<include>LibraryAutoTrailerStopButton</include>
 						<include content="LibraryAutoTrailerStartButton" condition="Skin.HasSetting(View510_DetailsAutoTrailer)">
 							<param name="interval" value="$INFO[Skin.String(details_auto_trailer_interval)]" />
 						</include>

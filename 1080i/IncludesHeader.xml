@@ -101,7 +101,7 @@
 		</control>
 		
 					<control type="textbox">
-                        <visible>String.EndsWith(Control.GetLabel(881),color_transparent.png) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(sets) | Window.IsActive(tvchannels) |  Window.IsActive(tvguide) | Window.IsActive(tvrecordings) | Window.IsActive(tvtimers) | Window.IsActive(tvsearch)]</visible>
+                        <visible>String.EndsWith(Control.GetLabel(881),color_transparent.png) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(sets) | Window.IsActive(tvchannels) |  Window.IsActive(tvguide) | Window.IsActive(tvrecordings) | Window.IsActive(tvtimers) | Window.IsActive(tvsearch) | String.IsEqual(ListItem.Property(tmdb_type),person)]</visible>
 						<right>60</right>
 						<top>15</top>
 						<width>430</width>
@@ -139,7 +139,7 @@
 		</control>
 		
 					<control type="textbox">
-                        <visible>String.EndsWith(Control.GetLabel(882),color_transparent.png) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(sets) | Window.IsActive(tvchannels) |  Window.IsActive(tvguide) | Window.IsActive(tvrecordings) | Window.IsActive(tvtimers) | Window.IsActive(tvsearch)]</visible>
+                        <visible>String.EndsWith(Control.GetLabel(882),color_transparent.png) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(sets) | Window.IsActive(tvchannels) |  Window.IsActive(tvguide) | Window.IsActive(tvrecordings) | Window.IsActive(tvtimers) | Window.IsActive(tvsearch) | String.IsEqual(ListItem.Property(tmdb_type),person)]</visible>
 						<left>60</left>
 						<top>15</top>
 						<width>430</width>
@@ -173,7 +173,7 @@
 		</control>
 
 					<control type="textbox">
-                        <visible>String.EndsWith(Control.GetLabel(883),color_transparent.png) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(sets) | Window.IsActive(tvchannels) |  Window.IsActive(tvguide) | Window.IsActive(tvrecordings) | Window.IsActive(tvtimers) | Window.IsActive(tvsearch)]</visible>
+                        <visible>String.EndsWith(Control.GetLabel(883),color_transparent.png) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(sets) | Window.IsActive(tvchannels) |  Window.IsActive(tvguide) | Window.IsActive(tvrecordings) | Window.IsActive(tvtimers) | Window.IsActive(tvsearch) | String.IsEqual(ListItem.Property(tmdb_type),person)]</visible>
 						<left>744</left>
 						<top>15</top>
 						<width>430</width>

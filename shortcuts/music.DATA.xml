@@ -47,12 +47,4 @@
 		<thumb />
 		<action>ActivateWindow(10502,addons://sources/audio/,return)</action>
 	</shortcut>
-		<shortcut>
-		<label>137</label>
-		<label2>Music</label2>
-		<defaultID>137</defaultID>
-		<icon />
-		<thumb />
-		<action>ActivateWindow(1107,return)</action>
-	</shortcut>
 </shortcuts>

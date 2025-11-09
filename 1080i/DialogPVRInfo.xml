@@ -3,7 +3,7 @@
 <window>
     <defaultcontrol always="true">9000</defaultcontrol>
     <controls>
-		<include>Defs_TMDbHelper_Loader</include>
+		<include>Defs_TMDbBingieHelper_Loader</include>
         <!--Dialog Overlay-->
 		<control type="group">
 			<visible>!Window.IsActive(fullscreenvideo)</visible>
@@ -141,7 +141,7 @@
                     <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                     <texturenofocus>dialogs/default/separator.png</texturenofocus>
                     <label>$LOCALIZE[135]:</label>
-                    <label2 fallback="161">$INFO[Container(99950).ListItem.Genre]</label2>
+                    <label2 fallback="161">$INFO[Container(17195).ListItem.Genre]</label2>
                     <enable>false</enable>
                 </control>
                 <control type="button">
@@ -178,7 +178,7 @@
                 <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                 <pagecontrol>60</pagecontrol>
                 <label fallback="161">$VAR[Plots]</label>
-                <visible>String.IsEmpty(Container(99950).ListItem.Art(poster))</visible>
+                <visible>String.IsEmpty(Container(17195).ListItem.Art(poster))</visible>
             </control>
             <control type="textbox" id="400">
                 <description>Plot value with poster present</description>
@@ -190,7 +190,7 @@
                 <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                 <pagecontrol>61</pagecontrol>
                 <label fallback="161">$VAR[Plots]</label>
-                <visible>!String.IsEmpty(Container(99950).ListItem.Art(poster))</visible>
+                <visible>!String.IsEmpty(Container(17195).ListItem.Art(poster))</visible>
             </control>
 			<control type="scrollbar" id="60">
 				<right>10</right>
@@ -219,7 +219,7 @@
                 <posy>543</posy>
                 <width>241</width>
                 <height>351</height>
-                <texture background="true">$INFO[Container(99950).ListItem.Art(poster)]</texture>
+                <texture background="true">$INFO[Container(17195).ListItem.Art(poster)]</texture>
                 <aspectratio align="right" aligny="center">stretch</aspectratio>
             </control>
             <!--Button Group-->
@@ -283,8 +283,8 @@
 					<include>DialogButtonOther</include>
 					<label>20410</label>
                     <onclick>Close</onclick>
-                    <onclick>PlayMedia($ESCINFO[Container(99950).ListItem.Trailer])</onclick>
-                    <visible>!String.IsEmpty(Container(99950).ListItem.Trailer)</visible>
+                    <onclick>PlayMedia($ESCINFO[Container(17195).ListItem.Trailer])</onclick>
+                    <visible>!String.IsEmpty(Container(17195).ListItem.Trailer)</visible>
                 </control>
 				<control type="button" id="7">
                     <!--Cancel-->

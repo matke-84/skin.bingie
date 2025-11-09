@@ -154,7 +154,6 @@
                         <posy>-1</posy>
                         <width>1020</width>
                         <height>60</height>
-                        <include condition="String.IsEqual(System.Language,Arabic) | String.IsEqual(System.Language,Hebrew)">align_right</include>
                         <label>$INFO[ListItem.Label]</label>
                         <align>left</align>
                         <aligny>center</aligny>
@@ -185,7 +184,6 @@
                             <posy>-1</posy>
                             <width>1020</width>
                             <height>60</height>
-                            <include condition="String.IsEqual(System.Language,Arabic) | String.IsEqual(System.Language,Hebrew)">align_right</include>
                             <label>$INFO[ListItem.Label]</label>
                             <align>left</align>
                             <aligny>center</aligny>
@@ -218,7 +216,6 @@
                             <posy>-1</posy>
                             <width>1020</width>
                             <height>60</height>
-                            <include condition="String.IsEqual(System.Language,Arabic) | String.IsEqual(System.Language,Hebrew)">align_right</include>
                             <label>$INFO[ListItem.Label]</label>
                             <align>left</align>
                             <aligny>center</aligny>
@@ -474,7 +471,6 @@
 				<posy>805</posy>
                 <width>1100</width>
                 <height>20</height>
-                <include condition="String.IsEqual(System.Language,Arabic) | String.IsEqual(System.Language,Hebrew)">align_right</include>
                 <label>$INFO[Container(3).ListItem.Label2]</label>
                 <align>left</align>
                 <aligny>center</aligny>

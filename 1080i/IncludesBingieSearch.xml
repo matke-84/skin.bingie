@@ -8,34 +8,29 @@
     </variable>
 	
 	<variable name="SearchTMDBAll">
-        <value condition="!String.IsEmpty(Skin.String(CustomSearchTerm))">plugin://plugin.video.themoviedb.helper?info=search&amp;type=both&amp;query=$INFO[Skin.String(CustomSearchTerm)]&amp;nextpage=false</value>
+        <value condition="!String.IsEmpty(Control.GetLabel(987)) + !String.IsEmpty(Skin.String(CustomSearchTerm))">plugin://plugin.video.tmdb.bingie.helper?info=search&amp;tmdb_type=both&amp;nextpage=false&amp;query=</value>
     </variable>
 	
 	<variable name="SearchTMDBMovies">
-        <value condition="!String.IsEmpty(Skin.String(CustomSearchTerm))">plugin://plugin.video.themoviedb.helper?info=search&amp;type=movie&amp;query=$INFO[Skin.String(CustomSearchTerm)]&amp;nextpage=false</value>
+        <value condition="!String.IsEmpty(Control.GetLabel(987)) + !String.IsEmpty(Skin.String(CustomSearchTerm))">plugin://plugin.video.tmdb.bingie.helper?info=search&amp;tmdb_type=movie&amp;nextpage=false&amp;query=</value>
     </variable>
 	
 	<variable name="SearchTMDBCollections">
-        <value condition="!String.IsEmpty(Skin.String(CustomSearchTerm))">plugin://plugin.video.themoviedb.helper?info=search&amp;type=collection&amp;query=$INFO[Skin.String(CustomSearchTerm)]&amp;nextpage=false</value>       
+        <value condition="!String.IsEmpty(Control.GetLabel(987)) + !String.IsEmpty(Skin.String(CustomSearchTerm))">plugin://plugin.video.tmdb.bingie.helper?info=search&amp;tmdb_type=collection&amp;nextpage=false&amp;query=</value>       
     </variable>
 	
 	<variable name="SearchTMDBShows">
-        <value condition="!String.IsEmpty(Skin.String(CustomSearchTerm))">plugin://plugin.video.themoviedb.helper?info=search&amp;type=tv&amp;query=$INFO[Skin.String(CustomSearchTerm)]&amp;nextpage=false</value>       
+        <value condition="!String.IsEmpty(Control.GetLabel(987)) + !String.IsEmpty(Skin.String(CustomSearchTerm))">plugin://plugin.video.tmdb.bingie.helper?info=search&amp;tmdb_type=tv&amp;nextpage=false&amp;query=</value>       
     </variable>
 	
 	<variable name="SearchTMDBPeople">
-        <value condition="!String.IsEmpty(Skin.String(CustomSearchTerm))">plugin://plugin.video.themoviedb.helper?info=search&amp;type=person&amp;query=$INFO[Skin.String(CustomSearchTerm)]&amp;nextpage=false</value>       
+        <value condition="!String.IsEmpty(Control.GetLabel(987)) + !String.IsEmpty(Skin.String(CustomSearchTerm))">plugin://plugin.video.tmdb.bingie.helper?info=search&amp;tmdb_type=person&amp;nextpage=false&amp;query=</value>       
     </variable>
 
     <variable name="EmptySearchResultsString">
         <value condition="Control.HasFocus(1007) + String.IsEmpty(Skin.String(CustomSearchTerm))">$LOCALIZE[31558]</value>
-        <value condition="String.IsEmpty(Skin.String(CustomSearchTerm)) + Window.IsActive(1106) + [Library.HasContent(Movies) | Library.HasContent(TVShows)]">$LOCALIZE[31560]</value>
-		<value condition="String.IsEmpty(Skin.String(CustomSearchTerm)) + Window.IsActive(1106) + !Library.HasContent(Movies) + !Library.HasContent(TVShows)">$LOCALIZE[31036]</value>
-		<value condition="String.IsEmpty(Skin.String(CustomSearchTerm)) + Window.IsActive(1107)">$LOCALIZE[31038]</value>
-		<value condition="String.IsEmpty(Skin.String(CustomSearchTerm)) + Window.IsActive(1108) + [Library.HasContent(Movies) | Library.HasContent(TVShows)]">$LOCALIZE[31559]</value>
-		<value condition="String.IsEmpty(Skin.String(CustomSearchTerm)) + Window.IsActive(1108) + !Library.HasContent(Movies) + !Library.HasContent(TVShows)">$LOCALIZE[31198]</value>
-        <value condition="String.IsEmpty(Skin.String(CustomSearchTerm)) + [Skin.HasSetting(EnableBingieSearchAuto) + [Library.HasContent(Movies) | Library.HasContent(TVShows)] | Skin.HasSetting(EnableBingieSearchLibrary)]">$LOCALIZE[31559]</value>
-		<value condition="String.IsEmpty(Skin.String(CustomSearchTerm)) + [Skin.HasSetting(EnableBingieSearchAuto) + !Library.HasContent(Movies) + !Library.HasContent(TVShows) | Skin.HasSetting(EnableBingieSearchTMDBHelper)]">$LOCALIZE[31186]</value>
+        <value condition="String.IsEmpty(Skin.String(CustomSearchTerm)) + Library.HasContent(Movies) | Library.HasContent(TVShows)">$LOCALIZE[31255]</value>
+		<value condition="String.IsEmpty(Skin.String(CustomSearchTerm)) + !Library.HasContent(Movies) + !Library.HasContent(TVShows)">$LOCALIZE[31186]</value>
         <value>$LOCALIZE[31578]</value>
     </variable>
 
@@ -59,12 +54,12 @@
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
             <item>
-                <label>$LOCALIZE[31649]</label>
+                <label>$LOCALIZE[31300]</label>
                 <property name="path">special://skin/playlists/watchitagainmovies.xsp</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
-                <label>$LOCALIZE[31650]</label>
+                <label>$LOCALIZE[31556]</label>
                 <property name="path">special://skin/playlists/watchitagaintvshows.xsp</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
@@ -160,7 +155,7 @@
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
             <item>
-                <label>$LOCALIZE[31649]</label>
+                <label>$LOCALIZE[31300]</label>
                 <property name="path">special://skin/playlists/watchitagainmovies.xsp</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
@@ -216,7 +211,7 @@
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
-                <label>$LOCALIZE[31650]</label>
+                <label>$LOCALIZE[31556]</label>
                 <property name="path">special://skin/playlists/watchitagaintvshows.xsp</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
@@ -268,97 +263,97 @@
         <content>
 			<item>
                 <label>$LOCALIZE[31432]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=trending_day&amp;type=movie&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trending_day&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31453]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=trending_day&amp;type=tv&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trending_day&amp;tmdb_type=tv&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31454]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=trending_week&amp;type=movie&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trending_week&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31540]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=trending_week&amp;type=tv&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trending_week&amp;tmdb_type=tv&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31347]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=popular&amp;type=movie&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=popular&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31346]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=popular&amp;type=tv&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=popular&amp;tmdb_type=tv&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31339]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=top_rated&amp;type=movie&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=top_rated&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31340]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=top_rated&amp;type=tv&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=top_rated&amp;tmdb_type=tv&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31343]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=revenue_movies&amp;type=movie&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=revenue_movies&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31335]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=most_voted&amp;type=movie&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=most_voted&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31336]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=most_voted&amp;type=tv&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=most_voted&amp;tmdb_type=tv&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
             <item>
                 <label>$LOCALIZE[31337]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_trending&amp;type=movie&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trakt_trending&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31328]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_trending&amp;type=tv&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trakt_trending&amp;tmdb_type=tv&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
             <item>
                 <label>$LOCALIZE[31326]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_popular&amp;type=movie&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trakt_popular&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31319]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_popular&amp;type=tv&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trakt_popular&amp;tmdb_type=tv&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31313]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_mostplayed&amp;type=movie&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trakt_mostplayed&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31314]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_mostplayed&amp;type=tv&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trakt_mostplayed&amp;tmdb_type=tv&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31315]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_mostviewers&amp;type=movie&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trakt_mostviewers&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31316]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_mostviewers&amp;type=tv&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trakt_mostviewers&amp;tmdb_type=tv&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>			
         </content>
@@ -369,52 +364,52 @@
         <content>
 			<item>
                 <label>$LOCALIZE[31432]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=trending_day&amp;type=movie&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trending_day&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31454]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=trending_week&amp;type=movie&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trending_week&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31347]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=popular&amp;type=movie&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=popular&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31339]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=top_rated&amp;type=movie&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=top_rated&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31343]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=revenue_movies&amp;type=movie&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=revenue_movies&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31335]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=most_voted&amp;type=movie&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=most_voted&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
             <item>
                 <label>$LOCALIZE[31337]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_trending&amp;type=movie&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trakt_trending&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
             <item>
                 <label>$LOCALIZE[31326]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_popular&amp;type=movie&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trakt_popular&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31313]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_mostplayed&amp;type=movie&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trakt_mostplayed&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31315]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_mostviewers&amp;type=movie&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trakt_mostviewers&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>		
         </content>
@@ -425,47 +420,47 @@
         <content>
 			<item>
                 <label>$LOCALIZE[31453]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=trending_day&amp;type=tv&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trending_day&amp;tmdb_type=tv&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31540]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=trending_week&amp;type=tv&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trending_week&amp;tmdb_type=tv&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31346]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=popular&amp;type=tv&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=popular&amp;tmdb_type=tv&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31340]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=top_rated&amp;type=tv&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=top_rated&amp;tmdb_type=tv&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31336]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=most_voted&amp;type=tv&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=most_voted&amp;tmdb_type=tv&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31328]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_trending&amp;type=tv&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trakt_trending&amp;tmdb_type=tv&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31319]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_popular&amp;type=tv&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trakt_popular&amp;tmdb_type=tv&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31314]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_mostplayed&amp;type=tv&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trakt_mostplayed&amp;tmdb_type=tv&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31316]</label>
-                <property name="path">plugin://plugin.video.themoviedb.helper?info=trakt_mostviewers&amp;type=tv&amp;nextpage=false</property>
+                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trakt_mostviewers&amp;tmdb_type=tv&amp;nextpage=false&amp;length=1</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>			
         </content>
@@ -874,7 +869,7 @@
         <param name="onup" default="101" />
         <param name="ondown" default="noop" />
         <param name="onright" default="77777" />
-        <param name="onleft" default="900" />
+        <param name="onleft" default="SetFocus(900,$INFO[Window(Home).Property(menupos)])" />
         <definition>
             <control type="list" id="$PARAM[id]">
                 <nested/>
@@ -956,7 +951,6 @@
                             <align>left</align>
                             <font>Reg30</font>
                             <textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
-                            <scroll>true</scroll>
                             <label>$INFO[ListItem.Label]</label>
                         </control>
                     </control>
@@ -964,12 +958,60 @@
             </control>
         </definition>
     </include>
-
-    <!-- Search Container Template -->
+	
+	<!-- Search Container Template -->
     <include name="SearchContainerTemplate">
         <definition>
             <control type="panel" id="$PARAM[id]">
                 <nested />
+				<animation effect="fade" start="0" end="100" time="1" delay="20" condition="ControlGroup(77777).HasFocus() | Control.HasFocus(1007) | [Control.HasFocus(900) + !String.IsEmpty(Window.Property(KeepSuggestions))]">Conditional</animation>  
+				<animation effect="fade" start="100" end="0" time="0" condition="!String.IsEmpty(Window.Property(SearchPosterAnimation)) + Container(500).IsUpdating + String.IsEmpty(Skin.String(CustomSearchTerm)) + !String.IsEmpty(Window.Property(SuggestionPath))">Conditional</animation>             
+				<visible>Container(500).IsUpdating | Integer.IsGreater(Container(500).NumItems,0) | $PARAM[force_visible]</visible>
+                <visible>$PARAM[visibility]</visible>
+                <width>$PARAM[width]</width>
+                <height>$PARAM[height]</height>
+                <orientation>$PARAM[orientation]</orientation>
+                <pagecontrol>$PARAM[pagecontrol]</pagecontrol>
+                <scrolltime tween="quadratic">400</scrolltime>
+                <preloaditems>4</preloaditems>
+                <itemlayout width="$PARAM[layoutwidth]" height="$PARAM[layoutheight]">
+                    <control type="group">
+                        <width>$PARAM[layoutwidth]</width>
+                        <height>$PARAM[layoutheight]</height>
+                        <include>$PARAM[layout]Layout</include>
+                        <control type="group">
+							<include>PosterTagOverlayBingieNoOverride</include>
+                        </control>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="$PARAM[layoutwidth]" height="$PARAM[layoutheight]">
+                    <control type="group">
+                        <width>$PARAM[layoutwidth]</width>
+                        <height>$PARAM[layoutheight]</height>
+                        <include>$PARAM[layout]LayoutFocus</include>
+                        <control type="group">
+                            <include>PosterTagOverlayBingieNoOverride</include>
+                        </control>
+						<include content="SearchHiddenWidgetButton">
+							<param name="widgetstyle" value="poster"/>
+							<param name="widgetid" value="$PARAM[widgetid]"/>
+						</include>
+						<control type="button">
+                            <visible>false</visible>
+							<onfocus condition="!String.IsEmpty(Window.Property(SearchPosterAnimation))">ClearProperty(SearchPosterAnimation)</onfocus>
+                        </control>
+                    </control>
+                </focusedlayout>
+            </control>
+        </definition>
+    </include>
+	
+	<!-- Custom Search Container Template -->
+	<include name="CustomSearchContainerTemplate">
+        <definition>
+            <control type="panel" id="$PARAM[id]">
+                <nested />
+				<animation effect="fade" start="0" end="100" time="1" delay="20" condition="!String.IsEmpty(Skin.String(CustomSearchTerm))">Conditional</animation>  
 				<animation effect="fade" start="100" end="0" time="0" condition="!String.IsEmpty(Window.Property(SearchPosterAnimation)) + Container(500).IsUpdating + String.IsEmpty(Skin.String(CustomSearchTerm)) + !String.IsEmpty(Window.Property(SuggestionPath)) | Container($PARAM[id]).IsUpdating  + !String.IsEmpty(Skin.String(CustomSearchTerm))">Conditional</animation>
                 <visible>Container($PARAM[id]).IsUpdating | Integer.IsGreater(Container($PARAM[id]).NumItems,0) | $PARAM[force_visible]</visible>
                 <visible>$PARAM[visibility]</visible>
@@ -984,16 +1026,13 @@
                         <width>$PARAM[layoutwidth]</width>
                         <height>$PARAM[layoutheight]</height>
                         <include>$PARAM[layout]Layout</include>
+						<include>$PARAM[layout]TagsNoOverride</include>
                         <control type="group">
                             <include content="$PARAM[layout]Tags">
-                                <param name="force_tags" value="$PARAM[force_tags]" />
                                 <param name="widgetTags" value="$PARAM[widgetTags]" />
                             </include>
-							<control type="group">
-								<left>29</left>
-								<include>Poster_New_Episodes_Tag_Overlay</include>
-							</control>
                         </control>
+						<include>$PARAM[layout]NewEpisodeTag</include>
                     </control>
                 </itemlayout>
                 <focusedlayout width="$PARAM[layoutwidth]" height="$PARAM[layoutheight]">
@@ -1001,16 +1040,13 @@
                         <width>$PARAM[layoutwidth]</width>
                         <height>$PARAM[layoutheight]</height>
                         <include>$PARAM[layout]LayoutFocus</include>
-                        <control type="group">
+						<include>$PARAM[layout]TagsNoOverride</include>
+                        <control type="group">							
                             <include content="$PARAM[layout]Tags">
-                                <param name="force_tags" value="$PARAM[force_tags]" />
                                 <param name="widgetTags" value="$PARAM[widgetTags]" />
                             </include>
-							<control type="group">
-								<left>29</left>
-								<include>Poster_New_Episodes_Tag_Overlay</include>
-							</control>
                         </control>
+						<include>$PARAM[layout]NewEpisodeTag</include>
 						<include content="SearchHiddenWidgetButton">
 							<param name="widgetstyle" value="poster"/>
 							<param name="widgetid" value="$PARAM[widgetid]"/>
@@ -1018,9 +1054,8 @@
 						<control type="button">
                             <visible>false</visible>
 							<onfocus condition="!String.IsEmpty(Window.Property(SearchPosterAnimation))">ClearProperty(SearchPosterAnimation)</onfocus>
+							<onfocus>SetProperty(CurrentSearchWidgetID,$PARAM[id],Home)</onfocus>
                         </control>
-						<!--Top 250-->
-						<include>Top250Indicator</include>
                     </control>
                 </focusedlayout>
             </control>
@@ -1029,6 +1064,57 @@
 	
 	<include name="Object_SearchList_Template">
         <include content="SearchResultWidgetTopLabel">
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,2)">Conditional</animation>											 																																											   
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,4)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,6)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,8)">Conditional</animation>		
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,10)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,12)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,14)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,16)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,18)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,20)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,22)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,24)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,26)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,28)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,30)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,32)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,34)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,36)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,38)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,40)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,42)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,44)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,46)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,48)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,50)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,52)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,54)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,56)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,58)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,60)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,62)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,64)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,66)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,68)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,70)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,72)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,74)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,76)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,78)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,80)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,82)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,84)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,86)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,88)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,90)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,92)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,94)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,96)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,98)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,100)">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="250" condition="Integer.IsGreater(Window(Home).Property(CurrentSearchWidgetID), $PARAM[id])">Conditional</animation>
             <param name="groupid" value="$PARAM[groupid]" />
             <param name="id" value="$PARAM[id]" />
             <param name="label" value="$PARAM[label]$INFO[Container($PARAM[id]).NumItems, (,)]" />
@@ -1036,50 +1122,106 @@
 			<animation effect="fade" start="100" end="0" time="0" condition="Container($PARAM[id]).IsUpdating">Conditional</animation>
         </include>
         <include content="CustomSearchResultWidget">
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,2)">Conditional</animation>											 																																											   
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,4)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,6)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,8)">Conditional</animation>		
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,10)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,12)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,14)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,16)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,18)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,20)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,22)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,24)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,26)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,28)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,30)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,32)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,34)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,36)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,38)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,40)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,42)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,44)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,46)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,48)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,50)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,52)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,54)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,56)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,58)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,60)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,62)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,64)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,66)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,68)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,70)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,72)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,74)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,76)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,78)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,80)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,82)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,84)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,86)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,88)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,90)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,92)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,94)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,96)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,98)">Conditional</animation>
+			<animation effect="slide" end="0,-1017" time="300" condition="Integer.IsGreater(Container(77777).Position,100)">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="250" condition="Integer.IsGreater(Window(Home).Property(CurrentSearchWidgetID), $PARAM[id])">Conditional</animation>
             <param name="id" value="$PARAM[id]" />
             <param name="layout">$PARAM[layout]</param>
-			<param name="limit">$PARAM[limit]</param>
+			<param name="widgetLimit">$PARAM[widgetLimit]</param>
             <param name="layoutwidth">$PARAM[layoutwidth]</param>
 			<param name="layoutheight">$PARAM[layoutheight]</param>
 			<param name="height">$PARAM[height]</param>
-			<param name="force_tags">$PARAM[force_tags]</param>
+			<param name="widgetTags">$PARAM[widgetTags]</param>
+			<param name="widgetTarget">$PARAM[widgetTarget]</param>
             <param name="allow_showinfo_onclick" value="true" />
 			<param name="orientation" value="vertical" />
             <param name="visibility" value="!String.IsEmpty(Skin.String(CustomSearchTerm))" />
-            <content target="videos" sortby="file" limit="$PARAM[limit]">$PARAM[path]$INFO[Skin.String(CustomSearchTerm)]</content>
+            <content browse="never" target="$PARAM[widgetTarget]" sortby="file" limit="$PARAM[widgetLimit]">$PARAM[path]$INFO[Skin.String(CustomSearchTerm)]$PARAM[path2]</content>
         </include>
     </include>
 
     <!-- Tag Overlays -->
 	<include name="PosterPanelBingieTags">
-        <include condition="!String.IsEqual(Skin.String(Widgets_DisplayTags),override) + !String.IsEqual(Skin.String(Widgets_DisplayTags),disable) | $PARAM[force_tags]">PosterTagOverlayBingie</include>
-        <!-- <include condition="String.IsEqual(Skin.String(Widgets_DisplayTags),auto)">PosterTagOverlayVisibility</include> -->
-        <include content="$PARAM[widgetTags]" condition="String.IsEqual(Skin.String(Widgets_DisplayTags),override)">
+        <include>PosterTagOverlayBingie</include>
+        <include content="$PARAM[widgetTags]">
             <param name="prefix" value="Poster"/>
         </include>
     </include>
 	
     <include name="ThumbsViewBingieTags">
-        <include condition="!String.IsEqual(Skin.String(Widgets_DisplayTags),override) + !String.IsEqual(Skin.String(Widgets_DisplayTags),disable) | $PARAM[force_tags]">ThumbsTagOverlayBingie</include>
-        <!-- <include condition="String.IsEqual(Skin.String(Widgets_DisplayTags),auto)">PosterTagOverlayVisibility</include> -->
-        <include content="$PARAM[widgetTags]" condition="String.IsEqual(Skin.String(Widgets_DisplayTags),override)">
+        <include>ThumbsTagOverlayBingie</include>
+        <include content="$PARAM[widgetTags]">
             <param name="prefix" value="Landscape"/>
         </include>
     </include>
 
     <include name="SquarePosterPanelTags">
-        <include condition="!String.IsEqual(Skin.String(Widgets_DisplayTags),override) + !String.IsEqual(Skin.String(Widgets_DisplayTags),disable) | $PARAM[force_tags]">SquarePosterTagOverlay</include>
-        <!-- <include condition="String.IsEqual(Skin.String(Widgets_DisplayTags),auto)">SquarePosterTagOverlayVisibility</include> -->
-        <include content="$PARAM[widgetTags]" condition="String.IsEqual(Skin.String(Widgets_DisplayTags),override)">
+        <include>SquarePosterTagOverlayBingie</include>
+        <include content="$PARAM[widgetTags]">
             <param name="prefix" value="SquarePoster"/>
         </include>
+    </include>
+	
+	<include name="PosterPanelBingieTagsNoOverride">
+        <include>PosterTagOverlayBingieNoOverride</include>
+    </include>
+	
+	<include name="SquarePosterPanelTagsNoOverride">
+        <include>SquarePosterTagOverlayBingieNoOverride</include>
     </include>
 	
 	<include name="SearchResultWidget">
         <param name="height">search_widget_height</param>
         <param name="orientation">horizontal</param>
         <param name="layoutheight">search_widget_height</param>
-        <param name="force_tags" default="false" />
         <definition>
                 <include content="SearchContainerTemplate">
                     <nested />
@@ -1092,16 +1234,14 @@
                     <param name="layoutwidth" value="$PARAM[layoutwidth]" />
                     <param name="layoutheight" value="$PARAM[layoutheight]" />
                     <param name="force_visible" value="!String.IsEmpty(Window(home).Property(CustomSearch))" />
-                    <param name="force_tags" value="$PARAM[force_tags]" />
                     <param name="visibility" value="$PARAM[visibility]" />
-                    <param name="widgetTags" value="$PARAM[widgetTags]" />
                 </include>
         </definition>
     </include>
 
     <include name="CustomSearchResultWidget">
         <definition>
-                <include content="SearchContainerTemplate">
+                <include content="CustomSearchContainerTemplate">
                     <nested />
                     <include condition="Skin.HasSetting(ShowInformationBypass) + $PARAM[allow_showinfo_onclick]">ContainerShowInfoOnclick</include>
                     <param name="id" value="$PARAM[id]"/>
@@ -1112,7 +1252,6 @@
                     <param name="layoutwidth" value="$PARAM[layoutwidth]" />
                     <param name="layoutheight" value="$PARAM[layoutheight]" />
                     <param name="force_visible" value="!String.IsEmpty(Window(home).Property(CustomSearch))" />
-                    <param name="force_tags" value="$PARAM[force_tags]" />
                     <param name="visibility" value="$PARAM[visibility]" />
                     <param name="widgetTags" value="$PARAM[widgetTags]" />
                 </include>
@@ -1127,7 +1266,7 @@
                 <nested />
                 <height>40</height>
                 <control type="label">
-                    <left>5</left>
+                    <left>8</left>
                     <width>auto</width>
                     <label>$PARAM[label]</label>
                     <aligny>center</aligny>
@@ -1140,88 +1279,4 @@
         </definition>
     </include>
 
-    <!-- Search Episode Widget -->
-    <include name="EpisodeSearchResultWidget">
-        <include content="SearchResultWidget">
-            <param name="id" value="$PARAM[id]" />
-            <param name="layout">ThumbsViewBingie</param>
-			<param name="height" value="230" />
-            <param name="layoutwidth">394</param>
-			<param name="layoutheight">230</param>
-			<param name="widgetTags" value="WidgetTagOverlayEnable" />
-            <param name="force_tags" value="true" />
-            <param name="allow_showinfo_onclick" value="true" />
-			<param name="orientation" value="vertical" />
-            <param name="visibility" value="!String.IsEmpty(Skin.String(CustomSearchTerm))" />
-            <content browse="never" limit="100" target="videos">videodb://tvshows/titles/-1/-1/-1/-1/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22title%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22$INFO[Skin.String(CustomSearchTerm)]%22%5D%7D%5D%7D%2C%22type%22%3A%22episodes%22%7D</content>
-        </include>
-    </include>
-
-    <!-- Search Music Videos Widget -->
-    <include name="MusicVideosSearchResultWidget">
-        <include content="SearchResultWidget">
-            <param name="id" value="$PARAM[id]" />
-            <param name="layout">ThumbsViewBingie</param>
-			<param name="height" value="230" />
-            <param name="layoutwidth">394</param>
-			<param name="layoutheight">230</param>
-			<param name="widgetTags" value="WidgetTagOverlayEnable" />
-            <param name="force_tags" value="true" />
-            <param name="allow_showinfo_onclick" value="false" />
-			<param name="orientation" value="vertical" />
-            <param name="visibility" value="!String.IsEmpty(Skin.String(CustomSearchTerm))" />
-            <content browse="never" limit="100" target="videos">videodb://musicvideos/titles/?xsp=%7b%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22title%22%2c%22operator%22%3a%22contains%22%2c%22value%22%3a%5b%22$INFO[Skin.String(CustomSearchTerm)]%22%5d%7d%5d%7d%2c%22type%22%3a%22musicvideos%22%7d</content>
-        </include>
-    </include>
-
-    <!-- Search Albums Widget -->
-    <include name="AlbumsSearchResultWidget">
-        <include content="SearchResultWidget">
-            <param name="id" value="$PARAM[id]" />
-            <param name="layout">SquarePosterPanel</param>
-			<param name="height" value="394" />
-            <param name="layoutwidth">394</param>
-			<param name="layoutheight">394</param>
-			<param name="widgetTags" value="WidgetTagOverlayEnable" />
-            <param name="force_tags" value="true" />
-            <param name="allow_showinfo_onclick" value="false" />
-			<param name="orientation" value="vertical" />
-            <param name="visibility" value="!String.IsEmpty(Skin.String(CustomSearchTerm))" />
-            <content browse="never" limit="100" target="music">musicdb://albums/?xsp=%7b%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22album%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22album%22%2c%22operator%22%3a%22contains%22%2c%22value%22%3a%5b%22$INFO[Skin.String(CustomSearchTerm)]%22%5d%7d%5d%7d%2c%22type%22%3a%22albums%22%7d</content>
-        </include>
-    </include>
-
-    <!-- Search Artists Widget -->
-    <include name="ArtistsSearchResultWidget">
-        <include content="SearchResultWidget">
-            <param name="id" value="$PARAM[id]" />
-            <param name="layout">SquarePosterPanel</param>
-			<param name="height" value="394" />
-            <param name="layoutwidth">394</param>
-			<param name="layoutheight">394</param>
-			<param name="widgetTags" value="WidgetTagOverlayEnable" />
-            <param name="force_tags" value="true" />
-            <param name="allow_showinfo_onclick" value="false" />
-			<param name="orientation" value="vertical" />
-            <param name="visibility" value="!String.IsEmpty(Skin.String(CustomSearchTerm))" />
-            <content browse="never" limit="100" target="music">musicdb://artists/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22artist%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22artist%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22$INFO[Skin.String(CustomSearchTerm)]%22%5D%7D%5D%7D%2C%22type%22%3A%22artists%22%7D</content>
-        </include>
-    </include>
-
-    <!-- Search Songs Widget -->
-    <include name="SongsSearchResultWidget">
-        <include content="SearchResultWidget">
-            <param name="id" value="$PARAM[id]" />
-            <param name="layout">SquarePosterPanel</param>
-			<param name="height" value="394" />
-            <param name="layoutwidth">394</param>
-			<param name="layoutheight">394</param>
-			<param name="widgetTags" value="WidgetTagOverlayEnable" />
-            <param name="force_tags" value="true" />
-            <param name="allow_showinfo_onclick" value="false" />
-			<param name="orientation" value="vertical" />
-            <param name="visibility" value="!String.IsEmpty(Skin.String(CustomSearchTerm))" />
-            <content browse="never" limit="100" target="music">musicdb://songs/?xsp=%7b%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22artist%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22title%22%2c%22operator%22%3a%22contains%22%2c%22value%22%3a%5b%22$INFO[Skin.String(CustomSearchTerm)]%22%5d%7d%5d%7d%2c%22type%22%3a%22songs%22%7d</content>
-        </include>
-    </include>
 </includes>

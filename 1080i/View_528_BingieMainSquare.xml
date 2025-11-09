@@ -20,7 +20,7 @@
                 <control type="label">
                     <width>100%</width>
                     <height>40</height>
-					<posx>7</posx>
+					<posx>8</posx>
 					<top>-1</top>
                     <font>Bold31</font>
                     <align>left</align>
@@ -45,7 +45,7 @@
 					<textureslidernibfocus colordiffuse="$INFO[Skin.String(ScrollbarFocusedColor)]">scrollbar/texturesliderbar_nib.png</textureslidernibfocus>
                     <visible>Control.IsVisible(528) + Integer.IsGreater(Container.NumItems,0)</visible>
                     <width>10</width>
-					<height>431</height>
+					<height>466</height>
                     <right>0</right>
                     <bottom>0</bottom>
                     <onleft>528</onleft>
@@ -65,9 +65,9 @@
                 <param name="viewtype" value="$LOCALIZE[31122]" />
             </include>
             <focusedposition>0</focusedposition>
-            <top>41</top>
-            <width>1768</width>
-            <height>470</height>
+            <top>6</top>
+            <width>1674</width>
+            <height>474</height>
             <orientation>vertical</orientation>
             <itemgap>0</itemgap>
             <preloaditems>4</preloaditems>
@@ -79,18 +79,45 @@
 			<onleft>9000</onleft>
             <onup>528</onup>
             <ondown>528</ondown>
-            <itemlayout height="238" width="238">
+            <itemlayout height="339" width="279">
                 <control type="group">
-                    <width>240</width>
-                    <height>240</height>
-                    <include>SquarePosterPanelLayout</include>
+                    <width>280</width>
+                    <height>280</height>
+                    <include>SquarePosterPanelBingieLayout</include>
+					<control type="label">
+						<!--Label-->
+						<left>8</left>
+						<right>8</right>
+						<bottom>-47</bottom>
+						<height>61</height>
+						<include condition="Skin.HasSetting(ThumbsLabelAlignmentCenter)">align_center</include>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>[B]$VAR[SquareListDetails][/B]</label>
+						<font>Reg26</font>
+						<textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
+					</control>
                 </control>
             </itemlayout>
-            <focusedlayout height="238" width="238">
+            <focusedlayout height="339" width="279">
                 <control type="group">
-                    <width>240</width>
-                    <height>240</height>
-                    <include>SquarePosterPanelLayoutFocus</include>
+                    <width>280</width>
+                    <height>280</height>
+                    <include>SquarePosterPanelBingieLayoutFocus</include>
+					<control type="label">
+						<!--Label-->
+						<left>8</left>
+						<right>8</right>
+						<bottom>-47</bottom>
+						<height>61</height>
+						<include condition="Skin.HasSetting(ThumbsLabelAlignmentCenter)">align_center</include>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>[B]$VAR[SquareListDetails][/B]</label>
+						<font>Reg26</font>
+						<scroll>true</scroll>
+						<textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
+					</control>
                 </control>
             </focusedlayout>
         </control>

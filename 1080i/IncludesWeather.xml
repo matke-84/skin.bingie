@@ -322,8 +322,7 @@
 							<control type="image">
 								<width>329</width>
 								<height>310</height>
-								<colordiffuse>$INFO[Skin.String(ViewDetailsBorderFocusColor)]</colordiffuse>
-								<texture border="15">diffuse/panel4.png</texture>
+								<texture border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">$INFO[Skin.String(thumbsborder_focused),bingie/border/default_button_fo_,.png]</texture>
 							</control>
 							<control type="multiimage">
 								<description>current weather icon</description>
@@ -1137,8 +1136,7 @@
                             <control type="image">
 								<width>650</width>
 								<height>167</height>
-								<colordiffuse>$INFO[Skin.String(ViewDetailsBorderFocusColor)]</colordiffuse>
-								<texture border="15">diffuse/panel4.png</texture>
+								<texture border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">$INFO[Skin.String(thumbsborder_focused),bingie/border/default_button_fo_,.png]</texture>
 							</control>
 							<control type="image">
 								<description>current weather icon</description>

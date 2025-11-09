@@ -3,9 +3,9 @@
 <window>
     <defaultcontrol always="true">100</defaultcontrol>
     <include>DefaultSkinSettings</include>
-	<onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=900&amp;group=mainmenu|powermenu|searchmenu)</onunload>
-	<onunload condition="!Skin.HasSetting(EnableRatings)">Skin.SetBool(TMDbHelper.DisableRatings)</onunload>
-    <onunload condition="Skin.HasSetting(EnableRatings)">Skin.Reset(TMDbHelper.DisableRatings)</onunload>
+	<onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=900&amp;levels=1&amp;group=mainmenu|powermenu|searchmenu|tmdbsearchmenu|moviehub|tvshowhub|newhub|musichub|customhub|somethinghub)</onunload>
+	<onunload condition="!Skin.HasSetting(EnableRatings)">Skin.SetBool(TMDbBingieHelper.DisableRatings)</onunload>
+    <onunload condition="Skin.HasSetting(EnableRatings)">Skin.Reset(TMDbBingieHelper.DisableRatings)</onunload>
     <controls>
         <!--Global Background-->
         <include>GlobalBackground</include>

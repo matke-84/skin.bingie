@@ -452,7 +452,6 @@
                     <textureradiooffnofocus colordiffuse="$INFO[Skin.String(BingieButtonTextColor)]">dialogs/keyboard/done.png</textureradiooffnofocus>
                     <label/>
                     <include>SearchKeyDefs</include>
-                    <onclick>SetFocus(100)</onclick>
                     <onup>107</onup>
                 </control>
                 <!-- Layout -->

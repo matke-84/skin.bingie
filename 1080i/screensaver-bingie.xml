@@ -50,8 +50,8 @@
 			<visible>!Container(1297).IsUpdating</visible>
 			<visible>!Skin.HasSetting(DisableBingieLogo)</visible>
 			<description>Bingie logo</description>
-			<right>321</right>
-			<bottom>12</bottom>
+			<right>314</right>
+			<bottom>5</bottom>
 			<width>0</width>
 			<height>165</height>
 			<align>right</align>

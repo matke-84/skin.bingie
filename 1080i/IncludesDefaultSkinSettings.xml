@@ -26,6 +26,8 @@
 	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(GuideShowInfo)</onload>
 	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(HideOSDDisc)</onload>
 	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(pvrGuideOnFullscreenVideo)</onload>
+	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(TVGuideChannelLogo)</onload>
+	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(TVGuideChannelNumber)</onload>
 	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(WatchedIndicator.Watched)</onload>
 	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(WatchedIndicator.Progress)</onload>
 	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(WatchedIndicator.Episodes)</onload>
@@ -33,18 +35,17 @@
 	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(UseBingieOSD)</onload>
 	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(EnableBufferingProgressOSD)</onload>
 	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(DisablePlotAutoScroll)</onload>
-	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetString(AutoYoutubeTrailer,true)</onload>
+    <onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetString(AutoYoutubeTrailer,true)</onload>
 	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(EnableFixedFrameWidgets)</onload>
 	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(ShowInformationBypass)</onload>
 	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(MovieDetailsHome)</onload>
-	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(LockHubWidgets)</onload>
 	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(UseBingieInfoDialog)</onload>
 	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(ForceVideoPlaybackStop)</onload>
 	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(AutoCloseVideoOSD)</onload>
-	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetString(WidgetsGlobalLimit,30)</onload>
+	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetString(WidgetsGlobalLimit,20)</onload>
+	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetString(SearchLimit,20)</onload>
 	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(EnableStudioLogoInfoDialog)</onload>
 	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(DisableScrollingLetters)</onload>
-	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(EnableBingieSearchAuto)</onload>
 	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(EnableAutoPauseOnOSD)</onload>
 	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(ratings_IMDB)</onload>
 	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(ratings_Top250)</onload>
@@ -85,7 +86,7 @@
 	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(videoinfo_details_director)</onload>
 	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(videoinfo_details_creator)</onload>
 	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(videoinfo_details_genre)</onload>
-	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(tmdbhelper_search_all)</onload>		
+	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(tmdbbingiehelper_search_all)</onload>		
 	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(categories_list_action)</onload>
 	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(categories_list_dramas)</onload>
 	<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(categories_list_comedies)</onload>
@@ -202,7 +203,7 @@
         <onload condition="!Skin.String(OSDPanelColor)">Skin.SetString(OSDPanelColor,cc000000)</onload>
         <onload condition="!Skin.String(OSDPanelColor.name)">Skin.SetString(OSDPanelColor.name,$LOCALIZE[353])</onload>
         <onload condition="!Skin.String(ButtonColor)">Skin.SetString(ButtonColor,ff141414)</onload>
-        <onload condition="!Skin.String(ButtonColor.name)">Skin.SetString(ButtonColor.name,$LOCALIZE[31642])</onload>
+        <onload condition="!Skin.String(ButtonColor.name)">Skin.SetString(ButtonColor.name,$LOCALIZE[31205])</onload>
         <onload condition="!Skin.String(FooterTextShadowColor)">Skin.SetString(FooterTextShadowColor,None)</onload>
         <onload condition="!Skin.String(FooterTextShadowColor.name)">Skin.SetString(FooterTextShadowColor.name,$LOCALIZE[231])</onload>
         <onload condition="!Skin.String(OSDPrimaryTextColor)">Skin.SetString(OSDPrimaryTextColor,ffffffff)</onload>
@@ -246,7 +247,7 @@
 		<onload condition="!Skin.String(OSDMediaInfoColor)">Skin.SetString(OSDMediaInfoColor,ffffffff)</onload>
         <onload condition="!Skin.String(OSDMediaInfoColor.name)">Skin.SetString(OSDMediaInfoColor.name,$LOCALIZE[742])</onload>
         <onload condition="!Skin.String(ScrollbarBackgroundColor)">Skin.SetString(ScrollbarBackgroundColor,ff141414)</onload>
-        <onload condition="!Skin.String(ScrollbarBackgroundColor.name)">Skin.SetString(ScrollbarBackgroundColor.name,$LOCALIZE[31642])</onload>
+        <onload condition="!Skin.String(ScrollbarBackgroundColor.name)">Skin.SetString(ScrollbarBackgroundColor.name,$LOCALIZE[31205])</onload>
         <onload condition="!Skin.String(ScrollbarUnfocusedColor)">Skin.SetString(ScrollbarUnfocusedColor,ff5f5f5f)</onload>
         <onload condition="!Skin.String(ScrollbarUnfocusedColor.name)">Skin.SetString(ScrollbarUnfocusedColor.name,$LOCALIZE[31279])</onload>
         <onload condition="!Skin.String(ScrollbarFocusedColor)">Skin.SetString(ScrollbarFocusedColor,ffb4b4b4)</onload>
@@ -347,7 +348,7 @@
 		<onload condition="!Skin.String(MPAATextColor)">Skin.SetString(MPAATextColor.name,$LOCALIZE[742])</onload>
         <!-- pvr colors -->
         <onload condition="!Skin.String(PVRGuideItemColorUnfocus)">Skin.SetString(PVRGuideItemColorUnfocus,ff141414)</onload>
-        <onload condition="!Skin.String(PVRGuideItemColorUnfocus.name)">Skin.SetString(PVRGuideItemColorUnfocus.name,$LOCALIZE[31642])</onload>
+        <onload condition="!Skin.String(PVRGuideItemColorUnfocus.name)">Skin.SetString(PVRGuideItemColorUnfocus.name,$LOCALIZE[31205])</onload>
         <onload condition="!Skin.String(PVRGuideItemColorFocus)">Skin.SetString(PVRGuideItemColorFocus,ffb4b4b4)</onload>
         <onload condition="!Skin.String(PVRGuideItemColorFocus.name)">Skin.SetString(PVRGuideItemColorFocus.name,$LOCALIZE[766])</onload>
         <onload condition="!Skin.String(PVRGuideItemTextColorUnfocus)">Skin.SetString(PVRGuideItemTextColorUnfocus,ffffffff)</onload>
@@ -361,8 +362,6 @@
         <onload condition="!Skin.String(widgetstyle.label)">Skin.SetString(widgetstyle.label,$LOCALIZE[20021])</onload>
 		<onload condition="!Skin.String(layout)">Skin.SetString(layout,PosterPanelBingie)</onload>
         <onload condition="!Skin.String(layout.label)">Skin.SetString(layout.label,$LOCALIZE[20021])</onload>
-		<onload condition="!Skin.String(widgetlimit)">Skin.SetString(widgetlimit,$INFO[Skin.String(WidgetsGlobalLimit)])</onload>
-        <onload condition="!Skin.String(widgetlimit.label)">Skin.SetString(widgetlimit.label,$LOCALIZE[571])</onload>
 		<onload condition="!Skin.String(mediaflagsstyle)">Skin.SetString(mediaflagsstyle,disabled)</onload>
         <onload condition="!Skin.String(mediaflagsstyle.label)">Skin.SetString(mediaflagsstyle.label,$LOCALIZE[1223])</onload>
 		<onload condition="!Skin.String(osdmediaflagsstyle)">Skin.SetString(osdmediaflagsstyle,large_color)</onload>
@@ -390,8 +389,6 @@
         <onload condition="!Skin.String(thumbsborder_focused.label)">Skin.SetString(thumbsborder_focused.label,4 $LOCALIZE[31298])</onload>
 		<onload condition="!Skin.String(volumestyle)">Skin.SetString(volumestyle,modern)</onload>
         <onload condition="!Skin.String(volumestyle.label)">Skin.SetString(volumestyle.label,$LOCALIZE[31228])</onload>
-		<onload condition="!Skin.String(Widgets_DisplayTags)">Skin.SetString(Widgets_DisplayTags,disable)</onload>
-        <onload condition="!Skin.String(Widgets_DisplayTags.label)">Skin.SetString(Widgets_DisplayTags.label,$LOCALIZE[1223])</onload>
 		<onload condition="!Skin.String(Views_DisplayTags)">Skin.SetString(Views_DisplayTags,disable)</onload>
         <onload condition="!Skin.String(Views_DisplayTags.label)">Skin.SetString(Views_DisplayTags.label,$LOCALIZE[1223])</onload>
 		<onload condition="!Skin.String(force_tags)">Skin.SetString(force_tags,false)</onload>
@@ -410,8 +407,6 @@
         <onload condition="!Skin.String(scrollbar_visibility.label)">Skin.SetString(scrollbar_visibility.label,$LOCALIZE[571])</onload>
 		<onload condition="!Skin.String(categories_types)">Skin.SetString(categories_types,Auto)</onload>
         <onload condition="!Skin.String(categories_types.label)">Skin.SetString(categories_types.label,$LOCALIZE[31490])</onload>
-		<onload condition="!Skin.String(list_filter)">Skin.SetString(list_filter,none)</onload>
-        <onload condition="!Skin.String(list_filter.label)">Skin.SetString(list_filter.label,$LOCALIZE[231])</onload>
 		<onload condition="!Skin.String(general_header)">Skin.SetString(general_header,disable)</onload>
         <onload condition="!Skin.String(general_header.label)">Skin.SetString(general_header.label,$LOCALIZE[1223])</onload>
 		<onload condition="!Skin.String(home_header)">Skin.SetString(home_header,disable)</onload>
@@ -430,6 +425,8 @@
 		<onload condition="!Skin.String(skin.forcedview.albums)">Skin.SetString(skin.forcedview.albums,$LOCALIZE[31122])</onload>
 		<onload condition="!Skin.String(AutoCloseVideoOSDTime)">Skin.SetString(AutoCloseVideoOSDTime,5)</onload>
         <onload condition="!Skin.String(AutoCloseVideoOSDTime)">Skin.SetString(AutoCloseVideoOSDTime.label,5 $LOCALIZE[31231])</onload>
+		<onload condition="!Skin.String(trailersource)">Skin.SetString(trailersource,youtube)</onload>
+        <onload condition="!Skin.String(trailersource)">Skin.SetString(trailersource.label,$LOCALIZE[31062])</onload>
 		
         <!-- finish default settings -->
         <onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(HomeMenuDefaults46)</onload>

@@ -63,23 +63,21 @@
 	<!-- POSTER LAYOUT FOR BINGIE VIEWS -->
     <include name="PosterPanelBingieLayout">
         <include>PosterThumbBingieLayout</include>
-        <include condition="!Window.IsActive(Home) + !$EXP[IsBingieHubsActive] + !Window.IsActive(1117) + !Window.IsActive(1109) + !Window.IsActive(1108) + !Window.IsActive(1106) + [Window.IsActive(1190) | Window.IsActive(1191) | !Window.IsActive(DialogVideoInfo.xml)]">PosterTagOverlayBingie</include>
         <control type="group">
             <!--Watched Overlay-->
             <right>8</right>
             <top>8</top>
-            <include>WatchedIndicatorNormal</include>
+            <include>WatchedIndicatorBingieNormal</include>
         </control>
     </include>
     <include name="PosterPanelBingieLayoutFocus">
-        <include condition="![Skin.HasSetting(EnableFixedFrameWidgets) + [Window.IsActive(Home) | [$EXP[IsBingieHubsActive2] + Skin.HasSetting(LockHubWidgets)] | Window.IsActive(videoosd)]] | [Window.IsActive(DialogVideoInfo.xml) + Skin.HasSetting(UseBingieInfoDialog)] | Window.IsActive(1109) | Window.IsActive(1108) | Window.IsActive(1106) | Window.IsActive(1190)">PosterThumbFOBingie</include>
+        <include condition="![Skin.HasSetting(EnableFixedFrameWidgets) + [Window.IsActive(Home) | $EXP[IsBingieHubsActive2] | Window.IsActive(videoosd)]] | [Window.IsActive(DialogVideoInfo.xml) + Skin.HasSetting(UseBingieInfoDialog)] | Window.IsActive(1109) | Window.IsActive(1190)">PosterThumbFOBingie</include>
         <include>PosterThumbBingieLayout</include>
-        <include condition="!Window.IsActive(Home) + !$EXP[IsBingieHubsActive] + !Window.IsActive(1117) + !Window.IsActive(1109) + !Window.IsActive(1108) + !Window.IsActive(1106) + [Window.IsActive(1190) | Window.IsActive(1191) | !Window.IsActive(DialogVideoInfo.xml)]">PosterTagOverlayBingie</include>
         <control type="group">
             <!--Watched Overlay-->
             <right>8</right>
             <top>8</top>
-            <include>WatchedIndicatorNormal</include>
+            <include>WatchedIndicatorBingieNormal</include>
         </control>
     </include>
     
@@ -89,16 +87,16 @@
             <texture background="true" diffuse="diffuse/poster3.png" fallback="DefaultVideo.png">$VAR[PosterThumbList]</texture>
             <aspectratio scalediffuse="true" aligny="center" align="center">stretch</aspectratio>
             <bordersize>8</bordersize>
-            <visible>[!String.IsEmpty(ListItem.Art(poster)) | !String.IsEmpty(ListItem.Art(tvshow.poster))] + !String.IsEqual(ListItem.Property(item.type),person)</visible>
+            <visible>[!String.IsEmpty(ListItem.Art(poster)) | !String.IsEmpty(ListItem.Art(tvshow.poster))] + !String.IsEqual(ListItem.Property(tmdb_type),person)</visible>
         </control>
         <control type="image">
             <description>Fallback Poster thumb keep aspect for all other</description>
             <texture background="true" diffuse="diffuse/poster3.png" fallback="DefaultVideo.png">$VAR[PosterThumbList]</texture>
             <aspectratio scalediffuse="false" aligny="center" align="center">scale</aspectratio>
             <bordersize>8</bordersize>
-            <visible>String.IsEmpty(ListItem.Art(poster)) + String.IsEmpty(ListItem.Art(tvshow.poster)) | String.IsEqual(ListItem.Property(item.type),person)</visible>
+            <visible>String.IsEmpty(ListItem.Art(poster)) + String.IsEmpty(ListItem.Art(tvshow.poster)) | String.IsEqual(ListItem.Property(tmdb_type),person)</visible>
         </control>
-        <include condition="!$EXP[IsBingieViewsActive]">Poster_New_Episodes_Tag_Overlay</include>
+        <include>Poster_New_Episodes_Tag_Overlay</include>
     </include>
 	
 	<include name="PosterThumbFO">
@@ -162,18 +160,13 @@
         <texture>diffuse/poster3.png</texture>
         <colordiffuse>$INFO[Skin.String(ViewDetailsBorderFocusColor)]</colordiffuse>
     </include>
+	
     <!-- TAG OVERLAYS -->
-    <include name="PosterTagOverlayVisibility">
-        <visible>!String.IsEqual(ListItem.Label,..)</visible>
-        <visible>
-            [Skin.String(Views_DisplayTags,enable) + [Window.IsActive(MyVideoNav.xml) | Window.IsActive(MyMusicNav.xml)]] | [[String.Contains(Window.Property(xmlfile),Nav) | Window.IsActive(Home)] + String.IsEmpty(ListItem.Art(poster)) + String.IsEmpty(ListItem.Art(tvshow.poster)) + !String.IsEqual(Skin.String(Widgets_DisplayTags),disable)] | 
-            [String.IsEmpty(ListItem.Art(poster)) + String.IsEmpty(ListItem.Art(tvshow.poster)) + [Window.IsActive(1109) | Window.IsActive(1108) | Window.IsActive(1106) | Window.IsActive(1190) | Window.IsActive(DialogVideoInfo.xml)]] | [String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.Property(DBTYPE),episode)] + Skin.HasSetting(EnableEpisodesTag) |
-			Skin.HasSetting(EnableMusicTag) + [String.IsEqual(ListItem.DBTYPE,song) | String.IsEqual(ListItem.Property(DBTYPE),song) | String.IsEqual(ListItem.DBTYPE,album) | String.IsEqual(ListItem.Property(DBTYPE),album) | String.IsEqual(ListItem.DBTYPE,artist) | String.IsEqual(ListItem.Property(DBTYPE),artist)]
-        </visible>
-    </include>
     <include name="PosterTagOverlay">
         <control type="group">
-            <include>PosterTagOverlayVisibility</include>
+            <visible>!String.IsEqual(ListItem.Label,..)</visible>
+			<visible>!String.Contains(ListItem.Label,$LOCALIZE[33078])</visible>
+			<visible>![![String.IsEmpty(ListItem.Art(poster)) | String.IsEqual(ListItem.Property(tmdb_type),person)] + !Skin.String(Views_DisplayTags,enable) + [Window.IsActive(MyVideoNav.xml) | Window.IsActive(MyMusicNav.xml)]]</visible>
             <!--Panel-->
             <control type="image">
                 <bottom>0</bottom>
@@ -214,9 +207,54 @@
     </include>
 	<include name="PosterTagOverlayBingie">
         <control type="group">
-            <include condition="!Window.IsActive(Home) + !$EXP[IsBingieHubsActive] + !Window.IsActive(1117) + !Window.IsActive(1109) + !Window.IsActive(1108) + !Window.IsActive(1106) + !Window.IsActive(1190) + !Window.IsActive(1191) + !Window.IsActive(DialogVideoInfo.xml) + !Window.IsActive(videoosd)">PosterTagOverlayVisibility</include>
-			<visible>![[$EXP[IsTvShowDBType] | $EXP[IsMovieDBType]] + $EXP[IsTVShowInLastEpisodes] + [!Skin.HasSetting(DisableNewEpisodesIndicator)]]</visible>
-			<visible>![!String.IsEmpty(ListItem.Art(poster)) + [Window.IsActive(1109) | Window.IsActive(1108) | Window.IsActive(1106) | Window.IsActive(1190) | Window.IsActive(1191) | Window.IsActive(DialogVideoInfo.xml)] + [$EXP[IsMovieDBType] | $EXP[IsTvShowDBType] | ListItem.IsCollection] + !String.IsEqual(Skin.String(Widgets_DisplayTags),enable)]</visible>
+			<visible>!String.IsEqual(ListItem.Label,..)</visible>
+			<visible>!String.Contains(ListItem.Label,$LOCALIZE[33078])</visible>
+			<visible>![$EXP[IsTvShowDBType] + $EXP[IsTVShowInLastEpisodes] + !Skin.HasSetting(DisableNewEpisodesIndicator)]</visible>
+			<visible>![String.IsEmpty(ListItem.Art(poster)) | String.IsEqual(ListItem.Property(tmdb_type),person)] + ![Window.IsActive(MyVideoNav.xml) | Window.IsActive(MyMusicNav.xml)] | [Window.IsActive(MyVideoNav.xml) | Window.IsActive(MyMusicNav.xml)] + Skin.String(Views_DisplayTags,enable)</visible>>
+            <!--Panel-->
+            <control type="image">
+                <bottom>0</bottom>
+                <height>82</height>
+                <bordersize>8</bordersize>
+                <texture>diffuse/poster_tag2.png</texture>
+                <colordiffuse>$INFO[Skin.String(TagOverlaysPanelColor)]</colordiffuse>
+            </control>
+            <control type="textbox">
+                <left>15</left>
+                <right>15</right>
+                <bottom>9</bottom>
+                <height>65</height>
+                <include condition="Skin.HasSetting(ThumbsLabelAlignmentCenter)">align_center</include>
+                <align>left</align>
+                <aligny>center</aligny>
+                <label>$VAR[ThumbListDetailsPoster]</label>
+                <font>postertag</font>
+                <autoscroll>false</autoscroll>
+                <textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
+                <visible>!String.IsEqual(System.CurrentControl,ListItem.Label)</visible>
+            </control>
+            <control type="textbox">
+                <left>15</left>
+                <right>15</right>
+                <bottom>9</bottom>
+                <height>65</height>
+                <include condition="Skin.HasSetting(ThumbsLabelAlignmentCenter)">align_center</include>
+                <align>left</align>
+                <aligny>center</aligny>
+                <label>$VAR[ThumbListDetailsPoster]</label>
+                <font>postertag</font>
+                <autoscroll delay="2000" time="2000" repeat="500">true</autoscroll>
+                <textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
+                <visible>String.IsEqual(System.CurrentControl,ListItem.Label)</visible>
+            </control>
+        </control>
+    </include>
+	<include name="PosterTagOverlayBingieNoOverride">
+        <control type="group">
+			<visible>!String.IsEqual(ListItem.Label,..)</visible>
+			<visible>!String.Contains(ListItem.Label,$LOCALIZE[33078])</visible>
+			<visible>![$EXP[IsTvShowDBType] + $EXP[IsTVShowInLastEpisodes] + !Skin.HasSetting(DisableNewEpisodesIndicator)]</visible>
+			<visible>[String.IsEmpty(ListItem.Art(poster)) | String.IsEqual(ListItem.Property(tmdb_type),person)]</visible>
             <!--Panel-->
             <control type="image">
                 <bottom>0</bottom>
@@ -257,7 +295,9 @@
     </include>
     <include name="SmallPosterTagOverlay">
         <control type="group">
-            <include>PosterTagOverlayVisibility</include>
+            <visible>!String.IsEqual(ListItem.Label,..)</visible>
+			<visible>!String.Contains(ListItem.Label,$LOCALIZE[33078])</visible>
+			<visible>![![String.IsEmpty(ListItem.Art(poster)) | String.IsEqual(ListItem.Property(tmdb_type),person)] + !Skin.String(Views_DisplayTags,enable) + [Window.IsActive(MyVideoNav.xml) | Window.IsActive(MyMusicNav.xml)]]</visible>
                 <!--Panel-->
                 <control type="image">
                 <bottom>0</bottom>
@@ -306,7 +346,8 @@
             <height>36</height>
             <left>45</left>
             <bottom>8</bottom>
-			<animation effect="slide" end="-7" time="0" condition="Window.IsActive(1190)">Conditional</animation>
+			<animation effect="slide" end="27" time="0" condition="Window.IsActive(1109)">Conditional</animation>
+			<animation effect="slide" end="-8" time="0" condition="Window.IsActive(1190)">Conditional</animation>
 			<animation effect="slide" end="14" time="0" condition="Window.IsActive(DialogVideoInfo.xml)">Conditional</animation>
             <control type="button">
                 <width>150</width>

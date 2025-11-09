@@ -354,7 +354,7 @@
                     <!--Year: Movies-->
                     <width>800</width>
                     <height>40</height>
-                    <visible>!String.IsEmpty(ListItem.Year) | !String.IsEmpty(Container(99950).ListItem.Year) | !String.IsEmpty(Container(99950).ListItem.Property(Set.Years)) | !String.IsEmpty(ListItem.Premiered) | !String.IsEmpty(Container(99950).ListItem.Property(Premiered))</visible>
+                    <visible>!String.IsEmpty(ListItem.Year) | !String.IsEmpty(Container(17195).ListItem.Year) | !String.IsEmpty(Container(17195).ListItem.Property(Set.Years)) | !String.IsEmpty(ListItem.Premiered) | !String.IsEmpty(Container(17195).ListItem.Property(Premiered))</visible>
                     <control type="image">
                         <posx>9</posx>
                         <posy>14</posy>
@@ -395,11 +395,34 @@
                         <scroll>false</scroll>
                     </control>
                 </control>
+				<control type="group">
+					<!--Seasons-->
+					<width>600</width>
+					<height>40</height>
+					<visible>[Container.Content(tvshows) | Container.Content(seasons)] + [!String.IsEmpty(ListItem.Property(TotalSeasons)) | !String.IsEmpty(ListItem.Property(TotalEpisodes))]</visible>
+					<control type="image">
+						<posx>10</posx>
+						<posy>21</posy>
+						<width>26</width>
+						<height>20</height>
+						<texture>dialogs/videoinfo/seasons.png</texture>
+						<colordiffuse>$INFO[Skin.String(ViewDetailsTextColor)]</colordiffuse>
+					</control>
+					<control type="label">
+						<posx>60</posx>
+						<posy>0</posy>
+						<width>600</width>
+						<align>left</align>
+						<label>$VAR[GetTotalSeasonEpisodeCount]</label>
+						<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+						<scroll>false</scroll>
+					</control>
+				</control>
                 <control type="group">
                     <!--Genre-->
                     <width>800</width>
                     <height>40</height>
-                    <visible>!String.IsEmpty(ListItem.Genre) | !String.IsEmpty(Container(99950).ListItem.Property(Genre)) | !String.IsEmpty(Container(99950).ListItem.Property(Set.Genres))</visible>
+                    <visible>!String.IsEmpty(ListItem.Genre) | !String.IsEmpty(Container(17195).ListItem.Property(Genre)) | !String.IsEmpty(Container(17195).ListItem.Property(Set.Genres))</visible>
                     <control type="image">
                         <posx>7</posx>
 						<posy>14</posy>
@@ -422,7 +445,7 @@
                     <!--Director: Movies, Episodes-->
                     <width>800</width>
                     <height>40</height>
-                    <visible>[Container.Content(Movies) | Container.Content(episodes)] + [!String.IsEmpty(ListItem.Director) | !String.IsEmpty(Container(99950).ListItem.Property(Director))]</visible>
+                    <visible>[Container.Content(Movies) | Container.Content(episodes)] + [!String.IsEmpty(ListItem.Director) | !String.IsEmpty(Container(17195).ListItem.Property(Director))]</visible>
                     <control type="image">
                         <posx>8</posx>
                         <posy>16</posy>
@@ -445,7 +468,7 @@
                     <!--Writer: Movies, Episodes-->
                     <width>800</width>
                     <height>40</height>
-					<visible>Container.Content(Movies) + [!String.IsEmpty(ListItem.Writer) | !String.IsEmpty(Container(99950).ListItem.Writer)]</visible>      
+					<visible>Container.Content(Movies) + [!String.IsEmpty(ListItem.Writer) | !String.IsEmpty(Container(17195).ListItem.Writer)]</visible>      
                     <control type="image">
                         <posx>3</posx>
                         <posy>10</posy>
@@ -468,7 +491,7 @@
                     <!--Creator-->
                     <width>800</width>
                     <height>40</height>
-                    <visible>!Container.Content(Movies) + !String.IsEmpty(Container(99950).ListItem.Property(Creator))</visible>  
+                    <visible>!Container.Content(Movies) + !String.IsEmpty(ListItem.Property(Creator))</visible>  
                     <control type="image">
                         <posx>3</posx>
                         <posy>10</posy>
@@ -482,7 +505,7 @@
                         <posy>0</posy>
                         <width>800</width>
                         <align>left</align>
-                        <label>$INFO[Container(99950).ListItem.Property(Creator)]</label>
+                        <label>$INFO[ListItem.Property(Creator)]</label>
                         <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                         <scroll>false</scroll>
                     </control>
@@ -491,7 +514,7 @@
 					<!--Studio: TV-Shows-->
 					<width>1200</width>
 					<height>40</height>
-					<visible>!String.IsEmpty(ListItem.Studio) | !String.IsEmpty(Container(99950).ListItem.Studio)</visible>					
+					<visible>!String.IsEmpty(ListItem.Studio) | !String.IsEmpty(Container(17195).ListItem.Studio)</visible>					
 					<control type="image">
                         <posx>8</posx>
                         <posy>10</posy>
@@ -656,7 +679,7 @@
             <control type="group">
                 <!--Year: Movies-->
                 <height>40</height>
-				<visible>!String.IsEmpty(ListItem.Year) | !String.IsEmpty(Container(99950).ListItem.Year) | !String.IsEmpty(Container(99950).ListItem.Property(Set.Years)) | !String.IsEmpty(ListItem.Premiered) | !String.IsEmpty(Container(99950).ListItem.Property(Premiered))</visible>
+				<visible>!String.IsEmpty(ListItem.Year) | !String.IsEmpty(Container(17195).ListItem.Year) | !String.IsEmpty(Container(17195).ListItem.Property(Set.Years)) | !String.IsEmpty(ListItem.Premiered) | !String.IsEmpty(Container(17195).ListItem.Property(Premiered))</visible>
                 <control type="image">
                     <posx>9</posx>
                     <posy>14</posy>
@@ -695,11 +718,32 @@
                     <scroll>false</scroll>
                 </control>
             </control>
+			<control type="group">
+                <!--Seasons-->
+                <height>40</height>
+                <visible>[Container.Content(tvshows) | Container.Content(seasons)] + [!String.IsEmpty(ListItem.Property(TotalSeasons)) | !String.IsEmpty(ListItem.Property(TotalEpisodes))]</visible>
+                <control type="image">
+                    <posx>10</posx>
+                    <posy>22</posy>
+                    <width>26</width>
+                    <height>20</height>
+                    <texture>dialogs/videoinfo/seasons.png</texture>
+                    <colordiffuse>$INFO[Skin.String(ViewDetailsTextColor)]</colordiffuse>
+                </control>
+                <control type="label">
+                    <posx>60</posx>
+                    <posy>0</posy>
+                    <align>left</align>
+                    <label>$VAR[GetTotalSeasonEpisodeCount]</label>
+                    <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+                    <scroll>false</scroll>
+                </control>
+            </control>
             <control type="group">
                 <!--Genre-->
                 <width>100%</width>
                 <height>40</height>
-                <visible>!String.IsEmpty(ListItem.Genre) | !String.IsEmpty(Container(99950).ListItem.Property(Genre)) | !String.IsEmpty(Container(99950).ListItem.Property(Set.Genres))</visible>
+                <visible>!String.IsEmpty(ListItem.Genre) | !String.IsEmpty(Container(17195).ListItem.Property(Genre)) | !String.IsEmpty(Container(17195).ListItem.Property(Set.Genres))</visible>
                 <control type="image">
                     <posx>7</posx>
                     <posy>14</posy>
@@ -721,7 +765,7 @@
                 <!--Director: Movies, Episodes-->
                 <width>100%</width>
                 <height>40</height>
-                <visible>[Container.Content(Movies) | Container.Content(episodes)] + [!String.IsEmpty(ListItem.Director) | !String.IsEmpty(Container(99950).ListItem.Property(Director))]</visible>
+                <visible>[Container.Content(Movies) | Container.Content(episodes)] + [!String.IsEmpty(ListItem.Director) | !String.IsEmpty(Container(17195).ListItem.Property(Director))]</visible>
 				<control type="image">
                     <posx>8</posx>
                     <posy>16</posy>
@@ -743,7 +787,7 @@
                 <!--Writer: Movies, Episodes-->
                 <width>100%</width>
                 <height>40</height>
-                <visible>Container.Content(Movies) + [!String.IsEmpty(ListItem.Writer) | !String.IsEmpty(Container(99950).ListItem.Writer)]</visible>              
+                <visible>Container.Content(Movies) + [!String.IsEmpty(ListItem.Writer) | !String.IsEmpty(Container(17195).ListItem.Writer)]</visible>              
 				<control type="image">
                     <posx>3</posx>
                     <posy>10</posy>
@@ -765,7 +809,7 @@
                 <!--Creator-->
                 <width>100%</width>
                 <height>40</height>
-                <visible>![Container.Content(Movies) | Container.Content(sets) | String.IsEqual(Container.Folderpath,videodb://movies/sets/)] + !String.IsEmpty(Container(99950).ListItem.Property(Creator))</visible>              
+                <visible>![Container.Content(Movies) | Container.Content(sets) | String.IsEqual(Container.Folderpath,videodb://movies/sets/)] + !String.IsEmpty(ListItem.Property(Creator))</visible>              
 				<control type="image">
                     <posx>3</posx>
                     <posy>10</posy>
@@ -778,7 +822,7 @@
                     <posx>60</posx>
                     <posy>0</posy>
                     <align>left</align>
-                    <label>$INFO[Container(99950).ListItem.Property(Creator)]</label>
+                    <label>$INFO[ListItem.Property(Creator)]</label>
                     <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
                     <scroll>false</scroll>
                 </control>
@@ -787,7 +831,7 @@
                 <!--Studio: TV-Shows-->
                 <width>100%</width>
                 <height>40</height>
-                <visible>!String.IsEmpty(ListItem.Studio) | !String.IsEmpty(Container(99950).ListItem.Studio)</visible>
+                <visible>!String.IsEmpty(ListItem.Studio) | !String.IsEmpty(Container(17195).ListItem.Studio)</visible>
                 <control type="image">
                     <posx>8</posx>
                     <posy>10</posy>
@@ -900,7 +944,7 @@
 			<control type="group">				
                 <width>607</width>
                 <height>400</height>
-				<visible>!String.IsEmpty(ListItem.Plot) | !String.IsEmpty(ListItem.Property(Album_Description)) | !String.IsEmpty(ListItem.Property(Artist_Description)) | !String.IsEmpty(ListItem.Comment) | !String.IsEmpty(ListItem.PictureDesc) | !String.IsEmpty(ListItem.PictureComment) | !String.IsEmpty(ListItem.PictureKeywords) | !String.IsEmpty(ListItem.Property(Plot)) | !String.IsEmpty(Container(99950).ListItem.Plot) | Container.Content(Addons)</visible>
+				<visible>!String.IsEmpty(ListItem.Plot) | !String.IsEmpty(ListItem.Property(Album_Description)) | !String.IsEmpty(ListItem.Property(Artist_Description)) | !String.IsEmpty(ListItem.Comment) | !String.IsEmpty(ListItem.PictureDesc) | !String.IsEmpty(ListItem.PictureComment) | !String.IsEmpty(ListItem.PictureKeywords) | !String.IsEmpty(ListItem.Property(Plot)) | !String.IsEmpty(Container(17195).ListItem.Plot) | Container.Content(Addons)</visible>
 			<!-- horizontal line -->
 			<control type="image">
 				<posy>20</posy>
@@ -984,10 +1028,10 @@
         </control>
 		<control type="image">
             <!--fallback logo image-->
-			<height>360</height>
-			<top>95</top>
+			<height>359</height>
+			<top>104</top>
 			<left>0</left>
-            <bordersize>107</bordersize>
+            <bordersize>117</bordersize>
             <texture background="true">$VAR[ClearLogoFallback]</texture>
             <aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
             <visible>String.IsEmpty(Listitem.Art(landscape)) + String.IsEmpty(ListItem.Property(landscape)) + !String.IsEqual(ListItem.DBTYPE,episode) + !String.IsEqual(ListItem.Property(DBTYPE),episode) + !Container.Content(episodes) + !String.IsEqual(ListItem.DBTYPE,season) + !String.IsEqual(ListItem.Property(DBTYPE),season)</visible>
@@ -1034,7 +1078,7 @@
             <posy>8</posy>
             <width>609</width>
             <height>344</height>
-            <visible>[$EXP[IsPlayingUnrecognizedContent] + [Skin.HasSetting(View51_DetailsAutoTrailer) | Skin.HasSetting(View53_DetailsAutoTrailer) | Skin.HasSetting(View55_DetailsAutoTrailer) | Skin.HasSetting(View510_DetailsAutoTrailer) | Skin.HasSetting(View512_DetailsAutoTrailer) | Skin.HasSetting(View523_DetailsAutoTrailer) | Skin.HasSetting(View526_DetailsAutoTrailer)]] + [!Window.IsActive(DialogVideoInfo.xml) | !Window.IsActive(Custom_1190_TMDbHelperCast.xml)] + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)]</visible>
+            <visible>[$EXP[IsPlayingUnrecognizedContent] + [Skin.HasSetting(View51_DetailsAutoTrailer) | Skin.HasSetting(View53_DetailsAutoTrailer) | Skin.HasSetting(View55_DetailsAutoTrailer) | Skin.HasSetting(View510_DetailsAutoTrailer) | Skin.HasSetting(View512_DetailsAutoTrailer) | Skin.HasSetting(View523_DetailsAutoTrailer) | Skin.HasSetting(View526_DetailsAutoTrailer)]] + [!Window.IsActive(DialogVideoInfo.xml) | !Window.IsActive(Custom_1190_TMDbBingieHelperCast.xml)] + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)]</visible>
             <control type="image">
                 <texture>colors/color_black.png</texture>
             </control>
@@ -1141,7 +1185,7 @@
     <include name="poster_shadow">
         <bordertexture border="20" colordiffuse="black">diffuse/poster_shadow.png</bordertexture>
     </include>
-    
+	
 	<include name="WatchedIndicatorLayout">
         <control type="group">
             <visible>!String.IsEqual(ListItem$PARAM[listitem].Label,..)</visible>
@@ -1181,7 +1225,6 @@
             </control>
             <control type="group">
                 <description>In progress Overlay</description>
-				<visible>![Skin.HasSetting(MovieDetailsHome) + $EXP[BingieIndicatorsViews] + !Window.IsActive(DialogVideoInfo.xml)]</visible>
                 <visible>!Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,0) + !Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,100) + Skin.HasSetting(WatchedIndicator.Progress)</visible>
                 <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
 				<visible>!$EXP[IsTvShowDBType]</visible>
@@ -1224,8 +1267,191 @@
             <control type="group">
                 <description>Movieset Overlay</description>
                 <visible>[!String.IsEmpty(ListItem$PARAM[listitem].Set) | ListItem$PARAM[listitem].IsCollection | String.Contains(ListItem$PARAM[listitem].Path,videodb://movies/sets/)] + Skin.HasSetting(WatchedIndicator.Sets)</visible>
-				<visible>![[Skin.HasSetting(WatchedIndicator.Progress) + !Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,0) + !Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,100)] + [$EXP[BingieIndicatorsViews] + !Window.IsActive(DialogVideoInfo.xml) + !Skin.HasSetting(MovieDetailsHome)]]</visible>
-				<visible>![[Skin.HasSetting(WatchedIndicator.Progress) + !Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,0) + !Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,100)] + ![$EXP[BingieIndicatorsViews] + !Window.IsActive(DialogVideoInfo.xml) + Skin.HasSetting(MovieDetailsHome)]]</visible>
+				<visible>![!Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,0) + !Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,100)]</visible>
+                <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
+				<control type="image">
+					<visible>![![!Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,0) + !Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,100)] + Integer.IsGreater(ListItem$PARAM[listitem].PlayCount,0) +
+					!ListItem$PARAM[listitem].IsResumable] | !Skin.HasSetting(WatchedIndicator.Watched)</visible>
+                    <texture background="true">$PARAM[overlay_texture]</texture>
+                    <colordiffuse>$INFO[Skin.String(WatchedIndicator.Sets.Color)]</colordiffuse>
+                </control>
+				<control type="image">
+					<visible>![!Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,0) + !Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,100)] + Integer.IsGreater(ListItem$PARAM[listitem].PlayCount,0) + !ListItem$PARAM[listitem].IsResumable + Skin.HasSetting(WatchedIndicator.Watched)</visible>
+                    <texture background="true">$PARAM[overlay_texture]</texture>
+                    <colordiffuse>$INFO[Skin.String(WatchedIndicator.Watched.Color)]</colordiffuse>
+                </control>
+                <control type="image">
+                    <texture>overlays/$PARAM[overlay]/discset.png</texture>
+                    <colordiffuse>$INFO[Skin.String(WatchedIndicator.Sets.TextColor)]</colordiffuse>
+                </control>
+            </control>
+            
+            <control type="group">
+                <description>Is Playing</description>
+                <visible>Skin.HasSetting(WatchedIndicator.Playing)</visible>
+                <visible>ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
+                <control type="image">
+                    <texture background="true">$PARAM[overlay_texture]</texture>
+                    <colordiffuse>$INFO[Skin.String(WatchedIndicator.Playing.Color)]</colordiffuse>
+                </control>
+                <control type="image">
+                    <texture>overlays/$PARAM[overlay]/play.png</texture>
+                    <colordiffuse>$INFO[Skin.String(WatchedIndicator.Playing.TextColor)]</colordiffuse>
+                </control>
+            </control>
+            <control type="group">
+                <description>Is Recording</description>
+                <visible>Skin.HasSetting(WatchedIndicator.Playing)</visible>
+                <visible>!ListItem$PARAM[listitem].IsPlaying + ListItem$PARAM[listitem].IsRecording</visible>
+                <control type="image">
+                    <texture background="true">$PARAM[overlay_texture]</texture>
+                    <colordiffuse>$INFO[Skin.String(WatchedIndicator.Playing.Color)]</colordiffuse>
+                </control>
+                <control type="image">
+                    <left>36%</left>
+                    <top>-8%</top>
+                    <width>72%</width>
+                    <height>72%</height>
+                    <texture>pvr/icons/pvr_record.png</texture>
+                </control>
+            </control>
+            <control type="group">
+                <description>Is single timer</description>
+                <visible>Skin.HasSetting(WatchedIndicator.Playing)</visible>
+                <visible>String.IsEqual(ListItem.Comment,$LOCALIZE[305]) | String.IsEmpty(ListItem.Comment)</visible>
+                <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
+                <visible>[ListItem$PARAM[listitem].HasTimer + !ListItem$PARAM[listitem].HasTimerSchedule] | [!String.IsEmpty(ListItem$PARAM[listitem].TimerType) + !ListItem$PARAM[listitem].IsFolder]</visible>
+                <control type="image">
+                    <texture background="true">$PARAM[overlay_texture]</texture>
+                    <colordiffuse>$INFO[Skin.String(WatchedIndicator.Playing.Color)]</colordiffuse>
+                </control>
+                <control type="image">
+                    <left>36%</left>
+                    <top>-8%</top>
+                    <width>72%</width>
+                    <height>72%</height>
+                    <texture>pvr/icons/pvr_timer.png</texture>
+                </control>
+            </control>
+            <control type="group">
+                <description>PVR recurring timer</description>
+                <visible>Skin.HasSetting(WatchedIndicator.Playing)</visible>
+                <visible>String.IsEqual(ListItem.Comment,$LOCALIZE[305]) | String.IsEmpty(ListItem.Comment)</visible>
+                <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
+                <visible>[ListItem$PARAM[listitem].HasTimer + ListItem$PARAM[listitem].HasTimerSchedule] | [!String.IsEmpty(ListItem$PARAM[listitem].TimerType) + ListItem$PARAM[listitem].IsFolder]</visible>
+                <control type="image">
+                    <texture background="true">$PARAM[overlay_texture]</texture>
+                    <colordiffuse>$INFO[Skin.String(WatchedIndicator.Watched.Color)]</colordiffuse>
+                </control>
+                <control type="image">
+                    <right>-11</right>
+                    <top>-5</top>
+                    <width>73%</width>
+                    <height>70%</height>
+                    <texture>pvr/icons/pvr_record.png</texture>
+                    <animation effect="fade" start="100" end="60" time="0" condition="true">Conditional</animation>
+                </control>
+                <control type="image">
+                    <right>-3</right>
+                    <top>-5</top>
+                    <width>73%</width>
+                    <height>70%</height>
+                    <texture>pvr/icons/pvr_record.png</texture>
+                    <animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
+                </control>
+                <control type="image">
+                    <right>5</right>
+                    <top>-5</top>
+                    <width>73%</width>
+                    <height>70%</height>
+                    <texture>pvr/icons/pvr_record.png</texture>
+                </control>
+            </control>
+        </control>
+    </include>
+    
+	<include name="WatchedIndicatorLayoutBingie">
+        <control type="group">
+            <visible>!String.IsEqual(ListItem$PARAM[listitem].Label,..)</visible>
+            <width>$PARAM[width]</width>
+            <height>$PARAM[height]</height>
+            <right>0</right>
+            <top>0</top>
+            <control type="group">
+                <description>Watched Overlay</description>
+                <visible>![!Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,0) + !Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,100)] + Integer.IsGreater(ListItem$PARAM[listitem].PlayCount,0) + Skin.HasSetting(WatchedIndicator.Watched) + !ListItem$PARAM[listitem].IsResumable</visible>
+                <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
+                <visible>![String.IsEqual(ListItem.DBTYPE, song) | String.IsEqual(ListItem.Property(DBTYPE), song) | Container.Content(songs)]</visible>
+                <visible>![String.IsEqual(ListItem.DBTYPE, album) | String.IsEqual(ListItem.Property(DBTYPE), album) | Container.Content(albums)]</visible>
+				<visible>![[!String.IsEmpty(ListItem$PARAM[listitem].Set) | ListItem$PARAM[listitem].IsCollection | String.Contains(ListItem$PARAM[listitem].Path,videodb://movies/sets/)] + Skin.HasSetting(WatchedIndicator.Sets)]</visible>
+                <control type="image">
+                    <texture background="true">$PARAM[overlay_texture]</texture>
+                    <colordiffuse>$INFO[Skin.String(WatchedIndicator.Watched.Color)]</colordiffuse>
+                </control>
+                <control type="image">
+                    <texture>overlays/$PARAM[overlay]/watched.png</texture>
+                    <colordiffuse>$INFO[Skin.String(WatchedIndicator.Watched.TextColor)]</colordiffuse>
+                </control>
+            </control>
+            <control type="group">
+                <description>Unwatched Overlay</description>
+                <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
+                <visible>String.IsEqual(ListItem$PARAM[listitem].Overlay,OverlayUnWatched.png) + Skin.HasSetting(WatchedIndicator.UnWatched) + !ListItem$PARAM[listitem].IsResumable</visible>
+                <visible>![String.IsEqual(ListItem.DBTYPE, song) | String.IsEqual(ListItem.Property(DBTYPE), song) | Container.Content(songs) | [$EXP[IsTvShowDBType] + Skin.HasSetting(WatchedIndicator.Episodes)]]</visible>
+                <control type="image">
+                    <texture background="true">$PARAM[overlay_texture]</texture>
+                    <colordiffuse>$INFO[Skin.String(WatchedIndicator.UnWatched.Color)]</colordiffuse>
+                </control>
+                <control type="image">
+                    <texture>overlays/$PARAM[overlay]/unwatched.png</texture>
+                    <colordiffuse>$INFO[Skin.String(WatchedIndicator.UnWatched.TextColor)]</colordiffuse>
+                </control>
+            </control>
+            <control type="group">
+                <description>In progress Overlay</description>
+				<visible>!Skin.HasSetting(MovieDetailsHome)</visible>
+                <visible>!Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,0) + !Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,100) + Skin.HasSetting(WatchedIndicator.Progress)</visible>
+                <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
+				<visible>!$EXP[IsTvShowDBType]</visible>
+                <control type="image">
+                    <texture background="true">$PARAM[overlay_texture]</texture>
+                    <colordiffuse>$INFO[Skin.String(WatchedIndicator.Progress.Color)]</colordiffuse>
+                </control>
+                <control type="label">
+                    <right>0</right>
+                    <top>0</top>
+                    <align>center</align>
+                    <font>$PARAM[font]</font>
+                    <width>65%</width>
+                    <height>45%</height>
+                    <label>$INFO[ListItem$PARAM[listitem].PercentPlayed]%</label>
+                    <textcolor>$INFO[Skin.String(WatchedIndicator.Progress.TextColor)]</textcolor>
+					<shadowcolor>ff4d4d4d</shadowcolor>
+                </control>
+            </control>
+            <control type="group">
+                <description>Episodes count Overlay</description>
+                <visible>!Integer.IsEqual(ListItem$PARAM[listitem].Property(UnWatchedEpisodes),0) + Skin.HasSetting(WatchedIndicator.Episodes) + !Integer.IsEqual(ListItem$PARAM[listitem].Property(WatchedEpisodes),0)</visible>
+                <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
+                <control type="image">
+                    <texture background="true">$PARAM[overlay_texture]</texture>
+                    <colordiffuse>$INFO[Skin.String(WatchedIndicator.Episodes.Color)]</colordiffuse>
+                </control>
+                <control type="label">
+                    <right>0</right>
+                    <top>0</top>
+                    <align>center</align>
+                    <font>$PARAM[font]</font>
+                    <width>65%</width>
+                    <height>45%</height>
+                    <label>$INFO[ListItem$PARAM[listitem].Property(UnWatchedEpisodes)]</label>
+                    <textcolor>$INFO[Skin.String(WatchedIndicator.Episodes.TextColor)]</textcolor>
+					<shadowcolor>ff4d4d4d</shadowcolor>
+                </control>
+            </control>
+            <control type="group">
+                <description>Movieset Overlay</description>
+                <visible>[!String.IsEmpty(ListItem$PARAM[listitem].Set) | ListItem$PARAM[listitem].IsCollection | String.Contains(ListItem$PARAM[listitem].Path,videodb://movies/sets/)] + Skin.HasSetting(WatchedIndicator.Sets)</visible>
                 <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
 				<control type="image">
 					<visible>![![!Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,0) + !Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,100)] + Integer.IsGreater(ListItem$PARAM[listitem].PlayCount,0) +
@@ -1330,6 +1556,16 @@
             
     <include name="WatchedIndicatorNormal">
         <include content="WatchedIndicatorLayout">
+            <param name="width" value="80" />
+            <param name="height" value="80" />
+            <param name="font" value="indicator_normal" />
+            <param name="overlay" value="normal" />
+            <param name="overlay_texture" value="diffuse/icon_overlay.png" />
+        </include>
+    </include>
+	
+	<include name="WatchedIndicatorBingieNormal">
+        <include content="WatchedIndicatorLayoutBingie">
             <param name="width" value="80" />
             <param name="height" value="80" />
             <param name="font" value="indicator_normal" />
@@ -1563,11 +1799,11 @@
                 <height>100%</height>
                 <texture background="true" fallback="defaultaddonpvrclient.png">$INFO[ListItem.Icon]</texture>
                 <aspectratio align="center" aligny="center">keep</aspectratio>
-                <visible>!Skin.HasSetting(HideChannelLogosInGuide)</visible>
+                <visible>Skin.HasSetting(TVGuideChannelLogo)</visible>
             </control>			
             <control type="label">
                 <description>Channel Nummber with logo and channelname present</description>
-                <left>24%</left>
+                <left>23%</left>
                 <width>20%</width>
                 <height>100%</height>
                 <font>$PARAM[font]</font>
@@ -1575,11 +1811,11 @@
                 <textcolor>$PARAM[textcolor]</textcolor>
                 <selectedcolor>$PARAM[textcolor]</selectedcolor>
                 <info>ListItem.ChannelNumberLabel</info>
-                <visible>!Skin.HasSetting(HideChannelLogosInGuide)</visible>
+                <visible>Skin.HasSetting(TVGuideChannelLogo) + Skin.HasSetting(TVGuideChannelNumber)</visible>
             </control>
             <control type="label">
                 <description>Channel Number with logo disabled and channelname present</description>
-                <left>5%</left>
+                <left>4%</left>
                 <width>20%</width>
                 <height>100%</height>
                 <font>$PARAM[font]</font>
@@ -1587,21 +1823,21 @@
                 <textcolor>$PARAM[textcolor]</textcolor>
                 <selectedcolor>$PARAM[textcolor]</selectedcolor>
                 <info>ListItem.ChannelNumberLabel</info>
-                <visible>Skin.HasSetting(HideChannelLogosInGuide)</visible>
+                <visible>Skin.HasSetting(TVGuideChannelNumber) + !Skin.HasSetting(TVGuideChannelLogo)</visible>
             </control>
             <control type="label">
                 <description>Channel Name with logo and channel number enabled</description>
-                <left>46%</left>
+                <left>45%</left>
                 <width>53%</width>
                 <height>100%</height>
                 <font>$PARAM[font]</font>
                 <textcolor>$PARAM[textcolor]</textcolor>
                 <selectedcolor>$PARAM[textcolor]</selectedcolor>
                 <label>$INFO[ListItem.ChannelName]</label>
-                <visible>!Skin.HasSetting(HideChannelLogosInGuide)</visible>
+                <visible>Skin.HasSetting(TVGuideChannelLogo) + Skin.HasSetting(TVGuideChannelNumber)</visible>
             </control>
             <control type="label">
-                <description>Channel Name with logo disabled and channel number enabled</description>
+                <description>Channel Name with logo or channel disabled</description>
                 <left>27%</left>
                 <width>70%</width>
                 <height>100%</height>
@@ -1609,7 +1845,18 @@
                 <textcolor>$PARAM[textcolor]</textcolor>
                 <selectedcolor>$PARAM[textcolor]</selectedcolor>
                 <label>$INFO[ListItem.ChannelName]</label>
-                <visible>Skin.HasSetting(HideChannelLogosInGuide)</visible>
+                <visible>Skin.HasSetting(TVGuideChannelNumber) + !Skin.HasSetting(TVGuideChannelLogo) | !Skin.HasSetting(TVGuideChannelNumber) + Skin.HasSetting(TVGuideChannelLogo)</visible>
+            </control>
+			<control type="label">
+                <description>Channel Name with logo disabled and channel number disabled</description>
+                <left>5%</left>
+                <width>92%</width>
+                <height>100%</height>
+                <font>$PARAM[font]</font>
+                <textcolor>$PARAM[textcolor]</textcolor>
+                <selectedcolor>$PARAM[textcolor]</selectedcolor>
+                <label>$INFO[ListItem.ChannelName]</label>
+                <visible>!Skin.HasSetting(TVGuideChannelNumber) + !Skin.HasSetting(TVGuideChannelLogo)</visible>
             </control>
         </control>
     </include>
@@ -1700,19 +1947,6 @@
         <onclick condition="[Container.Content(games) + String.IsEmpty(Skin.String(Skin.ForcedView.games))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
         <onclick condition="[Container.Content(unknown) + String.IsEmpty(Skin.String(Skin.ForcedView.unknown))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
         <onclick condition="[Container.Content(videos) + String.IsEmpty(Skin.String(Skin.ForcedView.videos))]">AlarmClock(setviewlock,Skin.SetString(Skin.ForcedView.$INFO[Container.Content],$INFO[Container.Viewmode]),00:01,silent)</onclick>
-    </include>
-	
-	<!--Top 250 Indicator-->
-	<include name="Top250Indicator">
-		<control type="image">
-		<visible>!$EXP[IsEpisodeDBType] + [!String.IsEmpty(Control.GetLabel(8231)) | Control.IsVisible(1719)] + !Skin.HasSetting(DisableTop250Indicator) + Skin.HasSetting(EnableRatings) + !$EXP[IsCategoryDBType]</visible>
-		<posy>8</posy>
-		<left>8</left>
-        <height>60</height>
-        <width>50</width>
-        <aspectratio>keep</aspectratio>
-        <texture>bingie/top250p.png</texture>
-		</control>
     </include>
 
 </includes>

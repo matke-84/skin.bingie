@@ -8,8 +8,7 @@
     <controls>
 		<control type="group">
 	    <include>HideWindowOnStartupAndDialogInfoLoad</include>
-		<include>Defs_TMDbHelper_Loader</include>
-		<include>HiddenTop250</include>
+		<include>Defs_TMDbBingieHelper_Loader</include>
         <include>GlobalBackground</include>
 
         <!-- Spotlight Section -->
@@ -178,7 +177,7 @@
 				<control type="group">
 					<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
 					<include>Animation_Right_Home</include>
-					<right>-116</right>
+					<right>-120</right>
 					<include>Bingie_Footer</include>
 				</control>
             </control>
@@ -191,7 +190,7 @@
             <width>1666</width>
             <!-- Content Header -->
             <control type="label">
-			<left>7</left>
+			<left>8</left>
 			<top>-39</top>
                 <include condition="Skin.HasSetting(EnableRatings)">FooterON</include>
 				<include condition="!Skin.HasSetting(EnableRatings)">FooterOFF</include>

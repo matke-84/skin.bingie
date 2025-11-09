@@ -2,7 +2,7 @@
 <!-- BINGIE -->
 <window type="dialog" id="1154">
 	<visible>!String.IsEmpty(Window(Home).Property(SpaceSearchTerm))</visible>
-	<visible>Window.IsVisible(virtualkeyboard) + [Window.IsActive(1109) | Window.IsActive(1108) | Window.IsActive(1106) | Window.IsActive(1107)]</visible>
+	<visible>Window.IsVisible(virtualkeyboard) + Window.IsActive(1109)</visible>
 	<!-- space action-->
 	<onload>SendClick(10103,32)</onload>
 	<!-- done action-->

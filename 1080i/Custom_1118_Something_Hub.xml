@@ -13,7 +13,7 @@
 	<control type="group">
 		<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
 		<animation effect="fade" start="0" end="100" time="600" delay="200">Visible</animation>
-		<include>Defs_TMDbHelper_Loader</include>
+		<include>Defs_TMDbBingieHelper_Loader</include>
         <!-- fake go-to-fullscreen button -->
         <control type="button" id="509">
             <visible allowhiddenfocus="true">false</visible>

@@ -117,7 +117,7 @@
         <textureradiofocus colordiffuse="$INFO[Skin.String(ActiveSpinControlColor)]">common/radio/radio-button-fo.png</textureradiofocus>
         <textureradionofocus colordiffuse="$INFO[Skin.String(ButtonTextColor)]">common/radio/radio-button-nf.png</textureradionofocus>
         <textureradioondisabled colordiffuse="aaffffff">common/radio/radio-button-fo.png</textureradioondisabled>
-        <textureradiooffdisabled colordiffuse="$INFO[Skin.String(ButtonTextColor)]">common/radio/radio-button-nf.png</textureradiooffdisabled>
+        <textureradiooffdisabled colordiffuse="aaffffff">common/radio/radio-button-nf.png</textureradiooffdisabled>
         <textoffsetx>50</textoffsetx>
         <radioposx/>
         <pulseonselect>false</pulseonselect>
@@ -218,7 +218,7 @@
 		<textureslidernibfocus colordiffuse="$INFO[Skin.String(ScrollbarFocusedColor)]">scrollbar/texturesliderbar_nib.png</textureslidernibfocus>
 		<showonepage>false</showonepage>
         <orientation>vertical</orientation>
-        <visible>!String.IsEqual(Skin.String(scrollbar_visibility),always_hide) | Window.IsActive(script-wikipedia.xml) | Window.IsActive(Custom_1190_TMDbHelperCast.xml) | Window.IsActive(SettingsSystemInfo.xml) | Window.IsActive(SkinSettings.xml)</visible>
+        <visible>!String.IsEqual(Skin.String(scrollbar_visibility),always_hide) | Window.IsActive(script-tmdbbingiehelper-wikipedia.xml) | Window.IsActive(Custom_1190_TMDbBingieHelperCast.xml) | Window.IsActive(SettingsSystemInfo.xml) | Window.IsActive(SkinSettings.xml)</visible>
     </default>
     <default type="textbox">
         <label/>

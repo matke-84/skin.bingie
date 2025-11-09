@@ -268,7 +268,7 @@
           <height>80</height>
           <align>center</align>
           <include>DialogButtonOther</include>
-          <label>31753</label>
+          <label>31493</label>
           <onclick>Close</onclick>
           <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/search/?q=$INFO[ListItem.Artist],return)</onclick>
 		</control>

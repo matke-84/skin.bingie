@@ -47,9 +47,7 @@
     <include file="IncludesHubs.xml" />
     <include file="IncludesBingieKeyboard.xml"/>
     <include file="IncludesBingieSearch.xml"/>
-    <include file="IncludesSkinShortcuts.xml" />
 	<include file="IncludesDefaultSkinSettings.xml" />
-    <include file="IncludesDefaultSkinHubs.xml" />
 	<include file="IncludesBackgroundBuilding.xml" />
 	<include file="IncludesWeather.xml" />
     <include file="IncludesHeader.xml" />
@@ -60,9 +58,7 @@
     <include file="IncludesDebugInfo.xml" condition="Skin.HasSetting(DebugGrid) | Skin.HasSetting(DebugInfo)" />
 
     <!-- Constants -->
-    <constant name="landscape_width">374</constant>
     <constant name="bingie_no_circular_posx">131</constant>
-    <constant name="bingie_no_circular_left_diff">65</constant>
     <constant name="search_widget_height">420</constant>
     <constant name="search_widget_thumb_width">295</constant>
     <constant name="search_key_size">80</constant>
@@ -72,21 +68,19 @@
     <constant name="episodes_thumb_width">466</constant>
 
     <!-- expressions -->
-    <expression name="IsBingieViewsActive">Window.IsActive(Home) | Window.IsActive(1109) | Window.IsActive(1106) | Window.IsActive(1119) | Window.IsActive(1110) | Window.IsActive(1111) | Window.IsActive(1112) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(1116) | Window.IsActive(1118) | Window.IsActive(1120)</expression>
+    <expression name="IsBingieViewsActive">Window.IsActive(Home) | Window.IsActive(1109) | Window.IsActive(1119) | Window.IsActive(1110) | Window.IsActive(1111) | Window.IsActive(1112) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1116) | Window.IsActive(1118) | Window.IsActive(1120)</expression>
 
     <expression name="IsBingieHubsActive">Window.IsActive(1110) | Window.IsActive(1111) | Window.IsActive(1112) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1116) | Window.IsActive(1118) | Window.IsActive(1120)</expression>
 	
 	<expression name="IsBingieHubsActive2">Window.IsActive(1110) | Window.IsActive(1111) | Window.IsActive(1112) | Window.IsActive(1113) | Window.IsActive(1116) | Window.IsActive(1118) | Window.IsActive(1120)</expression>
 
-    <expression name="IsBingieListsActive">Window.IsActive(1115)</expression>
-
     <expression name="IsBingieCategoriesActive">Window.IsActive(1117)</expression>
 	
-	<expression name="AllBingieViews">Window.IsActive(Home) | Window.IsActive(1106) | Window.IsActive(1107) | Window.IsActive(1108) | Window.IsActive(1109) | Window.IsActive(1110) | Window.IsActive(1111) | Window.IsActive(1112) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(1116) | Window.IsActive(1117) | Window.IsActive(1118) | Window.IsActive(1119) | Window.IsActive(1120) | Control.IsVisible(523) | Control.IsVisible(525) | Control.IsVisible(526) | Control.IsVisible(527) | Control.IsVisible(528)</expression>
+	<expression name="AllBingieViews">Window.IsActive(Home) | Window.IsActive(1109) | Window.IsActive(1110) | Window.IsActive(1111) | Window.IsActive(1112) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1116) | Window.IsActive(1117) | Window.IsActive(1118) | Window.IsActive(1119) | Window.IsActive(1120) | Control.IsVisible(523) | Control.IsVisible(525) | Control.IsVisible(526) | Control.IsVisible(527) | Control.IsVisible(528)</expression>
 	
 	<expression name="AllNoneBingieViews">Control.IsVisible(52) | Control.IsVisible(507) | Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(53) | Control.IsVisible(57) | Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(56) | Control.IsVisible(501) | Control.IsVisible(502) | Control.IsVisible(509) | Control.IsVisible(510) | Control.IsVisible(511) | Control.IsVisible(512) | Control.IsVisible(524) | Control.IsVisible(51) | Control.IsVisible(503) | Control.IsVisible(50)</expression>
 	
-	<expression name="BingieIndicatorsViews">Window.IsActive(Home) | Window.IsActive(1110) | Window.IsActive(1111) | Window.IsActive(1112) | Window.IsActive(1113) | Window.IsActive(1114) | Window.IsActive(1115) | Window.IsActive(1117) | Window.IsActive(1120) | Control.IsVisible(523) | Control.IsVisible(526) | Control.IsVisible(528)</expression>
+	<expression name="BingieIndicatorsViews">Window.IsActive(DialogVideoInfo.xml) | Window.IsActive(1109) | Control.IsVisible(52) | Control.IsVisible(507) | Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(53) | Control.IsVisible(57) | Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(56) | Control.IsVisible(501) | Control.IsVisible(502) | Control.IsVisible(509) | Control.IsVisible(510) | Control.IsVisible(511) | Control.IsVisible(512) | Control.IsVisible(524) | Control.IsVisible(51) | Control.IsVisible(503) | Control.IsVisible(50)</expression>
 
     <expression name="IsRecognizedVideoContent">VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(livetv) | VideoPlayer.Content(musicvideos) | Pvr.IsPlayingRecording</expression>
 
@@ -114,15 +108,15 @@
 	
 	<expression name="IsSeasonDBType">String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.Property(DBTYPE),season) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE,season)) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),season)</expression>
 	
-	<expression name="IsSetDBType">String.IsEqual(ListItem.DBTYPE,set) | String.IsEqual(ListItem.Property(DBTYPE),set) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE,set)) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),set)</expression>
+	<expression name="IsSetDBType">String.IsEqual(ListItem.DBTYPE,set) | String.IsEqual(ListItem.Property(DBTYPE),set) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE,set)) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),set) | ListItem.IsCollection</expression>
 
     <expression name="IsEpisodeDBTypeNoFallback">String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.Property(DBTYPE),episode)</expression>
 
     <expression name="IsCategoryDBType">String.IsEmpty(ListItem.DBType) + [String.IsEqual(ListItem.Property(DBTYPE),genre) | String.IsEqual(ListItem.Property(DBTYPE),category) | String.IsEqual(ListItem.Property(DBTYPE),categorie) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE),category)]</expression>
 
-    <expression name="IsMenuEntryActive">[Window.IsActive(Home) + String.IsEqual(ListItem.Property(path), ActivateWindow(home,return))] | [Window.IsActive(1110) + String.IsEqual(ListItem.Property(path), ActivateWindow(1110,return))] | [Window.IsActive(1111) + String.IsEqual(ListItem.Property(path), ActivateWindow(1111,return))] | [Window.IsActive(1112) + String.IsEqual(ListItem.Property(path), ActivateWindow(1112,return))] | [Window.IsActive(1113) + String.IsEqual(ListItem.Property(path), ActivateWindow(1113,return))] | [Window.IsActive(1114) + String.IsEqual(ListItem.Property(path), ActivateWindow(1114,return))] | [Window.IsActive(1115) + String.IsEqual(ListItem.Property(path), ActivateWindow(1115,return))] | [Window.IsActive(1109) + String.IsEqual(ListItem.Property(path), ActivateWindow(1109,return))] | [Window.IsActive(1119) + String.IsEqual(ListItem.Property(path), ActivateWindow(1119,return))] | [Window.IsActive(1116) + String.IsEqual(ListItem.Property(path), ActivateWindow(1116,return))] | [Window.IsActive(1118) + String.IsEqual(ListItem.Property(path), ActivateWindow(1118,return))] | [Window.IsActive(1120) + String.IsEqual(ListItem.Property(path), ActivateWindow(1120,return))]</expression>
+    <expression name="IsMenuEntryActive">[Window.IsActive(Home) + String.IsEqual(ListItem.Property(path), ActivateWindow(home,return))] | [Window.IsActive(1110) + String.IsEqual(ListItem.Property(path), ActivateWindow(1110,return))] | [Window.IsActive(1111) + String.IsEqual(ListItem.Property(path), ActivateWindow(1111,return))] | [Window.IsActive(1112) + String.IsEqual(ListItem.Property(path), ActivateWindow(1112,return))] | [Window.IsActive(1113) + String.IsEqual(ListItem.Property(path), ActivateWindow(1113,return))] | [Window.IsActive(1114) + String.IsEqual(ListItem.Property(path), ActivateWindow(1114,return))] | [Window.IsActive(1109) + String.IsEqual(ListItem.Property(path), ActivateWindow(1109,return))] | [Window.IsActive(1119) + String.IsEqual(ListItem.Property(path), ActivateWindow(1119,return))] | [Window.IsActive(1116) + String.IsEqual(ListItem.Property(path), ActivateWindow(1116,return))] | [Window.IsActive(1118) + String.IsEqual(ListItem.Property(path), ActivateWindow(1118,return))] | [Window.IsActive(1120) + String.IsEqual(ListItem.Property(path), ActivateWindow(1120,return))]</expression>
 
-    <expression name="IsKnownMenuEntryPath">String.IsEqual(ListItem.Property(path), ActivateWindow(home,return)) | String.IsEqual(ListItem.Property(path), ActivateWindow(1110,return)) | String.IsEqual(ListItem.Property(path), ActivateWindow(1111,return)) | String.IsEqual(ListItem.Property(path), ActivateWindow(1112,return)) | String.IsEqual(ListItem.Property(path), ActivateWindow(1113,return)) | String.IsEqual(ListItem.Property(path), ActivateWindow(1114,return)) | String.IsEqual(ListItem.Property(path), ActivateWindow(1115,return)) | String.IsEqual(ListItem.Property(path), ActivateWindow(1109,return)) | String.IsEqual(ListItem.Property(path), ActivateWindow(1119,return)) | String.IsEqual(ListItem.Property(path), ActivateWindow(1118,return)) | String.IsEqual(ListItem.Property(path), ActivateWindow(1120,return))</expression>
+    <expression name="IsKnownMenuEntryPath">String.IsEqual(ListItem.Property(path), ActivateWindow(home,return)) | String.IsEqual(ListItem.Property(path), ActivateWindow(1110,return)) | String.IsEqual(ListItem.Property(path), ActivateWindow(1111,return)) | String.IsEqual(ListItem.Property(path), ActivateWindow(1112,return)) | String.IsEqual(ListItem.Property(path), ActivateWindow(1113,return)) | String.IsEqual(ListItem.Property(path), ActivateWindow(1114,return)) | String.IsEqual(ListItem.Property(path), ActivateWindow(1109,return)) | String.IsEqual(ListItem.Property(path), ActivateWindow(1119,return)) | String.IsEqual(ListItem.Property(path), ActivateWindow(1118,return)) | String.IsEqual(ListItem.Property(path), ActivateWindow(1120,return))</expression>
 
     <expression name="IsFirstRun">!Skin.HasSetting(BingieFirstStartupDone) | !Skin.HasSetting(BingieSecondStartupDone)</expression>
 
@@ -130,7 +124,7 @@
 
     <expression name="IsCurrentWidgetSpotlight">Control.HasFocus(1508) | [Control.IsVisible(1508) + Container(77777).Position(0)]</expression>
 	
-	<expression name="EXP_TMDBHelper_Metadata">String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.Property(DBTYPE),movie) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE,movie)) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),movie) | Container.Content(movies) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.Property(DBTYPE),tvshow) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE,tvshow)) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),tvshow) | Container.Content(tvshows) | String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.Property(DBTYPE),season) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE,season)) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),season) | Container.Content(seasons) | String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.Property(DBTYPE),episode) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE,episode)) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),episode) | Container.Content(episodes) | Container.Content(sets) | Window.IsActive(Custom_1116_PVR_Hub.xml)</expression>
+	<expression name="EXP_TMDbBingieHelper_Metadata">String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.Property(DBTYPE),movie) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE,movie)) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),movie) | Container.Content(movies) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.Property(DBTYPE),tvshow) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE,tvshow)) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),tvshow) | Container.Content(tvshows) | String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.Property(DBTYPE),season) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE,season)) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),season) | Container.Content(seasons) | String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.Property(DBTYPE),episode) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE,episode)) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),episode) | Container.Content(episodes) | Window.IsActive(Custom_1116_PVR_Hub.xml)</expression>
 
 	<expression name="Exp_IsPersonInfo">[String.IsEqual(ListItem.Property(item.type),person) | String.IsEqual(ListItem.Property(tmdb_type),person)]</expression>
 
@@ -154,10 +148,6 @@
 
     <include name="navigation_horizontal">
         <orientation>horizontal</orientation>
-    </include>
-
-    <include name="align_right">
-        <align>right</align>
     </include>
 
     <include name="align_center">
@@ -488,8 +478,9 @@
 			<height>290</height>
 			<control type="group">
 			<animation effect="slide" start="0,400" end="0,0" tween="cubic" easing="out" delay="1000" time="450" reversible="false">WindowOpen</animation>
-			<animation effect="slide" start="0,0" end="0,400" tween="cubic" easing="out" delay="4000" time="450" reversible="false" condition="System.IdleTime(1) + Player.Playing">conditional</animation>
-			<animation effect="slide" start="0,400" end="0,0" tween="cubic" easing="out" delay="0" time="450" reversible="true" condition="Player.Paused | Player.Forwarding | Player.Rewinding | Player.Seeking">conditional</animation>
+			<animation effect="slide" start="0,0" end="0,400" tween="cubic" easing="out" delay="4000" time="450" reversible="true" condition="System.IdleTime(1) + Player.Playing + !Skin.HasSetting(EnableAutoPauseOnOSD)">conditional</animation>
+			<animation effect="slide" start="0,0" end="0,400" tween="cubic" easing="out" delay="4000" time="450" reversible="false" condition="System.IdleTime(1) + Player.Playing + Skin.HasSetting(EnableAutoPauseOnOSD)">conditional</animation>
+			<animation effect="slide" start="0,400" end="0,0" tween="cubic" easing="out" delay="0" time="450" reversible="true" condition="[Player.Paused | Player.Forwarding | Player.Rewinding | Player.Seeking] + Skin.HasSetting(EnableAutoPauseOnOSD)">conditional</animation>
 				<!-- Vignette Mask -->
 				<control type="image">
 					<width>100%</width>
@@ -580,9 +571,10 @@
 			<visible>Control.HasFocus(70011)</visible>
 			<bottom>0</bottom>
 			<height>220</height>
-			<animation effect="slide" start="0,400" end="0,0" tween="cubic" easing="out" delay="1000" time="450" reversible="false">Visible</animation>
-			<animation effect="slide" start="0,0" end="0,400" tween="cubic" easing="out" delay="4000" time="450" reversible="false" condition="System.IdleTime(1) + Player.Playing">conditional</animation>
-			<animation effect="slide" start="0,400" end="0,0" tween="cubic" easing="out" delay="0" time="450" reversible="true" condition="Player.Paused | Player.Forwarding | Player.Rewinding | Player.Seeking">conditional</animation>
+			<animation effect="slide" start="0,400" end="0,0" tween="cubic" easing="out" delay="1000" time="450" reversible="false">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,400" tween="cubic" easing="out" delay="4000" time="450" reversible="true" condition="System.IdleTime(1) + Player.Playing + !Skin.HasSetting(EnableAutoPauseOnOSD)">conditional</animation>
+			<animation effect="slide" start="0,0" end="0,400" tween="cubic" easing="out" delay="4000" time="450" reversible="false" condition="System.IdleTime(1) + Player.Playing + Skin.HasSetting(EnableAutoPauseOnOSD)">conditional</animation>
+			<animation effect="slide" start="0,400" end="0,0" tween="cubic" easing="out" delay="0" time="450" reversible="true" condition="[Player.Paused | Player.Forwarding | Player.Rewinding | Player.Seeking] + Skin.HasSetting(EnableAutoPauseOnOSD)">conditional</animation>
 			<!--Panel-->
 			<control type="image">
 				<posx>0</posx>
@@ -825,8 +817,8 @@
         </definition>
     </include>
 	
-	<include name="Defs_TMDbHelper_Loader">
-        <control type="list" id="99950">
+	<include name="Defs_TMDbBingieHelper_Loader">
+        <control type="list" id="17195">
             <width>1</width>
             <height>1</height>
             <itemlayout />
@@ -834,17 +826,6 @@
             <left>-1920</left>
         </control>
     </include>
-	
-	<!-- Hidden Top250 -->
-	<include name="HiddenTop250">		
-		<control type="label" id="1719">
-			<width>1</width>
-            <height>1</height>
-            <left>-1920</left>
-			<label/>
-			<visible>!String.IsEmpty(ListItem.Top250) | !String.IsEmpty(Container(99950).ListItem.Property(Top250))</visible>				
-        </control>
-	</include>
 	
 	<include name="MediaInfoListLayout">
 		<param name="height">125</param>
@@ -966,6 +947,6 @@
 				<enable>$PARAM[enable]</enable>
 			</control>
 		</definition>
-	</include>
+	</include>	
 	
 </includes>

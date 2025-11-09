@@ -18,6 +18,7 @@
 	<onload>ClearProperty(ListItem.VideoResolution,Home)</onload>
 	<onload>ClearProperty(ListItem.AudioChannels,Home)</onload>
 	<onload>ClearProperty(ListItem.Art.fanart,Home)</onload>
+	<onload>ClearProperty(ListItem.Art.thumb,Home)</onload>
 	<onload>ClearProperty(ListItem.Art.ClearLogo,Home)</onload>
 	<onload>ClearProperty(ListItem.TotalEpisodes,Home)</onload>
 	<onload>ClearProperty(ListItem.TotalSeasons,Home)</onload>

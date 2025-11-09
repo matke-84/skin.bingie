@@ -69,17 +69,17 @@
 
     <!-- Fixed Focus Navigation Factory -->
     <include name="Fixed_Focus_Navigation_Factory">
-        <include content="Fixed_Focus_Navigation" condition="String.IsEqual(Skin.String(widgetstyle),landscape) + !Window.IsActive(1116) + !Window.IsActive(1120)">
-            <param name="widgetid" value="$PARAM[widgetid]"/>
-            <param name="FixedAnimationHeight" value="-261"/>
-        </include>
-        <include content="Fixed_Focus_Navigation" condition="String.IsEqual(Skin.String(widgetstyle),poster) + !Window.IsActive(1116) + !Window.IsActive(1120)">
+		<include content="Fixed_Focus_Navigation" condition="String.IsEqual(Skin.String(widgetstyle),landscape)">
             <param name="widgetid" value="$PARAM[widgetid]"/>
             <param name="FixedAnimationHeight" value="-383"/>
         </include>
-		<include content="Fixed_Focus_Navigation" condition="Window.IsActive(1116) | Window.IsActive(1120)">
+        <include content="Fixed_Focus_Navigation" condition="String.IsEqual(Skin.String(widgetstyle),poster)">
             <param name="widgetid" value="$PARAM[widgetid]"/>
-            <param name="FixedAnimationHeight" value="-283"/>
+            <param name="FixedAnimationHeight" value="-383"/>
+        </include>
+		<include content="Fixed_Focus_Navigation" condition="String.IsEqual(Skin.String(widgetstyle),square)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="FixedAnimationHeight" value="-383"/>
         </include>
     </include>
 
@@ -91,7 +91,6 @@
         <onload>ClearProperty(ShowViewSubMenu,Home)</onload>
         <onunload>ClearProperty(ShowViewSubMenu,Home)</onunload>
         <onunload condition="System.HasAlarm(preview_delay)">CancelAlarm(preview_delay,silent)</onunload>
-		<onunload>ClearProperty(TMDbHelper.WidgetContainer)</onunload>
     </include>
 
     <!-- DETAILS ROW INCLUDES -->
@@ -407,12 +406,12 @@
 			String.IsEqual(ListItem.mpaa,TV-Y) | String.Contains(ListItem.mpaa,TV-Y7) | String.Contains(ListItem.mpaa,TV-G) | String.Contains(ListItem.mpaa,TV-PG) | String.Contains(ListItem.mpaa,TV-14) | String.Contains(ListItem.mpaa,TV-MA) | String.Contains(ListItem.mpaa,UK:U) | String.Contains(ListItem.mpaa,GB-U) | String.Contains(ListItem.mpaa,Rated U) | String.IsEqual(ListItem.mpaa,U) | 
 			String.Contains(ListItem.mpaa,UK:PG) | String.Contains(ListItem.mpaa,GB-PG) | String.Contains(ListItem.mpaa,Guidance) | String.Contains(ListItem.mpaa,UK:12A) | String.Contains(ListItem.mpaa,GB-12A) | String.Contains(ListItem.mpaa,Rated 12A) | String.IsEqual(ListItem.mpaa,12A) | String.IsEqual(ListItem.mpaa,UK:12) | String.IsEqual(ListItem.mpaa,GB-12) | String.IsEqual(ListItem.mpaa,Rated 12) | String.IsEqual(ListItem.mpaa,12) | 
 			String.Contains(ListItem.mpaa,UK:15) | String.Contains(ListItem.mpaa,GB-15) | String.Contains(ListItem.mpaa,Rated 15) | String.IsEqual(ListItem.mpaa,15) | String.Contains(ListItem.mpaa,Mature) | String.Contains(ListItem.mpaa,UK:18) | String.Contains(ListItem.mpaa,GB-18) | String.Contains(ListItem.mpaa,Rated 18) | String.IsEqual(ListItem.mpaa,18)]] 
-			| [!String.IsEmpty(Container(99950).ListItem.mpaa) + [String.Contains(Container(99950).ListItem.mpaa,US:G) | String.Contains(Container(99950).ListItem.mpaa,USA:G) | String.Contains(Container(99950).ListItem.mpaa,Rated G) | String.IsEqual(Container(99950).ListItem.mpaa,G) |
-			String.Contains(Container(99950).ListItem.mpaa,PG-13) | String.IsEqual(Container(99950).ListItem.mpaa,US:PG) | String.IsEqual(Container(99950).ListItem.mpaa,USA:PG) | String.IsEqual(Container(99950).ListItem.mpaa,Rated PG) | String.IsEqual(Container(99950).ListItem.mpaa,PG) |
-			String.Contains(Container(99950).ListItem.mpaa,US:R) | String.Contains(Container(99950).ListItem.mpaa,USA:R) | String.Contains(Container(99950).ListItem.mpaa,Rated R) | String.IsEqual(Container(99950).ListItem.mpaa,R) | String.Contains(Container(99950).ListItem.mpaa,NC-17) | String.Contains(Container(99950).ListItem.mpaa,NR) | String.Contains(Container(99950).ListItem.mpaa,Not) | String.Contains(Container(99950).ListItem.mpaa,Unrated) | String.Contains(Container(99950).ListItem.mpaa,Passed) | String.Contains(Container(99950).ListItem.mpaa,Approved) | 
-			String.IsEqual(Container(99950).ListItem.mpaa,TV-Y) | String.Contains(Container(99950).ListItem.mpaa,TV-Y7) | String.Contains(Container(99950).ListItem.mpaa,TV-G) |String.Contains(Container(99950).ListItem.mpaa,TV-PG) | String.Contains(Container(99950).ListItem.mpaa,TV-14) | String.Contains(Container(99950).ListItem.mpaa,TV-MA) | String.Contains(Container(99950).ListItem.mpaa,USA:TV-MA) | String.Contains(Container(99950).ListItem.mpaa,GB-U) | String.Contains(Container(99950).ListItem.mpaa,Rated U) | String.IsEqual(Container(99950).ListItem.mpaa,U) | 
-			String.Contains(Container(99950).ListItem.mpaa,UK:PG) | String.Contains(Container(99950).ListItem.mpaa,GB-PG) | String.Contains(Container(99950).ListItem.mpaa,Guidance) | String.Contains(Container(99950).ListItem.mpaa,GB-12A) | String.Contains(Container(99950).ListItem.mpaa,Rated 12A) | String.IsEqual(Container(99950).ListItem.mpaa,12A) | String.IsEqual(Container(99950).ListItem.mpaa,GB-12) | String.IsEqual(Container(99950).ListItem.mpaa,Rated 12) | String.IsEqual(Container(99950).ListItem.mpaa,12) | 
-			String.Contains(Container(99950).ListItem.mpaa,UK:15) | String.Contains(Container(99950).ListItem.mpaa,GB-15) | String.Contains(Container(99950).ListItem.mpaa,Rated 15) | String.IsEqual(Container(99950).ListItem.mpaa,15) | String.Contains(Container(99950).ListItem.mpaa,Mature) | String.Contains(Container(99950).ListItem.mpaa,UK:18) | String.Contains(Container(99950).ListItem.mpaa,GB-18) | String.Contains(Container(99950).ListItem.mpaa,Rated 18) | String.IsEqual(Container(99950).ListItem.mpaa,18)]] + $EXP[EXP_TMDBHelper_Metadata]</visible>
+			| [!String.IsEmpty(Container(17195).ListItem.mpaa) + [String.Contains(Container(17195).ListItem.mpaa,US:G) | String.Contains(Container(17195).ListItem.mpaa,USA:G) | String.Contains(Container(17195).ListItem.mpaa,Rated G) | String.IsEqual(Container(17195).ListItem.mpaa,G) |
+			String.Contains(Container(17195).ListItem.mpaa,PG-13) | String.IsEqual(Container(17195).ListItem.mpaa,US:PG) | String.IsEqual(Container(17195).ListItem.mpaa,USA:PG) | String.IsEqual(Container(17195).ListItem.mpaa,Rated PG) | String.IsEqual(Container(17195).ListItem.mpaa,PG) |
+			String.Contains(Container(17195).ListItem.mpaa,US:R) | String.Contains(Container(17195).ListItem.mpaa,USA:R) | String.Contains(Container(17195).ListItem.mpaa,Rated R) | String.IsEqual(Container(17195).ListItem.mpaa,R) | String.Contains(Container(17195).ListItem.mpaa,NC-17) | String.Contains(Container(17195).ListItem.mpaa,NR) | String.Contains(Container(17195).ListItem.mpaa,Not) | String.Contains(Container(17195).ListItem.mpaa,Unrated) | String.Contains(Container(17195).ListItem.mpaa,Passed) | String.Contains(Container(17195).ListItem.mpaa,Approved) | 
+			String.IsEqual(Container(17195).ListItem.mpaa,TV-Y) | String.Contains(Container(17195).ListItem.mpaa,TV-Y7) | String.Contains(Container(17195).ListItem.mpaa,TV-G) |String.Contains(Container(17195).ListItem.mpaa,TV-PG) | String.Contains(Container(17195).ListItem.mpaa,TV-14) | String.Contains(Container(17195).ListItem.mpaa,TV-MA) | String.Contains(Container(17195).ListItem.mpaa,USA:TV-MA) | String.Contains(Container(17195).ListItem.mpaa,GB-U) | String.Contains(Container(17195).ListItem.mpaa,Rated U) | String.IsEqual(Container(17195).ListItem.mpaa,U) | 
+			String.Contains(Container(17195).ListItem.mpaa,UK:PG) | String.Contains(Container(17195).ListItem.mpaa,GB-PG) | String.Contains(Container(17195).ListItem.mpaa,Guidance) | String.Contains(Container(17195).ListItem.mpaa,GB-12A) | String.Contains(Container(17195).ListItem.mpaa,Rated 12A) | String.IsEqual(Container(17195).ListItem.mpaa,12A) | String.IsEqual(Container(17195).ListItem.mpaa,GB-12) | String.IsEqual(Container(17195).ListItem.mpaa,Rated 12) | String.IsEqual(Container(17195).ListItem.mpaa,12) | 
+			String.Contains(Container(17195).ListItem.mpaa,UK:15) | String.Contains(Container(17195).ListItem.mpaa,GB-15) | String.Contains(Container(17195).ListItem.mpaa,Rated 15) | String.IsEqual(Container(17195).ListItem.mpaa,15) | String.Contains(Container(17195).ListItem.mpaa,Mature) | String.Contains(Container(17195).ListItem.mpaa,UK:18) | String.Contains(Container(17195).ListItem.mpaa,GB-18) | String.Contains(Container(17195).ListItem.mpaa,Rated 18) | String.IsEqual(Container(17195).ListItem.mpaa,18)]] + $EXP[EXP_TMDbBingieHelper_Metadata]</visible>
 			<width>56</width>
 			<height>50</height>
             <aspectratio>keep</aspectratio>
@@ -426,7 +425,7 @@
 	<include>Default_Visible_Fade</include>
 	<!-- Icon display -->
 	<control type="button">
-			<visible>!String.IsEmpty(ListItem.MPAA) | !String.IsEmpty(Container(99950).ListItem.mpaa) + $EXP[EXP_TMDBHelper_Metadata]</visible>
+			<visible>!String.IsEmpty(ListItem.MPAA) | !String.IsEmpty(Container(17195).ListItem.mpaa) + $EXP[EXP_TMDbBingieHelper_Metadata]</visible>
 			<posy>7</posy>
 				<height>36</height>
                 <width min="42">auto</width>
@@ -451,7 +450,7 @@
 	<include>Default_Visible_Fade</include>
 	<!-- Icon display -->
 	<control type="group">
-			<visible>!String.IsEmpty(ListItem.MPAA) | !String.IsEmpty(Container(99950).ListItem.mpaa)</visible>
+			<visible>!String.IsEmpty(ListItem.MPAA) | !String.IsEmpty(Container(17195).ListItem.mpaa)</visible>
 			<height>34</height>
             <width>106</width>
 	<control type="image">
@@ -493,7 +492,7 @@
 	<include name="MPAA_Details_Row">		
             <include>Default_Visible_Fade</include>
             <control type="button">
-				<visible>!String.IsEmpty(ListItem.Mpaa) | !String.IsEmpty(Container(99950).ListItem.mpaa) + $EXP[EXP_TMDBHelper_Metadata]</visible>
+				<visible>!String.IsEmpty(ListItem.Mpaa) | !String.IsEmpty(Container(17195).ListItem.mpaa) + $EXP[EXP_TMDbBingieHelper_Metadata]</visible>
 				<posy>7</posy>
                 <height>36</height>
                 <width min="42">auto</width>
@@ -632,7 +631,7 @@
 		<include name="ShowStatus">
 			<include>Default_Visible_Fade</include>
 			<control type="group">
-			<visible>!String.IsEmpty(Container(99950).ListItem.Status) + $EXP[IsTvShowDBType]</visible>
+			<visible>!String.IsEmpty(Container(17195).ListItem.Status) + $EXP[IsTvShowDBType]</visible>
 			<visible>![Skin.HasSetting(UseBingieInfoDialog) + [String.IsEqual(Window.Property(AdditionalInfo),similar) | String.IsEqual(Window.Property(AdditionalInfo),cast) | String.IsEqual(Window.Property(AdditionalInfo),trailers)]]</visible>
 			<control type="button">
 				<posy>7</posy>
@@ -647,7 +646,7 @@
 				<texturefocus colordiffuse="$INFO[Skin.String(BingieDetailsFlagColor)]" border="10">bingie/square-rounded2.png</texturefocus>
 				<textoffsetx>8</textoffsetx>
 				<font>Reg26</font>
-				<label>[CAPITALIZE]$INFO[Container(99950).ListItem.Status][/CAPITALIZE]</label>
+				<label>[CAPITALIZE]$INFO[Container(17195).ListItem.Status][/CAPITALIZE]</label>
 				<enable>false</enable>
 			</control>
 			<control type="label">
@@ -660,7 +659,7 @@
                 <textcolor>$INFO[Skin.String(BingieDetailsFlagTextColor)]</textcolor>
                 <font>Reg26</font>
                 <scroll>true</scroll>
-                <label>[CAPITALIZE]$INFO[Container(99950).ListItem.Status][/CAPITALIZE]</label>
+                <label>[CAPITALIZE]$INFO[Container(17195).ListItem.Status][/CAPITALIZE]</label>
 			</control>
 		</control>
 		</include>			
@@ -737,10 +736,10 @@
           <definition>
 		      <control type="grouplist">
                   <nested/>
-				  <visible>!Window.IsActive(1120)</visible>
+				  <visible>!$EXP[IsMusicDBType]</visible>
 				  <visible>!Skin.HasSetting(EnableCastThumb) | [Skin.HasSetting(EnableCastThumb) + Container.Content(seasons)]</visible>
 				  <visible>$PARAM[visibility]</visible>
-                  <visible>$EXP[IsMovieDBType] | $EXP[IsTvShowDBType] | $EXP[IsSeasonDBType] | [String.IsEqual(ListItem.DBTYPE,artist) | String.IsEqual(ListItem.DBTYPE,album)] + [!String.IsEmpty(ListItem.Property(Album_Description)) | !String.IsEmpty(ListItem.Property(Artist_Description))] | String.Contains(ListItem.Path,videodb://movies/sets/)</visible>
+                  <visible>$EXP[IsMovieDBType] | $EXP[IsTvShowDBType] | $EXP[IsSeasonDBType] | [String.IsEqual(ListItem.DBTYPE,artist) | String.IsEqual(ListItem.DBTYPE,album)] + [!String.IsEmpty(ListItem.Property(Album_Description)) | !String.IsEmpty(ListItem.Property(Artist_Description))] | $EXP[IsSetDBType]</visible>
 				  <visible>Skin.HasSetting(EnableTop250) + Skin.HasSetting(EnableRatings) + String.IsEmpty(Control.GetLabel(8231)) + !Integer.IsGreater(ListItem.PercentPlayed,1) | [$EXP[IsMainMenuOpened] + Integer.IsGreater(Window(Home).Property(ListItem.PercentPlayed),1)] | 
 				  Skin.HasSetting(EnableTop250) + Skin.HasSetting(EnableRatings) + String.IsEmpty(Control.GetLabel(8231)) + !Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1) | 
 				  [!Skin.HasSetting(EnableTop250) | !Skin.HasSetting(EnableRatings)] + !Skin.HasSetting(MovieDetailsHome) | 
@@ -793,10 +792,10 @@
               </control>
               <control type="grouplist">
                   <nested/>
-				  <visible>!Window.IsActive(1120)</visible>
+				  <visible>!$EXP[IsMusicDBType]</visible>
 				  <visible>Skin.HasSetting(EnableCastThumb) + !Container.Content(seasons)</visible>
 				  <visible>$PARAM[visibility]</visible>
-                  <visible>$EXP[IsMovieDBType] | $EXP[IsTvShowDBType] | $EXP[IsSeasonDBType] | [String.IsEqual(ListItem.DBTYPE,artist) | String.IsEqual(ListItem.DBTYPE,album)] + [!String.IsEmpty(ListItem.Property(Album_Description)) | !String.IsEmpty(ListItem.Property(Artist_Description))] | String.Contains(ListItem.Path,videodb://movies/sets/)</visible>
+                  <visible>$EXP[IsMovieDBType] | $EXP[IsTvShowDBType] | $EXP[IsSeasonDBType] | [String.IsEqual(ListItem.DBTYPE,artist) | String.IsEqual(ListItem.DBTYPE,album)] + [!String.IsEmpty(ListItem.Property(Album_Description)) | !String.IsEmpty(ListItem.Property(Artist_Description))] | $EXP[IsSetDBType]</visible>
 				  <visible>Skin.HasSetting(EnableTop250) + Skin.HasSetting(EnableRatings) + String.IsEmpty(Control.GetLabel(8231)) + !Integer.IsGreater(ListItem.PercentPlayed,1) | [$EXP[IsMainMenuOpened] + Integer.IsGreater(Window(Home).Property(ListItem.PercentPlayed),1)] | 
 				  Skin.HasSetting(EnableTop250) + Skin.HasSetting(EnableRatings) + String.IsEmpty(Control.GetLabel(8231)) + !Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1) | 
 				  [!Skin.HasSetting(EnableTop250) | !Skin.HasSetting(EnableRatings)] + !Skin.HasSetting(MovieDetailsHome) | 
@@ -810,7 +809,7 @@
                   <usecontrolcoords>true</usecontrolcoords>
                   <include>Default_Visible_Fade</include>			  
                   <control type="group">
-                      <visible>[String.IsEmpty(Container(99950).ListItem.Property(Cast.1.Thumb)) + [[String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),9)]]] | ![[String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),9)]]</visible>
+                      <visible>[String.IsEmpty(Container(17195).ListItem.Property(Cast.1.Thumb)) + [[String.StartsWith(Container(17195).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(17195).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(17195).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(Trakt_Rating),9)]]] | ![[String.StartsWith(Container(17195).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(17195).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(17195).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(Trakt_Rating),9)]]</visible>
                       <top>23</top>
                       <height>70</height> 
                       <width>70</width>
@@ -834,7 +833,7 @@
                       </control>
                   </control>
 				  <control type="group">
-                      <visible>!String.IsEmpty(Container(99950).ListItem.Property(Cast.1.Thumb)) + [[String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),9)]]</visible>
+                      <visible>!String.IsEmpty(Container(17195).ListItem.Property(Cast.1.Thumb)) + [[String.StartsWith(Container(17195).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(17195).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(17195).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(Trakt_Rating),9)]]</visible>
                       <top>23</top>
                       <height>70</height> 
                       <width>70</width>
@@ -857,12 +856,12 @@
                           <align>left</align>
                           <aligny>center</aligny>
 						  <aspectratio scalediffuse="false" align="center" aligny="center">scale</aspectratio>
-                          <texture diffuse="diffuse/circle_diffuse.png">$INFO[Container(99950).ListItem.Property(Cast.1.Thumb)]</texture>
+                          <texture diffuse="diffuse/circle_diffuse.png">$INFO[Container(17195).ListItem.Property(Cast.1.Thumb)]</texture>
                       </control>
                   </control>
 				  <!-- Red Circle More Details - Under Movie Info -->
 				  <control type="textbox" id="84">
-					  <visible>[String.IsEmpty(Container(99950).ListItem.Property(Cast.1.Thumb)) + [[String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),9)]]] | ![[String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),9)]]</visible>
+					  <visible>[String.IsEmpty(Container(17195).ListItem.Property(Cast.1.Thumb)) + [[String.StartsWith(Container(17195).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(17195).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(17195).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(Trakt_Rating),9)]]] | ![[String.StartsWith(Container(17195).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(17195).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(17195).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(Trakt_Rating),9)]]</visible>
                       <animation effect="fade" time="150">Visible</animation>
                       <height>115</height>		  
 					  <bottom>0</bottom>			  
@@ -875,12 +874,12 @@
                       <autoscroll>false</autoscroll>
                   </control>
 				  <control type="textbox" id="84">
-					  <visible>!String.IsEmpty(Container(99950).ListItem.Property(Cast.1.Thumb)) + [[String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(99950).ListItem.Property(Trakt_Rating),9)]]</visible>
+					  <visible>!String.IsEmpty(Container(17195).ListItem.Property(Cast.1.Thumb)) + [[String.StartsWith(Container(17195).ListItem.Property(TMDb_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(TMDb_Rating),9)] + [String.StartsWith(Container(17195).ListItem.Property(IMDb_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(IMDb_Rating),9)] + [String.StartsWith(Container(17195).ListItem.Property(Trakt_Rating),8) | String.StartsWith(Container(17195).ListItem.Property(Trakt_Rating),9)]]</visible>
                       <animation effect="fade" time="150">Visible</animation>
                       <height>115</height>	  
 					  <bottom>0</bottom>			  
                       <width>650</width>
-                      <label>$INFO[Container(99950).ListItem.Property(Cast.1.Name),$LOCALIZE[31100] ]</label>
+                      <label>$INFO[Container(17195).ListItem.Property(Cast.1.Name),$LOCALIZE[31100] ]</label>
                       <textcolor>$INFO[Skin.String(BingieAdditionalInfoTextColor)]</textcolor>
                       <align>left</align>
                       <aligny>center</aligny>
@@ -890,7 +889,7 @@
               </control>
 			  <control type="grouplist">
                   <nested/>
-				  <visible>Window.IsActive(1120)</visible>
+				  <visible>$EXP[IsMusicDBType]</visible>
 				  <visible>$PARAM[visibility]</visible>
                   <visible>[String.IsEqual(ListItem.DBTYPE,artist) | String.IsEqual(ListItem.DBTYPE,album)] + [!String.IsEmpty(ListItem.Property(Album_Description)) | !String.IsEmpty(ListItem.Property(Artist_Description))]</visible>				  
                   <top>$PARAM[top]</top>
@@ -1088,31 +1087,33 @@
 	
 	<!-- Choose Duration Or Total Seasons/Episodes count -->
 	<variable name="DurationOrTotalSECount">
-		<value condition="[!String.IsEmpty(ListItem.Property(TotalSeasons)) | !String.IsEmpty(ListItem.Property(TotalEpisodes)) | !String.IsEmpty(ListItem.Season) | !String.IsEmpty(ListItem.Episodes) | [!String.IsEmpty(Container(99950).ListItem.Episodes) + $EXP[EXP_TMDBHelper_Metadata]] | [!String.IsEmpty(Container(99950).ListItem.Season) + $EXP[EXP_TMDBHelper_Metadata]]] + !$EXP[IsEpisodeDBType] + !$EXP[IsMovieDBType]">$VAR[GetTotalSeasonEpisodeCount]</value>
-		<value condition="!String.Contains(ListItem.Path,videodb://movies/sets/)">$VAR[GetDuration]</value>
+		<value condition="[!String.IsEmpty(ListItem.Property(TotalSeasons)) | !String.IsEmpty(ListItem.Property(TotalEpisodes)) | !String.IsEmpty(ListItem.Season) | !String.IsEmpty(ListItem.Episodes) | [!String.IsEmpty(Container(17195).ListItem.Episodes) + $EXP[EXP_TMDbBingieHelper_Metadata]] | [!String.IsEmpty(Container(17195).ListItem.Season) + $EXP[EXP_TMDbBingieHelper_Metadata]]] + !$EXP[IsEpisodeDBType] + !$EXP[IsMovieDBType]">$VAR[GetTotalSeasonEpisodeCount]</value>
+		<value condition="!$EXP[IsSetDBType]">$VAR[GetDuration]</value>
+		<value condition="!String.IsEmpty(Container(17195).ListItem.Property(Set.NumItems)) + $EXP[IsSetDBType]">$INFO[Container(17195).ListItem.Property(Set.NumItems),, $LOCALIZE[342]]</value>
 	</variable>
 	
 	<!-- Premiered Info -->
 	<variable name="GetPremiered">
 		<value condition="!String.IsEmpty(ListItem.Premiered)">$INFO[ListItem.Premiered]</value>
 		<value condition="$EXP[IsMainMenuOpened] + !String.IsEmpty(Window(Home).Property(ListItem.Premiered))">$INFO[Window(Home).Property(ListItem.Premiered)]</value>
-		<value condition="!String.IsEmpty(Container(99950).ListItem.Property(Premiered)) + $EXP[EXP_TMDBHelper_Metadata]">$INFO[Container(99950).ListItem.Property(Premiered)]</value>
+		<value condition="!String.IsEmpty(Container(17195).ListItem.Property(Premiered)) + $EXP[EXP_TMDbBingieHelper_Metadata]">$INFO[Container(17195).ListItem.Property(Premiered)]</value>
 	</variable>
 
 	<!--Year Info -->
 	<variable name="GetYear">
-		<value condition="!String.IsEmpty(Container(99950).ListItem.Property(Set.Years)) + $EXP[EXP_TMDBHelper_Metadata]">$INFO[Container(99950).ListItem.Property(Set.Years)]</value>
-		<value condition="!String.IsEmpty(ListItem.Year)">$INFO[ListItem.Year]</value>
-		<value condition="$EXP[IsMainMenuOpened] + !String.IsEmpty(Window(Home).Property(ListItem.Year))">$INFO[Window(Home).Property(ListItem.Year)]</value>
-		<value condition="!String.IsEmpty(Container(99950).ListItem.Year) + $EXP[EXP_TMDBHelper_Metadata]">$INFO[Container(99950).ListItem.Year]</value>
+		<value condition="!String.IsEmpty(Container(17195).ListItem.Property(Set.Years)) + $EXP[IsSetDBType]">$INFO[Container(17195).ListItem.Property(Set.Years)]</value>
+		<value condition="[!String.IsEmpty(ListItem.Property(Birthday)) | !String.IsEmpty(ListItem.Property(Deathday))] + $EXP[Exp_IsPersonInfo]">$INFO[ListItem.Property(Birthday),$LOCALIZE[21893]: ]$INFO[ListItem.Property(Deathday),  •  $LOCALIZE[21897]: ] $INFO[ListItem.Property(Age), ($LOCALIZE[31241] ,) ]</value>
+		<value condition="!String.IsEmpty(ListItem.Year) + !$EXP[IsSetDBType]">$INFO[ListItem.Year]</value>
+		<value condition="$EXP[IsMainMenuOpened] + !String.IsEmpty(Window(Home).Property(ListItem.Year)) + !$EXP[IsSetDBType]">$INFO[Window(Home).Property(ListItem.Year)]</value>
+		<value condition="!String.IsEmpty(Container(17195).ListItem.Year) + $EXP[EXP_TMDbBingieHelper_Metadata]">$INFO[Container(17195).ListItem.Year]</value>
 	</variable>
 	
 	<!--Genres Info -->
 	<variable name="GetGenres">
-		<value condition="!String.IsEmpty(Container(99950).ListItem.Property(Set.Genres))">$INFO[Container(99950).ListItem.Property(Set.Genres)]</value>
+		<value condition="!String.IsEmpty(Container(17195).ListItem.Property(Set.Genres))">$INFO[Container(17195).ListItem.Property(Set.Genres)]</value>
 		<value condition="!String.IsEmpty(ListItem.Genre)">$INFO[ListItem.Genre]</value>
 		<value condition="$EXP[IsMainMenuOpened] + !String.IsEmpty(Window(Home).Property(ListItem.Genre))">$INFO[Window(Home).Property(ListItem.Genre)]</value>
-		<value condition="!String.IsEmpty(Container(99950).ListItem.Genre)">$INFO[Container(99950).ListItem.Genre]</value>
+		<value condition="!String.IsEmpty(Container(17195).ListItem.Genre)">$INFO[Container(17195).ListItem.Genre]</value>
 	</variable>
 
     <!-- PVR Times Info (Start, Date, etc) -->
@@ -1133,7 +1134,7 @@
         <!-- regular format fallback -->
         <value condition="!String.IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration]</value>
         <value condition="$EXP[IsMainMenuOpened] + !String.IsEmpty(Window(Home).Property(ListItem.Duration))">$INFO[Window(Home).Property(ListItem.Duration)]</value>
-		<value condition="!String.IsEmpty(Container(99950).ListItem.Duration) + $EXP[EXP_TMDBHelper_Metadata]">$INFO[Container(99950).ListItem.Duration(h),,h ]$INFO[Container(99950).ListItem.Duration(m),,m]</value>
+		<value condition="!String.IsEmpty(Container(17195).ListItem.Duration) + $EXP[EXP_TMDbBingieHelper_Metadata]">$INFO[Container(17195).ListItem.Duration(h),,h ]$INFO[Container(17195).ListItem.Duration(m),,m]</value>
     </variable>
 
     <!-- Total Seasons/Episodes Info -->
@@ -1147,10 +1148,10 @@
         <value condition="Integer.IsGreater(ListItem.Episode,1) + Integer.IsEqual(ListItem.Season,1)">$INFO[ListItem.Season,, $LOCALIZE[20373]]</value>
         <value condition="!String.IsEmpty(ListItem.Episode) + Integer.IsEqual(ListItem.Episode,1)">$INFO[ListItem.Episode,, $LOCALIZE[20359]]</value>
         <value condition="!String.IsEmpty(ListItem.Episode) + Integer.IsGreater(ListItem.Episode,0)">$INFO[ListItem.Episode,, $LOCALIZE[20360]]</value>
-		<value condition="Integer.IsGreater(Container(99950).ListItem.Episode,1) + Integer.IsGreater(Container(99950).ListItem.Season,1)">$INFO[Container(99950).ListItem.Season,, $LOCALIZE[33054]]</value>
-        <value condition="Integer.IsGreater(Container(99950).ListItem.Episode,1) + Integer.IsEqual(Container(99950).ListItem.Season,1)">$INFO[Container(99950).ListItem.Season,, $LOCALIZE[20373]]</value>
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Episode) + Integer.IsEqual(Container(99950).ListItem.Episode,1)">$INFO[Container(99950).ListItem.Episode,, $LOCALIZE[20359]]</value>
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Episode) + Integer.IsGreater(Container(99950).ListItem.Episode,0)">$INFO[Container(99950).ListItem.Episode,, $LOCALIZE[20360]]</value>
+		<value condition="Integer.IsGreater(Container(17195).ListItem.Episode,1) + Integer.IsGreater(Container(17195).ListItem.Season,1)">$INFO[Container(17195).ListItem.Season,, $LOCALIZE[33054]]</value>
+        <value condition="Integer.IsGreater(Container(17195).ListItem.Episode,1) + Integer.IsEqual(Container(17195).ListItem.Season,1)">$INFO[Container(17195).ListItem.Season,, $LOCALIZE[20373]]</value>
+        <value condition="!String.IsEmpty(Container(17195).ListItem.Episode) + Integer.IsEqual(Container(17195).ListItem.Episode,1)">$INFO[Container(17195).ListItem.Episode,, $LOCALIZE[20359]]</value>
+        <value condition="!String.IsEmpty(Container(17195).ListItem.Episode) + Integer.IsGreater(Container(17195).ListItem.Episode,0)">$INFO[Container(17195).ListItem.Episode,, $LOCALIZE[20360]]</value>
         <!-- fallback -->
         <value condition="$EXP[IsMainMenuOpened] + Integer.IsGreater(Window(Home).Property(ListItem.TotalEpisodes),1) + Integer.IsGreater(Window(Home).Property(ListItem.TotalSeasons),1)">$INFO[Window(Home).Property(ListItem.TotalSeasons),, $LOCALIZE[33054]]</value>
         <value condition="$EXP[IsMainMenuOpened] + Integer.IsGreater(Window(Home).Property(ListItem.TotalEpisodes),1) + Integer.IsEqual(Window(Home).Property(ListItem.TotalSeasons),1)">$INFO[Window(Home).Property(ListItem.TotalSeasons),, $LOCALIZE[20373]]</value>
@@ -1213,7 +1214,7 @@
         <value condition="String.Contains(ListItem.mpaa,Brazil:18) | String.Contains(ListItem.mpaa,18 anos)">18</value>
 
         <value condition="!String.IsEmpty(ListItem.mpaa) + !String.Contains(ListItem.mpaa,not rated) + !String.Contains(ListItem.mpaa,n/a)">$INFO[ListItem.MPAA]</value>
-		<value condition="!String.IsEmpty(Container(99950).ListItem.mpaa)">$INFO[Container(99950).ListItem.MPAA]</value>
+		<value condition="!String.IsEmpty(Container(17195).ListItem.mpaa)">$INFO[Container(17195).ListItem.MPAA]</value>
 		
         <!-- home widgets -->
         <value condition="$EXP[IsMainMenuOpened] + [String.Contains(Window(Home).Property(ListItem.mpaa),US:G) | String.Contains(Window(Home).Property(ListItem.mpaa),USA:G) | String.Contains(Window(Home).Property(ListItem.mpaa),Rated G)]">G</value>
@@ -1302,7 +1303,7 @@
         <value condition="String.Contains(videoplayer.mpaa,Brazil:18) | String.Contains(videoplayer.mpaa,18 anos)">18</value>
 		
         <value condition="!String.IsEmpty(videoplayer.mpaa) + !String.Contains(videoplayer.mpaa,not rated) + !String.Contains(videoplayer.mpaa,n/a)">$INFO[videoplayer.mpaa]</value>
-		<value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.Player.MPAA))">$INFO[Window(Home).Property(TMDbHelper.Player.MPAA)]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(TMDbBingieHelper.Player.MPAA))">$INFO[Window(Home).Property(TMDbBingieHelper.Player.MPAA)]</value>
     </variable>
 
 	<!-- Resolution Info -->
@@ -1351,8 +1352,8 @@
 	
 	<variable name="ScreensaverWidget">
         <value condition="!String.IsEmpty(Skin.String(screensaver.bingie.path))">$INFO[Skin.String(screensaver.bingie.path)]</value>
-        <value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">plugin://script.bingie.widgets/?action=random&amp;mediatype=media&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
-		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.themoviedb.helper/?info=random_popular&amp;tmdb_type=both&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbHelper.Widgets.Reload)]</value>
+        <value condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">plugin://script.bingie.widgets/?action=random&amp;mediatype=media&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
+		<value condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">plugin://plugin.video.tmdb.bingie.helper/?info=random_popular&amp;tmdb_type=both&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbBingieHelper.Widgets.Reload)]</value>
     </variable>
 
     <!-- bingie home clearlogo -->
@@ -1363,7 +1364,7 @@
         <value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(artist.clearlogo))">$INFO[ListItem.Art(artist.clearlogo)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(albumartist.clearlogo))">$INFO[ListItem.Art(albumartist.clearlogo)]</value>
-		<value condition="!String.IsEmpty(Container(99950).ListItem.Art(clearlogo)) + Window.IsActive(Custom_1116_PVR_Hub.xml)">$INFO[Container(99950).ListItem.Art(clearlogo)]</value>
+		<value condition="!String.IsEmpty(Container(17195).ListItem.Art(clearlogo)) + Window.IsActive(Custom_1116_PVR_Hub.xml)">$INFO[Container(17195).ListItem.Art(clearlogo)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(icon)) + Window.IsActive(Custom_1116_PVR_Hub.xml)">$INFO[ListItem.Art(icon)]</value>
         <!-- home -->
         <value condition="$EXP[IsMainMenuOpened] + !String.IsEmpty(Window(Home).Property(ListItem.Art.tvshow.clearlogo))">$INFO[Window(Home).Property(ListItem.Art.tvshow.clearlogo)]</value>
@@ -1423,7 +1424,7 @@
         <value condition="$EXP[IsMainMenuOpened] + !String.IsEmpty(Window(Home).Property(ListItem.TotalSeasons)) + !Integer.IsEqual(Window(Home).Property(ListItem.TotalSeasons),0) + !Integer.IsEqual(Window(Home).Property(ListItem.TotalSeasons),1) + String.IsEqual(Window(Home).Property(ListItem.UnWatchedEpisodes),Window(Home).Property(ListItem.TotalEpisodes))">$LOCALIZE[31161]</value>
         <value condition="[String.IsEqual(ListItem.DBTYPE,album)  | String.IsEqual(Window(Home).Property(ListItem.DBTYPE),album)]">$INFO[ListItem.Album]</value>
         <value condition="!String.IsEmpty(ListItem.Artist)">$INFO[ListItem.TrackNumber,#, ]$INFO[ListItem.Title, ","]$INFO[ListItem.Album, (,)]</value>
-		<value condition="String.IsEmpty(ListItem.DBTYPE) + !String.IsEmpty(ListItem.StartTime) + !String.IsEmpty(Container(99950).ListItem.Art(clearlogo)) + !String.IsEmpty(Container(99950).ListItem.Tagline)">[B]$INFO[Container(99950).ListItem.Tagline][/B]$VAR[GetPVRTimings, (,)]</value>
+		<value condition="String.IsEmpty(ListItem.DBTYPE) + !String.IsEmpty(ListItem.StartTime) + !String.IsEmpty(Container(17195).ListItem.Art(clearlogo)) + !String.IsEmpty(Container(17195).ListItem.Tagline)">[B]$INFO[Container(17195).ListItem.Tagline][/B]$VAR[GetPVRTimings, (,)]</value>
         <value condition="String.IsEmpty(ListItem.DBTYPE) + !String.IsEmpty(ListItem.StartTime) + !String.IsEmpty(ListItem.Title)">[B]$INFO[ListItem.Title][/B]$VAR[GetPVRTimings, (,)]</value>
         <value condition="String.IsEmpty(ListItem.DBTYPE) + !String.IsEmpty(ListItem.StartTime) + !String.IsEmpty(ListItem.Label2)">[B]$INFO[ListItem.Label2][/B]$VAR[GetPVRTimings, (,)]</value>
     </variable>
@@ -1479,6 +1480,11 @@
         <value condition="!String.IsEmpty(Container(1508).ListItem.Art(thumb))">$INFO[Container(1508).ListItem.Art(thumb)]</value>
     </variable>
 	
+	<variable name="SpotlightClearLogoFallback">
+        <value condition="!String.IsEmpty(Container(1508).ListItem.Art(clearlogo))">$INFO[Container(1508).ListItem.Art(clearlogo)]</value>
+        <value condition="!String.IsEmpty(Container(1508).ListItem.Art(tvshow.clearlogo))">$INFO[Container(1508).ListItem.Art(tvshow.clearlogo)]</value>
+    </variable>
+	
 	<variable name="SpotlightPosterImage">
         <value condition="!String.IsEmpty(Container(1508).ListItem.Art(tvshow.poster))">$INFO[Container(1508).ListItem.Art(tvshow.poster)]</value>
         <value condition="!String.IsEmpty(Container(1508).ListItem.Art(poster))">$INFO[Container(1508).ListItem.Art(poster)]</value>
@@ -1488,38 +1494,39 @@
 		<value condition="!String.IsEmpty(Container(1508).ListItem.Art(thumb))">$INFO[Container(1508).ListItem.Art(thumb)]</value>
         <value condition="!String.IsEmpty(Container(1508).Listitem.Art(artist.thumb))">$INFO[Container(1508).Listitem.Art(artist.thumb)]</value>
 		<value condition="!String.IsEmpty(Container(1508).Listitem.Art(albumartist.thumb))">$INFO[Container(1508).Listitem.Art(albumartist.thumb)]</value>
+		<value condition="!String.IsEmpty(Container(1508).ListItem.Art(fanart))">$INFO[Container(1508).ListItem.Art(fanart)]</value>
     </variable>
 
     <!-- Bingie More Details (pseudo-random) -->
     <variable name="BingieMoreDetails">		
-        <value condition="Integer.IsLessOrEqual(System.Time(ss),15) + !String.IsEmpty(Container(99950).ListItem.Property(Awards))">$INFO[Container(99950).ListItem.Property(Awards)]</value>       
-        <value condition="Integer.IsLessOrEqual(System.Time(ss),30) + !String.IsEmpty(Container(99950).ListItem.Director) + !String.IsEmpty(Container(99950).ListItem.Cast) + $EXP[IsMovieDBType]">$INFO[Container(99950).ListItem.Director,$LOCALIZE[31541] ] $LOCALIZE[31149] $INFO[Container(99950).ListItem.Property(cast.1.name)]$INFO[Container(99950).ListItem.Property(cast.2.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.3.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.4.name), $LOCALIZE[31150] ] $LOCALIZE[31545].</value>	
-		<value condition="Integer.IsLessOrEqual(System.Time(ss),30) + !String.IsEmpty(Container(99950).ListItem.Property(Network.1.name)) + !String.IsEmpty(Container(99950).ListItem.Cast) + !$EXP[IsMovieDBType]">$INFO[Container(99950).ListItem.Property(Network.1.name)] $LOCALIZE[31546] $INFO[Container(99950).ListItem.Property(cast.1.name)]$INFO[Container(99950).ListItem.Property(cast.2.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.3.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.4.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.5.name), $LOCALIZE[31150] ] $LOCALIZE[31545].</value>
+        <value condition="Integer.IsLessOrEqual(System.Time(ss),15) + !String.IsEmpty(Container(17195).ListItem.Property(Awards))">$INFO[Container(17195).ListItem.Property(Awards)]</value>       
+        <value condition="Integer.IsLessOrEqual(System.Time(ss),30) + !String.IsEmpty(Container(17195).ListItem.Director) + !String.IsEmpty(Container(17195).ListItem.Cast) + $EXP[IsMovieDBType]">$INFO[Container(17195).ListItem.Director,$LOCALIZE[31541] ] $LOCALIZE[31149] $INFO[Container(17195).ListItem.Property(cast.1.name)]$INFO[Container(17195).ListItem.Property(cast.2.name),$COMMA ,]$INFO[Container(17195).ListItem.Property(cast.3.name),$COMMA ,]$INFO[Container(17195).ListItem.Property(cast.4.name), $LOCALIZE[31150] ] $LOCALIZE[31545].</value>	
+		<value condition="Integer.IsLessOrEqual(System.Time(ss),30) + !String.IsEmpty(Container(17195).ListItem.Property(Network.1.name)) + !String.IsEmpty(Container(17195).ListItem.Cast) + !$EXP[IsMovieDBType]">$INFO[Container(17195).ListItem.Property(Network.1.name)] $LOCALIZE[31546] $INFO[Container(17195).ListItem.Property(cast.1.name)]$INFO[Container(17195).ListItem.Property(cast.2.name),$COMMA ,]$INFO[Container(17195).ListItem.Property(cast.3.name),$COMMA ,]$INFO[Container(17195).ListItem.Property(cast.4.name),$COMMA ,]$INFO[Container(17195).ListItem.Property(cast.5.name), $LOCALIZE[31150] ] $LOCALIZE[31545].</value>
 		<value condition="Integer.IsLessOrEqual(System.Time(ss),45) + !String.IsEmpty(ListItem.Tagline)">$INFO[ListItem.Tagline]</value>
-        <value condition="[!String.IsEmpty(ListItem.Genre) | !String.IsEmpty(Container(99950).ListItem.Property(Set.Genres))] + Integer.IsLessOrEqual(System.Time(ss),60) + !String.Contains(ListItem.Genre,unknown)">$VAR[GetGenres]</value>
+        <value condition="[!String.IsEmpty(ListItem.Genre) | !String.IsEmpty(Container(17195).ListItem.Property(Set.Genres))] + Integer.IsLessOrEqual(System.Time(ss),60) + !String.Contains(ListItem.Genre,unknown)">$VAR[GetGenres]</value>
     </variable>
 	
     <!-- Bingie More Details Image (pseudo-random) -->
     <variable name="BingieMoreDetailsImage">		
-        <value condition="Integer.IsLessOrEqual(System.Time(ss),15) + !String.IsEmpty(Container(99950).ListItem.Property(Awards))">awards</value>       
-        <value condition="Integer.IsLessOrEqual(System.Time(ss),30) + !String.IsEmpty(Container(99950).ListItem.Director) + !String.IsEmpty(Container(99950).ListItem.Cast) + $EXP[IsMovieDBType]">director</value>	
-		<value condition="Integer.IsLessOrEqual(System.Time(ss),30) + !String.IsEmpty(Container(99950).ListItem.Property(Network.1.name)) + !String.IsEmpty(Container(99950).ListItem.Cast) + !$EXP[IsMovieDBType]">director</value>
+        <value condition="Integer.IsLessOrEqual(System.Time(ss),15) + !String.IsEmpty(Container(17195).ListItem.Property(Awards))">awards</value>       
+        <value condition="Integer.IsLessOrEqual(System.Time(ss),30) + !String.IsEmpty(Container(17195).ListItem.Director) + !String.IsEmpty(Container(17195).ListItem.Cast) + $EXP[IsMovieDBType]">director</value>	
+		<value condition="Integer.IsLessOrEqual(System.Time(ss),30) + !String.IsEmpty(Container(17195).ListItem.Property(Network.1.name)) + !String.IsEmpty(Container(17195).ListItem.Cast) + !$EXP[IsMovieDBType]">director</value>
 		<value condition="Integer.IsLessOrEqual(System.Time(ss),45) + !String.IsEmpty(ListItem.Tagline)">tags</value>
-        <value condition="[!String.IsEmpty(ListItem.Genre) | !String.IsEmpty(Container(99950).ListItem.Property(Set.Genres))] + Integer.IsLessOrEqual(System.Time(ss),60) + !String.Contains(ListItem.Genre,unknown)">genre</value>
+        <value condition="[!String.IsEmpty(ListItem.Genre) | !String.IsEmpty(Container(17195).ListItem.Property(Set.Genres))] + Integer.IsLessOrEqual(System.Time(ss),60) + !String.Contains(ListItem.Genre,unknown)">genre</value>
     </variable>
 	
 	<!-- Bingie More Details Spotlight(pseudo-random) -->
     <variable name="BingieMoreDetailsSpotlight">		    
-        <value condition="Integer.IsLessOrEqual(System.Time(ss),20) + !String.IsEmpty(Container(99950).ListItem.Director) + !String.IsEmpty(Container(99950).ListItem.Cast) + $EXP[IsMovieDBType]">$INFO[Container(99950).ListItem.Director,$LOCALIZE[31541] ] $LOCALIZE[31149] $INFO[Container(99950).ListItem.Property(cast.1.name)]$INFO[Container(99950).ListItem.Property(cast.2.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.3.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.4.name), $LOCALIZE[31150] ] $LOCALIZE[31545].</value>	
-		<value condition="Integer.IsLessOrEqual(System.Time(ss),20) + !String.IsEmpty(Container(99950).ListItem.Property(Network.1.name)) + !String.IsEmpty(Container(99950).ListItem.Cast) + !$EXP[IsMovieDBType]">$INFO[Container(99950).ListItem.Property(Network.1.name)] $LOCALIZE[31546] $INFO[Container(99950).ListItem.Property(cast.1.name)]$INFO[Container(99950).ListItem.Property(cast.2.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.3.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.4.name),$COMMA ,]$INFO[Container(99950).ListItem.Property(cast.5.name), $LOCALIZE[31150] ] $LOCALIZE[31545].</value>
+        <value condition="Integer.IsLessOrEqual(System.Time(ss),20) + !String.IsEmpty(Container(17195).ListItem.Director) + !String.IsEmpty(Container(17195).ListItem.Cast) + $EXP[IsMovieDBType]">$INFO[Container(17195).ListItem.Director,$LOCALIZE[31541] ] $LOCALIZE[31149] $INFO[Container(17195).ListItem.Property(cast.1.name)]$INFO[Container(17195).ListItem.Property(cast.2.name),$COMMA ,]$INFO[Container(17195).ListItem.Property(cast.3.name),$COMMA ,]$INFO[Container(17195).ListItem.Property(cast.4.name), $LOCALIZE[31150] ] $LOCALIZE[31545].</value>	
+		<value condition="Integer.IsLessOrEqual(System.Time(ss),20) + !String.IsEmpty(Container(17195).ListItem.Property(Network.1.name)) + !String.IsEmpty(Container(17195).ListItem.Cast) + !$EXP[IsMovieDBType]">$INFO[Container(17195).ListItem.Property(Network.1.name)] $LOCALIZE[31546] $INFO[Container(17195).ListItem.Property(cast.1.name)]$INFO[Container(17195).ListItem.Property(cast.2.name),$COMMA ,]$INFO[Container(17195).ListItem.Property(cast.3.name),$COMMA ,]$INFO[Container(17195).ListItem.Property(cast.4.name),$COMMA ,]$INFO[Container(17195).ListItem.Property(cast.5.name), $LOCALIZE[31150] ] $LOCALIZE[31545].</value>
 		<value condition="Integer.IsLessOrEqual(System.Time(ss),40) + !String.IsEmpty(Container(1508).ListItem.Tagline)">$INFO[Container(1508).ListItem.Tagline]</value>
         <value condition="!String.IsEmpty(Container(1508).ListItem.Genre) + Integer.IsLessOrEqual(System.Time(ss),60) + !String.Contains(Container(1508).ListItem.Genre,unknown)">$INFO[Container(1508).ListItem.Genre]</value>
     </variable>
 	
 	<!-- Bingie More Details Image Spotlight (pseudo-random) -->
     <variable name="BingieMoreDetailsImageSpotlight">		
-        <value condition="Integer.IsLessOrEqual(System.Time(ss),20) + !String.IsEmpty(Container(99950).ListItem.Director) + !String.IsEmpty(Container(99950).ListItem.Cast) + $EXP[IsMovieDBType]">director</value>	
-		<value condition="Integer.IsLessOrEqual(System.Time(ss),20) + !String.IsEmpty(Container(99950).ListItem.Property(Network.1.name)) + !String.IsEmpty(Container(99950).ListItem.Cast) + !$EXP[IsMovieDBType]">director</value>
+        <value condition="Integer.IsLessOrEqual(System.Time(ss),20) + !String.IsEmpty(Container(17195).ListItem.Director) + !String.IsEmpty(Container(17195).ListItem.Cast) + $EXP[IsMovieDBType]">director</value>	
+		<value condition="Integer.IsLessOrEqual(System.Time(ss),20) + !String.IsEmpty(Container(17195).ListItem.Property(Network.1.name)) + !String.IsEmpty(Container(17195).ListItem.Cast) + !$EXP[IsMovieDBType]">director</value>
 		<value condition="Integer.IsLessOrEqual(System.Time(ss),40) + !String.IsEmpty(Container(1508).ListItem.Tagline)">tags</value>
         <value condition="!String.IsEmpty(Container(1508).ListItem.Genre) + Integer.IsLessOrEqual(System.Time(ss),60) + !String.Contains(Container(1508).ListItem.Genre,unknown)">genre</value>
     </variable>
@@ -1541,7 +1548,7 @@
     <!-- 'SxxExx "episode_title"' format-->
     <variable name="BingieDialogEpisodeInfoLabel">
         <value condition="[String.IsEqual(ListItem.DBType,tvshow) | Container.Content(tvshows)] + !String.IsEmpty(Container(5050).ListItem.Title) + Skin.HasSetting(ShowEpisodePlotInfoDialog) + !String.IsEmpty(ListItem.DBID)">$INFO[Container(5050).ListItem.Title]</value>
-		<value condition="[String.IsEqual(ListItem.DBType,tvshow) | Container.Content(tvshows)] + !String.IsEmpty(Container(1234).ListItem.Title) + Skin.HasSetting(ShowEpisodePlotInfoDialog) + Control.IsVisible(1234) + String.IsEqual(ListItem.Path,plugin://plugin.video.themoviedb.helper/) + !Container(1234).IsUpdating + !Integer.IsEqual(Container(1234).NumItems,0)">$INFO[Container(1234).ListItem.Title]</value>
+		<value condition="[String.IsEqual(ListItem.DBType,tvshow) | Container.Content(tvshows)] + !String.IsEmpty(Container(1234).ListItem.Title) + Skin.HasSetting(ShowEpisodePlotInfoDialog) + Control.IsVisible(1234) + String.IsEqual(ListItem.Path,plugin://plugin.video.tmdb.bingie.helper/) + !Container(1234).IsUpdating + !Integer.IsEqual(Container(1234).NumItems,0)">$INFO[Container(1234).ListItem.Title]</value>
 		<value condition="[String.IsEqual(ListItem.DBType,episode) | Container.Content(episodes)] + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
     </variable>
 
@@ -1565,7 +1572,7 @@
         <value condition="$EXP[IsMainMenuOpened] + !String.IsEmpty(Window(Home).Property(ListItem.PictureDesc))">$INFO[Window(Home).Property(ListItem.PictureDesc)]</value>
         <value condition="$EXP[IsMainMenuOpened] + !String.IsEmpty(Window(Home).Property(ListItem.PictureComment))">$INFO[Window(Home).Property(ListItem.PictureComment)]</value>
         <value condition="$EXP[IsMainMenuOpened] + !String.IsEmpty(Window(Home).Property(ListItem.PictureKeywords))">$INFO[Window(Home).Property(ListItem.PictureKeywords)]</value>
-		<value condition="!String.IsEmpty(Container(99950).ListItem.Plot)">$INFO[Container(99950).ListItem.Plot]</value>
+		<value condition="!String.IsEmpty(Container(17195).ListItem.Plot)">$INFO[Container(17195).ListItem.Plot]</value>
     </variable>
 	
 	<variable name="BingieDialogInfoPlot">
@@ -1574,8 +1581,8 @@
         <value condition="![String.IsEqual(ListItem.DBType,tvshow) | Container.Content(tvshows)] + !String.IsEmpty(ListItem.Property(Plot))">$INFO[ListItem.Property(Plot)]</value>
 		<value condition="[String.IsEqual(ListItem.DBType,tvshow) | Container.Content(tvshows)] + !String.IsEmpty(Container(5050).ListItem.Plot) + Skin.HasSetting(ShowEpisodePlotInfoDialog) + Control.IsVisible(5050)">$INFO[Container(5050).ListItem.Plot]</value>
         <value condition="[String.IsEqual(ListItem.DBType,tvshow) | Container.Content(tvshows)] + !String.IsEmpty(Container(5050).ListItem.Property(Plot)) + Skin.HasSetting(ShowEpisodePlotInfoDialog) + Control.IsVisible(5050)">$INFO[Container(5050).ListItem.Property(Plot)]</value>
-		<value condition="[String.IsEqual(ListItem.DBType,tvshow) | Container.Content(tvshows)] + !String.IsEmpty(Container(1234).ListItem.Plot) + Skin.HasSetting(ShowEpisodePlotInfoDialog) + Control.IsVisible(1234) + String.IsEqual(ListItem.Path,plugin://plugin.video.themoviedb.helper/) + !Container(1234).IsUpdating + !Integer.IsEqual(Container(1234).NumItems,0)">$INFO[Container(1234).ListItem.Plot]</value>
-        <value condition="[String.IsEqual(ListItem.DBType,tvshow) | Container.Content(tvshows)] + !String.IsEmpty(Container(1234).ListItem.Property(Plot)) + Skin.HasSetting(ShowEpisodePlotInfoDialog) + Control.IsVisible(1234) + String.IsEqual(ListItem.Path,plugin://plugin.video.themoviedb.helper/) + !Container(1234).IsUpdating + !Integer.IsEqual(Container(1234).NumItems,0)">$INFO[Container(1234).ListItem.Property(Plot)]</value>
+		<value condition="[String.IsEqual(ListItem.DBType,tvshow) | Container.Content(tvshows)] + !String.IsEmpty(Container(1234).ListItem.Plot) + Skin.HasSetting(ShowEpisodePlotInfoDialog) + Control.IsVisible(1234) + String.IsEqual(ListItem.Path,plugin://plugin.video.tmdb.bingie.helper/) + !Container(1234).IsUpdating + !Integer.IsEqual(Container(1234).NumItems,0)">$INFO[Container(1234).ListItem.Plot]</value>
+        <value condition="[String.IsEqual(ListItem.DBType,tvshow) | Container.Content(tvshows)] + !String.IsEmpty(Container(1234).ListItem.Property(Plot)) + Skin.HasSetting(ShowEpisodePlotInfoDialog) + Control.IsVisible(1234) + String.IsEqual(ListItem.Path,plugin://plugin.video.tmdb.bingie.helper/) + !Container(1234).IsUpdating + !Integer.IsEqual(Container(1234).NumItems,0)">$INFO[Container(1234).ListItem.Property(Plot)]</value>
 		<value condition="[String.IsEqual(ListItem.DBType,tvshow) | Container.Content(tvshows)] + !String.IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
         <value condition="[String.IsEqual(ListItem.DBType,tvshow) | Container.Content(tvshows)] + !String.IsEmpty(ListItem.Property(Plot))">$INFO[ListItem.Property(Plot)]</value>
         <value condition="!String.IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
@@ -1590,12 +1597,12 @@
         <value condition="$EXP[IsMainMenuOpened] + !String.IsEmpty(Window(Home).Property(ListItem.PictureDesc))">$INFO[Window(Home).Property(ListItem.PictureDesc)]</value>
         <value condition="$EXP[IsMainMenuOpened] + !String.IsEmpty(Window(Home).Property(ListItem.PictureComment))">$INFO[Window(Home).Property(ListItem.PictureComment)]</value>
         <value condition="$EXP[IsMainMenuOpened] + !String.IsEmpty(Window(Home).Property(ListItem.PictureKeywords))">$INFO[Window(Home).Property(ListItem.PictureKeywords)]</value>
-		<value condition="!String.IsEmpty(Container(99950).ListItem.Plot)">$INFO[Container(99950).ListItem.Plot]</value>
+		<value condition="!String.IsEmpty(Container(17195).ListItem.Plot)">$INFO[Container(17195).ListItem.Plot]</value>
     </variable>
 
     <variable name="BingieSpotlightPlot">
         <value condition="!String.IsEmpty(Container(1508).ListItem.Plot)">$INFO[Container(1508).ListItem.Plot]</value>
-		<value condition="!String.IsEmpty(Container(99950).ListItem.Plot)">$INFO[Container(99950).ListItem.Plot]</value>
+		<value condition="!String.IsEmpty(Container(17195).ListItem.Plot)">$INFO[Container(17195).ListItem.Plot]</value>
 		<value condition="!String.IsEmpty(Container(1508).ListItem.Property(Album_Description))">$INFO[Container(1508).ListItem.Property(Album_Description)]</value>
         <value condition="!String.IsEmpty(Container(1508).ListItem.Property(Artist_Description))">$INFO[Container(1508).ListItem.Property(Artist_Description)]</value>
     </variable>
@@ -1743,36 +1750,17 @@
                 <onright condition="Integer.IsGreater(Container(4445).NumItems,0)">4444</onright>
                 <onright condition="Integer.IsEqual(Container(4445).NumItems,0)">ClearProperty(ShowViewSubMenu,Home)</onright>
                 <onright condition="Integer.IsEqual(Container(4445).NumItems,0) + !Window.IsActive(1109)">77777</onright>
-                <onright condition="Integer.IsEqual(Container(4445).NumItems,0) + Window.IsActive(1109)">9000</onright>
+                <onright condition="Integer.IsEqual(Container(4445).NumItems,0) + Window.IsActive(1109) + String.IsEmpty(Window.Property(KeepSuggestions))">9000</onright>
+				<onright condition="Integer.IsEqual(Container(4445).NumItems,0) + Window.IsActive(1109) + !String.IsEmpty(Window.Property(KeepSuggestions))">1007</onright>
                 <onback>ClearProperty(ShowViewSubMenu,Home)</onback>
                 <onback condition="!Window.IsActive(1109)">77777</onback>
-				<onback condition="Window.IsActive(1109)">9000</onback>
-				<onup condition="Control.IsVisible(40000)">40000</onup>
+				<onback condition="Window.IsActive(1109) + String.IsEmpty(Window.Property(KeepSuggestions))">9000</onback>
+				<onback condition="Window.IsActive(1109) + !String.IsEmpty(Window.Property(KeepSuggestions))">1007</onback>
+				<onup>40000</onup>
                 <ondown>40003</ondown>
-                <itemlayout height="82" width="bingie_menu_width" condition="[Control.HasFocus(900) | Control.HasFocus(4444) | Control.HasFocus(40000) | Control.HasFocus(40003)]">
-                    <!--this red line just for slim menu-->
-                    <include content="Bingie_Menu_Current_Indicator"> 
-                         <param name="keepvisible" value="true" />
-                         <param name="visibility" value="$EXP[IsMenuEntryActive] + !$EXP[IsMainMenuOpened]" />
-                         <param name="left" value="70" /> 
-                     </include> 
-					 <!--added to keep the red line stationary on sideblade menu instead of moving with focus-->
-						<include content="Bingie_Menu_Current_Indicator"> 
-                        <param name="visibility" value="$EXP[IsMainMenuOpened] + $EXP[IsMenuEntryActive]" />
-						<param name="left" value="70" />
-						<param name="includeAnimCond" value="true" />
-						</include>
-                    <include content="Bingie_Menu_Icon">
-                        <param name="includeAnimCond" value="true" />
-                    </include>
-                    <include content="Bingie_Menu_Label">
-                        <param name="textcolor" value="$INFO[Skin.String(MainMenuTextColor)]" />
-                    </include>
-                </itemlayout>
 				<itemlayout height="82" width="bingie_menu_width" condition="![Control.HasFocus(900) | Control.HasFocus(4444) | Control.HasFocus(40000) | Control.HasFocus(40003)]">
                     <!--this red line just for slim menu-->
                     <include content="Bingie_Menu_Current_Indicator"> 
-                         <param name="keepvisible" value="true" />
                          <param name="visibility" value="$EXP[IsMenuEntryActive] + !$EXP[IsMainMenuOpened]" />
                          <param name="left" value="70" /> 
 						 <param name="includeAnimCond" value="true" />
@@ -1782,7 +1770,7 @@
                         <param name="visibility" value="$EXP[IsMainMenuOpened] + $EXP[IsMenuEntryActive]" />
 						<param name="left" value="70" />
 						</include>
-                    <include content="Bingie_Menu_IconFOCUS">
+                    <include content="Bingie_Menu_IconFOCUS_2">
                         <param name="includeAnimCond" value="true" />
                     </include>
 					<include content="Bingie_Menu_Label">
@@ -1817,7 +1805,6 @@
                 </focusedlayout>
                 <focusedlayout height="82" width="bingie_menu_width" condition="![Control.HasFocus(900) | Control.HasFocus(4444)]">
 					<include content="Bingie_Menu_Current_Indicator"> 
-                         <param name="keepvisible" value="true" />
                          <param name="visibility" value="$EXP[IsMenuEntryActive] + !$EXP[IsMainMenuOpened]" />
                          <param name="left" value="70" /> 
 						 <param name="includeAnimCond" value="true" />
@@ -1944,8 +1931,7 @@
                 <itemlayout width="360" height="50">
                     <include content="Bingie_Submenu_Label"></include>
                 </itemlayout>
-                <focusedlayout width="360" height="50" condition="!Control.HasFocus(900)">
-				
+                <focusedlayout width="360" height="50" condition="!Control.HasFocus(900)">				
                     <include content="Bingie_Submenu_LabelFOCUS"></include>
                     <control type="button">
                         <label/>
@@ -1969,7 +1955,6 @@
     </include>
 	<!-- Bingie Menu  Indicator - Red line Under Menu Icons-->
     <include name="Bingie_Menu_Current_Indicator">
-        <param name="keepvisible" default="false" />
         <definition>
 		<control type="group">
 			<include condition="$PARAM[includeAnimCond]">Bingie_Menu_Icon_Anim</include>
@@ -2037,6 +2022,18 @@
             <control type="image">
                 <include>Bingie_Menu_Icon_Defs</include>
                 <colordiffuse>$INFO[Skin.String(MainMenuFocusButtonColor)]</colordiffuse>
+            </control>
+        </control>
+    </include>
+	<include name="Bingie_Menu_IconFOCUS_2">
+        <control type="group">
+            <include condition="$PARAM[includeAnimCond]">Bingie_Menu_Icon_Anim</include>
+            <left>70</left>
+            <height>100%</height>
+            <top>35</top>
+            <control type="image">
+                <include>Bingie_Menu_Icon_Defs</include>
+                <colordiffuse>$VAR[MenuIconColor]</colordiffuse>
             </control>
         </control>
     </include>
@@ -2129,7 +2126,7 @@
 				<include content="right" condition="$EXP[IsBingieCategoriesActive]">
                 <param name="right" value="130" />
                 </include>
-				<right>14</right>
+				<right>10</right>
                 <height></height>
                 <width></width>
 				<top>-30</top>
@@ -2170,25 +2167,67 @@
     </include>
 	
     <include name="Bingie_Screens_Fixed_Focus_Frame">
-		<!-- Landscape Fixed Frame -->
-        <include content="Bingie_Screens_Fixed_Focus_Frame_Base" condition="String.IsEqual(Skin.String(widgetstyle),landscape)">
-            <param name="visibility" value="ControlGroup(77777).HasFocus() + !String.IsEmpty(Container(77777).CurrentItem) + !String.IsEmpty(ListItem.Label) + ![$EXP[IsCurrentWidgetSpotlight] | Window.IsActive(1120)]"/>
-            <param name="width" value="landscape_width"/>
-            <param name="height" value="218"/>
-            <texture background="true" border="10">$INFO[Skin.String(thumbsborder_focused),bingie/border/thumb_fo_,.png]</texture>
-        </include>
 		<!-- Poster Fixed Frame -->
         <include content="Bingie_Screens_Fixed_Focus_Frame_Base" condition="String.IsEqual(Skin.String(widgetstyle),poster)">
-            <param name="visibility" value="ControlGroup(77777).HasFocus() + !String.IsEmpty(Container(77777).CurrentItem) + !String.IsEmpty(ListItem.Label) + ![$EXP[IsCurrentWidgetSpotlight] | Window.IsActive(1120)]"/>
+            <param name="visibility" value="ControlGroup(77777).HasFocus() + !String.IsEmpty(Container(77777).CurrentItem) + !String.IsEmpty(ListItem.Label) + !String.IsEqual(window(home).Property(widgetstyle),landscape) + !String.IsEqual(window(home).Property(widgetstyle),square) + !$EXP[IsCurrentWidgetSpotlight]"/>
             <param name="width" value="240" />
             <param name="height" value="340" />
             <texture background="true" border="12">$INFO[Skin.String(thumbsborder_focused),bingie/border/poster_fo_,.png]</texture>
         </include>
-		<!-- Square Fixed Frame -->
-        <include content="Bingie_Screens_Fixed_Focus_Frame_Base" condition="String.IsEqual(Skin.String(widgetstyle),square) | Window.IsActive(1120)">
-           <param name="visibility" value="ControlGroup(77777).HasFocus() + !String.IsEmpty(Container(77777).CurrentItem) + !String.IsEmpty(ListItem.Label) + !$EXP[IsCurrentWidgetSpotlight]"/>
+		<!-- Poster Fixed Frame -->
+        <include content="Bingie_Screens_Fixed_Focus_Frame_Base" condition="String.IsEqual(Skin.String(widgetstyle),landscape)">
+            <param name="visibility" value="ControlGroup(77777).HasFocus() + !String.IsEmpty(Container(77777).CurrentItem) + !String.IsEmpty(ListItem.Label) + ![$EXP[IsCurrentWidgetSpotlight] | String.IsEqual(window(home).Property(widgetstyle),landscape) | String.IsEqual(window(home).Property(widgetstyle),square)] + String.IsEqual(window(home).Property(widgetstyle),poster)"/>
             <param name="width" value="240" />
-            <param name="height" value="240" />
+            <param name="height" value="340" />
+            <texture background="true" border="12">$INFO[Skin.String(thumbsborder_focused),bingie/border/poster_fo_,.png]</texture>
+        </include>
+		<!-- Poster Fixed Frame -->
+        <include content="Bingie_Screens_Fixed_Focus_Frame_Base" condition="String.IsEqual(Skin.String(widgetstyle),square)">
+            <param name="visibility" value="ControlGroup(77777).HasFocus() + !String.IsEmpty(Container(77777).CurrentItem) + !String.IsEmpty(ListItem.Label) + ![$EXP[IsCurrentWidgetSpotlight] | String.IsEqual(window(home).Property(widgetstyle),landscape) | String.IsEqual(window(home).Property(widgetstyle),square)] + String.IsEqual(window(home).Property(widgetstyle),poster)"/>
+            <param name="width" value="240" />
+            <param name="height" value="340" />
+            <texture background="true" border="12">$INFO[Skin.String(thumbsborder_focused),bingie/border/poster_fo_,.png]</texture>
+        </include>
+		<!-- Landscape Fixed Frame -->
+        <include content="Bingie_Screens_Fixed_Focus_Frame_Base" condition="String.IsEqual(Skin.String(widgetstyle),landscape)">
+            <param name="visibility" value="ControlGroup(77777).HasFocus() + !String.IsEmpty(Container(77777).CurrentItem) + !String.IsEmpty(ListItem.Label) + !String.IsEqual(window(home).Property(widgetstyle),poster) + !String.IsEqual(window(home).Property(widgetstyle),square) + !$EXP[IsCurrentWidgetSpotlight]"/>
+            <param name="width" value="419" />
+            <param name="height" value="242" />
+            <texture background="true" border="12">$INFO[Skin.String(thumbsborder_focused),bingie/border/thumb_fo_,.png]</texture>
+        </include>
+		<!-- Landscape Fixed Frame -->
+        <include content="Bingie_Screens_Fixed_Focus_Frame_Base" condition="String.IsEqual(Skin.String(widgetstyle),poster)">
+            <param name="visibility" value="ControlGroup(77777).HasFocus() + !String.IsEmpty(Container(77777).CurrentItem) + !String.IsEmpty(ListItem.Label) + ![$EXP[IsCurrentWidgetSpotlight] | String.IsEqual(window(home).Property(widgetstyle),poster) | String.IsEqual(window(home).Property(widgetstyle),square)] + String.IsEqual(window(home).Property(widgetstyle),landscape)"/>
+            <param name="width" value="419" />
+            <param name="height" value="242" />
+            <texture background="true" border="12">$INFO[Skin.String(thumbsborder_focused),bingie/border/thumb_fo_,.png]</texture>
+        </include>
+		<!-- Landscape Fixed Frame -->
+        <include content="Bingie_Screens_Fixed_Focus_Frame_Base" condition="String.IsEqual(Skin.String(widgetstyle),square)">
+            <param name="visibility" value="ControlGroup(77777).HasFocus() + !String.IsEmpty(Container(77777).CurrentItem) + !String.IsEmpty(ListItem.Label) + ![$EXP[IsCurrentWidgetSpotlight] | String.IsEqual(window(home).Property(widgetstyle),poster) | String.IsEqual(window(home).Property(widgetstyle),square)] + String.IsEqual(window(home).Property(widgetstyle),landscape)"/>
+            <param name="width" value="419" />
+            <param name="height" value="242" />
+            <texture background="true" border="12">$INFO[Skin.String(thumbsborder_focused),bingie/border/thumb_fo_,.png]</texture>
+        </include>
+		<!-- Square Fixed Frame -->
+        <include content="Bingie_Screens_Fixed_Focus_Frame_Base" condition="String.IsEqual(Skin.String(widgetstyle),square)">
+           <param name="visibility" value="ControlGroup(77777).HasFocus() + !String.IsEmpty(Container(77777).CurrentItem) + !String.IsEmpty(ListItem.Label) + !String.IsEqual(window(home).Property(widgetstyle),landscape) + !String.IsEqual(window(home).Property(widgetstyle),poster) + !$EXP[IsCurrentWidgetSpotlight]"/>
+            <param name="width" value="280" />
+            <param name="height" value="280" />
+            <texture background="true" border="12">$INFO[Skin.String(thumbsborder_focused),bingie/border/poster_fo_,.png]</texture>
+        </include>
+		<!-- Square Fixed Frame -->
+        <include content="Bingie_Screens_Fixed_Focus_Frame_Base" condition="String.IsEqual(Skin.String(widgetstyle),poster)">
+           <param name="visibility" value="ControlGroup(77777).HasFocus() + !String.IsEmpty(Container(77777).CurrentItem) + !String.IsEmpty(ListItem.Label) + ![$EXP[IsCurrentWidgetSpotlight] | String.IsEqual(window(home).Property(widgetstyle),landscape) | String.IsEqual(window(home).Property(widgetstyle),poster)] + String.IsEqual(window(home).Property(widgetstyle),square)"/>
+            <param name="width" value="280" />
+            <param name="height" value="280" />
+            <texture background="true" border="12">$INFO[Skin.String(thumbsborder_focused),bingie/border/poster_fo_,.png]</texture>
+        </include>
+		<!-- Square Fixed Frame -->
+        <include content="Bingie_Screens_Fixed_Focus_Frame_Base" condition="String.IsEqual(Skin.String(widgetstyle),landscape)">
+           <param name="visibility" value="ControlGroup(77777).HasFocus() + !String.IsEmpty(Container(77777).CurrentItem) + !String.IsEmpty(ListItem.Label) + ![$EXP[IsCurrentWidgetSpotlight] | String.IsEqual(window(home).Property(widgetstyle),landscape) | String.IsEqual(window(home).Property(widgetstyle),poster)] + String.IsEqual(window(home).Property(widgetstyle),square)"/>
+            <param name="width" value="280" />
+            <param name="height" value="280" />
             <texture background="true" border="12">$INFO[Skin.String(thumbsborder_focused),bingie/border/poster_fo_,.png]</texture>
         </include>
     </include>
@@ -2217,7 +2256,7 @@
             <onright condition="String.IsEmpty(Window(Home).Property(spotlightinfo))">SetProperty(spotlightinfo,1,Home)</onright>
             <onleft condition="!String.IsEmpty(Window(Home).Property(spotlightinfo))">ClearProperty(spotlightinfo,Home)</onleft>
             <onleft condition="String.IsEmpty(Window(Home).Property(spotlightinfo)) + $EXP[IsPlayingUnrecognizedContent]">SetProperty(KeepPlayingPreview,1,Home)</onleft>
-            <onleft condition="String.IsEmpty(Window(Home).Property(spotlightinfo))">900</onleft>
+            <onleft condition="String.IsEmpty(Window(Home).Property(spotlightinfo))">SetFocus(900,$INFO[Window(Home).Property(menupos)])</onleft>
             <onunfocus>ClearProperty(spotlightinfo,home)</onunfocus>
 			<onfocus>SetProperty(FullImage,1,Home)</onfocus>
 			<onunfocus>ClearProperty(FullImage,home)</onunfocus>
@@ -2226,7 +2265,7 @@
 			<onfocus condition="!String.IsEmpty(Window(Home).Property(KeepPlayingPreview))">ClearProperty(KeepPlayingPreview,home)</onfocus>
 			<onfocus condition="!String.IsEmpty(Window(Home).Property(DelayTransition))">ClearProperty(DelayTransition,home)</onfocus>
             <onback>900</onback>
-
+			<onback>SetFocus(900,$INFO[Window(Home).Property(menupos)])</onback>
 			<onclick condition="String.IsEmpty(Window(Home).Property(FullImage))">SetProperty(FullImage,1,Home)</onclick>
 			<onclick condition="!String.IsEmpty(Window(Home).Property(FullImage))">SetProperty(EpisodesAnimation,1,Home)</onclick>
             <onclick condition="!String.IsEmpty(Window(Home).Property(spotlightinfo))">Action(info)</onclick>
@@ -2371,35 +2410,20 @@
         <value condition="Window.IsActive(Home) + !String.IsEmpty(Skin.String(spotlighthome.path))">$INFO[Skin.String(spotlighthome.path)]</value>
         <value condition="Window.IsActive(Home)">$VAR[DefSpotlightWidgetContent]</value>
         <!-- movies hub -->
-        <value condition="Window.IsActive(1111) + !String.IsEmpty(Skin.String(spotlightmovieslocal.path)) + Skin.HasSetting(HubLocalWidgetsDefaults)">$INFO[Skin.String(spotlightmovieslocal.path)]</value>
-        <value condition="Window.IsActive(1111) + Skin.String(spotlightmovieslocal.label, default) + Skin.HasSetting(HubLocalWidgetsDefaults)">special://skin/extras/widgetplaylists/randommovies.xsp</value>
-		<value condition="Window.IsActive(1111) + !String.IsEmpty(Skin.String(spotlightmoviesaddon.path)) + Skin.HasSetting(HubAddonWidgetsDefaults)">$INFO[Skin.String(spotlightmoviesaddon.path)]</value>
-        <value condition="Window.IsActive(1111) + Skin.String(spotlightmoviesaddon.label, default) + Skin.HasSetting(HubAddonWidgetsDefaults)">plugin://plugin.video.themoviedb.helper/?info=random_popular&amp;tmdb_type=movie&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbHelper.Widgets.Reload)]</value>
-        <value condition="Window.IsActive(1111)"/>
+        <value condition="Window.IsActive(1111) + !String.IsEmpty(Skin.String(spotlightmoviesl.path))">$INFO[Skin.String(spotlightmovies.path)]</value>
+        <value condition="Window.IsActive(1111)">$VAR[DefSpotlightMovieHubContent]</value>
         <!-- tvshows hub -->
-		<value condition="Window.IsActive(1110) + !String.IsEmpty(Skin.String(spotlighttvshowslocal.path)) + Skin.HasSetting(HubLocalWidgetsDefaults)">$INFO[Skin.String(spotlighttvshowsaddon.path)]</value>
-        <value condition="Window.IsActive(1110) + Skin.String(spotlighttvshowslocal.label, default) + Skin.HasSetting(HubLocalWidgetsDefaults)">special://skin/extras/widgetplaylists/randomtvshows.xsp</value>
-		<value condition="Window.IsActive(1110) + !String.IsEmpty(Skin.String(spotlighttvshowsaddon.path)) + Skin.HasSetting(HubAddonWidgetsDefaults)">$INFO[Skin.String(spotlighttvshowsaddon.path)]</value>
-        <value condition="Window.IsActive(1110) + Skin.String(spotlighttvshowsaddon.label, default) + Skin.HasSetting(HubAddonWidgetsDefaults)">plugin://plugin.video.themoviedb.helper/?info=random_popular&amp;tmdb_type=tv&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbHelper.Widgets.Reload)]</value>
-        <value condition="Window.IsActive(1110)"/>
+		<value condition="Window.IsActive(1110) + !String.IsEmpty(Skin.String(spotlighttvshows.path))">$INFO[Skin.String(spotlighttvshows.path)]</value>
+		<value condition="Window.IsActive(1110)">$VAR[DefSpotlightTVShowHubContent]</value>
 		<!-- new hub -->
-		<value condition="Window.IsActive(1112) + !String.IsEmpty(Skin.String(spotlightnewlocal.path)) + Skin.HasSetting(HubLocalWidgetsDefaults)">$INFO[Skin.String(spotlightnewlocal.path)]</value>
-        <value condition="Window.IsActive(1112) + Skin.String(spotlightnewlocal.label, default) + Skin.HasSetting(HubLocalWidgetsDefaults)">plugin://script.bingie.widgets/?action=newrelease&amp;mediatype=media&amp;limit=5&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
-		<value condition="Window.IsActive(1112) + !String.IsEmpty(Skin.String(spotlightnewaddon.path)) + Skin.HasSetting(HubAddonWidgetsDefaults)">$INFO[Skin.String(spotlightnewaddon.path)]</value>
-        <value condition="Window.IsActive(1112) + Skin.String(spotlightnewaddon.label, default) + Skin.HasSetting(HubAddonWidgetsDefaults)">plugin://plugin.video.themoviedb.helper/?info=random_trending&amp;tmdb_type=both&amp;widget=true&amp;reload=$INFO[Window(Home).Property(TMDbHelper.Widgets.Reload)]</value>
-        <value condition="Window.IsActive(1112)"/>
+		<value condition="Window.IsActive(1112) + !String.IsEmpty(Skin.String(spotlightnew.path))">$INFO[Skin.String(spotlightnew.path)]</value>
+        <value condition="Window.IsActive(1112)">$VAR[DefSpotlightNewHubContent]</value>
         <!-- my hub -->
         <value condition="Window.IsActive(1113) + !String.IsEmpty(Skin.String(spotlightmyhub.path))">$INFO[Skin.String(spotlightmyhub.path)]</value>
         <value condition="Window.IsActive(1113)"/>		
-        <!-- pvr hub -->
-        <value condition="Window.IsActive(1116) + !String.IsEmpty(Skin.String(spotlightmyhub.path))">$INFO[Skin.String(spotlightpvr.path)]</value>
-        <value condition="Window.IsActive(1116)"/>
 		<!-- music hub -->
         <value condition="Window.IsActive(1120) + !String.IsEmpty(Skin.String(spotlightmusic.path))">$INFO[Skin.String(spotlightmusic.path)]</value>
-        <value condition="Window.IsActive(1120) + Skin.String(spotlightmusic.label, default)">special://skin/extras/widgetplaylists/randomsongs.xsp</value>
-        <value condition="Window.IsActive(1120)"/>
-        <!-- container screens -->
-        <value condition="$EXP[IsBingieListsActive]"/>
+        <value condition="Window.IsActive(1120)">special://skin/extras/widgetplaylists/randomsongs.xsp</value>
     </variable>
 
 <!-- SPOTLIGHT IMAGE MAIN HOME--> 
@@ -2564,7 +2588,7 @@
         <definition>
             <control type="group">
 				<visible>!String.IsEqual(Skin.String(mpaa_style),uk_mpaa)</visible>
-                <visible>!String.IsEmpty(ListItem.Mpaa) | !String.IsEmpty(Container(99950).ListItem.mpaa) + $EXP[EXP_TMDBHelper_Metadata]</visible>
+                <visible>!String.IsEmpty(ListItem.Mpaa) | !String.IsEmpty(Container(17195).ListItem.mpaa) + $EXP[EXP_TMDbBingieHelper_Metadata]</visible>
                 <right>-160</right>
                 <top>684</top>
                 <height>54</height>
@@ -2619,12 +2643,12 @@
 				String.IsEqual(ListItem.mpaa,TV-Y) | String.Contains(ListItem.mpaa,TV-Y7) | String.Contains(ListItem.mpaa,TV-G) | String.Contains(ListItem.mpaa,TV-PG) | String.Contains(ListItem.mpaa,TV-14) | String.Contains(ListItem.mpaa,TV-MA) | String.Contains(ListItem.mpaa,UK:U) | String.Contains(ListItem.mpaa,GB-U) | String.Contains(ListItem.mpaa,Rated U) | String.IsEqual(ListItem.mpaa,U) | 
 				String.Contains(ListItem.mpaa,UK:PG) | String.Contains(ListItem.mpaa,GB-PG) | String.Contains(ListItem.mpaa,Guidance) | String.Contains(ListItem.mpaa,UK:12A) | String.Contains(ListItem.mpaa,GB-12A) | String.Contains(ListItem.mpaa,Rated 12A) | String.IsEqual(ListItem.mpaa,12A) | String.IsEqual(ListItem.mpaa,UK:12) | String.IsEqual(ListItem.mpaa,GB-12) | String.IsEqual(ListItem.mpaa,Rated 12) | String.IsEqual(ListItem.mpaa,12) | 
 				String.Contains(ListItem.mpaa,UK:15) | String.Contains(ListItem.mpaa,GB-15) | String.Contains(ListItem.mpaa,Rated 15) | String.IsEqual(ListItem.mpaa,15) | String.Contains(ListItem.mpaa,Mature) | String.Contains(ListItem.mpaa,UK:18) | String.Contains(ListItem.mpaa,GB-18) | String.Contains(ListItem.mpaa,Rated 18) | String.IsEqual(ListItem.mpaa,18)]] 
-				| [!String.IsEmpty(Container(99950).ListItem.mpaa) + [String.Contains(Container(99950).ListItem.mpaa,US:G) | String.Contains(Container(99950).ListItem.mpaa,USA:G) | String.Contains(Container(99950).ListItem.mpaa,Rated G) | String.IsEqual(Container(99950).ListItem.mpaa,G) |
-				String.Contains(Container(99950).ListItem.mpaa,PG-13) | String.IsEqual(Container(99950).ListItem.mpaa,US:PG) | String.IsEqual(Container(99950).ListItem.mpaa,USA:PG) | String.IsEqual(Container(99950).ListItem.mpaa,Rated PG) | String.IsEqual(Container(99950).ListItem.mpaa,PG) |
-				String.Contains(Container(99950).ListItem.mpaa,US:R) | String.Contains(Container(99950).ListItem.mpaa,USA:R) | String.Contains(Container(99950).ListItem.mpaa,Rated R) | String.IsEqual(Container(99950).ListItem.mpaa,R) | String.Contains(Container(99950).ListItem.mpaa,NC-17) | String.Contains(Container(99950).ListItem.mpaa,NR) | String.Contains(Container(99950).ListItem.mpaa,Not) | String.Contains(Container(99950).ListItem.mpaa,Unrated) | String.Contains(Container(99950).ListItem.mpaa,Passed) | String.Contains(Container(99950).ListItem.mpaa,Approved) | 
-				String.IsEqual(Container(99950).ListItem.mpaa,TV-Y) | String.Contains(Container(99950).ListItem.mpaa,TV-Y7) | String.Contains(Container(99950).ListItem.mpaa,TV-G) |String.Contains(Container(99950).ListItem.mpaa,TV-PG) | String.Contains(Container(99950).ListItem.mpaa,TV-14) | String.Contains(Container(99950).ListItem.mpaa,TV-MA) | String.Contains(Container(99950).ListItem.mpaa,USA:TV-MA) | String.Contains(Container(99950).ListItem.mpaa,GB-U) | String.Contains(Container(99950).ListItem.mpaa,Rated U) | String.IsEqual(Container(99950).ListItem.mpaa,U) | 
-				String.Contains(Container(99950).ListItem.mpaa,UK:PG) | String.Contains(Container(99950).ListItem.mpaa,GB-PG) | String.Contains(Container(99950).ListItem.mpaa,Guidance) | String.Contains(Container(99950).ListItem.mpaa,GB-12A) | String.Contains(Container(99950).ListItem.mpaa,Rated 12A) | String.IsEqual(Container(99950).ListItem.mpaa,12A) | String.IsEqual(Container(99950).ListItem.mpaa,GB-12) | String.IsEqual(Container(99950).ListItem.mpaa,Rated 12) | String.IsEqual(Container(99950).ListItem.mpaa,12) | 
-				String.Contains(Container(99950).ListItem.mpaa,UK:15) | String.Contains(Container(99950).ListItem.mpaa,GB-15) | String.Contains(Container(99950).ListItem.mpaa,Rated 15) | String.IsEqual(Container(99950).ListItem.mpaa,15) | String.Contains(Container(99950).ListItem.mpaa,Mature) | String.Contains(Container(99950).ListItem.mpaa,UK:18) | String.Contains(Container(99950).ListItem.mpaa,GB-18) | String.Contains(Container(99950).ListItem.mpaa,Rated 18) | String.IsEqual(Container(99950).ListItem.mpaa,18)]] + $EXP[EXP_TMDBHelper_Metadata]</visible>
+				| [!String.IsEmpty(Container(17195).ListItem.mpaa) + [String.Contains(Container(17195).ListItem.mpaa,US:G) | String.Contains(Container(17195).ListItem.mpaa,USA:G) | String.Contains(Container(17195).ListItem.mpaa,Rated G) | String.IsEqual(Container(17195).ListItem.mpaa,G) |
+				String.Contains(Container(17195).ListItem.mpaa,PG-13) | String.IsEqual(Container(17195).ListItem.mpaa,US:PG) | String.IsEqual(Container(17195).ListItem.mpaa,USA:PG) | String.IsEqual(Container(17195).ListItem.mpaa,Rated PG) | String.IsEqual(Container(17195).ListItem.mpaa,PG) |
+				String.Contains(Container(17195).ListItem.mpaa,US:R) | String.Contains(Container(17195).ListItem.mpaa,USA:R) | String.Contains(Container(17195).ListItem.mpaa,Rated R) | String.IsEqual(Container(17195).ListItem.mpaa,R) | String.Contains(Container(17195).ListItem.mpaa,NC-17) | String.Contains(Container(17195).ListItem.mpaa,NR) | String.Contains(Container(17195).ListItem.mpaa,Not) | String.Contains(Container(17195).ListItem.mpaa,Unrated) | String.Contains(Container(17195).ListItem.mpaa,Passed) | String.Contains(Container(17195).ListItem.mpaa,Approved) | 
+				String.IsEqual(Container(17195).ListItem.mpaa,TV-Y) | String.Contains(Container(17195).ListItem.mpaa,TV-Y7) | String.Contains(Container(17195).ListItem.mpaa,TV-G) |String.Contains(Container(17195).ListItem.mpaa,TV-PG) | String.Contains(Container(17195).ListItem.mpaa,TV-14) | String.Contains(Container(17195).ListItem.mpaa,TV-MA) | String.Contains(Container(17195).ListItem.mpaa,USA:TV-MA) | String.Contains(Container(17195).ListItem.mpaa,GB-U) | String.Contains(Container(17195).ListItem.mpaa,Rated U) | String.IsEqual(Container(17195).ListItem.mpaa,U) | 
+				String.Contains(Container(17195).ListItem.mpaa,UK:PG) | String.Contains(Container(17195).ListItem.mpaa,GB-PG) | String.Contains(Container(17195).ListItem.mpaa,Guidance) | String.Contains(Container(17195).ListItem.mpaa,GB-12A) | String.Contains(Container(17195).ListItem.mpaa,Rated 12A) | String.IsEqual(Container(17195).ListItem.mpaa,12A) | String.IsEqual(Container(17195).ListItem.mpaa,GB-12) | String.IsEqual(Container(17195).ListItem.mpaa,Rated 12) | String.IsEqual(Container(17195).ListItem.mpaa,12) | 
+				String.Contains(Container(17195).ListItem.mpaa,UK:15) | String.Contains(Container(17195).ListItem.mpaa,GB-15) | String.Contains(Container(17195).ListItem.mpaa,Rated 15) | String.IsEqual(Container(17195).ListItem.mpaa,15) | String.Contains(Container(17195).ListItem.mpaa,Mature) | String.Contains(Container(17195).ListItem.mpaa,UK:18) | String.Contains(Container(17195).ListItem.mpaa,GB-18) | String.Contains(Container(17195).ListItem.mpaa,Rated 18) | String.IsEqual(Container(17195).ListItem.mpaa,18)]] + $EXP[EXP_TMDbBingieHelper_Metadata]</visible>
                 <right>-160</right>
                 <height>55</height>
                 <width>160</width>
@@ -3021,7 +3045,8 @@
         <!-- user rating -->
         <value condition="!String.IsEmpty(ListItem.UserRating)">$VAR[RatingDecimalToPercentageListItemUserRating]</value>
         <value condition="!String.IsEmpty(ListItem.Rating)">$VAR[RatingDecimalToPercentageListItemRating]</value>
-		<value condition="!String.IsEmpty(Container(99950).ListItem.Rating) + $EXP[EXP_TMDBHelper_Metadata]">$VAR[RatingDecimalToPercentageHomeListItemTMDbRating]</value>
+		<value condition="!String.IsEmpty(Container(17195).ListItem.Rating) + $EXP[EXP_TMDbBingieHelper_Metadata]">$VAR[RatingDecimalToPercentageHomeListItemTMDbRating]</value>
+		<value condition="!String.IsEmpty(Container(17195).ListItem.Property(Set.Rating)) + $EXP[IsSetDBType]">$VAR[RatingDecimalToPercentageHomeSetTMDbRating]</value>
         <value condition="$EXP[IsMainMenuOpened] + !String.IsEmpty(Window(Home).Property(ListItem.UserRating))">$VAR[RatingDecimalToPercentageHomeListItemUserRating]</value>
         <value condition="$EXP[IsMainMenuOpened] + !String.IsEmpty(Window(Home).Property(ListItem.Rating))">$VAR[RatingDecimalToPercentageHomeListItemRating]</value>
     </variable>
@@ -3610,120 +3635,236 @@
         <value condition="String.IsEqual(Window(Home).Property(ListItem.Rating),10.0)"/>
     </variable>
 	
-	<!-- Container(99950).ListItem.Rating -->
+	<!-- Container(17195).ListItem.Rating -->
 	<variable name="RatingDecimalToPercentageHomeListItemTMDbRating">
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,0)"/>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,0.0)"/>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,0.1)">1</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,0.2)">2</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,0.3)">3</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,0.4)">4</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,0.5)">5</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,0.6)">6</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,0.7)">7</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,0.8)">8</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,0.9)">9</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,1)">10</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,1.0)">10</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,1.1)">11</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,1.2)">12</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,1.3)">13</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,1.4)">14</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,1.5)">15</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,1.6)">16</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,1.7)">17</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,1.8)">18</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,1.9)">19</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,2)">20</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,2.0)">20</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,2.1)">21</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,2.2)">22</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,2.3)">23</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,2.4)">24</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,2.5)">25</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,2.6)">26</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,2.7)">27</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,2.8)">28</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,2.9)">29</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,3)">30</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,3.0)">30</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,3.1)">31</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,3.2)">32</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,3.3)">33</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,3.4)">34</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,3.5)">35</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,3.6)">36</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,3.7)">37</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,3.8)">38</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,3.9)">39</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,4)">40</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,4.0)">40</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,4.1)">41</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,4.2)">42</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,4.3)">43</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,4.4)">44</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,4.5)">45</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,4.6)">46</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,4.7)">47</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,4.8)">48</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,4.9)">49</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,5)">50</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,5.0)">50</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,5.1)">51</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,5.2)">52</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,5.3)">53</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,5.4)">54</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,5.5)">55</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,5.6)">56</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,5.7)">57</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,5.8)">58</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,5.9)">59</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,6)">60</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,6.0)">60</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,6.1)">61</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,6.2)">62</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,6.3)">63</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,6.4)">64</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,6.5)">65</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,6.6)">66</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,6.7)">67</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,6.8)">68</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,6.9)">69</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,7)">70</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,7.0)">70</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,7.1)">71</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,7.2)">72</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,7.3)">73</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,7.4)">74</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,7.5)">75</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,7.6)">76</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,7.7)">77</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,7.8)">78</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,7.9)">79</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,8)">80</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,8.0)">80</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,8.1)">81</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,8.2)">82</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,8.3)">83</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,8.4)">84</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,8.5)">85</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,8.6)">86</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,8.7)">87</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,8.8)">88</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,8.9)">89</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,9)">90</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,9.0)">90</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,9.1)">91</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,9.2)">92</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,9.3)">93</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,9.4)">94</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,9.5)">95</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,9.6)">96</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,9.7)">97</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,9.8)">98</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,9.9)">99</value>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,10)"/>
-        <value condition="String.IsEqual(Container(99950).ListItem.Rating,10.0)"/>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,0)"/>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,0.0)"/>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,0.1)">1</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,0.2)">2</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,0.3)">3</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,0.4)">4</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,0.5)">5</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,0.6)">6</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,0.7)">7</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,0.8)">8</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,0.9)">9</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,1)">10</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,1.0)">10</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,1.1)">11</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,1.2)">12</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,1.3)">13</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,1.4)">14</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,1.5)">15</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,1.6)">16</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,1.7)">17</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,1.8)">18</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,1.9)">19</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,2)">20</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,2.0)">20</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,2.1)">21</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,2.2)">22</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,2.3)">23</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,2.4)">24</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,2.5)">25</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,2.6)">26</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,2.7)">27</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,2.8)">28</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,2.9)">29</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,3)">30</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,3.0)">30</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,3.1)">31</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,3.2)">32</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,3.3)">33</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,3.4)">34</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,3.5)">35</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,3.6)">36</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,3.7)">37</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,3.8)">38</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,3.9)">39</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,4)">40</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,4.0)">40</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,4.1)">41</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,4.2)">42</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,4.3)">43</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,4.4)">44</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,4.5)">45</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,4.6)">46</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,4.7)">47</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,4.8)">48</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,4.9)">49</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,5)">50</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,5.0)">50</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,5.1)">51</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,5.2)">52</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,5.3)">53</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,5.4)">54</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,5.5)">55</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,5.6)">56</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,5.7)">57</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,5.8)">58</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,5.9)">59</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,6)">60</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,6.0)">60</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,6.1)">61</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,6.2)">62</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,6.3)">63</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,6.4)">64</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,6.5)">65</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,6.6)">66</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,6.7)">67</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,6.8)">68</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,6.9)">69</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,7)">70</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,7.0)">70</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,7.1)">71</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,7.2)">72</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,7.3)">73</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,7.4)">74</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,7.5)">75</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,7.6)">76</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,7.7)">77</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,7.8)">78</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,7.9)">79</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,8)">80</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,8.0)">80</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,8.1)">81</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,8.2)">82</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,8.3)">83</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,8.4)">84</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,8.5)">85</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,8.6)">86</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,8.7)">87</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,8.8)">88</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,8.9)">89</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,9)">90</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,9.0)">90</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,9.1)">91</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,9.2)">92</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,9.3)">93</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,9.4)">94</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,9.5)">95</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,9.6)">96</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,9.7)">97</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,9.8)">98</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,9.9)">99</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,10)"/>
+        <value condition="String.IsEqual(Container(17195).ListItem.Rating,10.0)"/>
+    </variable>
+	
+	<!-- Container(17195).ListItem.Property(Set.Rating) -->
+	<variable name="RatingDecimalToPercentageHomeSetTMDbRating">
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),0)"/>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),0.0)"/>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),0.1)">1</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),0.2)">2</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),0.3)">3</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),0.4)">4</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),0.5)">5</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),0.6)">6</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),0.7)">7</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),0.8)">8</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),0.9)">9</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),1)">10</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),1.0)">10</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),1.1)">11</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),1.2)">12</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),1.3)">13</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),1.4)">14</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),1.5)">15</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),1.6)">16</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),1.7)">17</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),1.8)">18</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),1.9)">19</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),2)">20</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),2.0)">20</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),2.1)">21</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),2.2)">22</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),2.3)">23</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),2.4)">24</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),2.5)">25</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),2.6)">26</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),2.7)">27</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),2.8)">28</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),2.9)">29</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),3)">30</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),3.0)">30</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),3.1)">31</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),3.2)">32</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),3.3)">33</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),3.4)">34</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),3.5)">35</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),3.6)">36</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),3.7)">37</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),3.8)">38</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),3.9)">39</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),4)">40</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),4.0)">40</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),4.1)">41</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),4.2)">42</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),4.3)">43</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),4.4)">44</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),4.5)">45</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),4.6)">46</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),4.7)">47</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),4.8)">48</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),4.9)">49</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),5)">50</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),5.0)">50</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),5.1)">51</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),5.2)">52</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),5.3)">53</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),5.4)">54</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),5.5)">55</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),5.6)">56</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),5.7)">57</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),5.8)">58</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),5.9)">59</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),6)">60</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),6.0)">60</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),6.1)">61</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),6.2)">62</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),6.3)">63</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),6.4)">64</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),6.5)">65</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),6.6)">66</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),6.7)">67</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),6.8)">68</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),6.9)">69</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),7)">70</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),7.0)">70</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),7.1)">71</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),7.2)">72</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),7.3)">73</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),7.4)">74</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),7.5)">75</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),7.6)">76</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),7.7)">77</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),7.8)">78</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),7.9)">79</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),8)">80</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),8.0)">80</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),8.1)">81</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),8.2)">82</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),8.3)">83</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),8.4)">84</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),8.5)">85</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),8.6)">86</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),8.7)">87</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),8.8)">88</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),8.9)">89</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),9)">90</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),9.0)">90</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),9.1)">91</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),9.2)">92</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),9.3)">93</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),9.4)">94</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),9.5)">95</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),9.6)">96</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),9.7)">97</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),9.8)">98</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),9.9)">99</value>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),10)"/>
+        <value condition="String.IsEqual(Container(17195).ListItem.Property(Set.Rating),10.0)"/>
     </variable>
     <!-- END OF DecimalToPercentage -->
 
@@ -3963,7 +4104,6 @@
         <value condition="Window.IsActive(1110)">$LOCALIZE[31590]</value>
         <value condition="Window.IsActive(1111)">$LOCALIZE[342]</value>
 		<value condition="Window.IsActive(1114)">[CAPITALIZE]$LOCALIZE[31534][/CAPITALIZE]</value>
-		<value condition="Window.IsActive(1115)">$INFO[Skin.String(mycustom.label)]</value>
 		<value condition="Window.IsActive(1120)">$LOCALIZE[2]</value>
     </variable>
 	
@@ -3971,6 +4111,11 @@
     <variable name="SeasonFormat">
 		<value condition="Integer.IsLess(ListItem.Season,1) + !String.IsEmpty(ListItem.Episode)">$LOCALIZE[20381]</value>
         <value condition="!String.IsEmpty(ListItem.Season)">$INFO[ListItem.Season,$LOCALIZE[36904] ,]</value>
+    </variable>
+	
+	<variable name="MenuIconColor">
+		<value condition="![Control.HasFocus(900) | Control.HasFocus(4444) | Control.HasFocus(40000) | Control.HasFocus(40003)]">$INFO[Skin.String(MainMenuFocusButtonColor)]</value>
+        <value condition="[Control.HasFocus(900) | Control.HasFocus(4444) | Control.HasFocus(40000) | Control.HasFocus(40003)]">$INFO[Skin.String(MainMenuButtonColor)]</value>
     </variable>
 	
 </includes>

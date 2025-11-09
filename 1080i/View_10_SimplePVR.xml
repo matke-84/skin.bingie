@@ -83,7 +83,7 @@
                 <control type="group">
                     <!-- Ground 3 -->
                     <height>40</height>
-                    <visible>!String.IsEmpty(Container(99950).ListItem.Genre)</visible>
+                    <visible>!String.IsEmpty(Container(17195).ListItem.Genre)</visible>
                     <control type="label">
                         <posx>0</posx>
                         <posy>0</posy>
@@ -96,7 +96,7 @@
                         <posy>0</posy>
                         <width>400</width>
                         <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-                        <label>$INFO[Container(99950).ListItem.Genre]</label>
+                        <label>$INFO[Container(17195).ListItem.Genre]</label>
                     </control>
                 </control>
                 <control type="group">

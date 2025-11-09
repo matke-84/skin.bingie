@@ -22,7 +22,7 @@
                 <control type="label">
                     <width>100%</width>
                     <height>40</height>
-					<posx>7</posx>
+					<posx>8</posx>
 					<top>-36</top>
                     <font>Bold31</font>
                     <align>left</align>
@@ -98,8 +98,8 @@
                 <param name="viewtype" value="$LOCALIZE[31027]" />
             </include>
             <top>6</top>
-            <height>469</height>
-            <width>1666</width>
+            <height>474</height>
+            <width>1674</width>
             <itemgap>0</itemgap>
             <include condition="Skin.HasSetting(View_526_HorizontalNavigation)">navigation_horizontal</include>
             <orientation>vertical</orientation>
@@ -119,34 +119,28 @@
 			<onback>CancelAlarm(preview_delay,silent)</onback>
 			<onback condition="!Player.HasAudio + $EXP[IsPlayingUnrecognizedContent] + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)] + Skin.HasSetting(View526_DetailsAutoTrailer)">PlayerControl(Stop)</onback>
             <onback>ClearProperty(HideNowPlaying)</onback>
-		    <itemlayout height="338" width="238">
+		    <itemlayout height="339" width="239">
                 <control type="group">
                     <width>240</width>
                     <height>340</height>
                     <include>PosterPanelBingieLayout</include>
+					<include>PosterTagOverlayBingieNoOverride</include>
+					<include>PosterTagOverlayBingie</include>
                 </control>
             </itemlayout>
-            <focusedlayout height="338" width="238">
+            <focusedlayout height="339" width="239">
                 <control type="group">
                     <width>240</width>
                     <height>340</height>
                     <include condition="!Skin.HasSetting(View526_UseFixedLayout) | !Skin.HasSetting(View_526_HorizontalNavigation)">PosterPanelBingieLayoutFocus</include>
 					<include condition="Skin.HasSetting(View526_UseFixedLayout) + Skin.HasSetting(View_526_HorizontalNavigation)">PosterPanelBingieLayout</include>
+					<include>PosterTagOverlayBingieNoOverride</include>
+					<include>PosterTagOverlayBingie</include>
                     <include>LibraryAutoTrailerStopButton</include>
 						<include content="LibraryAutoTrailerStartButton" condition="Skin.HasSetting(View526_DetailsAutoTrailer)">
 							<param name="interval" value="$INFO[Skin.String(details_auto_trailer_interval)]" />
 						</include>
                 </control>
-				<!--Top 250 1-->
-				<control type="image">
-				<visible>!Container.Content(episodes) + !Container.Content(seasons) + !String.IsEmpty(Control.GetLabel(8231)) + !Skin.HasSetting(DisableTop250Indicator) + Skin.HasSetting(EnableRatings)</visible>
-				<posy>8</posy>
-				<left>8</left>
-                <height>60</height>
-                <width>50</width>
-				<aspectratio>keep</aspectratio>
-                <texture>bingie/top250p.png</texture>
-		        </control>
             </focusedlayout>
         </control>
     </include>

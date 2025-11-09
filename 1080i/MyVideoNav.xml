@@ -22,7 +22,7 @@
 	<onunload condition="!String.IsEmpty(Window(Home).Property(NoFadeOut))">ClearProperty(NoFadeOut,home)</onunload>
     
 	<controls>
-		<include>Defs_TMDbHelper_Loader</include>
+		<include>Defs_TMDbBingieHelper_Loader</include>
         <!-- Video Background -->
         <include>GlobalBackground</include>
 		<!-- Now Playing -->
@@ -98,20 +98,6 @@
 					<usealttexture>library.isscanningvideo</usealttexture>
 					<visible>!String.Contains(Container.FolderPath,plugin://plugin.video)</visible>
 				</control>
-                <control type="button" id="388">
-                    <!--Button Movie Search-->
-                    <include>SideBladeMenuButton</include>
-                    <label>137</label>
-					<onclick>ActivateWindow(1108,return)</onclick>
-					<visible>!String.Contains(Container.FolderPath,plugin://plugin.video) + [$EXP[IsMovieDBType] + !String.IsEmpty(ListItem.DBID)]</visible>
-                </control>
-				<control type="button" id="389">
-                    <!--Button TVShow Search-->
-                    <include>SideBladeMenuButton</include>
-                    <label>137</label>
-					<onclick>ActivateWindow(1106,return)</onclick>
-					<visible>!String.Contains(Container.FolderPath,plugin://plugin.video) + [$EXP[IsTvShowDBType] + !String.IsEmpty(ListItem.DBID)]</visible>
-                </control>
 				<control type="button" id="4401">
                     <!--current playlist-->
                     <include>SideBladeMenuButton</include>

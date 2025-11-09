@@ -75,15 +75,13 @@
 						<height>54</height>
 						<font>Reg24</font>
 						<textcolor>a6ffffff</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<selectedcolor>white</selectedcolor>
+						<focusedcolor>ff000000</focusedcolor>
+						<selectedcolor>ff000000</selectedcolor>
 						<textoffsetx>20</textoffsetx>
 						<aligny>center</aligny>
 						<align>center</align>
-						<texturefocus border="10" colordiffuse="white">bingie/border/slimframefo.png</texturefocus>
-						<texturenofocus border="10" colordiffuse="a6ffffff">bingie/border/slimframefo.png</texturenofocus>
-						<alttexturefocus border="10" colordiffuse="white">bingie/border/slimframefo.png</alttexturefocus>
-						<alttexturenofocus border="10" colordiffuse="a6ffffff">bingie/border/slimframefo.png</alttexturenofocus>
+						<texturefocus border="10" colordiffuse="white">bingie/border/default_button_focus.png</texturefocus>
+						<alttexturefocus border="10" colordiffuse="white">bingie/border/default_button_focus.png</alttexturefocus>
 						<label>$LOCALIZE[31389]</label>
 						<onclick>Skin.SetBool(BingieFirstStartupDone)</onclick>
 						<onclick>SetProperty(finishBingieStartup1,1,Home)</onclick>
@@ -103,15 +101,13 @@
 						<height>54</height>
 						<font>Reg24</font>
 						<textcolor>a6ffffff</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<selectedcolor>white</selectedcolor>
+						<focusedcolor>ff000000</focusedcolor>
+						<selectedcolor>ff000000</selectedcolor>
 						<textoffsetx>20</textoffsetx>
 						<aligny>center</aligny>
 						<align>center</align>
-						<texturefocus border="10" colordiffuse="white">bingie/border/slimframefo.png</texturefocus>
-						<texturenofocus border="10" colordiffuse="a6ffffff">bingie/border/slimframefo.png</texturenofocus>
-						<alttexturefocus border="10" colordiffuse="white">bingie/border/slimframefo.png</alttexturefocus>
-						<alttexturenofocus border="10" colordiffuse="a6ffffff">bingie/border/slimframefo.png</alttexturenofocus>
+						<texturefocus border="10" colordiffuse="white">bingie/border/default_button_focus.png</texturefocus>
+						<alttexturefocus border="10" colordiffuse="white">bingie/border/default_button_focus.png</alttexturefocus>
 						<label>$LOCALIZE[31390]</label>
 						<onclick>Skin.SetBool(BingieFirstStartupDone)</onclick>
 						<onclick>SetProperty(finishBingieStartup1,1,Home)</onclick>

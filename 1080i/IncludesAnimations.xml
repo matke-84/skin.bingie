@@ -79,14 +79,14 @@
 
     <!-- Menu Animations -->	
     <include name="No_Circular_Menu_Animations">
-        <animation effect="slide" start="0" end="420" time="325" delay="0" tween="cubic" easing="inout" condition="$EXP[IsMainMenuOpened] + [[$EXP[IsBingieListsActive] | Window.IsActive(1109) | Window.IsActive(1119)] | [[Window.IsActive(Home) | $EXP[IsBingieHubsActive]] + [!String.IsEmpty(Window(Home).Property(LastFocusWidgetPos)) + String.IsEqual(Window(Home).Property(LastFocusWidgetPos), 1)] | String.IsEmpty(Window(Home).Property(LastFocusWidgetPos))]]">Conditional</animation>
+        <animation effect="slide" start="0" end="420" time="325" delay="0" tween="cubic" easing="inout" condition="$EXP[IsMainMenuOpened] + [[Window.IsActive(1109) | Window.IsActive(1119)] | [[Window.IsActive(Home) | $EXP[IsBingieHubsActive]] + [!String.IsEmpty(Window(Home).Property(LastFocusWidgetPos)) + String.IsEqual(Window(Home).Property(LastFocusWidgetPos), 1)] | String.IsEmpty(Window(Home).Property(LastFocusWidgetPos))]]">Conditional</animation>
         <animation effect="slide" start="0" end="420" time="325" delay="0" tween="cubic" easing="inout" condition="$EXP[IsMainMenuOpened] + [Window.IsActive(Home) | $EXP[IsBingieHubsActive]] + !String.IsEmpty(Window(Home).Property(LastFocusWidgetPos)) + !String.IsEqual(Window(Home).Property(LastFocusWidgetPos), 1)">Conditional</animation>
 	<!-- Side Menu Icons Static Position -->
 		<animation effect="slide" start="0" end="0" time="200" delay="0" tween="sine" easing="inout" condition="[Window.IsActive(Home) | $EXP[IsBingieHubsActive]] + !String.IsEmpty(Window(Home).Property(LastFocusWidgetPos)) + !String.IsEqual(Window(Home).Property(LastFocusWidgetPos), 1)">Conditional</animation>
     </include>
 	
 	<include name="No_Circular_Menu_AnimationsOriginal">
-        <animation effect="slide" start="0" end="420" time="325" delay="0" tween="cubic" easing="inout" condition="$EXP[IsMainMenuOpened] + [[$EXP[IsBingieListsActive] | Window.IsActive(1109) | Window.IsActive(1119)] | [[Window.IsActive(Home) | $EXP[IsBingieHubsActive]] + [!String.IsEmpty(Window(Home).Property(LastFocusWidgetPos)) + String.IsEqual(Window(Home).Property(LastFocusWidgetPos), 1)] | String.IsEmpty(Window(Home).Property(LastFocusWidgetPos))]]">Conditional</animation>
+        <animation effect="slide" start="0" end="420" time="325" delay="0" tween="cubic" easing="inout" condition="$EXP[IsMainMenuOpened] + [[Window.IsActive(1109) | Window.IsActive(1119)] | [[Window.IsActive(Home) | $EXP[IsBingieHubsActive]] + [!String.IsEmpty(Window(Home).Property(LastFocusWidgetPos)) + String.IsEqual(Window(Home).Property(LastFocusWidgetPos), 1)] | String.IsEmpty(Window(Home).Property(LastFocusWidgetPos))]]">Conditional</animation>
         <animation effect="slide" start="0" end="520" time="325" delay="0" tween="cubic" easing="inout" condition="$EXP[IsMainMenuOpened] + [Window.IsActive(Home) | $EXP[IsBingieHubsActive]] + !String.IsEmpty(Window(Home).Property(LastFocusWidgetPos)) + !String.IsEqual(Window(Home).Property(LastFocusWidgetPos), 1)">Conditional</animation>
         <animation effect="slide" start="0" end="-100" time="200" delay="0" tween="sine" easing="inout" condition="[Window.IsActive(Home) | $EXP[IsBingieHubsActive]] + !String.IsEmpty(Window(Home).Property(LastFocusWidgetPos)) + !String.IsEqual(Window(Home).Property(LastFocusWidgetPos), 1)">Conditional</animation>
     </include>
@@ -192,7 +192,7 @@
     </include>
 
     <include name="No_Circular_Slide_Animation">
-        <animation effect="slide" time="0" delay="0" start="0" end="bingie_no_circular_left_diff" condition="true">Conditional</animation>
+        <animation effect="slide" time="0" delay="0" start="0" end="65" condition="true">Conditional</animation>
     </include>
 
     <include name="animation_sub_menu">
@@ -1103,19 +1103,19 @@
 	</include>
 	
 	<include name="Animation_Right_Delay_2">
-		<animation type="WindowOpen" reversible="false" condition="!String.IsEmpty(Window(Home).Property(AnimationRight)) + [!String.IsEmpty(Window(Home).Property(CloseInfoDialog)) | !String.IsEmpty(Window(Home).Property(FullImage)) | !String.IsEmpty(Window(Home).Property(Animation)) | Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1) | Window.IsActive(Custom_1190_TMDbHelperCast.xml) | Window.IsActive(Custom_1109_BingieSearch.xml) | Window.IsActive(Custom_1108_BingieMovieSearch.xml)]">
+		<animation type="WindowOpen" reversible="false" condition="!String.IsEmpty(Window(Home).Property(AnimationRight)) + [!String.IsEmpty(Window(Home).Property(CloseInfoDialog)) | !String.IsEmpty(Window(Home).Property(FullImage)) | !String.IsEmpty(Window(Home).Property(Animation)) | Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1) | Window.IsActive(Custom_1190_TMDbBingieHelperCast.xml) | Window.IsActive(Custom_1109_BingieSearch.xml)]">
 		  <effect type="fade" start="0" end="100" time="500" delay="200" tween="sine" easing="out" />
 		  <effect type="slide" start="-150" end="0" time="500" delay="200" tween="cubic" easing="out" />
 		</animation>
-		<animation type="WindowClose" reversible="false" condition="!String.IsEmpty(Window(Home).Property(AnimationRight)) + [!String.IsEmpty(Window(Home).Property(CloseInfoDialog)) | !String.IsEmpty(Window(Home).Property(FullImage)) | !String.IsEmpty(Window(Home).Property(Animation)) | Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1) | Window.IsActive(Custom_1109_BingieSearch.xml) | Window.IsActive(Custom_1108_BingieMovieSearch.xml)]">
+		<animation type="WindowClose" reversible="false" condition="!String.IsEmpty(Window(Home).Property(AnimationRight)) + [!String.IsEmpty(Window(Home).Property(CloseInfoDialog)) | !String.IsEmpty(Window(Home).Property(FullImage)) | !String.IsEmpty(Window(Home).Property(Animation)) | Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1) | Window.IsActive(Custom_1109_BingieSearch.xml)]">
 		  <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
 		  <effect type="slide" start="0" end="-150" time="300" tween="cubic" easing="out" />
 		</animation>
-		<animation type="WindowOpen" reversible="false" condition="!String.IsEmpty(Window(Home).Property(CloseInfoDialog)) | !String.IsEmpty(Window(Home).Property(FullImage)) | !String.IsEmpty(Window(Home).Property(Animation)) | Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1) | Window.IsActive(Custom_1190_TMDbHelperCast.xml) | Window.IsActive(Custom_1109_BingieSearch.xml) | Window.IsActive(Custom_1108_BingieMovieSearch.xml)">
+		<animation type="WindowOpen" reversible="false" condition="!String.IsEmpty(Window(Home).Property(CloseInfoDialog)) | !String.IsEmpty(Window(Home).Property(FullImage)) | !String.IsEmpty(Window(Home).Property(Animation)) | Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1) | Window.IsActive(Custom_1190_TMDbBingieHelperCast.xml) | Window.IsActive(Custom_1109_BingieSearch.xml)">
 		  <effect type="fade" start="0" end="100" time="500" delay="200" tween="sine" easing="out" />
 		  <effect type="slide" start="150" end="0" time="500" delay="200" tween="cubic" easing="out" />
 		</animation>
-		<animation type="WindowClose" reversible="false" condition="!String.IsEmpty(Window(Home).Property(CloseInfoDialog)) | !String.IsEmpty(Window(Home).Property(FullImage)) | !String.IsEmpty(Window(Home).Property(Animation)) | Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1) | Window.IsActive(Custom_1109_BingieSearch.xml) | Window.IsActive(Custom_1108_BingieMovieSearch.xml)">
+		<animation type="WindowClose" reversible="false" condition="!String.IsEmpty(Window(Home).Property(CloseInfoDialog)) | !String.IsEmpty(Window(Home).Property(FullImage)) | !String.IsEmpty(Window(Home).Property(Animation)) | Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1) | Window.IsActive(Custom_1109_BingieSearch.xml)">
 		  <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
 		  <effect type="slide" start="0" end="150" time="300" tween="cubic" easing="out" />
 		</animation>
@@ -1204,27 +1204,35 @@
 	</include>
 	
 	<include name="Animation_Recommendations_Window_2">
-	    <animation type="WindowOpen" reversible="false">
+		<animation type="WindowOpen" reversible="false" condition="!Window.IsActive(1109)">
             <effect type="fade" start="0" end="100" delay="400" time="500" tween="sine" easing="out"/>
             <effect type="slide" start="-150,0" end="0" delay="400" time="500" tween="cubic" easing="out" />
         </animation>
-        <animation type="WindowOpen" reversible="false" condition="String.IsEmpty(Window(Home).Property(TMDbHelper.Recommendations.HideInfo))">
+		<animation type="WindowOpen" reversible="false" condition="Window.IsActive(1109)">
+            <effect type="fade" start="0" end="100" delay="300" time="500" tween="sine" easing="out"/>
+            <effect type="slide" start="150,0" end="0" delay="300" time="500" tween="cubic" easing="out" />
+        </animation>
+        <animation type="WindowOpen" reversible="false" condition="String.IsEmpty(Window(Home).Property(TMDbBingieHelper.Recommendations.HideInfo))">
             <effect type="fade" start="0" end="100" delay="400" time="500" tween="sine" easing="out"/>
             <effect type="slide" start="150,0" end="0" delay="400" time="500" tween="cubic" easing="out" />
         </animation>
-        <animation type="WindowOpen" reversible="false" condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.Recommendations.HideInfo))">
+        <animation type="WindowOpen" reversible="false" condition="!String.IsEmpty(Window(Home).Property(TMDbBingieHelper.Recommendations.HideInfo))">
             <effect type="fade" start="0" end="100" delay="400" time="500" tween="sine" easing="out"/>
             <effect type="slide" start="150,0" end="0" delay="400" time="500" tween="cubic" easing="out" />
         </animation>
-        <animation type="WindowClose" reversible="false">
+		<animation type="WindowClose" reversible="false" condition="!Window.IsActive(1109)">
             <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out"/>
             <effect type="slide" start="0" end="-150" time="300" tween="cubic" easing="out" />
         </animation>
-		<animation type="WindowClose" reversible="false" condition="String.IsEmpty(Window(Home).Property(TMDbHelper.Recommendations.HideRecs))">
+		<animation type="WindowClose" reversible="false" condition="Window.IsActive(1109)">
             <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out"/>
             <effect type="slide" start="0" end="150" time="300" tween="cubic" easing="out" />
         </animation>
-        <animation type="WindowClose" reversible="false" condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.Recommendations.HideRecs))">
+		<animation type="WindowClose" reversible="false" condition="String.IsEmpty(Window(Home).Property(TMDbBingieHelper.Recommendations.HideRecs))">
+            <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out"/>
+            <effect type="slide" start="0" end="150" time="300" tween="cubic" easing="out" />
+        </animation>
+        <animation type="WindowClose" reversible="false" condition="!String.IsEmpty(Window(Home).Property(TMDbBingieHelper.Recommendations.HideRecs))">
             <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out"/>
             <effect type="slide" start="0" end="150" time="300" tween="cubic" easing="out" />
         </animation>
@@ -1257,10 +1265,10 @@
 	</include>
 	
 	<include name="DialogInfoFanart_Animation">
-		<animation type="WindowOpen" condition="Window.IsActive(1106) | Window.IsActive(1108) | Window.IsActive(1109)">
+		<animation type="WindowOpen" condition="Window.IsActive(1109)">
 			<effect type="fade" start="0" end="50" time="500" reversible="false"/>
 		</animation>
-		<animation type="WindowClose" condition="Window.IsActive(1106) | Window.IsActive(1108) | Window.IsActive(1109)">
+		<animation type="WindowClose" condition="Window.IsActive(1109)">
 			<effect type="fade" start="50" end="0" time="300" reversible="false"/>
 		</animation>
 		<animation type="WindowOpen" condition="String.IsEmpty(Window(Home).Property(CloseInfoDialog)) + String.IsEmpty(Window(Home).Property(FullImage)) + String.IsEmpty(Window(Home).Property(FadeFanart))">

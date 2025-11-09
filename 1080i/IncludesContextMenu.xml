@@ -274,7 +274,7 @@
             </visible>
 		</control>
 		
-		<control type="radiobutton" id="2018">
+		<control type="radiobutton" id="31119">
 			<!--show fanart thumb in bingie seasons-->
 			<include>SideBladeMenuButton</include>
 			<label>31119</label>
@@ -554,7 +554,7 @@
         <control type="radiobutton" id="19002">
 			<!--Disable extra fanart-->
 			<include>SideBladeMenuButton</include>
-			<label>31653</label>
+			<label>31553</label>
             <onclick condition="Control.IsVisible(10)">Skin.ToggleSetting(View10_DisableExtraFanArt)</onclick>
             <onclick condition="Control.IsVisible(50)">Skin.ToggleSetting(View50_DisableExtraFanArt)</onclick>
 			<onclick condition="Control.IsVisible(51)">Skin.ToggleSetting(View51_DisableExtraFanArt)</onclick>

@@ -6,7 +6,7 @@
 	<onunload>ClearProperty(ShowViewSubMenu,Home)</onunload>
 	<include>allViewIds</include>
     <controls>
-		<include>Defs_TMDbHelper_Loader</include>
+		<include>Defs_TMDbBingieHelper_Loader</include>
         <!--Global Background-->
         <include>GlobalBackground</include>
 		<!-- Now Playing -->

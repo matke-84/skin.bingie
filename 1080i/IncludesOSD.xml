@@ -1175,7 +1175,7 @@
                      <fadetime>200</fadetime>
                      <texture background="true">$VAR[OSDInfoImage]</texture>
                      <aspectratio align="center" aligny="center">keep</aspectratio>
-                     <visible>[!String.IsEmpty(Player.Art(clearlogo)) | !String.IsEmpty(Player.Art(clearart)) | !String.IsEmpty(Player.Art(tvshow.clearlogo)) | !String.IsEmpty(Player.Art(tvshow.clearart)) | !String.IsEmpty(Window(home).Property(TMDbHelper.Player.clearart)) | !String.IsEmpty(Window(home).Property(TMDbHelper.Player.clearlogo))]</visible>
+                     <visible>[!String.IsEmpty(Player.Art(clearlogo)) | !String.IsEmpty(Player.Art(clearart)) | !String.IsEmpty(Player.Art(tvshow.clearlogo)) | !String.IsEmpty(Player.Art(tvshow.clearart)) | !String.IsEmpty(Window(home).Property(TMDbBingieHelper.Player.clearart)) | !String.IsEmpty(Window(home).Property(TMDbBingieHelper.Player.clearlogo))]</visible>
                  </control>
 				 <control type="grouplist">
 					 <posx>38</posx>
@@ -1189,7 +1189,7 @@
 					 <control type="textbox">
 						 <width>1450</width>
 						 <height>40</height>
-						 <visible>[!String.IsEmpty(VideoPlayer.Premiered) | !String.IsEmpty(VideoPlayer.Duration) | !String.IsEmpty(VideoPlayer.RatingAndVotes)] + [!String.IsEmpty(Player.Art(clearlogo)) | !String.IsEmpty(Player.Art(clearart)) | !String.IsEmpty(Player.Art(tvshow.clearlogo)) | !String.IsEmpty(Player.Art(tvshow.clearart)) | !String.IsEmpty(Window(home).Property(TMDbHelper.Player.clearart)) | !String.IsEmpty(Window(home).Property(TMDbHelper.Player.clearlogo))]</visible>
+						 <visible>[!String.IsEmpty(VideoPlayer.Premiered) | !String.IsEmpty(VideoPlayer.Duration) | !String.IsEmpty(VideoPlayer.RatingAndVotes)] + [!String.IsEmpty(Player.Art(clearlogo)) | !String.IsEmpty(Player.Art(clearart)) | !String.IsEmpty(Player.Art(tvshow.clearlogo)) | !String.IsEmpty(Player.Art(tvshow.clearart)) | !String.IsEmpty(Window(home).Property(TMDbBingieHelper.Player.clearart)) | !String.IsEmpty(Window(home).Property(TMDbBingieHelper.Player.clearlogo))]</visible>
 						 <label fallback="19055">[B]$INFO[VideoPlayer.Premiered,,  •  ]$INFO[VideoPlayer.Duration]$INFO[VideoPlayer.RatingAndVotes,  •  ][/B]</label>
 						 <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
 						 <align>justify</align>
@@ -1198,7 +1198,7 @@
 					 <control type="textbox">
 						 <width>1450</width>
 						 <height>155</height>
-						 <visible>!String.IsEmpty(VideoPlayer.Plot) + [!String.IsEmpty(Player.Art(clearlogo)) | !String.IsEmpty(Player.Art(clearart)) | !String.IsEmpty(Player.Art(tvshow.clearlogo)) | !String.IsEmpty(Player.Art(tvshow.clearart)) | !String.IsEmpty(Window(home).Property(TMDbHelper.Player.clearart)) | !String.IsEmpty(Window(home).Property(TMDbHelper.Player.clearlogo))]</visible>
+						 <visible>!String.IsEmpty(VideoPlayer.Plot) + [!String.IsEmpty(Player.Art(clearlogo)) | !String.IsEmpty(Player.Art(clearart)) | !String.IsEmpty(Player.Art(tvshow.clearlogo)) | !String.IsEmpty(Player.Art(tvshow.clearart)) | !String.IsEmpty(Window(home).Property(TMDbBingieHelper.Player.clearart)) | !String.IsEmpty(Window(home).Property(TMDbBingieHelper.Player.clearlogo))]</visible>
 						 <label fallback="19055">$INFO[VideoPlayer.Plot]</label>
 						 <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
 						 <align>justify</align>
@@ -1208,7 +1208,7 @@
 					 <control type="textbox">
 						 <width>1810</width>
 						 <height>40</height>
-						 <visible>[!String.IsEmpty(VideoPlayer.Premiered) | !String.IsEmpty(VideoPlayer.Duration) | !String.IsEmpty(VideoPlayer.RatingAndVotes)] + ![!String.IsEmpty(Player.Art(clearart)) | !String.IsEmpty(Player.Art(tvshow.clearart)) | !String.IsEmpty(Player.Art(clearlogo)) | !String.IsEmpty(Player.Art(tvshow.clearlogo)) | !String.IsEmpty(Window(home).Property(TMDbHelper.Player.clearart)) | !String.IsEmpty(Window(home).Property(TMDbHelper.Player.clearlogo))]</visible>
+						 <visible>[!String.IsEmpty(VideoPlayer.Premiered) | !String.IsEmpty(VideoPlayer.Duration) | !String.IsEmpty(VideoPlayer.RatingAndVotes)] + ![!String.IsEmpty(Player.Art(clearart)) | !String.IsEmpty(Player.Art(tvshow.clearart)) | !String.IsEmpty(Player.Art(clearlogo)) | !String.IsEmpty(Player.Art(tvshow.clearlogo)) | !String.IsEmpty(Window(home).Property(TMDbBingieHelper.Player.clearart)) | !String.IsEmpty(Window(home).Property(TMDbBingieHelper.Player.clearlogo))]</visible>
 						 <label fallback="19055">[B]$INFO[VideoPlayer.Premiered,,  •  ]$INFO[VideoPlayer.Duration]$INFO[VideoPlayer.RatingAndVotes,  •  ][/B]</label>
 						 <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
 						 <align>justify</align>
@@ -1218,7 +1218,7 @@
 					 <control type="textbox">
 						 <width>1810</width>
 						 <height>155</height>
-						 <visible>!String.IsEmpty(VideoPlayer.Plot) + ![!String.IsEmpty(Player.Art(clearart)) | !String.IsEmpty(Player.Art(tvshow.clearart)) | !String.IsEmpty(Player.Art(clearlogo)) | !String.IsEmpty(Player.Art(tvshow.clearlogo)) | !String.IsEmpty(Window(home).Property(TMDbHelper.Player.clearart)) | !String.IsEmpty(Window(home).Property(TMDbHelper.Player.clearlogo))]</visible>
+						 <visible>!String.IsEmpty(VideoPlayer.Plot) + ![!String.IsEmpty(Player.Art(clearart)) | !String.IsEmpty(Player.Art(tvshow.clearart)) | !String.IsEmpty(Player.Art(clearlogo)) | !String.IsEmpty(Player.Art(tvshow.clearlogo)) | !String.IsEmpty(Window(home).Property(TMDbBingieHelper.Player.clearart)) | !String.IsEmpty(Window(home).Property(TMDbBingieHelper.Player.clearlogo))]</visible>
 						 <label fallback="19055">$INFO[VideoPlayer.Plot]</label>
 						 <textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
 						 <align>justify</align>
@@ -2198,18 +2198,13 @@
 					<orientation>horizontal</orientation>
 					<onclick>SetProperty(DisableOSDCast,1,home)</onclick>
 					<onclick>Action(Close)</onclick>
-					<onclick>RunScript(plugin.video.themoviedb.helper,recommendations=oninfo,tmdb_type=person,tmdb_id=$INFO[Container($PARAM[id]).ListItem.UniqueID(tmdb)],window_id=1191)</onclick>
+					<onclick>RunScript(plugin.video.tmdb.bingie.helper,recommendations=oninfo,tmdb_type=person,tmdb_id=$INFO[Container($PARAM[id]).ListItem.UniqueID(tmdb)],window_id=1191)</onclick>
 					<itemlayout height="347" width="238">
 			        <control type="group">
 						<width>240</width>
 						<height>340</height>
 						<include>PosterPanelBingieLayout</include>
-						<control type="group">
-                            <include content="$PARAM[layout]Tags">
-                                <param name="force_tags" value="$PARAM[force_tags]" />
-                                <param name="widgetTags" value="$PARAM[widgetTags]" />
-                            </include>
-                        </control>
+						<include>PosterTagOverlayBingieNoOverride</include>
 					</control>
 					</itemlayout>
 					<focusedlayout height="347" width="238" condition="Control.HasFocus($PARAM[id])">
@@ -2217,12 +2212,7 @@
 						<width>240</width>
 						<height>340</height>
 						<include>PosterPanelBingieLayoutFocus</include>
-						<control type="group">
-                            <include content="$PARAM[layout]Tags">
-                                <param name="force_tags" value="$PARAM[force_tags]" />
-                                <param name="widgetTags" value="$PARAM[widgetTags]" />
-                            </include>
-                        </control>
+						<include>PosterTagOverlayBingieNoOverride</include>
 					</control>
 					</focusedlayout>
 					<focusedlayout height="347" width="238" condition="!Control.HasFocus($PARAM[id])">
@@ -2230,12 +2220,7 @@
 						<width>240</width>
 						<height>340</height>
 						<include>PosterPanelBingieLayout</include>
-						<control type="group">
-                            <include content="$PARAM[layout]Tags">
-                                <param name="force_tags" value="$PARAM[force_tags]" />
-                                <param name="widgetTags" value="$PARAM[widgetTags]" />
-                            </include>
-                        </control>
+						<include>PosterTagOverlayBingieNoOverride</include>
 					</control>
 					</focusedlayout>
 					<content>$PARAM[content]</content>

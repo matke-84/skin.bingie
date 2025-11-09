@@ -5,6 +5,9 @@
 	<onunload>ClearProperty(textbox,1121)</onunload>
 	<onunload>ClearProperty(osdheader,1121)</onunload>
 	<onunload>ClearProperty(osdtextbox,1121)</onunload>
+	<onunload>ClearProperty(osdgenre,1121)</onunload>
+	<onunload>ClearProperty(osdrating,1121)</onunload>
+	<onunload>ClearProperty(osdyear,1121)</onunload>
     <controls>
         <!--Dialog Overlay-->
         <include>DialogOverlayExtra</include>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<shortcuts>
+    <shortcut>
+        <label>$VAR[DefSomethingHubName]</label>
+        <label2 />
+        <icon />
+        <thumb />
+        <action>$VAR[DefSomethingHubContent]</action>
+    </shortcut>   
+</shortcuts>
