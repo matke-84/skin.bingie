@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KODI Skins\n"
 "Report-Msgid-Bugs-To: http://trac.kodi.tv/\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2025-04-11 17:05+0800\n"
+"PO-Revision-Date: 2025-12-22 17:08+0800\n"
 "Last-Translator: Kodi Translation Team\n"
 "Language-Team: \n"
 "Language: zh\n"
@@ -17,7 +17,6 @@ msgstr ""
 "X-Generator: Poedit 3.5\n"
 
 # BINGIE Strings
-
 #. 'Season' 的首字母
 msgctxt "#31000"
 msgid "S"
@@ -63,7 +62,7 @@ msgstr "使用高级布局"
 
 msgctxt "#31010"
 msgid "Playback & OSD"
-msgstr "播放与OSD"
+msgstr "播放与 OSD"
 
 msgctxt "#31011"
 msgid "Button focus text color (bordered focus)"
@@ -71,7 +70,7 @@ msgstr "按钮焦点文字色（带边框）"
 
 msgctxt "#31012"
 msgid "Up next addon options"
-msgstr "Up Next插件选项"
+msgstr "Up Next 插件选项"
 
 msgctxt "#31013"
 msgid "Configure shortcuts"
@@ -79,7 +78,7 @@ msgstr "配置快捷方式"
 
 msgctxt "#31014"
 msgid "Edit menu shortcuts and home widgets"
-msgstr ""
+msgstr "编辑菜单快捷方式和主界面小组件"
 
 msgctxt "#31015"
 msgid "Button text color"
@@ -87,15 +86,15 @@ msgstr "按钮文字颜色"
 
 msgctxt "#31016"
 msgid "Bingie layout playback & OSD"
-msgstr "Bingie播放界面布局"
+msgstr "Bingie 播放界面布局"
 
 msgctxt "#31017"
 msgid "Use alternative video OSD layout"
-msgstr "使用替代视频OSD布局"
+msgstr "使用替代视频 OSD 布局"
 
 msgctxt "#31018"
 msgid "Bingie Main Landscape"
-msgstr "Bingie主场景贴图布局"
+msgstr "Bingie 主场景贴图布局"
 
 msgctxt "#31019"
 msgid "Progress bar color"
@@ -115,7 +114,7 @@ msgstr "背景设置"
 
 msgctxt "#31023"
 msgid "Rated"
-msgstr "已评分"
+msgstr "评分"
 
 msgctxt "#31024"
 msgid "Force stop playback when not in fullscreen mode (exc. live TV)"
@@ -127,15 +126,15 @@ msgstr "分类"
 
 msgctxt "#31026"
 msgid "MPAA color panel"
-msgstr "MPAA颜色面板"
+msgstr "MPAA 颜色面板"
 
 msgctxt "#31027"
 msgid "Bingie Main Poster"
-msgstr "Bingie主海报布局"
+msgstr "Bingie 主海报布局"
 
 msgctxt "#31028"
 msgid "Display tags on widgets"
-msgstr "在小部件显示标签"
+msgstr "在小组件显示标签"
 
 msgctxt "#31029"
 msgid "Pink"
@@ -151,11 +150,11 @@ msgstr "设置演职员表显示角色数量"
 
 msgctxt "#31032"
 msgid "OSD progress bar background color"
-msgstr "OSD进度条背景色"
+msgstr "OSD 进度条背景色"
 
 msgctxt "#31033"
 msgid "OSD progress bar color"
-msgstr "OSD进度条颜色"
+msgstr "OSD 进度条颜色"
 
 msgctxt "#31034"
 msgid "items total"
@@ -171,7 +170,7 @@ msgstr "焦点区剧情文字颜色"
 
 msgctxt "#31037"
 msgid "Set default limit for items in widgets"
-msgstr "设置小部件默认项目数"
+msgstr "设置小组件默认项目数"
 
 msgctxt "#31038"
 msgid "Use compact header"
@@ -179,7 +178,7 @@ msgstr "使用紧凑标题"
 
 msgctxt "#31039"
 msgid "Disable 'New Episodes' indicator"
-msgstr "禁用'新剧集'指示器"
+msgstr "禁用“新剧集”指示器"
 
 msgctxt "#31040"
 msgid "Now playing"
@@ -187,19 +186,19 @@ msgstr "正在播放"
 
 msgctxt "#31041"
 msgid "Bingie splash image"
-msgstr "Bingie启动画面"
+msgstr "Bingie 启动画面"
 
 msgctxt "#31042"
 msgid "Enable studio logo"
-msgstr "启用制片厂标志"
+msgstr "启用制片厂徽标"
 
 msgctxt "#31043"
 msgid "OSD progress bar cache color"
-msgstr "OSD进度条缓存颜色"
+msgstr "OSD 进度条缓存颜色"
 
 msgctxt "#31044"
 msgid "OSD text color"
-msgstr "OSD文字颜色"
+msgstr "OSD 文字颜色"
 
 msgctxt "#31045"
 msgid "Enable air date"
@@ -215,7 +214,7 @@ msgstr "次要文字颜色"
 
 msgctxt "#31048"
 msgid "Home main menu focus icon color"
-msgstr "主页主菜单焦点图标颜色"
+msgstr "主菜单焦点图标颜色"
 
 msgctxt "#31049"
 msgid "Music & Musicals"
@@ -231,7 +230,7 @@ msgstr "所有剧集"
 
 msgctxt "#31052"
 msgid "Widget Content"
-msgstr "小部件内容"
+msgstr "小组件内容"
 
 msgctxt "#31053"
 msgid "You can select which palette is displayed by default when the color picker is called by the skin."
@@ -251,11 +250,11 @@ msgstr "场景贴图"
 
 msgctxt "#31057"
 msgid "OSD buttons color"
-msgstr "OSD按钮颜色"
+msgstr "OSD 按钮颜色"
 
 msgctxt "#31058"
 msgid "Customize shows hub"
-msgstr ""
+msgstr "自定义节目聚合中心"
 
 msgctxt "#31059"
 msgid "remaining"
@@ -263,7 +262,7 @@ msgstr "剩余"
 
 msgctxt "#31060"
 msgid "Show/hide OSD buttons"
-msgstr "显示/隐藏OSD按钮"
+msgstr "显示/隐藏 OSD 按钮"
 
 msgctxt "#31061"
 msgid "for"
@@ -299,7 +298,7 @@ msgstr "替代播放界面布局"
 
 msgctxt "#31069"
 msgid "PVR Hub"
-msgstr "PVR hub"
+msgstr "PVR 聚合中心"
 
 msgctxt "#31070"
 msgid "Watch Season"
@@ -311,7 +310,7 @@ msgstr "设置级别"
 
 msgctxt "#31072"
 msgid "Enable autoclose video OSD"
-msgstr "启用视频OSD自动关闭"
+msgstr "启用视频 OSD 自动关闭"
 
 msgctxt "#31073"
 msgid "Lock view"
@@ -323,7 +322,7 @@ msgstr "解锁视图"
 
 msgctxt "#31075"
 msgid "Enable startup animation in 4K"
-msgstr "启用4K启动动画"
+msgstr "启用 4K 启动动画"
 
 msgctxt "#31076"
 msgid "Switch Profiles"
@@ -331,7 +330,7 @@ msgstr "切换配置文件"
 
 msgctxt "#31077"
 msgid "Home main menu icon color"
-msgstr "主页主菜单图标颜色"
+msgstr "主菜单图标颜色"
 
 msgctxt "#31078"
 msgid "Blockbuster Movies"
@@ -371,7 +370,7 @@ msgstr "添加到我的列表"
 
 msgctxt "#31087"
 msgid "Autoclose OSD time"
-msgstr "OSD自动关闭时间"
+msgstr "OSD 自动关闭时间"
 
 msgctxt "#31088"
 msgid "Live TV"
@@ -391,7 +390,7 @@ msgstr "从我的列表移除"
 
 msgctxt "#31092"
 msgid "Show OSD info panel on pause"
-msgstr "暂停时显示OSD信息面板"
+msgstr "暂停时显示 OSD 信息面板"
 
 msgctxt "#31093"
 msgid "Progress bar text color"
@@ -407,11 +406,11 @@ msgstr "Bingie 季"
 
 msgctxt "#31096"
 msgid "OSD primary text color"
-msgstr "OSD主文字颜色"
+msgstr "OSD 主文字颜色"
 
 msgctxt "#31097"
 msgid "OSD details row text color"
-msgstr "OSD详细信息行文字颜色"
+msgstr "OSD 详细信息行文字颜色"
 
 msgctxt "#31098"
 msgid "Critically Acclaimed TV Shows"
@@ -435,7 +434,7 @@ msgstr "标签文字颜色"
 
 msgctxt "#31103"
 msgid "OSD label text color"
-msgstr "OSD标签文字颜色"
+msgstr "OSD 标签文字颜色"
 
 msgctxt "#31104"
 msgid "Season Greetings"
@@ -462,8 +461,8 @@ msgid "Video playback"
 msgstr "视频播放"
 
 msgctxt "#31110"
-msgid "Movies, TV Shows and People"
-msgstr "电影/剧集/人物"
+msgid "TMDb Movies, TV Shows and People"
+msgstr "TMDb 电影、电视剧与人物"
 
 msgctxt "#31111"
 msgid "Written by"
@@ -483,7 +482,7 @@ msgstr "显示扩展信息"
 
 msgctxt "#31115"
 msgid "Homescreen layout"
-msgstr "主屏幕布局"
+msgstr "主界面布局"
 
 msgctxt "#31116"
 msgid "Rotten Tomatoes Rating"
@@ -495,7 +494,7 @@ msgstr "已延迟"
 
 msgctxt "#31118"
 msgid "Ratings and studio logo visibility"
-msgstr "评分与制片厂标志可见性"
+msgstr "评分与制片厂徽标可见性"
 
 msgctxt "#31119"
 msgid "Show large thumbnail"
@@ -507,15 +506,15 @@ msgstr "启用详细信息图标（演职员/导演/类型等）"
 
 msgctxt "#31121"
 msgid "Homescreen layout"
-msgstr "主屏幕布局"
+msgstr "主界面布局"
 
 msgctxt "#31122"
 msgid "Bingie Main Square"
-msgstr "Bingie主方形布局"
+msgstr "Bingie 主方形布局"
 
 msgctxt "#31123"
 msgid "Enable moving focus frame in home & hubs"
-msgstr "在主界面和中心启用动态焦点框"
+msgstr "在主界面和聚合中心启用动态焦点框"
 
 msgctxt "#31125"
 msgid "Always visible"
@@ -523,7 +522,7 @@ msgstr "始终可见"
 
 msgctxt "#31126"
 msgid "Favorites"
-msgstr ""
+msgstr "收藏夹"
 
 msgctxt "#31127"
 msgid "Volume indicator color"
@@ -539,7 +538,7 @@ msgstr "音量指示器样式"
 
 msgctxt "#31130"
 msgid "Enable OSD of buffering progess during video playback"
-msgstr "视频播放时显示缓冲进度OSD"
+msgstr "视频播放时显示缓冲进度 OSD"
 
 msgctxt "#31131"
 msgid "Recently Added Artists"
@@ -547,7 +546,7 @@ msgstr "最近添加艺人"
 
 msgctxt "#31132"
 msgid "Home main menu/submenu focused text color"
-msgstr "主页主菜单/子菜单焦点文字颜色"
+msgstr "主菜单/子菜单焦点文字颜色"
 
 msgctxt "#31133"
 msgid "Jump to a specific time (hh:mm:ss)"
@@ -559,7 +558,7 @@ msgstr "面板布局"
 
 msgctxt "#31135"
 msgid "Home main menu/submenu text color"
-msgstr "主页主菜单/子菜单文字颜色"
+msgstr "主菜单/子菜单文字颜色"
 
 msgctxt "#31136"
 msgid "Enable Zoom Effect"
@@ -579,7 +578,7 @@ msgstr "取消所有剧集录制"
 
 msgctxt "#31140"
 msgid "Letterboxd Rating"
-msgstr ""
+msgstr "Letterboxd 评分"
 
 msgctxt "#31141"
 msgid "Display tags in views"
@@ -599,7 +598,7 @@ msgstr "选择详细信息行显示内容"
 
 msgctxt "#31145"
 msgid "MPAA"
-msgstr "MPAA分级"
+msgstr "MPAA 分级"
 
 msgctxt "#31146"
 msgid "Duration/total seasons"
@@ -611,7 +610,7 @@ msgstr "已停用"
 
 msgctxt "#31148"
 msgid "Trakt Manager"
-msgstr "Trakt管理"
+msgstr "Trakt 管理"
 
 msgctxt "#31149"
 msgid "with"
@@ -627,7 +626,7 @@ msgstr "背景叠加颜色"
 
 msgctxt "#31152"
 msgid "Bingie animation"
-msgstr "Bingie动画"
+msgstr "Bingie 动画"
 
 msgctxt "#31153"
 msgid "Trakt"
@@ -639,11 +638,11 @@ msgstr "启动动画"
 
 msgctxt "#31155"
 msgid "Add/remove favorites"
-msgstr ""
+msgstr "添加/移除收藏夹"
 
 msgctxt "#31156"
 msgid "Ratings & studio logo"
-msgstr "评分与制片厂标志"
+msgstr "评分与制片厂徽标"
 
 msgctxt "#31157"
 msgid "Primary text color"
@@ -678,8 +677,8 @@ msgid "Action & Crime TV Shows"
 msgstr "动作犯罪剧集"
 
 msgctxt "#31165"
-msgid "Search categories"
-msgstr "搜索分类"
+msgid "TMDb Shows"
+msgstr "TMDb 节目"
 
 msgctxt "#31166"
 msgid "Categories list"
@@ -687,15 +686,15 @@ msgstr "分类列表"
 
 msgctxt "#31167"
 msgid "Configure home screen & menus"
-msgstr ""
+msgstr "配置主界面和菜单"
 
 msgctxt "#31168"
 msgid "This skin is integrated with the skinshortcuts script to provide you maximized flexibility in how you want to arrange your homescreen & menus. You’re able to add and delete widgets, change the icons, define submenus etc. Choose the buttons below to get started modifying the skin menu’s and widgets’s to your own preferences."
-msgstr ""
+msgstr "此皮肤已集成 skinshortcuts 脚本，为您提供最大化的灵活性，可自由安排主界面与菜单布局。您能够添加或删除小工具、更换图标、定义子菜单等。请选择下方按钮，开始根据个人偏好修改皮肤菜单和小工具。"
 
 msgctxt "#31169"
 msgid "Disable dummy spotlight widget"
-msgstr "禁用虚拟聚光灯小部件"
+msgstr "禁用虚拟“精彩推荐”小组件"
 
 msgctxt "#31170"
 msgid "Reset menu to skin's defaults"
@@ -703,19 +702,19 @@ msgstr "重置菜单为皮肤默认"
 
 msgctxt "#31171"
 msgid "One of the main advantages of using the skinshortcuts-script is that your menu layout is shared across skins that support this addon. This is not always convenient as you won’t get the skins default menu layout which is optimized for the skin or you have played a bit in another skin and you don’t like the menu layout now. If you see weird behavior on your home menu or you just want to start fresh and get the most out of this skin, you can reset the menu structures to the skins default settings with the button below."
-msgstr "使用skinshortcuts脚本的优势在于菜单布局可在支持该插件的皮肤间共享。但这也可能导致无法获得当前皮肤的优化默认布局。若遇到菜单异常或想重新开始，点击下方按钮重置为皮肤默认设置。"
+msgstr "使用 skinshortcuts 脚本的优势在于菜单布局可在支持该插件的皮肤间共享。但这也可能导致无法获得当前皮肤的优化默认布局。若遇到菜单异常或想重新开始，点击下方按钮重置为皮肤默认设置。"
 
 msgctxt "#31172"
 msgid "Who's watching Bingie?"
-msgstr "谁在使用Bingie？"
+msgstr "谁在使用 Bingie？"
 
 msgctxt "#31173"
 msgid "Auto play trailers in home & hubs"
-msgstr "在家庭和 Hub 中自动播放预告片"
+msgstr "在主界面和聚合中心中自动播放预告片"
 
 msgctxt "#31174"
 msgid "Focused color for home tiles and widgets"
-msgstr "主页磁贴和小部件焦点颜色"
+msgstr "主界面磁贴及小组件的选中状态颜色"
 
 msgctxt "#31175"
 msgid "Change shortcut"
@@ -727,11 +726,11 @@ msgstr "启动画面设置"
 
 msgctxt "#31177"
 msgid "Title/clearlogo animation when system is idle"
-msgstr "系统空闲时标题/清晰标志动画"
+msgstr "系统空闲时标题/透明徽标动画"
 
 msgctxt "#31178"
 msgid "Hide ratings and studio logo on spotlight"
-msgstr "在焦点区隐藏评分和制片厂标志"
+msgstr "在焦点区隐藏评分和制片厂徽标"
 
 msgctxt "#31179"
 msgid "Always open fullscreen music playback"
@@ -739,7 +738,7 @@ msgstr "始终全屏播放音乐"
 
 msgctxt "#31180"
 msgid "Hide ratings and studio logo on widgets"
-msgstr "在小部件隐藏评分和制片厂标志"
+msgstr "在小组件隐藏评分和制片厂徽标"
 
 msgctxt "#31181"
 msgid "Alphabet letters pop-up & navigation"
@@ -750,8 +749,8 @@ msgid "Menu options"
 msgstr "菜单选项"
 
 msgctxt "#31183"
-msgid "Movie search"
-msgstr "电影搜索"
+msgid "TMDb Movies"
+msgstr "TMDb 电影"
 
 msgctxt "#31184"
 msgid "Replace cast and crew text list with cast and crew images"
@@ -763,7 +762,7 @@ msgstr "聚光灯"
 
 msgctxt "#31186"
 msgid "Search by TMDb Movies, Shows or People"
-msgstr ""
+msgstr "可以通过 TMDb 电影、节目或演员来进行搜索。"
 
 msgctxt "#31187"
 msgid "More info"
@@ -811,7 +810,7 @@ msgstr "惊悚悬疑剧集"
 
 msgctxt "#31198"
 msgid "Hide ratings in Plot & Critics"
-msgstr "在剧情与评价中隐藏评分"
+msgstr "在“剧情与评价”中隐藏评分"
 
 msgctxt "#31199"
 msgid "Enable additional details cast thumbnails"
@@ -851,7 +850,7 @@ msgstr "使用扩展同人画"
 
 msgctxt "#31208"
 msgid "Replace 'Rate This Title' (local library) with 'Add Raiting' (Trakt)"
-msgstr "用Trakt评分替换本地评分"
+msgstr "用 Trakt 评分替换本地评分"
 
 msgctxt "#31209"
 msgid "Loading..."
@@ -875,7 +874,7 @@ msgstr "选择自动预告片延迟间隔"
 
 msgctxt "#31214"
 msgid "Replace 'Add to My List' (local library) with 'Add/Remove Favorites' (Trakt)"
-msgstr ""
+msgstr "将“添加到我的列表”（本地媒体库）替换为“添加/移除收藏夹”（Trakt）"
 
 msgctxt "#31215"
 msgid "Content loading"
@@ -883,7 +882,7 @@ msgstr "内容加载中"
 
 msgctxt "#31216"
 msgid "Only when OSD active"
-msgstr "仅OSD激活时"
+msgstr "仅 OSD 激活时"
 
 msgctxt "#31217"
 msgid "Reboot to android"
@@ -915,7 +914,7 @@ msgstr "确定要移除剧集评分？"
 
 msgctxt "#31224"
 msgid "PVR Guide unfocused item color"
-msgstr "PVR指南未聚焦项颜色"
+msgstr "PVR 指南未聚焦项颜色"
 
 msgctxt "#31225"
 msgid "Enable auto scroll for plots/descriptions"
@@ -967,7 +966,7 @@ msgstr "详细信息行文字颜色"
 
 msgctxt "#31237"
 msgid "Use genre colors in EPG timeline"
-msgstr "在EPG时间轴使用类型颜色"
+msgstr "在 EPG 时间轴使用类型颜色"
 
 msgctxt "#31238"
 msgid "Text color for focused lyrics"
@@ -975,7 +974,7 @@ msgstr "聚焦歌词文字颜色"
 
 msgctxt "#31239"
 msgid "Use alternative EPG progress indicator"
-msgstr "使用替代EPG进度指示器"
+msgstr "使用替代 EPG 进度指示器"
 
 msgctxt "#31240"
 msgid "We think you'll like this"
@@ -1011,15 +1010,15 @@ msgstr "预告片与更多"
 
 msgctxt "#31248"
 msgid "IMDb"
-msgstr ""
+msgstr "IMDb"
 
 msgctxt "#31249"
 msgid "Enable OSD seek/jump indicator"
-msgstr "启用OSD跳转指示器"
+msgstr "启用 OSD 跳转指示器"
 
 msgctxt "#31250"
 msgid "Customize custom hub"
-msgstr ""
+msgstr "自定义定制化聚合中心"
 
 msgctxt "#31251"
 msgid "Custom color settings"
@@ -1027,7 +1026,7 @@ msgstr "自定义颜色设置"
 
 msgctxt "#31252"
 msgid "Custom Hub"
-msgstr ""
+msgstr "定制化聚合中心"
 
 msgctxt "#31253"
 msgid "FAST FORWARD"
@@ -1039,7 +1038,7 @@ msgstr "快退"
 
 msgctxt "#31255"
 msgid "Search by Movies, Shows or Episodes"
-msgstr ""
+msgstr "按电影、节目或剧集进行搜索"
 
 msgctxt "#31256"
 msgid "TV Shows Trending Today"
@@ -1051,7 +1050,7 @@ msgstr "内存使用"
 
 msgctxt "#31258"
 msgid "Enable finish time, current time & total duration for OSD playback"
-msgstr "在OSD显示结束时间/当前时间/总时长"
+msgstr "在 OSD 显示结束时间/当前时间/总时长"
 
 msgctxt "#31259"
 msgid "Enable animated discart"
@@ -1063,7 +1062,7 @@ msgstr "通用面板颜色"
 
 msgctxt "#31261"
 msgid "Enable total media count in Bingie views (local library)"
-msgstr "在Bingie视图中显示媒体总数（本地库）"
+msgstr "在 Bingie 视图中显示媒体总数（本地库）"
 
 msgctxt "#31262"
 msgid "Halloween Animation"
@@ -1071,7 +1070,7 @@ msgstr "万圣节动画"
 
 msgctxt "#31263"
 msgid "Recommended by TMDb"
-msgstr "TMDb推荐"
+msgstr "TMDb 推荐"
 
 msgctxt "#31264"
 msgid "Snow Animation"
@@ -1087,7 +1086,7 @@ msgstr "启用背景动画"
 
 msgctxt "#31267"
 msgid "General widget settings"
-msgstr "通用小部件设置"
+msgstr "通用小组件设置"
 
 msgctxt "#31268"
 msgid "Disable fanart"
@@ -1119,7 +1118,7 @@ msgstr "重置皮肤为默认设置"
 
 msgctxt "#31275"
 msgid "Disable Bingie logo on home"
-msgstr "在主界面禁用Bingie标志"
+msgstr "在主界面禁用 Bingie 徽标"
 
 msgctxt "#31276"
 msgid "Auto hide menu"
@@ -1127,11 +1126,11 @@ msgstr "自动隐藏菜单"
 
 msgctxt "#31277"
 msgid "IMDB Top 250 Movies"
-msgstr "IMDB Top 250电影"
+msgstr "IMDB Top 250 电影"
 
 msgctxt "#31278"
 msgid "Hide ratings and studio logo while trailer is playing"
-msgstr "播放预告片时隐藏评分和制片厂标志"
+msgstr "播放预告片时隐藏评分和制片厂徽标"
 
 msgctxt "#31279"
 msgid "Dark grey"
@@ -1139,11 +1138,11 @@ msgstr "深灰色"
 
 msgctxt "#31280"
 msgid "OSD buffering spinner color"
-msgstr "OSD缓冲旋转颜色"
+msgstr "OSD 缓冲旋转颜色"
 
 msgctxt "#31281"
 msgid "Disable items progress bar below title/clearlogo (use default indicator)"
-msgstr "禁用标题下方进度条（使用默认指示器）"
+msgstr "在标题或徽标下方禁用项目进度条显示功能（使用默认的进度指示器）。"
 
 msgctxt "#31282"
 msgid "Prefer red/white additional details icon"
@@ -1151,11 +1150,11 @@ msgstr "优先使用红/白附加信息图标"
 
 msgctxt "#31283"
 msgid "Prefer white icon on Top 250 sublabel"
-msgstr "Top 250子标签优先使用白色图标"
+msgstr "Top 250 子标签优先使用白色图标"
 
 msgctxt "#31284"
 msgid "Enable Top 250 sublabel on home and Bingie views"
-msgstr "在主界面和Bingie视图启用Top 250子标签"
+msgstr "在主界面和 Bingie 视图启用 Top 250 子标签"
 
 msgctxt "#31285"
 msgid "Overview"
@@ -1163,7 +1162,7 @@ msgstr "概述"
 
 msgctxt "#31286"
 msgid "36 Hour Forecast"
-msgstr "36小时预报"
+msgstr "36 小时预报"
 
 msgctxt "#31287"
 msgid "Hourly Forecast"
@@ -1175,7 +1174,7 @@ msgstr "周末预报"
 
 msgctxt "#31289"
 msgid "10 Day Forecast"
-msgstr "10天预报"
+msgstr "10 天预报"
 
 msgctxt "#31290"
 msgid "Chance of Precipitation"
@@ -1187,15 +1186,15 @@ msgstr "正在获取预报信息..."
 
 msgctxt "#31292"
 msgid "TV show status"
-msgstr ""
+msgstr "电视节目播出状态"
 
 msgctxt "#31293"
 msgid "Only for music"
-msgstr ""
+msgstr "仅用于音乐领域"
 
 msgctxt "#31294"
 msgid "For episodes and music"
-msgstr ""
+msgstr "用于剧集及音乐制作"
 
 msgctxt "#31295"
 msgid "Notification TV Shows airing today"
@@ -1207,7 +1206,7 @@ msgstr "每张同人画显示时间"
 
 msgctxt "#31297"
 msgid "Disable spotlight widget"
-msgstr "禁用焦点小部件"
+msgstr "禁用焦点小组件"
 
 msgctxt "#31298"
 msgid "pixels"
@@ -1231,7 +1230,7 @@ msgstr "颜色"
 
 msgctxt "#31304"
 msgid "Prefer TV Show thumb for episodes in widgets"
-msgstr "小部件剧集优先显示剧集缩略图"
+msgstr "小组件剧集优先显示剧集缩略图"
 
 msgctxt "#31305"
 msgid "Decoder"
@@ -1243,7 +1242,7 @@ msgstr "英国分级（仅限美英分级）"
 
 msgctxt "#31307"
 msgid "Spotlight widget"
-msgstr "焦点小部件"
+msgstr "“精彩推荐”小组件"
 
 msgctxt "#31308"
 msgid "Select movie genre fanart"
@@ -1251,7 +1250,7 @@ msgstr "选择电影类型同人画"
 
 msgctxt "#31309"
 msgid "MPAA style"
-msgstr "MPAA样式"
+msgstr "MPAA 样式"
 
 msgctxt "#31310"
 msgid "Are you sure you want to remove the rating for movie?"
@@ -1259,11 +1258,11 @@ msgstr "确定要移除电影评分？"
 
 msgctxt "#31311"
 msgid "on IMDB Today"
-msgstr "今日IMDB"
+msgstr "今日 IMDB"
 
 msgctxt "#31312"
 msgid "Channel logo/number visibility in the guide"
-msgstr ""
+msgstr "节目指南频道徽标 / 频道号显示"
 
 msgctxt "#31313"
 msgid "Most Played Movies"
@@ -1287,31 +1286,31 @@ msgstr "禁用合集"
 
 msgctxt "#31318"
 msgid "Bingie Episodes"
-msgstr "Bingie剧集视图"
+msgstr "Bingie 剧集视图"
 
 msgctxt "#31319"
 msgid "Trakt Popular TV Shows"
-msgstr "Trakt热门剧集"
+msgstr "Trakt 热门剧集"
 
 msgctxt "#31320"
 msgid "Enable Top 250 sublabel on video info"
-msgstr "在视频信息启用Top 250子标签"
+msgstr "在视频信息启用 Top 250 子标签"
 
 msgctxt "#31321"
 msgid "Bingie views"
-msgstr "Bingie视图"
+msgstr "Bingie 视图"
 
 msgctxt "#31322"
 msgid "Enable Top 250 sublabel on spotlight"
-msgstr "在焦点区启用Top 250子标签"
+msgstr "在焦点区启用 Top 250 子标签"
 
 msgctxt "#31323"
 msgid "Top 250 sublabel visibility"
-msgstr "Top 250子标签可见性"
+msgstr "Top 250 子标签可见性"
 
 msgctxt "#31324"
 msgid "Hide ratings and studio logo in views"
-msgstr "在视图中隐藏评分和制片厂标志"
+msgstr "在视图中隐藏评分和制片厂徽标"
 
 msgctxt "#31325"
 msgid "Show current weather in the video info & video on-screen displays"
@@ -1319,15 +1318,15 @@ msgstr "在视频信息和视频屏幕显示中显示当前天气"
 
 msgctxt "#31326"
 msgid "Trakt Popular Movies"
-msgstr "Trakt热门电影"
+msgstr "Trakt 热门电影"
 
 msgctxt "#31327"
 msgid "Clearlogo/title position"
-msgstr "清晰标志/标题位置"
+msgstr "透明徽标/标题位置"
 
 msgctxt "#31328"
 msgid "Trakt Trending TV Shows"
-msgstr "Trakt趋势剧集"
+msgstr "Trakt 趋势剧集"
 
 msgctxt "#31329"
 msgid "Top left"
@@ -1363,11 +1362,11 @@ msgstr "最多投票剧集"
 
 msgctxt "#31337"
 msgid "Trakt Trending Movies"
-msgstr "Trakt趋势电影"
+msgstr "Trakt 趋势电影"
 
 msgctxt "#31338"
 msgid "Prefer white ratings and studio logo"
-msgstr "优先使用白色评分和制片厂标志"
+msgstr "优先使用白色评分和制片厂徽标"
 
 msgctxt "#31339"
 msgid "Top Rated Movies"
@@ -1379,11 +1378,11 @@ msgstr "最高评分剧集"
 
 msgctxt "#31341"
 msgid "New & Popular Hub"
-msgstr ""
+msgstr "新潮热门聚合中心"
 
 msgctxt "#31342"
 msgid "Movies Hub"
-msgstr "电影 Hub"
+msgstr "电影聚合中心"
 
 msgctxt "#31343"
 msgid "Highest Revenue Movies"
@@ -1395,11 +1394,11 @@ msgstr "滚动条可见性"
 
 msgctxt "#31346"
 msgid "TMDb Popular TV Shows"
-msgstr "TMDb热门剧集"
+msgstr "TMDb 热门剧集"
 
 msgctxt "#31347"
 msgid "TMDb Popular Movies"
-msgstr "TMDb热门电影"
+msgstr "TMDb 热门电影"
 
 msgctxt "#31352"
 msgid "TV Mysteries"
@@ -1411,7 +1410,7 @@ msgstr "西部剧集"
 
 msgctxt "#31354"
 msgid "Select which categories to show in categories hub"
-msgstr "选择分类中心显示的分类"
+msgstr "选择分类聚合中心显示分类"
 
 msgctxt "#31364"
 msgid "TV Animations"
@@ -1439,11 +1438,11 @@ msgstr "设置图标"
 
 msgctxt "#31370"
 msgid "Auto play trailers for spotlight widget"
-msgstr "焦点小部件自动播放预告片"
+msgstr "焦点小组件自动播放预告片"
 
 msgctxt "#31371"
 msgid "No items in My List.[CR]Start adding Movies & TV Shows you like, just press the 'Add to My List' button from information page."
-msgstr "我的列表为空。[CR]从信息页点击'添加到我的列表'按钮开始收藏影视内容"
+msgstr "我的列表为空。[CR]从信息页点击“添加到我的列表”按钮开始收藏影视内容。"
 
 msgctxt "#31372"
 msgid "TV Crime"
@@ -1459,7 +1458,7 @@ msgstr "战争政治剧集"
 
 msgctxt "#31375"
 msgid "OSD media/codec info color"
-msgstr ""
+msgstr "OSD 媒体/编解码器信息显示颜色"
 
 msgctxt "#31376"
 msgid "TV Kids & Family"
@@ -1475,7 +1474,7 @@ msgstr "使用替代视频信息对话框"
 
 msgctxt "#31379"
 msgid "Set custom spotlight"
-msgstr ""
+msgstr "设置自定义“精选推荐”"
 
 msgctxt "#31380"
 msgid "Audio Process Information"
@@ -1491,7 +1490,7 @@ msgstr "喜剧剧集"
 
 msgctxt "#31383"
 msgid "Customize surprise me hub"
-msgstr ""
+msgstr "自定义令人惊喜聚合中心"
 
 msgctxt "#31384"
 msgid "Are you sure you want to remove the rating for show?"
@@ -1507,13 +1506,13 @@ msgstr "动作冒险剧集"
 
 msgctxt "#31387"
 msgid "Welcome to Bingie"
-msgstr "欢迎使用Bingie"
+msgstr "欢迎使用 Bingie"
 
 msgctxt "#31388"
 msgid ""
-"This skin is designed to simulate Netflix user experience for TV.[CR]In order to get everything running as it should, it's recommended to set the following Kodi options:[CR][CR][COLOR ff41b957] - Disable mouse[CR] - Hide parent folder items[CR] - Auto focus first unwatched episode[CR] - Flatten TV Shows seasons (show all episodes)[CR] - Set media default action to 'Resume'[/COLOR][CR][CR]Note that this settings are global and will be valid for all installed skins.[CR]But no worries, all settings can be reverted in Kodi "
-"settings."
-msgstr "本皮肤模拟Netflix电视端体验。[CR][CR建议设置以下Kodi选项：[CR][COLOR ff41b957]- 禁用鼠标[CR]- 隐藏父文件夹项[CR]- 自动聚焦首集未观看剧集[CR]- 平铺剧集季数（显示所有剧集）[CR]- 设置媒体默认操作为'续播'[/COLOR][CR][CR]注意这些是全局设置，会影响所有已安装皮肤。但所有设置都可在Kodi设置中还原。"
+"This skin is designed to simulate Netflix user experience for TV.[CR]In order to get everything running as it should, it's recommended to set the following Kodi options:[CR][CR][COLOR ff41b957]    - Disable mouse[CR]    - Hide parent folder items[CR]    - Auto focus first unwatched episode[CR]    - Flatten TV Shows seasons (show all episodes)[CR]    - Set media default action to 'Resume'[/COLOR][CR][CR]Note that this settings are global and will be valid for all installed skins.[CR]But no worries, all settings can be "
+"reverted in Kodi settings."
+msgstr "这款皮肤旨在模拟在电视上使用 Netflix 时的用户体验。[CR]为确保所有功能都能正常运行，建议设置以下 Kodi 参数：[CR][CR][COLOR ff41b957]    - 禁用鼠标操作[CR]    - 隐藏父文件夹中的项目[CR]    - 自动将未观看的剧集设置为当前播放内容[CR]    - 将电视节目的季集显示方式设置为“显示所有剧集”[CR]    - 将媒体的默认操作设置为“继续播放”[/COLOR][CR][CR]需要注意的是，这些设置是全局性的，因此会对所有已安装的皮肤产生影响。[CR]不过不用担心，所有这些设置都可以在 Kodi 的设置界面中重新进行调整。"
 
 msgctxt "#31389"
 msgid "OK, do it for me!"
@@ -1525,31 +1524,27 @@ msgstr "保持当前配置"
 
 msgctxt "#31391"
 msgid "Change action"
-msgstr ""
+msgstr "改变操作"
 
 msgctxt "#31392"
 msgid "Disable shortcut"
-msgstr ""
+msgstr "禁用快捷方式"
 
 msgctxt "#31393"
 msgid "Icon color for footer"
-msgstr ""
+msgstr "页脚图标颜色"
 
 msgctxt "#31394"
 msgid "Lyrics colors"
-msgstr ""
+msgstr "歌词颜色"
 
 msgctxt "#31395"
-msgid "With Bingie you can have all of your Kodi and library content in one place, through the use of widgets.[CR][CR]"
-"Home widgets and hubs can be configured from:[CR]"
-"[COLOR white]    - Skin settings -> Configure shortcuts[CR][CR]"
-"The skin is pre-packed with widgets for Movies & TV Shows.[CR]"
-"If you haven't added files to your video library yet, now is a good time![CR]"
-"Otherwise, you'd be staring with TMDb Bingie Helper widgets.[/COLOR][CR][CR]"
-"[COLOR ff41b957]TMDb Bingie Helper widgets do not play content. You need a separate plugin for that. Then you can configure TMDb Bingie Helper to use it for playback:[CR]"
-"    - Skin settings -> Supported addons -> TMDb Bingie Helper -> Players[CR]"
-"You can always replace the default skin widgets with your own.[/COLOR]"
+msgid ""
+"With Bingie you can have all of your Kodi and library content in one place, through the use of widgets.[CR][CR]Home widgets and hubs can be configured from:[CR][COLOR white]    - Skin settings -> Configure shortcuts[CR][CR]The skin is pre-packed with widgets for Movies & TV Shows.[CR]If you haven't added files to your video library yet, now is a good time![CR]Otherwise, you'd be staring with TMDb Bingie Helper widgets.[/COLOR][CR][CR][COLOR ff41b957]TMDb Bingie Helper widgets do not play content. You need a separate "
+"plugin for that. Then you can configure TMDb Bingie Helper to use it for playback:[CR]    - Skin settings -> Supported addons -> TMDb Bingie Helper -> Players[CR]You can always replace the default skin widgets with your own.[/COLOR]"
 msgstr ""
+"通过使用小工具，你可以将所有的 Kodi 内容以及你的媒体库中的文件集中管理在一个地方。[CR][CR]主界面上的小工具和聚合中心可以通过以下方式进行配置：[CR][COLOR white]    – 皮肤设置 -> 配置快捷方式[CR][CR]该皮肤预装了用于播放电影和电视节目的小工具。[CR]如果你还没有向媒体库中添加任何文件，现在正是合适的时候！[CR]否则，你看到的将会只是 TMDb Bingie 辅助小工具而已。[/COLOR][CR][CR][COLOR ff41b957]TMDb Bingie 辅助小工具本身并不具备播放内容的功能，你需要另外安装一个插件才能实现播放功能。之后，你可以通过以下设置让 TMDb Bingie 辅助小工具"
+"用于播放：[CR]    – 皮肤设置 -> 支持的插件 -> TMDb Bingie 辅助小工具 -> 播放器[CR]你随时都可以用自己的小工具替换默认设置中的小工具。[/COLOR]"
 
 msgctxt "#31396"
 msgid "Alright, let's do it"
@@ -1589,7 +1584,7 @@ msgstr "[B]文件管理[/B][CR][CR]浏览管理文件"
 
 msgctxt "#31405"
 msgid "[B]CONFIGURE NETWORK SETTINGS[/B][CR][CR]Setup control of Kodi via UPnP and HTTP · Configure file sharing · Set internet access options"
-msgstr "[B]网络设置[/B][CR][CR]UPnP/HTTP控制 · 文件共享 · 网络访问"
+msgstr "[B]网络设置[/B][CR][CR]UPnP/HTTP 控制 · 文件共享 · 网络访问"
 
 msgctxt "#31406"
 msgid "[B]CONFIGURE SYSTEM SETTINGS[/B][CR][CR]Setup and calibrate displays · Configure audio output · Set power saving options · Enable debugging"
@@ -1609,7 +1604,7 @@ msgstr "[B]系统信息[/B][CR][CR]摘要 · 存储 · 网络 · 视频 · 硬�
 
 msgctxt "#31410"
 msgid "[B]CONFIGURE LIVE-TV SETTINGS[/B][CR][CR]Configure PVR settings"
-msgstr "[B]直播电视设置[/B][CR][CR]PVR设置"
+msgstr "[B]直播电视设置[/B][CR][CR]PVR 设置"
 
 msgctxt "#31411"
 msgid "Additional info text color"
@@ -1621,7 +1616,7 @@ msgstr "子标签文字颜色"
 
 msgctxt "#31413"
 msgid "Configure hubs"
-msgstr ""
+msgstr "配置聚合中心"
 
 msgctxt "#31414"
 msgid "Mysteries"
@@ -1645,15 +1640,15 @@ msgstr "顶的评分值"
 
 msgctxt "#31419"
 msgid "PVR Guide focused item color"
-msgstr "PVR指南聚焦项颜色"
+msgstr "PVR 指南聚焦项颜色"
 
 msgctxt "#31420"
 msgid "Don't use rich artwork on the OSD at live TV playback"
-msgstr "直播电视播放时不使用复杂OSD图像"
+msgstr "直播电视播放时不使用复杂 OSD 图像"
 
 msgctxt "#31421"
 msgid "[B]SELECT YOUR KODI USER PROFILE[/B][CR][CR]To login and continue"
-msgstr "[B]选择Kodi用户配置文件[/B][CR][CR]登录以继续"
+msgstr "[B]选择 Kodi 用户配置文件[/B][CR][CR]登录以继续"
 
 msgctxt "#31422"
 msgid "Panel Details"
@@ -1669,7 +1664,7 @@ msgstr "横幅列表"
 
 msgctxt "#31425"
 msgid "Banner Plex"
-msgstr "Plex横幅"
+msgstr "Plex 横幅"
 
 msgctxt "#31426"
 msgid "Big Panel"
@@ -1697,15 +1692,15 @@ msgstr "场景贴画单行布局"
 
 msgctxt "#31432"
 msgid "TMDb Trending Movies"
-msgstr "TMDb趋势电影"
+msgstr "TMDb 趋势电影"
 
 msgctxt "#31433"
 msgid "Rate this title"
-msgstr "评价此标题"
+msgstr "给此标题评分"
 
 msgctxt "#31434"
 msgid "Customize movies hub"
-msgstr ""
+msgstr "自定义电影聚合中心"
 
 msgctxt "#31435"
 msgid "Animations"
@@ -1741,7 +1736,7 @@ msgstr "历史战争"
 
 msgctxt "#31443"
 msgid "IMDB Top 250 TV Shows"
-msgstr "IMDB Top 250剧集"
+msgstr "IMDB Top 250 剧集"
 
 msgctxt "#31444"
 msgid "List Details"
@@ -1781,7 +1776,7 @@ msgstr "恐怖"
 
 msgctxt "#31453"
 msgid "TMDb Trending TV Shows"
-msgstr "TMDb趋势剧集"
+msgstr "TMDb 趋势剧集"
 
 msgctxt "#31454"
 msgid "Movies Trending This Week"
@@ -1829,19 +1824,19 @@ msgstr "本皮肤支持全面颜色自定义，可保存为颜色主题或使用
 
 msgctxt "#31465"
 msgid "Customize submenu"
-msgstr ""
+msgstr "自定义子菜单"
 
 msgctxt "#31466"
 msgid "Set label"
-msgstr ""
+msgstr "设置标签"
 
 msgctxt "#31467"
 msgid "PVR Guide progress indicator color"
-msgstr ""
+msgstr "PVR 指南进度指示器颜色"
 
 msgctxt "#31468"
 msgid "Content type"
-msgstr ""
+msgstr "内容类型"
 
 msgctxt "#31469"
 msgid "Action & Adventure"
@@ -1857,11 +1852,11 @@ msgstr "成人内容面板颜色"
 
 msgctxt "#31472"
 msgid "Customize music hub"
-msgstr ""
+msgstr "自定义音乐聚合中心"
 
 msgctxt "#31473"
 msgid "OSD panel color"
-msgstr "OSD面板颜色"
+msgstr "OSD 面板颜色"
 
 msgctxt "#31474"
 msgid "Amber"
@@ -1881,7 +1876,7 @@ msgstr "页脚阴影颜色"
 
 msgctxt "#31478"
 msgid "OSD text color"
-msgstr "OSD文字颜色"
+msgstr "OSD 文字颜色"
 
 msgctxt "#31479"
 msgid "Similar"
@@ -1893,23 +1888,23 @@ msgstr "播放预告片"
 
 msgctxt "#31481"
 msgid "PVR Guide unfocused item text color"
-msgstr "PVR指南未聚焦项文字颜色"
+msgstr "PVR 指南未聚焦项文字颜色"
 
 msgctxt "#31482"
 msgid "OSD progress bar background color"
-msgstr "OSD进度条背景色"
+msgstr "OSD 进度条背景色"
 
 msgctxt "#31483"
 msgid "OSD progress bar color"
-msgstr "OSD进度条颜色"
+msgstr "OSD 进度条颜色"
 
 msgctxt "#31484"
 msgid "OSD buttons color"
-msgstr "OSD按钮颜色"
+msgstr "OSD 按钮颜色"
 
 msgctxt "#31485"
 msgid "OSD focus buttons color"
-msgstr "OSD焦点按钮颜色"
+msgstr "OSD 焦点按钮颜色"
 
 msgctxt "#31486"
 msgid "General color settings"
@@ -1925,7 +1920,7 @@ msgstr "编剧"
 
 msgctxt "#31489"
 msgid "Categories hub"
-msgstr "类别 Hub"
+msgstr "类别聚合中心"
 
 msgctxt "#31490"
 msgid "Library list"
@@ -1933,7 +1928,7 @@ msgstr "媒体库列表"
 
 msgctxt "#31491"
 msgid "TMDb Bingie Helper list"
-msgstr "TMDb Bingie Helper列表"
+msgstr "TMDb Bingie Helper 列表"
 
 msgctxt "#31492"
 msgid "Play Something Else"
@@ -1941,7 +1936,7 @@ msgstr "播放其他内容"
 
 msgctxt "#31493"
 msgid "YouTube videos"
-msgstr "YouTube视频"
+msgstr "YouTube 视频"
 
 msgctxt "#31494"
 msgid "Emmy"
@@ -1965,11 +1960,11 @@ msgstr "无碟片封面时使用虚拟封面"
 
 msgctxt "#31499"
 msgid "Channel number"
-msgstr ""
+msgstr "频道编号"
 
 msgctxt "#31500"
 msgid "Use local trailers only"
-msgstr ""
+msgstr "仅使用本地的预告片。"
 
 msgctxt "#31501"
 msgid "Reload"
@@ -1993,11 +1988,11 @@ msgstr "加载动画颜色"
 
 msgctxt "#31506"
 msgid "Customize new & popular hub"
-msgstr ""
+msgstr "自定新型且受欢迎的聚合中心"
 
 msgctxt "#31507"
 msgid "Layout for widgets"
-msgstr "小部件布局"
+msgstr "小组件布局"
 
 msgctxt "#31508"
 msgid "Cast in TV Shows"
@@ -2049,7 +2044,7 @@ msgstr "电影演员阵容"
 
 msgctxt "#31520"
 msgid "Widget loading animation color"
-msgstr "小部件加载动画颜色"
+msgstr "小组件加载动画颜色"
 
 msgctxt "#31521"
 msgid "color for indicator image or text"
@@ -2057,7 +2052,7 @@ msgstr "指示器图像/文字颜色"
 
 msgctxt "#31522"
 msgid "Auto trailers"
-msgstr ""
+msgstr "自动预告片"
 
 msgctxt "#31523"
 msgid "Settings for header"
@@ -2081,7 +2076,7 @@ msgstr "首播于"
 
 msgctxt "#31528"
 msgid "Play next episode (TMDb Bingie Helper)"
-msgstr "播放下集(TMDb Bingie Helper)"
+msgstr "播放下集 (TMDb Bingie Helper)"
 
 msgctxt "#31529"
 msgid "Posters"
@@ -2109,7 +2104,7 @@ msgstr "我的列表"
 
 msgctxt "#31535"
 msgid "OSD focus button color"
-msgstr "OSD焦点按钮颜色"
+msgstr "OSD 焦点按钮颜色"
 
 msgctxt "#31536"
 msgid "Action & Crime Movies"
@@ -2121,7 +2116,7 @@ msgstr "旗帜颜色"
 
 msgctxt "#31538"
 msgid "PVR Guide focused item text color"
-msgstr "PVR指南聚焦项文字颜色"
+msgstr "PVR 指南聚焦项文字颜色"
 
 msgctxt "#31539"
 msgid "Light red"
@@ -2141,7 +2136,7 @@ msgstr "编剧"
 
 msgctxt "#31543"
 msgid "No items in My List.[CR]Start adding Movies & TV Shows you like, just press the 'Add/Remove Favorites' button from information page."
-msgstr ""
+msgstr "我的列表中目前没有任何项目。[CR]现在可以开始添加你喜欢的电影和电视节目，只需点击信息页面上的“添加/移除收藏夹”按钮即可。"
 
 msgctxt "#31544"
 msgid "There are no comments for this content."
@@ -2209,7 +2204,7 @@ msgstr "音乐播放"
 
 msgctxt "#31560"
 msgid "Channel logo"
-msgstr ""
+msgstr "频道徽标"
 
 msgctxt "#31561"
 msgid "Additional info icons color"
@@ -2225,7 +2220,7 @@ msgstr "热门"
 
 msgctxt "#31564"
 msgid "Widgets"
-msgstr "小部件"
+msgstr "小组件"
 
 msgctxt "#31565"
 msgid "Open submenu"
@@ -2233,7 +2228,7 @@ msgstr "打开子菜单"
 
 msgctxt "#31567"
 msgid "Simple list (PVR)"
-msgstr "简单列表(PVR)"
+msgstr "简单列表 (PVR)"
 
 msgctxt "#31568"
 msgid "Enable indicator for unwatched items"
@@ -2257,7 +2252,7 @@ msgstr "视频附加信息文字颜色"
 
 msgctxt "#31573"
 msgid "OSD progress bar buffer cache color"
-msgstr "OSD进度条缓冲颜色"
+msgstr "OSD 进度条缓冲颜色"
 
 msgctxt "#31574"
 msgid "Background color diffuse"
@@ -2265,7 +2260,7 @@ msgstr "背景颜色扩散"
 
 msgctxt "#31575"
 msgid "Enable small PVR Channels OSD"
-msgstr "启用小型PVR频道OSD"
+msgstr "启用小型 PVR 频道 OSD"
 
 msgctxt "#31576"
 msgid "color for play icon"
@@ -2281,7 +2276,7 @@ msgstr "无匹配搜索结果。"
 
 msgctxt "#31579"
 msgid "Only for episodes"
-msgstr ""
+msgstr "仅适用于剧集"
 
 msgctxt "#31580"
 msgid "Parents strongly cautioned panel color"
@@ -2289,11 +2284,11 @@ msgstr "家长特别注意面板颜色"
 
 msgctxt "#31581"
 msgid "OSD plot text color"
-msgstr "OSD剧情文字颜色"
+msgstr "OSD 剧情文字颜色"
 
 msgctxt "#31582"
 msgid "OSD sublabel text color"
-msgstr "OSD子标签文字颜色"
+msgstr "OSD 子标签文字颜色"
 
 msgctxt "#31583"
 msgid "Rating color in details row"
@@ -2301,7 +2296,7 @@ msgstr "详细信息行评分颜色"
 
 msgctxt "#31584"
 msgid "TMDb Rating"
-msgstr "TMDb评分"
+msgstr "TMDb 评分"
 
 msgctxt "#31585"
 msgid "Diffuse color for lyrics overlay"
@@ -2313,11 +2308,11 @@ msgstr "根据您的观看历史"
 
 msgctxt "#31587"
 msgid "Show artist logo on fullscreen music playback"
-msgstr "全屏音乐播放显示艺人标志"
+msgstr "全屏音乐播放显示艺人徽标"
 
 msgctxt "#31588"
 msgid "OSD info panel"
-msgstr "OSD信息面板"
+msgstr "OSD 信息面板"
 
 msgctxt "#31589"
 msgid "Hardware decoding"
@@ -2333,7 +2328,7 @@ msgstr "人物"
 
 msgctxt "#31592"
 msgid "Enable auto pause on OSD open"
-msgstr "打开OSD时自动暂停"
+msgstr "打开 OSD 时自动暂停"
 
 msgctxt "#31593"
 msgid "Global background"
@@ -2349,7 +2344,7 @@ msgstr "选择视频信息显示内容"
 
 msgctxt "#31596"
 msgid "Open information instead of playing/opening content (only applies to widgets)"
-msgstr "打开信息而非播放（仅限小部件）"
+msgstr "打开信息而非播放（仅限小组件）"
 
 msgctxt "#31597"
 msgid "Total duration"
@@ -2357,7 +2352,7 @@ msgstr "总时长"
 
 msgctxt "#31598"
 msgid "IMDB Rating"
-msgstr "IMDB评分"
+msgstr "IMDB 评分"
 
 msgctxt "#31599"
 msgid "Show infopanel right"
@@ -2385,15 +2380,15 @@ msgstr "海报缩略图标签文字颜色"
 
 msgctxt "#31605"
 msgid "Border color for fixed MPAA panel"
-msgstr "固定MPAA面板边框颜色"
+msgstr "固定 MPAA 面板边框颜色"
 
 msgctxt "#31606"
 msgid "Metacritic Rating"
-msgstr "Metacritic评分"
+msgstr "Metacritic 评分"
 
 msgctxt "#31607"
 msgid "Trakt Rating"
-msgstr "Trakt评分"
+msgstr "Trakt 评分"
 
 msgctxt "#31608"
 msgid "Oscar"
@@ -2417,7 +2412,7 @@ msgstr "烂番茄观众评分"
 
 msgctxt "#31613"
 msgid "Shows Hub"
-msgstr ""
+msgstr "节目聚合中心"
 
 msgctxt "#31614"
 msgid "for You"
@@ -2441,7 +2436,7 @@ msgstr "单选按钮/微调控件焦点颜色"
 
 msgctxt "#31619"
 msgid "Home main menu line under icon"
-msgstr "主页主菜单图标下划线"
+msgstr "主菜单图标下划线"
 
 msgctxt "#31620"
 msgid "Random Movies"
@@ -2473,7 +2468,7 @@ msgstr "选择电影类型图标"
 
 msgctxt "#31627"
 msgid "Disable clearlogo (text title instead)"
-msgstr "禁用清晰标志（显示文字标题）"
+msgstr "禁用清晰徽标（显示文字标题）"
 
 msgctxt "#31628"
 msgid "Border size for focus frame"
@@ -2481,7 +2476,7 @@ msgstr "焦点框边框大小"
 
 msgctxt "#31629"
 msgid "Exit Bingie"
-msgstr "退出Bingie"
+msgstr "退出 Bingie"
 
 msgctxt "#31630"
 msgid "Play from beginning"
@@ -2521,7 +2516,7 @@ msgstr "未分级面板颜色"
 
 msgctxt "#31639"
 msgid "MPAA font color"
-msgstr "MPAA字体颜色"
+msgstr "MPAA 字体颜色"
 
 msgctxt "#31640"
 msgid "Surprise Me"
@@ -2529,20 +2524,20 @@ msgstr "随机推荐"
 
 msgctxt "#31641"
 msgid "In the Bingie skin, the content is organized into dedicated hubs. This layout makes it easy to navigate between categories and find what you’re looking for. Just like on the home screen, you have the ability to add new widgets, remove existing ones, and fully customize their appearance and behavior to suit your personal viewing preferences."
-msgstr ""
+msgstr "在 Bingie 皮肤中，内容会归类至专属内容聚合中心。这种布局可让你轻松在不同分类间切换浏览，快速找到所需内容。与主界面操作一致，你可添加新的小组件、移除现有小组件，并完全自定义其外观和行为，以契合你的个人观影偏好。"
 
 msgctxt "#31642"
 msgid "For all content"
-msgstr ""
+msgstr "全部内容"
 
 msgctxt "#31643"
 msgid "Episode number"
-msgstr ""
+msgstr "集数"
 
 msgctxt "#31644"
 msgid "Total episodes"
-msgstr ""
+msgstr "总集数"
 
 msgctxt "#31645"
 msgid "Trailer source"
-msgstr ""
+msgstr "预告片来源"
