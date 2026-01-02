@@ -5,14 +5,13 @@
   <controls>
     <!--Dialog Overlay-->
     <control type="group">
-      <visible>!Window.IsActive(fullscreenvideo) + !Window.IsActive(filebrowser)</visible>
       <include>DialogOverlayExtra</include>
       <animation effect="fade" time="250" start="0" end="100" reversible="false">WindowOpen</animation>
+	  <animation effect="fade" time="250" start="100" end="0" reversible="false">WindowClose</animation>
     </control>
 
     <!--Dialog Info-->
     <control type="group">
-      <visible>!Window.IsVisible(yesnodialog) + !Window.IsActive(filebrowser)</visible>
       <animation type="WindowOpen">
         <effect type="slide" start="1200" end="0" time="250" tween="cubic" easing="inout" />
       </animation>
@@ -47,7 +46,7 @@
         <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
         <align>left</align>
         <height>100</height>
-        <label>658</label>
+        <label>$LOCALIZE[658]</label>
         <visible>Container.Content(Songs)</visible>
       </control>
       <control type="label">
@@ -59,7 +58,7 @@
         <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
         <align>left</align>
         <height>100</height>
-        <label>24016</label>
+        <label>$LOCALIZE[24016]</label>
         <visible>Container.Content(Albums)</visible>
       </control>
       <control type="label">
@@ -71,7 +70,7 @@
         <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
         <align>left</align>
         <height>100</height>
-        <label>24017</label>
+        <label>$LOCALIZE[24017]</label>
         <visible>Container.Content(Artists)</visible>
       </control>
 
@@ -216,75 +215,66 @@
         <ondown>60</ondown>
         <onleft>9000</onleft>
         <onright>9000</onright>
-        <animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)">Conditional</animation>
-        <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+        <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+        <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
       </control>
 
       <!--Button Group-->
       <control type="grouplist" id="9000">
-        <posx>675</posx>
+        <posx>668</posx>
         <posy>940</posy>
         <orientation>horizontal</orientation>
-        <itemgap>5</itemgap>
+        <itemgap>2</itemgap>
         <defaultcontrol>5</defaultcontrol>
         <onup condition="Control.IsVisible(60)">60</onup>
-        <width>1200</width>
-        <control type="button" id="11">
-          <!--Cancel-->
-          <width>296</width>
-          <height>80</height>
-          <align>center</align>
-          <label>222</label>
-          <include>DialogButtonOther</include>
-          <onclick>Close</onclick>
-        </control>
+        <width>1214</width>
         <control type="button" id="12">
           <!--Album Info button-->
-          <width>296</width>
+          <width>302</width>
           <height>80</height>
           <align>center</align>
           <include>DialogButtonOther</include>
-          <label>10523</label>
+          <label>$LOCALIZE[10523]</label>
         </control>
         <control type="button" id="10">
           <!--Get Thumb button-->
-          <width>296</width>
+          <width>302</width>
           <height>80</height>
           <align>center</align>
           <include>DialogButtonOther</include>
-          <label>13405</label>
+          <label>$LOCALIZE[13405]</label>
         </control>
         <control type="button" id="7">
           <!--set personal rating-->
-          <width>296</width>
+          <width>302</width>
           <height>80</height>
           <align>center</align>
           <include>DialogButtonOther</include>
-          <label>38023</label>
+          <label>$LOCALIZE[38023]</label>
         </control>
 		<control type="button" id="3102">
 		  <!--Youtube-->
-		  <width>296</width>
+		  <width>302</width>
           <height>80</height>
           <align>center</align>
           <include>DialogButtonOther</include>
-          <label>31493</label>
+          <label>$LOCALIZE[31493]</label>
           <onclick>Close</onclick>
           <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/search/?q=$INFO[ListItem.Artist],return)</onclick>
 		</control>
         <control type="button" id="6">
           <!--update-->
-          <width>296</width>
+          <width>302</width>
           <height>80</height>
           <align>center</align>
           <include>DialogButtonOther</include>
-          <label>184</label>
+          <label>$LOCALIZE[184]</label>
         </control>
       </control>
       <!--Arrows-->
       <control type="image">
         <animation effect="fade" start="100" end="50" tween="sine" easing="inout" time="800" pulse="true" reversible="false" condition="true">Conditional</animation>
-        <right>15</right>
+        <right>14</right>
         <bottom>70</bottom>
         <posy>50</posy>
         <width>20</width>
@@ -297,7 +287,7 @@
       </control>
       <control type="image">
         <animation effect="fade" start="100" end="50" tween="sine" easing="inout" time="800" pulse="true" reversible="false" condition="true">Conditional</animation>
-        <right>1255</right>
+        <right>1256</right>
         <bottom>70</bottom>
         <posy>50</posy>
         <width>20</width>

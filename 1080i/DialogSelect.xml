@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- BINGIE -->
 <window>
-	<zorder>5</zorder>
     <defaultcontrol always="true">1000</defaultcontrol>
     <onload condition="Skin.HasSetting(BingieAutoTrailer) + System.HasAlarm(preview_delay)">CancelAlarm(preview_delay,silent)</onload>
 	 <coordinates>
@@ -9,7 +8,6 @@
 		<left>0</left>
 		<top>0</top>
 	</coordinates>
-    <!--Normal "1" over DialogVideoInfo.xml-->
     <controls>
 		<include>DialogOverlayExtra</include>
 		
@@ -103,30 +101,6 @@
                     <imagepath>$INFO[Container(6).ListItem.Icon]</imagepath>
                     <visible>!String.Contains(Container(6).ListItem.FileNameAndPath,spinner)</visible>
                 </control>
-				<control type="textbox">
-					<posx>1091</posx>
-                    <posy>630</posy>
-                    <width>400</width>
-                    <height>140</height>
-                    <font>Reg22</font>
-					<label>$INFO[Container(6).ListItem.Label2,, ][CR]$INFO[Container(6).ListItem.AddonVersion,$LOCALIZE[24051] ]</label>
-					<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-					<align>left</align>
-					<aligny>top</aligny>
-                    <visible>!String.IsEmpty(Container(6).ListItem.label2)</visible>
-				</control>
-                <control type="textbox">
-					<posx>1091</posx>
-                    <posy>630</posy>
-                    <width>400</width>
-                    <height>140</height>
-                    <font>Reg22</font>
-					<label>$INFO[Container(6).ListItem.AddonSummary,, ][CR]$INFO[Container(6).ListItem.AddonVersion,$LOCALIZE[24051] ]</label>
-					<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-					<align>left</align>
-					<aligny>top</aligny>
-                    <visible>String.IsEmpty(Container(6).ListItem.label2)</visible>
-				</control>
             </control>
             <!--List-->
             <control type="list" id="3">
@@ -232,9 +206,9 @@
                             <visible>ListItem.IsSelected</visible>
                         </control>
                     </control>
-                </focusedlayout>
-				
+                </focusedlayout>				
 			</control>
+			
 			<control type="scrollbar" id="60">
 				<visible>Control.IsVisible(3)</visible>
 				<posx>1517</posx>
@@ -243,10 +217,9 @@
 				<onup>60</onup>
 				<ondown>60</ondown>
 				<onleft>3</onleft>
-				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)">Conditional</animation>
-				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
 			</control>
-
 			
             <control type="list" id="6">
                 <!--Container 6 Big-->
@@ -453,6 +426,7 @@
                     </control>
                 </focusedlayout>
             </control>
+			
 			<control type="scrollbar" id="1661">
 				<visible>Control.IsVisible(6)</visible>
 				<posx>1047</posx>
@@ -461,22 +435,9 @@
 				<onleft>6</onleft>
                 <onup>661</onup>
                 <ondown>661</ondown>
-				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(1661) | Container.Scrolling  | String.IsEqual(Skin.String(scrollbar_visibility),always_show)">Conditional</animation>
-				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(1661) | Container.Scrolling  | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
-			</control>
-            
-            <!--description -->
-			<control type="label">
-                <posx>423</posx>
-				<posy>805</posy>
-                <width>1100</width>
-                <height>20</height>
-                <label>$INFO[Container(3).ListItem.Label2]</label>
-                <align>left</align>
-                <aligny>center</aligny>
-                <scroll>true</scroll>
-                <font>Reg22</font>
-            </control>
+				<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(1661) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(1661) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+			</control>           
             
 			<!--Buttons-->
             <control type="grouplist" id="8000">
@@ -493,7 +454,7 @@
                 <control type="button" id="5">
                     <description>OK</description>
 					<left>0</left>
-                    <label>186</label>
+                    <label>$LOCALIZE[186]</label>
                     <width>400</width>
                     <include>DialogButtonOther</include>
                     <height>80</height>
@@ -502,7 +463,7 @@
                 <control type="button" id="7">
                     <right>0</right>
                     <description>Close</description>
-                    <label></label>
+                    <label/>
                     <width>400</width>
                     <include>DialogButtonOther</include>
                     <height>80</height>

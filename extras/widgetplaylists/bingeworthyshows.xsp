@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- BINGIE -->
+<smartplaylist type="tvshows">
+    <name>Bingeworthy TV Shows</name>
+    <match>all</match>
+    <rule field="rating" operator="greaterthan">
+        <value>7.4</value>
+    </rule>
+    <rule field="votes" operator="greaterthan">
+        <value>1000</value>
+    </rule>
+    <order direction="descending">dateadded</order>
+	<limit>200</limit>
+</smartplaylist>

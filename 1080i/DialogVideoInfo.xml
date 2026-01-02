@@ -19,6 +19,7 @@
 	<onunload condition="!String.IsEmpty(Window.Property(AdditionalInfo))">ClearProperty(AdditionalInfo)</onunload>
 	<onunload condition="!String.IsEmpty(Window.Property(ShowPlayBeginning))">ClearProperty(ShowPlayBeginning)</onunload>
 	<onunload condition="!String.IsEmpty(Window.Property(PlaySearchTrailer))">ClearProperty(PlaySearchTrailer)</onunload>
+	<onload condition="![String.IsEqual(ListItem.Path,plugin://plugin.video.tmdb.bingie.helper/) | !String.IsEmpty(ListItem.DBID)]">SetProperty(SetCustomAddon,1,Home)</onload>
     <controls>
 		<include>Defs_TMDbBingieHelper_Loader</include>
         <include condition="Skin.HasSetting(UseBingieInfoDialog)">BingieInfo</include>

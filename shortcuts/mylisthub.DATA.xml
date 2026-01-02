@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<shortcuts>
+    <shortcut>
+        <label>$LOCALIZE[31534]</label>
+        <label2 />
+        <icon />
+        <thumb />
+        <action>$VAR[Path_MyList]</action>
+    </shortcut>   
+</shortcuts>

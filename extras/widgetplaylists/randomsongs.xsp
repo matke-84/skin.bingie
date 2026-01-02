@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- BINGIE -->
 <smartplaylist type="songs">
     <name>Random Songs</name>
     <match>all</match>
-    <order direction="ascending">random</order>
+    <order direction="descending">random</order>
+	<limit>200</limit>
 </smartplaylist>

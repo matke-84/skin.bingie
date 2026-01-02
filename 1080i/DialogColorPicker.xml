@@ -50,7 +50,6 @@
 				<orientation>vertical</orientation>
 				<preloaditems>4</preloaditems>
 				<pagecontrol>60</pagecontrol>
-				<viewtype label="31438">icons</viewtype>
 				<itemlayout height="84" width="128">
 					<control type="group">
 						<control type="image">

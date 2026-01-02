@@ -57,7 +57,7 @@
                 <posx>425</posx>
                 <posy>270</posy>
                 <width>800</width>
-                <label>1036</label>
+                <label>$LOCALIZE[1036]</label>
                 <align>left</align>
                 <include>DialogHeader</include>
             </control>
@@ -188,14 +188,14 @@
                 </focusedlayout>
             </control>
             		
-			<control type="scrollbar" id="60"> <!--scrollbar-->
+			<control type="scrollbar" id="60">
 				<left>1040</left>
 				<top>350</top>
 				<height>545</height>
 				<onleft>450</onleft>
 				<showonepage>false</showonepage>
-				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)">Conditional</animation>
-				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
 			</control>				
 	</controls>
 </window>

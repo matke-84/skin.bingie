@@ -34,7 +34,7 @@
 				<left>137</left>
                 <width>auto</width>
 				<font>Reg32</font>
-                <label>31230</label>
+                <label>$LOCALIZE[31230]</label>
 				<visible>Skin.HasSetting(EnableBingieSearchFullKeyboard) + !$EXP[IsActualKeyboardActive]</visible>				
             </control>
 		</control>
@@ -122,8 +122,8 @@
             <onclick condition="String.IsEmpty(Skin.String(CustomSearchTerm))">noop</onclick>
             <visible>!$EXP[IsActualKeyboardActive]</visible>          
             <content>plugin://plugin.program.autocompletion?info=autocomplete&amp;&amp;id=$INFO[Skin.String(CustomSearchTerm)]</content>
-			<include condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">Search_Suggestions_Content</include>
-			<include condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">Search_Suggestions_Content_2</include>
+			<include condition="[Library.HasContent(Movies) | Library.HasContent(TVShows)] + !Skin.HasSetting(DisableSearchSuggestions)">Search_Suggestions_Content</include>
+			<include condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows) + !Skin.HasSetting(DisableSearchSuggestions)">Search_Suggestions_Content_2</include>
         </include>
 
         <!--- ########## Right Layout ########## -->
@@ -232,13 +232,7 @@
         <!-- Main Menu -->
         <include>BingieSideBladeMainMenu</include>
 		<!-- Snow Effect -->
-        <control type="group">
-            <include condition="String.IsEqual(Skin.String(season_greetings),snow_animation)">snow</include>
-        </control>
-		<!-- Halloween Effect -->
-        <control type="group">
-            <include condition="String.IsEqual(Skin.String(season_greetings),halloween_animation)">pumpkin</include>
-        </control>
+        <include condition="Skin.HasSetting(EnableSnowAnimation)">SnowAnimation</include>
 		<control type="videowindow">
             <visible>!String.IsEmpty(Window(Home).Property(PlaySearchTrailer))</visible>
         </control>

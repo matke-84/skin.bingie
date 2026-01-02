@@ -9,13 +9,12 @@
     <controls>
         <!--Dialog Overlay-->
 		<control type="group">
-			<visible>!Window.IsActive(fullscreenvideo) + !Window.IsActive(filebrowser)</visible>
 			<include>DialogOverlayExtra</include>
 			<animation effect="fade" time="250" start="0" end="100" reversible="false">WindowOpen</animation>
+			<animation effect="fade" time="250" start="100" end="0" reversible="false">WindowClose</animation>
         </control>
 		
         <control type="group">
-             <visible>!Window.IsVisible(yesnodialog) + !Window.IsActive(filebrowser)</visible>
 			<animation type="WindowOpen">
 				<effect type="slide" start="1200" end="0" time="250" tween="cubic" easing="inout" />
 			</animation>
@@ -35,9 +34,9 @@
            <!--Header-->
             <control type="label">
                 <description>Heading</description>
-                <posx>675</posx>
+                <posx>677</posx>
                 <posy>10</posy>
-                <width>1200</width>
+                <width>1196</width>
 				<font>Bold40</font>
 				<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                 <align>left</align>
@@ -46,16 +45,17 @@
             </control>
             <control type="group" id="1000">
                 <description>Control Area</description>
-                <posx>675</posx>
+                <posx>677</posx>
                 <posy>120</posy>
-                <width>1200</width>
+                <width>1196</width>
                 <height>800</height>
 				<include>SkinSettings_HomeLayout</include>
                 <include>SkinSettings_Shortcuts</include>
+				<include>SkinSettings_General</include>
                 <include>SkinSettings_Library</include>
-                <include>SkinSettings_PVR</include>
-                <include>SkinSettings_OSD</include>
-                <include>SkinSettings_General</include>
+				<include>SkinSettings_VideoInfo</include>
+				<include>SkinSettings_OSD</include>
+                <include>SkinSettings_PVR</include>                              
                 <include>SkinSettings_Background</include>
                 <include>SkinSettings_ColorThemes</include>
                 <include>SkinSettings_CustomColors</include>
@@ -63,20 +63,20 @@
                 <include>SkinSettings_Backup</include>
             </control>
             <!--Button Group-->
-            <control type="grouplist" id="2000">
-                <posx>675</posx>
+			<control type="group" id="2000">
+            <control type="grouplist" id="9000">
+                <posx>668</posx>
                 <posy>940</posy>
 				<orientation>horizontal</orientation>
-				<itemgap>0</itemgap>
+				<itemgap>2</itemgap>
 				<onup>1000</onup>
-                <width>1200</width>
+                <width>1214</width>
                 <include>SkinSettings_MenuOptions</include>
             </control>
-            <!--Arrows-->
+			<!--Arrows-->
             <control type="image">
                 <animation effect="fade" start="100" end="50" tween="sine" easing="inout" time="800" pulse="true" reversible="false" condition="true">Conditional</animation>
-				<animation effect="fade" start="100" end="40" time="300" tween="sine" easing="inout" condition="!ControlGroup(2000).HasFocus()">Conditional</animation>
-                <right>17</right>
+                <right>14</right>
                 <bottom>70</bottom>
                 <posy>50</posy>
                 <width>20</width>
@@ -89,8 +89,7 @@
             </control>
             <control type="image">
                 <animation effect="fade" start="100" end="50" tween="sine" easing="inout" time="800" pulse="true" reversible="false" condition="true">Conditional</animation>
-				<animation effect="fade" start="100" end="40" time="300" tween="sine" easing="inout" condition="!ControlGroup(2000).HasFocus()">Conditional</animation>
-                <right>1253</right>
+                <right>1256</right>
                 <bottom>70</bottom>
                 <posy>50</posy>
                 <width>20</width>
@@ -99,8 +98,9 @@
                 <texture flipx="true">dialogs/videoinfo/arrow.png</texture>
                 <visible>!Control.HasFocus(51)</visible>
                 <colordiffuse>white</colordiffuse>
-                <visible>Container(9000).HasNext</visible>
+                <visible>Container(9000).HasPrevious</visible>
             </control>
+			</control>
         </control>
     </controls>
 </window>

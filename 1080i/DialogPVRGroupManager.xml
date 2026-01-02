@@ -54,7 +54,7 @@
                         <height>34</height>
                         <align>left</align>
                         <textoffsetx>20</textoffsetx>
-                        <label>19141</label>
+                        <label>$LOCALIZE[19141]</label>
                         <include>DialogButton</include>
                     </control>
                     <control type="image">
@@ -168,7 +168,8 @@
                         <onup>60</onup>
                         <showonepage>false</showonepage>
                         <orientation>vertical</orientation>
-                        <animation effect="fade" start="75" end="0" time="300" tween="sine" easing="inout" condition="!Control.IsVisible(61)">Conditional</animation>
+                        <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+						<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
                     </control>
                 </control>
                 <control type="group">
@@ -317,7 +318,8 @@
                         <onup>70</onup>
                         <showonepage>false</showonepage>
                         <orientation>vertical</orientation>
-                        <animation effect="fade" start="75" end="0" time="300" tween="sine" easing="inout" condition="!Control.IsVisible(71)">Conditional</animation>
+                        <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(70) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+						<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(70) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
                     </control>
                 </control>
                 <control type="group">
@@ -466,7 +468,8 @@
                         <onup>80</onup>
                         <showonepage>false</showonepage>
                         <orientation>vertical</orientation>
-                        <animation effect="fade" start="75" end="0" time="300" tween="sine" easing="inout" condition="!Control.IsVisible(81)">Conditional</animation>
+                        <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(80) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+						<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(80) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
                     </control>
                 </control>
                 <control type="grouplist" id="9000">
@@ -484,8 +487,8 @@
                     <ondown>13</ondown>
                     <control type="togglebutton" id="34">
                         <description>TV/Radio Button</description>
-                        <label>10705</label>
-                        <altlabel>10700</altlabel>
+                        <label>$LOCALIZE[10705]</label>
+                        <altlabel>$LOCALIZE[10700]</altlabel>
 						<width>300</width>
                         <usealttexture>!String.IsEmpty(Window.Property(IsRadio))</usealttexture>
                         <include>DialogButtonOther</include>
@@ -493,25 +496,25 @@
 					<control type="button" id="26">
 						<description>Add Group</description>
 						<width>300</width>
-						<label>15019</label>
+						<label>$LOCALIZE[15019]</label>
 						<include>DialogButtonOther</include>
 					</control>
 					<control type="button" id="27">
 						<description>Rename Group</description>
 						<width>300</width>
-						<label>118</label>
+						<label>$LOCALIZE[118]</label>
 						<include>DialogButtonOther</include>
 					</control>
 					<control type="button" id="28">
 						<description>Delete Group</description>
 						<width>300</width>
-						<label>117</label>
+						<label>$LOCALIZE[117]</label>
 						<include>DialogButtonOther</include>
 					</control>
 					<control type="button" id="29">
 						<description>OK</description>
 						<width>300</width>
-						<label>186</label>
+						<label>$LOCALIZE[186]</label>
 						<include>DialogButtonOther</include>
 					</control>
 					<control type="radiobutton" id="25">
@@ -520,7 +523,7 @@
 						<radioposx>178</radioposx>
 						<align>left</align>
 						<width>300</width>
-						<label>19289</label>
+						<label>$LOCALIZE[19289]</label>
 						<include>DialogButtonOther</include>
 					</control>
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
+	<zorder>999</zorder>
     <defaultcontrol always="true">1297</defaultcontrol>
     <controls>
 		<control type="image">
@@ -71,13 +72,7 @@
         </control>
 		
 		<!-- Snow Effect -->
-        <control type="group">
-            <include condition="String.IsEqual(Skin.String(season_greetings),snow_animation)">snow</include>
-        </control>
-		<!-- Halloween Effect -->
-        <control type="group">
-            <include condition="String.IsEqual(Skin.String(season_greetings),halloween_animation)">pumpkin</include>
-        </control>
+        <include condition="Skin.HasSetting(EnableSnowAnimation)">SnowAnimation</include>
 
     </controls>
 </window>

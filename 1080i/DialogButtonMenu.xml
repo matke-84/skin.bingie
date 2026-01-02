@@ -8,7 +8,11 @@
 	<onunload>ClearProperty(StartupMask,Home)</onunload>
     <controls>
 	
-	<include>DialogOverlayExtra</include>
+		<control type="group">
+			<include>DialogOverlayExtra</include>
+			<animation effect="fade" time="250" start="0" end="100" reversible="false">WindowOpen</animation>
+			<animation effect="fade" time="250" start="100" end="0" reversible="false">WindowClose</animation>
+        </control>
     
     <control type="button" id="9001">
         <description>Make sure we hit the first button in the group list and not the close window button</description>
@@ -33,7 +37,13 @@
 		<bottom>0</bottom>
 		<height>110</height>
 		
-		<include>animation_dialog_button_modern</include>
+		<!--Shutdown Menu Open/Close-->
+        <animation type="WindowOpen">
+            <effect type="slide" start="0,110" end="0,0" tween="cubic" easing="inout" time="250" />
+        </animation>
+        <animation type="WindowClose">
+            <effect type="slide" start="0,0" end="0,110" tween="cubic" easing="inout" time="250" />
+        </animation>
 	 
         <!--Panel-->
 		

@@ -6,6 +6,6 @@
     <rule field="playcount" operator="is">
         <value>0</value>
     </rule>
-    <limit>200</limit>
     <order direction="descending">dateadded</order>
+	<limit>200</limit>
 </smartplaylist>

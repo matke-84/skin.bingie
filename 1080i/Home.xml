@@ -14,7 +14,7 @@
     <onload condition="Skin.HasSetting(EnableRatings)">Skin.Reset(TMDbBingieHelper.DisableRatings)</onload>
 	
 	<!-- Build Menu -->
-    <onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=900&amp;levels=1&amp;group=mainmenu|powermenu|searchmenu|tmdbsearchmenu|moviehub|tvshowhub|newhub|musichub|customhub|somethinghub)</onload>
+    <onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=900&amp;levels=1&amp;group=mainmenu|powermenu|searchmenu|tmdbsearchmenu|moviehub|tvshowhub|newhub|musichub|customhub|somethinghub|mylisthub)</onload>
     <onload condition="String.IsEmpty(Window(Home).Property(widgetstyle))">SetProperty(widgetstyle,$INFO[Skin.String(widgetstyle)])</onload>
 	<onload>Skin.TimerStart(spotlightanimation)</onload>
 

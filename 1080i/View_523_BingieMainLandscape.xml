@@ -27,9 +27,9 @@
                     <font>Bold31</font>
                     <align>left</align>
                     <textcolor>$INFO[Skin.String(BingieHeaderTextColor)]</textcolor>
-                    <label>$VAR[BingieMainContentHeader] $INFO[Container(523).NumItems,(,)]</label>
-                    <visible>Skin.HasSetting(EnableMediaCount) + Integer.IsGreater(Container(523).NumItems,0)</visible>
-					<visible>!String.IsEmpty(ListItem.DBID) + !Container.Content(episodes) + !Container.Content(seasons) + !String.Contains(ListItem.Path,plugin://)</visible>
+                    <label>$VAR[BingieMainContentHeader]</label>
+                    <visible>Integer.IsGreater(Container(523).NumItems,0)</visible>
+					<visible>!Container.Content(episodes) + !Container.Content(seasons)</visible>
                 </control>
 
                 <include content="Bingie_Main_Landscape_View">
@@ -52,8 +52,8 @@
                     <bottom>0</bottom>
                     <onleft>523</onleft>
                     <orientation>vertical</orientation>
-                    <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
-                    <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+                    <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+                    <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
                 </control>
             </control>
         </control>
@@ -62,7 +62,7 @@
     <!-- Container -->
     <include name="Bingie_Main_Landscape_View">
         <control type="$PARAM[containerType]" id="523">
-            <viewtype label="31018">panel</viewtype>
+            <viewtype label="31018">Bingie Landscape</viewtype>
             <include content="View_Forced">
                 <param name="viewtype" value="$LOCALIZE[31018]" />
             </include>
@@ -75,14 +75,12 @@
             <preloaditems>4</preloaditems>
             <pagecontrol>60</pagecontrol>
             <include>ScrollTime</include>
-            <onright condition="Skin.HasSetting(EnableQuickJump) + Control.IsVisible(6002)">6000</onright>
-            <onright condition="Skin.HasSetting(EnableQuickJump) + !Control.IsVisible(6002)">noop</onright>
-            <onright condition="!Skin.HasSetting(EnableQuickJump)">60</onright>
+            <onright>60</onright>
 			<onleft>9000</onleft>
             <onup>523</onup>
             <ondown>523</ondown>
 			<onback>CancelAlarm(preview_delay,silent)</onback>
-			<onback condition="!Player.HasAudio + $EXP[IsPlayingUnrecognizedContent] + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)] + Skin.HasSetting(View510_DetailsAutoTrailer)">PlayerControl(Stop)</onback>
+			<onback condition="!Player.HasAudio + $EXP[IsPlayingUnrecognizedContent] + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)] + Skin.HasSetting(View523_DetailsAutoTrailer)">PlayerControl(Stop)</onback>
             <onback>ClearProperty(HideNowPlaying)</onback>
 			<itemlayout height="339" width="418">
                 <control type="group">
@@ -117,14 +115,17 @@
 							<!--Label-->
 							<left>8</left>
 							<right>8</right>
-							<bottom>-80</bottom>
+							<bottom>-81</bottom>
 							<height>61</height>
 							<include condition="Skin.HasSetting(ThumbsLabelAlignmentCenter)">align_center</include>
 							<align>left</align>
 							<aligny>center</aligny>
 							<label>$VAR[ThumbListDetails_3]</label>
-							<font>Reg26</font>
+							<font>tagsecrow</font>
 							<textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
+							<animation effect="fade" start="0" end="70" time="0" condition="true">Conditional</animation>
+							<visible>!String.IsEqual(ListItem.Label,..)</visible>
+							<visible>!String.Contains(ListItem.Label,$LOCALIZE[33078])</visible>
 						</control>
                 </control>
             </itemlayout>
@@ -155,22 +156,25 @@
 							<aligny>center</aligny>
 							<label>[B]$VAR[ThumbListDetails_2][/B]</label>
 							<font>Reg26</font>
-							<autoscroll>false</autoscroll>
+							<scroll>true</scroll>
 							<textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
 						</control>
 						<control type="label">
 							<!--Label-->
 							<left>8</left>
 							<right>8</right>
-							<bottom>-80</bottom>
+							<bottom>-81</bottom>
 							<height>61</height>
 							<include condition="Skin.HasSetting(ThumbsLabelAlignmentCenter)">align_center</include>
 							<align>left</align>
 							<aligny>center</aligny>
 							<label>$VAR[ThumbListDetails_3]</label>
-							<font>Reg26</font>
-							<autoscroll>false</autoscroll>
+							<font>tagsecrow</font>
+							<scroll>true</scroll>
 							<textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
+							<animation effect="fade" start="0" end="70" time="0" condition="true">Conditional</animation>
+							<visible>!String.IsEqual(ListItem.Label,..)</visible>
+							<visible>!String.Contains(ListItem.Label,$LOCALIZE[33078])</visible>
 						</control>
                     <include>LibraryAutoTrailerStopButton</include>
 						<include content="LibraryAutoTrailerStartButton" condition="Skin.HasSetting(View523_DetailsAutoTrailer)">

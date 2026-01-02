@@ -115,15 +115,15 @@
 							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="6000" />
 							<effect type="slide" end="0,276" tween="sine" easing="in" time="400" delay="6000" />
                         </animation>
-						<animation type="conditional" condition="$EXP[IsMusicDBType] + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + [String.IsEqual(Container(1508).ListItem.DBTYPE,artist) | String.IsEqual(Container(1508).ListItem.DBTYPE,album)] + [!String.IsEmpty(Container(1508).ListItem.Property(Album_Description)) | !String.IsEmpty(Container(1508).ListItem.Property(Artist_Description))] + !$EXP[IsMainMenuOpened]" reversible="false">
+						<animation type="conditional" condition="$EXP[IsMusicDBType] + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + [String.IsEqual(ListItem.DBTYPE,artist) | String.IsEqual(ListItem.DBTYPE,album)] + [!String.IsEmpty(ListItem.Property(Album_Description)) | !String.IsEmpty(ListItem.Property(Artist_Description))] + !$EXP[IsMainMenuOpened]" reversible="false">
 							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="6000" />
 							<effect type="slide" end="0,276" tween="sine" easing="in" time="400" delay="6000" />
                         </animation>
-						<animation type="conditional" condition="$EXP[IsMusicDBType] + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + [String.IsEqual(Container(1508).ListItem.DBTYPE,artist) | String.IsEqual(Container(1508).ListItem.DBTYPE,album)] + ![!String.IsEmpty(Container(1508).ListItem.Property(Album_Description)) | !String.IsEmpty(Container(1508).ListItem.Property(Artist_Description))] + !$EXP[IsMainMenuOpened]" reversible="false">
+						<animation type="conditional" condition="$EXP[IsMusicDBType] + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + [String.IsEqual(ListItem.DBTYPE,artist) | String.IsEqual(ListItem.DBTYPE,album)] + ![!String.IsEmpty(ListItem.Property(Album_Description)) | !String.IsEmpty(ListItem.Property(Artist_Description))] + !$EXP[IsMainMenuOpened]" reversible="false">
 							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="6000" />
 							<effect type="slide" end="0,94" tween="sine" easing="in" time="400" delay="6000" />
                         </animation>
-						<animation type="conditional" condition="$EXP[IsMusicDBType] + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + String.IsEqual(Container(1508).ListItem.DBTYPE,song) + !$EXP[IsMainMenuOpened]" reversible="false">
+						<animation type="conditional" condition="$EXP[IsMusicDBType] + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + String.IsEqual(ListItem.DBTYPE,song) + !$EXP[IsMainMenuOpened]" reversible="false">
 							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="6000" />
 							<effect type="slide" end="0,94" tween="sine" easing="in" time="400" delay="6000" />
                         </animation>
@@ -140,15 +140,15 @@
 							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="6000" />
 							<effect type="slide" end="0,294" tween="sine" easing="in" time="400" delay="6000" />
                         </animation>
-						<animation type="conditional" condition="$EXP[IsMusicDBType] + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + [String.IsEqual(Container(1508).ListItem.DBTYPE,artist) | String.IsEqual(Container(1508).ListItem.DBTYPE,album)] + [!String.IsEmpty(Container(1508).ListItem.Property(Album_Description)) | !String.IsEmpty(Container(1508).ListItem.Property(Artist_Description))] + !$EXP[IsMainMenuOpened]" reversible="false">
+						<animation type="conditional" condition="$EXP[IsMusicDBType] + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + [String.IsEqual(ListItem.DBTYPE,artist) | String.IsEqual(ListItem.DBTYPE,album)] + [!String.IsEmpty(ListItem.Property(Album_Description)) | !String.IsEmpty(ListItem.Property(Artist_Description))] + !$EXP[IsMainMenuOpened]" reversible="false">
 							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="6000" />
 							<effect type="slide" end="0,294" tween="sine" easing="in" time="400" delay="6000" />
                         </animation>
-						<animation type="conditional" condition="$EXP[IsMusicDBType] + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + [String.IsEqual(Container(1508).ListItem.DBTYPE,artist) | String.IsEqual(Container(1508).ListItem.DBTYPE,album)] + ![!String.IsEmpty(Container(1508).ListItem.Property(Album_Description)) | !String.IsEmpty(Container(1508).ListItem.Property(Artist_Description))] + !$EXP[IsMainMenuOpened]" reversible="false">
+						<animation type="conditional" condition="$EXP[IsMusicDBType] + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + [String.IsEqual(ListItem.DBTYPE,artist) | String.IsEqual(ListItem.DBTYPE,album)] + ![!String.IsEmpty(ListItem.Property(Album_Description)) | !String.IsEmpty(ListItem.Property(Artist_Description))] + !$EXP[IsMainMenuOpened]" reversible="false">
 							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="6000" />
 							<effect type="slide" end="0,78" tween="sine" easing="in" time="400" delay="6000" />
                         </animation>
-						<animation type="conditional" condition="$EXP[IsMusicDBType] + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + String.IsEqual(Container(1508).ListItem.DBTYPE,song) + !$EXP[IsMainMenuOpened]" reversible="false">
+						<animation type="conditional" condition="$EXP[IsMusicDBType] + Skin.HasSetting(AutoHidePlotOnIdle) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + String.IsEqual(ListItem.DBTYPE,song) + !$EXP[IsMainMenuOpened]" reversible="false">
 							<effect type="zoom" end="69" tween="linear" easing="in" time="400" delay="6000" />
 							<effect type="slide" end="0,78" tween="sine" easing="in" time="400" delay="6000" />
                         </animation>
@@ -217,7 +217,7 @@
 					</control>	
 					<!-- Music label -->
 					<control type="group">
-						<visible>String.IsEqual(Container(1508).ListItem.DBTYPE,song)</visible>
+						<visible>String.IsEqual(ListItem.DBTYPE,song)</visible>
                         <include>Default_Visible_Fade</include>
 						<width>820</width>
 						<height>56</height>
@@ -247,12 +247,12 @@
                         <align>left</align>
                         <font>Plots</font>
                         <textcolor>$INFO[Skin.String(BingieSpotlightPlotTextColor)]</textcolor> 
-                        <label>$VAR[BingieSpotlightPlot]</label>
+                        <label>$VAR[BingiePlot]</label>
 					</control>
 					<!-- Plot - Music Spotlight -->
 					<control type="textbox">
 						<visible>!$EXP[IsMainMenuOpened]</visible>
-						<visible>$EXP[IsMusicDBType] + [String.IsEqual(Container(1508).ListItem.DBTYPE,artist) | String.IsEqual(Container(1508).ListItem.DBTYPE,album)] + [!String.IsEmpty(Container(1508).ListItem.Property(Album_Description)) | !String.IsEmpty(Container(1508).ListItem.Property(Artist_Description))]</visible>
+						<visible>$EXP[IsMusicDBType] + [String.IsEqual(ListItem.DBTYPE,artist) | String.IsEqual(ListItem.DBTYPE,album)] + [!String.IsEmpty(ListItem.Property(Album_Description)) | !String.IsEmpty(ListItem.Property(Artist_Description))]</visible>
                      	<animation type="conditional" condition="[$EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + !Skin.HasSetting(AutoHidePlotOnIdle) | $EXP[IsPlayingUnrecognizedContent] + Skin.HasSetting(SpotLightTrailers) + Skin.HasSetting(AutoHidePlotOnIdle) | Skin.HasSetting(AutoHidePlotOnIdle) + !Skin.HasSetting(SpotLightTrailers)] + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(spotlightanimation),1) + !$EXP[IsMainMenuOpened]" reversible="false">
                         <effect type="Fade" start="100" end="0" time="100" delay="6200" />
                         <effect type="slide" start="0,0" end="0,75" tween="sine" easing="in" time="400" delay="6000" />
@@ -264,7 +264,7 @@
                         <align>left</align>
                         <font>Plots</font>
                         <textcolor>$INFO[Skin.String(BingieSpotlightPlotTextColor)]</textcolor> 
-                        <label>$VAR[BingieSpotlightPlot]</label>
+                        <label>$VAR[BingiePlot]</label>
 					</control>
 					
 					<!-- Spotlight Additional Details Grouplist -->
@@ -288,7 +288,7 @@
 						<height>70</height>
 						<width>70</width>
 						<aspectratio>keep</aspectratio>
-						<texture>$VAR[BingieMoreDetailsImageSpotlight,bingie/details/,.png]</texture>
+						<texture>$VAR[BingieMoreDetailsImage,bingie/details/,.png]</texture>
 					</control>
 					<!-- Home Spotlight Additional Details White Icon -->
 					<control type="image">
@@ -300,7 +300,7 @@
 						<width>70</width>
 						<aspectratio>keep</aspectratio>
 						<colordiffuse>$INFO[Skin.String(BingieAdditionalInfoIconsColor)]</colordiffuse>
-						<texture>$VAR[BingieMoreDetailsImageSpotlight,bingie/details/white/,.png]</texture>
+						<texture>$VAR[BingieMoreDetailsImage,bingie/details/white/,.png]</texture>
 					</control>		
 					<!-- Home Spotlight Additional Details Text -->
 					<control type="textbox" id="31001">
@@ -314,7 +314,7 @@
 						<font>Reg28</font> 
 						<textcolor>$INFO[Skin.String(BingieAdditionalInfoTextColor)]</textcolor>
 						<autoscroll>false</autoscroll>					
-						<label>$VAR[BingieMoreDetailsSpotlight]</label>
+						<label>$VAR[BingieMoreDetails]</label>
 					</control>
 					</control>
 
@@ -340,7 +340,7 @@
 						<height>70</height>
 						<width>70</width>
 						<aspectratio>keep</aspectratio>
-						<texture>$VAR[BingieMoreDetailsImageSpotlight,bingie/details/,.png]</texture>
+						<texture>$VAR[BingieMoreDetailsImage,bingie/details/,.png]</texture>
 					</control>
 					<!-- Home Spotlight Additional Details White Icon -->
 					<control type="image">
@@ -353,7 +353,7 @@
 						<width>70</width>
 						<aspectratio>keep</aspectratio>
 						<colordiffuse>$INFO[Skin.String(BingieAdditionalInfoIconsColor)]</colordiffuse>
-						<texture>$VAR[BingieMoreDetailsImageSpotlight,bingie/details/white/,.png]</texture>
+						<texture>$VAR[BingieMoreDetailsImage,bingie/details/white/,.png]</texture>
 					</control>	
 					<!-- Cast Thumb -->
 					<control type="group">
@@ -392,7 +392,7 @@
 						<font>Reg28</font> 
 						<textcolor>$INFO[Skin.String(BingieAdditionalInfoTextColor)]</textcolor>
 						<autoscroll>false</autoscroll>					
-						<label>$VAR[BingieMoreDetailsSpotlight]</label>
+						<label>$VAR[BingieMoreDetails]</label>
 					</control>
 					<control type="textbox" id="31002">
 						<visible>!String.IsEmpty(Control.GetLabel(31002))</visible>
@@ -406,7 +406,7 @@
 						<font>Reg28</font> 
 						<label>$INFO[Container(17195).ListItem.Property(Cast.1.Name),$LOCALIZE[31100] ]</label>
 						<autoscroll>false</autoscroll>					
-						<label>$VAR[BingieMoreDetailsSpotlight]</label>
+						<label>$VAR[BingieMoreDetails]</label>
 					</control>
 					</control>	
 
@@ -452,7 +452,7 @@
 						<font>Reg28</font> 
 						<textcolor>$INFO[Skin.String(BingieAdditionalInfoTextColor)]</textcolor>
 						<autoscroll>false</autoscroll>					
-						<label fallback="$LOCALIZE[29921]">$VAR[BingieMoreDetailsSpotlight]</label>
+						<label fallback="$LOCALIZE[29921]">$VAR[BingieMoreDetails]</label>
 					</control>
 					</control>					
 			
@@ -749,6 +749,7 @@
             <control type="grouplist" id="77777">
                 <animation time="300" effect="fade" start="100" end="70" reversible="true" easing="inout" condition="$EXP[IsMainMenuOpened] + !$EXP[IsPlayingRecognizedContent]">Conditional</animation>
 				<animation effect="slide" end="0,38" time="300" condition="$EXP[IsCurrentWidgetSpotlight]">Conditional</animation>
+				<animation effect="slide" end="0,42" time="0" condition="Window.IsActive(1114)">Conditional</animation>
                 <usecontrolcoords>true</usecontrolcoords>
 				<top>564</top>
                 <include condition="Window.IsActive(Home) | $EXP[IsBingieHubsActive]">Fixed_Focus_Bottom</include>
@@ -770,7 +771,7 @@
                 <include condition="Window.IsActive(1111)">skinshortcuts-template-moviehub</include>
                 <include condition="Window.IsActive(1112)">skinshortcuts-template-newhub</include>
                 <include condition="Window.IsActive(1113)">skinshortcuts-template-customhub</include>
-                <include condition="Window.IsActive(1114)">bingie_items_mylist</include>
+                <include condition="Window.IsActive(1114)">skinshortcuts-template-mylisthub</include>
 				<include condition="Window.IsActive(1120)">skinshortcuts-template-musichub</include>				
             </control>
 			
@@ -847,13 +848,7 @@
 			<animation effect="fade" start="100" end="50" time="300" condition="!Control.IsVisible(40003) + !$EXP[IsMainMenuOpened] + !$EXP[IsCurrentWidgetSpotlight] + [Window.IsActive(Home) | $EXP[IsBingieHubsActive2]] + Container.HasPrevious">Conditional</animation>
 		</control>	 
 		<!-- Snow Effect -->
-        <control type="group">
-            <include condition="String.IsEqual(Skin.String(season_greetings),snow_animation)">snow</include>
-        </control>
-		<!-- Halloween Effect -->
-        <control type="group">
-            <include condition="String.IsEqual(Skin.String(season_greetings),halloween_animation)">pumpkin</include>
-        </control>
+        <include condition="Skin.HasSetting(EnableSnowAnimation)">SnowAnimation</include>
 		</control>
     </include>
 	

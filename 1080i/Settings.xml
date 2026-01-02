@@ -52,12 +52,9 @@
                 <align>left</align>
                 <label>$INFO[Container(9000).ListItem.Label2]</label>
             </control>
-            
-            
-            
+                               
             <!--List 9000-->
             <control type="panel" id="9000">
-                <viewtype label="31437">icons</viewtype>
                 <right>69</right>
                 <top>22</top>
                 <height>780</height>
@@ -81,7 +78,7 @@
 							<label>[UPPERCASE]$INFO[ListItem.label][/UPPERCASE]</label>
 							<font>settings</font>
 							<autoscroll>false</autoscroll>
-							<textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
+							<textcolor>white</textcolor>
 						</control>
                     </control>
                 </itemlayout>
@@ -100,87 +97,87 @@
 							<label>[UPPERCASE]$INFO[ListItem.label][/UPPERCASE]</label>
 							<font>settings</font>
 							<autoscroll delay="2000" time="2000" repeat="2000">true</autoscroll>
-							<textcolor>$INFO[Skin.String(TagOverlaysTextColor)]</textcolor>
+							<textcolor>white</textcolor>
 						</control>
                     </control>
                 </focusedlayout>
                 <content>
                     <item id="11">
                         <description>Skin Settings</description>
-                        <label>20077</label>
-                        <label2>31407</label2>
+                        <label>$LOCALIZE[20077]</label>
+                        <label2>$LOCALIZE[31407]</label2>
                         <onclick>activatewindow(skinsettings)</onclick>
                         <icon>special://skin/extras/media/backgrounds/settings_bingie.jpg</icon>
                         <thumb>addonskin.png</thumb>
                     </item>
                     <item id="1">
                         <description>Interface</description>
-                        <label>14206</label>
-                        <label2>31400</label2>
+                        <label>$LOCALIZE[14206]</label>
+                        <label2>$LOCALIZE[31400]</label2>
                         <onclick>activatewindow(InterfaceSettings)</onclick>
                         <icon>special://skin/extras/media/backgrounds/settings_interface.jpg</icon>
                         <thumb>appearance.png</thumb>
                     </item>
                     <item id="2">
                         <description>Media Settings</description>
-                        <label>14212</label>
-                        <label2>31401</label2>
+                        <label>$LOCALIZE[14212]</label>
+                        <label2>$LOCALIZE[31401]</label2>
                         <onclick>activatewindow(MediaSettings)</onclick>
                         <icon>special://skin/extras/media/backgrounds/settings_media_settings.jpg</icon>
                         <thumb>media.png</thumb>
                     </item>
                     <item id="3">
                         <description>Live TV</description>
-                        <label>31088</label>
-                        <label2>31410</label2>
+                        <label>$LOCALIZE[31088]</label>
+                        <label2>$LOCALIZE[31410]</label2>
                         <onclick>ActivateWindow(PVRSettings)</onclick>
                         <icon>special://skin/extras/media/backgrounds/settings_live_tv.jpg</icon>
                         <thumb>addontvinfo.png</thumb>
                     </item>
                     <item id="4">
                         <description>Player</description>
-                        <label>14201</label>
-                        <label2>31402</label2>
+                        <label>$LOCALIZE[14201]</label>
+                        <label2>$LOCALIZE[31402]</label2>
                         <onclick>ActivateWindow(PlayerSettings)</onclick>
                         <icon>special://skin/extras/media/backgrounds/settings_player_settings.jpg</icon>
                         <thumb>player.png</thumb>
                     </item>
                     <item id="5">
                         <description>Addons</description>
-                        <label>24001</label>
-                        <label2>31408</label2>
+                        <label>$LOCALIZE[24001]</label>
+                        <label2>$LOCALIZE[31408]</label2>
                         <onclick>activatewindow(AddonBrowser)</onclick>
                         <icon>special://skin/extras/media/backgrounds/settings_addons.jpg</icon>
                         <thumb>addon.png</thumb>
                     </item>
                     <item id="8">
                         <description>Network/Services</description>
-                        <label>14036</label>
-                        <label2>31405</label2>
+                        <label>$LOCALIZE[14036]</label>
+                        <label2>$LOCALIZE[31405]</label2>
                         <onclick>activatewindow(ServiceSettings)</onclick>
                         <icon>special://skin/extras/media/backgrounds/settings_services.jpg</icon>
                         <thumb>network.png</thumb>
                     </item>
                     <item id="9">
                         <description>System</description>
-                        <label>13000</label>
-                        <label2>31406</label2>
+                        <label>$LOCALIZE[13000]</label>
+                        <label2>$LOCALIZE[31406]</label2>
                         <onclick>activatewindow(SystemSettings)</onclick>
                         <icon>special://skin/extras/media/backgrounds/settings_system.jpg</icon>
                         <thumb>settings.png</thumb>
                     </item>
                     <item id="10">
                         <description>System Info</description>
-                        <label>130</label>
-                        <label2>31409</label2>
+                        <label>$LOCALIZE[130]</label>
+                        <label2>$LOCALIZE[31409]</label2>
                         <onclick>activatewindow(7)</onclick>
                         <icon>special://skin/extras/media/backgrounds/settings_system_info.jpg</icon>
                         <thumb>cpu.png</thumb>
                     </item>
                     <item id="12">
                         <description>Profiles</description>
-                        <label>13200</label>
-                        <label2>31421</label2>
+                        <label>$LOCALIZE[13200]</label>
+                        <label2>$LOCALIZE[31421]</label2>
                         <onclick>activatewindow(Profiles)</onclick>
                         <icon>special://skin/extras/media/backgrounds/settings_profiles.jpg</icon>
                         <thumb>actor.png</thumb>
@@ -195,8 +192,8 @@
                     </item>
                     <item id="14">
                         <description>File Manager</description>
-                        <label>7</label>
-                        <label2>31404</label2>
+                        <label>$LOCALIZE[7]</label>
+                        <label2>$LOCALIZE[31404]</label2>
                         <onclick>ActivateWindow(filemanager)</onclick>
                         <icon>special://skin/extras/media/backgrounds/system.jpg</icon>
                         <thumb>file.png</thumb>

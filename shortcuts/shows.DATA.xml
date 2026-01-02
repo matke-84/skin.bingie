@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <shortcuts>
 	<shortcut>
-		<label>31051</label>
-		<label2>Shows</label2>
+		<label>$LOCALIZE[31051]</label>
+		<label2 />
 		<defaultID>369</defaultID>
 		<icon />
 		<thumb />
 		<action>ActivateWindow(Videos,videodb://tvshows/titles/,return)</action>
-		<visible>Library.HasContent(Movies) | Library.HasContent(TVShows)</visible>
+		<visible>Library.HasContent(TVShows)</visible>
 	</shortcut>
 	<shortcut>
-		<label>31051</label>
-		<label2>Shows</label2>
+		<label>$LOCALIZE[31051]</label>
+		<label2 />
 		<defaultID>369</defaultID>
 		<icon />
 		<thumb />
@@ -19,44 +19,44 @@
 		<visible>!Library.HasContent(Movies) + !Library.HasContent(TVShows)</visible>
 	</shortcut>
 	<shortcut>
-		<label>31101</label>
-		<label2>Shows</label2>
+		<label>$LOCALIZE[31101]</label>
+		<label2 />
 		<defaultID>369</defaultID>
 		<icon/>
 		<thumb />
 		<action>ActivateWindow(Videos,special://skin/extras/widgetplaylists/recentlyaddedtvshows.xsp,return)</action>
-		<visible>Library.HasContent(Movies) | Library.HasContent(TVShows)</visible>
+		<visible>Library.HasContent(TVShows)</visible>
 	</shortcut>
 	<shortcut>
-		<label>20387</label>
-		<label2>Shows</label2>
+		<label>$LOCALIZE[20387]</label>
+		<label2 />
 		<defaultID>20387</defaultID>
 		<icon />
 		<thumb />
 		<action>ActivateWindow(Videos,videodb://recentlyaddedepisodes/,return)</action>
-		<visible>Library.HasContent(Movies) | Library.HasContent(TVShows)</visible>
+		<visible>Library.HasContent(TVShows)</visible>
 	</shortcut>
 	<shortcut>
-		<label>626</label>
-		<label2>Shows</label2>
+		<label>$LOCALIZE[626]</label>
+		<label2 />
 		<defaultID>626</defaultID>
 		<icon />
 		<thumb />
 		<action>ActivateWindow(Videos,videodb://inprogresstvshows/,return)</action>
-		<visible>Library.HasContent(Movies) | Library.HasContent(TVShows)</visible>
+		<visible>Library.HasContent(TVShows)</visible>
 	</shortcut>
 	<shortcut>
-		<label>135</label>
-		<label2>Shows</label2>
+		<label>$LOCALIZE[135]</label>
+		<label2 />
 		<defaultID>135</defaultID>
 		<icon />
 		<thumb />
 		<action>ActivateWindow(Videos,videodb://tvshows/genres/,return)</action>
-		<visible>Library.HasContent(Movies) | Library.HasContent(TVShows)</visible>
+		<visible>Library.HasContent(TVShows)</visible>
 	</shortcut>
 	<shortcut>
-		<label>135</label>
-		<label2>Shows</label2>
+		<label>$LOCALIZE[135]</label>
+		<label2 />
 		<defaultID>135</defaultID>
 		<icon />
 		<thumb />

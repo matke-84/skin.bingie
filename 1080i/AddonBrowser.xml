@@ -28,9 +28,9 @@
             <!--Grouplist 9000-->
             <control type="grouplist" id="9000">
                 <posx>21</posx>
-                <posy>190</posy>
+                <posy>180</posy>
                 <width>458</width>
-                <height>750</height>
+                <height>781</height>
                 <itemgap>3</itemgap>
                 <onleft>5000</onleft>
                 <onright>5000</onright>
@@ -44,7 +44,7 @@
 				
                 <control type="button" id="3">
                     <!--Sort-->
-					<label>103</label>
+					<label>$LOCALIZE[103]</label>
                     <include>SideBladeMenuButton</include>
                 </control>
                 <control type="togglebutton" id="4">
@@ -52,28 +52,28 @@
                     <include>SideBladeMenuButton</include>
 					<alttexturefocus border="10" colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">diffuse/panel.png</alttexturefocus>
 					<alttexturenofocus/>
-                    <label>584</label>
-                    <altlabel>585</altlabel>
+                    <label>$LOCALIZE[584]</label>
+                    <altlabel>$LOCALIZE[585]</altlabel>
                 </control>
 				<control type="button" id="5">
 					<description>addon-updates</description>
 					<include>SideBladeMenuButton</include>
-					<label>10004</label>
+					<label>$LOCALIZE[10004]</label>
 				</control>
 				<control type="radiobutton" id="7">
 					<description>Hide foreign</description>
 					<include>SideBladeMenuButton</include>
-					<label>25001</label>
+					<label>$LOCALIZE[25001]</label>
 				</control>
 				<control type="radiobutton" id="8">
 					<description>Hide broken</description>
 					<include>SideBladeMenuButton</include>
-					<label>24999</label>
+					<label>$LOCALIZE[24999]</label>
 				</control>
 				<control type="button" id="9">
 					<description>Check for repo updates</description>
 					<include>SideBladeMenuButton</include>
-					<label>24034</label>
+					<label>$LOCALIZE[24034]</label>
 				</control>
 				<include>SideBladeViewCommands</include>
             </control>

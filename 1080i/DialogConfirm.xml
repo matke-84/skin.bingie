@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <window>
-	<zorder>5</zorder>
 	<onload condition="Control.IsVisible(12)">SetFocus(12)</onload>
     <controls>
 	<control type="group">
@@ -14,7 +12,7 @@
 		<control type="group">
 			
 			<posx>400</posx>
-			<posy>410</posy>
+			<posy>375</posy>
 			<include>animation_window_open_close</include>
 			<control type="image">
 				<posx>-460</posx>
@@ -77,6 +75,7 @@
 				<posy>80</posy>
 				<width>1000</width>
 				<height>120</height>
+				<align>left</align>
 				<label/>
 				<font>Reg30</font>
 			</control>
@@ -85,34 +84,34 @@
 			<control type="grouplist">
                 <posx>8</posx>
                 <posy>220</posy>
-				<width>920</width>
+				<width>930</width>
                 <orientation>horizontal</orientation>
                 <itemgap>10</itemgap>
                 <control type="button" id="11">
                     <description>Yes button</description>
-                    <width>300</width>
+                    <width>302</width>
                     <height>90</height>
-					<label>107</label>
+					<label>$LOCALIZE[107]</label>
                     <font>Reg36</font>
-                    <textwidth>262</textwidth>
+                    <textwidth>242</textwidth>
                     <include>DialogButtonOther</include>
                 </control>
                 <control type="button" id="10">
                     <description>No button</description>
-                    <width>300</width>
+                    <width>302</width>
                     <height>90</height>
                     <font>Reg36</font>
-					<textwidth>262</textwidth>
-                    <label>106</label>
+					<textwidth>242</textwidth>
+                    <label>$LOCALIZE[106]</label>
                     <include>DialogButtonOther</include>
                 </control>
                 <control type="button" id="12">
                     <description>Custom button</description>
-                    <width>300</width>
+                    <width>302</width>
                     <height>90</height>
                     <font>Reg36</font>
-					<textwidth>262</textwidth>
-                    <label>106</label>
+					<textwidth>242</textwidth>
+                    <label>$LOCALIZE[106]</label>
                     <include>DialogButtonOther</include>
                 </control>
             </control>

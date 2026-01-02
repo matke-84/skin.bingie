@@ -4,6 +4,15 @@
 
     <include name="DialogPVRChannelsOSD_Small">
         <control type="group">
+			<!-- osd setings background -->
+			<control type="image">
+				<include>FullscreenDimensions</include>
+				<texture background="true">diffuse/panel2.png</texture>
+				<colordiffuse>b3000000</colordiffuse>
+				<visible>Window.IsActive(fullscreenvideo)</visible>
+				<animation effect="fade" time="250" start="0" end="100" reversible="false">WindowOpen</animation>
+				<animation effect="fade" time="250" start="100" end="0" reversible="false">WindowClose</animation>
+			</control>
 			<posx>-660</posx>
 			<posy>0</posy>
 			<animation type="WindowOpen">
@@ -81,7 +90,6 @@
                 <onright>NextChannelGroup</onright>
                 <onup>11</onup>
                 <ondown>11</ondown>
-                <viewtype label="535">list</viewtype>
                 <pagecontrol>60</pagecontrol>
                 <scrolltime>200</scrolltime>
                 <itemlayout height="130" width="552">
@@ -403,6 +411,13 @@
 	</include>
     
     <include name="DialogPVRChannelsOSD_Large">
+		<!-- osd setings background -->
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture background="true">diffuse/panel2.png</texture>
+			<colordiffuse>b3000000</colordiffuse>
+			<visible>Window.IsActive(fullscreenvideo)</visible>
+		</control>
         <control type="group">
 			<include>animation_window_open_close</include>
             <left>60</left>
@@ -493,7 +508,6 @@
                 <ondown>11</ondown>
                 <onleft>10</onleft>
                 <onright>60</onright>
-                <viewtype label="535">list</viewtype>
                 <pagecontrol>60</pagecontrol>
                 <scrolltime>200</scrolltime>
                 <itemlayout height="60" width="1100">
@@ -667,8 +681,8 @@
 				<ondown>60</ondown>
 				<onleft>11</onleft>
                 <onright>11</onright>
-				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(60) | Container(11).Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)">Conditional</animation>
-				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container(11).Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
 			</control>
             
             <!--details -->

@@ -1,20 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- BINGIE -->
 <window>
-	<zorder>4</zorder>
     <defaultcontrol always="true">10</defaultcontrol>
     <controls>
         <control type="button" id="10">
-            <onfocus condition="Skin.HasSetting(pvrGuideOnFullscreenVideo)">SetProperty(pvrGuideOnFullscreenVideo,fullscreenvideo,Home)</onfocus>
-            <onfocus condition="Skin.HasSetting(pvrGuideOnFullscreenVideo)">Dialog.Close(VideoOSD)</onfocus>
-            <onfocus condition="Skin.HasSetting(pvrGuideOnFullscreenVideo)">Dialog.Close(seekbar)</onfocus>
-            <onfocus condition="Skin.HasSetting(pvrGuideOnFullscreenVideo)">Dialog.Close(pvrchannelguide)</onfocus>
-            <onfocus condition="Skin.HasSetting(pvrGuideOnFullscreenVideo)">Dialog.Close(fullscreenvideo)</onfocus>
-            <onfocus condition="Skin.HasSetting(pvrGuideOnFullscreenVideo)">ActivateWindow(tvguide)</onfocus>
-            <onfocus condition="!Skin.HasSetting(pvrGuideOnFullscreenVideo)">SetFocus(11)</onfocus>
+            <onfocus condition="!Skin.HasSetting(pvrGuideOnFullscreenVideo)">SetProperty(pvrGuideOnFullscreenVideo,fullscreenvideo,Home)</onfocus>
+            <onfocus condition="!Skin.HasSetting(pvrGuideOnFullscreenVideo)">Dialog.Close(VideoOSD)</onfocus>
+            <onfocus condition="!Skin.HasSetting(pvrGuideOnFullscreenVideo)">Dialog.Close(seekbar)</onfocus>
+            <onfocus condition="!Skin.HasSetting(pvrGuideOnFullscreenVideo)">Dialog.Close(pvrchannelguide)</onfocus>
+            <onfocus condition="!Skin.HasSetting(pvrGuideOnFullscreenVideo)">Dialog.Close(fullscreenvideo)</onfocus>
+            <onfocus condition="!Skin.HasSetting(pvrGuideOnFullscreenVideo)">ActivateWindow(tvguide)</onfocus>
+            <onfocus condition="Skin.HasSetting(pvrGuideOnFullscreenVideo)">SetFocus(11)</onfocus>
             <visible allowhiddenfocus="true">false</visible>
         </control>
+		<!--Dialog Overlay-->
 		<control type="group">
+			<visible>!Window.IsActive(fullscreenvideo) + Skin.HasSetting(pvrGuideOnFullscreenVideo)</visible>
+			<include>DialogOverlayExtra</include>
+			<animation effect="fade" time="250" start="0" end="100" reversible="false">WindowOpen</animation>
+			<animation effect="fade" time="250" start="100" end="0" reversible="false">WindowClose</animation>
+        </control>
+		<!-- osd setings background -->
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture background="true">diffuse/panel2.png</texture>
+			<colordiffuse>b3000000</colordiffuse>
+			<visible>Window.IsActive(fullscreenvideo)</visible>
+			<animation effect="fade" time="250" start="0" end="100" reversible="false">WindowOpen</animation>
+			<animation effect="fade" time="250" start="100" end="0" reversible="false">WindowClose</animation>
+		</control>
+		<control type="group">
+			<visible>Skin.HasSetting(pvrGuideOnFullscreenVideo)</visible>
 			<posx>-660</posx>
 			<posy>0</posy>
 			<animation type="WindowOpen">
@@ -88,24 +104,11 @@
 				<height>10</height>
 				<align>left</align>
 				<texture border="10">common/menu-separator2.png</texture>
-				<visible>String.IsEmpty(ListItem.StartDate)</visible>
-				
+				<visible>String.IsEmpty(ListItem.StartDate)</visible>				
 			</control>
-            <!-- Scollbar behind panel for touch control-->
-            <control type="scrollbar" id="60">
-                <posx>0</posx>
-                <posy>140</posy>
-                <width>680</width>
-                <height>960</height>
-                <onup>60</onup>
-                <ondown>60</ondown>
-                <onleft>50</onleft>
-                <animation effect="fade" start="100" end="0" time="10" condition="true">Conditional</animation>
-            </control>
 			
 			<!--List ID=11-->
 			<control type="list" id="11">
-				<viewtype label="535">list</viewtype>
 				<posx>10</posx>
 				<posy>150</posy>
 				<width>670</width>

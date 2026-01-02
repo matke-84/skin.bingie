@@ -161,7 +161,7 @@
                     <font>Reg30</font>
                     <textoffsetx>0</textoffsetx>
                     <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-                    <label>19148</label>
+                    <label>$LOCALIZE[19148]</label>
                 </control>
                 <control type="label">
                     <!--Channle Title-->
@@ -172,7 +172,7 @@
                     <font>Reg30</font>
                     <textoffsetx>0</textoffsetx>
                     <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-                    <label>369</label>
+                    <label>$LOCALIZE[369]</label>
                 </control>
                 <control type="label">
                     <!--Time-->
@@ -183,13 +183,12 @@
                     <font>Reg30</font>
                     <textoffsetx>0</textoffsetx>
                     <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-                    <label>555</label>
+                    <label>$LOCALIZE[555]</label>
                 </control>
 
             </control>
             <control type="list" id="10">
-                <!--List ID=14-->
-				<viewtype label="31567">list</viewtype>
+				<viewtype label="31567">Simple list (PVR)</viewtype>
                 <include content="View_Forced">
                     <param name="viewtype" value="$LOCALIZE[31567]" />
                 </include>
@@ -201,8 +200,7 @@
                 <onup>10</onup>
                 <ondown>10</ondown>
                 <onleft>9000</onleft>
-                <onright condition="Skin.HasSetting(EnableQuickJump)">6000</onright>
-                <onright condition="!Skin.HasSetting(EnableQuickJump)">60</onright>
+                <onright>60</onright>
                 <pagecontrol>60</pagecontrol>
                 <scrolltime>200</scrolltime>
                 <itemlayout height="80"  width="1780">
@@ -395,8 +393,8 @@
                 <onup>60</onup>
                 <ondown>6000</ondown>
                 <onleft>10</onleft>
-                <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] + !Control.IsVisible(6002)">Conditional</animation>
-                <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] | Control.IsVisible(6002)">Conditional</animation>
+                <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+                <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
             </control>
         </control>
       </include>

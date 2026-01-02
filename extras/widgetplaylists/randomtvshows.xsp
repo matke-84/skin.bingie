@@ -2,6 +2,7 @@
 <!-- BINGIE -->
 <smartplaylist type="tvshows">
     <name>Random TV Shows</name>
-    <limit>200</limit>
-    <order direction="ascending">random</order>
+    <match>all</match>
+    <order direction="descending">random</order>
+	<limit>200</limit>
 </smartplaylist>

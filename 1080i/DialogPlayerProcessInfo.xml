@@ -332,7 +332,7 @@
 					<top>40</top>
 					<width>250</width>
 					<height>25</height>
-					<label>$LOCALIZE[31589]: </label> 
+					<label>$LOCALIZE[31577]: </label> 
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>Reg26</font>
@@ -626,7 +626,7 @@
 					<width>auto</width>
 					<height>100</height>
 					<textoffsetx>40</textoffsetx>
-					<label>$LOCALIZE[31555]</label> 
+					<label>$LOCALIZE[10116]</label> 
 				</control>
 			</control>
 		</control>

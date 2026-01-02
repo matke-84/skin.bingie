@@ -4,8 +4,8 @@
     <name>Horror</name>
     <match>all</match>
     <rule field="genre" operator="contains">
-        <value>horror</value>
+        <value>Horror</value>
     </rule>
-    <order direction="descending">year</order>
+    <order direction="descending">dateadded</order>
     <limit>200</limit>
 </smartplaylist>

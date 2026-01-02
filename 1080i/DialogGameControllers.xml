@@ -5,10 +5,11 @@
 		<include>DialogOverlayExtra</include>					   
 			
 		<control type="group">
-			<posy>20</posy>
+			<include>animation_window_open_close</include>
+			<posy>50</posy>
 			<posx>50</posx>
-			<width>1800</width>
-			<height>1000</height>
+			<width>1820</width>
+			<height>980</height>
 			
 			<!-- background panel frame-->
 			<control type="image">
@@ -29,43 +30,33 @@
 			<!-- Dialog Header  -->
 			<control type="label" id="2">
 				<description>Heading</description>
-				<height>25</height>
 				<top>20</top>
-				<font>Bold30</font>
-				<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+				<include>DialogHeader</include>
 				<align>center</align>
-				<label>[B]$LOCALIZE[35058][/B]</label>
+				<label>$LOCALIZE[35058]</label>
 			</control>
+			
 			<control type="image">
-				<top>55</top>
-				<left>20</left>
-				<width>1700</width>
-				<height>1</height>
-				<texture>colors/color_white.png</texture>
-				<colordiffuse>$INFO[Skin.String(DialogFrameColor)]</colordiffuse>
-			</control>
+                <top>188</top>
+                <left>40</left>
+                <width>410</width>
+				<height>604</height>
+                <texture border="5">dialogs/default/inner.png</texture>
+            </control>
 			
 			<control type="group">
 				<description>Controller list</description>
-				<top>120</top>
-				<left>30</left>
+				<top>170</top>
+				<left>40</left>
 				<width>410</width>
-				<height>580</height>
+				<height>610</height>
 				
-				<control type="image">
-					<!-- <visible>Control.HasFocus()</visible> -->
-					<left>0</left>
-					<top>0</top>
-					<width>101%</width>
-					<height>103%</height>
-					<texture colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="5">diffuse/wide.png</texture>
-				</control>
 				<control type="label">
 					<description>Controller profiles grouplist heading</description>
-					<top>-40</top>
+					<top>-20</top>
 					<height>25</height>
-					<font>Bold24</font>
-					<label>[B] - $LOCALIZE[35050] - [/B]</label>
+					<font>Reg28</font>
+					<label>[B]$LOCALIZE[35050][/B]</label>
 					<align>center</align>
 					<aligny>center</aligny>
 					<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -78,13 +69,6 @@
 					<onright>5</onright>
 					<onup>3</onup>
 					<ondown>3</ondown>
-					<pagecontrol>62</pagecontrol>
-				</control>
-				<control type="scrollbar" id="62">
-					<top>40</top>
-					<right>0</right>
-					<width>12</width>
-					<orientation>vertical</orientation>
 				</control>
 				<control type="button" id="10">
 					<description>Default controller button</description>
@@ -92,36 +76,37 @@
 					<height>60</height>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>Reg25</font>
 				</control>
 			</control>
 			<control type="gamecontroller" id="31">
-				<top>150</top>
-				<left>500</left>
+				<top>200</top>
+				<left>482</left>
 				<width>550</width>
 				<height>550</height>
 			</control>
 			
+			<control type="image">
+                <top>188</top>
+				<right>392</right>
+				<width>370</width>
+				<height>604</height>
+                <texture border="5">dialogs/default/inner.png</texture>
+            </control>
+			
 			<control type="group">
 				<description>Feature list</description>
-				<top>120</top>
-				<right>350</right>
+				<top>170</top>
+				<right>372</right>
 				<width>380</width>
-				<height>580</height>
+				<height>610</height>
 				
-				<control type="image">
-					<right>0</right>
-					<top>0</top>
-					<width>101%</width>
-					<height>103%</height>
-					<texture colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]" border="5">diffuse/wide.png</texture>
-				</control>
 				<control type="label">
 					<description>Feature list heading</description>
-					<top>-40</top>
+					<top>-20</top>
 					<height>25</height>
-					<font>Bold24</font>
-					<label>[B] - $LOCALIZE[35059] - [/B]</label>
+					<width>350</width>
+					<font>Reg28</font>
+					<label>[B]$LOCALIZE[35059][/B]</label>
 					<align>center</align>
 					<aligny>center</aligny>
 					<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
@@ -130,16 +115,26 @@
 					<description>Features grouplist</description>
 					<top>30</top>
 					<onleft>3</onleft>
-					<onright>9001</onright>
+					<onright>60</onright>
 					<onup>5</onup>
 					<ondown>5</ondown>
-					<pagecontrol>61</pagecontrol>
+					<pagecontrol>60</pagecontrol>
 				</control>
-				<control type="scrollbar" id="61">
+				<control type="scrollbar" id="60">
+					<texturesliderbackground border="5" colordiffuse="$INFO[Skin.String(ScrollbarBackgroundColor)]">scrollbar/texturesliderbar_small.png</texturesliderbackground>
+					<texturesliderbar colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]" border="5">scrollbar/texturesliderbar_small.png</texturesliderbar>
+					<texturesliderbarfocus colordiffuse="$INFO[Skin.String(ScrollbarFocusedColor)]" border="5">scrollbar/texturesliderbar_small.png</texturesliderbarfocus>
+					<textureslidernib colordiffuse="$INFO[Skin.String(ScrollbarUnfocusedColor)]">scrollbar/texturesliderbar_nib.png</textureslidernib>
+					<textureslidernibfocus colordiffuse="$INFO[Skin.String(ScrollbarFocusedColor)]">scrollbar/texturesliderbar_nib.png</textureslidernibfocus>
+					<onright>9001</onright>
+					<onleft>5</onleft>
 					<right>0</right>
-					<top>40</top>
+					<top>30</top>
 					<width>10</width>
+					<height>580</height>
 					<orientation>vertical</orientation>
+					<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+                    <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
 				</control>
 				<control type="button" id="7">
 					<description>Default feature button</description>
@@ -149,65 +144,44 @@
 					<right>5</right>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>Reg25</font>
-				</control>
-				<control type="label" id="8">
-					<description>Feature group title</description>
-					<width>350</width>
-					<height>40</height>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>Bold30</font>
-					<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-				</control>
-				<control type="image" id="9">
-					<description>Feature separator image</description>
-					<height>1</height>
-					<texture colordiffuse="$INFO[Skin.String(DialogFrameColor)]">colors/color_white.png</texture>
 				</control>
 			</control>
 			<control type="grouplist" id="9001">
-				<top>120</top>
-				<right>10</right>
+				<top>200</top>
+				<right>32</right>
 				<width>320</width>
-				<onleft>5</onleft>
+				<onleft>60</onleft>
 				<onright>3</onright>
-				<itemgap>10</itemgap>
+				<itemgap>5</itemgap>
 				
 				<control type="button" id="18">
-					<font>Reg28</font>
 					<label>$LOCALIZE[186]</label>
-					<width>300</width>
+					<width>302</width>
 					<height>60</height>
 				</control>
 				<control type="button" id="19">
-					<font>Reg28</font>
 					<label>$LOCALIZE[13007]</label>
 					<width>300</width>
 					<height>60</height>
 				</control>
 				<control type="button" id="20">
-					<font>Reg28</font>
 					<label>$LOCALIZE[21452]</label>
-					<width>300</width>
+					<width>302</width>
 					<height>60</height>
 				</control>
 				<control type="button" id="22">
-					<font>Reg28</font>
 					<label>$LOCALIZE[35021]</label>
-					<width>300</width>
+					<width>302</width>
 					<height>60</height>
 				</control>
 				<control type="button" id="17">
-					<font>Reg28</font>
 					<label>$LOCALIZE[10043]</label>
-					<width>300</width>
+					<width>302</width>
 					<height>60</height>
 				</control>
 				<control type="button" id="21">
-					<font>Reg28</font>
 					<label>$LOCALIZE[35019]</label>
-					<width>300</width>
+					<width>302</width>
 					<height>60</height>
 				</control>
 			</control>
@@ -219,10 +193,11 @@
 				<height>140</height>
 				
 				<control type="textbox" id="32">
-					<top>5</top>
-					<bottom>5</bottom>
-					<left>10</left>
-					<right>10</right>
+					<top>20</top>
+					<bottom>20</bottom>
+					<left>12</left>
+					<right>12</right>
+					<font>Reg24</font>
 					<description>Controller description</description>
 					<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 				</control>

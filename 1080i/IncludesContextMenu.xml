@@ -3,6 +3,12 @@
 <includes>
 		
 	<include name="DialogContextMenuModern">
+		<!--Dialog Overlay-->
+		<control type="group">
+			<include>DialogOverlayExtra</include>
+			<animation effect="fade" time="250" start="0" end="100" reversible="false">WindowOpen</animation>
+			<animation effect="fade" time="250" start="100" end="0" reversible="false">WindowClose</animation>
+        </control>
 		<control type="group">
 			<height>100%</height>
             <width>270</width>
@@ -25,7 +31,7 @@
 		</control>
 		<!-- header -->
         <control type="label">
-            <posx>70</posx>
+            <posx>58</posx>
             <posy>10</posy>
             <width min="80" max="1100">auto</width>
             <height>100</height>
@@ -37,18 +43,18 @@
             <!--Label Menu: -->
             <control type="image">
                 <!--Seperator-->
-                <posx>56</posx>
+                <posx>39</posx>
                 <posy>160</posy>
-                <width>388</width>
+                <width>422</width>
                 <height>20</height>
                 <align>left</align>
                 <texture>common/menu-separator2.png</texture>
             </control>
 			<control type="image">
                 <!--Seperator-->
-                <posx>56</posx>
-                <posy>1014</posy>
-                <width>388</width>
+                <posx>39</posx>
+                <posy>1013</posy>
+                <width>422</width>
                 <height>20</height>
                 <align>left</align>
                 <texture>common/menu-separator2.png</texture>
@@ -58,7 +64,7 @@
                 <posx>21</posx>
                 <posy>180</posy>
 				<onright>Dialog.Close(contextmenu)</onright>
-                <height>817</height>
+                <height>816</height>
                 <itemgap>3</itemgap>
                 <!--Buttons-->
                 <control type="button" id="1000">
@@ -70,6 +76,13 @@
 	</include>	
 	
 	<include name="SideBladeModern">
+		<control type="group">
+			<!--Dialog Overlay-->
+			<include>DialogOverlayExtra</include>
+			<visible>ControlGroup(9000).HasFocus()</visible>
+			<animation effect="fade" time="250" start="0" end="100" reversible="false">Visible</animation>
+			<animation effect="fade" time="250" start="100" end="0" reversible="false">Hidden</animation>
+		</control>
 		<posx>-660</posx>
 		<posy>0</posy>
 		<visible>!Window.IsActive(virtualkeyboard)</visible>
@@ -91,7 +104,7 @@
 
 		<!-- header -->
         <control type="label">
-            <posx>71</posx>
+            <posx>58</posx>
             <posy>10</posy>
             <width min="80" max="1100">auto</width>
             <height>100</height>
@@ -102,18 +115,18 @@
         </control>
 		<control type="image">
 			<!--Seperator-->
-			<posx>56</posx>
+			<posx>39</posx>
 			<posy>160</posy>
-			<width>388</width>
+			<width>422</width>
 			<height>20</height>
 			<align>left</align>
 			<texture>common/menu-separator2.png</texture>
 		</control>
 		<control type="image">
 			<!--Seperator-->
-			<posx>56</posx>
-			<posy>980</posy>
-			<width>388</width>
+			<posx>39</posx>
+			<posy>978</posy>
+			<width>422</width>
 			<height>20</height>
 			<align>left</align>
 			<texture>common/menu-separator2.png</texture>
@@ -124,14 +137,14 @@
          <control type="button" id="308">
 			<!--Switch fullscreen-->
 			<include>SideBladeMenuButton</include>
-			<label>244</label>
+			<label>$LOCALIZE[244]</label>
 			<onclick>FullScreen</onclick>
             <visible>Player.HasMedia</visible>
 		</control>
          <control type="button" id="309">
 			<!--Open Kodi favourites-->
 			<include>SideBladeMenuButton</include>
-			<label>1036</label>
+			<label>$LOCALIZE[1036]</label>
 			<onclick>ActivateWindow(FavouritesBrowser)</onclick>
 			<visible>!Window.IsActive(favouritesbrowser)</visible>
 		</control>
@@ -140,24 +153,32 @@
         <control type="label" id="2001">
             <!--empty space-->
             <width>458</width>
-            <height>5</height>
+            <height>11</height>
         </control>
-        <control type="image" id="2002">
+		<control type="group" id="2002">
+        <control type="image">
             <!--Seperator-->
+			<posx>18</posx>
+            <width>422</width>
+			<height>20</height>
+			<align>left</align>
+			<texture>common/menu-separator2.png</texture>
+        </control>		
+		</control>
+		<control type="label" id="2003">
+            <!--empty space-->
             <width>458</width>
-            <height>1</height>
-            <texture>colors/color_white.png</texture>
-            <colordiffuse>$INFO[Skin.String(ButtonTextColor)]</colordiffuse>
+            <height>8</height>
         </control>
         <control type="label" id="14018">
             <!--Label Menu-->
-            <textoffsetx>50</textoffsetx>
+            <textoffsetx>38</textoffsetx>
             <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
             <include>SideBladeMenuButton</include>
             <label>$LOCALIZE[14018]:</label>
         </control>
                 
-        <control type="button" id="4403">
+        <control type="button" id="21483">
             <!--Set View new method-->
             <include>SideBladeMenuButton</include>
             <label>$LOCALIZE[21483]$INFO[Container.Viewmode,: ,]</label>
@@ -166,7 +187,7 @@
             <visible>!Window.IsActive(tvguide) + !Window.IsActive(tvchannels) + !Window.IsActive(tvsearch) + !Window.IsActive(tvrecordings) + !Window.IsActive(tvtimers) + !Window.IsActive(favouritesbrowser)</visible>
         </control>
 
-        <control type="radiobutton" id="4404">
+        <control type="radiobutton" id="31074">
             <!--Lock/Unlock View-->
             <include>SideBladeMenuButton</include>
             <label>$LOCALIZE[31074]</label>
@@ -179,7 +200,7 @@
             <visible>Window.IsVisible(MyVideoNav.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyPrograms.xml) | Window.IsVisible(MyGames.xml)</visible>
             <visible>[Container.Content() + !String.IsEmpty(Skin.String(Skin.ForcedView.))] | [Container.Content(tags) + !String.IsEmpty(Skin.String(Skin.ForcedView.tags))] | [Container.Content(years) + !String.IsEmpty(Skin.String(Skin.ForcedView.years))] | [Container.Content(genres) + !String.IsEmpty(Skin.String(Skin.ForcedView.genres))] | [Container.Content(countries) + !String.IsEmpty(Skin.String(Skin.ForcedView.countries))] | [Container.Content(studios) + !String.IsEmpty(Skin.String(Skin.ForcedView.studios))] | [Container.Content(playlists) + !String.IsEmpty(Skin.String(Skin.ForcedView.playlists))] | [Container.Content(movies) + !String.IsEmpty(Skin.String(Skin.ForcedView.movies))] | [Container.Content(sets) + !String.IsEmpty(Skin.String(Skin.ForcedView.sets))] | [Container.Content(tvshows) + !String.IsEmpty(Skin.String(Skin.ForcedView.tvshows))] | [Container.Content(seasons) + !String.IsEmpty(Skin.String(Skin.ForcedView.seasons))] | [Container.Content(episodes) + !String.IsEmpty(Skin.String(Skin.ForcedView.episodes))] | [Container.Content(artists) + !String.IsEmpty(Skin.String(Skin.ForcedView.artists))] | [Container.Content(albums) + !String.IsEmpty(Skin.String(Skin.ForcedView.albums))] | [Container.Content(songs) + !String.IsEmpty(Skin.String(Skin.ForcedView.songs))] | [Container.Content(musicvideos) + !String.IsEmpty(Skin.String(Skin.ForcedView.musicvideos))] | [Container.Content(addons) + !String.IsEmpty(Skin.String(Skin.ForcedView.addons))] | [Container.Content(actors) + !String.IsEmpty(Skin.String(Skin.ForcedView.actors))] | [Container.Content(directors) + !String.IsEmpty(Skin.String(Skin.ForcedView.directors))] | [Container.Content(files) + !String.IsEmpty(Skin.String(Skin.ForcedView.files))] | [Container.Content(mixed) + !String.IsEmpty(Skin.String(Skin.ForcedView.mixed))] | [Container.Content(images) + !String.IsEmpty(Skin.String(Skin.ForcedView.images))] | [Container.Content(games) + !String.IsEmpty(Skin.String(Skin.ForcedView.games))] | [Container.Content(unknown) + !String.IsEmpty(Skin.String(Skin.ForcedView.unknown))] | [Container.Content(videos) + !String.IsEmpty(Skin.String(Skin.ForcedView.videos))]</visible>
         </control>
-        <control type="radiobutton" id="4405">
+        <control type="radiobutton" id="31073">
             <!--Lock/Unlock View-->
             <include>SideBladeMenuButton</include>
             <label>$LOCALIZE[31073]</label>
@@ -190,22 +211,22 @@
             <include>Items_LockUnlock</include>
             <include>Items_LockView</include>
             <visible>Window.IsVisible(MyVideoNav.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyPrograms.xml) | Window.IsVisible(MyGames.xml)</visible>
-            <visible>!Control.IsVisible(4404)</visible>
+            <visible>!Control.IsVisible(31074)</visible>
         </control>      
 
-        <control type="radiobutton" id="341">
+        <control type="radiobutton" id="36427">
             <!--Show info-->
             <include>SideBladeMenuButton</include>
-            <label>36427</label>
+            <label>$LOCALIZE[36427]</label>
             <onclick>Skin.ToggleSetting(GuideShowInfo)</onclick>
             <selected>Skin.HasSetting(GuideShowInfo)</selected>
             <visible>Window.IsActive(tvguide)</visible>
         </control>
         
- 		<control type="radiobutton" id="3010">
+ 		<control type="radiobutton" id="364271">
 			<!--Show info-->
 			<include>SideBladeMenuButton</include>
-			<label>36427</label>
+			<label>$LOCALIZE[36427]</label>
 			<onclick condition="Control.IsVisible(507)">Skin.ToggleSetting(FanArtViewShowInfo)</onclick>
             <onclick condition="Control.IsVisible(524)">Skin.ToggleSetting(ShowCaseViewShowInfo)</onclick>
             <onclick condition="Control.IsVisible(52)">Skin.ToggleSetting(PanelViewShowInfo)</onclick>
@@ -226,25 +247,25 @@
 		</control>
         
         <!-- show info for poster row-->
-        <control type="button" id="317491">
+        <control type="button" id="364272">
             <include>SideBladeMenuButton</include>
-            <label>$LOCALIZE[31083]: $INFO[Skin.String(View513_DisplayInfo.label)]</label>
-            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,id=View_DisplayInfo,setting=View513_DisplayInfo,header=$LOCALIZE[31083])</onclick>
+            <label>$LOCALIZE[36427]: $INFO[Skin.String(View513_DisplayInfo.label)]</label>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,id=View_DisplayInfo,setting=View513_DisplayInfo,header=$LOCALIZE[36427])</onclick>
             <visible>Control.IsVisible(513)</visible>
         </control>
         
         <!-- show info for poster shift-->
-        <control type="button" id="317492">
+        <control type="button" id="364273">
             <include>SideBladeMenuButton</include>
-            <label>$LOCALIZE[31083]: $INFO[Skin.String(View514_DisplayInfo.label)]</label>
-            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,id=View_DisplayInfo,setting=View514_DisplayInfo,header=$LOCALIZE[31083])</onclick>
+            <label>$LOCALIZE[36427]: $INFO[Skin.String(View514_DisplayInfo.label)]</label>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,id=View_DisplayInfo,setting=View514_DisplayInfo,header=$LOCALIZE[36427])</onclick>
             <visible>Control.IsVisible(514)</visible>
         </control>
         
-        <control type="radiobutton" id="3005">
+        <control type="radiobutton" id="31114">
 			<!--show extended info-->
 			<include>SideBladeMenuButton</include>
-			<label>31114</label>
+			<label>$LOCALIZE[31114]</label>
             <onclick condition="Control.IsVisible(512)">Skin.ToggleSetting(View512_DetailsShowInfo)</onclick>
             <onclick condition="Control.IsVisible(510)">Skin.ToggleSetting(View510_DetailsShowInfo)</onclick>
             <onclick condition="Control.IsVisible(55)">Skin.ToggleSetting(View55_DetailsShowInfo)</onclick>
@@ -277,7 +298,7 @@
 		<control type="radiobutton" id="31119">
 			<!--show fanart thumb in bingie seasons-->
 			<include>SideBladeMenuButton</include>
-			<label>31119</label>
+			<label>$LOCALIZE[31119]</label>
 			<onclick condition="Control.IsVisible(525)">Skin.ToggleSetting(View525_DetailsShowFanart)</onclick>
 			<onclick condition="Control.IsVisible(527)">Skin.ToggleSetting(View527_DetailsShowFanart)</onclick>
 			<onclick>ReloadSkin()</onclick>
@@ -288,7 +309,7 @@
 		<control type="radiobutton" id="31045">
             <!--Enable Air Date-->
             <include>SideBladeMenuButton</include>
-            <label>31045</label>
+            <label>$LOCALIZE[31045]</label>
             <onclick condition="Control.IsVisible(525)">Skin.ToggleSetting(View525_EnableAirDate)</onclick>
 			<onclick condition="Control.IsVisible(527)">Skin.ToggleSetting(View527_EnableAirDate)</onclick>
             <selected>
@@ -296,36 +317,13 @@
 				[Control.IsVisible(527) + Skin.HasSetting(View527_EnableAirDate)]
             </selected>
             <visible>Control.IsVisible(525) | Control.IsVisible(527)</visible>
-        </control>
-        
-        <control type="radiobutton" id="3006">
-			<!--horizontal navigation view-->
-			<visible>Control.IsVisible(526)</visible>
-			<include>SideBladeMenuButton</include>
-			<label>31635</label>
-            <onclick condition="Control.IsVisible(526)">Skin.ToggleSetting(View_526_HorizontalNavigation)</onclick>
-            <onclick>ReloadSkin()</onclick>
-			<selected>[Control.IsVisible(526) + Skin.HasSetting(View_526_HorizontalNavigation)]
-            </selected>
-        </control>
-
-        <control type="radiobutton" id="3051">
-            <!--fixed position-->
-            <visible>Control.IsVisible(526) + Skin.HasSetting(View_526_HorizontalNavigation)</visible>
-            <include>SideBladeMenuButton</include>
-            <label>31511</label>
-            <onclick condition="Control.IsVisible(526)">Skin.ToggleSetting(View526_UseFixedLayout)</onclick>
-			<onclick>ReloadSkin()</onclick>
-            <selected>
-                [Control.IsVisible(526) + Skin.HasSetting(View526_UseFixedLayout)]
-            </selected>            
-        </control>
+        </control>       
 
         <control type="radiobutton" id="31524">
             <!--auto play trailer-->
             <visible>Container.Content(movies) | Container.Content(tvshows)</visible>
             <include>SideBladeMenuButton</include>
-            <label>31524</label>
+            <label>$LOCALIZE[31524]</label>
             <onclick>Skin.ToggleSetting(DetailsAutoTrailer)</onclick>
 			<onclick condition="Control.IsVisible(512)">Skin.ToggleSetting(View512_DetailsAutoTrailer)</onclick>
             <onclick condition="Control.IsVisible(510)">Skin.ToggleSetting(View510_DetailsAutoTrailer)</onclick>
@@ -334,6 +332,7 @@
             <onclick condition="Control.IsVisible(51)">Skin.ToggleSetting(View51_DetailsAutoTrailer)</onclick>
 			<onclick condition="Control.IsVisible(523)">Skin.ToggleSetting(View523_DetailsAutoTrailer)</onclick>
             <onclick condition="Control.IsVisible(526)">Skin.ToggleSetting(View526_DetailsAutoTrailer)</onclick>
+			<onclick condition="Control.IsVisible(528)">Skin.ToggleSetting(View528_DetailsAutoTrailer)</onclick>
 			<onclick>ReloadSkin()</onclick>
             <selected>
 			[Control.IsVisible(512) + Skin.HasSetting(View512_DetailsAutoTrailer)] |
@@ -342,19 +341,21 @@
             [Control.IsVisible(55) + Skin.HasSetting(View55_DetailsAutoTrailer)] |
             [Control.IsVisible(53) + Skin.HasSetting(View53_DetailsAutoTrailer)] |
 			[Control.IsVisible(523) + Skin.HasSetting(View523_DetailsAutoTrailer)] |
-			[Control.IsVisible(526) + Skin.HasSetting(View526_DetailsAutoTrailer)]
+			[Control.IsVisible(526) + Skin.HasSetting(View526_DetailsAutoTrailer)] |
+			[Control.IsVisible(528) + Skin.HasSetting(View528_DetailsAutoTrailer)]
 			</selected>
 			<visible>
             [Control.IsVisible(512) + !Skin.HasSetting(View512_DetailsShowInfo)] |
             [Control.IsVisible(510) + !Skin.HasSetting(View510_DetailsShowInfo)] |
             [Control.IsVisible(51) + !Skin.HasSetting(View51_DetailsShowInfo)] |
             [Control.IsVisible(55) + !Skin.HasSetting(View55_DetailsShowInfo)] |
-            [Control.IsVisible(53) + !Skin.HasSetting(View53_DetailsShowInfo)] | Control.IsVisible(523) | Control.IsVisible(526)
+            [Control.IsVisible(53) + !Skin.HasSetting(View53_DetailsShowInfo)] | 
+			Control.IsVisible(523) | Control.IsVisible(526) | Control.IsVisible(528)
 			</visible>
         </control>
 
         <!--Auto Trailer Interval-->
-        <control type="radiobutton" id="31795">
+        <control type="radiobutton" id="31163">
 			<visible>Container.Content(movies) | Container.Content(tvshows)</visible>
             <include>SideBladeMenuButton</include>
             <textureradioonfocus colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]">common/settings1.png</textureradioonfocus>
@@ -365,21 +366,22 @@
             <radioheight>35</radioheight>
             <radioposx>0</radioposx>
             <radioposy>12</radioposy>
-            <label>31634</label>
+            <label>$LOCALIZE[31163]</label>
             <visible>[Control.IsVisible(512) + Skin.HasSetting(View512_DetailsAutoTrailer)] |
             [Control.IsVisible(510) + Skin.HasSetting(View510_DetailsAutoTrailer)] |
             [Control.IsVisible(51) + Skin.HasSetting(View51_DetailsAutoTrailer)] |
             [Control.IsVisible(55) + Skin.HasSetting(View55_DetailsAutoTrailer)] |
             [Control.IsVisible(53) + Skin.HasSetting(View53_DetailsAutoTrailer)] |
 			[Control.IsVisible(523) + Skin.HasSetting(View523_DetailsAutoTrailer)] |
-			[Control.IsVisible(526) + Skin.HasSetting(View526_DetailsAutoTrailer)]</visible>
-            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=details_auto_trailer_interval,header=$LOCALIZE[31634])</onclick>
+			[Control.IsVisible(526) + Skin.HasSetting(View526_DetailsAutoTrailer)] |
+			[Control.IsVisible(528) + Skin.HasSetting(View526_DetailsAutoTrailer)]</visible>
+            <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=details_auto_trailer_interval,header=$LOCALIZE[31163])</onclick>
         </control>
 	
-         <control type="radiobutton" id="3045">
+         <control type="radiobutton" id="31356">
 			<!--Show info right-->
 			<include>SideBladeMenuButton</include>
-			<label>31599</label>
+			<label>$LOCALIZE[31356]</label>
 			<onclick condition="Control.IsVisible(512)">Skin.ToggleSetting(View512_ShowInfoRight)</onclick>
             <onclick condition="Control.IsVisible(510)">Skin.ToggleSetting(View510_ShowInfoRight)</onclick>
             <onclick condition="Control.IsVisible(55)">Skin.ToggleSetting(View55_ShowInfoRight)</onclick>
@@ -403,24 +405,15 @@
 		<!--swap poster in view-->
             <visible>Control.IsVisible(50)</visible>
 			<include>SideBladeMenuButton</include>
-			<label>31423</label>
+			<label>$LOCALIZE[31423]</label>
 			<onclick condition="Control.IsVisible(50)">Skin.ToggleSetting(View50_SwapPoster)</onclick>
 			<selected>Control.IsVisible(50) + Skin.HasSetting(View50_SwapPoster)</selected>
         </control>
-		
- 		<control type="radiobutton" id="3050">
-			<!--Prefer ClearArt-->
-			<include>SideBladeMenuButton</include>
-			<label>31447</label>
-			<onclick>Skin.ToggleSetting(LogoViewPreferClearArt)</onclick>
-			<selected>Skin.HasSetting(LogoViewPreferClearArt)</selected>
-			<visible>Control.IsVisible(503)</visible>
-		</control>
 
-        <control type="radiobutton" id="3057">
+        <control type="radiobutton" id="31004">
             <!--Disable Fixed Frame-->
             <include>SideBladeMenuButton</include>
-            <label>31004</label>
+            <label>$LOCALIZE[31004]</label>
             <onclick condition="Control.IsVisible(525)">Skin.ToggleSetting(View525_DisableFixedBingieFrame)</onclick>
 			<onclick condition="Control.IsVisible(527)">Skin.ToggleSetting(View527_DisableFixedBingieFrame)</onclick>
             <selected>
@@ -430,7 +423,7 @@
             <visible>Control.IsVisible(525) | Control.IsVisible(527)</visible>
         </control>
 
-        <control type="radiobutton" id="3056">
+        <control type="radiobutton" id="31136">
             <!-- enable zoom effect -->
             <include>SideBladeMenuButton</include>
             <label>$LOCALIZE[31136]</label>
@@ -441,10 +434,10 @@
             <visible>Control.IsVisible(52) | Control.IsVisible(502)</visible>			
         </control>    
         
-         <control type="radiobutton" id="3059">
+         <control type="radiobutton" id="31200">
 			<!--Show discart-->
 			<include>SideBladeMenuButton</include>
-			<label>31200</label>
+			<label>$LOCALIZE[31200]</label>
             <onclick condition="Control.IsVisible(513)">Skin.ToggleSetting(View513_ShowCDart)</onclick>
             <onclick condition="Control.IsVisible(514)">Skin.ToggleSetting(View514_ShowCDart)</onclick>
 			<onclick condition="Control.IsVisible(524)">Skin.ToggleSetting(View524_ShowCDart)</onclick>
@@ -461,10 +454,10 @@
 			<visible>$EXP[IsMovieDBType] | [$EXP[IsMovieDBType] + Skin.HasSetting(EnableFakeDiscArt)] | [!$EXP[IsMovieDBType] + Skin.HasSetting(EnableFakeDiscArt)] | Window.IsActive(Music)</visible>
 		</control>
 
-		<control type="radiobutton" id="3070">
+		<control type="radiobutton" id="31201">
 			<!--animate discart-->
 			<include>SideBladeMenuButton</include>
-			<label>31201</label>
+			<label>$LOCALIZE[31201]</label>
 			<onclick>Skin.ToggleSetting(AnimateDiscArt)</onclick>
 			<selected>Skin.HasSetting(AnimateDiscArt)</selected>
 			<visible>
@@ -482,10 +475,10 @@
 			<visible>$EXP[IsMovieDBType] | [$EXP[IsMovieDBType] + Skin.HasSetting(EnableFakeDiscArt)] | [!$EXP[IsMovieDBType] + Skin.HasSetting(EnableFakeDiscArt)] | Window.IsActive(Music)</visible>
 		</control>
 			
-		<control type="radiobutton" id="19001">
+		<control type="radiobutton" id="31268">
 			<!--Disable fanart-->
 			<include>SideBladeMenuButton</include>
-			<label>31268</label>
+			<label>$LOCALIZE[31268]</label>
 			<onclick condition="Control.IsVisible(10)">Skin.ToggleSetting(View10_DisableFanArt)</onclick>
             <onclick condition="Control.IsVisible(50)">Skin.ToggleSetting(View50_DisableFanArt)</onclick>
 			<onclick condition="Control.IsVisible(51)">Skin.ToggleSetting(View51_DisableFanArt)</onclick>
@@ -551,10 +544,10 @@
             </visible>
 			<visible>!Window.IsActive(favouritesbrowser)</visible>
 		</control>
-        <control type="radiobutton" id="19002">
+        <control type="radiobutton" id="31553">
 			<!--Disable extra fanart-->
 			<include>SideBladeMenuButton</include>
-			<label>31553</label>
+			<label>$LOCALIZE[31553]</label>
             <onclick condition="Control.IsVisible(10)">Skin.ToggleSetting(View10_DisableExtraFanArt)</onclick>
             <onclick condition="Control.IsVisible(50)">Skin.ToggleSetting(View50_DisableExtraFanArt)</onclick>
 			<onclick condition="Control.IsVisible(51)">Skin.ToggleSetting(View51_DisableExtraFanArt)</onclick>
@@ -616,10 +609,10 @@
 			Control.IsVisible(526) | Control.IsVisible(527) | Control.IsVisible(528)
             </visible>
 		</control>
-        <control type="button" id="84403">
+        <control type="button" id="20077">
             <!--Open Skin settings-->
             <include>SideBladeMenuButton</include>
-            <label>20077</label>
+            <label>$LOCALIZE[20077]</label>
             <onclick>ClearProperty(ShowViewSubMenu,Home)</onclick>
             <onclick>SetFocus(5000)</onclick>
             <onclick condition="!String.StartsWith(Window(Home).property(contenttype),tv)">SetProperty(SkinSettingSection,17,Home)</onclick>
@@ -644,9 +637,9 @@
 			<!--Grouplist 9000-->
             <control type="grouplist" id="9000">
                 <posx>21</posx>
-                <posy>185</posy>
+                <posy>180</posy>
                 <width>458</width>
-                <height>770</height>
+                <height>781</height>
                 <itemgap>3</itemgap>
                 <onleft>5000</onleft>
                 <onright>5000</onright>
@@ -660,7 +653,7 @@
                 <control type="button" id="100">
                     <!--Channels-->
                     <description>Channels</description>
-                    <label>19019</label>
+                    <label>$LOCALIZE[19019]</label>
                     <include>SideBladeMenuButton</include>
 					<onclick condition="Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)">NextChannelGroup</onclick>
 					<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVChannels)</onclick>
@@ -672,7 +665,7 @@
 					<top>80</top>
 					<textwidth>400</textwidth>
 					<include>SideBladeMenuButton</include>
-					<label>22020</label>
+					<label>$LOCALIZE[22020]</label>
 					<onclick condition="Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)">NextChannelGroup</onclick>
 					<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVGuide)</onclick>
 					<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioGuide)</onclick>
@@ -683,7 +676,7 @@
 					<top>120</top>
 					<textwidth>400</textwidth>
 					<include>SideBladeMenuButton</include>
-					<label>19163</label>
+					<label>$LOCALIZE[19163]</label>
 					<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVRecordings)</onclick>
 					<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioRecordings)</onclick>
 				</control>
@@ -693,7 +686,7 @@
 					<top>160</top>
 					<textwidth>400</textwidth>
 					<include>SideBladeMenuButton</include>
-					<label>19040</label>
+					<label>$LOCALIZE[19040]</label>
 					<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimers)</onclick>
 					<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimers)</onclick>
 				</control>
@@ -703,7 +696,7 @@
 					<top>160</top>
 					<textwidth>400</textwidth>
 					<include>SideBladeMenuButton</include>
-					<label>19138</label>
+					<label>$LOCALIZE[19138]</label>
 					<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimerRules)</onclick>
 					<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimerRules)</onclick>
 				</control>
@@ -713,7 +706,7 @@
 					<top>200</top>
 					<textwidth>400</textwidth>
 					<include>SideBladeMenuButton</include>
-					<label>137</label>
+					<label>$LOCALIZE[137]</label>
 					<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVSearch)</onclick>
 					<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioSearch)</onclick>
 				</control>
@@ -731,48 +724,48 @@
 					<right>40</right>
 					<textwidth>400</textwidth>
 					<include>SideBladeMenuButton</include>
-					<label>19270</label>
+					<label>$LOCALIZE[19270]</label>
 					<visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
 				</control>
 				
 				<control type="button" id="3">
 					<description>Sort by button</description>
 					<include>SideBladeMenuButton</include>
-					<label>103</label>
+					<label>$LOCALIZE[103]</label>
 				</control>
 				<control type="togglebutton" id="4">
 					<description>Sort asc</description>
 					<include>SideBladeMenuButton</include>
 					<alttexturefocus border="10" colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">diffuse/panel.png</alttexturefocus>
 					<alttexturenofocus/>
-					<label>21431</label>
-					<altlabel>21430</altlabel>
+					<label>$LOCALIZE[21431]</label>
+					<altlabel>$LOCALIZE[21430]</altlabel>
 					<usealttexture>Container.SortDirection(Ascending)</usealttexture>
 				</control>
                 
                 <control type="radiobutton" id="6">
 					<description>Show hidden channels</description>
 					<include>SideBladeMenuButton</include>
-					<label>19051</label>
+					<label>$LOCALIZE[19051]</label>
 					<visible>Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)</visible>
 				</control>
 				<control type="radiobutton" id="7">
 					<description>Show deleted recordings</description>
 					<include>SideBladeMenuButton</include>
-					<label>19184</label>
+					<label>$LOCALIZE[19184]</label>
 					<visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
 				</control>
                 <control type="radiobutton" id="8">  
                     <description>Hide disabled timers</description>  
                     <include>SideBladeMenuButton</include>  
-                    <label>19077</label>  
+                    <label>$LOCALIZE[19077]</label>  
                     <visible>Window.IsActive(TVTimers) | Window.IsActive(RadioTimers) | Window.IsActive(TVTimerRules) | Window.IsActive(RadioTimerRules)</visible>  
                 </control>  
   
 				<control type="radiobutton" id="31">
                     <!--filter-->
                     <include>SideBladeMenuButton</include>
-                    <label>587</label>
+                    <label>$LOCALIZE[587]</label>
 					<selected>Container.Filtered</selected>
 					<onclick>right</onclick>
 					<visible>Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)</visible>
@@ -787,10 +780,11 @@
     <include name="SideBladeMenuButton">
 		<width>458</width>
 		<align>left</align>
+		<textoffsetx>38</textoffsetx>
 		<font>Reg26</font>
 		<textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
 		<focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
-		<disabledcolor>77585858</disabledcolor>
+		<disabledcolor>$INFO[Skin.String(ButtonDisableTextColor)]</disabledcolor>
 		<invalidcolor>FFFF0000</invalidcolor>
 		<pulseonselect>false</pulseonselect>
 		<texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="10">diffuse/panel.png</texturefocus>

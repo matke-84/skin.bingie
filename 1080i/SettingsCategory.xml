@@ -120,7 +120,7 @@
         </control>
         <control type="grouplist" id="9000">
             <posx>90</posx>
-            <posy>630</posy>
+            <posy>685</posy>
             <width>450</width>
             <height>600</height>
             <onleft>9000</onleft>
@@ -133,7 +133,7 @@
                 <height>50</height>
                 <font>Reg28</font>
                 <font>Reg28</font>
-                <label>31071</label>
+                <label>$LOCALIZE[31071]</label>
                 <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                 <align>left</align>
             </control>
@@ -142,20 +142,10 @@
                 <font>Reg28</font>
                 <align>left</align>
                 <height>50</height>
-                <label>10037</label>
+                <label>$LOCALIZE[10037]</label>
 				<width>450</width>
 				<textoffsetx>38</textoffsetx>
                 <onclick>SettingsLevelChange</onclick>
-            </control>
-            <control type="button" id="21">
-                <description>Reset button</description>
-                <font>Reg28</font>
-                <align>left</align>
-                <height>50</height>
-                <label>10035</label>
-				<width>450</width>
-				<textoffsetx>38</textoffsetx>
-                <onclick>SettingsReset</onclick>
             </control>
         </control>
 		</control>
@@ -168,7 +158,7 @@
                 <bottom>20</bottom>
                 <height>86</height>
                 <font>Reg22</font>
-                <align>justify</align>
+                <align>left</align>
                 <textcolor>$INFO[Skin.String(FooterTextColor)]</textcolor>
                 <autoscroll time="3000" delay="5000" repeat="5000">true</autoscroll>
             </control>

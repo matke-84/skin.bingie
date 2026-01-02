@@ -121,8 +121,8 @@
 					<top>203</top>
 					<bottom>207</bottom>
 					<centerright>30</centerright>
-					<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(61) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] | !String.IsEqual(Skin.String(scrollbar_visibility),always_hide)">Conditional</animation>
-					<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(61) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] | String.IsEqual(Skin.String(scrollbar_visibility),always_hide)">Conditional</animation>
+					<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(61)">Conditional</animation>
+					<animation effect="fade" start="100" end="0" time="400" condition="!Control.HasFocus(61)">Conditional</animation>
 				</control>
 			</control>
 	</control>

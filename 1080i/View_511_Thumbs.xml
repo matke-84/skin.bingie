@@ -5,18 +5,17 @@
       <visible>Control.IsVisible(511)</visible>
       <include>animation_view_change</include>
       <control type="panel" id="511">
-        <viewtype label="31438">icons</viewtype>
-          <include content="View_Forced">
-              <param name="viewtype" value="$LOCALIZE[31438]" />
-          </include>
+        <viewtype label="31056">Landscape</viewtype>
+        <include content="View_Forced">
+            <param name="viewtype" value="$LOCALIZE[31056]" />
+        </include>
         <posx>52</posx>
         <bottom>96</bottom>
         <width>1820</width>
         <height>832</height>
         <orientation>vertical</orientation>
         <onleft>9000</onleft>
-        <onright condition="Skin.HasSetting(EnableQuickJump)">6000</onright>
-        <onright condition="!Skin.HasSetting(EnableQuickJump)">60</onright>
+        <onright>60</onright>
         <onup>511</onup>
         <ondown>511</ondown>
 		<onback>ClearProperty(ListAnimation,home)</onback>
@@ -53,8 +52,8 @@
 			<onup>60</onup>
 			<ondown>6000</ondown>
 			<onleft>511</onleft>
-			<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] + !Control.IsVisible(6002)">Conditional</animation>
-			<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] | Control.IsVisible(6002)">Conditional</animation>
+			<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
 		</control>      
 	</control>	
   </include>

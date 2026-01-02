@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- BINGIE -->
 <window>
-	<zorder>6</zorder>
     <defaultcontrol always="true">300</defaultcontrol>
     <controls>
         <include condition="Window.IsActive(1109)">BingieSearchMiniKeyboard</include>

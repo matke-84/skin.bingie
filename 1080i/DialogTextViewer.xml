@@ -8,6 +8,7 @@
 		
         <!--Dialog Tex Viewer-->
         <control type="group">
+			<posy>4</posy>
             <include>animation_window_open_close</include>
 			
 			<control type="image">
@@ -76,7 +77,8 @@
 				<onback>8000</onback>
                 <showonepage>false</showonepage>
                 <orientation>vertical</orientation>
-                <animation effect="fade" start="75" end="0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(60)">Conditional</animation>
+                <animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(60)">Conditional</animation>
+                <animation effect="fade" start="100" end="0" time="400" condition="!Control.HasFocus(60)">Conditional</animation>
             </control>
 			
             <control type="group" id="8000">

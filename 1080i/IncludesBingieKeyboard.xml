@@ -459,7 +459,7 @@
                     <height>search_key_size</height>
                     <width>290</width>
                     <include>SearchKeyDefs2</include>
-                    <label>20177</label>
+                    <label>$LOCALIZE[20177]</label>
                     <onup>9000</onup>
                 </control>
             </control>
@@ -506,7 +506,6 @@
                         <scroll>false</scroll>
                         <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
                         <selectedcolor>$INFO[Skin.String(ButtonTextColor)]</selectedcolor>
-                        <disabledcolor>FF686868</disabledcolor>
                     </control>
                 </control>
             </itemlayout>
@@ -585,7 +584,7 @@
             <!-- Heading -->
             <control type="label" id="311">
                 <animation effect="fade" end="0" time="0" condition="true">Conditional</animation>
-                <label>13406</label>
+                <label>$LOCALIZE[13406]</label>
             </control>
 
             <!-- keyboard commands/options -->
@@ -607,7 +606,7 @@
                     <onleft>111</onleft>
                     <onright>100</onright>
                     <include>KeyBoardKeyRadio</include>
-                    <label>20177</label>
+                    <label>$LOCALIZE[20177]</label>
                 </control>
 
                 <!-- Shift -->
@@ -617,7 +616,7 @@
                     <onleft>131</onleft>
                     <onright>120</onright>
                     <include>KeyBoardKeyRadio</include>
-                    <label>20178</label>
+                    <label>$LOCALIZE[20178]</label>
                 </control>
 
                 <!-- Caps lock -->
@@ -627,7 +626,7 @@
                     <onleft>151</onleft>
                     <onright>140</onright>
                     <include>KeyBoardKeyRadio</include>
-                    <label>20179</label>
+                    <label>$LOCALIZE[20179]</label>
                 </control>
 
                 <!-- Symbols -->
@@ -637,7 +636,7 @@
                     <onleft>171</onleft>
                     <onright>160</onright>
                     <include>KeyBoardKeyRadio</include>
-                    <label>20180</label>
+                    <label>$LOCALIZE[20180]</label>
                 </control>
 
                 <!-- IP address -->
@@ -647,7 +646,7 @@
                     <onleft>306</onleft>
                     <onright>32</onright>
                     <include>KeyBoardKeyRadio</include>
-                    <label>1006</label>
+                    <label>$LOCALIZE[1006]</label>
                 </control>
 
             </control>
@@ -1023,14 +1022,14 @@
                     <control type="button" id="32">
                         <onup>4000</onup>
                         <width>690</width>
-                        <label>20182</label>
+                        <label>$LOCALIZE[20182]</label>
                         <include>KeyBoardKey</include>
                     </control>
                     <!-- BACKSPACE -->
                     <control type="button" id="8">
                         <onup>4000</onup>
                         <width>410</width>
-                        <label>20181</label>
+                        <label>$LOCALIZE[20181]</label>
                         <include>KeyBoardKey</include>
                     </control>
                     <!-- Previous -->
@@ -1064,7 +1063,7 @@
                 <!-- Done -->
                 <control type="button" id="300">
                     <align>center</align>
-                    <label>186</label>
+                    <label>$LOCALIZE[186]</label>
                     <width>200</width>
                     <include>KeyBoardKey</include>
                     <onclick>SetFocus(100)</onclick>

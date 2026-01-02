@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- BINGIE -->
 <window>
-	<zorder>4</zorder>
     <defaultcontrol always="true">1</defaultcontrol>
     <controls>
 	
 	<control type="group">
+		<!-- osd setings background -->
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture background="true">diffuse/panel2.png</texture>
+			<colordiffuse>b3000000</colordiffuse>
+			<visible>Window.IsActive(fullscreenvideo)</visible>
+			<animation effect="fade" time="250" start="0" end="100" reversible="false">WindowOpen</animation>
+			<animation effect="fade" time="250" start="100" end="0" reversible="false">WindowClose</animation>
+		</control>
 			<posx>-660</posx>
 			<posy>0</posy>
 			<animation type="WindowOpen">
@@ -75,7 +83,6 @@
 							<width>545</width>
 							<height>60</height>
 							<font>Reg24</font>
-							<textcolor>FF0000FF</textcolor>
 							<align>center</align>
 							<aligny>center</aligny>
 						</control>
@@ -87,7 +94,6 @@
 							<scroll>false</scroll>
 							<textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
 							<selectedcolor>$INFO[Skin.String(ButtonTextColor)]</selectedcolor>
-							<disabledcolor>FF686868</disabledcolor>
 						</control>
 					</control>
 				</itemlayout>
@@ -99,7 +105,6 @@
 							<width>545</width>
 							<height>60</height>
 							<font>Reg24</font>
-							<textcolor>FF0000FF</textcolor>
 							<align>center</align>
 							<aligny>center</aligny>
 							<visible>!Control.HasFocus(11)</visible>
@@ -150,21 +155,21 @@
 					<width>563</width>
 					<include>DialogButtonOther</include>
                     <height>60</height>
-					<label>15019</label>
+					<label>$LOCALIZE[15019]</label>
                 </control>
                 <control type="button" id="3">
                     <description>Delete</description>
 					<width>563</width>
 					<include>DialogButtonOther</include>
                     <height>60</height>
-					<label>117</label>
+					<label>$LOCALIZE[117]</label>
                 </control>
 				<control type="button" id="4">
                     <description>Episode Bookmarks</description>
 					<width>563</width>
 					<include>DialogButtonOther</include>
                     <height>60</height>
-					<label>20406</label>
+					<label>$LOCALIZE[20406]</label>
 					<visible>videoplayer.content(episodes)</visible>
                 </control>
 				<control type="button" id="99">
@@ -172,7 +177,7 @@
 					<width>563</width>
 					<include>DialogButtonOther</include>
                     <height>60</height>
-					<label>222</label>
+					<label>$LOCALIZE[222]</label>
 					<onclick>Dialog.Close(all,true)</onclick>
                 </control>
             </control>

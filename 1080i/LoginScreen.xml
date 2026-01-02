@@ -23,27 +23,29 @@
                 <align>center</align>
                 <font>Reg46</font>
                 <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
-                <label>31172</label>
+                <label>$LOCALIZE[31172]</label>
             </control>
             
             <!--Login Screen-->
             <control type="group">
                 <control type="list" id="52">
                     <orientation>horizontal</orientation>
-                    <posx>836</posx>
-                    <posy>302</posy>
-                    <width>248</width>
+					<animation effect="slide" end="150" condition="Integer.IsEqual(Container(52).NumItems,4)">Conditional</animation>
+					<animation effect="slide" end="300" condition="Integer.IsEqual(Container(52).NumItems,3)">Conditional</animation>
+					<animation effect="slide" end="450" condition="Integer.IsEqual(Container(52).NumItems,2)">Conditional</animation>
+					<animation effect="slide" end="600" condition="Integer.IsEqual(Container(52).NumItems,1)">Conditional</animation>
+                    <top>302</top>
+					<left>236</left>
+                    <width>1500</width>
                     <height>500</height>
                     <onleft>52</onleft>
                     <onright>52</onright>
                     <ondown>10034</ondown>
 					<onback>ActivateWindow(Home)</onback>
-                    <pagecontrol/>
                     <scrolltime tween="cubic" easing="out">500</scrolltime>
-					<focusposition>1</focusposition>
-                    <movement>1</movement>
                     <itemlayout height="320" width="300">
 						<control type="image">
+							<animation effect="fade" start="100" end="50" time="0" condition="true">Conditional</animation> 
                             <posx>4</posx>
                             <posy>4</posy>
                             <width>240</width>
@@ -52,9 +54,10 @@
                             <aspectratio>keep</aspectratio>
                         </control>
                         <control type="label">
+							<animation effect="fade" start="100" end="50" time="0" condition="true">Conditional</animation> 
                             <align>center</align>
 							<posx>3</posx>
-                            <posy>273</posy>
+                            <posy>267</posy>
                             <width>240</width>
                             <height>50</height>
                             <textcolor fallback="white">$INFO[Skin.String(GeneralTextColor)]</textcolor>
@@ -78,7 +81,7 @@
                             </control>
 							<control type="image">
 								<visible>!Control.HasFocus(52)</visible>
-								<animation effect="fade" start="100" end="50" time="0" tween="sine" easing="inout" condition="!Control.HasFocus(52)">Conditional</animation> 
+								<animation effect="fade" start="100" end="50" time="0" condition="!Control.HasFocus(52)">Conditional</animation> 
                                 <align>left</align>
                                 <aligny>top</aligny>
                                 <width>248</width>
@@ -147,7 +150,7 @@
                 <bottom>348</bottom>
 				<width>185</width>
 				<height>50</height>
-				<label>31640</label>
+				<label>$LOCALIZE[31385]</label>
 				<font>surprise</font>
 				<textcolor>$VAR[LogonColor]</textcolor>
 				<scroll>true</scroll>

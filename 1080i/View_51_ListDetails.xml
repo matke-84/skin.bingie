@@ -15,13 +15,12 @@
 				<onup>51</onup>
 				<ondown>51</ondown>
 				<onleft>9000</onleft>
-				<onright condition="Skin.HasSetting(EnableQuickJump)">6000</onright>
-                <onright condition="!Skin.HasSetting(EnableQuickJump)">60</onright>
+                <onright>60</onright>
 				<onback>CancelAlarm(preview_delay,silent)</onback>
 				<onback condition="!Player.HasAudio + $EXP[IsPlayingUnrecognizedContent] + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)] + Skin.HasSetting(View51_DetailsAutoTrailer)">PlayerControl(Stop)</onback>
 				<onback>ClearProperty(HideNowPlaying)</onback>
 				<onback>ClearProperty(ListAnimation,home)</onback>
-				<viewtype label="31444">list</viewtype>
+				<viewtype label="31444">List Details</viewtype>
 				<include content="View_Forced">
 					<param name="viewtype" value="$LOCALIZE[31444]" />
 				</include>
@@ -93,8 +92,8 @@
 				<onup>60</onup>
 				<ondown>6000</ondown>
 				<onleft>51</onleft>
-				<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] + !Control.IsVisible(6002)">Conditional</animation>
-				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] | Control.IsVisible(6002)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
 			</control>   
 		</control>		
 	</include>

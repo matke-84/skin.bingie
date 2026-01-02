@@ -8,7 +8,7 @@
 		<action>DefaultSearch-Movies</action>
 	</shortcut>
 	<shortcut>
-		<label>$LOCALIZE[31590]</label>
+		<label>$LOCALIZE[31566]</label>
 		<label2 />
         <icon />
         <thumb />

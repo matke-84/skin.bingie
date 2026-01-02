@@ -52,12 +52,6 @@
 			<param name="size" value="80"/>
 		</include>
 		<!-- Snow Effect -->
-		<control type="group">
-			<include condition="String.IsEqual(Skin.String(season_greetings),snow_animation)">snow</include>
-		</control>
-		<!-- Halloween Effect -->
-		<control type="group">
-			<include condition="String.IsEqual(Skin.String(season_greetings),halloween_animation)">pumpkin</include>
-		</control>
+		<include condition="Skin.HasSetting(EnableSnowAnimation)">SnowAnimation</include>
 	</controls>
 </window>

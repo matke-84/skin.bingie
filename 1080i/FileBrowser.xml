@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- BINGIE -->
 <window>
-	<zorder>4</zorder>
     <defaultcontrol always="true">450</defaultcontrol>
     <coordinates>
 		<system>1</system>
@@ -17,7 +16,7 @@
         <control type="group">
             <include>animation_window_open_close</include>
             <visible>!Window.IsActive(virtualkeyboard) + !Window.IsActive(locksettings)</visible>
-
+			<top>-5</top>
 			<control type="image">
                 <!--Panel-->
                 <posx>445</posx>
@@ -48,9 +47,9 @@
             </control>
 
             <control type="image">
-                <posx>1122</posx>
+                <posx>1106</posx>
                 <posy>300</posy>
-                <width>319</width>
+                <width>336</width>
                 <height>481</height>
                 <texture border="5">dialogs/default/inner.png</texture>
             </control>
@@ -65,9 +64,9 @@
                 <align>center</align>
             </control>
             <control type="image">
-                <posx>1123</posx>
+                <posx>1117</posx>
                 <posy>301</posy>
-                <width>317</width>
+                <width>314</width>
                 <height>478</height>
                 <aspectratio>keep</aspectratio>
                 <texture background="true">$INFO[ListItem.Icon]</texture>
@@ -345,16 +344,16 @@
                     </control>
                 </focusedlayout>
             </control>
-     			<!--scrollbar-->
+     		<!--scrollbar-->
 			<control type="scrollbar" id="60"> 
-				<posx>1065</posx>
+				<posx>1073</posx>
                 <posy>300</posy>
 				<height>480</height>
 				<onleft>450</onleft>
 				<onleft>451</onleft>
 				<showonepage>false</showonepage>
-				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)">Conditional</animation>
-				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
 			</control>	
 			
 			<!--Buttons-->
@@ -368,7 +367,7 @@
 				<itemgap>15</itemgap>
                 <control type="button" id="413">
                     <description>OK</description>
-                    <label>186</label>
+                    <label>$LOCALIZE[186]</label>
 					<width>316</width>
                     <include>DialogButtonOther</include>
                     <pulseonselect>false</pulseonselect>

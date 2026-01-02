@@ -1,0 +1,1302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BINGIE -->
+<includes>
+	<!-- widget layout -->
+	<include name="1_widget_layout_categories">
+        <include content="widget_layout_poster" condition="String.IsEqual(Skin.String(1_widgetstyle),poster)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_landscape" condition="String.IsEqual(Skin.String(1_widgetstyle),landscape)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_square" condition="String.IsEqual(Skin.String(1_widgetstyle),square)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_default" condition="String.IsEqual(Skin.String(1_widgetstyle),default)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+    </include>
+	
+	<include name="2_widget_layout_categories">
+        <include content="widget_layout_poster" condition="String.IsEqual(Skin.String(2_widgetstyle),poster)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_landscape" condition="String.IsEqual(Skin.String(2_widgetstyle),landscape)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_square" condition="String.IsEqual(Skin.String(2_widgetstyle),square)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_default" condition="String.IsEqual(Skin.String(2_widgetstyle),default)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+    </include>
+	
+	<include name="3_widget_layout_categories">
+        <include content="widget_layout_poster" condition="String.IsEqual(Skin.String(3_widgetstyle),poster)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_landscape" condition="String.IsEqual(Skin.String(3_widgetstyle),landscape)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_square" condition="String.IsEqual(Skin.String(3_widgetstyle),square)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_default" condition="String.IsEqual(Skin.String(3_widgetstyle),default)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+    </include>
+	
+	<include name="4_widget_layout_categories">
+        <include content="widget_layout_poster" condition="String.IsEqual(Skin.String(4_widgetstyle),poster)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_landscape" condition="String.IsEqual(Skin.String(4_widgetstyle),landscape)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_square" condition="String.IsEqual(Skin.String(4_widgetstyle),square)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_default" condition="String.IsEqual(Skin.String(4_widgetstyle),default)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+    </include>
+	
+	<include name="5_widget_layout_categories">
+        <include content="widget_layout_poster" condition="String.IsEqual(Skin.String(5_widgetstyle),poster)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_landscape" condition="String.IsEqual(Skin.String(5_widgetstyle),landscape)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_square" condition="String.IsEqual(Skin.String(5_widgetstyle),square)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_default" condition="String.IsEqual(Skin.String(5_widgetstyle),default)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+    </include>
+	
+	<include name="6_widget_layout_categories">
+        <include content="widget_layout_poster" condition="String.IsEqual(Skin.String(6_widgetstyle),poster)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_landscape" condition="String.IsEqual(Skin.String(6_widgetstyle),landscape)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_square" condition="String.IsEqual(Skin.String(6_widgetstyle),square)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_default" condition="String.IsEqual(Skin.String(6_widgetstyle),default)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+    </include>
+	
+	<include name="7_widget_layout_categories">
+        <include content="widget_layout_poster" condition="String.IsEqual(Skin.String(7_widgetstyle),poster)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_landscape" condition="String.IsEqual(Skin.String(7_widgetstyle),landscape)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_square" condition="String.IsEqual(Skin.String(7_widgetstyle),square)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_default" condition="String.IsEqual(Skin.String(7_widgetstyle),default)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+    </include>
+	
+	<include name="8_widget_layout_categories">
+        <include content="widget_layout_poster" condition="String.IsEqual(Skin.String(8_widgetstyle),poster)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_landscape" condition="String.IsEqual(Skin.String(8_widgetstyle),landscape)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_square" condition="String.IsEqual(Skin.String(8_widgetstyle),square)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_default" condition="String.IsEqual(Skin.String(8_widgetstyle),default)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+    </include>
+	
+	<include name="9_widget_layout_categories">
+        <include content="widget_layout_poster" condition="String.IsEqual(Skin.String(9_widgetstyle),poster)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_landscape" condition="String.IsEqual(Skin.String(9_widgetstyle),landscape)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_square" condition="String.IsEqual(Skin.String(9_widgetstyle),square)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_default" condition="String.IsEqual(Skin.String(9_widgetstyle),default)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+    </include>
+	
+	<include name="10_widget_layout_categories">
+        <include content="widget_layout_poster" condition="String.IsEqual(Skin.String(10_widgetstyle),poster)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_landscape" condition="String.IsEqual(Skin.String(10_widgetstyle),landscape)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_square" condition="String.IsEqual(Skin.String(10_widgetstyle),square)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_default" condition="String.IsEqual(Skin.String(10_widgetstyle),default)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+    </include>
+	
+	<include name="11_widget_layout_categories">
+        <include content="widget_layout_poster" condition="String.IsEqual(Skin.String(11_widgetstyle),poster)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_landscape" condition="String.IsEqual(Skin.String(11_widgetstyle),landscape)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_square" condition="String.IsEqual(Skin.String(11_widgetstyle),square)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_default" condition="String.IsEqual(Skin.String(11_widgetstyle),default)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+    </include>
+	
+	<include name="12_widget_layout_categories">
+        <include content="widget_layout_poster" condition="String.IsEqual(Skin.String(12_widgetstyle),poster)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_landscape" condition="String.IsEqual(Skin.String(12_widgetstyle),landscape)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_square" condition="String.IsEqual(Skin.String(12_widgetstyle),square)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_default" condition="String.IsEqual(Skin.String(12_widgetstyle),default)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+    </include>
+	
+	<include name="13_widget_layout_categories">
+        <include content="widget_layout_poster" condition="String.IsEqual(Skin.String(13_widgetstyle),poster)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_landscape" condition="String.IsEqual(Skin.String(13_widgetstyle),landscape)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_square" condition="String.IsEqual(Skin.String(13_widgetstyle),square)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_default" condition="String.IsEqual(Skin.String(13_widgetstyle),default)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+    </include>
+	
+	<include name="14_widget_layout_categories">
+        <include content="widget_layout_poster" condition="String.IsEqual(Skin.String(14_widgetstyle),poster)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_landscape" condition="String.IsEqual(Skin.String(14_widgetstyle),landscape)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_square" condition="String.IsEqual(Skin.String(14_widgetstyle),square)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_default" condition="String.IsEqual(Skin.String(14_widgetstyle),default)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+    </include>
+	
+	<include name="15_widget_layout_categories">
+        <include content="widget_layout_poster" condition="String.IsEqual(Skin.String(15_widgetstyle),poster)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_landscape" condition="String.IsEqual(Skin.String(15_widgetstyle),landscape)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_square" condition="String.IsEqual(Skin.String(15_widgetstyle),square)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_default" condition="String.IsEqual(Skin.String(15_widgetstyle),default)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+    </include>
+	
+	<include name="16_widget_layout_categories">
+        <include content="widget_layout_poster" condition="String.IsEqual(Skin.String(16_widgetstyle),poster)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_landscape" condition="String.IsEqual(Skin.String(16_widgetstyle),landscape)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_square" condition="String.IsEqual(Skin.String(16_widgetstyle),square)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_default" condition="String.IsEqual(Skin.String(16_widgetstyle),default)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+    </include>
+	
+	<include name="17_widget_layout_categories">
+        <include content="widget_layout_poster" condition="String.IsEqual(Skin.String(17_widgetstyle),poster)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_landscape" condition="String.IsEqual(Skin.String(17_widgetstyle),landscape)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_square" condition="String.IsEqual(Skin.String(17_widgetstyle),square)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_default" condition="String.IsEqual(Skin.String(17_widgetstyle),default)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+    </include>
+	
+	<include name="18_widget_layout_categories">
+        <include content="widget_layout_poster" condition="String.IsEqual(Skin.String(18_widgetstyle),poster)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_landscape" condition="String.IsEqual(Skin.String(18_widgetstyle),landscape)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_square" condition="String.IsEqual(Skin.String(18_widgetstyle),square)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_default" condition="String.IsEqual(Skin.String(18_widgetstyle),default)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+    </include>
+	
+	<include name="19_widget_layout_categories">
+        <include content="widget_layout_poster" condition="String.IsEqual(Skin.String(19_widgetstyle),poster)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_landscape" condition="String.IsEqual(Skin.String(19_widgetstyle),landscape)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_square" condition="String.IsEqual(Skin.String(19_widgetstyle),square)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_default" condition="String.IsEqual(Skin.String(19_widgetstyle),default)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+    </include>
+	
+	<include name="20_widget_layout_categories">
+        <include content="widget_layout_poster" condition="String.IsEqual(Skin.String(20_widgetstyle),poster)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_landscape" condition="String.IsEqual(Skin.String(20_widgetstyle),landscape)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_square" condition="String.IsEqual(Skin.String(20_widgetstyle),square)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_default" condition="String.IsEqual(Skin.String(20_widgetstyle),default)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+    </include>
+	
+	<include name="21_widget_layout_categories">
+        <include content="widget_layout_poster" condition="String.IsEqual(Skin.String(21_widgetstyle),poster)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_landscape" condition="String.IsEqual(Skin.String(21_widgetstyle),landscape)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_square" condition="String.IsEqual(Skin.String(21_widgetstyle),square)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_default" condition="String.IsEqual(Skin.String(21_widgetstyle),default)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+    </include>
+	
+	<include name="22_widget_layout_categories">
+        <include content="widget_layout_poster" condition="String.IsEqual(Skin.String(22_widgetstyle),poster)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_landscape" condition="String.IsEqual(Skin.String(22_widgetstyle),landscape)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_square" condition="String.IsEqual(Skin.String(22_widgetstyle),square)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_default" condition="String.IsEqual(Skin.String(22_widgetstyle),default)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+    </include>
+	
+	<include name="23_widget_layout_categories">
+        <include content="widget_layout_poster" condition="String.IsEqual(Skin.String(23_widgetstyle),poster)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_landscape" condition="String.IsEqual(Skin.String(23_widgetstyle),landscape)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_square" condition="String.IsEqual(Skin.String(23_widgetstyle),square)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_default" condition="String.IsEqual(Skin.String(23_widgetstyle),default)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+    </include>
+	
+	<include name="24_widget_layout_categories">
+        <include content="widget_layout_poster" condition="String.IsEqual(Skin.String(24_widgetstyle),poster)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_landscape" condition="String.IsEqual(Skin.String(24_widgetstyle),landscape)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_square" condition="String.IsEqual(Skin.String(24_widgetstyle),square)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_default" condition="String.IsEqual(Skin.String(24_widgetstyle),default)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+    </include>
+	
+	<include name="25_widget_layout_categories">
+        <include content="widget_layout_poster" condition="String.IsEqual(Skin.String(25_widgetstyle),poster)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_landscape" condition="String.IsEqual(Skin.String(25_widgetstyle),landscape)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_square" condition="String.IsEqual(Skin.String(25_widgetstyle),square)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_default" condition="String.IsEqual(Skin.String(25_widgetstyle),default)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+    </include>
+	
+	<include name="26_widget_layout_categories">
+        <include content="widget_layout_poster" condition="String.IsEqual(Skin.String(26_widgetstyle),poster)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_landscape" condition="String.IsEqual(Skin.String(26_widgetstyle),landscape)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_square" condition="String.IsEqual(Skin.String(26_widgetstyle),square)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_default" condition="String.IsEqual(Skin.String(26_widgetstyle),default)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+    </include>
+	
+	<include name="27_widget_layout_categories">
+        <include content="widget_layout_poster" condition="String.IsEqual(Skin.String(27_widgetstyle),poster)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_landscape" condition="String.IsEqual(Skin.String(27_widgetstyle),landscape)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_square" condition="String.IsEqual(Skin.String(27_widgetstyle),square)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_default" condition="String.IsEqual(Skin.String(27_widgetstyle),default)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+    </include>
+	
+	<include name="28_widget_layout_categories">
+        <include content="widget_layout_poster" condition="String.IsEqual(Skin.String(28_widgetstyle),poster)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_landscape" condition="String.IsEqual(Skin.String(28_widgetstyle),landscape)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_square" condition="String.IsEqual(Skin.String(28_widgetstyle),square)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+		<include content="widget_layout_default" condition="String.IsEqual(Skin.String(28_widgetstyle),default)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+            <param name="widgetTags" value="$PARAM[widgetTags]"/>
+			<param name="height" value="$PARAM[height]"/>
+        </include>
+    </include>
+	
+	<!-- widget tags -->
+	<include name="1_WidgetTagOverlayDefault">
+        <include content="WidgetTagOverlayEnable" condition="String.IsEqual(Skin.String(1_Widgets_DisplayTags),enable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+		<include content="WidgetTagOverlayDisable" condition="String.IsEqual(Skin.String(1_Widgets_DisplayTags),disable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+    </include>
+	
+	<include name="2_WidgetTagOverlayDefault">
+        <include content="WidgetTagOverlayEnable" condition="String.IsEqual(Skin.String(2_Widgets_DisplayTags),enable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+		<include content="WidgetTagOverlayDisable" condition="String.IsEqual(Skin.String(2_Widgets_DisplayTags),disable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+    </include>
+	
+	<include name="3_WidgetTagOverlayDefault">
+        <include content="WidgetTagOverlayEnable" condition="String.IsEqual(Skin.String(3_Widgets_DisplayTags),enable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+		<include content="WidgetTagOverlayDisable" condition="String.IsEqual(Skin.String(3_Widgets_DisplayTags),disable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+    </include>
+	
+	<include name="4_WidgetTagOverlayDefault">
+        <include content="WidgetTagOverlayEnable" condition="String.IsEqual(Skin.String(4_Widgets_DisplayTags),enable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+		<include content="WidgetTagOverlayDisable" condition="String.IsEqual(Skin.String(4_Widgets_DisplayTags),disable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+    </include>
+	
+	<include name="5_WidgetTagOverlayDefault">
+        <include content="WidgetTagOverlayEnable" condition="String.IsEqual(Skin.String(5_Widgets_DisplayTags),enable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+		<include content="WidgetTagOverlayDisable" condition="String.IsEqual(Skin.String(5_Widgets_DisplayTags),disable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+    </include>
+	
+	<include name="6_WidgetTagOverlayDefault">
+        <include content="WidgetTagOverlayEnable" condition="String.IsEqual(Skin.String(6_Widgets_DisplayTags),enable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+		<include content="WidgetTagOverlayDisable" condition="String.IsEqual(Skin.String(6_Widgets_DisplayTags),disable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+    </include>
+	
+	<include name="7_WidgetTagOverlayDefault">
+        <include content="WidgetTagOverlayEnable" condition="String.IsEqual(Skin.String(7_Widgets_DisplayTags),enable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+		<include content="WidgetTagOverlayDisable" condition="String.IsEqual(Skin.String(7_Widgets_DisplayTags),disable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+    </include>
+	
+	<include name="8_WidgetTagOverlayDefault">
+        <include content="WidgetTagOverlayEnable" condition="String.IsEqual(Skin.String(8_Widgets_DisplayTags),enable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+		<include content="WidgetTagOverlayDisable" condition="String.IsEqual(Skin.String(8_Widgets_DisplayTags),disable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+    </include>
+	
+	<include name="9_WidgetTagOverlayDefault">
+        <include content="WidgetTagOverlayEnable" condition="String.IsEqual(Skin.String(9_Widgets_DisplayTags),enable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+		<include content="WidgetTagOverlayDisable" condition="String.IsEqual(Skin.String(9_Widgets_DisplayTags),disable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+    </include>
+	
+	<include name="10_WidgetTagOverlayDefault">
+        <include content="WidgetTagOverlayEnable" condition="String.IsEqual(Skin.String(10_Widgets_DisplayTags),enable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+		<include content="WidgetTagOverlayDisable" condition="String.IsEqual(Skin.String(10_Widgets_DisplayTags),disable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+    </include>
+	
+	<include name="11_WidgetTagOverlayDefault">
+        <include content="WidgetTagOverlayEnable" condition="String.IsEqual(Skin.String(11_Widgets_DisplayTags),enable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+		<include content="WidgetTagOverlayDisable" condition="String.IsEqual(Skin.String(11_Widgets_DisplayTags),disable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+    </include>
+	
+	<include name="12_WidgetTagOverlayDefault">
+        <include content="WidgetTagOverlayEnable" condition="String.IsEqual(Skin.String(12_Widgets_DisplayTags),enable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+		<include content="WidgetTagOverlayDisable" condition="String.IsEqual(Skin.String(12_Widgets_DisplayTags),disable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+    </include>
+	
+	<include name="13_WidgetTagOverlayDefault">
+        <include content="WidgetTagOverlayEnable" condition="String.IsEqual(Skin.String(13_Widgets_DisplayTags),enable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+		<include content="WidgetTagOverlayDisable" condition="String.IsEqual(Skin.String(13_Widgets_DisplayTags),disable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+    </include>
+	
+	<include name="14_WidgetTagOverlayDefault">
+        <include content="WidgetTagOverlayEnable" condition="String.IsEqual(Skin.String(14_Widgets_DisplayTags),enable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+		<include content="WidgetTagOverlayDisable" condition="String.IsEqual(Skin.String(14_Widgets_DisplayTags),disable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+    </include>
+	
+	<include name="15_WidgetTagOverlayDefault">
+        <include content="WidgetTagOverlayEnable" condition="String.IsEqual(Skin.String(15_Widgets_DisplayTags),enable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+		<include content="WidgetTagOverlayDisable" condition="String.IsEqual(Skin.String(15_Widgets_DisplayTags),disable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+    </include>
+	
+	<include name="16_WidgetTagOverlayDefault">
+        <include content="WidgetTagOverlayEnable" condition="String.IsEqual(Skin.String(16_Widgets_DisplayTags),enable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+		<include content="WidgetTagOverlayDisable" condition="String.IsEqual(Skin.String(16_Widgets_DisplayTags),disable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+    </include>
+	
+	<include name="17_WidgetTagOverlayDefault">
+        <include content="WidgetTagOverlayEnable" condition="String.IsEqual(Skin.String(17_Widgets_DisplayTags),enable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+		<include content="WidgetTagOverlayDisable" condition="String.IsEqual(Skin.String(17_Widgets_DisplayTags),disable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+    </include>
+	
+	<include name="18_WidgetTagOverlayDefault">
+        <include content="WidgetTagOverlayEnable" condition="String.IsEqual(Skin.String(18_Widgets_DisplayTags),enable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+		<include content="WidgetTagOverlayDisable" condition="String.IsEqual(Skin.String(18_Widgets_DisplayTags),disable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+    </include>
+	
+	<include name="19_WidgetTagOverlayDefault">
+        <include content="WidgetTagOverlayEnable" condition="String.IsEqual(Skin.String(19_Widgets_DisplayTags),enable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+		<include content="WidgetTagOverlayDisable" condition="String.IsEqual(Skin.String(19_Widgets_DisplayTags),disable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+    </include>
+	
+	<include name="20_WidgetTagOverlayDefault">
+        <include content="WidgetTagOverlayEnable" condition="String.IsEqual(Skin.String(20_Widgets_DisplayTags),enable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+		<include content="WidgetTagOverlayDisable" condition="String.IsEqual(Skin.String(20_Widgets_DisplayTags),disable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+    </include>
+	
+	<include name="21_WidgetTagOverlayDefault">
+        <include content="WidgetTagOverlayEnable" condition="String.IsEqual(Skin.String(21_Widgets_DisplayTags),enable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+		<include content="WidgetTagOverlayDisable" condition="String.IsEqual(Skin.String(21_Widgets_DisplayTags),disable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+    </include>
+	
+	<include name="22_WidgetTagOverlayDefault">
+        <include content="WidgetTagOverlayEnable" condition="String.IsEqual(Skin.String(22_Widgets_DisplayTags),enable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+		<include content="WidgetTagOverlayDisable" condition="String.IsEqual(Skin.String(22_Widgets_DisplayTags),disable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+    </include>
+	
+	<include name="23_WidgetTagOverlayDefault">
+        <include content="WidgetTagOverlayEnable" condition="String.IsEqual(Skin.String(23_Widgets_DisplayTags),enable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+		<include content="WidgetTagOverlayDisable" condition="String.IsEqual(Skin.String(23_Widgets_DisplayTags),disable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+    </include>
+	
+	<include name="24_WidgetTagOverlayDefault">
+        <include content="WidgetTagOverlayEnable" condition="String.IsEqual(Skin.String(24_Widgets_DisplayTags),enable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+		<include content="WidgetTagOverlayDisable" condition="String.IsEqual(Skin.String(24_Widgets_DisplayTags),disable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+    </include>
+	
+	<include name="25_WidgetTagOverlayDefault">
+        <include content="WidgetTagOverlayEnable" condition="String.IsEqual(Skin.String(25_Widgets_DisplayTags),enable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+		<include content="WidgetTagOverlayDisable" condition="String.IsEqual(Skin.String(25_Widgets_DisplayTags),disable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+    </include>
+	
+	<include name="26_WidgetTagOverlayDefault">
+        <include content="WidgetTagOverlayEnable" condition="String.IsEqual(Skin.String(26_Widgets_DisplayTags),enable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+		<include content="WidgetTagOverlayDisable" condition="String.IsEqual(Skin.String(26_Widgets_DisplayTags),disable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+    </include>
+	
+	<include name="27_WidgetTagOverlayDefault">
+        <include content="WidgetTagOverlayEnable" condition="String.IsEqual(Skin.String(27_Widgets_DisplayTags),enable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+		<include content="WidgetTagOverlayDisable" condition="String.IsEqual(Skin.String(27_Widgets_DisplayTags),disable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+    </include>
+	
+	<include name="28_WidgetTagOverlayDefault">
+        <include content="WidgetTagOverlayEnable" condition="String.IsEqual(Skin.String(28_Widgets_DisplayTags),enable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+		<include content="WidgetTagOverlayDisable" condition="String.IsEqual(Skin.String(28_Widgets_DisplayTags),disable)">
+            <param name="widgetid" value="$PARAM[widgetid]"/>
+        </include>
+    </include>
+	
+	<!-- widget action label -->
+    <variable name="widget_action_label">
+        <value condition="!String.IsEmpty(Skin.String(ActionAdvantureMovies.path)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31469])">$INFO[Skin.String(ActionAdvantureMovies.path)]</value>
+		<value condition="!String.IsEmpty(Skin.String(DramaMovies.path)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31456])">$INFO[Skin.String(DramaMovies.path)]</value>
+		<value condition="!String.IsEmpty(Skin.String(ComedyMoviesWidget.path)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31457])">$INFO[Skin.String(ComedyMoviesWidget.path)]</value>
+		<value condition="!String.IsEmpty(Skin.String(FamilyMoviesWidget.path)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31451])">$INFO[Skin.String(FamilyMoviesWidget.path)]</value>
+		<value condition="!String.IsEmpty(Skin.String(HorrorMoviesWidget.path)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31452])">$INFO[Skin.String(HorrorMoviesWidget.path)]</value>
+		<value condition="!String.IsEmpty(Skin.String(DocumentaryMovies.path)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31159])">$INFO[Skin.String(DocumentaryMovies.path)]</value>
+		<value condition="!String.IsEmpty(Skin.String(AnimeMovies.path)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31046])">$INFO[Skin.String(AnimeMovies.path)]</value>
+		<value condition="!String.IsEmpty(Skin.String(CrimeMovies.path)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31448])">$INFO[Skin.String(CrimeMovies.path)]</value>
+		<value condition="!String.IsEmpty(Skin.String(FantasyMovies.path)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31446])">$INFO[Skin.String(FantasyMovies.path)]</value>
+		<value condition="!String.IsEmpty(Skin.String(HistoryWarMovies.path)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31442])">$INFO[Skin.String(HistoryWarMovies.path)]</value>
+		<value condition="!String.IsEmpty(Skin.String(AnimationMovies.path)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31435])">$INFO[Skin.String(AnimationMovies.path)]</value>
+		<value condition="!String.IsEmpty(Skin.String(MusicMovies.path)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31049])">$INFO[Skin.String(MusicMovies.path)]</value>
+		<value condition="!String.IsEmpty(Skin.String(RomanceMovies.path)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31427])">$INFO[Skin.String(RomanceMovies.path)]</value>
+		<value condition="!String.IsEmpty(Skin.String(SciFiMovies.path)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31428])">$INFO[Skin.String(SciFiMovies.path)]</value>
+		<value condition="!String.IsEmpty(Skin.String(MysteryMovies.path)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31414])">$INFO[Skin.String(MysteryMovies.path)]</value>
+		<value condition="!String.IsEmpty(Skin.String(ThrillerMovies.path)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31398])">$INFO[Skin.String(ThrillerMovies.path)]</value>
+		<value condition="!String.IsEmpty(Skin.String(WesternMovies.path)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31399])">$INFO[Skin.String(WesternMovies.path)]</value>
+		<value condition="!String.IsEmpty(Skin.String(ActionAdvantureTVShows.path)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31386])">$INFO[Skin.String(ActionAdvantureTVShows.path)]</value>
+		<value condition="!String.IsEmpty(Skin.String(DramaTVShowsWidget.path)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31381])">$INFO[Skin.String(DramaTVShowsWidget.path)]</value>
+		<value condition="!String.IsEmpty(Skin.String(ComedyTVShows.path)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31382])">$INFO[Skin.String(ComedyTVShows.path)]</value>
+		<value condition="!String.IsEmpty(Skin.String(FamilyTVShows.path)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31376])">$INFO[Skin.String(FamilyTVShows.path)]</value>
+		<value condition="!String.IsEmpty(Skin.String(DocumentaryTVShows.path)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31377])">$INFO[Skin.String(DocumentaryTVShows.path)]</value>
+		<value condition="!String.IsEmpty(Skin.String(CrimeTVShows.path)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31372])">$INFO[Skin.String(CrimeTVShows.path)]</value>
+		<value condition="!String.IsEmpty(Skin.String(SciFiFantasyTVShows.path)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31373])">$INFO[Skin.String(SciFiFantasyTVShows.path)]</value>
+		<value condition="!String.IsEmpty(Skin.String(WarPoliticsTVShows.path)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31374])">$INFO[Skin.String(WarPoliticsTVShows.path)]</value>
+		<value condition="!String.IsEmpty(Skin.String(AnimationTVShows.path)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31364])">$INFO[Skin.String(AnimationTVShows.path)]</value>
+		<value condition="!String.IsEmpty(Skin.String(MysteryTVShows.path)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31352])">$INFO[Skin.String(MysteryTVShows.path)]</value>
+		<value condition="!String.IsEmpty(Skin.String(WesternTVShows.path)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31353])">$INFO[Skin.String(WesternTVShows.path)]</value>
+		<value>$LOCALIZE[571]</value>
+    </variable>
+	
+	<!-- var for categories -->
+    <variable name="catnum">
+        <value condition="String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31469])">1_</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31456])">2_</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31457])">3_</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31451])">4_</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31452])">5_</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31159])">6_</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31046])">7_</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31448])">8_</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31446])">9_</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31442])">10_</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31435])">11_</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31049])">12_</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31427])">13_</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31428])">14_</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31414])">15_</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31398])">16_</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31399])">17_</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31386])">18_</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31381])">19_</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31382])">20_</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31376])">21_</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31377])">22_</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31372])">23_</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31373])">24_</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31374])">25_</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31364])">26_</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31352])">27_</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31353])">28_</value>
+    </variable>
+	
+	<!-- widget label -->
+	<variable name="widget_label_shortcuts_1">
+        <value condition="!String.IsEmpty(Skin.String(ActionAdvantureMovies.label))">$INFO[Skin.String(ActionAdvantureMovies.label)]</value>	
+		<value>$LOCALIZE[31469]</value>
+    </variable>
+	
+	<variable name="widget_label_shortcuts_2">
+        <value condition="!String.IsEmpty(Skin.String(DramaMovies.label))">$INFO[Skin.String(DramaMovies.label)]</value>
+		<value>$LOCALIZE[31456]</value>
+    </variable>
+	
+	<variable name="widget_label_shortcuts_3">
+        <value condition="!String.IsEmpty(Skin.String(ComedyMoviesWidget.label))">$INFO[Skin.String(ComedyMoviesWidget.label)]</value>
+		<value>$LOCALIZE[31457]</value>
+    </variable>
+	
+	<variable name="widget_label_shortcuts_4">
+        <value condition="!String.IsEmpty(Skin.String(FamilyMoviesWidget.label))">$INFO[Skin.String(FamilyMoviesWidget.label)]</value>
+		<value>$LOCALIZE[31451]</value>
+    </variable>
+	
+	<variable name="widget_label_shortcuts_5">
+        <value condition="!String.IsEmpty(Skin.String(HorrorMoviesWidget.label))">$INFO[Skin.String(HorrorMoviesWidget.label)]</value>
+		<value>$LOCALIZE[31452]</value>
+    </variable>
+	
+	<variable name="widget_label_shortcuts_6">
+        <value condition="!String.IsEmpty(Skin.String(DocumentaryMovies.label))">$INFO[Skin.String(DocumentaryMovies.label)]</value>
+		<value>$LOCALIZE[31159]</value>
+    </variable>
+	
+	<variable name="widget_label_shortcuts_7">
+        <value condition="!String.IsEmpty(Skin.String(AnimeMovies.label))">$INFO[Skin.String(AnimeMovies.label)]</value>
+		<value>$LOCALIZE[31046]</value>
+    </variable>
+	
+	<variable name="widget_label_shortcuts_8">
+        <value condition="!String.IsEmpty(Skin.String(CrimeMovies.label))">$INFO[Skin.String(CrimeMovies.label)]</value>
+		<value>$LOCALIZE[31448]</value>
+    </variable>
+	
+	<variable name="widget_label_shortcuts_9">
+        <value condition="!String.IsEmpty(Skin.String(FantasyMovies.label))">$INFO[Skin.String(FantasyMovies.label)]</value>
+		<value>$LOCALIZE[31446]</value>
+    </variable>
+	
+	<variable name="widget_label_shortcuts_10">
+        <value condition="!String.IsEmpty(Skin.String(HistoryWarMovies.label))">$INFO[Skin.String(HistoryWarMovies.label)]</value>
+		<value>$LOCALIZE[31442]</value>
+    </variable>
+	
+	<variable name="widget_label_shortcuts_11">
+        <value condition="!String.IsEmpty(Skin.String(AnimationMovies.label))">$INFO[Skin.String(AnimationMovies.label)]</value>
+		<value>$LOCALIZE[31435]</value>
+    </variable>
+	
+	<variable name="widget_label_shortcuts_12">
+        <value condition="!String.IsEmpty(Skin.String(MusicMovies.label))">$INFO[Skin.String(MusicMovies.label)]</value>
+		<value>$LOCALIZE[31049]</value>
+    </variable>
+	
+	<variable name="widget_label_shortcuts_13">
+        <value condition="!String.IsEmpty(Skin.String(RomanceMovies.label))">$INFO[Skin.String(RomanceMovies.label)]</value>
+		<value>$LOCALIZE[31427]</value>
+    </variable>
+	
+	<variable name="widget_label_shortcuts_14">
+        <value condition="!String.IsEmpty(Skin.String(SciFiMovies.label))">$INFO[Skin.String(SciFiMovies.label)]</value>
+		<value>$LOCALIZE[31428]</value>
+    </variable>
+	
+	<variable name="widget_label_shortcuts_15">
+        <value condition="!String.IsEmpty(Skin.String(MysteryMovies.label))">$INFO[Skin.String(MysteryMovies.label)]</value>
+		<value>$LOCALIZE[31414]</value>
+    </variable>
+	
+	<variable name="widget_label_shortcuts_16">
+        <value condition="!String.IsEmpty(Skin.String(ThrillerMovies.label))">$INFO[Skin.String(ThrillerMovies.label)]</value>
+		<value>$LOCALIZE[31398]</value>
+    </variable>
+	
+	<variable name="widget_label_shortcuts_17">
+        <value condition="!String.IsEmpty(Skin.String(WesternMovies.label))">$INFO[Skin.String(WesternMovies.label)]</value>
+		<value>$LOCALIZE[31399]</value>
+    </variable>
+	
+	<variable name="widget_label_shortcuts_18">
+        <value condition="!String.IsEmpty(Skin.String(ActionAdvantureTVShows.label))">$INFO[Skin.String(ActionAdvantureTVShows.label)]</value>
+		<value>$LOCALIZE[31386]</value>
+    </variable>
+	
+	<variable name="widget_label_shortcuts_19">
+        <value condition="!String.IsEmpty(Skin.String(DramaTVShowsWidget.label))">$INFO[Skin.String(DramaTVShowsWidget.label)]</value>
+		<value>$LOCALIZE[31381]</value>
+    </variable>
+	
+	<variable name="widget_label_shortcuts_20">
+        <value condition="!String.IsEmpty(Skin.String(ComedyTVShows.label))">$INFO[Skin.String(ComedyTVShows.label)]</value>
+		<value>$LOCALIZE[31382]</value>
+    </variable>
+	
+	<variable name="widget_label_shortcuts_21">
+        <value condition="!String.IsEmpty(Skin.String(FamilyTVShows.label))">$INFO[Skin.String(FamilyTVShows.label)]</value>
+		<value>$LOCALIZE[31376]</value>
+    </variable>
+	
+	<variable name="widget_label_shortcuts_22">
+        <value condition="!String.IsEmpty(Skin.String(DocumentaryTVShows.label))">$INFO[Skin.String(DocumentaryTVShows.label)]</value>
+		<value>$LOCALIZE[31377]</value>
+    </variable>
+	
+	<variable name="widget_label_shortcuts_23">
+        <value condition="!String.IsEmpty(Skin.String(CrimeTVShows.label))">$INFO[Skin.String(CrimeTVShows.label)]</value>
+		<value>$LOCALIZE[31372]</value>
+    </variable>
+	
+	<variable name="widget_label_shortcuts_24">
+        <value condition="!String.IsEmpty(Skin.String(SciFiFantasyTVShows.label))">$INFO[Skin.String(SciFiFantasyTVShows.label)]</value>
+		<value>$LOCALIZE[31373]</value>
+    </variable>
+	
+	<variable name="widget_label_shortcuts_25">
+       <value condition="!String.IsEmpty(Skin.String(WarPoliticsTVShows.label))">$INFO[Skin.String(WarPoliticsTVShows.label)]</value>
+		<value>$LOCALIZE[31374]</value>
+    </variable>
+	
+	<variable name="widget_label_shortcuts_26">
+        <value condition="!String.IsEmpty(Skin.String(AnimationTVShows.label))">$INFO[Skin.String(AnimationTVShows.label)]</value>
+		<value>$LOCALIZE[31364]</value>
+    </variable>
+	
+	<variable name="widget_label_shortcuts_27">
+        <value condition="!String.IsEmpty(Skin.String(MysteryTVShows.label))">$INFO[Skin.String(MysteryTVShows.label)]</value>
+		<value>$LOCALIZE[31352]</value>
+    </variable>
+	
+	<variable name="widget_label_shortcuts_28">
+        <value condition="!String.IsEmpty(Skin.String(WesternTVShows.label))">$INFO[Skin.String(WesternTVShows.label)]</value>
+		<value>$LOCALIZE[31353]</value>
+    </variable>
+	
+	<!-- widget style label -->
+    <variable name="cat_widget_style_label">
+        <value condition="!String.IsEmpty(Skin.String(1_widgetstyle.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31469])">$INFO[Skin.String(1_widgetstyle.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(2_widgetstyle.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31456])">$INFO[Skin.String(2_widgetstyle.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(3_widgetstyle.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31457])">$INFO[Skin.String(3_widgetstyle.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(4_widgetstyle.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31451])">$INFO[Skin.String(4_widgetstyle.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(5_widgetstyle.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31452])">$INFO[Skin.String(5_widgetstyle.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(6_widgetstyle.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31159])">$INFO[Skin.String(6_widgetstyle.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(7_widgetstyle.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31046])">$INFO[Skin.String(7_widgetstyle.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(8_widgetstyle.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31448])">$INFO[Skin.String(8_widgetstyle.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(9_widgetstyle.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31446])">$INFO[Skin.String(9_widgetstyle.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(10_widgetstyle.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31442])">$INFO[Skin.String(10_widgetstyle.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(11_widgetstyle.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31435])">$INFO[Skin.String(11_widgetstyle.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(12_widgetstyle.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31049])">$INFO[Skin.String(12_widgetstyle.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(13_widgetstyle.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31427])">$INFO[Skin.String(13_widgetstyle.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(14_widgetstyle.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31428])">$INFO[Skin.String(14_widgetstyle.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(15_widgetstyle.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31414])">$INFO[Skin.String(15_widgetstyle.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(16_widgetstyle.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31398])">$INFO[Skin.String(16_widgetstyle.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(17_widgetstyle.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31399])">$INFO[Skin.String(17_widgetstyle.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(18_widgetstyle.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31386])">$INFO[Skin.String(18_widgetstyle.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(19_widgetstyle.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31381])">$INFO[Skin.String(19_widgetstyle.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(20_widgetstyle.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31382])">$INFO[Skin.String(20_widgetstyle.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(21_widgetstyle.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31376])">$INFO[Skin.String(21_widgetstyle.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(22_widgetstyle.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31377])">$INFO[Skin.String(22_widgetstyle.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(23_widgetstyle.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31372])">$INFO[Skin.String(23_widgetstyle.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(24_widgetstyle.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31373])">$INFO[Skin.String(24_widgetstyle.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(25_widgetstyle.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31374])">$INFO[Skin.String(25_widgetstyle.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(26_widgetstyle.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31364])">$INFO[Skin.String(26_widgetstyle.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(27_widgetstyle.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31352])">$INFO[Skin.String(27_widgetstyle.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(28_widgetstyle.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31353])">$INFO[Skin.String(28_widgetstyle.label)]</value>
+    </variable>
+	
+	<!-- widget tags label -->
+    <variable name="cat_widget_tags_label">
+        <value condition="!String.IsEmpty(Skin.String(1_Widgets_DisplayTags.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31469])">$INFO[Skin.String(1_Widgets_DisplayTags.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(2_Widgets_DisplayTags.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31456])">$INFO[Skin.String(2_Widgets_DisplayTags.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(3_Widgets_DisplayTags.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31457])">$INFO[Skin.String(3_Widgets_DisplayTags.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(4_Widgets_DisplayTags.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31451])">$INFO[Skin.String(4_Widgets_DisplayTags.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(5_Widgets_DisplayTags.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31452])">$INFO[Skin.String(5_Widgets_DisplayTags.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(6_Widgets_DisplayTags.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31159])">$INFO[Skin.String(6_Widgets_DisplayTags.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(7_Widgets_DisplayTags.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31046])">$INFO[Skin.String(7_Widgets_DisplayTags.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(8_Widgets_DisplayTags.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31448])">$INFO[Skin.String(8_Widgets_DisplayTags.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(9_Widgets_DisplayTags.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31446])">$INFO[Skin.String(9_Widgets_DisplayTags.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(10_Widgets_DisplayTags.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31442])">$INFO[Skin.String(10_Widgets_DisplayTags.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(11_Widgets_DisplayTags.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31435])">$INFO[Skin.String(11_Widgets_DisplayTags.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(12_Widgets_DisplayTags.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31049])">$INFO[Skin.String(12_Widgets_DisplayTags.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(13_Widgets_DisplayTags.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31427])">$INFO[Skin.String(13_Widgets_DisplayTags.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(14_Widgets_DisplayTags.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31428])">$INFO[Skin.String(14_Widgets_DisplayTags.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(15_Widgets_DisplayTags.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31414])">$INFO[Skin.String(15_Widgets_DisplayTags.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(16_Widgets_DisplayTags.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31398])">$INFO[Skin.String(16_Widgets_DisplayTags.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(17_Widgets_DisplayTags.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31399])">$INFO[Skin.String(17_Widgets_DisplayTags.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(18_Widgets_DisplayTags.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31386])">$INFO[Skin.String(18_Widgets_DisplayTags.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(19_Widgets_DisplayTags.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31381])">$INFO[Skin.String(19_Widgets_DisplayTags.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(20_Widgets_DisplayTags.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31382])">$INFO[Skin.String(20_Widgets_DisplayTags.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(21_Widgets_DisplayTags.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31376])">$INFO[Skin.String(21_Widgets_DisplayTags.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(22_Widgets_DisplayTags.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31377])">$INFO[Skin.String(22_Widgets_DisplayTags.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(23_Widgets_DisplayTags.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31372])">$INFO[Skin.String(23_Widgets_DisplayTags.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(24_Widgets_DisplayTags.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31373])">$INFO[Skin.String(24_Widgets_DisplayTags.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(25_Widgets_DisplayTags.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31374])">$INFO[Skin.String(25_Widgets_DisplayTags.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(26_Widgets_DisplayTags.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31364])">$INFO[Skin.String(26_Widgets_DisplayTags.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(27_Widgets_DisplayTags.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31352])">$INFO[Skin.String(27_Widgets_DisplayTags.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(28_Widgets_DisplayTags.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31353])">$INFO[Skin.String(28_Widgets_DisplayTags.label)]</value>
+    </variable>
+	
+	<!-- widget sortby label -->
+    <variable name="cat_widget_sortby_label">
+        <value condition="!String.IsEmpty(Skin.String(1_widgetsortby.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31469])">$INFO[Skin.String(1_widgetsortby.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(2_widgetsortby.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31456])">$INFO[Skin.String(2_widgetsortby.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(3_widgetsortby.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31457])">$INFO[Skin.String(3_widgetsortby.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(4_widgetsortby.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31451])">$INFO[Skin.String(4_widgetsortby.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(5_widgetsortby.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31452])">$INFO[Skin.String(5_widgetsortby.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(6_widgetsortby.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31159])">$INFO[Skin.String(6_widgetsortby.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(7_widgetsortby.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31046])">$INFO[Skin.String(7_widgetsortby.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(8_widgetsortby.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31448])">$INFO[Skin.String(8_widgetsortby.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(9_widgetsortby.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31446])">$INFO[Skin.String(9_widgetsortby.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(10_widgetsortby.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31442])">$INFO[Skin.String(10_widgetsortby.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(11_widgetsortby.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31435])">$INFO[Skin.String(11_widgetsortby.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(12_widgetsortby.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31049])">$INFO[Skin.String(12_widgetsortby.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(13_widgetsortby.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31427])">$INFO[Skin.String(13_widgetsortby.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(14_widgetsortby.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31428])">$INFO[Skin.String(14_widgetsortby.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(15_widgetsortby.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31414])">$INFO[Skin.String(15_widgetsortby.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(16_widgetsortby.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31398])">$INFO[Skin.String(16_widgetsortby.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(17_widgetsortby.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31399])">$INFO[Skin.String(17_widgetsortby.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(18_widgetsortby.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31386])">$INFO[Skin.String(18_widgetsortby.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(19_widgetsortby.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31381])">$INFO[Skin.String(19_widgetsortby.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(20_widgetsortby.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31382])">$INFO[Skin.String(20_widgetsortby.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(21_widgetsortby.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31376])">$INFO[Skin.String(21_widgetsortby.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(22_widgetsortby.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31377])">$INFO[Skin.String(22_widgetsortby.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(23_widgetsortby.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31372])">$INFO[Skin.String(23_widgetsortby.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(24_widgetsortby.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31373])">$INFO[Skin.String(24_widgetsortby.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(25_widgetsortby.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31374])">$INFO[Skin.String(25_widgetsortby.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(26_widgetsortby.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31364])">$INFO[Skin.String(26_widgetsortby.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(27_widgetsortby.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31352])">$INFO[Skin.String(27_widgetsortby.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(28_widgetsortby.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31353])">$INFO[Skin.String(28_widgetsortby.label)]</value>
+        <value>$LOCALIZE[571]</value>
+    </variable>
+	
+	<!-- widget sort order label -->
+    <variable name="cat_widget_sortorder_label">
+        <value condition="!String.IsEmpty(Skin.String(1_widgetsortorder.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31469])">$INFO[Skin.String(1_widgetsortorder.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(2_widgetsortorder.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31456])">$INFO[Skin.String(2_widgetsortorder.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(3_widgetsortorder.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31457])">$INFO[Skin.String(3_widgetsortorder.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(4_widgetsortorder.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31451])">$INFO[Skin.String(4_widgetsortorder.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(5_widgetsortorder.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31452])">$INFO[Skin.String(5_widgetsortorder.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(6_widgetsortorder.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31159])">$INFO[Skin.String(6_widgetsortorder.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(7_widgetsortorder.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31046])">$INFO[Skin.String(7_widgetsortorder.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(8_widgetsortorder.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31448])">$INFO[Skin.String(8_widgetsortorder.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(9_widgetsortorder.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31446])">$INFO[Skin.String(9_widgetsortorder.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(10_widgetsortorder.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31442])">$INFO[Skin.String(10_widgetsortorder.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(11_widgetsortorder.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31435])">$INFO[Skin.String(11_widgetsortorder.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(12_widgetsortorder.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31049])">$INFO[Skin.String(12_widgetsortorder.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(13_widgetsortorder.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31427])">$INFO[Skin.String(13_widgetsortorder.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(14_widgetsortorder.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31428])">$INFO[Skin.String(14_widgetsortorder.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(15_widgetsortorder.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31414])">$INFO[Skin.String(15_widgetsortorder.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(16_widgetsortorder.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31398])">$INFO[Skin.String(16_widgetsortorder.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(17_widgetsortorder.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31399])">$INFO[Skin.String(17_widgetsortorder.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(18_widgetsortorder.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31386])">$INFO[Skin.String(18_widgetsortorder.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(19_widgetsortorder.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31381])">$INFO[Skin.String(19_widgetsortorder.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(20_widgetsortorder.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31382])">$INFO[Skin.String(20_widgetsortorder.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(21_widgetsortorder.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31376])">$INFO[Skin.String(21_widgetsortorder.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(22_widgetsortorder.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31377])">$INFO[Skin.String(22_widgetsortorder.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(23_widgetsortorder.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31372])">$INFO[Skin.String(23_widgetsortorder.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(24_widgetsortorder.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31373])">$INFO[Skin.String(24_widgetsortorder.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(25_widgetsortorder.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31374])">$INFO[Skin.String(25_widgetsortorder.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(26_widgetsortorder.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31364])">$INFO[Skin.String(26_widgetsortorder.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(27_widgetsortorder.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31352])">$INFO[Skin.String(27_widgetsortorder.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(28_widgetsortorder.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31353])">$INFO[Skin.String(28_widgetsortorder.label)]</value>
+        <value>$LOCALIZE[16018]</value>
+    </variable>
+	
+	<!-- widget limit label -->
+    <variable name="cat_widget_limit_label">
+		<value condition="!String.IsEmpty(Skin.String(1_widgetlimit.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31469])">$INFO[Skin.String(1_widgetlimit.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(2_widgetlimit.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31456])">$INFO[Skin.String(2_widgetlimit.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(3_widgetlimit.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31457])">$INFO[Skin.String(3_widgetlimit.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(4_widgetlimit.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31451])">$INFO[Skin.String(4_widgetlimit.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(5_widgetlimit.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31452])">$INFO[Skin.String(5_widgetlimit.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(6_widgetlimit.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31159])">$INFO[Skin.String(6_widgetlimit.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(7_widgetlimit.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31046])">$INFO[Skin.String(7_widgetlimit.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(8_widgetlimit.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31448])">$INFO[Skin.String(8_widgetlimit.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(9_widgetlimit.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31446])">$INFO[Skin.String(9_widgetlimit.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(10_widgetlimit.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31442])">$INFO[Skin.String(10_widgetlimit.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(11_widgetlimit.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31435])">$INFO[Skin.String(11_widgetlimit.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(12_widgetlimit.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31049])">$INFO[Skin.String(12_widgetlimit.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(13_widgetlimit.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31427])">$INFO[Skin.String(13_widgetlimit.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(14_widgetlimit.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31428])">$INFO[Skin.String(14_widgetlimit.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(15_widgetlimit.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31414])">$INFO[Skin.String(15_widgetlimit.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(16_widgetlimit.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31398])">$INFO[Skin.String(16_widgetlimit.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(17_widgetlimit.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31399])">$INFO[Skin.String(17_widgetlimit.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(18_widgetlimit.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31386])">$INFO[Skin.String(18_widgetlimit.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(19_widgetlimit.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31381])">$INFO[Skin.String(19_widgetlimit.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(20_widgetlimit.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31382])">$INFO[Skin.String(20_widgetlimit.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(21_widgetlimit.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31376])">$INFO[Skin.String(21_widgetlimit.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(22_widgetlimit.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31377])">$INFO[Skin.String(22_widgetlimit.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(23_widgetlimit.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31372])">$INFO[Skin.String(23_widgetlimit.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(24_widgetlimit.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31373])">$INFO[Skin.String(24_widgetlimit.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(25_widgetlimit.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31374])">$INFO[Skin.String(25_widgetlimit.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(26_widgetlimit.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31364])">$INFO[Skin.String(26_widgetlimit.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(27_widgetlimit.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31352])">$INFO[Skin.String(27_widgetlimit.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(28_widgetlimit.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31353])">$INFO[Skin.String(28_widgetlimit.label)]</value>
+    </variable>
+	
+	<!-- widget target label -->
+    <variable name="cat_widget_target_label">
+		<value condition="!String.IsEmpty(Skin.String(1_widgettarget.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31469])">$INFO[Skin.String(1_widgettarget.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(2_widgettarget.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31456])">$INFO[Skin.String(2_widgettarget.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(3_widgettarget.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31457])">$INFO[Skin.String(3_widgettarget.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(4_widgettarget.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31451])">$INFO[Skin.String(4_widgettarget.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(5_widgettarget.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31452])">$INFO[Skin.String(5_widgettarget.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(6_widgettarget.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31159])">$INFO[Skin.String(6_widgettarget.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(7_widgettarget.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31046])">$INFO[Skin.String(7_widgettarget.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(8_widgettarget.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31448])">$INFO[Skin.String(8_widgettarget.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(9_widgettarget.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31446])">$INFO[Skin.String(9_widgettarget.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(10_widgettarget.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31442])">$INFO[Skin.String(10_widgettarget.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(11_widgettarget.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31435])">$INFO[Skin.String(11_widgettarget.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(12_widgettarget.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31049])">$INFO[Skin.String(12_widgettarget.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(13_widgettarget.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31427])">$INFO[Skin.String(13_widgettarget.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(14_widgettarget.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31428])">$INFO[Skin.String(14_widgettarget.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(15_widgettarget.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31414])">$INFO[Skin.String(15_widgettarget.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(16_widgettarget.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31398])">$INFO[Skin.String(16_widgettarget.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(17_widgettarget.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31399])">$INFO[Skin.String(17_widgettarget.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(18_widgettarget.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31386])">$INFO[Skin.String(18_widgettarget.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(19_widgettarget.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31381])">$INFO[Skin.String(19_widgettarget.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(20_widgettarget.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31382])">$INFO[Skin.String(20_widgettarget.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(21_widgettarget.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31376])">$INFO[Skin.String(21_widgettarget.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(22_widgettarget.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31377])">$INFO[Skin.String(22_widgettarget.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(23_widgettarget.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31372])">$INFO[Skin.String(23_widgettarget.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(24_widgettarget.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31373])">$INFO[Skin.String(24_widgettarget.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(25_widgettarget.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31374])">$INFO[Skin.String(25_widgettarget.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(26_widgettarget.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31364])">$INFO[Skin.String(26_widgettarget.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(27_widgettarget.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31352])">$INFO[Skin.String(27_widgettarget.label)]</value>
+		<value condition="!String.IsEmpty(Skin.String(28_widgettarget.label)) + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31353])">$INFO[Skin.String(28_widgettarget.label)]</value>
+    </variable>
+	
+</includes>

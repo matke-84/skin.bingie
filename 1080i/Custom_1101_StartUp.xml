@@ -71,7 +71,7 @@
 					<onright>noop</onright>
 					<onleft>noop</onleft>				
 					<control type="button" id="101">
-						<width min="300" max="391">auto</width>
+						<width min="302" max="438">auto</width>
 						<height>54</height>
 						<font>Reg24</font>
 						<textcolor>a6ffffff</textcolor>
@@ -97,7 +97,7 @@
 						<ondown>PageDown(3000)</ondown>
 					</control>
 					<control type="button" id="102">
-						<width min="300" max="484">auto</width>
+						<width min="302" max="438">auto</width>
 						<height>54</height>
 						<font>Reg24</font>
 						<textcolor>a6ffffff</textcolor>

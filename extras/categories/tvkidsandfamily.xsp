@@ -2,18 +2,14 @@
 <!-- BINGIE -->
 <smartplaylist type="tvshows">
     <name>TV Kids &amp; Family</name>
-    <match>one</match>
+    <match>all</match>
     <rule field="genre" operator="contains">
         <value>Family</value>
-        <value>Children</value>
         <value>Kids</value>
     </rule>
-    <rule field="mpaarating" operator="is">
-        <value>US:G</value>
-        <value>USA:G</value>
-        <value>G</value>
-        <value>Rated G</value>
+	<rule field="genre" operator="isnot">
+        <value>Animation</value>
     </rule>
-    <order direction="descending">year</order>
+    <order direction="descending">dateadded</order>
     <limit>200</limit>
 </smartplaylist>

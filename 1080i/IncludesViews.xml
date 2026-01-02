@@ -75,237 +75,12 @@
         <control type="group">
             <visible>![Control.IsVisible(10) | Control.IsVisible(523) | Control.IsVisible(526) | Control.IsVisible(525) | Control.IsVisible(527) | Control.IsVisible(528)]</visible>
             <include condition="Skin.String(ClearLogoLocation)">ClearLogo</include>
-        </control>
-            
-        <!--Scrolling Letter-->
-        <control type="group">
-            <visible>!Skin.HasSetting(DisableScrollingLetters)</visible>
-            <visible>Integer.IsGreater(Container.NumItems,0)</visible>
-            <visible>Container.Scrolling + [String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556])]</visible>
-            <animation effect="fade" start="0" end="100" time="400" delay="30">Visible</animation>
-            <animation effect="fade" start="100" end="0" time="400" delay="150">Hidden</animation>
-            <control type="image">
-                <posx>910</posx>
-                <posy>480</posy>
-                <width>100</width>
-                <height>100</height>
-                <texture border="10">diffuse/panel.png</texture>
-                <colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
-            </control>
-            <control type="image">
-                <posx>910</posx>
-                <posy>480</posy>
-                <width>100</width>
-                <height>100</height>
-                <texture border="10">diffuse/panel.png</texture>
-                <bordersize>8</bordersize>
-                <colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
-            </control>
-            <control type="label">
-                <posx>910</posx>
-                <posy>480</posy>
-                <width>100</width>
-                <height>100</height>
-                <align>center</align>
-                <aligny>center</aligny>
-                <font>Bold55</font>
-                <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-                <label>$INFO[ListItem.SortLetter]</label>
-            </control>
-        </control>
-        <!-- alphabet scrollbar -->
-        <include condition="Skin.HasSetting(EnableQuickJump)">AlphabetScrollbar</include>
+        </control>          
 		
 		<!-- Snow Effect -->
-        <control type="group">
-            <include condition="String.IsEqual(Skin.String(season_greetings),snow_animation)">snow</include>
-        </control>
-		<!-- Halloween Effect -->
-        <control type="group">
-            <include condition="String.IsEqual(Skin.String(season_greetings),halloween_animation)">pumpkin</include>
-        </control>
+        <include condition="Skin.HasSetting(EnableSnowAnimation)">SnowAnimation</include>
+		
     </control>
-    </include>
-    
-    <include name="AlphabetScrollbar">
-        
-        <!-- scrollbar vertical -->
-        <control type="group" id="6000">
-            <visible>![Control.IsVisible(52) | Control.IsVisible(502) | Control.IsVisible(503) | Control.IsVisible(507) | Control.IsVisible(513) | Control.IsVisible(514) | [Control.IsVisible(526) + Skin.HasSetting(View_526_HorizontalNavigation)] | Control.IsVisible(524)]</visible>
-            <control type="button" id="6001">
-                <width>1</width>
-                <right>-1</right>
-                <bottom>0</bottom>
-                <height>1</height>
-                <onfocus>SetFocus(60)</onfocus>
-                <visible>!Control.IsVisible(6002)</visible>
-            </control>
-            
-            <control type="image">
-                <texture>colors/color_white.png</texture>
-                <colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
-                <width>40</width>
-                <right>0</right>
-                <visible>Control.IsVisible(6002) + !Control.HasFocus(60)</visible>
-                <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(6002) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
-                <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(6002) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
-            </control>
-            
-            <control type="panel" id="6002">
-                <width>40</width>
-                <right>0</right>
-                <bottom>0</bottom>
-                <height>100%</height>
-                <onleft>5000</onleft>
-                <onright>60</onright>
-                <onup>6002</onup>
-                <ondown>6002</ondown>
-                <onback>5000</onback>
-                <orientation>vertical</orientation>
-                <itemlayout height="40" width="40">
-                    <control type="label">
-                        <width>100%</width>
-                        <height>100%</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <label>$INFO[ListItem.Label]</label>
-                        <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
-                        <font>Reg26</font>
-                        <animation effect="fade" start="100" end="20" time="0" condition="!String.IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
-                    </control>
-                    <control type="label">
-                        <width>100%</width>
-                        <height>100%</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <label>$INFO[ListItem.Label]</label>
-                        <textcolor>$INFO[Skin.String(ButtonFocusColor)]</textcolor>
-                        <font>Reg26</font>
-                        <visible>String.IsEqual(ListItem.Label,Container.ListItem.SortLetter)</visible>
-                    </control>
-                </itemlayout>
-                <focusedlayout height="40" width="40">
-                    <control type="image">
-                        <texture>colors/color_white.png</texture>
-                        <colordiffuse>$INFO[Skin.String(ButtonFocusColor)]</colordiffuse>
-                        <animation effect="fade" start="100" end="20" time="0" condition="!String.IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
-                    </control>
-                    <control type="label">
-                        <width>100%</width>
-                        <height>100%</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <label>$INFO[ListItem.Label]</label>
-                        <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
-                        <animation effect="fade" start="100" end="20" time="0" condition="!String.IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
-                        <font>Reg26</font>
-                    </control>
-                    <control type="button">
-                        <visible>false</visible>
-                        <onfocus condition="!String.IsEmpty(Container(6002).ListItem.Property(NotAvailable)) + Container(6002).OnNext">Control.Move(6002,1)</onfocus>
-                        <onfocus condition="!String.IsEmpty(Container(6002).ListItem.Property(NotAvailable)) + Container(6002).OnPrevious">Control.Move(6002,-1)</onfocus>
-                    </control>
-                </focusedlayout>
-                <content>plugin://script.bingie.toolbox/?action=alphabet&amp;reload=$INFO[Container.NumItems]</content>
-                <visible>Skin.HasSetting(EnableQuickJump) + Integer.IsGreater(Container.NumPages,1) + !Control.HasFocus(60)</visible>
-                <visible>String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556])</visible>
-                <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(6002) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
-                <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(6002) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
-            </control>
-        </control>
-    
-        <!-- scrollbar horizontal -->
-        <control type="group" id="7000">
-            <visible>[Control.IsVisible(52) | Control.IsVisible(502) | Control.IsVisible(503) | Control.IsVisible(507) | Control.IsVisible(513) | Control.IsVisible(514) | [Control.IsVisible(526) + Skin.HasSetting(View_526_HorizontalNavigation)] | Control.IsVisible(524)]</visible>
-            <control type="button" id="7001">
-                <width>1</width>
-                <right>-1</right>
-                <bottom>0</bottom>
-                <height>1</height>
-                <onfocus>SetFocus(60)</onfocus>
-                <visible>!Control.IsVisible(7002)</visible>
-            </control>
-            
-            <control type="image">
-                <texture>colors/color_white.png</texture>
-                <colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
-                <left>0</left>
-                <width>100%</width>
-                <bottom>0</bottom>
-                <height>40</height>
-                <visible>Control.IsVisible(7002) + !Control.HasFocus(60)</visible>
-                <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(7002) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
-                <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(7002) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
-            </control>
-            <control type="image">
-                <texture>colors/color_white.png</texture>
-                <colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
-                <left>0</left>
-                <width>100%</width>
-                <bottom>0</bottom>
-                <height>40</height>
-                <visible>Control.IsVisible(7002) + !Control.HasFocus(60)</visible>
-                <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(7002) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
-                <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(7002) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
-            </control>
-            
-            <control type="panel" id="7002">
-                <left>60</left>
-                <width>1800</width>
-                <bottom>0</bottom>
-                <height>40</height>
-                <onleft>7002</onleft>
-                <onright>7002</onright>
-                <onup>5000</onup>
-                <ondown>60</ondown>
-                <onback>5000</onback>
-                <orientation>horizontal</orientation>
-                <itemlayout height="40" width="66">
-                    <control type="label">
-                        <width>100%</width>
-                        <height>100%</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <label>$INFO[ListItem.Label]</label>
-                        <textcolor>$INFO[Skin.String(ViewDetailsListItemTextColor)]</textcolor>
-                        <font>Reg26</font>
-                        <animation effect="fade" start="100" end="20" time="0" condition="!String.IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
-                    </control>
-                    <control type="label">
-                        <width>100%</width>
-                        <height>100%</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <label>$INFO[ListItem.Label]</label>
-                        <textcolor>$INFO[Skin.String(ButtonFocusColor)]</textcolor>
-                        <font>Reg26</font>
-                        <visible>String.IsEqual(ListItem.Label,Container.ListItem.SortLetter)</visible>
-                    </control>
-                </itemlayout>
-                <focusedlayout height="40" width="66">
-                    <control type="image">
-                        <texture>colors/color_white.png</texture>
-                        <colordiffuse>$INFO[Skin.String(ButtonFocusColor)]</colordiffuse>
-                        <animation effect="fade" start="100" end="20" time="0" condition="!String.IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
-                    </control>
-                    <control type="label">
-                        <width>100%</width>
-                        <height>100%</height>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <label>$INFO[ListItem.Label]</label>
-                        <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
-                        <animation effect="fade" start="100" end="20" time="0" condition="!String.IsEmpty(ListItem.Property(NotAvailable))">Conditional</animation>
-                        <font>Reg26</font>
-                    </control>
-                </focusedlayout>
-                <content>plugin://script.bingie.toolbox/?action=alphabet&amp;reload=$INFO[Container.NumItems]</content>
-                <visible>Skin.HasSetting(EnableQuickJump) + Integer.IsGreater(Container.NumPages,1) + !Control.HasFocus(60)</visible>
-                <visible>String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556])</visible>
-                <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(7002) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
-                <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(7002) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
-            </control>       
-        </control>   
     </include>
 
     <include name="EpgProgressIndicatorNormal">
@@ -533,10 +308,7 @@
                         <scroll>false</scroll>
                     </control>
 				</control>
-			</control>
-     			
-			
-			
+			</control>			
             <control type="group">
                 <right>68</right>
                 <posy>22</posy>
@@ -1078,7 +850,7 @@
             <posy>8</posy>
             <width>609</width>
             <height>344</height>
-            <visible>[$EXP[IsPlayingUnrecognizedContent] + [Skin.HasSetting(View51_DetailsAutoTrailer) | Skin.HasSetting(View53_DetailsAutoTrailer) | Skin.HasSetting(View55_DetailsAutoTrailer) | Skin.HasSetting(View510_DetailsAutoTrailer) | Skin.HasSetting(View512_DetailsAutoTrailer) | Skin.HasSetting(View523_DetailsAutoTrailer) | Skin.HasSetting(View526_DetailsAutoTrailer)]] + [!Window.IsActive(DialogVideoInfo.xml) | !Window.IsActive(Custom_1190_TMDbBingieHelperCast.xml)] + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)]</visible>
+            <visible>[$EXP[IsPlayingUnrecognizedContent] + [Skin.HasSetting(View51_DetailsAutoTrailer) | Skin.HasSetting(View53_DetailsAutoTrailer) | Skin.HasSetting(View55_DetailsAutoTrailer) | Skin.HasSetting(View510_DetailsAutoTrailer) | Skin.HasSetting(View512_DetailsAutoTrailer) | Skin.HasSetting(View523_DetailsAutoTrailer) | Skin.HasSetting(View526_DetailsAutoTrailer) | Skin.HasSetting(View526_DetailsAutoTrailer)]] + [!Window.IsActive(DialogVideoInfo.xml) | !Window.IsActive(Custom_1190_TMDbBingieHelperCast.xml)] + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)]</visible>
             <control type="image">
                 <texture>colors/color_black.png</texture>
             </control>

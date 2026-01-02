@@ -209,7 +209,7 @@
         <control type="group">
 			<visible>!String.IsEqual(ListItem.Label,..)</visible>
 			<visible>!String.Contains(ListItem.Label,$LOCALIZE[33078])</visible>
-			<visible>![$EXP[IsTvShowDBType] + $EXP[IsTVShowInLastEpisodes] + !Skin.HasSetting(DisableNewEpisodesIndicator)]</visible>
+			<visible>![$EXP[IsTvShowDBType] + $EXP[IsTVShowInLastEpisodes] + Skin.HasSetting(EnableNewEpisodesIndicator)]</visible>
 			<visible>![String.IsEmpty(ListItem.Art(poster)) | String.IsEqual(ListItem.Property(tmdb_type),person)] + ![Window.IsActive(MyVideoNav.xml) | Window.IsActive(MyMusicNav.xml)] | [Window.IsActive(MyVideoNav.xml) | Window.IsActive(MyMusicNav.xml)] + Skin.String(Views_DisplayTags,enable)</visible>>
             <!--Panel-->
             <control type="image">
@@ -253,7 +253,7 @@
         <control type="group">
 			<visible>!String.IsEqual(ListItem.Label,..)</visible>
 			<visible>!String.Contains(ListItem.Label,$LOCALIZE[33078])</visible>
-			<visible>![$EXP[IsTvShowDBType] + $EXP[IsTVShowInLastEpisodes] + !Skin.HasSetting(DisableNewEpisodesIndicator)]</visible>
+			<visible>![$EXP[IsTvShowDBType] + $EXP[IsTVShowInLastEpisodes] + Skin.HasSetting(EnableNewEpisodesIndicator)]</visible>
 			<visible>[String.IsEmpty(ListItem.Art(poster)) | String.IsEqual(ListItem.Property(tmdb_type),person)]</visible>
             <!--Panel-->
             <control type="image">
@@ -340,7 +340,7 @@
     <!-- New Episodes Tag Overlay -->
     <include name="Poster_New_Episodes_Tag_Overlay">
         <control type="group">
-            <visible>!Skin.HasSetting(DisableNewEpisodesIndicator)</visible>
+            <visible>Skin.HasSetting(EnableNewEpisodesIndicator)</visible>
             <visible>$EXP[IsTvShowDBType] + $EXP[IsTVShowInLastEpisodes]</visible>
             <width>100%</width>
             <height>36</height>

@@ -98,7 +98,7 @@
 				<posy>210</posy>
 				<width>100%</width>
 				<align>center</align>
-				<label></label>
+				<label/>
 				<font>Reg40</font>
 			</control>
         </control>

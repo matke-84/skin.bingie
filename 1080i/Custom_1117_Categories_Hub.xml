@@ -4,316 +4,323 @@
     <defaultcontrol always="true">117</defaultcontrol>
     <include>CustomBingieWinProps</include>
     <include>BingieViews_WindowOpen_Fade</include>   
-    <!--<onunload>ClearProperty(category,Home)</onunload>-->
+	<onunload condition="$EXP[IsPlayingUnrecognizedContent]">PlayerControl(Stop)</onunload>
     <controls>
 		<control type="group">
 	    <include>HideWindowOnStartupAndDialogInfoLoad</include>
 		<include>Defs_TMDbBingieHelper_Loader</include>
         <include>GlobalBackground</include>
 
-        <!-- Spotlight Section -->
-        <include content="Bingie_Base_BG">
-            <param name="visibility" value="!$EXP[IsPlayingRecognizedContent]" />
+		<include content="Bingie_Main_Spotlight_Section">
+            <param name="id" value="117" />
         </include>
-        <include content="Preview_Window">
-            <param name="id" value="11701" />
-        </include>
-        <control type="group">
-            <include content="BingieSpotlightCornerImage">
-                <param name="visibility" value="!Player.HasVideo" />
-                <param name="image" value="$VAR[bingieThumb]" />
-            </include>
-
-            <!-- Details -->
-            <control type="grouplist">
-                    <visible>!$EXP[IsCurrentWidgetSpotlight]</visible>
-                    <animation effect="fade" start="0" end="100" time="250" reversible="false">Visible</animation>
-                    <include>WidgetsDisplaySpotlightTransition</include>
-                    <width>1500</width>
-                    <include>BingieLeftDefs</include>
-                    <top>10</top>  
-                    <height>600</height>
-                    <orientation>vertical</orientation>
-                    <usecontrolcoords>true</usecontrolcoords>
-                    <itemgap>0</itemgap>
-                    <!-- Movies and Episodes Info Slide-down -->
-                    <animation effect="slide" start="0" end="0,130" time="0" condition="Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1) | [$EXP[IsMainMenuOpened] + Integer.IsGreater(Window(Home).Property(ListItem.PercentPlayed),1)]">Conditional</animation>
-
-                    <include content="Bingie_Headline_Item">
-                        <param name="id" value="9000" />
-                        <param name="image" value="$VAR[BingieInfoClearlogo]" />
-                        <param name="text" value="$VAR[BingieInfoLabel]" />
-                    </include>
-
-                    <!-- Details Row at Top-->
-                    <control type="group">
-					<visible>!$EXP[IsMainMenuOpened]</visible>
-                        <visible>Skin.HasSetting(MovieDetailsHome) + !Integer.IsGreater(ListItem.PercentPlayed,1) | !Skin.HasSetting(MovieDetailsHome)</visible>
-                        <include>Default_Visible_Fade</include>
-                        <top>3</top>
-                        <width>1000</width>
-                        <height>60</height>
-                        <include>SpotlightRowDetails</include>
-                    </control>                 
-				
-				<!-- Movie and TV Show Continue Watching -->
-                        <control type="group">
-                            <visible>Skin.HasSetting(MovieDetailsHome)</visible>
-							<visible>Integer.IsGreater(ListItem.PercentPlayed,1) | [$EXP[IsMainMenuOpened] + Integer.IsGreater(Window(Home).Property(ListItem.PercentPlayed),1)]</visible>
-                            <top>39</top>
-							<left>1</left>
-							<width>650</width>
-                            <height>30</height>
-                            <aligny>center</aligny>
-                            <control type="progress">
-                                <width>185</width>
-                                <height>8</height>
-                                <texturebg colordiffuse="$INFO[Skin.String(BingieDetailsFlagColor)]" border="0">diffuse/panel2.png</texturebg>
-                                <lefttexture/>
-                                <midtexture colordiffuse="$INFO[Skin.String(BingieProgressBarColor)]" border="4">diffuse/panel2.png</midtexture>
-                                <righttexture/>
-                                <info>ListItem.PercentPlayed</info>
-                            </control>
-                            <control type="label">
-                                <top>-11</top>
-                                <left>214</left>
-                                <height>25</height>
-                                <width>450</width>
-                                <font>Reg26</font>
-                                <textcolor>$INFO[Skin.String(BingieHomeProgressBarTextColor)]</textcolor>
-                                <label>$VAR[PercentRemained,,% $LOCALIZE[31059]]</label>
-                            </control>
-                        </control>
-						
-					<control type="grouplist">
-						<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
-						<include>Animation_Right_Home</include>
-						<width>1500</width>
-						<height>600</height>
-						<orientation>vertical</orientation>
-						<usecontrolcoords>true</usecontrolcoords>
-						<itemgap>5</itemgap>	
-					<!-- Bingie Home Top 250/Sublabel/watch xx Now -->
-					<control type="grouplist">
-							<orientation>horizontal</orientation>
-							<visible>!$EXP[IsMainMenuOpened]</visible>
-							<visible>!$EXP[IsEpisodeDBType]</visible>
-							<visible>Skin.HasSetting(EnableTop250) + Skin.HasSetting(EnableRatings) + !String.IsEmpty(Control.GetLabel(8231)) + !Integer.IsGreater(ListItem.PercentPlayed,1) | Skin.HasSetting(EnableTop250) + Skin.HasSetting(EnableRatings) + !String.IsEmpty(Control.GetLabel(823)) + $EXP[IsTVShowInLastEpisodes] + !Integer.IsGreater(ListItem.PercentPlayed,1) | 
-							Skin.HasSetting(EnableTop250) + Skin.HasSetting(EnableRatings) + !String.IsEmpty(Control.GetLabel(8231)) + !Skin.HasSetting(MovieDetailsHome) + Integer.IsGreater(ListItem.PercentPlayed,1)</visible>
-							<animation effect="fade" time="150">Visible</animation>
-							<height>55</height>
-							<width>800</width>
-							<top>-5</top>
-							<aligny>center</aligny> 
-							<usecontrolcoords>true</usecontrolcoords>
-							<itemgap>15</itemgap>
-						<!-- Spotlight Details Row Top250 Red Icon -->
-						<control type="image">
-								<visible>!Skin.HasSetting(EnableTop250WhiteLabel)</visible>
-								<visible>!String.IsEmpty(Control.GetLabel(8231))</visible>
-								<posy>5</posy>
-								<left>1</left>
-								<height>50</height>
-								<width>50</width>
-								<aspectratio>keep</aspectratio>
-								<texture>bingie/top250.png</texture>
-						</control>
-						<!-- Spotlight Details Row Top250 White Icon -->
-						<control type="image">
-								<visible>Skin.HasSetting(EnableTop250WhiteLabel)</visible>
-								<visible>!String.IsEmpty(Control.GetLabel(8231))</visible>
-								<posy>5</posy>
-								<left>1</left>
-								<height>50</height>
-								<width>50</width>
-								<aspectratio>keep</aspectratio>
-								<texture>bingie/top250white.png</texture>
-						</control>
-						<!-- Spotlight Text Label Top250 -->	
-						<control type="label" id="8231">
-							<visible>!$EXP[IsEpisodeDBType]</visible>
-							<visible>!String.IsEmpty(Control.GetLabel(8231))</visible>
-							<font>bold29</font> 
-							<textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor>
-							<label>$VAR[IMDBTop250SubLabel,#, on IMDB Today]</label>
-							<include>Default_Visible_Fade</include>
-						</control>	
-							<!-- Tagline/Watch xx Now -->
-						<control type="label" id="823">
-								<visible>!$EXP[IsEpisodeDBType]</visible>
-								<visible>!String.IsEmpty(Control.GetLabel(823)) + String.IsEmpty(Control.GetLabel(8231))</visible>
-								<width>820</width>
-								<font>bold29</font> 
-								<textcolor>$INFO[Skin.String(BingieSubLabelTextColor)]</textcolor> 
-								<label>$VAR[BingieSublabel]</label>
-								<include>Default_Visible_Fade</include>
-						</control> 
-					</control>
-
-					<!-- Bingie Home Plot -->
-                    <control type="textbox" id="90009">
-					<visible>!$EXP[IsMainMenuOpened]</visible>
-                        <visible>Skin.HasSetting(MovieDetailsHome) + !Integer.IsGreater(ListItem.PercentPlayed,1) | !Skin.HasSetting(MovieDetailsHome)</visible>
-                        <include>Default_Visible_Fade</include>
-						<height min="30" max="121">auto</height>
-                        <width max="820">auto</width>
-                        <align>left</align>
-                        <font>Plots</font>
-						<textcolor>$INFO[Skin.String(BingiePlotTextColor)]</textcolor>
-                        <label>$VAR[BingiePlot]</label>
-                    </control>
-
-                    <!-- Additional Info -->
-					<control type="group">
-						<top>5</top>
-                    <include content="Bingie_Additional_Info">
-                       <param name="visibility" value="!$EXP[IsEpisodeDBType] + !$EXP[IsCategoryDBType] + !$EXP[IsMainMenuOpened] + !$EXP[IsTVShowInLastEpisodes] | [!Skin.HasSetting(EnableTop250) | !Skin.HasSetting(EnableRatings)] + !$EXP[IsEpisodeDBType] + !$EXP[IsCategoryDBType] + !$EXP[IsMainMenuOpened] | Container.Content(episodes)"/>
-                    </include>	
-					</control>					
-                </control>
-				</control>
-
-                <!-- Footer -->
-				<control type="group">
-					<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
-					<include>Animation_Right_Home</include>
-					<right>-120</right>
-					<include>Bingie_Footer</include>
-				</control>
-            </control>
+		
+		<!-- Footer -->
+		<control type="group">
+			<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
+			<include>Animation_Right_Home</include>
+			<right>-120</right>
+			<include>Bingie_Footer</include>
+		</control>
 
         <control type="group">
 			<visible>!Window.IsActive(DialogVideoInfo.xml)</visible>
 			<include>Animation_Right_Home</include>
-            <left>131</left>
             <top>606</top>
-            <width>1666</width>
-            <!-- Content Header -->
+            <width>1804</width>
+			<!-- Content Header -->
             <control type="label">
-			<left>8</left>
-			<top>-39</top>
+				<left>139</left>
+				<top>-39</top>
                 <include condition="Skin.HasSetting(EnableRatings)">FooterON</include>
 				<include condition="!Skin.HasSetting(EnableRatings)">FooterOFF</include>
                 <height>36</height>
                 <font>Reg29</font>
                 <align>left</align>
                 <textcolor>$INFO[Skin.String(BingieHeaderTextColor)]</textcolor>
-                <label>[CAPITALIZE][B]$INFO[Window(Home).Property(category)][/B][/CAPITALIZE]</label>
+                <label>[CAPITALIZE][B]$INFO[Window(Home).Property(categorylabel)][/B][/CAPITALIZE]</label>
                 <visible>Integer.IsGreater(Container(117).NumItems,0)</visible>
             </control>
-
             <!-- Movies -->			
-			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),action &amp; adventure)">
-                <param name="content" value="$VAR[ActionAdvantureMovies]" />
+			<include content="widget_base_categories" condition="String.IsEqual(Window(Home).Property(category),actionadventure)">
+				<param name="widgetPath" value="$VAR[ActionAdvantureMoviesWidget]" />
+				<param name="widgetLimit" value="$INFO[Skin.String(1_widgetlimit)]" />
+				<param name="widgetTarget" value="$INFO[Skin.String(1_widgettarget)]" />
+				<param name="widgetSortBy" value="$INFO[Skin.String(1_widgetsortby)]" />
+				<param name="widgetSortOrder" value="$INFO[Skin.String(1_widgetsortorder)]" />
+				<param name="widgetTags" value="1_WidgetTagOverlayDefault" />
+				<param name="widgetStyle" value="1_widget_layout_categories" />
             </include>
 			
-			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),dramas)">
-                <param name="content" value="$VAR[DramaMovies]" />
+			<include content="widget_base_categories" condition="String.IsEqual(Window(Home).Property(category),dramas)">
+                <param name="widgetPath" value="$VAR[DramaMoviesWidget]" />
+				<param name="widgetLimit" value="$INFO[Skin.String(2_widgetlimit)]" />
+				<param name="widgetTarget" value="$INFO[Skin.String(2_widgettarget)]" />
+				<param name="widgetSortBy" value="$INFO[Skin.String(2_widgetsortby)]" />
+				<param name="widgetSortOrder" value="$INFO[Skin.String(2_widgetsortorder)]" />
+				<param name="widgetTags" value="2_WidgetTagOverlayDefault" />
+				<param name="widgetStyle" value="2_widget_layout_categories" />
             </include>
 			
-			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),comedies)">
-                <param name="content" value="$VAR[ComedyMovies]" />
+			<include content="widget_base_categories" condition="String.IsEqual(Window(Home).Property(category),comedies)">
+				<param name="widgetPath" value="$VAR[ComedyMoviesWidget]" />
+				<param name="widgetLimit" value="$INFO[Skin.String(3_widgetlimit)]" />
+				<param name="widgetTarget" value="$INFO[Skin.String(3_widgettarget)]" />
+				<param name="widgetSortBy" value="$INFO[Skin.String(3_widgetsortby)]" />
+				<param name="widgetSortOrder" value="$INFO[Skin.String(3_widgetsortorder)]" />
+				<param name="widgetTags" value="3_WidgetTagOverlayDefault" />
+				<param name="widgetStyle" value="3_widget_layout_categories" />
             </include>
 			
-            <include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),kids &amp; family)">
-                <param name="content" value="$VAR[FamilyMovies]" />
+            <include content="widget_base_categories" condition="String.IsEqual(Window(Home).Property(category),kidsfamily)">
+				<param name="widgetPath" value="$VAR[FamilyMoviesWidget]" />
+				<param name="widgetLimit" value="$INFO[Skin.String(4_widgetlimit)]" />
+				<param name="widgetTarget" value="$INFO[Skin.String(4_widgettarget)]" />
+				<param name="widgetSortBy" value="$INFO[Skin.String(4_widgetsortby)]" />
+				<param name="widgetSortOrder" value="$INFO[Skin.String(4_widgetsortorder)]" />
+				<param name="widgetTags" value="4_WidgetTagOverlayDefault" />
+				<param name="widgetStyle" value="4_widget_layout_categories" />
             </include>
 
-            <include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),horror)">
-                <param name="content" value="$VAR[HorrorMovies]" />
+            <include content="widget_base_categories" condition="String.IsEqual(Window(Home).Property(category),horror)">
+				<param name="widgetPath" value="$VAR[HorrorMoviesWidget]" />
+				<param name="widgetLimit" value="$INFO[Skin.String(5_widgetlimit)]" />
+				<param name="widgetTarget" value="$INFO[Skin.String(5_widgettarget)]" />
+				<param name="widgetSortBy" value="$INFO[Skin.String(5_widgetsortby)]" />
+				<param name="widgetSortOrder" value="$INFO[Skin.String(5_widgetsortorder)]" />
+				<param name="widgetTags" value="5_WidgetTagOverlayDefault" />
+				<param name="widgetStyle" value="5_widget_layout_categories" />
             </include>
 
-            <include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),documentaries)">
-                <param name="content" value="$VAR[DocumentaryMovies]" />
+            <include content="widget_base_categories" condition="String.IsEqual(Window(Home).Property(category),documentaries)">
+				<param name="widgetPath" value="$VAR[DocumentaryMoviesWidget]" />
+				<param name="widgetLimit" value="$INFO[Skin.String(6_widgetlimit)]" />
+				<param name="widgetTarget" value="$INFO[Skin.String(6_widgettarget)]" />
+				<param name="widgetSortBy" value="$INFO[Skin.String(6_widgetsortby)]" />
+				<param name="widgetSortOrder" value="$INFO[Skin.String(6_widgetsortorder)]" />
+				<param name="widgetTags" value="6_WidgetTagOverlayDefault" />
+				<param name="widgetStyle" value="6_widget_layout_categories" />
             </include>
 
-            <include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),anime)">
-                <param name="content" value="$VAR[AnimeMovies]" />
+            <include content="widget_base_categories" condition="String.IsEqual(Window(Home).Property(category),anime)">
+				<param name="widgetPath" value="$VAR[AnimeMoviesWidget]" />
+				<param name="widgetLimit" value="$INFO[Skin.String(7_widgetlimit)]" />
+				<param name="widgetTarget" value="$INFO[Skin.String(7_widgettarget)]" />
+				<param name="widgetSortBy" value="$INFO[Skin.String(7_widgetsortby)]" />
+				<param name="widgetSortOrder" value="$INFO[Skin.String(7_widgetsortorder)]" />
+				<param name="widgetTags" value="7_WidgetTagOverlayDefault" />
+				<param name="widgetStyle" value="7_widget_layout_categories" />
             </include>
 
-            <include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),crime)">
-                <param name="content" value="$VAR[CrimeMovies]" />
+            <include content="widget_base_categories" condition="String.IsEqual(Window(Home).Property(category),crime)">
+				<param name="widgetPath" value="$VAR[CrimeMoviesWidget]" />
+				<param name="widgetLimit" value="$INFO[Skin.String(8_widgetlimit)]" />
+				<param name="widgetTarget" value="$INFO[Skin.String(8_widgettarget)]" />
+				<param name="widgetSortBy" value="$INFO[Skin.String(8_widgetsortby)]" />
+				<param name="widgetSortOrder" value="$INFO[Skin.String(8_widgetsortorder)]" />
+				<param name="widgetTags" value="8_WidgetTagOverlayDefault" />
+				<param name="widgetStyle" value="8_widget_layout_categories" />
             </include>
 			
-			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),fantasy)">
-                <param name="content" value="$VAR[FantasyMovies]" />
+			<include content="widget_base_categories" condition="String.IsEqual(Window(Home).Property(category),fantasy)">
+				<param name="widgetPath" value="$VAR[FantasyMoviesWidget]" />
+				<param name="widgetLimit" value="$INFO[Skin.String(9_widgetlimit)]" />
+				<param name="widgetTarget" value="$INFO[Skin.String(9_widgettarget)]" />
+				<param name="widgetSortBy" value="$INFO[Skin.String(9_widgetsortby)]" />
+				<param name="widgetSortOrder" value="$INFO[Skin.String(9_widgetsortorder)]" />
+				<param name="widgetTags" value="9_WidgetTagOverlayDefault" />
+				<param name="widgetStyle" value="9_widget_layout_categories" />
+            </include>  
+			
+			<include content="widget_base_categories" condition="String.IsEqual(Window(Home).Property(category),historywar)">
+				<param name="widgetPath" value="$VAR[HistoryWarMoviesWidget]" />
+				<param name="widgetLimit" value="$INFO[Skin.String(10_widgetlimit)]" />
+				<param name="widgetTarget" value="$INFO[Skin.String(10_widgettarget)]" />
+				<param name="widgetSortBy" value="$INFO[Skin.String(10_widgetsortby)]" />
+				<param name="widgetSortOrder" value="$INFO[Skin.String(10_widgetsortorder)]" />
+				<param name="widgetTags" value="10_WidgetTagOverlayDefault" />
+				<param name="widgetStyle" value="10_widget_layout_categories" />
+            </include>	
+			
+			<include content="widget_base_categories" condition="String.IsEqual(Window(Home).Property(category),animations)">
+				<param name="widgetPath" value="$VAR[AnimationMoviesWidget]" />
+				<param name="widgetLimit" value="$INFO[Skin.String(11_widgetlimit)]" />
+				<param name="widgetTarget" value="$INFO[Skin.String(11_widgettarget)]" />
+				<param name="widgetSortBy" value="$INFO[Skin.String(11_widgetsortby)]" />
+				<param name="widgetSortOrder" value="$INFO[Skin.String(11_widgetsortorder)]" />
+				<param name="widgetTags" value="11_WidgetTagOverlayDefault" />
+				<param name="widgetStyle" value="11_widget_layout_categories" />
+            </include>	
+
+			<include content="widget_base_categories" condition="String.IsEqual(Window(Home).Property(category),musicmusicals)">
+				<param name="widgetPath" value="$VAR[MusicMoviesWidget]" />
+				<param name="widgetLimit" value="$INFO[Skin.String(12_widgetlimit)]" />
+				<param name="widgetTarget" value="$INFO[Skin.String(12_widgettarget)]" />
+				<param name="widgetSortBy" value="$INFO[Skin.String(12_widgetsortby)]" />
+				<param name="widgetSortOrder" value="$INFO[Skin.String(12_widgetsortorder)]" />
+				<param name="widgetTags" value="12_WidgetTagOverlayDefault" />
+				<param name="widgetStyle" value="12_widget_layout_categories" />
             </include>  
 
-			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),music &amp; musicals)">
-                <param name="content" value="$VAR[MusicMovies]" />
-            </include>  
-
-			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),Romance)">
-                <param name="content" value="$VAR[RomanceMovies]" />
+			<include content="widget_base_categories" condition="String.IsEqual(Window(Home).Property(category),romance)">
+				<param name="widgetPath" value="$VAR[RomanceMoviesWidget]" />
+				<param name="widgetLimit" value="$INFO[Skin.String(13_widgetlimit)]" />
+				<param name="widgetTarget" value="$INFO[Skin.String(13_widgettarget)]" />
+				<param name="widgetSortBy" value="$INFO[Skin.String(13_widgetsortby)]" />
+				<param name="widgetSortOrder" value="$INFO[Skin.String(13_widgetsortorder)]" />
+				<param name="widgetTags" value="13_WidgetTagOverlayDefault" />
+				<param name="widgetStyle" value="1_widget_layout_categories" />
             </include> 
 
-			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),sci-fi)">
-                <param name="content" value="$VAR[SciFiMovies]" />
-            </include>		
+			<include content="widget_base_categories" condition="String.IsEqual(Window(Home).Property(category),scifi)">
+				<param name="widgetPath" value="$VAR[SciFiMoviesWidget]" />
+				<param name="widgetLimit" value="$INFO[Skin.String(14_widgetlimit)]" />
+				<param name="widgetTarget" value="$INFO[Skin.String(14_widgettarget)]" />
+				<param name="widgetSortBy" value="$INFO[Skin.String(14_widgetsortby)]" />
+				<param name="widgetSortOrder" value="$INFO[Skin.String(14_widgetsortorder)]" />
+				<param name="widgetTags" value="14_WidgetTagOverlayDefault" />
+				<param name="widgetStyle" value="14_widget_layout_categories" />
+            </include>	
 
-			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),thriller)">
-                <param name="content" value="$VAR[ThrillerMovies]" />
+			<include content="widget_base_categories" condition="String.IsEqual(Window(Home).Property(category),mysteries)">
+				<param name="widgetPath" value="$VAR[MysteryMoviesWidget]" />
+				<param name="widgetLimit" value="$INFO[Skin.String(15_widgetlimit)]" />
+				<param name="widgetTarget" value="$INFO[Skin.String(15_widgettarget)]" />
+				<param name="widgetSortBy" value="$INFO[Skin.String(15_widgetsortby)]" />
+				<param name="widgetSortOrder" value="$INFO[Skin.String(15_widgetsortorder)]" />
+				<param name="widgetTags" value="15_WidgetTagOverlayDefault" />
+				<param name="widgetStyle" value="15_widget_layout_categories" />
+            </include>				
+
+			<include content="widget_base_categories" condition="String.IsEqual(Window(Home).Property(category),thriller)">
+				<param name="widgetPath" value="$VAR[ThrillerMoviesWidget]" />
+				<param name="widgetLimit" value="$INFO[Skin.String(16_widgetlimit)]" />
+				<param name="widgetTarget" value="$INFO[Skin.String(16_widgettarget)]" />
+				<param name="widgetSortBy" value="$INFO[Skin.String(16_widgetsortby)]" />
+				<param name="widgetSortOrder" value="$INFO[Skin.String(16_widgetsortorder)]" />
+				<param name="widgetTags" value="16_WidgetTagOverlayDefault" />
+				<param name="widgetStyle" value="16_widget_layout_categories" />
             </include> 	
 
-			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),westerns)">
-                <param name="content" value="$VAR[WesternMovies]" />
+			<include content="widget_base_categories" condition="String.IsEqual(Window(Home).Property(category),westerns)">
+				<param name="widgetPath" value="$VAR[WesternMoviesWidget]" />
+				<param name="widgetLimit" value="$INFO[Skin.String(17_widgetlimit)]" />
+				<param name="widgetTarget" value="$INFO[Skin.String(17_widgettarget)]" />
+				<param name="widgetSortBy" value="$INFO[Skin.String(17_widgetsortby)]" />
+				<param name="widgetSortOrder" value="$INFO[Skin.String(17_widgetsortorder)]" />
+				<param name="widgetTags" value="17_WidgetTagOverlayDefault" />
+				<param name="widgetStyle" value="17_widget_layout_categories" />
             </include> 	
-
-			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),animations)">
-                <param name="content" value="$VAR[AnimationMovies]" />
-            </include>	
-
-			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),history &amp; war)">
-                <param name="content" value="$VAR[HistoryWarMovies]" />
-            </include>	
-
-			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),mysteries)">
-                <param name="content" value="$VAR[MysteryMovies]" />
-            </include>	
 
 			<!-- TV Shows -->
-			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),TV action &amp; adventure)">
-                <param name="content" value="$VAR[ActionAdvantureTVShows]" />
+			<include content="widget_base_categories" condition="String.IsEqual(Window(Home).Property(category),TVactionadventure)">
+				<param name="widgetPath" value="$VAR[ActionAdvantureTVShowsWidget]" />
+				<param name="widgetLimit" value="$INFO[Skin.String(18_widgetlimit)]" />
+				<param name="widgetTarget" value="$INFO[Skin.String(18_widgettarget)]" />
+				<param name="widgetSortBy" value="$INFO[Skin.String(18_widgetsortby)]" />
+				<param name="widgetSortOrder" value="$INFO[Skin.String(18_widgetsortorder)]" />
+				<param name="widgetTags" value="18_WidgetTagOverlayDefault" />
+				<param name="widgetStyle" value="18_widget_layout_categories" />
             </include>
 			
-			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),TV animations)">
-                <param name="content" value="$VAR[AnimationTVShows]" />
-            </include>	
-			
-			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),TV comedies)">
-                <param name="content" value="$VAR[ComedyTVShow]" />
+			<include content="widget_base_categories" condition="String.IsEqual(Window(Home).Property(category),TVdramas)">
+				<param name="widgetPath" value="$VAR[DramaTVShowsWidget]" />
+				<param name="widgetLimit" value="$INFO[Skin.String(19_widgetlimit)]" />
+				<param name="widgetTarget" value="$INFO[Skin.String(19_widgettarget)]" />
+				<param name="widgetSortBy" value="$INFO[Skin.String(19_widgetsortby)]" />
+				<param name="widgetSortOrder" value="$INFO[Skin.String(19_widgetsortorder)]" />
+				<param name="widgetTags" value="19_WidgetTagOverlayDefault" />
+				<param name="widgetStyle" value="19_widget_layout_categories" />
             </include>
 			
-			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),TV crime)">
-                <param name="content" value="$VAR[CrimeTVShows]" />
+			<include content="widget_base_categories" condition="String.IsEqual(Window(Home).Property(category),TVcomedies)">
+				<param name="widgetPath" value="$VAR[ComedyTVShowsWidget]" />
+				<param name="widgetLimit" value="$INFO[Skin.String(20_widgetlimit)]" />
+				<param name="widgetTarget" value="$INFO[Skin.String(20_widgettarget)]" />
+				<param name="widgetSortBy" value="$INFO[Skin.String(20_widgetsortby)]" />
+				<param name="widgetSortOrder" value="$INFO[Skin.String(20_widgetsortorder)]" />
+				<param name="widgetTags" value="20_WidgetTagOverlayDefault" />
+				<param name="widgetStyle" value="20_widget_layout_categories" />
             </include>
 			
-			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),TV documentaries)">
-                <param name="content" value="$VAR[DocumentaryTVShows]" />
+			<include content="widget_base_categories" condition="String.IsEqual(Window(Home).Property(category),TVkidsfamily)">
+				<param name="widgetPath" value="$VAR[FamilyTVShowsWidget]" />
+				<param name="widgetLimit" value="$INFO[Skin.String(21_widgetlimit)]" />
+				<param name="widgetTarget" value="$INFO[Skin.String(21_widgettarget)]" />
+				<param name="widgetSortBy" value="$INFO[Skin.String(21_widgetsortby)]" />
+				<param name="widgetSortOrder" value="$INFO[Skin.String(21_widgetsortorder)]" />
+				<param name="widgetTags" value="21_WidgetTagOverlayDefault" />
+				<param name="widgetStyle" value="21_widget_layout_categories" />
             </include>
 			
-			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),TV dramas)">
-                <param name="content" value="$VAR[DramaTVShows]" />
+			<include content="widget_base_categories" condition="String.IsEqual(Window(Home).Property(category),TVdocumentaries)">
+				<param name="widgetPath" value="$VAR[DocumentaryTVShowsWidget]" />
+				<param name="widgetLimit" value="$INFO[Skin.String(22_widgetlimit)]" />
+				<param name="widgetTarget" value="$INFO[Skin.String(22_widgettarget)]" />
+				<param name="widgetSortBy" value="$INFO[Skin.String(22_widgetsortby)]" />
+				<param name="widgetSortOrder" value="$INFO[Skin.String(22_widgetsortorder)]" />
+				<param name="widgetTags" value="22_WidgetTagOverlayDefault" />
+				<param name="widgetStyle" value="22_widget_layout_categories" />
             </include>
 			
-			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),TV kids &amp; family)">
-                <param name="content" value="$VAR[FamilyTVShows]" />
+			<include content="widget_base_categories" condition="String.IsEqual(Window(Home).Property(category),TVcrime)">
+				<param name="widgetPath" value="$VAR[CrimeTVShowsWidget]" />
+				<param name="widgetLimit" value="$INFO[Skin.String(23_widgetlimit)]" />
+				<param name="widgetTarget" value="$INFO[Skin.String(23_widgettarget)]" />
+				<param name="widgetSortBy" value="$INFO[Skin.String(23_widgetsortby)]" />
+				<param name="widgetSortOrder" value="$INFO[Skin.String(23_widgetsortorder)]" />
+				<param name="widgetTags" value="23_WidgetTagOverlayDefault" />
+				<param name="widgetStyle" value="23_widget_layout_categories" />
             </include>
-			
-			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),TV mysteries)">
-                <param name="content" value="$VAR[MysteryTVShows]" />
-            </include>	
-			
-			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),TV sci-fi &amp; fantasy)">
-                <param name="content" value="$VAR[SciFiFantasyTVShows]" />
+
+			<include content="widget_base_categories" condition="String.IsEqual(Window(Home).Property(category),TVscififantasy)">
+				<param name="widgetPath" value="$VAR[SciFiFantasyTVShowsWidget]" />
+				<param name="widgetLimit" value="$INFO[Skin.String(24_widgetlimit)]" />
+				<param name="widgetTarget" value="$INFO[Skin.String(24_widgettarget)]" />
+				<param name="widgetSortBy" value="$INFO[Skin.String(24_widgetsortby)]" />
+				<param name="widgetSortOrder" value="$INFO[Skin.String(24_widgetsortorder)]" />
+				<param name="widgetTags" value="24_WidgetTagOverlayDefault" />
+				<param name="widgetStyle" value="24_widget_layout_categories" />
             </include> 
+
+			<include content="widget_base_categories" condition="String.IsEqual(Window(Home).Property(category),TVwarpolitics)">
+				<param name="widgetPath" value="$VAR[WarPoliticsTVShowsWidget]" />
+				<param name="widgetLimit" value="$INFO[Skin.String(25_widgetlimit)]" />
+				<param name="widgetTarget" value="$INFO[Skin.String(25_widgettarget)]" />
+				<param name="widgetSortBy" value="$INFO[Skin.String(25_widgetsortby)]" />
+				<param name="widgetSortOrder" value="$INFO[Skin.String(25_widgetsortorder)]" />
+				<param name="widgetTags" value="25_WidgetTagOverlayDefault" />
+				<param name="widgetStyle" value="25_widget_layout_categories" />
+            </include>				
 			
-			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),TV war &amp; politics)">
-                <param name="content" value="$VAR[WarPoliticsTVShows]" />
-            </include>	
+			<include content="widget_base_categories" condition="String.IsEqual(Window(Home).Property(category),TVanimations)">
+				<param name="widgetPath" value="$VAR[AnimationTVShowsWidget]" />
+				<param name="widgetLimit" value="$INFO[Skin.String(26_widgetlimit)]" />
+				<param name="widgetTarget" value="$INFO[Skin.String(26_widgettarget)]" />
+				<param name="widgetSortBy" value="$INFO[Skin.String(26_widgetsortby)]" />
+				<param name="widgetSortOrder" value="$INFO[Skin.String(26_widgetsortorder)]" />
+				<param name="widgetTags" value="26_WidgetTagOverlayDefault" />
+				<param name="widgetStyle" value="26_widget_layout_categories" />
+            </include>																		
 			
-			<include content="Category_Widget" condition="String.IsEqual(Window(Home).Property(category),TV westerns)">
-                <param name="content" value="$VAR[WesternTVShows]" />
+			<include content="widget_base_categories" condition="String.IsEqual(Window(Home).Property(category),TVmysteries)">
+				<param name="widgetPath" value="$VAR[MysteryTVShowsWidget]" />
+				<param name="widgetLimit" value="$INFO[Skin.String(27_widgetlimit)]" />
+				<param name="widgetTarget" value="$INFO[Skin.String(27_widgettarget)]" />
+				<param name="widgetSortBy" value="$INFO[Skin.String(27_widgetsortby)]" />
+				<param name="widgetSortOrder" value="$INFO[Skin.String(27_widgetsortorder)]" />
+				<param name="widgetTags" value="27_WidgetTagOverlayDefault" />
+				<param name="widgetStyle" value="27_widget_layout_categories" />
+            </include>													
+			
+			<include content="widget_base_categories" condition="String.IsEqual(Window(Home).Property(category),TVwesterns)">
+				<param name="widgetPath" value="$VAR[WesternTVShowsWidget]" />
+				<param name="widgetLimit" value="$INFO[Skin.String(28_widgetlimit)]" />
+				<param name="widgetTarget" value="$INFO[Skin.String(28_widgettarget)]" />
+				<param name="widgetSortBy" value="$INFO[Skin.String(28_widgetsortby)]" />
+				<param name="widgetSortOrder" value="$INFO[Skin.String(28_widgetsortorder)]" />
+				<param name="widgetTags" value="28_WidgetTagOverlayDefault" />
+				<param name="widgetStyle" value="28_widget_layout_categories" />
             </include>
 
             <!-- Empty Category -->
@@ -361,15 +368,10 @@
 	
 	<include>Header</include>
 	
-		<!-- Snow Effect -->
-        <control type="group">
-            <include condition="String.IsEqual(Skin.String(season_greetings),snow_animation)">snow</include>
-        </control>
-		<!-- Halloween Effect -->
-        <control type="group">
-            <include condition="String.IsEqual(Skin.String(season_greetings),halloween_animation)">pumpkin</include>
-        </control>
-		</control>
+	<!-- Snow Effect -->
+    <include condition="Skin.HasSetting(EnableSnowAnimation)">SnowAnimation</include>
+		
+	</control>
 	
     </controls>
 </window>

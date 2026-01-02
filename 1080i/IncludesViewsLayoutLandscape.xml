@@ -226,7 +226,7 @@
 		<control type="group">
 			<visible>!String.IsEqual(ListItem.Label,..)</visible>
 			<visible>!String.Contains(ListItem.Label,$LOCALIZE[33078])</visible>
-			<visible>![$EXP[IsTvShowDBType] + $EXP[IsTVShowInLastEpisodes] + !Skin.HasSetting(DisableNewEpisodesIndicator)]</visible>
+			<visible>![$EXP[IsTvShowDBType] + $EXP[IsTVShowInLastEpisodes] + Skin.HasSetting(EnableNewEpisodesIndicator)]</visible>
         <control type="image">
             <!--Panel Ovelay-->
             <bordersize>8</bordersize>
@@ -362,7 +362,7 @@
     <include name="New_Episodes_Tag_Overlay">
         <control type="group">
 			<visible>!$EXP[IsCategoryDBType]</visible>
-            <visible>!Skin.HasSetting(DisableNewEpisodesIndicator)</visible>
+            <visible>Skin.HasSetting(EnableNewEpisodesIndicator)</visible>
             <visible>$EXP[IsTvShowDBType] + $EXP[IsTVShowInLastEpisodes]</visible>
             <width>100%</width>
             <height>36</height>

@@ -7,10 +7,10 @@
       <include>MovieDetailsLeft</include>	  
 	  <control type="panel" id="512">
         <animation effect="slide" end="-630" time="0" condition="Skin.HasSetting(View512_ShowInfoRight)">Conditional</animation>
-        <viewtype label="31439">icons</viewtype>
-          <include content="View_Forced">
-              <param name="viewtype" value="$LOCALIZE[31439]" />
-          </include>
+        <viewtype label="31439">Landscape Details</viewtype>
+        <include content="View_Forced">
+            <param name="viewtype" value="$LOCALIZE[31439]" />
+        </include>
         <right>28</right>
         <bottom>173</bottom>
         <height>700</height>
@@ -21,8 +21,7 @@
 		<onback condition="!Player.HasAudio + $EXP[IsPlayingUnrecognizedContent] + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)] + Skin.HasSetting(View512_DetailsAutoTrailer)">PlayerControl(Stop)</onback>
 		<onback>ClearProperty(HideNowPlaying)</onback>
 		<onback>ClearProperty(ListAnimation,home)</onback>
-        <onright condition="Skin.HasSetting(EnableQuickJump)">6000</onright>
-        <onright condition="!Skin.HasSetting(EnableQuickJump)">60</onright>
+        <onright>60</onright>
         <onup>512</onup>
         <ondown>512</ondown>
         <preloaditems>4</preloaditems>
@@ -61,8 +60,8 @@
 			<onup>60</onup>
 			<ondown>6000</ondown>
 			<onleft>509</onleft>
-			<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] + !Control.IsVisible(6002)">Conditional</animation>
-			<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] | Control.IsVisible(6002)">Conditional</animation>
+			<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+			<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
 		</control>   	  
     </control>			
   </include>
