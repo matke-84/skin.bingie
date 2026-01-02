@@ -11,8 +11,7 @@
             <include>animation_window_open_close</include>
 			<animation effect="fade" end="0" time="0" condition="Window.IsVisible">Conditional</animation>
             <visible>!Window.IsVisible(virtualkeyboard) + !Window.IsVisible(filebrowser) + !Window.IsVisible(selectdialog) + !Window.IsVisible(selectdialog) + !Window.IsVisible(progressdialog) + !Window.IsVisible(textviewer)</visible>
-            <!--Panel-->
-
+			<posy>6</posy>
             <!--Panel-->
             <control type="image">
                 <!--Panel-->
@@ -20,8 +19,7 @@
                 <posy>169</posy>
                 <width>1352</width>
                 <height>730</height>
-                <texture border="15">diffuse/bgpanel.png</texture>
-				
+                <texture border="15">diffuse/bgpanel.png</texture>				
 				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
             </control>
 			<control type="image">
@@ -31,8 +29,7 @@
                 <width>1352</width>
                 <height>730</height>
 				<bordersize>10</bordersize>
-                <texture border="15">diffuse/bgpanel.png</texture>
-				
+                <texture border="15">diffuse/bgpanel.png</texture>				
 				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
             </control>
 			
@@ -164,8 +161,8 @@
 				<onright>8004</onright>
 				<onleft>5</onleft>
 				<showonepage>false</showonepage>
-				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(60) | Container.Scrolling  | String.IsEqual(Skin.String(scrollbar_visibility),always_show)">Conditional</animation>
-				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container.Scrolling  | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
 			</control>
 			
 			<control type="grouplist" id="8002">
@@ -178,7 +175,7 @@
 
                 <control type="button" id="28">
                     <description>OK</description>
-                    <label>186</label>
+                    <label>$LOCALIZE[186]</label>
                     <align>center</align>
                     <width>400</width>
                     <include>DialogButtonOther</include>

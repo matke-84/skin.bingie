@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog" id="1121">
     <defaultcontrol>7</defaultcontrol>
-	<onunload>ClearProperty(header,1121)</onunload>
-	<onunload>ClearProperty(textbox,1121)</onunload>
-	<onunload>ClearProperty(osdheader,1121)</onunload>
-	<onunload>ClearProperty(osdtextbox,1121)</onunload>
-	<onunload>ClearProperty(osdgenre,1121)</onunload>
-	<onunload>ClearProperty(osdrating,1121)</onunload>
-	<onunload>ClearProperty(osdyear,1121)</onunload>
+	<onunload>ClearProperty(header)</onunload>
+	<onunload>ClearProperty(textbox)</onunload>
     <controls>
         <!--Dialog Overlay-->
         <include>DialogOverlayExtra</include>
 		
         <!--Dialog Tex Viewer-->
         <control type="group">
+			<posy>4</posy>
             <include>animation_window_open_close</include>
 			
 			<control type="image">
@@ -42,7 +38,7 @@
                 <posx>473</posx>
                 <posy>172</posy>
                 <width>974</width>
-                <label>$VAR[CustomPlotHeader]</label>
+                <label>$INFO[Window.Property(header)]</label>
                 <include>DialogHeader</include>
                 <align>center</align>
             </control>
@@ -61,7 +57,7 @@
                 <posy>255</posy>
                 <width>930</width>
                 <height>545</height>
-                <label>$VAR[CustomPlotTextbox]</label>
+                <label>$INFO[Window.Property(textbox)]</label>
                 <include>DialogLabel</include>
                 <align>left</align>
                 <pagecontrol>60</pagecontrol>
@@ -82,7 +78,8 @@
 				<onback>8000</onback>
                 <showonepage>false</showonepage>
                 <orientation>vertical</orientation>
-                <animation effect="fade" start="75" end="0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(60)">Conditional</animation>
+                <animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(60)">Conditional</animation>
+                <animation effect="fade" start="100" end="0" time="400" condition="!Control.HasFocus(60)">Conditional</animation>
             </control>
 			
             <control type="group" id="8000">

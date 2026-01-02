@@ -100,7 +100,7 @@
                         <width>46</width>
                         <height>46</height>
                         <aspect>keep</aspect>
-                        <texture colordiffuse="$INFO[Skin.String(BingieButtonFocusTextColor)]">dialogs/nextup/30.png</texture>
+                        <texture colordiffuse="$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]">dialogs/nextup/30.png</texture>
                         <animation effect="slide" end="13,5" time="0" condition="true">Conditional</animation>
                         <visible>Integer.IsGreater(Player.TimeRemaining,30) + !Control.HasFocus(3013)</visible>
                     </control>
@@ -116,7 +116,7 @@
                         <width>46</width>
                         <height>46</height>
                         <aspect>keep</aspect>
-                        <texture colordiffuse="$INFO[Skin.String(BingieButtonFocusTextColor)]">$INFO[Player.TimeRemaining(ss),dialogs/nextup/,.png]</texture>
+                        <texture colordiffuse="$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]">$INFO[Player.TimeRemaining(ss),dialogs/nextup/,.png]</texture>
                         <animation effect="slide" end="13,5" time="0" condition="true">Conditional</animation>
                         <visible>!Integer.IsGreater(Player.TimeRemaining,30) + !Control.HasFocus(3013)</visible>
                     </control>

@@ -7,6 +7,7 @@
 		<control type="group">
 			<include>DialogOverlayExtra</include>
 			<animation effect="fade" time="250" start="0" end="100" reversible="false">WindowOpen</animation>
+			<animation effect="fade" time="250" start="100" end="0" reversible="false">WindowClose</animation>
         </control>
 		
         <!--Dialog OpenElec Settings-->
@@ -1292,7 +1293,7 @@
                     </focusedlayout> 
                 </control>
             </control>
-     			<!-- save and edit buttons -->
+     		 <!-- save and edit buttons -->
 			 <control type="grouplist" id="1499">
                 <posx>680</posx>
                 <posy>880</posy>
@@ -1303,7 +1304,7 @@
 				<orientation>horizontal</orientation>
 				<control type="button" id="1504">
 					<width>300</width>
-					<label></label>
+					<label/>
 					<height>80</height>
 					<align>center</align>
 					<include>DialogButtonOther</include>

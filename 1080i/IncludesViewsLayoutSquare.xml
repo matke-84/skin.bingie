@@ -201,7 +201,7 @@
 	
 	<include name="Square_New_Episodes_Tag_Overlay">
         <control type="group">
-            <visible>!Skin.HasSetting(DisableNewEpisodesIndicator)</visible>
+            <visible>Skin.HasSetting(EnableNewEpisodesIndicator)</visible>
             <visible>$EXP[IsTvShowDBType] + $EXP[IsTVShowInLastEpisodes]</visible>
             <width>100%</width>
             <height>36</height>

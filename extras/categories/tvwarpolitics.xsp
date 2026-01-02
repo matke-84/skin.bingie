@@ -7,6 +7,6 @@
         <value>War</value>
 		<value>Politics</value>
     </rule>
-    <order direction="descending">year</order>
+    <order direction="descending">dateadded</order>
     <limit>200</limit>
 </smartplaylist>

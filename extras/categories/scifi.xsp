@@ -4,12 +4,12 @@
     <name>Sci-Fi</name>
     <match>all</match>
     <rule field="genre" operator="contains">
-        <value>SyFy</value>
         <value>Science Fiction</value>
-        <value>Science-Fiction</value>
 		<value>Sci-Fi</value>
-        <value>SciFi</value>
     </rule>
-    <order direction="descending">year</order>
+	<rule field="genre" operator="isnot">
+        <value>Animation</value>
+    </rule>
+    <order direction="descending">dateadded</order>
     <limit>200</limit>
 </smartplaylist>

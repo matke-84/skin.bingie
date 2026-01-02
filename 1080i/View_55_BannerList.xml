@@ -26,10 +26,9 @@
 				<onback condition="!Player.HasAudio + $EXP[IsPlayingUnrecognizedContent] + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)] + Skin.HasSetting(View55_DetailsAutoTrailer)">PlayerControl(Stop)</onback>
 				<onback>ClearProperty(HideNowPlaying)</onback>
 				<onback>ClearProperty(ListAnimation,home)</onback>
-                <onright condition="Skin.HasSetting(EnableQuickJump)">6000</onright>
-                <onright condition="!Skin.HasSetting(EnableQuickJump)">60</onright>
+                <onright>60</onright>
                 <pagecontrol>60</pagecontrol>
-                <viewtype label="31424">bigwide</viewtype>
+                <viewtype label="31424">Banner Details</viewtype>
                 <include content="View_Forced">
                     <param name="viewtype" value="$LOCALIZE[31424]" />
                 </include>
@@ -54,7 +53,7 @@
                             <include>thumbsborder_focused</include>
                         </control>
                         <include>BannerLayout</include>
-                        <include condition="Skin.HasSetting(View55_DetailsAutoTrailer)">LibraryAutoTrailerStopButton</include>
+						<include>LibraryAutoTrailerStopButton</include>
 						<include content="LibraryAutoTrailerStartButton" condition="Skin.HasSetting(View55_DetailsAutoTrailer)">
 							<param name="interval" value="$INFO[Skin.String(details_auto_trailer_interval)]" />
 						</include>
@@ -63,8 +62,7 @@
 							<onfocus>AlarmClock(SetList,ClearProperty(ListAnimation,home),00:00,silent)</onfocus>
 							<onfocus>AlarmClock(SetList,SetProperty(ListAnimation,1,home),00:00,silent)</onfocus>					
 						</control>
-					</control>
-					<include>LibraryAutoTrailerStopButton</include>
+					</control>					
                 </focusedlayout>
      			</control>
  			<!--vertical Scollbar-->
@@ -76,8 +74,8 @@
 				<onup>60</onup>
 				<ondown>6000</ondown>
 				<onleft>55</onleft>
-				<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] + !Control.IsVisible(6002)">Conditional</animation>
-				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] | Control.IsVisible(6002)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
 			</control> 
 		</control>		
 	</include>

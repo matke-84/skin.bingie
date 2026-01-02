@@ -1,47 +1,62 @@
 <settings>
     
-	<!-- widget style -->
-    <setting id="widgetstyle" value="poster" label="$LOCALIZE[20021]" icon="special://skin/extras/viewthumbs/widget_hor_poster.jpg" condition="" description=""/>
-	<setting id="widgetstyle" value="landscape" label="$LOCALIZE[31056]" condition="" icon="special://skin/extras/viewthumbs/widget_hor_landscape.jpg" description=""/>
-	<setting id="widgetstyle" value="square" label="$LOCALIZE[31099]" condition="" icon="special://skin/extras/viewthumbs/widget_hor_square.jpg" description=""/>
+	<!-- widget style -->	
+	<setting id="$VAR[catnum]widgetstyle" value="poster" label="$LOCALIZE[20021]" icon="special://skin/extras/viewthumbs/widget_poster.jpg" condition="" description=""/>
+	<setting id="$VAR[catnum]widgetstyle" value="landscape" label="$LOCALIZE[31056]" condition="" icon="special://skin/extras/viewthumbs/widget_landscape.jpg" description=""/>
+	<setting id="$VAR[catnum]widgetstyle" value="square" label="$LOCALIZE[31099]" condition="" icon="special://skin/extras/viewthumbs/widget_square.jpg" description=""/>
 	
 	<!-- Search Widgets Layout-->
 	<setting id="layout" value="PosterPanelBingie" label="$LOCALIZE[20021]" condition="" icon="" description=""/>
 	<setting id="layout" value="ThumbsViewBingie" label="$LOCALIZE[31056]" condition="" icon="" description=""/>
 	<setting id="layout" value="SquarePosterPanelBingie" label="$LOCALIZE[31099]" condition="" icon="" description=""/>
 	
-    <!-- widgetsortby -->
-    <setting id="widgetsortby" value="default" label="$LOCALIZE[571]"/>
-	<setting id="widgetsortby" value="label" label="$LOCALIZE[21899]"/>
-    <setting id="widgetsortby" value="random" label="$LOCALIZE[590]"/>
-	<setting id="widgetsortby" value="dateadded" label="$LOCALIZE[570]"/>
-	<setting id="widgetsortby" value="lastplayed" label="$LOCALIZE[568]"/>
-	<setting id="widgetsortby" value="playcount" label="$LOCALIZE[567]"/>
-    <setting id="widgetsortby" value="year" label="$LOCALIZE[562]"/>
-	<setting id="widgetsortby" value="rating" label="$LOCALIZE[563]"/>
-    <setting id="widgetsortby" value="userrating" label="$LOCALIZE[38018]"/>
-    <setting id="widgetsortby" value="votes" label="$LOCALIZE[205]"/>
-	<setting id="widgetsortby" value="genre" label="$LOCALIZE[515]"/>
-	<setting id="widgetsortby" value="country" label="$LOCALIZE[574]"/>
-	<setting id="widgetsortby" value="studio" label="$LOCALIZE[572]"/>
-	<setting id="widgetsortby" value="playlist" label="$LOCALIZE[559]"/>
-	<setting id="widgetsortby" value="episodenumber" label="$LOCALIZE[31643]"/>
-	<setting id="widgetsortby" value="season" label="$LOCALIZE[20373]"/>
-	<setting id="widgetsortby" value="totalepisodes" label="$LOCALIZE[31644]"/>
-	<setting id="widgetsortby" value="tvshowstatus" label="$LOCALIZE[31292]"/>
-	<setting id="widgetsortby" value="title" label="$LOCALIZE[556]"/>
-	<setting id="widgetsortby" value="track" label="$LOCALIZE[554]"/>
-	<setting id="widgetsortby" value="time" label="$LOCALIZE[555]"/>
-	<setting id="widgetsortby" value="artist" label="$LOCALIZE[557]"/>
-	<setting id="widgetsortby" value="album" label="$LOCALIZE[558]"/>
-	<setting id="widgetsortby" value="date" label="$LOCALIZE[552]"/>
-
-    <!-- widgetsortorder -->
-    <setting id="widgetsortorder" value="ascending" label="$LOCALIZE[21430]"/>
-    <setting id="widgetsortorder" value="descending" label="$LOCALIZE[21431]"/>
-
-    <!-- Widget Limit -->
-    <setting id="widgetlimit" value="$INFO[Skin.String(WidgetsGlobalLimit)]" label="$LOCALIZE[571]"/>
+	<!-- widgetsortby categories -->
+    <setting id="$VAR[catnum]widgetsortby" value="default" label="$LOCALIZE[571]"/>
+	<setting id="$VAR[catnum]widgetsortby" value="userpreference" label="$LOCALIZE[19349]"/>
+	<setting id="$VAR[catnum]widgetsortby" value="label" label="$LOCALIZE[21899]"/>
+    <setting id="$VAR[catnum]widgetsortby" value="random" label="$LOCALIZE[590]"/>
+	<setting id="$VAR[catnum]widgetsortby" value="dateadded" label="$LOCALIZE[570]"/>
+	<setting id="$VAR[catnum]widgetsortby" value="lastplayed" label="$LOCALIZE[568]"/>
+	<setting id="$VAR[catnum]widgetsortby" value="playcount" label="$LOCALIZE[567]"/>
+    <setting id="$VAR[catnum]widgetsortby" value="year" label="$LOCALIZE[562]"/>
+	<setting id="$VAR[catnum]widgetsortby" value="rating" label="$LOCALIZE[563]"/>
+    <setting id="$VAR[catnum]widgetsortby" value="userrating" label="$LOCALIZE[38018]"/>
+    <setting id="$VAR[catnum]widgetsortby" value="votes" label="$LOCALIZE[205]"/>
+	<setting id="$VAR[catnum]widgetsortby" value="genre" label="$LOCALIZE[515]"/>
+	<setting id="$VAR[catnum]widgetsortby" value="country" label="$LOCALIZE[574]"/>
+	<setting id="$VAR[catnum]widgetsortby" value="studio" label="$LOCALIZE[572]"/>
+	<setting id="$VAR[catnum]widgetsortby" value="playlist" label="$LOCALIZE[559]"/>
+	<setting id="$VAR[catnum]widgetsortby" value="episodenumber" label="$LOCALIZE[31342]"/>
+	<setting id="$VAR[catnum]widgetsortby" value="season" label="$LOCALIZE[20373]"/>
+	<setting id="$VAR[catnum]widgetsortby" value="totalepisodes" label="$LOCALIZE[31341]"/>
+	<setting id="$VAR[catnum]widgetsortby" value="tvshowstatus" label="$LOCALIZE[31292]"/>
+	<setting id="$VAR[catnum]widgetsortby" value="title" label="$LOCALIZE[556]"/>
+	<setting id="$VAR[catnum]widgetsortby" value="track" label="$LOCALIZE[554]"/>
+	<setting id="$VAR[catnum]widgetsortby" value="time" label="$LOCALIZE[555]"/>
+	<setting id="$VAR[catnum]widgetsortby" value="artist" label="$LOCALIZE[557]"/>
+	<setting id="$VAR[catnum]widgetsortby" value="album" label="$LOCALIZE[558]"/>
+	<setting id="$VAR[catnum]widgetsortby" value="date" label="$LOCALIZE[552]"/>
+	
+	<!-- widgetsortorder -->
+    <setting id="$VAR[catnum]widgetsortorder" value="ascending" label="$LOCALIZE[21430]"/>
+    <setting id="$VAR[catnum]widgetsortorder" value="descending" label="$LOCALIZE[21431]"/>
+	
+	<!-- Widget Limit Categories -->
+    <setting id="$VAR[catnum]widgetlimit" value="$INFO[Skin.String(WidgetsGlobalLimit)]" label="$LOCALIZE[571]" condition="Window.IsActive(1106)"/>
+    <setting id="$VAR[catnum]widgetlimit" value="5" label="5" condition="Window.IsActive(1106)"/>
+    <setting id="$VAR[catnum]widgetlimit" value="10" label="10" condition="Window.IsActive(1106)"/>
+    <setting id="$VAR[catnum]widgetlimit" value="15" label="15" condition="Window.IsActive(1106)"/>
+    <setting id="$VAR[catnum]widgetlimit" value="20" label="20" condition="Window.IsActive(1106)"/>
+    <setting id="$VAR[catnum]widgetlimit" value="25" label="25" condition="Window.IsActive(1106)"/>
+    <setting id="$VAR[catnum]widgetlimit" value="30" label="30" condition="Window.IsActive(1106)"/>
+    <setting id="$VAR[catnum]widgetlimit" value="50" label="50" condition="Window.IsActive(1106)"/>
+    <setting id="$VAR[catnum]widgetlimit" value="75" label="75" condition="Window.IsActive(1106)"/>
+    <setting id="$VAR[catnum]widgetlimit" value="100" label="100" condition="Window.IsActive(1106)"/>
+    <setting id="$VAR[catnum]widgetlimit" value="150" label="150" condition="Window.IsActive(1106)"/>
+    <setting id="$VAR[catnum]widgetlimit" value="200" label="200" condition="Window.IsActive(1106)"/>
+	
+	<!-- Widget Limit -->
+	<setting id="widgetlimit" value="$INFO[Skin.String(WidgetsGlobalLimit)]" label="$LOCALIZE[571]"/>
     <setting id="widgetlimit" value="$NUMBER[5]" label="$NUMBER[5]"/>
     <setting id="widgetlimit" value="$NUMBER[10]" label="$NUMBER[10]"/>
     <setting id="widgetlimit" value="$NUMBER[15]" label="$NUMBER[15]"/>
@@ -55,11 +70,11 @@
     <setting id="widgetlimit" value="$NUMBER[200]" label="$NUMBER[200]"/>
 	
 	<!-- Widget Target -->
-    <setting id="widgettarget" value="videos" label="$LOCALIZE[3]"/>
-    <setting id="widgettarget" value="music" label="$LOCALIZE[2]"/>
-	<setting id="widgettarget" value="programs" label="$LOCALIZE[0]"/>
-    <setting id="widgettarget" value="pictures" label="$LOCALIZE[1]"/>
-	<setting id="widgettarget" value="tvguide" label="$LOCALIZE[4]"/>
+    <setting id="$VAR[catnum]widgettarget" value="videos" label="$LOCALIZE[3]"/>
+    <setting id="$VAR[catnum]widgettarget" value="music" label="$LOCALIZE[2]"/>
+	<setting id="$VAR[catnum]widgettarget" value="programs" label="$LOCALIZE[0]"/>
+    <setting id="$VAR[catnum]widgettarget" value="pictures" label="$LOCALIZE[1]"/>
+	<setting id="$VAR[catnum]widgettarget" value="tvguide" label="$LOCALIZE[4]"/>
 
     <!-- media flags -->
 	<setting id="mediaflagsstyle" value="large_color" label="$LOCALIZE[31090]" icon="special://skin/extras/viewthumbs/flags_large_color.jpg" description="">
@@ -178,22 +193,27 @@
     <!-- Volume Indicator Style -->
     <setting id="volumestyle" value="modern" label="$LOCALIZE[31228]" condition="" icon="special://skin/extras/viewthumbs/volumestyle_modern.jpg" description=""/>
     <setting id="volumestyle" value="classic" label="$LOCALIZE[31210]" condition="" icon="special://skin/extras/viewthumbs/volumestyle_classic.jpg" description=""/>
-
-    <!-- display tags on widgets -->
-    <setting id="Widgets_DisplayTags" value="enable" label="$LOCALIZE[305]" condition="" icon="" description=""/>
-	<setting id="Widgets_DisplayTags" value="disable" label="$LOCALIZE[1223]" condition="" icon="" description=""/>
+	
+	<!-- display tags on widgets -->
+    <setting id="$VAR[catnum]Widgets_DisplayTags" value="enable" label="$LOCALIZE[305]" condition="" icon="" description=""/>
+	<setting id="$VAR[catnum]Widgets_DisplayTags" value="disable" label="$LOCALIZE[1223]" condition="" icon="" description=""/>
 
     <!-- display tags in Views -->
-	<setting id="Views_DisplayTags" value="enable" label="$LOCALIZE[31642]" condition="" icon="" description=""/>
-	<setting id="Views_DisplayTags" value="episodes" label="$LOCALIZE[31579]" condition="" icon="" description=""/>
+	<setting id="Views_DisplayTags" value="enable" label="$LOCALIZE[31489]" condition="" icon="" description=""/>
+	<setting id="Views_DisplayTags" value="episodes" label="$LOCALIZE[31511]" condition="" icon="" description=""/>
 	<setting id="Views_DisplayTags" value="music" label="$LOCALIZE[31293]" condition="" icon="" description=""/>
 	<setting id="Views_DisplayTags" value="both" label="$LOCALIZE[31294]" condition="" icon="" description=""/>
 	<setting id="Views_DisplayTags" value="disable" label="$LOCALIZE[1223]" condition="" icon="" description=""/>
 	
+	<!-- Landscape Sublabel -->
+	<setting id="LandscapeSublabel" value="genre" label="$LOCALIZE[515]" condition="" icon="" description=""/>
+	<setting id="LandscapeSublabel" value="tagline" label="$LOCALIZE[202]" condition="" icon="" description=""/>
+	<setting id="LandscapeSublabel" value="studio" label="$LOCALIZE[572]" condition="" icon="" description=""/>
+	
 	<!-- air date - multiselect -->
     <setting id="air_date" value="||MULTISELECT||" label="" condition="" icon="" description="">
         <option id="AirDateMovies" label="$LOCALIZE[342]" condition=""/>
-		<option id="AirDateShows" label="$LOCALIZE[31590]" condition=""/>
+		<option id="AirDateShows" label="$LOCALIZE[31566]" condition=""/>
 		<option id="AirDateSeasons" label="$LOCALIZE[33054]" condition=""/>
         <option id="AirDateEpisodes" label="$LOCALIZE[20360]" condition=""/>	
     </setting>
@@ -212,31 +232,22 @@
 	<setting id="splash_screen" value="bingie_image" label="$LOCALIZE[31041]" condition="" icon="" description=""/>
 	<setting id="splash_screen" value="none" label="$LOCALIZE[231]" condition="" icon="" description=""/>
 	
-	<!-- season greetings -->
-    <setting id="season_greetings" value="snow_animation" label="$LOCALIZE[31264]" condition="" icon="" description=""/>
-    <setting id="season_greetings" value="halloween_animation" label="$LOCALIZE[31262]" condition="" icon="" description=""/>
-	<setting id="season_greetings" value="none" label="$LOCALIZE[231]" condition="" icon="" description=""/>
-	
 	<!-- scrollbar visibility -->
 	<setting id="scrollbar_visibility" value="" label="$LOCALIZE[571]" condition="" icon="" description=""/>
     <setting id="scrollbar_visibility" value="always_show" label="$LOCALIZE[31125]" condition="" icon="" description=""/>
     <setting id="scrollbar_visibility" value="always_hide" label="$LOCALIZE[31067]" condition="" icon="" description=""/>
 	
-	<!-- categories types -->
-	<setting id="categories_types" value="Auto" label="$LOCALIZE[31490]" condition="" icon="" description=""/>
-	<setting id="categories_types" value="TMDbBingieHelperList" label="$LOCALIZE[31491]" condition="" icon="" description=""/>
-	
 	<!-- ratings to show on home - multiselect -->
     <setting id="ratings" value="||MULTISELECT||" label="" condition="" icon="" description="">
-        <option id="ratings_IMDB" label="$LOCALIZE[31598]" condition=""/>
-        <option id="ratings_Top250" label="$LOCALIZE[31610]" condition=""/>
+        <option id="ratings_IMDB" label="$LOCALIZE[31357]" condition=""/>
+        <option id="ratings_Top250" label="$LOCALIZE[31244]" condition=""/>
         <option id="ratings_RT" label="$LOCALIZE[31116]" condition=""/>
-        <option id="ratings_RTAudience" label="$LOCALIZE[31612]" condition=""/>
-        <option id="ratings_TMdb" label="$LOCALIZE[31584]" condition=""/>
-		<option id="ratings_Trakt" label="$LOCALIZE[31607]" condition=""/>
-        <option id="ratings_Metacritic" label="$LOCALIZE[31606]" condition=""/>
+        <option id="ratings_RTAudience" label="$LOCALIZE[31104]" condition=""/>
+        <option id="ratings_TMdb" label="$LOCALIZE[31295]" condition=""/>
+		<option id="ratings_Trakt" label="$LOCALIZE[31483]" condition=""/>
+        <option id="ratings_Metacritic" label="$LOCALIZE[31124]" condition=""/>
 		<option id="ratings_Letterboxd" label="$LOCALIZE[31140]" condition=""/>
-        <option id="ratings_Oscar" label="$LOCALIZE[31608]" condition=""/>
+        <option id="ratings_Oscar" label="$LOCALIZE[31482]" condition=""/>
 		<option id="ratings_GoldenGlobe" label="$LOCALIZE[31502]" condition=""/>
 		<option id="ratings_Emmy" label="$LOCALIZE[31494]" condition=""/>
     </setting>
@@ -257,20 +268,22 @@
     <!-- options to show in videoinfo - multiselect -->
     <setting id="videoinfo_buttons" value="||MULTISELECT||" label="" condition="" icon="" description="">
 	    <option id="videoinfo_button_myrating" label="$LOCALIZE[31433]" condition="Skin.HasSetting(UseBingieInfoDialog)"/>
-		<option id="videoinfo_button_play_beginning" label="$LOCALIZE[31630]" condition=""/>
+		<option id="videoinfo_button_play_beginning" label="$LOCALIZE[31195]" condition=""/>
 		<option id="videoinfo_button_play_next" label="$LOCALIZE[31549]" condition="[Library.HasContent(Movies) | Library.HasContent(TVShows)]"/>
 		<option id="videoinfo_button_play_next_tmdb" label="$LOCALIZE[31528]" condition=""/>
         <option id="videoinfo_button_trailer" label="$LOCALIZE[31480]" condition=""/>
 		<option id="videoinfo_button_trailersandmore" label="$LOCALIZE[31247]" condition="Skin.HasSetting(UseBingieInfoDialog)"/>
-        <option id="videoinfo_button_mylist" label="$LOCALIZE[31126]" condition="!Skin.HasSetting(UseBingieInfoDialog)"/>
-		<option id="videoinfo_button_mylist" label="$LOCALIZE[31534]" condition="Skin.HasSetting(UseBingieInfoDialog) + [Library.HasContent(Movies) | Library.HasContent(TVShows)]"/>
+        <option id="videoinfo_button_mylist" label="$LOCALIZE[31534]" condition="!Skin.HasSetting(UseBingieInfoDialog) + [Library.HasContent(Movies) | Library.HasContent(TVShows)]"/>
+		<option id="videoinfo_button_mylist" label="$LOCALIZE[31086]" condition="Skin.HasSetting(UseBingieInfoDialog) + [Library.HasContent(Movies) | Library.HasContent(TVShows)]"/>
+		<option id="videoinfo_button_favorites" label="$LOCALIZE[31126]" condition="!Skin.HasSetting(UseBingieInfoDialog)"/>
+		<option id="videoinfo_button_favorites" label="$LOCALIZE[31155]" condition="Skin.HasSetting(UseBingieInfoDialog)"/>
 		<option id="videoinfo_button_trakt" label="$LOCALIZE[31153]" condition="!Skin.HasSetting(UseBingieInfoDialog)"/>
-		<option id="videoinfo_button_trakt" label="$LOCALIZE[31155]" condition="Skin.HasSetting(UseBingieInfoDialog)"/>
-        <option id="videoinfo_button_plot" label="$LOCALIZE[31615]" condition="Skin.HasSetting(UseBingieInfoDialog)"/>
+		<option id="videoinfo_button_trakt" label="$LOCALIZE[31148]" condition="Skin.HasSetting(UseBingieInfoDialog)"/>
+        <option id="videoinfo_button_plot" label="$LOCALIZE[31420]" condition="Skin.HasSetting(UseBingieInfoDialog)"/>
         <option id="videoinfo_button_cast" label="$LOCALIZE[31246]" condition="Skin.HasSetting(UseBingieInfoDialog)"/>
 		<option id="videoinfo_button_moreinfo" label="$LOCALIZE[31187]" condition="!Skin.HasSetting(UseBingieInfoDialog)"/>
 		<option id="videoinfo_button_wikipedia" label="$LOCALIZE[31094]" condition="Skin.HasSetting(UseBingieInfoDialog)"/>
-        <option id="videoinfo_button_similar" label="$LOCALIZE[31622]" condition=""/>
+        <option id="videoinfo_button_similar" label="$LOCALIZE[31458]" condition=""/>
 		<option id="videoinfo_button_versions" label="$LOCALIZE[40013]" condition="[Library.HasContent(Movies) | Library.HasContent(TVShows)]"/>
         <option id="videoinfo_button_artwork" label="$LOCALIZE[13511]"  condition=""/>
         <option id="videoinfo_button_refresh" label="$LOCALIZE[184]" condition=""/>
@@ -281,56 +294,24 @@
         <option id="videoinfo_details_cast" label="$LOCALIZE[206]" condition=""/>
         <option id="videoinfo_details_director" label="$LOCALIZE[20339]" condition=""/>
 		<option id="videoinfo_details_writer" label="$LOCALIZE[20417]" condition=""/>
-        <option id="videoinfo_details_creator" label="$LOCALIZE[31244]" condition=""/>
+        <option id="videoinfo_details_creator" label="$LOCALIZE[31530]" condition=""/>
         <option id="videoinfo_details_genre" label="$LOCALIZE[135]" condition=""/>
-    </setting>
-	
-	<!-- categories - multiselect -->
-    <setting id="categories_list" value="||MULTISELECT||" label="" condition="" icon="" description="">
-        <option id="categories_list_action" label="$LOCALIZE[31469]" condition=""/>
-        <option id="categories_list_dramas" label="$LOCALIZE[31456]" condition=""/>
-        <option id="categories_list_comedies" label="$LOCALIZE[31457]" condition=""/>
-        <option id="categories_list_family" label="$LOCALIZE[31451]" condition=""/>
-        <option id="categories_list_horror" label="$LOCALIZE[31452]" condition=""/>
-        <option id="categories_list_documentaries" label="$LOCALIZE[31159]" condition=""/>
-        <option id="categories_list_anime" label="$LOCALIZE[31046]" condition=""/>
-		<option id="categories_list_crime" label="$LOCALIZE[31448]" condition=""/>
-        <option id="categories_list_fantasy" label="$LOCALIZE[31446]" condition=""/>
-        <option id="categories_list_history" label="$LOCALIZE[31442]" condition=""/>
-        <option id="categories_list_animations" label="$LOCALIZE[31435]" condition=""/>
-		<option id="categories_list_musicals" label="$LOCALIZE[31049]" condition=""/>
-		<option id="categories_list_romance" label="$LOCALIZE[31427]" condition=""/>
-		<option id="categories_list_sci-fi" label="$LOCALIZE[31428]" condition=""/>
-        <option id="categories_list_mysteries" label="$LOCALIZE[31414]" condition=""/>
-        <option id="categories_list_thriller" label="$LOCALIZE[31398]" condition=""/>
-        <option id="categories_list_westerns" label="$LOCALIZE[31399]" condition=""/>
-        <option id="categories_list_tvaction" label="$LOCALIZE[31386]" condition=""/>
-        <option id="categories_list_tvdramas" label="$LOCALIZE[31381]" condition=""/>
-        <option id="categories_list_tvcomedies" label="$LOCALIZE[31382]" condition=""/>
-		<option id="categories_list_tvfamily" label="$LOCALIZE[31376]" condition=""/>
-        <option id="categories_list_tvdocumentaries" label="$LOCALIZE[31377]" condition=""/>
-        <option id="categories_list_tvcrime" label="$LOCALIZE[31372]" condition=""/>
-        <option id="categories_list_tvfantasy" label="$LOCALIZE[31373]" condition=""/>
-		<option id="categories_list_tvwar" label="$LOCALIZE[31374]" condition=""/>
-		<option id="categories_list_tvanimations" label="$LOCALIZE[31364]" condition=""/>
-		<option id="categories_list_tvmysteries" label="$LOCALIZE[31352]" condition=""/>
-        <option id="categories_list_tvwesterns" label="$LOCALIZE[31353]" condition=""/>
     </setting>
 
     <!-- Show/Hide OSD Buttons - multiselect -->
     <setting id="bingie_osd_buttons" value="||MULTISELECT||" label="" condition="" icon="" description="">	 
 		<option id="bingie_osd_buttons_back" label="$LOCALIZE[13012]" condition=""/>
-		<option id="bingie_osd_buttons_record" label="$LOCALIZE[264]" condition=""/>
+		<option id="bingie_osd_buttons_record" label="$LOCALIZE[264]" condition="PVR.HasTVChannels | PVR.HasRadioChannels"/>
         <option id="bingie_osd_buttons_subtitles" label="$LOCALIZE[287]" condition=""/>
 		<option id="bingie_osd_buttons_audio" label="$LOCALIZE[13396]" condition=""/>
         <option id="bingie_osd_buttons_video" label="$LOCALIZE[13395]" condition=""/>
 		<option id="bingie_osd_buttons_bookmarks" label="$LOCALIZE[298]" condition=""/>
-		<option id="bingie_osd_buttons_channellist" label="$LOCALIZE[10700]" condition=""/>
-		<option id="bingie_osd_buttons_pvrguide" label="$LOCALIZE[10702]" condition=""/>
+		<option id="bingie_osd_buttons_channellist" label="$LOCALIZE[10700]" condition="PVR.HasTVChannels | PVR.HasRadioChannels"/>
+		<option id="bingie_osd_buttons_pvrguide" label="$LOCALIZE[10702]" condition="PVR.HasTVChannels | PVR.HasRadioChannels"/>
 		<option id="bingie_osd_buttons_play_beginning" label="$LOCALIZE[12021]" condition=""/>		
 		<option id="bingie_osd_buttons_playlist" label="$LOCALIZE[559]" condition=""/>
 		<option id="bingie_osd_buttons_viz" label="$LOCALIZE[250]" condition=""/>
-		<option id="bingie_osd_buttons_lyrics" label="$LOCALIZE[24013]" condition=""/>
+		<option id="bingie_osd_buttons_lyrics" label="$LOCALIZE[24013]" condition="System.HasAddon(script.cu.lrclyrics)"/>
 		<option id="bingie_osd_buttons_info" label="$LOCALIZE[19033]" condition=""/>
     </setting>
 	

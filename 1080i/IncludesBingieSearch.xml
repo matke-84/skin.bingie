@@ -31,7 +31,7 @@
         <value condition="Control.HasFocus(1007) + String.IsEmpty(Skin.String(CustomSearchTerm))">$LOCALIZE[31558]</value>
         <value condition="String.IsEmpty(Skin.String(CustomSearchTerm)) + Library.HasContent(Movies) | Library.HasContent(TVShows)">$LOCALIZE[31255]</value>
 		<value condition="String.IsEmpty(Skin.String(CustomSearchTerm)) + !Library.HasContent(Movies) + !Library.HasContent(TVShows)">$LOCALIZE[31186]</value>
-        <value>$LOCALIZE[31578]</value>
+        <value>$LOCALIZE[31261]</value>
     </variable>
 
     <variable name="SuggestionBorderColor">
@@ -43,216 +43,184 @@
     <!-- Static Search Suggestions -->
     <include name="Search_Suggestions_Content">
         <content>
-            <item>
-                <label>$LOCALIZE[31078]</label>
-                <property name="path">special://skin/playlists/blockbustermovies.xsp</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-            <item>
-                <label>$LOCALIZE[31079]</label>
-                <property name="path">special://skin/playlists/bingeworthyshows.xsp</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-            <item>
-                <label>$LOCALIZE[31300]</label>
-                <property name="path">special://skin/playlists/watchitagainmovies.xsp</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
 			<item>
-                <label>$LOCALIZE[31556]</label>
-                <property name="path">special://skin/playlists/watchitagaintvshows.xsp</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-			<item>
-                <label>[CAPITALIZE]$LOCALIZE[20386][/CAPITALIZE]</label>
-                <property name="path">special://skin/playlists/recentlyaddedmovies.xsp</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-            <item>
-                <label>[CAPITALIZE]$LOCALIZE[31101][/CAPITALIZE]</label>
-                <property name="path">special://skin/playlists/recentlyaddedshows.xsp</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-            <item>
                 <label>$LOCALIZE[31532]</label>
-                <property name="path">special://skin/playlists/criticallyacclaimedmovies.xsp</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-            <item>
-                <label>$LOCALIZE[31098]</label>
-                <property name="path">special://skin/playlists/criticallyacclaimedtvshows.xsp</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-            <item>
-                <label>$LOCALIZE[31536]</label>
-                <property name="path">special://skin/playlists/actionandcrimemovies.xsp</property>
+                <property name="path">special://skin/extras/widgetplaylists/criticallyacclaimedmovies.xsp</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
-                <label>$LOCALIZE[31164]</label>
-                <property name="path">special://skin/playlists/actionandcrimeseries.xsp</property>
+                <label>$LOCALIZE[31339]</label>
+                <property name="path">special://skin/extras/widgetplaylists/topratedmovies.xsp</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
-                <label>$LOCALIZE[31159]</label>
-                <property name="path">special://skin/playlists/documentaries.xsp</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-            <item>
-                <label>$LOCALIZE[31160]</label>
-                <property name="path">special://skin/playlists/docuseries.xsp</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-            <item>
-                <label>$LOCALIZE[31162]</label>
-                <property name="path">special://skin/playlists/adventureandfantasymovies.xsp</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-            <item>
-                <label>$LOCALIZE[31163]</label>
-                <property name="path">special://skin/playlists/adventureandfantasyseries.xsp</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-            <item>
-                <label>$LOCALIZE[31277]</label>
-                <property name="path">special://skin/playlists/imdbtop250movies.xsp</property>
+				<label>[CAPITALIZE]$LOCALIZE[20386][/CAPITALIZE]</label>
+                <property name="path">special://skin/extras/widgetplaylists/recentlyaddedmovies.xsp</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
-                <label>$LOCALIZE[31443]</label>
-                <property name="path">special://skin/playlists/imdbtop250TV.xsp</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-            <item>
-                <label>$LOCALIZE[31194]</label>
-                <property name="path">special://skin/playlists/syfymovies.xsp</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-            <item>
-                <label>$LOCALIZE[31195]</label>
-                <property name="path">special://skin/playlists/syfyseries.xsp</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-            <item>
-                <label>$LOCALIZE[31196]</label>
-                <property name="path">special://skin/playlists/thrillerandsuspensemovies.xsp</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-            <item>
-                <label>$LOCALIZE[31197]</label>
-                <property name="path">special://skin/playlists/thrillerandsuspenseseries.xsp</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-        </content>
-    </include>
-	
-	<!-- Static Search Suggestions Movies -->
-    <include name="Search_Suggestions_Movies">
-        <content>
-            <item>
-                <label>$LOCALIZE[31078]</label>
-                <property name="path">special://skin/playlists/blockbustermovies.xsp</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-            <item>
                 <label>$LOCALIZE[31300]</label>
-                <property name="path">special://skin/playlists/watchitagainmovies.xsp</property>
+                <property name="path">special://skin/extras/widgetplaylists/watchitagainmovies.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31469]</label>
+                <property name="path">special://skin/extras/categories/actionadventure.xsp</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
             <item>
-                <label>[CAPITALIZE]$LOCALIZE[20386][/CAPITALIZE]</label>
-                <property name="path">special://skin/playlists/recentlyaddedmovies.xsp</property>
+                <label>$LOCALIZE[31456]</label>
+                <property name="path">special://skin/extras/categories/dramas.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31457]</label>
+                <property name="path">special://skin/extras/categories/comedies.xsp</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
             <item>
-                <label>$LOCALIZE[31532]</label>
-                <property name="path">special://skin/playlists/criticallyacclaimedmovies.xsp</property>
+                <label>$LOCALIZE[31451]</label>
+                <property name="path">special://skin/extras/categories/kidsandfamily.xsp</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
-            <item>
-                <label>$LOCALIZE[31536]</label>
-                <property name="path">special://skin/playlists/actionandcrimemovies.xsp</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-            <item>
-                <label>$LOCALIZE[31162]</label>
-                <property name="path">special://skin/playlists/adventureandfantasymovies.xsp</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-            <item>
-                <label>$LOCALIZE[31277]</label>
-                <property name="path">special://skin/playlists/imdbtop250movies.xsp</property>
+			<item>
+				<label>$LOCALIZE[31452]</label>
+                <property name="path">special://skin/extras/categories/horror.xsp</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
             <item>
                 <label>$LOCALIZE[31159]</label>
-                <property name="path">special://skin/playlists/documentaries.xsp</property>
+                <property name="path">special://skin/extras/categories/documentaries.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31046]</label>
+                <property name="path">special://skin/extras/categories/anime.xsp</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
             <item>
-                <label>$LOCALIZE[31194]</label>
-                <property name="path">special://skin/playlists/syfymovies.xsp</property>
+                <label>$LOCALIZE[31448]</label>
+                <property name="path">special://skin/extras/categories/crime.xsp</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
             <item>
-                <label>$LOCALIZE[31196]</label>
-                <property name="path">special://skin/playlists/thrillerandsuspensemovies.xsp</property>
+                <label>$LOCALIZE[31446]</label>
+                <property name="path">special://skin/extras/categories/fantasy.xsp</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
-        </content>
-    </include>
-	
-	<!-- Static Search Suggestions -->
-    <include name="Search_Suggestions_TVShows">
-        <content>
+			<item>
+                <label>$LOCALIZE[31442]</label>
+                <property name="path">special://skin/extras/categories/historywar.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31435]</label>
+                <property name="path">special://skin/extras/categories/animations.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
             <item>
+                <label>$LOCALIZE[31049]</label>
+                <property name="path">special://skin/extras/categories/musicandmusical.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31427]</label>
+                <property name="path">special://skin/extras/categories/romance.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31428]</label>
+                <property name="path">special://skin/extras/categories/scifi.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+				<label>$LOCALIZE[31414]</label>
+                <property name="path">special://skin/extras/categories/mysteries.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31398]</label>
+                <property name="path">special://skin/extras/categories/thriller.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31399]</label>
+                <property name="path">special://skin/extras/categories/westerns.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
                 <label>$LOCALIZE[31079]</label>
-                <property name="path">special://skin/playlists/bingeworthyshows.xsp</property>
+                <property name="path">special://skin/extras/widgetplaylists/bingeworthyshows.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31340]</label>
+                <property name="path">special://skin/extras/widgetplaylists/topratedtvshows.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>[CAPITALIZE]$LOCALIZE[31101][/CAPITALIZE]</label>
+                <property name="path">special://skin/extras/widgetplaylists/recentlyaddedtvshows.xsp</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
                 <label>$LOCALIZE[31556]</label>
-                <property name="path">special://skin/playlists/watchitagaintvshows.xsp</property>
+                <property name="path">special://skin/extras/widgetplaylists/watchitagaintvshows.xsp</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
             <item>
-                <label>[CAPITALIZE]$LOCALIZE[31101][/CAPITALIZE]</label>
-                <property name="path">special://skin/playlists/recentlyaddedshows.xsp</property>
+                <label>$LOCALIZE[31386]</label>
+                <property name="path">special://skin/extras/categories/tvactionadventure.xsp</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
             <item>
-                <label>$LOCALIZE[31098]</label>
-                <property name="path">special://skin/playlists/criticallyacclaimedtvshows.xsp</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-            <item>
-                <label>$LOCALIZE[31164]</label>
-                <property name="path">special://skin/playlists/actionandcrimeseries.xsp</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-            <item>
-                <label>$LOCALIZE[31160]</label>
-                <property name="path">special://skin/playlists/docuseries.xsp</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-            <item>
-                <label>$LOCALIZE[31163]</label>
-                <property name="path">special://skin/playlists/adventureandfantasyseries.xsp</property>
+                <label>$LOCALIZE[31381]</label>
+                <property name="path">special://skin/extras/categories/tvdramas.xsp</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
 			<item>
-                <label>$LOCALIZE[31443]</label>
-                <property name="path">special://skin/playlists/imdbtop250TV.xsp</property>
+                <label>$LOCALIZE[31382]</label>
+                <property name="path">special://skin/extras/categories/tvcomedies.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31376]</label>
+                <property name="path">special://skin/extras/categories/tvkidsandfamily.xsp</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
             <item>
-                <label>$LOCALIZE[31195]</label>
-                <property name="path">special://skin/playlists/syfyseries.xsp</property>
+                <label>$LOCALIZE[31377]</label>
+                <property name="path">special://skin/extras/categories/tvdocumentaries.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+				<label>$LOCALIZE[31372]</label>
+                <property name="path">special://skin/extras/categories/tvcrime.xsp</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
             <item>
-                <label>$LOCALIZE[31197]</label>
-                <property name="path">special://skin/playlists/thrillerandsuspenseseries.xsp</property>
+                <label>$LOCALIZE[31373]</label>
+                <property name="path">special://skin/extras/categories/tvscififantasy.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31374]</label>
+                <property name="path">special://skin/extras/categories/tvwarpolitics.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31364]</label>
+                <property name="path">special://skin/extras/categories/tvanimations.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+            <item>
+                <label>$LOCALIZE[31352]</label>
+                <property name="path">special://skin/extras/categories/tvmysteries.xsp</property>
+                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
+            </item>
+			<item>
+                <label>$LOCALIZE[31353]</label>
+                <property name="path">special://skin/extras/categories/tvwesterns.xsp</property>
                 <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
             </item>
         </content>
@@ -358,113 +326,6 @@
             </item>			
         </content>
     </include>
-	
-	<!-- Static Search TMDB and Trakt Suggestions Movies -->
-    <include name="Search_Suggestions_Movies_2">
-        <content>
-			<item>
-                <label>$LOCALIZE[31432]</label>
-                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trending_day&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-			<item>
-                <label>$LOCALIZE[31454]</label>
-                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trending_week&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-			<item>
-                <label>$LOCALIZE[31347]</label>
-                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=popular&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-			<item>
-                <label>$LOCALIZE[31339]</label>
-                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=top_rated&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-			<item>
-                <label>$LOCALIZE[31343]</label>
-                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=revenue_movies&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-			<item>
-                <label>$LOCALIZE[31335]</label>
-                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=most_voted&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-            <item>
-                <label>$LOCALIZE[31337]</label>
-                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trakt_trending&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-            <item>
-                <label>$LOCALIZE[31326]</label>
-                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trakt_popular&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-			<item>
-                <label>$LOCALIZE[31313]</label>
-                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trakt_mostplayed&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-			<item>
-                <label>$LOCALIZE[31315]</label>
-                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trakt_mostviewers&amp;tmdb_type=movie&amp;nextpage=false&amp;length=1</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>		
-        </content>
-    </include>
-	
-	<!-- Static Search TMDB and Trakt Suggestions TV Shows -->
-    <include name="Search_Suggestions_TVShows_2">
-        <content>
-			<item>
-                <label>$LOCALIZE[31453]</label>
-                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trending_day&amp;tmdb_type=tv&amp;nextpage=false&amp;length=1</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-			<item>
-                <label>$LOCALIZE[31540]</label>
-                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trending_week&amp;tmdb_type=tv&amp;nextpage=false&amp;length=1</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-			<item>
-                <label>$LOCALIZE[31346]</label>
-                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=popular&amp;tmdb_type=tv&amp;nextpage=false&amp;length=1</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-			<item>
-                <label>$LOCALIZE[31340]</label>
-                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=top_rated&amp;tmdb_type=tv&amp;nextpage=false&amp;length=1</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-			<item>
-                <label>$LOCALIZE[31336]</label>
-                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=most_voted&amp;tmdb_type=tv&amp;nextpage=false&amp;length=1</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-			<item>
-                <label>$LOCALIZE[31328]</label>
-                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trakt_trending&amp;tmdb_type=tv&amp;nextpage=false&amp;length=1</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-			<item>
-                <label>$LOCALIZE[31319]</label>
-                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trakt_popular&amp;tmdb_type=tv&amp;nextpage=false&amp;length=1</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-			<item>
-                <label>$LOCALIZE[31314]</label>
-                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trakt_mostplayed&amp;tmdb_type=tv&amp;nextpage=false&amp;length=1</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>
-			<item>
-                <label>$LOCALIZE[31316]</label>
-                <property name="path">plugin://plugin.video.tmdb.bingie.helper?info=trakt_mostviewers&amp;tmdb_type=tv&amp;nextpage=false&amp;length=1</property>
-                <visible>String.IsEmpty(Skin.String(CustomSearchTerm))</visible>
-            </item>			
-        </content>
-    </include>
 
     <!-- Search Radio Key -->
     <include name="SearchRadioKey">
@@ -532,7 +393,6 @@
         <selectedcolor>$INFO[Skin.String(BingieButtonFocusTextColor)]</selectedcolor>
         <textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
 		<focusedcolor>$INFO[Skin.String(BingieButtonFocusTextColor)]</focusedcolor>
-		<disabledcolor>ffaaaaaa</disabledcolor>
         <pulseonselect>false</pulseonselect>
         <texturefocus border="20">dialogs/keyboard/key-nf2.png</texturefocus>
         <texturenofocus colordiffuse="ff1b1b1b" border="20">dialogs/keyboard/key-nf.png</texturenofocus>
@@ -546,7 +406,6 @@
         <selectedcolor>$INFO[Skin.String(BingieButtonFocusTextColor)]</selectedcolor>
         <textcolor>$INFO[Skin.String(BingieButtonTextColor)]</textcolor>
 		<focusedcolor>$INFO[Skin.String(BingieButtonFocusTextColor)]</focusedcolor>
-		<disabledcolor>ffaaaaaa</disabledcolor>
         <pulseonselect>false</pulseonselect>
         <texturefocus border="20">dialogs/keyboard/key-nf2.png</texturefocus>
         <texturenofocus colordiffuse="ff1b1b1b" border="20">dialogs/keyboard/key-nf.png</texturenofocus>
@@ -882,7 +741,7 @@
                 <onback>$PARAM[onback]</onback>
                 <onup>$PARAM[onup]</onup>
                 <ondown>$PARAM[ondown]</ondown>
-                <onright condition="!Container(500).IsUpdating">$PARAM[onright]</onright>
+                <onright condition="!Container(500).IsUpdating | !String.IsEmpty(Skin.String(CustomSearchTerm))">$PARAM[onright]</onright>
                 <onleft>$PARAM[onleft]</onleft>
                 <align>left</align>
                 <itemlayout width="$PARAM[width]" height="65">
@@ -964,7 +823,7 @@
         <definition>
             <control type="panel" id="$PARAM[id]">
                 <nested />
-				<animation effect="fade" start="0" end="100" time="1" delay="20" condition="ControlGroup(77777).HasFocus() | Control.HasFocus(1007) | [Control.HasFocus(900) + !String.IsEmpty(Window.Property(KeepSuggestions))]">Conditional</animation>  
+				<animation effect="fade" start="0" end="100" time="1" delay="50" condition="ControlGroup(77777).HasFocus() | Control.HasFocus(1007) | [Control.HasFocus(900) + !String.IsEmpty(Window.Property(KeepSuggestions))]">Conditional</animation>  
 				<animation effect="fade" start="100" end="0" time="0" condition="!String.IsEmpty(Window.Property(SearchPosterAnimation)) + Container(500).IsUpdating + String.IsEmpty(Skin.String(CustomSearchTerm)) + !String.IsEmpty(Window.Property(SuggestionPath))">Conditional</animation>             
 				<visible>Container(500).IsUpdating | Integer.IsGreater(Container(500).NumItems,0) | $PARAM[force_visible]</visible>
                 <visible>$PARAM[visibility]</visible>
@@ -1011,7 +870,7 @@
         <definition>
             <control type="panel" id="$PARAM[id]">
                 <nested />
-				<animation effect="fade" start="0" end="100" time="1" delay="20" condition="!String.IsEmpty(Skin.String(CustomSearchTerm))">Conditional</animation>  
+				<animation effect="fade" start="0" end="100" time="1" delay="50" condition="!String.IsEmpty(Skin.String(CustomSearchTerm))">Conditional</animation>  
 				<animation effect="fade" start="100" end="0" time="0" condition="!String.IsEmpty(Window.Property(SearchPosterAnimation)) + Container(500).IsUpdating + String.IsEmpty(Skin.String(CustomSearchTerm)) + !String.IsEmpty(Window.Property(SuggestionPath)) | Container($PARAM[id]).IsUpdating  + !String.IsEmpty(Skin.String(CustomSearchTerm))">Conditional</animation>
                 <visible>Container($PARAM[id]).IsUpdating | Integer.IsGreater(Container($PARAM[id]).NumItems,0) | $PARAM[force_visible]</visible>
                 <visible>$PARAM[visibility]</visible>

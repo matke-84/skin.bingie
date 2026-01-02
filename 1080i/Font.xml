@@ -635,6 +635,11 @@
 			<size>50</size>
         </font>
 		<font>
+            <name>tagsecrow</name>
+            <filename>Netflix-sans-light.ttf</filename>
+			<size>24</size>
+        </font>
+		<font>
             <name>flags</name>
             <filename>Netflix-sans-medium.ttf</filename>
  	  	 	<style>lighten</style>		
@@ -674,7 +679,7 @@
             <filename>Netflix-sans-medium.ttf</filename>
 			<style>lighten</style>
 			<linespacing>0.8</linespacing>
-            <size>84</size>
+            <size>85</size>
         </font>
 		<font>
             <name>title2</name> <!--Clearlogo spotlight content fallback-->
@@ -1386,6 +1391,12 @@
 			<size>49</size>
         </font>
 		<font>
+            <name>tagsecrow</name>
+            <filename>Arial.ttf</filename>
+			<style>lighten</style>
+			<size>23</size>
+        </font>
+		<font>
             <name>flags</name>
             <filename>Arial.ttf</filename>
             <size>23</size>		
@@ -2077,6 +2088,12 @@
             <filename>Inter-Regular.ttf</filename>
 			<style>lighten</style>
 			<size>49</size>
+        </font>
+		<font>
+            <name>tagsecrow</name>
+            <filename>Inter-Regular.ttf</filename>
+			<style>lighten</style>
+			<size>24</size>
         </font>
 		<font>
             <name>flags</name>

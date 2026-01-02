@@ -2,48 +2,48 @@
 <shortcuts>
 	<shortcut>
 		<defaultID>5</defaultID>
-		<label>5</label>
-		<label2>Kodi Command</label2>
+		<label>$LOCALIZE[5]</label>
+		<label2 />
 		<icon>common/settings1.png</icon>
 		<thumb />
 		<action>ActivateWindow(Settings)</action>
 	</shortcut>
 	<shortcut>
 		<defaultID>31501</defaultID>
-		<label>31501</label>
-		<label2>Kodi Command</label2>
+		<label>$LOCALIZE[31501]</label>
+		<label2 />
 		<icon>common/reload-skin.png</icon>
 		<thumb />
 		<action>ReloadSkin()</action>
 	</shortcut>
 	<shortcut>
-		<defaultID>31629</defaultID>
-		<label>31629</label>
-		<label2>Kodi Command</label2>
+		<defaultID>31160</defaultID>
+		<label>$LOCALIZE[31160]</label>
+		<label2 />
 		<icon>common/exit1.png</icon>
 		<thumb />
 		<action>Quit()</action>
 	</shortcut>
 	<shortcut>
 		<defaultID>13013</defaultID>
-		<label>13013</label>
-		<label2>Kodi Command</label2>
+		<label>$LOCALIZE[13013]</label>
+		<label2 />
 		<icon>common/reboot1.png</icon>
 		<thumb />
 		<action>Reset()</action>
 	</shortcut>
 	<shortcut>
 		<defaultID>13016</defaultID>
-		<label>13016</label>
-		<label2>Kodi Command</label2>
+		<label>$LOCALIZE[13016]</label>
+		<label2 />
 		<icon>common/shutdown1.png</icon>
 		<thumb />
 		<action>Powerdown()</action>
 	</shortcut>
 	<shortcut>
 		<defaultID>20126</defaultID>
-		<label>20126</label>
-		<label2>Kodi Command</label2>
+		<label>$LOCALIZE[20126]</label>
+		<label2 />
 		<icon>common/lock.png</icon>
 		<thumb />
 		<action>System.LogOff</action>

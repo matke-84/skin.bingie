@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- BINGIE -->
 <smartplaylist type="tvshows">
     <name>Documentaries</name>
     <match>all</match>
     <rule field="genre" operator="contains">
-        <value>Docu</value>
+        <value>Documentary</value>
     </rule>
-    <rule field="tag" operator="isnot">
-        <value>standup</value>
-        <value>stand up</value>
-        <value>stand-up</value>
-    </rule>
-    <rule field="plot" operator="doesnotcontain">
-        <value>standup</value>
-        <value>stand up</value>
-        <value>stand-up</value>
-    </rule>
-    <order direction="descending">year</order>
+    <order direction="descending">dateadded</order>
     <limit>200</limit>
 </smartplaylist>

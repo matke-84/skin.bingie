@@ -10,7 +10,7 @@
         <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
         <focusedcolor>$INFO[Skin.String(GeneralTextColor)]</focusedcolor>
         <selectedcolor>$INFO[Skin.String(GeneralTextColor)]</selectedcolor>
-        <disabledcolor>aaffffff</disabledcolor>
+        <disabledcolor>$INFO[Skin.String(ButtonDisableTextColor)]</disabledcolor>
         <scroll>false</scroll>
         <scrollspeed>30</scrollspeed>
     </default>
@@ -23,7 +23,7 @@
         <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
         <focusedcolor>$INFO[Skin.String(GeneralTextColor)]</focusedcolor>
         <selectedcolor>$INFO[Skin.String(GeneralTextColor)]</selectedcolor>
-        <disabledcolor>aaffffff</disabledcolor>
+        <disabledcolor>$INFO[Skin.String(ButtonDisableTextColor)]</disabledcolor>
         <scrollspeed>30</scrollspeed>
         <pauseatend>2000</pauseatend>
         <scrollout>false</scrollout>
@@ -45,13 +45,12 @@
         <label/>
         <textcolor fallback="white">$INFO[Skin.String(ButtonTextColor)]</textcolor>
         <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
-        <disabledcolor>aaffffff</disabledcolor>
+        <disabledcolor>$INFO[Skin.String(ButtonDisableTextColor)]</disabledcolor>
         <pulseonselect>false</pulseonselect>
         <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="10">diffuse/panel.png</texturefocus>
         <texturenofocus colordiffuse="$INFO[Skin.String(ButtonColor)]" border="10">diffuse/panel.png</texturenofocus>
         <textoffsetx>50</textoffsetx>
-    </default>
-	
+    </default>	
 	<default type="colorbutton">
         <align>center</align>
         <aligny>center</aligny>
@@ -59,16 +58,15 @@
         <textoffsetx>3</textoffsetx>
         <textcolor fallback="white">$INFO[Skin.String(ButtonTextColor)]</textcolor>
         <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
-		<disabledcolor>aaffffff</disabledcolor>
+		<disabledcolor>$INFO[Skin.String(ButtonDisableTextColor)]</disabledcolor>
         <colorwidth>134</colorwidth>
         <colorheight>28</colorheight>
 		<texturecolormask>diffuse/colorpicker.png</texturecolormask>
-		<texturecolordisabledmask colordiffuse="aaffffff">diffuse/colorpicker.png</texturecolordisabledmask>
+		<texturecolordisabledmask colordiffuse="$INFO[Skin.String(ButtonDisableTextColor)]">diffuse/colorpicker.png</texturecolordisabledmask>
         <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="10">diffuse/panel.png</texturefocus>
         <texturenofocus colordiffuse="$INFO[Skin.String(ButtonColor)]" border="10">diffuse/panel.png</texturenofocus>
         <pulseonselect>false</pulseonselect>
-    </default>
-	
+    </default>	
 	<default type="edit">
         <width>600</width>
         <height>60</height>
@@ -78,7 +76,7 @@
         <label/>
         <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
         <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
-        <disabledcolor>aaffffff</disabledcolor>
+        <disabledcolor>$INFO[Skin.String(ButtonDisableTextColor)]</disabledcolor>
         <pulseonselect>false</pulseonselect>
 		<texturenofocus colordiffuse="$INFO[Skin.String(ButtonColor)]" border="10">diffuse/panel.png</texturenofocus>
         <texturefocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]" border="10">diffuse/panel.png</texturefocus>
@@ -92,7 +90,7 @@
         <font>Reg28</font>
         <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
         <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
-        <disabledcolor>aaffffff</disabledcolor>
+        <disabledcolor>$INFO[Skin.String(ButtonDisableTextColor)]</disabledcolor>
         <align>center</align>
         <aligny>center</aligny>
         <pulseonselect>false</pulseonselect>
@@ -113,11 +111,11 @@
         <label/>
         <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
         <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
-        <disabledcolor>aaffffff</disabledcolor>
+        <disabledcolor>$INFO[Skin.String(ButtonDisableTextColor)]</disabledcolor>
         <textureradiofocus colordiffuse="$INFO[Skin.String(ActiveSpinControlColor)]">common/radio/radio-button-fo.png</textureradiofocus>
         <textureradionofocus colordiffuse="$INFO[Skin.String(ButtonTextColor)]">common/radio/radio-button-nf.png</textureradionofocus>
-        <textureradioondisabled colordiffuse="aaffffff">common/radio/radio-button-fo.png</textureradioondisabled>
-        <textureradiooffdisabled colordiffuse="aaffffff">common/radio/radio-button-nf.png</textureradiooffdisabled>
+        <textureradioondisabled colordiffuse="$INFO[Skin.String(ButtonDisableTextColor)]">common/radio/radio-button-fo.png</textureradioondisabled>
+        <textureradiooffdisabled colordiffuse="$INFO[Skin.String(ButtonDisableTextColor)]">common/radio/radio-button-nf.png</textureradiooffdisabled>
         <textoffsetx>50</textoffsetx>
         <radioposx/>
         <pulseonselect>false</pulseonselect>
@@ -131,15 +129,15 @@
         <font>Reg28</font>
         <textureup colordiffuse="$INFO[Skin.String(ButtonTextColor)]">common/spinctrl/arrow-up-nf.png</textureup>
         <texturedown colordiffuse="$INFO[Skin.String(ButtonTextColor)]">common/spinctrl/arrow-down-nf.png</texturedown>
-        <textureupdisabled colordiffuse="aaffffff">common/spinctrl/arrow-up-nf.png</textureupdisabled>
-        <texturedowndisabled colordiffuse="aaffffff">common/spinctrl/arrow-down-nf.png</texturedowndisabled>
+        <textureupdisabled colordiffuse="$INFO[Skin.String(ButtonDisableTextColor)]">common/spinctrl/arrow-up-nf.png</textureupdisabled>
+        <texturedowndisabled colordiffuse="$INFO[Skin.String(ButtonDisableTextColor)]">common/spinctrl/arrow-down-nf.png</texturedowndisabled>
         <textureupfocus colordiffuse="$INFO[Skin.String(ActiveSpinControlColor)]">common/spinctrl/arrow-up-nf.png</textureupfocus>
         <texturedownfocus colordiffuse="$INFO[Skin.String(ActiveSpinControlColor)]">common/spinctrl/arrow-down-nf.png</texturedownfocus>
         <spinwidth>40</spinwidth>
         <spinheight>60</spinheight>
         <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
         <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
-        <disabledcolor>aaffffff</disabledcolor>
+        <disabledcolor>$INFO[Skin.String(ButtonDisableTextColor)]</disabledcolor>
         <textoffsetx>50</textoffsetx>
         <align>center</align>
         <aligny>center</aligny>
@@ -153,8 +151,8 @@
         <height>23</height>
         <textureup colordiffuse="$INFO[Skin.String(ButtonTextColor)]">common/spinctrl/arrow-up-nf.png</textureup>
         <texturedown colordiffuse="$INFO[Skin.String(ButtonTextColor)]">common/spinctrl/arrow-down-nf.png</texturedown>
-        <textureupdisabled colordiffuse="aaffffff">common/spinctrl/arrow-up-nf.png</textureupdisabled>
-        <texturedowndisabled colordiffuse="aaffffff">common/spinctrl/arrow-down-nf.png</texturedowndisabled>
+        <textureupdisabled colordiffuse="$INFO[Skin.String(ButtonDisableTextColor)]">common/spinctrl/arrow-up-nf.png</textureupdisabled>
+        <texturedowndisabled colordiffuse="$INFO[Skin.String(ButtonDisableTextColor)]">common/spinctrl/arrow-down-nf.png</texturedowndisabled>
         <textureupfocus colordiffuse="$INFO[Skin.String(ActiveSpinControlColor)]">common/spinctrl/arrow-up-nf.png</textureupfocus>
         <texturedownfocus colordiffuse="$INFO[Skin.String(ActiveSpinControlColor)]">common/spinctrl/arrow-down-nf.png</texturedownfocus>
         <spinwidth>40</spinwidth>
@@ -162,7 +160,7 @@
         <font>Reg28</font>
         <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
         <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
-        <disabledcolor>aaffffff</disabledcolor>
+        <disabledcolor>$INFO[Skin.String(ButtonDisableTextColor)]</disabledcolor>
         <textoffsetx>50</textoffsetx>
         <align>center</align>
         <aligny>center</aligny>
@@ -186,7 +184,7 @@
         <font>Reg28</font>
         <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
         <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
-        <disabledcolor>aaffffff</disabledcolor>
+        <disabledcolor>$INFO[Skin.String(ButtonDisableTextColor)]</disabledcolor>
         <textoffsetx>50</textoffsetx>
         <textoffsety>0</textoffsety>
         <pulseonselect>false</pulseonselect>
@@ -218,7 +216,7 @@
 		<textureslidernibfocus colordiffuse="$INFO[Skin.String(ScrollbarFocusedColor)]">scrollbar/texturesliderbar_nib.png</textureslidernibfocus>
 		<showonepage>false</showonepage>
         <orientation>vertical</orientation>
-        <visible>!String.IsEqual(Skin.String(scrollbar_visibility),always_hide) | Window.IsActive(script-tmdbbingiehelper-wikipedia.xml) | Window.IsActive(Custom_1190_TMDbBingieHelperCast.xml) | Window.IsActive(SettingsSystemInfo.xml) | Window.IsActive(SkinSettings.xml)</visible>
+        <visible>!String.IsEqual(Skin.String(scrollbar_visibility),always_hide) | Window.IsActive(script-tmdbbingiehelper-wikipedia.xml) | Window.IsActive(Custom_1190_TMDbBingieHelperCast.xml) | Window.IsActive(SettingsSystemInfo.xml) | Window.IsActive(SkinSettings.xml) | Window.IsActive(1121) | Window.IsActive(DialogTextViewer.xml)</visible>
     </default>
     <default type="textbox">
         <label/>
@@ -227,6 +225,6 @@
         <shadowcolor/>
         <pagecontrol>61</pagecontrol>
 		<align>justify</align>
-        <autoscroll delay="8000" time="3000" repeat="10000">!Skin.HasSetting(DisablePlotAutoScroll)</autoscroll>
+        <autoscroll delay="6000" time="3000" repeat="10000">Skin.HasSetting(EnablePlotAutoScroll)</autoscroll>
     </default>
 </includes>

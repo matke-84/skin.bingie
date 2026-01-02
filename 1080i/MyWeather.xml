@@ -20,9 +20,9 @@
             <!--Grouplist 9000-->
             <control type="grouplist" id="9000">
                 <posx>21</posx>
-                <posy>190</posy>
+                <posy>180</posy>
                 <width>458</width>
-                <height>750</height>
+                <height>781</height>
                 <itemgap>3</itemgap>
                 <onleft>50</onleft>
                 <onright>50</onright>
@@ -36,13 +36,13 @@
                 <control type="button" id="2">
                     <!--Refresh-->
                     <description>Refresh</description>
-                    <label>184</label>
+                    <label>$LOCALIZE[184]</label>
                     <include>SideBladeMenuButton</include>
                 </control>
                 <control type="button" id="4">
                     <!--Settings-->
                     <description>Settings</description>
-                    <label>5</label>
+                    <label>$LOCALIZE[5]</label>
                     <onclick>ActivateWindow(servicesettings,weather)</onclick>
                     <include>SideBladeMenuButton</include>
                 </control>
@@ -61,27 +61,27 @@
                 </control>				
 				<control type="button" id="1224">
                     <description>Weather Icons</description>
-                    <label>31623</label>
+                    <label>$LOCALIZE[31078]</label>
                     <onclick>RunScript(script.bingie.toolbox,action=setresourceaddon,skinstring=WeatherIconPack,addontype=resource.images.weathericons)</onclick>
                     <include>SideBladeMenuButton</include>
                 </control>               
                 <control type="button" id="1225">
                     <!--Icons-->
                     <description>Weather FanArt</description>
-                    <label>31624</label>
+                    <label>$LOCALIZE[31052]</label>
                     <onclick>RunScript(script.bingie.toolbox,action=setresourceaddon,skinstring=WeatherFanArtPack,addontype=resource.images.weatherfanart)</onclick>
                     <include>SideBladeMenuButton</include>
                 </control>				
 				<control type="radiobutton" id="88552200">
 					<include>SideBladeMenuButton</include>
-					<label>31268</label>
+					<label>$LOCALIZE[31268]</label>
 					<onclick>Skin.ToggleSetting(MyWeatherDisableFanArt)</onclick>
 					<selected>Skin.HasSetting(MyWeatherDisableFanArt)</selected>
 				</control>				
                 <control type="button" id="84403">
                     <!--Open Skin settings-->
                     <include>SideBladeMenuButton</include>
-                    <label>20077</label>
+                    <label>$LOCALIZE[20077]</label>
                     <onclick>ClearProperty(ShowViewSubMenu,Home)</onclick>
                     <onclick>SetFocus(5000)</onclick>
                     <onclick>SetProperty(SkinSettingSection,6,Home)</onclick>

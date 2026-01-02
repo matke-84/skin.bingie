@@ -35,7 +35,7 @@
                 <posx>90</posx>
                 <posy>30</posy>
                 <width>450</width>
-                <label>128</label>
+                <label>$LOCALIZE[128]</label>
                 <onup>2</onup>
 				<onright>2</onright>
 				<onfocus>SetProperty(SkinSettingSection,155,Home)</onfocus>
@@ -47,7 +47,7 @@
 				<posx>600</posx>
 				<posy>30</posy>
 				<include>SkinSettings_Header</include>
-				<label>10130</label>
+				<label>$LOCALIZE[10130]</label>
 			</control>
 			
             <control type="list" id="2">
@@ -84,7 +84,7 @@
                         <align>left</align>
                         <aligny>center</aligny>
                         <info>ListItem.Label</info>
-                        <textcolor>white</textcolor>
+                        <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
                         <font>Reg28</font>
                         <animation effect="slide" start="0" end="75" time="0" condition="!String.IsEmpty(ListItem.Icon)">Conditional</animation>
                     </control>
@@ -96,7 +96,7 @@
                         <align>right</align>
                         <aligny>center</aligny>
                         <info>ListItem.Label2</info>
-                        <textcolor>white</textcolor>
+                        <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
                         <font>Reg28</font>
                     </control>
                 </itemlayout>
@@ -124,7 +124,7 @@
                             <align>left</align>
                             <aligny>center</aligny>
                             <info>ListItem.Label</info>
-                            <textcolor>black</textcolor>
+                            <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
                             <font>Reg28</font>
                             <animation effect="slide" start="0" end="75" time="0" condition="!String.IsEmpty(ListItem.Icon)">Conditional</animation>
                         </control>
@@ -136,7 +136,7 @@
                             <align>right</align>
                             <aligny>center</aligny>
                             <info>ListItem.Label2</info>
-                            <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+                            <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
                             <font>Reg28</font>
                         </control>
                     </control>
@@ -163,7 +163,7 @@
                             <align>left</align>
                             <aligny>center</aligny>
                             <info>ListItem.Label</info>
-                            <textcolor>white</textcolor>
+                            <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
                             <font>Reg28</font>
                             <animation effect="slide" start="0" end="75" time="0" condition="!String.IsEmpty(ListItem.Icon)">Conditional</animation>
                         </control>
@@ -175,7 +175,7 @@
                             <align>right</align>
                             <aligny>center</aligny>
                             <info>ListItem.Label2</info>
-                            <textcolor>white</textcolor>
+                            <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
                             <font>Reg28</font>
                         </control>
                     </control>

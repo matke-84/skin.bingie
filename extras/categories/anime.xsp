@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <!-- BINGIE -->
-<smartplaylist type="tvshows">
+<smartplaylist type="movies">
     <name>Anime</name>
     <match>all</match>
-    <rule field="genre" operator="contains">
-        <value>Anime</value>
+    <rule field="tag" operator="contains">
+        <value>anime</value>
     </rule>
-    <order direction="descending">year</order>
+    <order direction="descending">dateadded</order>
     <limit>200</limit>
 </smartplaylist>

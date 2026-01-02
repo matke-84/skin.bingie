@@ -3,24 +3,9 @@
 <smartplaylist type="movies">
     <name>Comedies</name>
     <match>all</match>
-    <rule field="genre" operator="is">
+    <rule field="genre" operator="contains">
         <value>Comedy</value>
     </rule>
-    <rule field="tag" operator="isnot">
-        <value>Standup</value>
-        <value>Stand up</value>
-        <value>Stand-up</value>
-    </rule>
-    <rule field="plot" operator="doesnotcontain">
-            <value>Standup</value>
-            <value>Stand up</value>
-            <value>Stand-up</value>
-            <value>louis c.k</value>
-            <value>jimmy carr</value>
-            <value>bill burr</value>
-            <value>jim jefferies</value>
-            <value>george carlin</value>
-    </rule>
-    <order direction="descending">year</order>
+    <order direction="descending">dateadded</order>
     <limit>200</limit>
 </smartplaylist>

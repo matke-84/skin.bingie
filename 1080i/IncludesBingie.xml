@@ -1514,22 +1514,6 @@
 		<value condition="Integer.IsLessOrEqual(System.Time(ss),45) + !String.IsEmpty(ListItem.Tagline)">tags</value>
         <value condition="[!String.IsEmpty(ListItem.Genre) | !String.IsEmpty(Container(17195).ListItem.Property(Set.Genres))] + Integer.IsLessOrEqual(System.Time(ss),60) + !String.Contains(ListItem.Genre,unknown)">genre</value>
     </variable>
-	
-	<!-- Bingie More Details Spotlight(pseudo-random) -->
-    <variable name="BingieMoreDetailsSpotlight">		    
-        <value condition="Integer.IsLessOrEqual(System.Time(ss),20) + !String.IsEmpty(Container(17195).ListItem.Director) + !String.IsEmpty(Container(17195).ListItem.Cast) + $EXP[IsMovieDBType]">$INFO[Container(17195).ListItem.Director,$LOCALIZE[31541] ] $LOCALIZE[31149] $INFO[Container(17195).ListItem.Property(cast.1.name)]$INFO[Container(17195).ListItem.Property(cast.2.name),$COMMA ,]$INFO[Container(17195).ListItem.Property(cast.3.name),$COMMA ,]$INFO[Container(17195).ListItem.Property(cast.4.name), $LOCALIZE[31150] ] $LOCALIZE[31545].</value>	
-		<value condition="Integer.IsLessOrEqual(System.Time(ss),20) + !String.IsEmpty(Container(17195).ListItem.Property(Network.1.name)) + !String.IsEmpty(Container(17195).ListItem.Cast) + !$EXP[IsMovieDBType]">$INFO[Container(17195).ListItem.Property(Network.1.name)] $LOCALIZE[31546] $INFO[Container(17195).ListItem.Property(cast.1.name)]$INFO[Container(17195).ListItem.Property(cast.2.name),$COMMA ,]$INFO[Container(17195).ListItem.Property(cast.3.name),$COMMA ,]$INFO[Container(17195).ListItem.Property(cast.4.name),$COMMA ,]$INFO[Container(17195).ListItem.Property(cast.5.name), $LOCALIZE[31150] ] $LOCALIZE[31545].</value>
-		<value condition="Integer.IsLessOrEqual(System.Time(ss),40) + !String.IsEmpty(Container(1508).ListItem.Tagline)">$INFO[Container(1508).ListItem.Tagline]</value>
-        <value condition="!String.IsEmpty(Container(1508).ListItem.Genre) + Integer.IsLessOrEqual(System.Time(ss),60) + !String.Contains(Container(1508).ListItem.Genre,unknown)">$INFO[Container(1508).ListItem.Genre]</value>
-    </variable>
-	
-	<!-- Bingie More Details Image Spotlight (pseudo-random) -->
-    <variable name="BingieMoreDetailsImageSpotlight">		
-        <value condition="Integer.IsLessOrEqual(System.Time(ss),20) + !String.IsEmpty(Container(17195).ListItem.Director) + !String.IsEmpty(Container(17195).ListItem.Cast) + $EXP[IsMovieDBType]">director</value>	
-		<value condition="Integer.IsLessOrEqual(System.Time(ss),20) + !String.IsEmpty(Container(17195).ListItem.Property(Network.1.name)) + !String.IsEmpty(Container(17195).ListItem.Cast) + !$EXP[IsMovieDBType]">director</value>
-		<value condition="Integer.IsLessOrEqual(System.Time(ss),40) + !String.IsEmpty(Container(1508).ListItem.Tagline)">tags</value>
-        <value condition="!String.IsEmpty(Container(1508).ListItem.Genre) + Integer.IsLessOrEqual(System.Time(ss),60) + !String.Contains(Container(1508).ListItem.Genre,unknown)">genre</value>
-    </variable>
 
     <variable name="BingieEpisodeInfoHeader">
         <value condition="!String.IsEmpty(ListItem.Season) | !String.IsEmpty(ListItem.Episode)">[CAPITALIZE]$INFO[ListItem.Season, $LOCALIZE[36904] ,]$INFO[ListItem.Episode, $LOCALIZE[36906] ,][/CAPITALIZE]</value>
@@ -1600,13 +1584,6 @@
 		<value condition="!String.IsEmpty(Container(17195).ListItem.Plot)">$INFO[Container(17195).ListItem.Plot]</value>
     </variable>
 
-    <variable name="BingieSpotlightPlot">
-        <value condition="!String.IsEmpty(Container(1508).ListItem.Plot)">$INFO[Container(1508).ListItem.Plot]</value>
-		<value condition="!String.IsEmpty(Container(17195).ListItem.Plot)">$INFO[Container(17195).ListItem.Plot]</value>
-		<value condition="!String.IsEmpty(Container(1508).ListItem.Property(Album_Description))">$INFO[Container(1508).ListItem.Property(Album_Description)]</value>
-        <value condition="!String.IsEmpty(Container(1508).ListItem.Property(Artist_Description))">$INFO[Container(1508).ListItem.Property(Artist_Description)]</value>
-    </variable>
-
     <!-- plot outline prioritized and per-episode plot -->
     <variable name="BingieInfoDialogPlot">
         <value condition="Skin.HasSetting(ShowEpisodePlotInfoDialog) + [String.IsEqual(ListItem.DBType,tvshow) | Container.Content(tvshows)] + !String.IsEmpty(Container(5050).ListItem.Plot)">$INFO[Container(5050).ListItem.Plot]</value>
@@ -1624,7 +1601,7 @@
     <!-- Profile name for widgets 'for you' -->
     <variable name="ForCurrentProfileNameLabel">
         <value condition="!String.IsEqual(System.ProfileName,Master user)">$INFO[System.ProfileName,$LOCALIZE[31061] ,]</value>
-        <value>$LOCALIZE[31614]</value>
+        <value>$LOCALIZE[31121]</value>
     </variable>
 
     <variable name="BingieGenreIconVarList">
@@ -2285,7 +2262,7 @@
                     <param name="widget" value="Spotlight" />
                 </include>
             </focusedlayout>
-            <content target="videos" limit="1" browse="never">$VAR[BingieHomeSpotlightWidgetContent]</content>
+            <content target="videos" limit="1" browse="never" sortby="userpreference">$VAR[BingieHomeSpotlightWidgetContent]</content>
         </control>
     </include>
     <!-- SPOTLIGHT LOADING SPINNER -->
@@ -2410,7 +2387,7 @@
         <value condition="Window.IsActive(Home) + !String.IsEmpty(Skin.String(spotlighthome.path))">$INFO[Skin.String(spotlighthome.path)]</value>
         <value condition="Window.IsActive(Home)">$VAR[DefSpotlightWidgetContent]</value>
         <!-- movies hub -->
-        <value condition="Window.IsActive(1111) + !String.IsEmpty(Skin.String(spotlightmoviesl.path))">$INFO[Skin.String(spotlightmovies.path)]</value>
+        <value condition="Window.IsActive(1111) + !String.IsEmpty(Skin.String(spotlightmovies.path))">$INFO[Skin.String(spotlightmovies.path)]</value>
         <value condition="Window.IsActive(1111)">$VAR[DefSpotlightMovieHubContent]</value>
         <!-- tvshows hub -->
 		<value condition="Window.IsActive(1110) + !String.IsEmpty(Skin.String(spotlighttvshows.path))">$INFO[Skin.String(spotlighttvshows.path)]</value>
@@ -2501,7 +2478,7 @@
                 <visible>String.EndsWith(Control.GetLabel($PARAM[id]5),color_transparent.png)</visible>
                 <top>-194</top>
                 <height>194</height>
-                <width max="650">auto</width>
+                <width max="648">auto</width>
                 <font>title</font> 
                 <align>left</align>
                 <aligny>center</aligny>
@@ -2690,11 +2667,11 @@
     <include name="Bingie_Main_Spotlight_Section">
         <!-- spotlight section -->
         <include content="Bingie_Base_BG">
-            <param name="visibility" value="!Player.HasVideo | Skin.HasSetting(View523_DetailsAutoTrailer) | Skin.HasSetting(View526_DetailsAutoTrailer)" />
+            <param name="visibility" value="true" />
         </include>
         <include content="Preview_Window">
             <param name="id" value="$PARAM[id]01" />
-            <param name="visibility" value="Player.HasVideo + [Skin.HasSetting(View523_DetailsAutoTrailer) | Skin.HasSetting(View526_DetailsAutoTrailer)] + !Window.IsActive(DialogVideoInfo.xml) + [Control.IsVisible(523) | Control.IsVisible(526) | Control.IsVisible(528)]" />
+            <param name="visibility" value="true" />
         </include>
         <control type="group">
             <width>1920</width>
@@ -2705,7 +2682,6 @@
 				<animation effect="fade" start="100" end="0" time="400">Hidden</animation>
             </include>
 			
-
             <!-- bingie details -->
             <control type="grouplist">
                 <width>1500</width>
@@ -2965,10 +2941,8 @@
 	
     <!-- Content header -->
     <variable name="BingieMainContentHeader">
-        <!-- built-in -->
-        <value condition="String.IsEqual(Container.FolderPath, videodb://tvshows/titles/)">[CAPITALIZE]$LOCALIZE[36903][/CAPITALIZE]</value>
-        <value condition="String.IsEqual(Container.FolderPath, videodb://movies/titles/)">[CAPITALIZE]$LOCALIZE[36901][/CAPITALIZE]</value>
-        <value condition="!String.IsEmpty(Container.FolderName)">$INFO[Container.FolderName]</value>
+		<value condition="!String.IsEmpty(Container.PluginCategory)">$INFO[Container.PluginCategory]</value>
+        <value condition="!String.IsEmpty(Container.FolderName) + !String.IsEqual(ListItem.Path,plugin://plugin.video.tmdb.bingie.helper/)">$INFO[Container.FolderName]</value>
     </variable>
 
     <!-- season/episode sublabel -->
@@ -4101,7 +4075,7 @@
     </variable>
 	
 	<variable name="HubNames">
-        <value condition="Window.IsActive(1110)">$LOCALIZE[31590]</value>
+        <value condition="Window.IsActive(1110)">$LOCALIZE[31566]</value>
         <value condition="Window.IsActive(1111)">$LOCALIZE[342]</value>
 		<value condition="Window.IsActive(1114)">[CAPITALIZE]$LOCALIZE[31534][/CAPITALIZE]</value>
 		<value condition="Window.IsActive(1120)">$LOCALIZE[2]</value>
@@ -4114,8 +4088,8 @@
     </variable>
 	
 	<variable name="MenuIconColor">
-		<value condition="![Control.HasFocus(900) | Control.HasFocus(4444) | Control.HasFocus(40000) | Control.HasFocus(40003)]">$INFO[Skin.String(MainMenuFocusButtonColor)]</value>
-        <value condition="[Control.HasFocus(900) | Control.HasFocus(4444) | Control.HasFocus(40000) | Control.HasFocus(40003)]">$INFO[Skin.String(MainMenuButtonColor)]</value>
+		<value condition="!$EXP[IsMainMenuOpened]">$INFO[Skin.String(MainMenuFocusButtonColor)]</value>
+        <value condition="$EXP[IsMainMenuOpened]">$INFO[Skin.String(MainMenuButtonColor)]</value>
     </variable>
 	
 </includes>

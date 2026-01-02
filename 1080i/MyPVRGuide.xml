@@ -13,7 +13,18 @@
 		<include>NowPlayingBackground</include>
 		<!-- clearlogo -->
         <include condition="Skin.String(ClearLogoLocation) + ![!String.IsEmpty(Window(Home).Property(pvrGuideOnFullscreenVideo))]">ClearLogo</include>
-        <!--PVR Views-->
+        <!--PVR Views-->		
+		<!-- osd setings background -->
+		<control type="image">
+			<animation effect="fade" time="250" condition="[Skin.HasSetting(EnableOSDInfo) + Window.IsActive(videoosd)]">Visible</animation>
+			<animation effect="fade" end="0" time="350" condition="[Skin.HasSetting(EnableOSDInfo) + Window.IsActive(videoosd)]">Hidden</animation>
+			<animation effect="fade" time="350" condition="[Skin.HasSetting(EnableOSDInfo) + Window.IsActive(videoosd)]">WindowOpen</animation>
+			<width>100%</width>
+			<height>100%</height>
+			<texture background="true">diffuse/panel2.png</texture>
+			<colordiffuse>b3000000</colordiffuse>
+			<visible>!String.IsEmpty(Window(Home).Property(pvrGuideOnFullscreenVideo))</visible>
+		</control>
         <control type="group" id="5000">
 			<include>animation_window_open_close</include>
 			<posx>10</posx>
@@ -110,7 +121,6 @@
             <control type="group">
                 <!-- timeline view ID=10-->
                 <control type="epggrid" id="10">
-                    <viewtype label="19032">list</viewtype>
                     <description>EPG Grid</description>
                     <include>animation_view_change_pvr</include>
                     <include condition="!String.IsEmpty(Window(Home).Property(pvrGuideOnFullscreenVideo)) + Skin.string(GuideRows, 7)">altEpgOnScreen7</include>

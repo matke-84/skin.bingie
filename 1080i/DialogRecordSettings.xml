@@ -8,6 +8,7 @@
 			<visible>!Window.IsActive(fullscreenvideo)</visible>
 			<include>DialogOverlayExtra</include>
 			<animation effect="fade" time="250" start="0" end="100" reversible="false">WindowOpen</animation>
+			<animation effect="fade" time="250" start="100" end="0" reversible="false">WindowClose</animation>
         </control>
 		
         <!--Dialog PVR Guid Info-->
@@ -170,7 +171,7 @@
                     <width>350</width>
                     <align>center</align>
 					<description>OK</description>
-                    <label>186</label>
+                    <label>$LOCALIZE[186]</label>
                     <onup>15</onup>
                     <ondown>15</ondown>
 					<font>Reg26</font>

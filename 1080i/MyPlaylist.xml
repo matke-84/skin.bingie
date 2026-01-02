@@ -21,9 +21,9 @@
            <!--Grouplist 9000-->
             <control type="grouplist" id="9000">
                 <posx>21</posx>
-                <posy>185</posy>
+                <posy>180</posy>
                 <width>458</width>
-                <height>770</height>
+                <height>781</height>
                 <itemgap>3</itemgap>
                 <onleft>5000</onleft>
                 <onright>5000</onright>
@@ -41,8 +41,8 @@
                 </control>
                 <control type="togglebutton" id="4">
                     <!--Ascending-->
-                    <label>584</label>
-                    <altlabel>585</altlabel>
+                    <label>$LOCALIZE[584]</label>
+                    <altlabel>$LOCALIZE[585]</altlabel>
                     <include>SideBladeMenuButton</include>
 					<alttexturefocus border="10" colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">diffuse/panel.png</alttexturefocus>
 					<alttexturenofocus/>
@@ -50,25 +50,25 @@
                 </control>
                 <control type="radiobutton" id="20">
                     <!--Shuffle-->
-                    <label>191</label>
+                    <label>$LOCALIZE[191]</label>
                     <include>SideBladeMenuButton</include>
                     <align>left</align>
                 </control>
                 <control type="button" id="21">
                     <!--Save-->
-                    <label>190</label>
+                    <label>$LOCALIZE[190]</label>
                     <include>SideBladeMenuButton</include>
                     <align>left</align>
                 </control>
                 <control type="button" id="22">
                     <!--Clear-->
-                    <label>192</label>
+                    <label>$LOCALIZE[192]</label>
                     <include>SideBladeMenuButton</include>
                     <align>left</align>
                 </control>
                 <control type="button" id="23">
                     <!--Play-->
-                    <label>208</label>
+                    <label>$LOCALIZE[208]</label>
                     <include>SideBladeMenuButton</include>
                     <align>left</align>
                 </control>

@@ -2,9 +2,7 @@
 
 <window>
 	<defaultcontrol always="true">900</defaultcontrol>
-    <onunload>ClearProperty(powermenu,Home)</onunload>
-	<controls>
-	
+	<controls>	
 	    <!--Global Background-->
         <include>GlobalBackground</include>
 		<!-- Now Playing -->
@@ -54,14 +52,11 @@
 					<left>90</left>
 					<top>30</top>
 					<width>590</width>
-					<height>774</height>
-					<onright condition="String.IsEmpty(Window.Property(widgetcontrols))">900</onright>
-                    <onright condition="!String.IsEmpty(Window.Property(widgetcontrols))">9000</onright>
+					<height>756</height>
+					<onright>900</onright>
 					<orientation>vertical</orientation>
-					<viewtype label="535">list</viewtype>
 					<preloaditems>2</preloaditems>
-					<scrolltime>0</scrolltime>
-					<selectedcolor>FF00b8ff</selectedcolor>
+					<scrolltime>200</scrolltime>
 					<itemlayout width="620" height="84">
 						<!--bg-->
 						<control type="image">
@@ -162,7 +157,7 @@
 						<left>5</left>
 						<width>500</width>
 						<height>25</height>
-						<label>[B]$LOCALIZE[15217]:[/B]</label>
+						<label>[B]$VAR[widget_skinshortcuts_label]:[/B]</label>
                         <font>Reg24</font>
 						<scrollspeed>160</scrollspeed>
 						<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
@@ -171,7 +166,7 @@
 						<left>5</left>
                         <width>500</width>
 						<height>20</height>
-						<label fallback="$LOCALIZE[16018]">$INFO[Container(211).Listitem.Property(translatedPath)]</label>
+						<label fallback="$LOCALIZE[16018]">$INFO[Container(211).ListItem.Property(Path)]</label>
 						<font>Reg20</font>
 						<scrollout>false</scrollout>
 						<scroll>true</scroll>
@@ -179,6 +174,46 @@
 						<pauseatend>2500</pauseatend>
 						<orientation>horizontal</orientation>
                         <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+						<visible>String.IsEqual(Window.Property(groupname),mainmenu) | String.IsEqual(Window.Property(groupname),powermenu) | String.IsEqual(Window.Property(groupname),searchmenu) | String.IsEqual(Window.Property(groupname),tmdbsearchmenu)</visible>
+					</control>
+					<control type="fadelabel">
+						<left>5</left>
+                        <width>500</width>
+						<height>20</height>
+						<label fallback="$LOCALIZE[16018]">$INFO[Container(211).ListItem.Property(TranslatedPath)]</label>
+						<font>Reg20</font>
+						<scrollout>false</scrollout>
+						<scroll>true</scroll>
+						<scrollspeed>50</scrollspeed>
+						<pauseatend>2500</pauseatend>
+						<orientation>horizontal</orientation>
+                        <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+						<visible>![String.IsEqual(Window.Property(groupname),mainmenu) | String.IsEqual(Window.Property(groupname),powermenu) | String.IsEqual(Window.Property(groupname),searchmenu) | String.IsEqual(Window.Property(groupname),tmdbsearchmenu)]</visible>
+					</control>
+					<!--Spotlight label-->
+					<control type="label">
+						<left>5</left>
+						<width>500</width>
+						<height>25</height>
+						<label>[B]$LOCALIZE[31185] [LOWERCASE]$LOCALIZE[31578][/LOWERCASE]:[/B]</label>
+                        <font>Reg24</font>
+						<scrollspeed>160</scrollspeed>
+						<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+						<visible>String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),customhub) | String.IsEqual(Window.Property(groupname),moviehub) | String.IsEqual(Window.Property(groupname),tvshowhub) | String.IsEqual(Window.Property(groupname),newhub) | String.IsEqual(Window.Property(groupname),musichub)</visible>
+					</control>
+					<control type="fadelabel">
+						<left>5</left>
+                        <width>500</width>
+						<height>20</height>
+						<label>$VAR[spotlight_label]</label>
+						<font>Reg20</font>
+						<scrollout>false</scrollout>
+						<scroll>true</scroll>
+						<scrollspeed>50</scrollspeed>
+						<pauseatend>2500</pauseatend>
+						<orientation>horizontal</orientation>
+                        <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+						<visible>String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),customhub) | String.IsEqual(Window.Property(groupname),moviehub) | String.IsEqual(Window.Property(groupname),tvshowhub) | String.IsEqual(Window.Property(groupname),newhub) | String.IsEqual(Window.Property(groupname),musichub)</visible>
 					</control>
 					<!--Widget style label-->
 					<control type="label">
@@ -215,7 +250,7 @@
 						<scrollspeed>160</scrollspeed>
 						<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
 						<visible>!String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEqual(Window.Property(groupname),powermenu) + !String.IsEqual(Window.Property(groupname),somethinghub)</visible>
-					    <visible>!String.Contains(Container(211).ListItem.Property(widgetstyle),landscape) + ![String.IsEmpty(Container(211).ListItem.Property(widgetstyle)) + String.Contains(Skin.String(widgetstyle),landscape)]</visible>
+					    <visible>!String.Contains(Container(211).ListItem.Property(widgetstyle),landscape) + ![String.IsEmpty(Container(211).ListItem.Property(widgetstyle)) + String.Contains(Skin.String(widgetstyle),landscape)] + !String.Contains(Container(211).ListItem.Property(widgetstyle),square) + ![String.IsEmpty(Container(211).ListItem.Property(widgetstyle)) + String.Contains(Skin.String(widgetstyle),square)]</visible>
 					</control>
 					<control type="fadelabel">
 						<left>5</left>
@@ -229,8 +264,8 @@
 						<pauseatend>2500</pauseatend>
 						<orientation>horizontal</orientation>
                         <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
-						<visible>!String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEqual(Window.Property(groupname),powermenu)</visible>
-						<visible>!String.Contains(Container(211).ListItem.Property(widgetstyle),landscape) + ![String.IsEmpty(Container(211).ListItem.Property(widgetstyle)) + String.Contains(Skin.String(widgetstyle),landscape)]</visible>
+						<visible>!String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEqual(Window.Property(groupname),powermenu) + !String.IsEqual(Window.Property(groupname),somethinghub)</visible>
+						<visible>!String.Contains(Container(211).ListItem.Property(widgetstyle),landscape) + ![String.IsEmpty(Container(211).ListItem.Property(widgetstyle)) + String.Contains(Skin.String(widgetstyle),landscape)] + !String.Contains(Container(211).ListItem.Property(widgetstyle),square) + ![String.IsEmpty(Container(211).ListItem.Property(widgetstyle)) + String.Contains(Skin.String(widgetstyle),square)]</visible>
 					</control>
 					<!--Widget target label-->
 					<control type="label">
@@ -354,9 +389,8 @@
 				<itemgap>5</itemgap>
 				<orientation>vertical</orientation>
 				<onleft>211</onleft>
-				<scrolltime>0</scrolltime>
+				<scrolltime>200</scrolltime>
                 <pagecontrol>270</pagecontrol>
-                <visible>String.IsEmpty(Window.Property(widgetcontrols))</visible>
 
 				<!--new shortcut-->
 				<control type="button" id="301"> 
@@ -374,7 +408,7 @@
 					<align>center</align>
 					<label>$LOCALIZE[15019]</label>
 					<visible>!Integer.IsGreater(Container(200).NumItems,34)</visible>
-					<visible>!String.IsEqual(Window.Property(groupname),searchmenu) + !String.IsEqual(Window.Property(groupname),tmdbsearchmenu) + !String.IsEqual(Window.Property(groupname),somethinghub)</visible>
+					<visible>!String.IsEqual(Window.Property(groupname),searchmenu) + !String.IsEqual(Window.Property(groupname),tmdbsearchmenu) + !String.IsEqual(Window.Property(groupname),somethinghub) + !String.IsEqual(Window.Property(groupname),mylisthub)</visible>
 					<include>Action_SkinShortcuts_ContentType_AutoSetOnUnFocus</include>
 				</control>				
 				
@@ -383,51 +417,39 @@
 					<width>510</width>
 					<height>58</height>
 					<align>center</align>
-					<label>31564</label>
-                    <visible>String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEqual(Window.Property(groupname),somethinghub)</visible>
+					<label>$LOCALIZE[31564]</label>
+                    <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 				</control>
 				
 				<!--Spotlight Home-->
-				<control type="radiobutton" id="31371">
+				<control type="button" id="31371">
 					<width>510</width>
 					<height>58</height>
 					<align>center</align>
-					<label>31379</label>
-					<textwidth>300</textwidth>
-					<onclick condition="String.IsEmpty(Skin.String(spotlighthome.label))">RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetName=spotlighthome.label&amp;skinWidgetTarget=spotlighthome.target&amp;skinWidgetPath=spotlighthome.path)</onclick>
-					<onclick condition="!String.IsEmpty(Skin.String(spotlighthome.label))">Skin.Reset(spotlighthome.label)</onclick>
-					<onclick condition="!String.IsEmpty(Skin.String(spotlighthome.path))">Skin.Reset(spotlighthome.path)</onclick>
-					<selected>Skin.String(spotlighthome.label)</selected>
-					<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+					<label>$LOCALIZE[31379]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=spotlighthome.path)</onclick>
+					<visible>String.EndsWith(Window.Property(groupname),.1)</visible>
 					<visible>!Skin.HasSetting(DisableSpotlightContent)</visible>
 				</control>
 				
 				<!--Spotlight Custom Hub-->
-				<control type="radiobutton" id="31372">
+				<control type="button" id="31372">
 					<width>510</width>
 					<height>58</height>
 					<align>center</align>
-					<label>31379</label>
-					<textwidth>300</textwidth>
-					<onclick condition="String.IsEmpty(Skin.String(spotlightmyhub.label))">RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetName=spotlightmyhub.label&amp;skinWidgetTarget=spotlightmyhub.target&amp;skinWidgetPath=spotlightmyhub.path)</onclick>
-					<onclick condition="!String.IsEmpty(Skin.String(spotlightmyhub.label))">Skin.Reset(spotlightmyhub.label)</onclick>
-					<onclick condition="!String.IsEmpty(Skin.String(spotlightmyhub.path))">Skin.Reset(spotlightmyhub.path)</onclick>
-					<selected>Skin.String(spotlightmyhub.label)</selected>
+					<label>$LOCALIZE[31379]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=spotlightmyhub.path)</onclick>
 					<visible>String.IsEqual(Window.Property(groupname),customhub)</visible>
 					<visible>!Skin.HasSetting(DisableSpotlightContent)</visible>
 				</control>
 				
 				<!--Spotlight Movie Hub-->
-				<control type="radiobutton" id="31373">
+				<control type="button" id="31373">
 					<width>510</width>
 					<height>58</height>
 					<align>center</align>
-					<label>31379</label>
-					<textwidth>300</textwidth>
-					<onclick condition="String.IsEmpty(Skin.String(spotlightmovies.label))">RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetName=spotlightmovies.label&amp;skinWidgetTarget=spotlightmovies.target&amp;skinWidgetPath=spotlightmovies.path)</onclick>
-					<onclick condition="!String.IsEmpty(Skin.String(spotlightmovies.label))">Skin.Reset(spotlightmovies.label)</onclick>
-					<onclick condition="!String.IsEmpty(Skin.String(spotlightmovies.path))">Skin.Reset(spotlightmovies.path)</onclick>
-					<selected>Skin.String(spotlightmovies.label)</selected>
+					<label>$LOCALIZE[31379]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=spotlightmovies.path)</onclick>
 					<visible>String.IsEqual(Window.Property(groupname),moviehub)</visible>
 					<visible>!Skin.HasSetting(DisableSpotlightContent)</visible>
 				</control>
@@ -437,42 +459,30 @@
 					<width>510</width>
 					<height>58</height>
 					<align>center</align>
-					<label>31379</label>
-					<textwidth>300</textwidth>
-					<onclick condition="String.IsEmpty(Skin.String(spotlighttvshows.label))">RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetName=spotlighttvshows.label&amp;skinWidgetTarget=spotlighttvshows.target&amp;skinWidgetPath=spotlighttvshows.path)</onclick>
-					<onclick condition="!String.IsEmpty(Skin.String(spotlighttvshows.label))">Skin.Reset(spotlighttvshows.label)</onclick>
-					<onclick condition="!String.IsEmpty(Skin.String(spotlighttvshows.path))">Skin.Reset(spotlighttvshows.path)</onclick>
-					<selected>Skin.String(spotlighttvshows.label)</selected>
+					<label>$LOCALIZE[31379]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=spotlighttvshows.path)</onclick>
 					<visible>String.IsEqual(Window.Property(groupname),tvshowhub)</visible>
 					<visible>!Skin.HasSetting(DisableSpotlightContent)</visible>
 				</control>
 				
 				<!--Spotlight New Hub-->
-				<control type="radiobutton" id="31375">
+				<control type="button" id="31375">
 					<width>510</width>
 					<height>58</height>
 					<align>center</align>
-					<label>31379</label>
-					<textwidth>300</textwidth>
-					<onclick condition="String.IsEmpty(Skin.String(spotlightnew.label))">RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetName=spotlightnew.label&amp;skinWidgetTarget=spotlightnew.target&amp;skinWidgetPath=spotlightnew.path)</onclick>
-					<onclick condition="!String.IsEmpty(Skin.String(spotlightnew.label))">Skin.Reset(spotlightnew.label)</onclick>
-					<onclick condition="!String.IsEmpty(Skin.String(spotlightnew.path))">Skin.Reset(spotlightnew.path)</onclick>
-					<selected>Skin.String(spotlightnew.label)</selected>
+					<label>$LOCALIZE[31379]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=spotlightnew.path)</onclick>
 					<visible>String.IsEqual(Window.Property(groupname),newhub)</visible>
 					<visible>!Skin.HasSetting(DisableSpotlightContent)</visible>
 				</control>
 				
 				<!--Spotlight Music Hub-->
-				<control type="radiobutton" id="31376">
+				<control type="button" id="31376">
 					<width>510</width>
 					<height>58</height>
 					<align>center</align>
-					<label>31379</label>
-					<textwidth>300</textwidth>
-					<onclick condition="String.IsEmpty(Skin.String(spotlightmusic.label))">RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetName=spotlightmusic.label&amp;skinWidgetTarget=spotlightmusic.target&amp;skinWidgetPath=spotlightmusic.path)</onclick>
-					<onclick condition="!String.IsEmpty(Skin.String(spotlightmusic.label))">Skin.Reset(spotlightmusic.label)</onclick>
-					<onclick condition="!String.IsEmpty(Skin.String(spotlightmusic.path))">Skin.Reset(spotlightmusic.path)</onclick>
-					<selected>Skin.String(spotlightmusic.label)</selected>
+					<label>$LOCALIZE[31379]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=spotlightmusic.path)</onclick>
 					<visible>String.IsEqual(Window.Property(groupname),musichub)</visible>
 					<visible>!Skin.HasSetting(DisableSpotlightContent)</visible>
 				</control>
@@ -482,7 +492,7 @@
 					<width>510</width>
 					<height>58</height>
 					<align>center</align>
-                    <label>31369</label>
+                    <label>$LOCALIZE[31369]</label>
                     <onclick>RunScript(script.bingie.toolbox,action=selectimage,skinshortcutsproperty=thumb,header=$LOCALIZE[31369],allowmulti=true,resourceaddon=resource.images.skinicons,skinstring=CustomBackgroundSetting,currentvalue=$INFO[Container(211).ListItem.Property(ThumbName)])</onclick>
 					<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 				</control>
@@ -502,7 +512,7 @@
 					<height>58</height>
 					<align>center</align>
 					<label>$LOCALIZE[13332]</label>
-					<visible>!String.IsEqual(Window.Property(groupname),somethinghub)</visible>
+					<visible>!String.IsEqual(Window.Property(groupname),somethinghub) + !String.IsEqual(Window.Property(groupname),mylisthub)</visible>
 				</control>
 				
 				<!--Move Down-->
@@ -511,7 +521,7 @@
 					<height>58</height>
 					<align>center</align>
 					<label>$LOCALIZE[13333]</label>
-					<visible>!String.IsEqual(Window.Property(groupname),somethinghub)</visible>
+					<visible>!String.IsEqual(Window.Property(groupname),somethinghub)  + !String.IsEqual(Window.Property(groupname),mylisthub)</visible>
 				</control>
 				
 				<!--change shortcut-->
@@ -520,7 +530,7 @@
 					<height>58</height>
 					<align>center</align>
 					<visible>true</visible>
-					<label>31175</label>
+					<label>$VAR[ChangeShortcutWidget]</label>
 				</control>
 				
 				<!--change action-->
@@ -529,7 +539,7 @@
 					<height>58</height>
 					<align>center</align>
 					<label>$LOCALIZE[31391]</label>
-					<visible>String.IsEqual(Window.Property(groupname),mainmenu) | String.IsEqual(Window.Property(groupname),searchmenu) | String.IsEqual(Window.Property(groupname),tmdbsearchmenu)</visible>
+					<visible>String.IsEqual(Window.Property(groupname),mainmenu) | String.IsEqual(Window.Property(groupname),powermenu) | String.IsEqual(Window.Property(groupname),searchmenu) | String.IsEqual(Window.Property(groupname),tmdbsearchmenu)</visible>
 				</control> 
 				
 				<!--sub menu-->
@@ -610,8 +620,8 @@
 					<align>center</align>
 					<onclick>RunScript(script.bingie.toolbox,action=setskinshortcutsproperty,header=$LOCALIZE[31028],property=widgetTags,setting=Widgets_DisplayTags)</onclick>
 					<visible>!String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEqual(Window.Property(groupname),powermenu) + !String.IsEqual(Window.Property(groupname),somethinghub)</visible>
-					<visible>!String.Contains(Container(211).ListItem.Property(widgetstyle),landscape) + ![String.IsEmpty(Container(211).ListItem.Property(widgetstyle)) + String.Contains(Skin.String(widgetstyle),landscape)]</visible>
-                </control>
+					<visible>!String.Contains(Container(211).ListItem.Property(widgetstyle),square) + ![String.IsEmpty(Container(211).ListItem.Property(widgetstyle)) + String.Contains(Skin.String(widgetstyle),square)] + !String.Contains(Container(211).ListItem.Property(widgetstyle),landscape) + ![String.IsEmpty(Container(211).ListItem.Property(widgetstyle)) + String.Contains(Skin.String(widgetstyle),landscape)]</visible>
+			   </control>
 				
 				<!--widget target-->
 				<control type="button" id="31468">
@@ -657,7 +667,7 @@
 					<width>510</width>
 					<height>58</height>
 					<align>center</align>
-					<label>31415</label>
+					<label>$LOCALIZE[31415]</label>
 				</control>
                 
                 <!-- disable shortcut-->
@@ -668,7 +678,7 @@
 					<textwidth>300</textwidth>
                     <label>$LOCALIZE[31392]</label>
                     <selected>String.Contains(Container(211).ListItem.Property(skinshortcuts-disabled),true)</selected>
-					<visible>!String.IsEqual(Window.Property(groupname),somethinghub)</visible>
+					<visible>!String.IsEqual(Window.Property(groupname),somethinghub) + !String.IsEqual(Window.Property(groupname),mylisthub)</visible>
 				</control>
 				
 				<!--Delete-->				
@@ -677,7 +687,7 @@
 					<height>58</height>
 					<align>center</align>
 					<label>$LOCALIZE[117]</label>
-					<visible>!String.IsEqual(Window.Property(groupname),somethinghub)</visible>
+					<visible>!String.IsEqual(Window.Property(groupname),somethinghub) + !String.IsEqual(Window.Property(groupname),mylisthub)</visible>
 				</control>
                 
                 <!--close button-->

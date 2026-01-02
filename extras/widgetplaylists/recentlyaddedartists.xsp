@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- BINGIE -->
 <smartplaylist type="artists">
     <name>Recently Added Artists</name>
     <match>all</match>
     <order direction="descending">dateadded</order>
+	<limit>200</limit>
 </smartplaylist>

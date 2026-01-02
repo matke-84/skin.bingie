@@ -288,7 +288,8 @@
                     <onup>60</onup>
                     <showonepage>false</showonepage>
                     <orientation>vertical</orientation>
-                    <animation effect="fade" start="75" end="0" time="300" tween="sine" easing="inout" condition="!Control.IsVisible(61)">Conditional</animation>
+                    <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+                    <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
                 </control>
                 <control type="group" id="8002">
                     <!--Group Right-->
@@ -314,7 +315,7 @@
                             <radioposx>492</radioposx>
                             <texturenofocus>dialogs/default/separator.png</texturenofocus>
 							<include>DialogButton</include>
-                            <label>19074</label>
+                            <label>$LOCALIZE[19074]</label>
                             <onleft>60</onleft>
                             <onright>8003</onright>
                             <onup>SetProperty(Focus,1)</onup>
@@ -332,7 +333,7 @@
                             <textoffsetx>20</textoffsetx>
                             <texturenofocus>dialogs/default/separator.png</texturenofocus>
 							<include>DialogButton</include>
-                            <label>19201</label>
+                            <label>$LOCALIZE[19201]</label>
                             <onright>8003</onright>
                             <onleft>60</onleft>
                             <onup>7</onup>
@@ -349,7 +350,7 @@
                             <textwidth>540</textwidth>
                             <texturenofocus>dialogs/default/separator.png</texturenofocus>
 							<include>DialogButton</include>
-                            <label>19202</label>
+                            <label>$LOCALIZE[19202]</label>
                             <onleft>60</onleft>
                             <onright>8003</onright>
                             <onup>8</onup>
@@ -376,7 +377,7 @@
                             <radioposx>492</radioposx>
                             <texturenofocus>dialogs/default/separator.png</texturenofocus>
 							<include>DialogButton</include>
-                            <label>19206</label>
+                            <label>$LOCALIZE[19206]</label>
                             <onleft>60</onleft>
                             <onright>8003</onright>
                             <onup>9</onup>
@@ -393,7 +394,7 @@
                             <textoffsetx>20</textoffsetx>
                             <align>left</align>
                             <spinposx>1</spinposx>
-                            <label>19200</label>
+                            <label>$LOCALIZE[19200]</label>
                             <onright>8003</onright>
                             <onleft>60</onleft>
                             <onup>12</onup>
@@ -411,7 +412,7 @@
                             <radioposx>492</radioposx>
                             <texturenofocus>dialogs/default/separator.png</texturenofocus>
 							<include>DialogButton</include>
-                            <label>19267</label>
+                            <label>$LOCALIZE[19267]</label>
                             <onleft>60</onleft>
                             <onright>8003</onright>
                             <onup>13</onup>
@@ -428,7 +429,7 @@
                             <textwidth>540</textwidth>
                             <texturenofocus>dialogs/default/separator.png</texturenofocus>
 							<include>DialogButton</include>
-                            <label>19205</label>
+                            <label>$LOCALIZE[19205]</label>
                             <onleft>60</onleft>
                             <onright>8003</onright>
                             <onup>14</onup>
@@ -445,7 +446,7 @@
                             <textwidth>540</textwidth>
                             <texturenofocus>dialogs/default/separator.png</texturenofocus>
 							<include>DialogButton</include>
-                            <label>19024</label>
+                            <label>$LOCALIZE[19024]</label>
                             <onleft>60</onleft>
                             <onright>8003</onright>
                             <onup>30</onup>
@@ -463,7 +464,7 @@
                             <textwidth>540</textwidth>
                             <texturenofocus>dialogs/default/separator.png</texturenofocus>
 							<include>DialogButton</include>
-                            <label>19023</label>
+                            <label>$LOCALIZE[19023]</label>
                             <onleft>60</onleft>
                             <onright>8003</onright>
                             <onup>30</onup>
@@ -481,7 +482,7 @@
                             <textwidth>540</textwidth>
                             <texturenofocus></texturenofocus>
 							<include>DialogButton</include>
-                            <label>19204</label>
+                            <label>$LOCALIZE[19204]</label>
                             <onleft>60</onleft>
                             <onright>8003</onright>
                             <onup>34</onup>

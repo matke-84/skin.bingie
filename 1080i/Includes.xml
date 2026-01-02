@@ -44,7 +44,6 @@
     <include file="IncludesSkinSettings.xml" />
     <include file="IncludesContextMenu.xml" />
     <include file="IncludesHomeBingie.xml"/>
-    <include file="IncludesHubs.xml" />
     <include file="IncludesBingieKeyboard.xml"/>
     <include file="IncludesBingieSearch.xml"/>
 	<include file="IncludesDefaultSkinSettings.xml" />
@@ -53,6 +52,7 @@
     <include file="IncludesHeader.xml" />
     <include file="IncludesFooter.xml" />
 	<include file="IncludesPaths.xml" />
+	<include file="IncludesCategories.xml" />
     <include file="IncludesOSDDialogs.xml" />
 	<include file="script-skinshortcuts-includes.xml"/>
     <include file="IncludesDebugInfo.xml" condition="Skin.HasSetting(DebugGrid) | Skin.HasSetting(DebugInfo)" />
@@ -97,6 +97,8 @@
     <expression name="IsTvShowDBType">String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.Property(DBTYPE),tvshow) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE,tvshow)) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),tvshow)</expression>
 
     <expression name="IsTvShowDBTypeNoFallback">String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.Property(DBTYPE),tvshow)</expression>
+	
+	<expression name="IsSeasonDBTypeNoFallback">String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.Property(DBTYPE),season)</expression>
 
     <expression name="IsMovieDBType">String.IsEqual(ListItem.DBTYPE,movie) | String.IsEqual(ListItem.Property(DBTYPE),movie) | String.IsEqual(Window(Home).Property(ListItem.DBTYPE,movie)) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),movie)</expression>
 
@@ -524,7 +526,7 @@
 					<height>11</height>
 					<width>1152</width>
 					<texturesliderbar>colors/color_transparent.png</texturesliderbar>
-					<textureslidernib colordiffuse="$INFO[Skin.String(BingieOSDProgressBarColor)]">common/slider/slider_button_nofocus.png</textureslidernib>
+					<textureslidernib colordiffuse="$INFO[Skin.String(OSDBingieButtonsFocusColor)]">common/slider/slider_button_nofocus.png</textureslidernib>
 					<visible>Player.SeekEnabled + Player.Seeking</visible>
 				</control>
 				<!-- Play Time / Remaining Time -->
@@ -552,14 +554,14 @@
 				<!-- Forwarding/Rewinding Indicators -->
 				<control type="image">
 					<visible>Player.Forwarding | Player.Rewinding</visible>
-					<texture>$VAR[ForwardRewindIndicatorImage]</texture>
+					<texture>$VAR[ForwardRewindIndicatorImageFocus]</texture>
 					<include>PlayerImageIndicatorDefs</include>
 				</control>				
 				<!-- Play/Pause Indicators -->
 				<control type="image">
 					<visible>Player.Paused | Player.Playing</visible>
 					<visible>!Window.IsActive(videoosd)</visible>
-					<texture>$VAR[PlayingPausedIndicatorImage]</texture>
+					<texture>$VAR[PlayingPausedIndicatorImageFocus]</texture>
 					<include>PlayerImageIndicatorDefs</include>
 				</control>
 			</control>

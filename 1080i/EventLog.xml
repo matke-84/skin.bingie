@@ -43,7 +43,6 @@
                 <onright>60</onright>
                 <onup>570</onup>
                 <ondown>570</ondown>
-                <viewtype label="535">list</viewtype>
                 <pagecontrol>60</pagecontrol>
                 <scrolltime>200</scrolltime>
                 <itemlayout height="85" width="1250">
@@ -171,8 +170,8 @@
                     <align>left</align>
                     <height>47</height>
                     <width>450</width>
-                    <label>584</label>
-					<altlabel>585</altlabel>
+                    <label>$LOCALIZE[584]</label>
+					<altlabel>$LOCALIZE[585]</altlabel>
                     <usealttexture>Container.SortDirection(Ascending)</usealttexture>
                 </control>
                 <control type="button" id="21">
@@ -198,7 +197,7 @@
                     <align>left</align>
                     <height>47</height>
                     <width>450</width>
-                    <label>192</label>
+                    <label>$LOCALIZE[192]</label>
                 </control>
         
             </control>

@@ -2,7 +2,6 @@
 <!-- BINGIE -->
 <includes>
 	<variable name="503_LogoImage">
-		<value condition="Skin.HasSetting(LogoViewPreferClearArt) + !String.IsEmpty(ListItem.Art(clearart))">$INFO[ListItem.Art(clearart)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
@@ -30,13 +29,12 @@
 					<onleft>503</onleft>
 					<onright>503</onright>
 					<onup>9000</onup>
-					<ondown condition="Skin.HasSetting(EnableQuickJump)">7000</ondown>
-					<ondown condition="!Skin.HasSetting(EnableQuickJump)">60</ondown>
+					<ondown>60</ondown>
 					<onback>ClearProperty(ListAnimation,home)</onback>
 					<focusposition>1</focusposition>
 					<pagecontrol>60</pagecontrol>
 					<preloaditems>2</preloaditems>
-					<viewtype label="31461">list</viewtype>
+					<viewtype label="31461">Clearlogo</viewtype>
 					<include content="View_Forced">
 						<param name="viewtype" value="$LOCALIZE[31461]" />
 					</include>
@@ -92,8 +90,8 @@
 					<onleft>60</onleft>
 					<onright>60</onright>
 					<orientation>horizontal</orientation>
-					<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] + !Control.IsVisible(7002)">Conditional</animation>
-					<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] | Control.IsVisible(7002)">Conditional</animation>
+					<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] + !Control.IsVisible(7002)">Conditional</animation>
+					<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] | Control.IsVisible(7002)">Conditional</animation>
 				</control>
         </control>
 	</include>

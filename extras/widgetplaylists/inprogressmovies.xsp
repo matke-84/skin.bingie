@@ -4,6 +4,6 @@
     <name>In Progress Movies</name>
     <match>all</match>
     <rule field="inprogress" operator="true" />
-    <limit>200</limit>
     <order direction="descending">lastplayed</order>
+	<limit>200</limit>
 </smartplaylist>

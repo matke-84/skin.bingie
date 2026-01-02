@@ -63,8 +63,8 @@
                     <ondown>60</ondown>
                     <onleft>50</onleft>
                     <onright>50</onright>
-                    <animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(60) | Container(50).Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)">Conditional</animation>
-                    <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container(50).Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+                    <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+                    <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
                 </control>
 				
             <control type="list" id="50">
@@ -326,8 +326,8 @@
                     <ondown>70</ondown>
                     <onleft>100</onleft>
                     <onright>100</onright>
-                    <animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(70) | Container(100).Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)">Conditional</animation>
-                    <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(70) | Container(100).Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+                    <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(70) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+                    <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(70) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
                 </control>
 				
             <control type="label">

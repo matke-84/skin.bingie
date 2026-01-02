@@ -7,6 +7,7 @@
 		<control type="group">
 			<include>DialogOverlayExtra</include>
 			<animation effect="fade" time="250" start="0" end="100" reversible="false">WindowOpen</animation>
+			<animation effect="fade" time="250" start="100" end="0" reversible="false">WindowClose</animation>
         </control>
 		
         <!--Dialog OpenElec Settings-->

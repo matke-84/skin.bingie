@@ -1,0 +1,1726 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window type="dialog" id="1106">
+	<defaultcontrol always="true">900</defaultcontrol>
+	<controls>	
+	    <!--Global Background-->
+        <include>GlobalBackground</include>
+		<!-- Now Playing -->
+		<include>NowPlayingBackground</include>
+        <!--Header-->
+        <include>Header</include>
+		
+		<control type="group">
+			<include>animation_window_open_close</include>
+			<width>1920</width>
+			<bottom>135</bottom>
+			<height>75%</height>
+			
+			<!--background panel default -->
+			<control type="image">
+				<posx>60</posx>
+				<posy>0</posy>
+				<width>1800</width>
+				<texture border="15">diffuse/bgpanel.png</texture>
+				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+			</control>
+
+			<!-- left panel -->
+			<control type="group" id="200">
+				<!--Current shortcuts -->
+				<control type="list" id="211">
+					<left>90</left>
+					<top>30</top>
+					<width>590</width>
+					<height>756</height>
+					<onright>900</onright>
+					<orientation>vertical</orientation>
+					<preloaditems>2</preloaditems>
+					<scrolltime>200</scrolltime>
+					<itemlayout width="620" height="84">
+						<!--bg-->
+						<control type="image">
+							<width>571</width>
+							<height>79</height>
+							<aligny>center</aligny>
+							<texture border="10" colordiffuse="$INFO[Skin.String(ButtonColor)]">diffuse/panel.png</texture>
+						</control>
+						<!-- thumb -->
+						<control type="image">
+							<left>2</left>
+							<top>4</top>
+							<height>70</height>
+							<width>166</width>
+							<aspectratio aligny="center">keep</aspectratio>
+							<texture>defaultshortcut.png</texture>
+						</control>
+						<!--label-->
+						<control type="label">
+							<left>170</left>
+							<width>380</width>
+							<label>$INFO[ListItem.Label]</label>
+							<font>Reg26</font>
+							<scroll>false</scroll>
+							<textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
+						</control>
+					</itemlayout>				
+					<focusedlayout width="620" height="84">
+						<!--focus bg-->
+						<control type="image">
+							<width>571</width>
+							<height>79</height>
+							<aligny>center</aligny>
+							<texture border="10" colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">diffuse/panel.png</texture>
+							<visible>Control.HasFocus(211)</visible>
+						</control>
+						<control type="image">
+							<width>571</width>
+							<height>79</height>
+							<aligny>center</aligny>
+							<texture border="10" colordiffuse="$INFO[Skin.String(ButtonColor)]">diffuse/panel.png</texture>
+							<visible>!Control.HasFocus(211)</visible>
+						</control>
+						<control type="image">
+							<width>571</width>
+							<height>79</height>
+							<aligny>center</aligny>
+							<texture border="10" colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">diffuse/panel_trans.png</texture>
+							<visible>!Control.HasFocus(211)</visible>
+						</control>
+						<!-- thumb -->
+						<control type="image">
+							<top>4</top>
+							<left>2</left>
+							<height>70</height>
+							<width>166</width>
+							<aspectratio aligny="center">keep</aspectratio>
+							<texture>defaultshortcut.png</texture>
+						</control>
+						<!--label-->
+						<control type="label">
+							<left>170</left>
+							<width>380</width>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
+							<font>Reg26</font>
+							<scroll>true</scroll>
+							<visible>Control.HasFocus(211)</visible>
+						</control>
+						<control type="label">
+							<left>170</left>
+							<width>380</width>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
+							<font>Reg26</font>
+							<scroll>false</scroll>
+							<visible>!Control.HasFocus(211)</visible>
+						</control>
+					</focusedlayout>
+					<content>
+						<item id="1">
+							<label>$VAR[widget_label_shortcuts_1]</label>
+							<label2>$LOCALIZE[31469]</label2>
+						</item>
+						  
+						<item id="2">
+							<label>$VAR[widget_label_shortcuts_2]</label>
+							<label2>$LOCALIZE[31456]</label2>
+						</item>
+						
+						<item id="3">
+							<label>$VAR[widget_label_shortcuts_3]</label>
+							<label2>$LOCALIZE[31457]</label2>
+						</item>
+
+						<item id="4">
+							<label>$VAR[widget_label_shortcuts_4]</label>
+							<label2>$LOCALIZE[31451]</label2>
+						</item>	
+
+						<item id="5">
+							<label>$VAR[widget_label_shortcuts_5]</label>
+							<label2>$LOCALIZE[31452]</label2>
+						</item>	
+
+						<item id="6">
+							<label>$VAR[widget_label_shortcuts_6]</label>
+							<label2>$LOCALIZE[31159]</label2>
+						</item>	
+
+						<item id="7">
+							<label>$VAR[widget_label_shortcuts_7]</label>
+							<label2>$LOCALIZE[31046]</label2>
+						</item>
+
+						<item id="8">
+							<label>$VAR[widget_label_shortcuts_8]</label>
+							<label2>$LOCALIZE[31448]</label2>
+						</item>		
+						
+						<item id="9">
+							<label>$VAR[widget_label_shortcuts_9]</label>
+							<label2>$LOCALIZE[31446]</label2>
+						</item>	
+
+						<item id="10">
+							<label>$VAR[widget_label_shortcuts_10]</label>
+							<label2>$LOCALIZE[31442]</label2>
+						</item>	
+
+						<item id="11">
+							<label>$VAR[widget_label_shortcuts_11]</label>
+							<label2>$LOCALIZE[31435]</label2>
+						</item>
+						  
+						<item id="12">
+							<label>$VAR[widget_label_shortcuts_12]</label>
+							<label2>$LOCALIZE[31049]</label2>
+						</item>
+						
+						<item id="13">
+							<label>$VAR[widget_label_shortcuts_13]</label>
+							<label2>$LOCALIZE[31427]</label2>
+						</item>
+
+						<item id="14">
+							<label>$VAR[widget_label_shortcuts_14]</label>
+							<label2>$LOCALIZE[31428]</label2>
+						</item>	
+
+						<item id="15">
+							<label>$VAR[widget_label_shortcuts_15]</label>
+							<label2>$LOCALIZE[31414]</label2>
+						</item>	
+
+						<item id="16">
+							<label>$VAR[widget_label_shortcuts_16]</label>
+							<label2>$LOCALIZE[31398]</label2>
+						</item>	
+
+						<item id="17">
+							<label>$VAR[widget_label_shortcuts_17]</label>
+							<label2>$LOCALIZE[31399]</label2>
+						</item>
+
+						<item id="18">
+							<label>$VAR[widget_label_shortcuts_18]</label>
+							<label2>$LOCALIZE[31386]</label2>
+						</item>		
+						
+						<item id="19">
+							<label>$VAR[widget_label_shortcuts_19]</label>
+							<label2>$LOCALIZE[31381]</label2>
+						</item>	
+
+						<item id="20">
+							<label>$VAR[widget_label_shortcuts_20]</label>
+							<label2>$LOCALIZE[31382]</label2>
+						</item>
+						<item id="21">
+							<label>$VAR[widget_label_shortcuts_21]</label>
+							<label2>$LOCALIZE[31376]</label2>
+						</item>
+						  
+						<item id="22">
+							<label>$VAR[widget_label_shortcuts_22]</label>
+							<label2>$LOCALIZE[31377]</label2>
+						</item>
+						
+						<item id="23">
+							<label>$VAR[widget_label_shortcuts_23]</label>
+							<label2>$LOCALIZE[31372]</label2>
+						</item>
+
+						<item id="24">
+							<label>$VAR[widget_label_shortcuts_24]</label>
+							<label2>$LOCALIZE[31373]</label2>
+						</item>	
+
+						<item id="25">
+							<label>$VAR[widget_label_shortcuts_25]</label>
+							<label2>$LOCALIZE[31374]</label2>
+						</item>	
+
+						<item id="26">
+							<label>$VAR[widget_label_shortcuts_26]</label>
+							<label2>$LOCALIZE[31364]</label2>
+						</item>	
+
+						<item id="27">
+							<label>$VAR[widget_label_shortcuts_27]</label>
+							<label2>$LOCALIZE[31352]</label2>
+						</item>
+
+						<item id="28">
+							<label>$VAR[widget_label_shortcuts_28]</label>
+							<label2>$LOCALIZE[31353]</label2>
+						</item>						
+					</content>
+				</control>
+				
+				<!-- right panel -->
+				<control type="image">
+					<right>90</right>
+					<posy>30</posy>
+					<width>539</width>
+					<height>750</height>
+					<texture border="15">diffuse/bgpanel.png</texture>
+					<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
+				</control>
+				
+				<control type="grouplist">
+                    <right>109</right>
+                    <width>500</width>
+					<posy>48</posy>								
+					<!--action label-->
+					<control type="label">
+						<left>5</left>
+						<width>500</width>
+						<height>25</height>
+						<label>[B]$LOCALIZE[31578]:[/B]</label>
+                        <font>Reg24</font>
+						<scrollspeed>160</scrollspeed>
+						<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+					</control>
+					<control type="fadelabel">
+						<left>5</left>
+                        <width>500</width>
+						<height>20</height>
+						<label>$VAR[widget_action_label]</label>
+						<font>Reg20</font>
+						<scrollout>false</scrollout>
+						<scroll>true</scroll>
+						<scrollspeed>50</scrollspeed>
+						<pauseatend>2500</pauseatend>
+						<orientation>horizontal</orientation>
+                        <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+					</control>
+					<!--Widget style label-->
+					<control type="label">
+						<left>5</left>
+						<width>500</width>
+						<height>25</height>
+						<label>[B]$LOCALIZE[31507]:[/B]</label>
+                        <font>Reg24</font>
+						<scrollspeed>160</scrollspeed>
+						<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+					</control>
+					<control type="fadelabel">
+						<left>5</left>
+                        <width>500</width>
+						<height>20</height>
+						<label>$VAR[cat_widget_style_label]</label>
+						<font>Reg20</font>
+						<scrollout>false</scrollout>
+						<scroll>true</scroll>
+						<scrollspeed>50</scrollspeed>
+						<pauseatend>2500</pauseatend>
+						<orientation>horizontal</orientation>
+                        <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+					</control>
+					<!--Widget tags label-->
+					<control type="label">
+						<left>5</left>
+						<width>500</width>
+						<height>25</height>
+						<label>[B]$LOCALIZE[31028]:[/B]</label>
+                        <font>Reg24</font>
+						<scrollspeed>160</scrollspeed>
+						<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+						<visible>					
+						![[String.IsEqual(Skin.String(1_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(1_widgetstyle),landscape) | String.IsEqual(Skin.String(1_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31469]) | 
+						![[String.IsEqual(Skin.String(2_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(2_widgetstyle),landscape) | String.IsEqual(Skin.String(2_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31456]) | 
+						![[String.IsEqual(Skin.String(3_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(3_widgetstyle),landscape) | String.IsEqual(Skin.String(3_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31457]) | 
+						![[String.IsEqual(Skin.String(4_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(4_widgetstyle),landscape) | String.IsEqual(Skin.String(4_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31451]) | 
+						![[String.IsEqual(Skin.String(5_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(5_widgetstyle),landscape) | String.IsEqual(Skin.String(5_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31452]) | 
+						![[String.IsEqual(Skin.String(6_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(6_widgetstyle),landscape) | String.IsEqual(Skin.String(6_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31159]) | 
+						![[String.IsEqual(Skin.String(7_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(7_widgetstyle),landscape) | String.IsEqual(Skin.String(7_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31046]) |
+						![[String.IsEqual(Skin.String(8_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(8_widgetstyle),landscape) | String.IsEqual(Skin.String(8_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31448]) |
+						![[String.IsEqual(Skin.String(9_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(9_widgetstyle),landscape) | String.IsEqual(Skin.String(9_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31446]) |
+						![[String.IsEqual(Skin.String(10_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(10_widgetstyle),landscape) | String.IsEqual(Skin.String(10_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31442]) |
+						![[String.IsEqual(Skin.String(11_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(11_widgetstyle),landscape) | String.IsEqual(Skin.String(11_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31435]) |
+						![[String.IsEqual(Skin.String(12_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(12_widgetstyle),landscape) | String.IsEqual(Skin.String(12_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31049]) |
+						![[String.IsEqual(Skin.String(13_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(13_widgetstyle),landscape) | String.IsEqual(Skin.String(13_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31427]) |
+						![[String.IsEqual(Skin.String(14_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(14_widgetstyle),landscape) | String.IsEqual(Skin.String(14_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31428]) |
+						![[String.IsEqual(Skin.String(15_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(15_widgetstyle),landscape) | String.IsEqual(Skin.String(15_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31414]) |
+						![[String.IsEqual(Skin.String(16_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(16_widgetstyle),landscape) | String.IsEqual(Skin.String(16_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31398]) |
+						![[String.IsEqual(Skin.String(17_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(17_widgetstyle),landscape) | String.IsEqual(Skin.String(17_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31399]) |
+						![[String.IsEqual(Skin.String(18_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(18_widgetstyle),landscape) | String.IsEqual(Skin.String(18_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31386]) |
+						![[String.IsEqual(Skin.String(19_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(19_widgetstyle),landscape) | String.IsEqual(Skin.String(19_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31381]) |
+						![[String.IsEqual(Skin.String(20_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(20_widgetstyle),landscape) | String.IsEqual(Skin.String(20_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31382]) |
+						![[String.IsEqual(Skin.String(21_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(21_widgetstyle),landscape) | String.IsEqual(Skin.String(21_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31376]) |
+						![[String.IsEqual(Skin.String(22_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(22_widgetstyle),landscape) | String.IsEqual(Skin.String(22_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31377]) |
+						![[String.IsEqual(Skin.String(3_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(23_widgetstyle),landscape) | String.IsEqual(Skin.String(23_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31372]) |
+						![[String.IsEqual(Skin.String(24_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(24_widgetstyle),landscape) | String.IsEqual(Skin.String(24_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31373]) |
+						![[String.IsEqual(Skin.String(25_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(25_widgetstyle),landscape) | String.IsEqual(Skin.String(25_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31374]) |
+						![[String.IsEqual(Skin.String(26_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(26_widgetstyle),landscape) | String.IsEqual(Skin.String(26_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31364]) |
+						![[String.IsEqual(Skin.String(27_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(27_widgetstyle),landscape) | String.IsEqual(Skin.String(27_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31352]) |
+						![[String.IsEqual(Skin.String(28_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(28_widgetstyle),landscape) | String.IsEqual(Skin.String(28_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31353])					
+						</visible>	
+					</control>
+					<control type="fadelabel">
+						<left>5</left>
+                        <width>500</width>
+						<height>20</height>
+						<label>$VAR[cat_widget_tags_label]</label>
+						<font>Reg20</font>
+						<scrollout>false</scrollout>
+						<scroll>true</scroll>
+						<scrollspeed>50</scrollspeed>
+						<pauseatend>2500</pauseatend>
+						<orientation>horizontal</orientation>
+                        <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+						<visible>					
+						![[String.IsEqual(Skin.String(1_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(1_widgetstyle),landscape) | String.IsEqual(Skin.String(1_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31469]) | 
+						![[String.IsEqual(Skin.String(2_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(2_widgetstyle),landscape) | String.IsEqual(Skin.String(2_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31456]) | 
+						![[String.IsEqual(Skin.String(3_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(3_widgetstyle),landscape) | String.IsEqual(Skin.String(3_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31457]) | 
+						![[String.IsEqual(Skin.String(4_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(4_widgetstyle),landscape) | String.IsEqual(Skin.String(4_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31451]) | 
+						![[String.IsEqual(Skin.String(5_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(5_widgetstyle),landscape) | String.IsEqual(Skin.String(5_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31452]) | 
+						![[String.IsEqual(Skin.String(6_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(6_widgetstyle),landscape) | String.IsEqual(Skin.String(6_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31159]) | 
+						![[String.IsEqual(Skin.String(7_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(7_widgetstyle),landscape) | String.IsEqual(Skin.String(7_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31046]) |
+						![[String.IsEqual(Skin.String(8_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(8_widgetstyle),landscape) | String.IsEqual(Skin.String(8_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31448]) |
+						![[String.IsEqual(Skin.String(9_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(9_widgetstyle),landscape) | String.IsEqual(Skin.String(9_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31446]) |
+						![[String.IsEqual(Skin.String(10_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(10_widgetstyle),landscape) | String.IsEqual(Skin.String(10_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31442]) |
+						![[String.IsEqual(Skin.String(11_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(11_widgetstyle),landscape) | String.IsEqual(Skin.String(11_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31435]) |
+						![[String.IsEqual(Skin.String(12_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(12_widgetstyle),landscape) | String.IsEqual(Skin.String(12_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31049]) |
+						![[String.IsEqual(Skin.String(13_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(13_widgetstyle),landscape) | String.IsEqual(Skin.String(13_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31427]) |
+						![[String.IsEqual(Skin.String(14_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(14_widgetstyle),landscape) | String.IsEqual(Skin.String(14_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31428]) |
+						![[String.IsEqual(Skin.String(15_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(15_widgetstyle),landscape) | String.IsEqual(Skin.String(15_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31414]) |
+						![[String.IsEqual(Skin.String(16_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(16_widgetstyle),landscape) | String.IsEqual(Skin.String(16_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31398]) |
+						![[String.IsEqual(Skin.String(17_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(17_widgetstyle),landscape) | String.IsEqual(Skin.String(17_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31399]) |
+						![[String.IsEqual(Skin.String(18_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(18_widgetstyle),landscape) | String.IsEqual(Skin.String(18_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31386]) |
+						![[String.IsEqual(Skin.String(19_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(19_widgetstyle),landscape) | String.IsEqual(Skin.String(19_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31381]) |
+						![[String.IsEqual(Skin.String(20_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(20_widgetstyle),landscape) | String.IsEqual(Skin.String(20_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31382]) |
+						![[String.IsEqual(Skin.String(21_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(21_widgetstyle),landscape) | String.IsEqual(Skin.String(21_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31376]) |
+						![[String.IsEqual(Skin.String(22_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(22_widgetstyle),landscape) | String.IsEqual(Skin.String(22_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31377]) |
+						![[String.IsEqual(Skin.String(3_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(23_widgetstyle),landscape) | String.IsEqual(Skin.String(23_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31372]) |
+						![[String.IsEqual(Skin.String(24_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(24_widgetstyle),landscape) | String.IsEqual(Skin.String(24_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31373]) |
+						![[String.IsEqual(Skin.String(25_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(25_widgetstyle),landscape) | String.IsEqual(Skin.String(25_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31374]) |
+						![[String.IsEqual(Skin.String(26_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(26_widgetstyle),landscape) | String.IsEqual(Skin.String(26_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31364]) |
+						![[String.IsEqual(Skin.String(27_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(27_widgetstyle),landscape) | String.IsEqual(Skin.String(27_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31352]) |
+						![[String.IsEqual(Skin.String(28_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(28_widgetstyle),landscape) | String.IsEqual(Skin.String(28_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31353])					
+						</visible>	
+					</control>				
+					<!--Widget target label-->
+					<control type="label">
+						<left>5</left>
+						<width>500</width>
+						<height>25</height>
+						<label>[B]$LOCALIZE[31468]:[/B]</label>
+                        <font>Reg24</font>
+						<scrollspeed>160</scrollspeed>
+						<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+					</control>
+					<control type="fadelabel">
+						<left>5</left>
+                        <width>500</width>
+						<height>20</height>
+						<label>$VAR[cat_widget_target_label]</label>
+						<font>Reg20</font>
+						<scrollout>false</scrollout>
+						<scroll>true</scroll>
+						<scrollspeed>50</scrollspeed>
+						<pauseatend>2500</pauseatend>
+						<orientation>horizontal</orientation>
+                        <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+					</control>					
+					<!--Widget sort by label-->
+					<control type="label">
+						<left>5</left>
+						<width>500</width>
+						<height>25</height>
+						<label>[B]$LOCALIZE[581]:[/B]</label>
+                        <font>Reg24</font>
+						<scrollspeed>160</scrollspeed>
+						<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+					</control>
+					<control type="fadelabel">
+						<left>5</left>
+                        <width>500</width>
+						<height>20</height>
+						<label>$VAR[cat_widget_sortby_label]</label>
+						<font>Reg20</font>
+						<scrollout>false</scrollout>
+						<scroll>true</scroll>
+						<scrollspeed>50</scrollspeed>
+						<pauseatend>2500</pauseatend>
+						<orientation>horizontal</orientation>
+                        <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+					</control>
+					<!--Widget sort order label-->
+					<control type="label">
+						<left>5</left>
+						<width>500</width>
+						<height>25</height>
+						<label>[B]$LOCALIZE[580]:[/B]</label>
+                        <font>Reg24</font>
+						<scrollspeed>160</scrollspeed>
+						<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+					</control>
+					<control type="fadelabel">
+						<left>5</left>
+                        <width>500</width>
+						<height>20</height>
+						<label>$VAR[cat_widget_sortorder_label]</label>
+						<font>Reg20</font>
+						<scrollout>false</scrollout>
+						<scroll>true</scroll>
+						<scrollspeed>50</scrollspeed>
+						<pauseatend>2500</pauseatend>
+						<orientation>horizontal</orientation>
+                        <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+					</control>
+					<!--Widget limit label-->
+					<control type="label">
+						<left>5</left>
+						<width>500</width>
+						<height>25</height>
+						<label>[B]$LOCALIZE[21427]:[/B]</label>
+                        <font>Reg24</font>
+						<scrollspeed>160</scrollspeed>
+						<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+					</control>
+					<control type="fadelabel">
+						<left>5</left>
+                        <width>500</width>
+						<height>20</height>
+						<label>$VAR[cat_widget_limit_label]</label>
+						<font>Reg20</font>
+						<scrollout>false</scrollout>
+						<scroll>true</scroll>
+						<scrollspeed>50</scrollspeed>
+						<pauseatend>2500</pauseatend>
+						<orientation>horizontal</orientation>
+                        <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+					</control>
+				</control>				
+				<!--fake list -->
+				<control type="list" id="111"> 
+					<visible>false</visible>
+					<orientation>vertical</orientation>
+					<selectedcolor>FF00b8ff</selectedcolor>
+					<itemlayout width="1000" height="65">
+					</itemlayout>
+					<focusedlayout width="1000" height="65">			
+					</focusedlayout>
+				</control>							
+			</control>
+
+			<!-- menu controls -->
+			<control type="grouplist" id="900">
+				<left>721</left>
+				<top>30</top>
+				<width>510</width>
+				<height>755</height>
+				<itemgap>5</itemgap>
+				<orientation>vertical</orientation>
+				<onleft>211</onleft>
+				<scrolltime>200</scrolltime>
+                <pagecontrol>270</pagecontrol>
+                <visible>String.IsEmpty(Window.Property(widgetcontrols))</visible>
+				
+				<!-- Set label -->
+				<control type="button" id="500">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>			
+					<label>$LOCALIZE[31466]</label>
+					<onclick>Skin.SetString(ActionAdvantureMovies.label)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31469])</visible>
+				</control>
+				<control type="button" id="501">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>			
+					<label>$LOCALIZE[31466]</label>
+					<onclick>Skin.SetString(DramaMovies.label)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31456])</visible>
+				</control>
+				<control type="button" id="502">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>					
+					<label>$LOCALIZE[31466]</label>
+					<onclick>Skin.SetString(ComedyMovies.label)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31457])</visible>
+				</control>
+				<control type="button" id="503">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>				
+					<label>$LOCALIZE[31466]</label>
+					<onclick>Skin.SetString(FamilyMovies.label)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31451])</visible>
+				</control>
+				<control type="button" id="504">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>			
+					<label>$LOCALIZE[31466]</label>
+					<onclick>Skin.SetString(HorrorMovies.label)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31452])</visible>
+				</control>
+				<control type="button" id="505">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>		
+					<label>$LOCALIZE[31466]</label>
+					<onclick>Skin.SetString(DocumentaryMovies.label)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31159])</visible>
+				</control>
+				<control type="button" id="506">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>			
+					<label>$LOCALIZE[31466]</label>
+					<onclick>Skin.SetString(AnimeMovies.label)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31046])</visible>
+				</control>
+				<control type="button" id="507">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>			
+					<label>$LOCALIZE[31466]</label>
+					<onclick>Skin.SetString(CrimeMovies.label)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31448])</visible>
+				</control>
+				<control type="button" id="508">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>	
+					<label>$LOCALIZE[31466]</label>
+					<onclick>Skin.SetString(FantasyMovies.label)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31446])</visible>
+				</control>
+				<control type="button" id="509">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>			
+					<label>$LOCALIZE[31466]</label>
+					<onclick>Skin.SetString(HistoryWarMovies.label)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31442])</visible>
+				</control>
+				<control type="button" id="510">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>			
+					<label>$LOCALIZE[31466]</label>
+					<onclick>Skin.SetString(AnimationMovies.label)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31435])</visible>
+				</control>
+				<control type="button" id="511">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>			
+					<label>$LOCALIZE[31466]</label>
+					<onclick>Skin.SetString(MusicMovies.label)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31049])</visible>
+				</control>
+				<control type="button" id="512">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>	
+					<label>$LOCALIZE[31466]</label>
+					<onclick>Skin.SetString(RomanceMovies.label)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31427])</visible>
+				</control>
+				<control type="button" id="513">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>		
+					<label>$LOCALIZE[31466]</label>
+					<onclick>Skin.SetString(SciFiMovies.label)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31428])</visible>
+				</control>
+				<control type="button" id="514">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>			
+					<label>$LOCALIZE[31466]</label>
+					<onclick>Skin.SetString(MysteryMovies.label)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31414])</visible>
+				</control>
+				<control type="button" id="515">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>	
+					<label>$LOCALIZE[31466]</label>
+					<onclick>Skin.SetString(ThrillerMovies.label)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31398])</visible>
+				</control>
+				<control type="button" id="516">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>		
+					<label>$LOCALIZE[31466]</label>
+					<onclick>Skin.SetString(WesternMovies.label)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31399])</visible>
+				</control>
+				<control type="button" id="517">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>		
+					<label>$LOCALIZE[31466]</label>
+					<onclick>Skin.SetString(ActionAdvantureTVShows.label)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31386])</visible>
+				</control>
+				<control type="button" id="518">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>		
+					<label>$LOCALIZE[31466]</label>
+					<onclick>Skin.SetString(DramaTVShows.label)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31381])</visible>
+				</control>
+				<control type="button" id="519">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>	
+					<label>$LOCALIZE[31466]</label>
+					<onclick>Skin.SetString(ComedyTVShows.label)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31382])</visible>
+				</control>
+				<control type="button" id="520">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>			
+					<label>$LOCALIZE[31466]</label>
+					<onclick>Skin.SetString(FamilyTVShows.label)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31376])</visible>
+				</control>
+				<control type="button" id="521">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<label>$LOCALIZE[31466]</label>
+					<onclick>Skin.SetString(DocumentaryTVShows.label)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31377])</visible>
+				</control>
+				<control type="button" id="522">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>	
+					<label>$LOCALIZE[31466]</label>
+					<onclick>Skin.SetString(CrimeTVShows.label)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31372])</visible>
+				</control>
+				<control type="button" id="523">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>		
+					<label>$LOCALIZE[31466]</label>
+					<onclick>Skin.SetString(SciFiFantasyTVShows.label)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31373])</visible>
+				</control>
+				<control type="button" id="524">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>			
+					<label>$LOCALIZE[31466]</label>
+					<onclick>Skin.SetString(WarPoliticsTVShows.label)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31374])</visible>
+				</control>
+				<control type="button" id="525">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>		
+					<label>$LOCALIZE[31466]</label>
+					<onclick>Skin.SetString(AnimationTVShows.label)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31364])</visible>
+				</control>
+				<control type="button" id="526">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>		
+					<label>$LOCALIZE[31466]</label>
+					<onclick>Skin.SetString(MysteryTVShows.label)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31352])</visible>
+				</control>
+				<control type="button" id="527">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<label>$LOCALIZE[31466]</label>
+					<onclick>Skin.SetString(WesternTVShows.label)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31353])</visible>
+				</control>
+				
+				<!-- Set widgets -->
+				<control type="button" id="31469">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>			
+					<label>$LOCALIZE[31490]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=ActionAdvantureMovies.path)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31469])</visible>
+				</control>
+				<control type="button" id="31456">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>			
+					<label>$LOCALIZE[31490]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=DramaMovies.path)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31456])</visible>
+				</control>
+				<control type="button" id="31457">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>					
+					<label>$LOCALIZE[31490]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=ComedyMovies.path)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31457])</visible>
+				</control>
+				<control type="button" id="31451">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>				
+					<label>$LOCALIZE[31490]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=FamilyMovies.path)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31451])</visible>
+				</control>
+				<control type="button" id="31452">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>			
+					<label>$LOCALIZE[31490]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=HorrorMovies.path)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31452])</visible>
+				</control>
+				<control type="button" id="31159">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>		
+					<label>$LOCALIZE[31490]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=DocumentaryMovies.path)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31159])</visible>
+				</control>
+				<control type="button" id="31046">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>			
+					<label>$LOCALIZE[31490]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=AnimeMovies.path)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31046])</visible>
+				</control>
+				<control type="button" id="31448">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>			
+					<label>$LOCALIZE[31490]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=CrimeMovies.path)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31448])</visible>
+				</control>
+				<control type="button" id="31446">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>	
+					<label>$LOCALIZE[31490]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=FantasyMovies.path)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31446])</visible>
+				</control>
+				<control type="button" id="31442">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>			
+					<label>$LOCALIZE[31490]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=HistoryWarMovies.path)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31442])</visible>
+				</control>
+				<control type="button" id="31435">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>			
+					<label>$LOCALIZE[31490]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=AnimationMovies.path)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31435])</visible>
+				</control>
+				<control type="button" id="31049">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>			
+					<label>$LOCALIZE[31490]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=MusicMovies.path)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31049])</visible>
+				</control>
+				<control type="button" id="31427">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>	
+					<label>$LOCALIZE[31490]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=RomanceMovies.path)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31427])</visible>
+				</control>
+				<control type="button" id="31428">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>		
+					<label>$LOCALIZE[31490]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=SciFiMovies.path)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31428])</visible>
+				</control>
+				<control type="button" id="31414">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>			
+					<label>$LOCALIZE[31490]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=MysteryMovies.path)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31414])</visible>
+				</control>
+				<control type="button" id="31398">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>	
+					<label>$LOCALIZE[31490]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=ThrillerMovies.path)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31398])</visible>
+				</control>
+				<control type="button" id="31399">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>		
+					<label>$LOCALIZE[31490]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=WesternMovies.path)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31399])</visible>
+				</control>
+				<control type="button" id="31386">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>		
+					<label>$LOCALIZE[31490]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=ActionAdvantureTVShows.path)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31386])</visible>
+				</control>
+				<control type="button" id="31381">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>		
+					<label>$LOCALIZE[31490]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=DramaTVShows.path)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31381])</visible>
+				</control>
+				<control type="button" id="31382">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>	
+					<label>$LOCALIZE[31490]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=ComedyTVShows.path)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31382])</visible>
+				</control>
+				<control type="button" id="31376">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>			
+					<label>$LOCALIZE[31490]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=FamilyTVShows.path)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31376])</visible>
+				</control>
+				<control type="button" id="31377">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<label>$LOCALIZE[31490]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=DocumentaryTVShows.path)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31377])</visible>
+				</control>
+				<control type="button" id="31372">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>	
+					<label>$LOCALIZE[31490]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=CrimeTVShows.path)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31372])</visible>
+				</control>
+				<control type="button" id="31373">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>		
+					<label>$LOCALIZE[31490]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=SciFiFantasyTVShows.path)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31373])</visible>
+				</control>
+				<control type="button" id="31374">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>			
+					<label>$LOCALIZE[31490]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=WarPoliticsTVShows.path)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31374])</visible>
+				</control>
+				<control type="button" id="31364">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>		
+					<label>$LOCALIZE[31490]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=AnimationTVShows.path)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31364])</visible>
+				</control>
+				<control type="button" id="31352">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>		
+					<label>$LOCALIZE[31490]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=MysteryTVShows.path)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31352])</visible>
+				</control>
+				<control type="button" id="31353">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<label>$LOCALIZE[31490]</label>
+					<onclick>RunScript(script.skinshortcuts,type=widgets&amp;showNone=true&amp;skinWidgetPath=WesternTVShows.path)</onclick>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31353])</visible>
+				</control>
+				<!--widget style-->
+                <control type="button" id="31507"> 
+					<width>510</width>
+					<height>58</height>
+					<label>$LOCALIZE[31507]</label>
+					<align>center</align>
+                    <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=$VAR[catnum]widgetstyle,header=$LOCALIZE[31507])</onclick>
+                </control>
+				<!-- Tags on widgets -->
+				<control type="button" id="31028">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<label>$LOCALIZE[31028]</label>
+					<onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=$VAR[catnum]Widgets_DisplayTags,header=$LOCALIZE[31028])</onclick>
+					<visible>					
+					![[String.IsEqual(Skin.String(1_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(1_widgetstyle),landscape) | String.IsEqual(Skin.String(1_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31469]) | 
+					![[String.IsEqual(Skin.String(2_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(2_widgetstyle),landscape) | String.IsEqual(Skin.String(2_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31456]) | 
+					![[String.IsEqual(Skin.String(3_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(3_widgetstyle),landscape) | String.IsEqual(Skin.String(3_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31457]) | 
+					![[String.IsEqual(Skin.String(4_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(4_widgetstyle),landscape) | String.IsEqual(Skin.String(4_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31451]) | 
+					![[String.IsEqual(Skin.String(5_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(5_widgetstyle),landscape) | String.IsEqual(Skin.String(5_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31452]) | 
+					![[String.IsEqual(Skin.String(6_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(6_widgetstyle),landscape) | String.IsEqual(Skin.String(6_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31159]) | 
+					![[String.IsEqual(Skin.String(7_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(7_widgetstyle),landscape) | String.IsEqual(Skin.String(7_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31046]) |
+					![[String.IsEqual(Skin.String(8_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(8_widgetstyle),landscape) | String.IsEqual(Skin.String(8_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31448]) |
+					![[String.IsEqual(Skin.String(9_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(9_widgetstyle),landscape) | String.IsEqual(Skin.String(9_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31446]) |
+					![[String.IsEqual(Skin.String(10_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(10_widgetstyle),landscape) | String.IsEqual(Skin.String(10_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31442]) |
+					![[String.IsEqual(Skin.String(11_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(11_widgetstyle),landscape) | String.IsEqual(Skin.String(11_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31435]) |
+					![[String.IsEqual(Skin.String(12_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(12_widgetstyle),landscape) | String.IsEqual(Skin.String(12_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31049]) |
+					![[String.IsEqual(Skin.String(13_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(13_widgetstyle),landscape) | String.IsEqual(Skin.String(13_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31427]) |
+					![[String.IsEqual(Skin.String(14_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(14_widgetstyle),landscape) | String.IsEqual(Skin.String(14_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31428]) |
+					![[String.IsEqual(Skin.String(15_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(15_widgetstyle),landscape) | String.IsEqual(Skin.String(15_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31414]) |
+					![[String.IsEqual(Skin.String(16_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(16_widgetstyle),landscape) | String.IsEqual(Skin.String(16_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31398]) |
+					![[String.IsEqual(Skin.String(17_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(17_widgetstyle),landscape) | String.IsEqual(Skin.String(17_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31399]) |
+					![[String.IsEqual(Skin.String(18_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(18_widgetstyle),landscape) | String.IsEqual(Skin.String(18_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31386]) |
+					![[String.IsEqual(Skin.String(19_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(19_widgetstyle),landscape) | String.IsEqual(Skin.String(19_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31381]) |
+					![[String.IsEqual(Skin.String(20_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(20_widgetstyle),landscape) | String.IsEqual(Skin.String(20_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31382]) |
+					![[String.IsEqual(Skin.String(21_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(21_widgetstyle),landscape) | String.IsEqual(Skin.String(21_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31376]) |
+					![[String.IsEqual(Skin.String(22_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(22_widgetstyle),landscape) | String.IsEqual(Skin.String(22_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31377]) |
+					![[String.IsEqual(Skin.String(3_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(23_widgetstyle),landscape) | String.IsEqual(Skin.String(23_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31372]) |
+					![[String.IsEqual(Skin.String(24_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(24_widgetstyle),landscape) | String.IsEqual(Skin.String(24_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31373]) |
+					![[String.IsEqual(Skin.String(25_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(25_widgetstyle),landscape) | String.IsEqual(Skin.String(25_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31374]) |
+					![[String.IsEqual(Skin.String(26_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(26_widgetstyle),landscape) | String.IsEqual(Skin.String(26_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31364]) |
+					![[String.IsEqual(Skin.String(27_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(27_widgetstyle),landscape) | String.IsEqual(Skin.String(27_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31352]) |
+					![[String.IsEqual(Skin.String(28_widgetstyle),default) + [String.IsEqual(Skin.String(widgetstyle),landscape) | String.IsEqual(Skin.String(widgetstyle),square)]] | String.IsEqual(Skin.String(28_widgetstyle),landscape) | String.IsEqual(Skin.String(28_widgetstyle),square)] + String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31353])					
+					</visible>
+				</control>
+				<!--widget target-->
+				<control type="button" id="31468">
+                    <width>510</width>
+					<height>58</height>
+					<label>$LOCALIZE[31468]</label>
+					<align>center</align>
+					<onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=$VAR[catnum]widgettarget,header=$LOCALIZE[31468])</onclick>
+                </control>
+				<!-- Categories sort by -->
+				<control type="button" id="581">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<label>$LOCALIZE[581]</label>
+					<onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=$VAR[catnum]widgetsortby,header=$LOCALIZE[581])</onclick>
+				</control>
+				<!-- Categories sort order -->
+				<control type="button" id="580">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<label>$LOCALIZE[580]</label>
+					<onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=$VAR[catnum]widgetsortorder,header=$LOCALIZE[580])</onclick>
+				</control>
+				<!-- Categories limit -->
+				<control type="button" id="21427">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<label>$LOCALIZE[21427]</label>
+					<onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=$VAR[catnum]widgetlimit,header=$LOCALIZE[21427])</onclick>
+				</control>  
+                <!-- disable shortcut-->
+                <control type="radiobutton" id="300">
+                    <width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<textwidth>300</textwidth>
+                    <label>$LOCALIZE[31392]</label>
+                    <onclick>Skin.ToggleSetting(categories_list_action)</onclick>
+					<selected>Skin.HasSetting(categories_list_action)</selected>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31469])</visible>
+				</control>	
+				<control type="radiobutton" id="301">
+                    <width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<textwidth>300</textwidth>
+                    <label>$LOCALIZE[31392]</label>
+                    <onclick>Skin.ToggleSetting(categories_list_dramas)</onclick>
+					<selected>Skin.HasSetting(categories_list_dramas)</selected>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31456])</visible>
+				</control>
+				<control type="radiobutton" id="302">
+                    <width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<textwidth>300</textwidth>
+                    <label>$LOCALIZE[31392]</label>
+                    <onclick>Skin.ToggleSetting(categories_list_comedies)</onclick>
+					<selected>Skin.HasSetting(categories_list_comedies)</selected>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31457])</visible>
+				</control>	
+				<control type="radiobutton" id="303">
+                    <width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<textwidth>300</textwidth>
+                    <label>$LOCALIZE[31392]</label>
+                    <onclick>Skin.ToggleSetting(categories_list_family)</onclick>
+					<selected>Skin.HasSetting(categories_list_family)</selected>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31451])</visible>
+				</control>	
+				<control type="radiobutton" id="304">
+                    <width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<textwidth>300</textwidth>
+                    <label>$LOCALIZE[31392]</label>
+                    <onclick>Skin.ToggleSetting(categories_list_horror)</onclick>
+					<selected>Skin.HasSetting(categories_list_horror)</selected>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31452])</visible>
+				</control>	
+				<control type="radiobutton" id="305">
+                    <width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<textwidth>300</textwidth>
+                    <label>$LOCALIZE[31392]</label>
+                    <onclick>Skin.ToggleSetting(categories_list_documentaries)</onclick>
+					<selected>Skin.HasSetting(categories_list_documentaries)</selected>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31159])</visible>
+				</control>
+				<control type="radiobutton" id="306">
+                    <width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<textwidth>300</textwidth>
+                    <label>$LOCALIZE[31392]</label>
+                    <onclick>Skin.ToggleSetting(categories_list_anime)</onclick>
+					<selected>Skin.HasSetting(categories_list_anime)</selected>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31046])</visible>
+				</control>	
+				<control type="radiobutton" id="307">
+                    <width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<textwidth>300</textwidth>
+                    <label>$LOCALIZE[31392]</label>
+                    <onclick>Skin.ToggleSetting(categories_list_crime)</onclick>
+					<selected>Skin.HasSetting(categories_list_crime)</selected>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31448])</visible>
+				</control>
+				<control type="radiobutton" id="308">
+                    <width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<textwidth>300</textwidth>
+                    <label>$LOCALIZE[31392]</label>
+                    <onclick>Skin.ToggleSetting(categories_list_fantasy)</onclick>
+					<selected>Skin.HasSetting(categories_list_fantasy)</selected>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31446])</visible>
+				</control>	
+				<control type="radiobutton" id="309">
+                    <width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<textwidth>300</textwidth>
+                    <label>$LOCALIZE[31392]</label>
+                    <onclick>Skin.ToggleSetting(categories_list_history)</onclick>
+					<selected>Skin.HasSetting(categories_list_history)</selected>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31442])</visible>
+				</control>	
+				<control type="radiobutton" id="310">
+                    <width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<textwidth>300</textwidth>
+                    <label>$LOCALIZE[31392]</label>
+                    <onclick>Skin.ToggleSetting(categories_list_animations)</onclick>
+					<selected>Skin.HasSetting(categories_list_animations)</selected>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31435])</visible>
+				</control>	
+				<control type="radiobutton" id="311">
+                    <width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<textwidth>300</textwidth>
+                    <label>$LOCALIZE[31392]</label>
+                    <onclick>Skin.ToggleSetting(categories_list_musicals)</onclick>
+					<selected>Skin.HasSetting(categories_list_musicals)</selected>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31049])</visible>
+				</control>
+				<control type="radiobutton" id="312">
+                    <width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<textwidth>300</textwidth>
+                    <label>$LOCALIZE[31392]</label>
+                    <onclick>Skin.ToggleSetting(categories_list_romance)</onclick>
+					<selected>Skin.HasSetting(categories_list_romance)</selected>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31427])</visible>
+				</control>	
+				<control type="radiobutton" id="313">
+                    <width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<textwidth>300</textwidth>
+                    <label>$LOCALIZE[31392]</label>
+                    <onclick>Skin.ToggleSetting(categories_list_scifi)</onclick>
+					<selected>Skin.HasSetting(categories_list_scifi)</selected>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31428])</visible>
+				</control>
+				<control type="radiobutton" id="314">
+                    <width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<textwidth>300</textwidth>
+                    <label>$LOCALIZE[31392]</label>
+                    <onclick>Skin.ToggleSetting(categories_list_mysteries)</onclick>
+					<selected>Skin.HasSetting(categories_list_mysteries)</selected>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31414])</visible>
+				</control>	
+				<control type="radiobutton" id="315">
+                    <width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<textwidth>300</textwidth>
+                    <label>$LOCALIZE[31392]</label>
+                    <onclick>Skin.ToggleSetting(categories_list_thriller)</onclick>
+					<selected>Skin.HasSetting(categories_list_thriller)</selected>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31398])</visible>
+				</control>	
+				<control type="radiobutton" id="316">
+                    <width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<textwidth>300</textwidth>
+                    <label>$LOCALIZE[31392]</label>
+                    <onclick>Skin.ToggleSetting(categories_list_westerns)</onclick>
+					<selected>Skin.HasSetting(categories_list_westerns)</selected>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31399])</visible>
+				</control>	
+				<control type="radiobutton" id="317">
+                    <width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<textwidth>300</textwidth>
+                    <label>$LOCALIZE[31392]</label>
+                    <onclick>Skin.ToggleSetting(categories_list_tvaction)</onclick>
+					<selected>Skin.HasSetting(categories_list_tvaction)</selected>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31386])</visible>
+				</control>
+				<control type="radiobutton" id="318">
+                    <width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<textwidth>300</textwidth>
+                    <label>$LOCALIZE[31392]</label>
+                    <onclick>Skin.ToggleSetting(categories_list_tvdramas)</onclick>
+					<selected>Skin.HasSetting(categories_list_tvdramas)</selected>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31381])</visible>
+				</control>	
+				<control type="radiobutton" id="319">
+                    <width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<textwidth>300</textwidth>
+                    <label>$LOCALIZE[31392]</label>
+                    <onclick>Skin.ToggleSetting(categories_list_tvcomedies)</onclick>
+					<selected>Skin.HasSetting(categories_list_tvcomedies)</selected>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31382])</visible>
+				</control>
+				<control type="radiobutton" id="320">
+                    <width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<textwidth>300</textwidth>
+                    <label>$LOCALIZE[31392]</label>
+                    <onclick>Skin.ToggleSetting(categories_list_tvfamily)</onclick>
+					<selected>Skin.HasSetting(categories_list_tvfamily)</selected>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31376])</visible>
+				</control>	
+				<control type="radiobutton" id="321">
+                    <width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<textwidth>300</textwidth>
+                    <label>$LOCALIZE[31392]</label>
+                    <onclick>Skin.ToggleSetting(categories_list_tvdocumentaries)</onclick>
+					<selected>Skin.HasSetting(categories_list_tvdocumentaries)</selected>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31377])</visible>
+				</control>	
+				<control type="radiobutton" id="322">
+                    <width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<textwidth>300</textwidth>
+                    <label>$LOCALIZE[31392]</label>
+                    <onclick>Skin.ToggleSetting(categories_list_tvcrime)</onclick>
+					<selected>Skin.HasSetting(categories_list_tvcrime)</selected>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31372])</visible>
+				</control>	
+				<control type="radiobutton" id="323">
+                    <width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<textwidth>300</textwidth>
+                    <label>$LOCALIZE[31392]</label>
+                    <onclick>Skin.ToggleSetting(categories_list_tvfantasy)</onclick>
+					<selected>Skin.HasSetting(categories_list_tvfantasy)</selected>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31373])</visible>
+				</control>
+				<control type="radiobutton" id="324">
+                    <width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<textwidth>300</textwidth>
+                    <label>$LOCALIZE[31392]</label>
+                    <onclick>Skin.ToggleSetting(categories_list_tvwar)</onclick>
+					<selected>Skin.HasSetting(categories_list_tvwar)</selected>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31374])</visible>
+				</control>	
+				<control type="radiobutton" id="325">
+                    <width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<textwidth>300</textwidth>
+                    <label>$LOCALIZE[31392]</label>
+                    <onclick>Skin.ToggleSetting(categories_list_tvanimations)</onclick>
+					<selected>Skin.HasSetting(categories_list_tvanimations)</selected>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31364])</visible>
+				</control>
+				<control type="radiobutton" id="326">
+                    <width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<textwidth>300</textwidth>
+                    <label>$LOCALIZE[31392]</label>
+                    <onclick>Skin.ToggleSetting(categories_list_tvmysteries)</onclick>
+					<selected>Skin.HasSetting(categories_list_tvmysteries)</selected>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31352])</visible>
+				</control>	
+				<control type="radiobutton" id="327">
+                    <width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<textwidth>300</textwidth>
+                    <label>$LOCALIZE[31392]</label>
+                    <onclick>Skin.ToggleSetting(categories_list_tvwesterns)</onclick>
+					<selected>Skin.HasSetting(categories_list_tvwesterns)</selected>
+					<visible>String.IsEqual(Container(211).ListItem.Label2,$LOCALIZE[31353])</visible>
+				</control>
+				<control type="button" id="400">
+					<width>510</width>
+					<height>58</height>
+					<align>center</align>
+					<label>$LOCALIZE[31415]</label>
+					<onclick>RunScript(script.bingie.toolbox,action=dialogyesno,header=$LOCALIZE[31415]?,message=$LOCALIZE[31354],yesaction=
+							  Skin.Reset(ActionAdvantureMovies.path)|
+							  Skin.Reset(DramaMovies.path)|
+							  Skin.Reset(ComedyMovies.path)|
+							  Skin.Reset(FamilyMovies.path)|
+							  Skin.Reset(HorrorMovies.path)|
+							  Skin.Reset(DocumentaryMovies.path)|
+							  Skin.Reset(AnimeMovies.path)|
+							  Skin.Reset(CrimeMovies.path)|
+							  Skin.Reset(FantasyMovies.path)|
+							  Skin.Reset(HistoryWarMovies.path)|
+							  Skin.Reset(AnimationMovies.path)|
+							  Skin.Reset(MusicMovies.path)|
+							  Skin.Reset(RomanceMovies.path)|
+							  Skin.Reset(SciFiMovies.path)|
+							  Skin.Reset(MysteryMovies.path)|
+							  Skin.Reset(ThrillerMovies.path)|
+							  Skin.Reset(WesternMovies.path)|
+							  Skin.Reset(ActionAdvantureTVShows.path)|
+							  Skin.Reset(DramaTVShows.path)|
+							  Skin.Reset(ComedyTVShows.path)|
+							  Skin.Reset(FamilyTVShows.path)|
+							  Skin.Reset(DocumentaryTVShows.path)|
+							  Skin.Reset(CrimeTVShows.path)|
+							  Skin.Reset(SciFiFantasyTVShows.path)|
+							  Skin.Reset(WarPoliticsTVShows.path)|
+							  Skin.Reset(AnimationTVShows.path)|
+							  Skin.Reset(MysteryTVShows.path)|
+							  Skin.Reset(WesternTVShows.path)|
+							  
+							  Skin.Reset(ActionAdvantureMovies.label)|
+							  Skin.Reset(DramaMovies.label)|
+							  Skin.Reset(ComedyMovies.label)|
+							  Skin.Reset(FamilyMovies.label)|
+							  Skin.Reset(HorrorMovies.label)|
+							  Skin.Reset(DocumentaryMovies.label)|
+							  Skin.Reset(AnimeMovies.label)|
+							  Skin.Reset(CrimeMovies.label)|
+							  Skin.Reset(FantasyMovies.label)|
+							  Skin.Reset(HistoryWarMovies.label)|
+							  Skin.Reset(AnimationMovies.label)|
+							  Skin.Reset(MusicMovies.label)|
+							  Skin.Reset(RomanceMovies.label)|
+							  Skin.Reset(SciFiMovies.label)|
+							  Skin.Reset(MysteryMovies.label)|
+							  Skin.Reset(ThrillerMovies.label)|
+							  Skin.Reset(WesternMovies.label)|
+							  Skin.Reset(ActionAdvantureTVShows.label)|
+							  Skin.Reset(DramaTVShows.label)|
+							  Skin.Reset(ComedyTVShows.label)|
+							  Skin.Reset(FamilyTVShows.label)|
+							  Skin.Reset(DocumentaryTVShows.label)|
+							  Skin.Reset(CrimeTVShows.label)|
+							  Skin.Reset(SciFiFantasyTVShows.label)|
+							  Skin.Reset(WarPoliticsTVShows.label)|
+							  Skin.Reset(AnimationTVShows.label)|
+							  Skin.Reset(MysteryTVShows.label)|
+							  Skin.Reset(WesternTVShows.label)|
+							  
+							  Skin.Reset(categories_list_action)|
+							  Skin.Reset(categories_list_dramas)|
+							  Skin.Reset(categories_list_comedies)|
+							  Skin.Reset(categories_list_family)|
+							  Skin.Reset(categories_list_horror)|
+							  Skin.Reset(categories_list_documentaries)|
+							  Skin.Reset(categories_list_anime)|
+							  Skin.Reset(categories_list_crime)|
+							  Skin.Reset(categories_list_fantasy)|
+							  Skin.Reset(categories_list_history)|
+							  Skin.Reset(categories_list_animations)|
+							  Skin.Reset(categories_list_musicals)|
+							  Skin.Reset(categories_list_romance)|
+							  Skin.Reset(categories_list_scifi)|
+							  Skin.Reset(categories_list_mysteries)|
+							  Skin.Reset(categories_list_thriller)|
+							  Skin.Reset(categories_list_westerns)|
+							  Skin.Reset(categories_list_tvaction)|
+							  Skin.Reset(categories_list_tvdramas)|
+							  Skin.Reset(categories_list_tvcomedies)|
+							  Skin.Reset(categories_list_tvfamily)|
+							  Skin.Reset(categories_list_tvdocumentaries)|
+							  Skin.Reset(categories_list_tvcrime)|
+							  Skin.Reset(categories_list_tvfantasy)|
+							  Skin.Reset(categories_list_tvwar)|
+							  Skin.Reset(categories_list_tvanimations)|
+							  Skin.Reset(categories_list_tvmysteries)|
+							  Skin.Reset(categories_list_tvwesterns)|
+							  
+							  Skin.SetString(1_Widgets_DisplayTags,disable)|
+							  Skin.SetString(2_Widgets_DisplayTags,disable)|
+							  Skin.SetString(3_Widgets_DisplayTags,disable)|
+							  Skin.SetString(4_Widgets_DisplayTags,disable)|
+							  Skin.SetString(5_Widgets_DisplayTags,disable)|
+							  Skin.SetString(6_Widgets_DisplayTags,disable)|
+							  Skin.SetString(7_Widgets_DisplayTags,disable)|
+							  Skin.SetString(8_Widgets_DisplayTags,disable)|
+							  Skin.SetString(9_Widgets_DisplayTags,disable)|
+							  Skin.SetString(10_Widgets_DisplayTags,disable)|
+							  Skin.SetString(11_Widgets_DisplayTags,disable)|
+							  Skin.SetString(12_Widgets_DisplayTags,disable)|
+							  Skin.SetString(13_Widgets_DisplayTags,disable)|
+							  Skin.SetString(14_Widgets_DisplayTags,disable)|
+							  Skin.SetString(15_Widgets_DisplayTags,disable)|
+							  Skin.SetString(16_Widgets_DisplayTags,disable)|
+							  Skin.SetString(17_Widgets_DisplayTags,disable)|
+							  Skin.SetString(18_Widgets_DisplayTags,disable)|
+							  Skin.SetString(19_Widgets_DisplayTags,disable)|
+							  Skin.SetString(20_Widgets_DisplayTags,disable)|
+							  Skin.SetString(21_Widgets_DisplayTags,disable)|
+							  Skin.SetString(22_Widgets_DisplayTags,disable)|
+							  Skin.SetString(23_Widgets_DisplayTags,disable)|
+							  Skin.SetString(24_Widgets_DisplayTags,disable)|
+							  Skin.SetString(25_Widgets_DisplayTags,disable)|
+							  Skin.SetString(26_Widgets_DisplayTags,disable)|
+							  Skin.SetString(27_Widgets_DisplayTags,disable)|
+							  Skin.SetString(28_Widgets_DisplayTags,disable)|
+							  
+							  Skin.SetString(1_Widgets_DisplayTags.label,$LOCALIZE[1223])|
+							  Skin.SetString(2_Widgets_DisplayTags.label,$LOCALIZE[1223])|
+							  Skin.SetString(3_Widgets_DisplayTags.label,$LOCALIZE[1223])|
+							  Skin.SetString(4_Widgets_DisplayTags.label,$LOCALIZE[1223])|
+							  Skin.SetString(5_Widgets_DisplayTags.label,$LOCALIZE[1223])|
+							  Skin.SetString(6_Widgets_DisplayTags.label,$LOCALIZE[1223])|
+							  Skin.SetString(7_Widgets_DisplayTags.label,$LOCALIZE[1223])|
+							  Skin.SetString(8_Widgets_DisplayTags.label,$LOCALIZE[1223])|
+							  Skin.SetString(9_Widgets_DisplayTags.label,$LOCALIZE[1223])|
+							  Skin.SetString(10_Widgets_DisplayTags.label,$LOCALIZE[1223])|
+							  Skin.SetString(11_Widgets_DisplayTags.label,$LOCALIZE[1223])|
+							  Skin.SetString(12_Widgets_DisplayTags.label,$LOCALIZE[1223])|
+							  Skin.SetString(13_Widgets_DisplayTags.label,$LOCALIZE[1223])|
+							  Skin.SetString(14_Widgets_DisplayTags.label,$LOCALIZE[1223])|
+							  Skin.SetString(15_Widgets_DisplayTags.label,$LOCALIZE[1223])|
+							  Skin.SetString(16_Widgets_DisplayTags.label,$LOCALIZE[1223])|
+							  Skin.SetString(17_Widgets_DisplayTags.label,$LOCALIZE[1223])|
+							  Skin.SetString(18_Widgets_DisplayTags.label,$LOCALIZE[1223])|
+							  Skin.SetString(19_Widgets_DisplayTags.label,$LOCALIZE[1223])|
+							  Skin.SetString(20_Widgets_DisplayTags.label,$LOCALIZE[1223])|
+							  Skin.SetString(21_Widgets_DisplayTags.label,$LOCALIZE[1223])|
+							  Skin.SetString(22_Widgets_DisplayTags.label,$LOCALIZE[1223])|
+							  Skin.SetString(23_Widgets_DisplayTags.label,$LOCALIZE[1223])|
+							  Skin.SetString(24_Widgets_DisplayTags.label,$LOCALIZE[1223])|
+							  Skin.SetString(25_Widgets_DisplayTags.label,$LOCALIZE[1223])|
+							  Skin.SetString(26_Widgets_DisplayTags.label,$LOCALIZE[1223])|
+							  Skin.SetString(27_Widgets_DisplayTags.label,$LOCALIZE[1223])|
+							  Skin.SetString(28_Widgets_DisplayTags.label,$LOCALIZE[1223])|
+							  
+							  Skin.SetString(1_widgetstyle,default)|
+							  Skin.SetString(2_widgetstyle,default)|
+							  Skin.SetString(3_widgetstyle,default)|
+							  Skin.SetString(4_widgetstyle,default)|
+							  Skin.SetString(5_widgetstyle,default)|
+							  Skin.SetString(6_widgetstyle,default)|
+							  Skin.SetString(7_widgetstyle,default)|
+							  Skin.SetString(8_widgetstyle,default)|
+							  Skin.SetString(9_widgetstyle,default)|
+							  Skin.SetString(10_widgetstyle,default)|
+							  Skin.SetString(11_widgetstyle,default)|
+							  Skin.SetString(12_widgetstyle,default)|
+							  Skin.SetString(13_widgetstyle,default)|
+							  Skin.SetString(14_widgetstyle,default)|
+							  Skin.SetString(15_widgetstyle,default)|
+							  Skin.SetString(16_widgetstyle,default)|
+							  Skin.SetString(17_widgetstyle,default)|
+							  Skin.SetString(18_widgetstyle,default)|
+							  Skin.SetString(19_widgetstyle,default)|
+							  Skin.SetString(20_widgetstyle,default)|
+							  Skin.SetString(21_widgetstyle,default)|
+							  Skin.SetString(22_widgetstyle,default)|
+							  Skin.SetString(23_widgetstyle,default)|
+							  Skin.SetString(24_widgetstyle,default)|
+							  Skin.SetString(25_widgetstyle,default)|
+							  Skin.SetString(26_widgetstyle,default)|
+							  Skin.SetString(27_widgetstyle,default)|
+							  Skin.SetString(28_widgetstyle,default)|
+							  
+							  Skin.SetString(1_widgetstyle.label,$LOCALIZE[571])|
+							  Skin.SetString(2_widgetstyle.label,$LOCALIZE[571])|
+							  Skin.SetString(3_widgetstyle.label,$LOCALIZE[571])|
+							  Skin.SetString(4_widgetstyle.label,$LOCALIZE[571])|
+							  Skin.SetString(5_widgetstyle.label,$LOCALIZE[571])|
+							  Skin.SetString(6_widgetstyle.label,$LOCALIZE[571])|
+							  Skin.SetString(7_widgetstyle.label,$LOCALIZE[571])|
+							  Skin.SetString(8_widgetstyle.label,$LOCALIZE[571])|
+							  Skin.SetString(9_widgetstyle.label,$LOCALIZE[571])|
+							  Skin.SetString(10_widgetstyle.label,$LOCALIZE[571])|
+							  Skin.SetString(11_widgetstyle.label,$LOCALIZE[571])|
+							  Skin.SetString(12_widgetstyle.label,$LOCALIZE[571])|
+							  Skin.SetString(13_widgetstyle.label,$LOCALIZE[571])|
+							  Skin.SetString(14_widgetstyle.label,$LOCALIZE[571])|
+							  Skin.SetString(15_widgetstyle.label,$LOCALIZE[571])|
+							  Skin.SetString(16_widgetstyle.label,$LOCALIZE[571])|
+							  Skin.SetString(17_widgetstyle.label,$LOCALIZE[571])|
+							  Skin.SetString(18_widgetstyle.label,$LOCALIZE[571])|
+							  Skin.SetString(19_widgetstyle.label,$LOCALIZE[571])|
+							  Skin.SetString(20_widgetstyle.label,$LOCALIZE[571])|
+							  Skin.SetString(21_widgetstyle.label,$LOCALIZE[571])|
+							  Skin.SetString(22_widgetstyle.label,$LOCALIZE[571])|
+							  Skin.SetString(23_widgetstyle.label,$LOCALIZE[571])|
+							  Skin.SetString(24_widgetstyle.label,$LOCALIZE[571])|
+							  Skin.SetString(25_widgetstyle.label,$LOCALIZE[571])|
+							  Skin.SetString(26_widgetstyle.label,$LOCALIZE[571])|
+							  Skin.SetString(27_widgetstyle.label,$LOCALIZE[571])|
+							  Skin.SetString(28_widgetstyle.label,$LOCALIZE[571])|
+							  
+							  Skin.SetString(1_widgettarget,videos)|
+							  Skin.SetString(2_widgettarget,videos)|
+							  Skin.SetString(3_widgettarget,videos)|
+							  Skin.SetString(4_widgettarget,videos)|
+							  Skin.SetString(5_widgettarget,videos)|
+							  Skin.SetString(6_widgettarget,videos)|
+							  Skin.SetString(7_widgettarget,videos)|
+							  Skin.SetString(8_widgettarget,videos)|
+							  Skin.SetString(9_widgettarget,videos)|
+							  Skin.SetString(10_widgettarget,videos)|
+							  Skin.SetString(11_widgettarget,videos)|
+							  Skin.SetString(12_widgettarget,videos)|
+							  Skin.SetString(13_widgettarget,videos)|
+							  Skin.SetString(14_widgettarget,videos)|
+							  Skin.SetString(15_widgettarget,videos)|
+							  Skin.SetString(16_widgettarget,videos)|
+							  Skin.SetString(17_widgettarget,videos)|
+							  Skin.SetString(18_widgettarget,videos)|
+							  Skin.SetString(19_widgettarget,videos)|
+							  Skin.SetString(20_widgettarget,videos)|
+							  Skin.SetString(21_widgettarget,videos)|
+							  Skin.SetString(22_widgettarget,videos)|
+							  Skin.SetString(23_widgettarget,videos)|
+							  Skin.SetString(24_widgettarget,videos)|
+							  Skin.SetString(25_widgettarget,videos)|
+							  Skin.SetString(26_widgettarget,videos)|
+							  Skin.SetString(27_widgettarget,videos)|
+							  Skin.SetString(28_widgettarget,videos)|
+							  
+							  Skin.SetString(1_widgettarget.label,$LOCALIZE[3])|
+							  Skin.SetString(2_widgettarget.label,$LOCALIZE[3])|
+							  Skin.SetString(3_widgettarget.label,$LOCALIZE[3])|
+							  Skin.SetString(4_widgettarget.label,$LOCALIZE[3])|
+							  Skin.SetString(5_widgettarget.label,$LOCALIZE[3])|
+							  Skin.SetString(6_widgettarget.label,$LOCALIZE[3])|
+							  Skin.SetString(7_widgettarget.label,$LOCALIZE[3])|
+							  Skin.SetString(8_widgettarget.label,$LOCALIZE[3])|
+							  Skin.SetString(9_widgettarget.label,$LOCALIZE[3])|
+							  Skin.SetString(10_widgettarget.label,$LOCALIZE[3])|
+							  Skin.SetString(11_widgettarget.label,$LOCALIZE[3])|
+							  Skin.SetString(12_widgettarget.label,$LOCALIZE[3])|
+							  Skin.SetString(13_widgettarget.label,$LOCALIZE[3])|
+							  Skin.SetString(14_widgettarget.label,$LOCALIZE[3])|
+							  Skin.SetString(15_widgettarget.label,$LOCALIZE[3])|
+							  Skin.SetString(16_widgettarget.label,$LOCALIZE[3])|
+							  Skin.SetString(17_widgettarget.label,$LOCALIZE[3])|
+							  Skin.SetString(18_widgettarget.label,$LOCALIZE[3])|
+							  Skin.SetString(19_widgettarget.label,$LOCALIZE[3])|
+							  Skin.SetString(20_widgettarget.label,$LOCALIZE[3])|
+							  Skin.SetString(21_widgettarget.label,$LOCALIZE[3])|
+							  Skin.SetString(22_widgettarget.label,$LOCALIZE[3])|
+							  Skin.SetString(23_widgettarget.label,$LOCALIZE[3])|
+							  Skin.SetString(24_widgettarget.label,$LOCALIZE[3])|
+							  Skin.SetString(25_widgettarget.label,$LOCALIZE[3])|
+							  Skin.SetString(26_widgettarget.label,$LOCALIZE[3])|
+							  Skin.SetString(27_widgettarget.label,$LOCALIZE[3])|
+							  Skin.SetString(28_widgettarget.label,$LOCALIZE[3])|
+							  
+							  Skin.SetString(1_widgetlimit,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(2_widgetlimit,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(3_widgetlimit,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(4_widgetlimit,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(5_widgetlimit,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(6_widgetlimit,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(7_widgetlimit,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(8_widgetlimit,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(9_widgetlimit,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(10_widgetlimit,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(11_widgetlimit,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(12_widgetlimit,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(13_widgetlimit,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(14_widgetlimit,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(15_widgetlimit,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(16_widgetlimit,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(17_widgetlimit,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(18_widgetlimit,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(19_widgetlimit,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(20_widgetlimit,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(21_widgetlimit,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(22_widgetlimit,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(23_widgetlimit,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(24_widgetlimit,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(25_widgetlimit,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(26_widgetlimit,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(27_widgetlimit,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(28_widgetlimit,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  
+							  Skin.SetString(1_widgetlimit.label,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(2_widgetlimit.label,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(3_widgetlimit.label,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(4_widgetlimit.label,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(5_widgetlimit.label,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(6_widgetlimit.label,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(7_widgetlimit.label,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(8_widgetlimit.label,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(9_widgetlimit.label,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(10_widgetlimit.label,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(11_widgetlimit.label,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(12_widgetlimit.label,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(13_widgetlimit.label,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(14_widgetlimit.label,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(15_widgetlimit.label,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(16_widgetlimit.label,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(17_widgetlimit.label,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(18_widgetlimit.label,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(19_widgetlimit.label,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(20_widgetlimit.label,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(21_widgetlimit.label,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(22_widgetlimit.label,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(23_widgetlimit.label,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(24_widgetlimit.label,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(25_widgetlimit.label,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(26_widgetlimit.label,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(27_widgetlimit.label,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  Skin.SetString(28_widgetlimit.label,$INFO[Skin.String(WidgetsGlobalLimit)])|
+							  
+							  Skin.Reset(1_widgetsortby)|
+							  Skin.Reset(2_widgetsortby)|
+							  Skin.Reset(3_widgetsortby)|
+							  Skin.Reset(4_widgetsortby)|
+							  Skin.Reset(5_widgetsortby)|
+							  Skin.Reset(6_widgetsortby)|
+							  Skin.Reset(7_widgetsortby)|
+							  Skin.Reset(8_widgetsortby)|
+							  Skin.Reset(9_widgetsortby)|
+							  Skin.Reset(10_widgetsortby)|
+							  Skin.Reset(11_widgetsortby)|
+							  Skin.Reset(12_widgetsortby)|
+							  Skin.Reset(13_widgetsortby)|
+							  Skin.Reset(14_widgetsortby)|
+							  Skin.Reset(15_widgetsortby)|
+							  Skin.Reset(16_widgetsortby)|
+							  Skin.Reset(17_widgetsortby)|
+							  Skin.Reset(18_widgetsortby)|
+							  Skin.Reset(19_widgetsortby)|
+							  Skin.Reset(20_widgetsortby)|
+							  Skin.Reset(21_widgetsortby)|
+							  Skin.Reset(22_widgetsortby)|
+							  Skin.Reset(23_widgetsortby)|
+							  Skin.Reset(24_widgetsortby)|
+							  Skin.Reset(25_widgetsortby)|
+							  Skin.Reset(26_widgetsortby)|
+							  Skin.Reset(27_widgetsortby)|
+							  Skin.Reset(28_widgetsortby)|						  
+							  
+							  Skin.Reset(1_widgetsortorder)|
+							  Skin.Reset(2_widgetsortorder)|
+							  Skin.Reset(3_widgetsortorder)|
+							  Skin.Reset(4_widgetsortorder)|
+							  Skin.Reset(5_widgetsortorder)|
+							  Skin.Reset(6_widgetsortorder)|
+							  Skin.Reset(7_widgetsortorder)|
+							  Skin.Reset(8_widgetsortorder)|
+							  Skin.Reset(9_widgetsortorder)|
+							  Skin.Reset(10_widgetsortorder)|
+							  Skin.Reset(11_widgetsortorder)|
+							  Skin.Reset(12_widgetsortorder)|
+							  Skin.Reset(13_widgetsortorder)|
+							  Skin.Reset(14_widgetsortorder)|
+							  Skin.Reset(15_widgetsortorder)|
+							  Skin.Reset(16_widgetsortorder)|
+							  Skin.Reset(17_widgetsortorder)|
+							  Skin.Reset(18_widgetsortorder)|
+							  Skin.Reset(19_widgetsortorder)|
+							  Skin.Reset(20_widgetsortorder)|
+							  Skin.Reset(21_widgetsortorder)|
+							  Skin.Reset(22_widgetsortorder)|
+							  Skin.Reset(23_widgetsortorder)|
+							  Skin.Reset(24_widgetsortorder)|
+							  Skin.Reset(25_widgetsortorder)|
+							  Skin.Reset(26_widgetsortorder)|
+							  Skin.Reset(27_widgetsortorder)|
+							  Skin.Reset(28_widgetsortorder),noaction=noop)</onclick>
+				</control>				
+                <!--close button-->
+				<control type="button" id="2404"> 
+					<width>510</width>
+					<height>58</height>
+					<label>$LOCALIZE[15067]</label>
+					<align>center</align>
+					<onclick>back</onclick>
+				</control>			
+			</control>			
+		</control>		
+	</controls>
+</window>

@@ -9,13 +9,15 @@
             <include>DialogOverlayExtra</include>
             <!--Dialog Picture Info-->
             <control type="group">
+				<top>-41</top>
+				<left>-2</left>
                 <include>animation_window_open_close</include>
                 <control type="button" id="6">
                     <onfocus>SetFocus(5)</onfocus>
                     <texturefocus/>
                     <texturenofocus/>
                 </control>
-                         <!-- background panel -->
+                <!-- background panel -->
                 <control type="image">
                     <posx>367</posx>
                     <posy>236</posy>
@@ -157,17 +159,17 @@
                         </control>
                     </focusedlayout>
                 </control>
-                         <control type="scrollbar" id="60">
+                <control type="scrollbar" id="60">
                     <posx>1520</posx>
                     <posy>315</posy>
                     <height>480</height>
                     <onup>60</onup>
                     <ondown>60</ondown>
                     <onleft>3</onleft>
-                    <animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)">Conditional</animation>
-                    <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+                    <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+                    <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
                 </control>
-                         <!--Buttons-->
+                <!--Buttons-->
                 <control type="grouplist" id="8000">
                     <posx>410</posx>
                     <posy>820</posy>
@@ -182,7 +184,7 @@
                         <right>0</right>
                         <description>Close</description>
                         <label>$LOCALIZE[222]</label>
-                        <width>500</width>
+                        <width>400</width>
                         <include>DialogButtonOther</include>
                         <height>80</height>
                         <visible>true</visible>

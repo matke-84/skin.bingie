@@ -66,7 +66,7 @@ msgid "Playback & OSD"
 msgstr ""
 
 msgctxt "#31011"
-msgid "Button focus text color (bordered focus)"
+msgid "Button focused text color (keyboard)"
 msgstr ""
 
 msgctxt "#31012"
@@ -86,7 +86,7 @@ msgid "Button text color"
 msgstr ""
 
 msgctxt "#31016"
-msgid "Bingie layout playback & OSD"
+msgid "Bingie playback & OSD"
 msgstr ""
 
 msgctxt "#31017"
@@ -94,7 +94,7 @@ msgid "Use alternative video OSD layout"
 msgstr ""
 
 msgctxt "#31018"
-msgid "Bingie Main Landscape"
+msgid "Bingie Landscape"
 msgstr ""
 
 msgctxt "#31019"
@@ -118,7 +118,7 @@ msgid "Rated"
 msgstr ""
 
 msgctxt "#31024"
-msgid "Force stop playback when not in fullscreen mode (exc. live TV)"
+msgid "Force stop playback on fullscreen exit (except Live TV)"
 msgstr ""
 
 msgctxt "#31025"
@@ -130,7 +130,7 @@ msgid "MPAA color panel"
 msgstr ""
 
 msgctxt "#31027"
-msgid "Bingie Main Poster"
+msgid "Bingie Poster"
 msgstr ""
 
 msgctxt "#31028"
@@ -142,7 +142,7 @@ msgid "Pink"
 msgstr ""
 
 msgctxt "#31030"
-msgid "Display weather"
+msgid "OSD plot text color"
 msgstr ""
 
 msgctxt "#31031"
@@ -158,7 +158,7 @@ msgid "OSD progress bar color"
 msgstr ""
 
 msgctxt "#31034"
-msgid "items total"
+msgid "Parents strongly cautioned panel color"
 msgstr ""
 
 msgctxt "#31035"
@@ -178,7 +178,7 @@ msgid "Use compact header"
 msgstr ""
 
 msgctxt "#31039"
-msgid "Disable 'New Episodes' indicator"
+msgid "Enable 'New Episodes' indicator"
 msgstr ""
 
 msgctxt "#31040"
@@ -198,7 +198,7 @@ msgid "OSD progress bar cache color"
 msgstr ""
 
 msgctxt "#31044"
-msgid "OSD text color"
+msgid "Video info dialog"
 msgstr ""
 
 msgctxt "#31045"
@@ -214,7 +214,7 @@ msgid "Secondary text color"
 msgstr ""
 
 msgctxt "#31048"
-msgid "Home main menu focus icon color"
+msgid "Home main menu focused icon color"
 msgstr ""
 
 msgctxt "#31049"
@@ -230,11 +230,11 @@ msgid "All shows"
 msgstr ""
 
 msgctxt "#31052"
-msgid "Widget Content"
+msgid "Select weather fanart"
 msgstr ""
 
 msgctxt "#31053"
-msgid "You can select which palette is displayed by default when the color picker is called by the skin."
+msgid "You can select which palette is displayed by default when the color picker is called."
 msgstr ""
 
 msgctxt "#31054"
@@ -250,7 +250,7 @@ msgid "Landscape"
 msgstr ""
 
 msgctxt "#31057"
-msgid "OSD buttons color"
+msgid "OSD button color"
 msgstr ""
 
 msgctxt "#31058"
@@ -294,11 +294,11 @@ msgid "Always hide"
 msgstr ""
 
 msgctxt "#31068"
-msgid "Alternative layout playback & OSD"
+msgid "Alternative playback & OSD"
 msgstr ""
 
 msgctxt "#31069"
-msgid "PVR Hub"
+msgid "Trailer source"
 msgstr ""
 
 msgctxt "#31070"
@@ -306,7 +306,7 @@ msgid "Watch Season"
 msgstr ""
 
 msgctxt "#31071"
-msgid "Setting level"
+msgid "Settings level"
 msgstr ""
 
 msgctxt "#31072"
@@ -334,7 +334,7 @@ msgid "Home main menu icon color"
 msgstr ""
 
 msgctxt "#31078"
-msgid "Blockbuster Movies"
+msgid "Select weather icons"
 msgstr ""
 
 msgctxt "#31079"
@@ -342,7 +342,7 @@ msgid "Bingeworthy TV Shows"
 msgstr ""
 
 msgctxt "#31080"
-msgid "Watch It Again"
+msgid "OSD sublabel text color"
 msgstr ""
 
 msgctxt "#31081"
@@ -354,7 +354,7 @@ msgid "Select which buttons to show in video info"
 msgstr ""
 
 msgctxt "#31083"
-msgid "Show info"
+msgid "Animate music background"
 msgstr ""
 
 msgctxt "#31084"
@@ -414,7 +414,7 @@ msgid "OSD details row text color"
 msgstr ""
 
 msgctxt "#31098"
-msgid "Critically Acclaimed TV Shows"
+msgid "Not rated panel color"
 msgstr ""
 
 msgctxt "#31099"
@@ -426,7 +426,7 @@ msgid "Starring"
 msgstr ""
 
 msgctxt "#31101"
-msgid "Recently added TV shows"
+msgid "Recently added TV Shows"
 msgstr ""
 
 msgctxt "#31102"
@@ -438,7 +438,7 @@ msgid "OSD label text color"
 msgstr ""
 
 msgctxt "#31104"
-msgid "Season Greetings"
+msgid "Rotten Tomatoes Audience Rating"
 msgstr ""
 
 msgctxt "#31105"
@@ -450,7 +450,7 @@ msgid "Randomize images (multi-image only)"
 msgstr ""
 
 msgctxt "#31107"
-msgid "Enable quick jump alphabet navigation strip"
+msgid "Disable clearlogo (use text title instead)"
 msgstr ""
 
 msgctxt "#31108"
@@ -466,7 +466,7 @@ msgid "TMDb Movies, TV Shows and People"
 msgstr ""
 
 msgctxt "#31111"
-msgid "Written by"
+msgid "Show premiere date instead of year"
 msgstr ""
 
 msgctxt "#31112"
@@ -482,7 +482,7 @@ msgid "Show extended info"
 msgstr ""
 
 msgctxt "#31115"
-msgid "Homescreen layout"
+msgid "Home screen layout"
 msgstr ""
 
 msgctxt "#31116"
@@ -502,19 +502,23 @@ msgid "Show large thumbnail"
 msgstr ""
 
 msgctxt "#31120"
-msgid "Enable details icons (cast, director, genre, etc...)"
+msgid "Enable details icons (cast, director, genre...)"
 msgstr ""
 
 msgctxt "#31121"
-msgid "Homescreen layout"
+msgid "for You"
 msgstr ""
 
 msgctxt "#31122"
-msgid "Bingie Main Square"
+msgid "Bingie Square"
 msgstr ""
 
 msgctxt "#31123"
 msgid "Enable moving focus frame in home & hubs"
+msgstr ""
+
+msgctxt "#31124"
+msgid "Metacritic Rating"
 msgstr ""
 
 msgctxt "#31125"
@@ -538,7 +542,7 @@ msgid "Volume indicator style"
 msgstr ""
 
 msgctxt "#31130"
-msgid "Enable OSD of buffering progess during video playback"
+msgid "Show OSD buffering progress during video playback"
 msgstr ""
 
 msgctxt "#31131"
@@ -550,7 +554,7 @@ msgid "Home main menu/submenu focused text color"
 msgstr ""
 
 msgctxt "#31133"
-msgid "Jump to a specific time (hh:mm:ss)"
+msgid "Jump to a specific time"
 msgstr ""
 
 msgctxt "#31134"
@@ -562,7 +566,7 @@ msgid "Home main menu/submenu text color"
 msgstr ""
 
 msgctxt "#31136"
-msgid "Enable Zoom Effect"
+msgid "Enable zoom effect"
 msgstr ""
 
 msgctxt "#31137"
@@ -586,15 +590,15 @@ msgid "Display tags in views"
 msgstr ""
 
 msgctxt "#31142"
-msgid "Global background settings"
+msgid "Prefer mini TV guide on fullscreen"
 msgstr ""
 
 msgctxt "#31143"
-msgid "Button focus text color"
+msgid "Plot text color"
 msgstr ""
 
 msgctxt "#31144"
-msgid "Select which details to show in details row"
+msgid "Select which info to show in details row"
 msgstr ""
 
 msgctxt "#31145"
@@ -658,7 +662,7 @@ msgid "Documentaries"
 msgstr ""
 
 msgctxt "#31160"
-msgid "Docuseries"
+msgid "Exit Bingie"
 msgstr ""
 
 msgctxt "#31161"
@@ -666,15 +670,15 @@ msgid "Watch Season 1 Now"
 msgstr ""
 
 msgctxt "#31162"
-msgid "Adventure & Fantasy Movies"
+msgid "Button disabled text color"
 msgstr ""
 
 msgctxt "#31163"
-msgid "Adventure & Fantasy TV Shows"
+msgid "Trailer delay interval"
 msgstr ""
 
 msgctxt "#31164"
-msgid "Action & Crime TV Shows"
+msgid "No active weather alerts"
 msgstr ""
 
 msgctxt "#31165"
@@ -682,7 +686,7 @@ msgid "TMDb Shows"
 msgstr ""
 
 msgctxt "#31166"
-msgid "Categories list"
+msgid "Customize my list hub"
 msgstr ""
 
 msgctxt "#31167"
@@ -690,7 +694,7 @@ msgid "Configure home screen & menus"
 msgstr ""
 
 msgctxt "#31168"
-msgid "This skin is integrated with the skinshortcuts script to provide you maximized flexibility in how you want to arrange your homescreen & menus. You’re able to add and delete widgets, change the icons, define submenus etc. Choose the buttons below to get started modifying the skin menu’s and widgets’s to your own preferences."
+msgid "This skin is designed to give you maximum flexibility in how you arrange your home screen and menus. You can add or remove widgets, define menus and submenus, and more. Use the buttons below to start customizing the skin’s menus and widgets."
 msgstr ""
 
 msgctxt "#31169"
@@ -698,11 +702,11 @@ msgid "Disable dummy spotlight widget"
 msgstr ""
 
 msgctxt "#31170"
-msgid "Reset menu to skin's defaults"
+msgid "Reset menu to skin defaults"
 msgstr ""
 
 msgctxt "#31171"
-msgid "One of the main advantages of using the skinshortcuts script is that your menu layout is shared across skins that support this addon. This is not always convenient as you won’t get the skins default menu layout which is optimized for the skin or you have played a bit in another skin and you don’t like the menu layout now. If you see weird behavior on your home menu or you just want to start fresh and get the most out of this skin, you can reset the menu structures to the skins default settings with the button below."
+msgid "If you see weird behavior on your home menu or you just want to start fresh and get the most out of this skin, you can reset the menu structures to the skins default settings with the button below."
 msgstr ""
 
 msgctxt "#31172"
@@ -742,7 +746,7 @@ msgid "Hide ratings and studio logo on widgets"
 msgstr ""
 
 msgctxt "#31181"
-msgid "Alphabet letters pop-up & navigation"
+msgid "Select movie genre icons"
 msgstr ""
 
 msgctxt "#31182"
@@ -774,7 +778,7 @@ msgid "Details options"
 msgstr ""
 
 msgctxt "#31189"
-msgid "Listitem border focus color"
+msgid "Listitem border/panel focused color"
 msgstr ""
 
 msgctxt "#31190"
@@ -790,23 +794,23 @@ msgid "Match"
 msgstr ""
 
 msgctxt "#31193"
-msgid "Enable letters pop-up while scrolling"
+msgid "Focus frame border size"
 msgstr ""
 
 msgctxt "#31194"
-msgid "Science Fiction Movies"
+msgid "Supported addons"
 msgstr ""
 
 msgctxt "#31195"
-msgid "Sci-Fi TV Shows"
+msgid "Play from beginning"
 msgstr ""
 
 msgctxt "#31196"
-msgid "Thriller & Suspense Movies"
+msgid "Last Releases TV Shows"
 msgstr ""
 
 msgctxt "#31197"
-msgid "Thriller & Suspense TV Shows"
+msgid "Style for media/codec info"
 msgstr ""
 
 msgctxt "#31198"
@@ -890,15 +894,15 @@ msgid "Reboot to android"
 msgstr ""
 
 msgctxt "#31218"
-msgid "Show first unwatched/currently watching episode info in TV show's info"
+msgid "Show first unwatched/currently watching episode details in TV Shows info"
 msgstr ""
 
 msgctxt "#31219"
-msgid "Text color for header"
+msgid "Random Movies"
 msgstr ""
 
 msgctxt "#31220"
-msgid "Shadow color for header"
+msgid "Header text shadow color"
 msgstr ""
 
 msgctxt "#31221"
@@ -914,7 +918,7 @@ msgid "Are you sure you want to remove the rating for episode?"
 msgstr ""
 
 msgctxt "#31224"
-msgid "PVR Guide unfocused item color"
+msgid "PVR guide unfocused item panel color"
 msgstr ""
 
 msgctxt "#31225"
@@ -922,11 +926,11 @@ msgid "Enable auto scroll for plots/descriptions"
 msgstr ""
 
 msgctxt "#31226"
-msgid "Media details header/highlights color"
+msgid "Media details header color"
 msgstr ""
 
 msgctxt "#31227"
-msgid "This section will take effect only when content is sorted by title."
+msgid "New & Popular"
 msgstr ""
 
 msgctxt "#31228"
@@ -946,11 +950,11 @@ msgid "seconds"
 msgstr ""
 
 msgctxt "#31232"
-msgid "Do not hide OSD infopanel on fullscreen music playback"
+msgid "Don't hide OSD infopanel on fullscreen music playback"
 msgstr ""
 
 msgctxt "#31233"
-msgid "Focused color for buttons in the skin"
+msgid "Button focused color"
 msgstr ""
 
 msgctxt "#31234"
@@ -970,7 +974,7 @@ msgid "Use genre colors in EPG timeline"
 msgstr ""
 
 msgctxt "#31238"
-msgid "Text color for focused lyrics"
+msgid "Lyrics text color"
 msgstr ""
 
 msgctxt "#31239"
@@ -994,11 +998,11 @@ msgid "Show large scrolling text while music playback"
 msgstr ""
 
 msgctxt "#31244"
-msgid "Creator"
+msgid "IMDB Top 250"
 msgstr ""
 
 msgctxt "#31245"
-msgid "Number of rows to show in the timeline"
+msgid "Number of rows to show in timeline"
 msgstr ""
 
 msgctxt "#31246"
@@ -1050,7 +1054,7 @@ msgid "Memory Usage"
 msgstr ""
 
 msgctxt "#31258"
-msgid "Enable finish time, current time & total duration for OSD playback"
+msgid "Enable finish, current & total time for OSD playback"
 msgstr ""
 
 msgctxt "#31259"
@@ -1058,15 +1062,15 @@ msgid "Enable animated discart"
 msgstr ""
 
 msgctxt "#31260"
-msgid "General panels color"
+msgid "Panel color"
 msgstr ""
 
 msgctxt "#31261"
-msgid "Enable total media count in Bingie views (local library)"
+msgid "There are no matches for your search."
 msgstr ""
 
 msgctxt "#31262"
-msgid "Halloween Animation"
+msgid "In the Bingie skin, the content is organized into dedicated hubs. This layout makes it easy to navigate between categories and find what you’re looking for. Just like on the home screen, you have the ability to add new widgets, remove existing ones, and fully customize their appearance and behavior."
 msgstr ""
 
 msgctxt "#31263"
@@ -1074,7 +1078,7 @@ msgid "Recommended by TMDb"
 msgstr ""
 
 msgctxt "#31264"
-msgid "Snow Animation"
+msgid "Enable snow animation"
 msgstr ""
 
 msgctxt "#31265"
@@ -1106,15 +1110,15 @@ msgid "Backup and restore"
 msgstr ""
 
 msgctxt "#31272"
-msgid "Backup the skin settings"
+msgid "Backup skin settings"
 msgstr ""
 
 msgctxt "#31273"
-msgid "Restore the skin settings"
+msgid "Restore skin settings"
 msgstr ""
 
 msgctxt "#31274"
-msgid "Reset the skin to default settings"
+msgid "Reset skin to default settings"
 msgstr ""
 
 msgctxt "#31275"
@@ -1186,7 +1190,7 @@ msgid "Fetching forecast info..."
 msgstr ""
 
 msgctxt "#31292"
-msgid "TV show status"
+msgid "TV Show status"
 msgstr ""
 
 msgctxt "#31293"
@@ -1198,7 +1202,7 @@ msgid "For episodes and music"
 msgstr ""
 
 msgctxt "#31295"
-msgid "Notification TV Shows airing today"
+msgid "TMDb Rating"
 msgstr ""
 
 msgctxt "#31296"
@@ -1225,12 +1229,16 @@ msgctxt "#31301"
 msgid "Auto focus the first unwatched episode in lists"
 msgstr ""
 
+msgctxt "#31302"
+msgid "Border color for fixed MPAA panel"
+msgstr ""
+
 msgctxt "#31303"
 msgid "Color"
 msgstr ""
 
 msgctxt "#31304"
-msgid "Prefer TV Show thumb for episodes in widgets"
+msgid "Prefer TV Show thumbnail for episodes in widgets"
 msgstr ""
 
 msgctxt "#31305"
@@ -1242,7 +1250,7 @@ msgid "UK MPAA (only for US and UK ratings)"
 msgstr ""
 
 msgctxt "#31307"
-msgid "Spotlight widget"
+msgid "Lyrics overlay color"
 msgstr ""
 
 msgctxt "#31308"
@@ -1262,7 +1270,7 @@ msgid "on IMDB Today"
 msgstr ""
 
 msgctxt "#31312"
-msgid "Channel logo/number visibility in the guide"
+msgid "Channel logo/number visibility in TV guide"
 msgstr ""
 
 msgctxt "#31313"
@@ -1314,7 +1322,7 @@ msgid "Hide ratings and studio logo in views"
 msgstr ""
 
 msgctxt "#31325"
-msgid "Show current weather in the video info & video on-screen displays"
+msgid "Show current weather"
 msgstr ""
 
 msgctxt "#31326"
@@ -1322,7 +1330,7 @@ msgid "Trakt Popular Movies"
 msgstr ""
 
 msgctxt "#31327"
-msgid "Clearlogo/title position"
+msgid "Clearlogo/title position (except Bingie views)"
 msgstr ""
 
 msgctxt "#31328"
@@ -1346,7 +1354,7 @@ msgid "Movies Trending Today"
 msgstr ""
 
 msgctxt "#31333"
-msgid "Are you sure?"
+msgid "Because you watched"
 msgstr ""
 
 msgctxt "#31334"
@@ -1378,11 +1386,11 @@ msgid "Top Rated TV Shows"
 msgstr ""
 
 msgctxt "#31341"
-msgid "New & Popular Hub"
+msgid "Total episodes"
 msgstr ""
 
 msgctxt "#31342"
-msgid "Movies Hub"
+msgid "Episode number"
 msgstr ""
 
 msgctxt "#31343"
@@ -1401,6 +1409,22 @@ msgctxt "#31347"
 msgid "TMDb Popular Movies"
 msgstr ""
 
+msgctxt "#31348"
+msgid "Label overlay text color"
+msgstr ""
+
+msgctxt "#31349"
+msgid "Label overlay panel color"
+msgstr ""
+
+msgctxt "#31350"
+msgid "Menu colors"
+msgstr ""
+
+msgctxt "#31351"
+msgid "Sideblade/options menu panel color"
+msgstr ""
+
 msgctxt "#31352"
 msgid "TV Mysteries"
 msgstr ""
@@ -1410,7 +1434,43 @@ msgid "TV Westerns"
 msgstr ""
 
 msgctxt "#31354"
-msgid "Select which categories to show in categories hub"
+msgid "Are you sure you want to restore menu itmes to default settings?"
+msgstr ""
+
+msgctxt "#31355"
+msgid "Align tags in center"
+msgstr ""
+
+msgctxt "#31356"
+msgid "Show infopanel right"
+msgstr ""
+
+msgctxt "#31357"
+msgid "IMDB Rating"
+msgstr ""
+
+msgctxt "#31358"
+msgid "Open information instead of playing/opening content (only applies to widgets)"
+msgstr ""
+
+msgctxt "#31359"
+msgid "Select which details to show in video info"
+msgstr ""
+
+msgctxt "#31360"
+msgid "Enable ratings"
+msgstr ""
+
+msgctxt "#31361"
+msgid "Global background"
+msgstr ""
+
+msgctxt "#31362"
+msgid "Enable auto pause on OSD open"
+msgstr ""
+
+msgctxt "#31363"
+msgid "TMDb People"
 msgstr ""
 
 msgctxt "#31364"
@@ -1474,7 +1534,7 @@ msgid "Use alternative video info dialog"
 msgstr ""
 
 msgctxt "#31379"
-msgid "Set custom spotlight"
+msgid "Set spotlight widget"
 msgstr ""
 
 msgctxt "#31380"
@@ -1498,7 +1558,7 @@ msgid "Are you sure you want to remove the rating for show?"
 msgstr ""
 
 msgctxt "#31385"
-msgid "Recommended TV Shows"
+msgid "Surprise Me"
 msgstr ""
 
 msgctxt "#31386"
@@ -1522,11 +1582,11 @@ msgid ""
 msgstr ""
 
 msgctxt "#31389"
-msgid "OK, do it for me!"
+msgid "Set recommended options"
 msgstr ""
 
 msgctxt "#31390"
-msgid "I want to keep my current config"
+msgid "Keep my current settings"
 msgstr ""
 
 msgctxt "#31391"
@@ -1538,7 +1598,7 @@ msgid "Disable shortcut"
 msgstr ""
 
 msgctxt "#31393"
-msgid "Icon color for footer"
+msgid "Footer icon color"
 msgstr ""
 
 msgctxt "#31394"
@@ -1549,20 +1609,20 @@ msgctxt "#31395"
 msgid "With Bingie you can have all of your Kodi and library content in one place, through the use of widgets.[CR][CR]"
 "Home widgets and hubs can be configured from:[CR]"
 "[COLOR white]    - Skin settings -> Configure shortcuts[CR][CR]"
-"The skin is pre-packed with widgets for Movies & TV Shows.[CR]"
-"If you haven't added files to your video library yet, now is a good time![CR]"
-"Otherwise, you'd be staring with TMDb Bingie Helper widgets.[/COLOR][CR][CR]"
-"[COLOR ff41b957]TMDb Bingie Helper widgets do not play content. You need a separate plugin for that. Then you can configure TMDb Bingie Helper to use it for playback:[CR]"
+"The skin is pre-packed with widgets for movies & TV shows.[CR]"
+"If you haven't added files to your video library yet, now is a good time.[CR]"
+"Otherwise, you will start with TMDb Bingie Helper widgets.[/COLOR][CR][CR]"
+"[COLOR ff41b957]TMDb Bingie Helper doesn't play any content by itself. To watch movies or TV shows, you need a separate plugin for that. If you want, you can then configure TMDb Bingie Helper to use it for playing content:[CR]"
 "    - Skin settings -> Supported addons -> TMDb Bingie Helper -> Players[CR]"
 "You can always replace the default skin widgets with your own.[/COLOR]"
 msgstr ""
 
 msgctxt "#31396"
-msgid "Alright, let's do it"
+msgid "Add videos to library"
 msgstr ""
 
 msgctxt "#31397"
-msgid "Nah, I'll figure it out myself"
+msgid "Get started with Bingie"
 msgstr ""
 
 msgctxt "#31398"
@@ -1574,15 +1634,15 @@ msgid "Westerns"
 msgstr ""
 
 msgctxt "#31400"
-msgid "[B]CONFIGURE APPEARANCE SETTINGS[/B][CR][CR]Change the skin · Set language and region · Change file listing options · Set up a screensaver"
+msgid "[B]CONFIGURE APPEARANCE SETTINGS[/B][CR][CR]Change skin · Configure language and region · Setup screensaver"
 msgstr ""
 
 msgctxt "#31401"
-msgid "[B]CONFIGURE MEDIA SETTINGS[/B][CR][CR]Manage your video, music and picture library · Change video, music and picture listing options"
+msgid "[B]CONFIGURE MEDIA SETTINGS[/B][CR][CR]Manage your video, music and picture library"
 msgstr ""
 
 msgctxt "#31402"
-msgid "[B]CONFIGURE PLAYER SETTINGS[/B][CR][CR]Set video/music playback options · Configure slideshows · Set subtitle fonts"
+msgid "[B]CONFIGURE PLAYER SETTINGS[/B][CR][CR]Configure playback options · Set subtitle style"
 msgstr ""
 
 msgctxt "#31403"
@@ -1594,19 +1654,19 @@ msgid "[B]FILE MANAGER[/B][CR][CR]Browse and organize files"
 msgstr ""
 
 msgctxt "#31405"
-msgid "[B]CONFIGURE NETWORK SETTINGS[/B][CR][CR]Setup control of Kodi via UPnP and HTTP · Configure file sharing · Set internet access options"
+msgid "[B]CONFIGURE NETWORK SETTINGS[/B][CR][CR]Configure file sharing and internet access options"
 msgstr ""
 
 msgctxt "#31406"
-msgid "[B]CONFIGURE SYSTEM SETTINGS[/B][CR][CR]Setup and calibrate displays · Configure audio output · Set power saving options · Enable debugging"
+msgid "[B]CONFIGURE SYSTEM SETTINGS[/B][CR][CR]Configure display and audio · Enable debugging"
 msgstr ""
 
 msgctxt "#31407"
-msgid "[B]CONFIGURE SKIN SETTINGS[/B][CR][CR]Setup Bingie skin · Add and remove home menu items · Change skin backgrounds"
+msgid "[B]CONFIGURE SKIN SETTINGS[/B][CR][CR]Setup Bingie · Configure home screen and hubs"
 msgstr ""
 
 msgctxt "#31408"
-msgid "[B]CONFIGURE ADD-ONS[/B][CR][CR]Manage your installed Add-ons · Browse for and install Add-ons from kodi.tv · Modify Add-on settings"
+msgid "[B]CONFIGURE ADD-ONS[/B][CR][CR]Browse, install and manage add-ons"
 msgstr ""
 
 msgctxt "#31409"
@@ -1614,7 +1674,7 @@ msgid "[B]SYSTEM INFO[/B][CR][CR]Summary · Storage · Network · Video · Hardw
 msgstr ""
 
 msgctxt "#31410"
-msgid "[B]CONFIGURE LIVE-TV SETTINGS[/B][CR][CR]Configure PVR settings"
+msgid "[B]CONFIGURE LIVE TV SETTINGS[/B][CR][CR]Configure PVR options"
 msgstr ""
 
 msgctxt "#31411"
@@ -1650,15 +1710,15 @@ msgid "Thumbs up rate value"
 msgstr ""
 
 msgctxt "#31419"
-msgid "PVR Guide focused item color"
+msgid "PVR guide focused item panel color"
 msgstr ""
 
 msgctxt "#31420"
-msgid "Don't use rich artwork on the OSD at live TV playback"
+msgid "Plot & critics"
 msgstr ""
 
 msgctxt "#31421"
-msgid "[B]SELECT YOUR KODI USER PROFILE[/B][CR][CR]To login and continue"
+msgid "[B]MANAGE YOUR KODI USER PROFILES[/B][CR][CR]Create new profiles or edit existing ones"
 msgstr ""
 
 msgctxt "#31422"
@@ -1670,11 +1730,11 @@ msgid "Swap poster"
 msgstr ""
 
 msgctxt "#31424"
-msgid "Banner List"
+msgid "Banner Details"
 msgstr ""
 
 msgctxt "#31425"
-msgid "Banner Plex"
+msgid "Banner"
 msgstr ""
 
 msgctxt "#31426"
@@ -1690,7 +1750,7 @@ msgid "Sci-Fi"
 msgstr ""
 
 msgctxt "#31429"
-msgid "Showcase"
+msgid "Poster Showcase"
 msgstr ""
 
 msgctxt "#31430"
@@ -1718,15 +1778,15 @@ msgid "Animations"
 msgstr ""
 
 msgctxt "#31436"
-msgid "Panel Square"
+msgid "Disable search suggestions"
 msgstr ""
 
 msgctxt "#31437"
-msgid "Panel Square Details"
+msgid "Square Details"
 msgstr ""
 
 msgctxt "#31438"
-msgid "Landscape"
+msgid "Enable indicator if item is playing or is recording/timer (PVR)"
 msgstr ""
 
 msgctxt "#31439"
@@ -1754,7 +1814,7 @@ msgid "List Details"
 msgstr ""
 
 msgctxt "#31445"
-msgid "Horizontal Panel"
+msgid "Panel Single Row"
 msgstr ""
 
 msgctxt "#31446"
@@ -1762,7 +1822,7 @@ msgid "Fantasy"
 msgstr ""
 
 msgctxt "#31447"
-msgid "Prefer ClearArt"
+msgid "Bingie landscape tag sublabel"
 msgstr ""
 
 msgctxt "#31448"
@@ -1794,7 +1854,7 @@ msgid "Movies Trending This Week"
 msgstr ""
 
 msgctxt "#31455"
-msgid "Text color for footer"
+msgid "Footer text color"
 msgstr ""
 
 msgctxt "#31456"
@@ -1806,19 +1866,19 @@ msgid "Comedies"
 msgstr ""
 
 msgctxt "#31458"
-msgid "Text color for buttons in the skin"
+msgid "More like this"
 msgstr ""
 
 msgctxt "#31459"
-msgid "Focused text color for buttons in the skin"
+msgid "Button focused text color"
 msgstr ""
 
 msgctxt "#31460"
-msgid "General text color"
+msgid "Text color"
 msgstr ""
 
 msgctxt "#31461"
-msgid "Logos"
+msgid "Clearlogo"
 msgstr ""
 
 msgctxt "#31462"
@@ -1830,7 +1890,7 @@ msgid "Select a color theme"
 msgstr ""
 
 msgctxt "#31464"
-msgid "This skin allows you to customize almost every color in the skin manually. You can also choose to save your customizations to a color theme or use one of the predefined color themes."
+msgid "Bingie skin allows you to customize almost every color manually. You can save your customizations as a color theme or reset everything to default."
 msgstr ""
 
 msgctxt "#31465"
@@ -1842,7 +1902,7 @@ msgid "Set label"
 msgstr ""
 
 msgctxt "#31467"
-msgid "PVR Guide progress indicator color"
+msgid "PVR guide progress indicator color"
 msgstr ""
 
 msgctxt "#31468"
@@ -1854,7 +1914,7 @@ msgid "Action & Adventure"
 msgstr ""
 
 msgctxt "#31470"
-msgid "Background overlay texture"
+msgid "Details row rating color"
 msgstr ""
 
 msgctxt "#31471"
@@ -1874,15 +1934,15 @@ msgid "Amber"
 msgstr ""
 
 msgctxt "#31475"
-msgid "Color for buttons in the skin"
+msgid "Button color"
 msgstr ""
 
 msgctxt "#31476"
-msgid "Listitem border unfocus color"
+msgid "Listitem border/panel unfocused color"
 msgstr ""
 
 msgctxt "#31477"
-msgid "Shadow color for footer"
+msgid "Footer text shadow color"
 msgstr ""
 
 msgctxt "#31478"
@@ -1898,27 +1958,27 @@ msgid "Play trailer"
 msgstr ""
 
 msgctxt "#31481"
-msgid "PVR Guide unfocused item text color"
+msgid "PVR guide unfocused item text color"
 msgstr ""
 
 msgctxt "#31482"
-msgid "OSD progress bar background color"
+msgid "Oscar"
 msgstr ""
 
 msgctxt "#31483"
-msgid "OSD progress bar color"
+msgid "Trakt Rating"
 msgstr ""
 
 msgctxt "#31484"
-msgid "OSD buttons color"
+msgid "Home main menu icon underline color"
 msgstr ""
 
 msgctxt "#31485"
-msgid "OSD focus buttons color"
+msgid "Radio button and spin control focused/active color"
 msgstr ""
 
 msgctxt "#31486"
-msgid "General color settings"
+msgid "General colors"
 msgstr ""
 
 msgctxt "#31487"
@@ -1930,15 +1990,15 @@ msgid "Writer"
 msgstr ""
 
 msgctxt "#31489"
-msgid "Categories hub"
+msgid "For all content"
 msgstr ""
 
 msgctxt "#31490"
-msgid "Library list"
+msgid "Change widget"
 msgstr ""
 
 msgctxt "#31491"
-msgid "TMDb Bingie Helper list"
+msgid "Customize categories hub"
 msgstr ""
 
 msgctxt "#31492"
@@ -1990,7 +2050,7 @@ msgid "Clock"
 msgstr ""
 
 msgctxt "#31504"
-msgid "Default music background (as fallback if no artist fanart or fanart disabled)"
+msgid "Default music background (if no artist fanart)"
 msgstr ""
 
 msgctxt "#31505"
@@ -2018,7 +2078,7 @@ msgid "Crew in TV Shows"
 msgstr ""
 
 msgctxt "#31511"
-msgid "Use fixed focus"
+msgid "Only for episodes"
 msgstr ""
 
 msgctxt "#31512"
@@ -2058,7 +2118,7 @@ msgid "Widget loading animation color"
 msgstr ""
 
 msgctxt "#31521"
-msgid "color for indicator image or text"
+msgid "color for indicator image"
 msgstr ""
 
 msgctxt "#31522"
@@ -2066,7 +2126,7 @@ msgid "Auto trailers"
 msgstr ""
 
 msgctxt "#31523"
-msgid "Settings for header"
+msgid "Header settings"
 msgstr ""
 
 msgctxt "#31524"
@@ -2114,11 +2174,11 @@ msgid "My list"
 msgstr ""
 
 msgctxt "#31535"
-msgid "OSD focus button color"
+msgid "OSD button focused color"
 msgstr ""
 
 msgctxt "#31536"
-msgid "Action & Crime Movies"
+msgid "Weather Alerts"
 msgstr ""
 
 msgctxt "#31537"
@@ -2126,7 +2186,7 @@ msgid "Flags color"
 msgstr ""
 
 msgctxt "#31538"
-msgid "PVR Guide focused item text color"
+msgid "PVR guide focused item text color"
 msgstr ""
 
 msgctxt "#31539"
@@ -2194,7 +2254,7 @@ msgid "Remove rating"
 msgstr ""
 
 msgctxt "#31555"
-msgid "Player process info"
+msgid "Show artist logo on fullscreen music playback"
 msgstr ""
 
 msgctxt "#31556"
@@ -2202,7 +2262,7 @@ msgid "Watch It Again TV Shows"
 msgstr ""
 
 msgctxt "#31557"
-msgid "Text color for unfocused lyrics"
+msgid "Lyrics unfocused text color"
 msgstr ""
 
 msgctxt "#31558"
@@ -2218,11 +2278,11 @@ msgid "Channel logo"
 msgstr ""
 
 msgctxt "#31561"
-msgid "Additional info icons color"
+msgid "Additional info icon color"
 msgstr ""
 
 msgctxt "#31562"
-msgid "Recommended Movies"
+msgid "MPAA font color"
 msgstr ""
 
 msgctxt "#31563"
@@ -2234,7 +2294,11 @@ msgid "Widgets"
 msgstr ""
 
 msgctxt "#31565"
-msgid "Open submenu"
+msgid "OSD info panel"
+msgstr ""
+
+msgctxt "#31566"
+msgid "Shows"
 msgstr ""
 
 msgctxt "#31567"
@@ -2246,19 +2310,19 @@ msgid "Enable indicator for unwatched items"
 msgstr ""
 
 msgctxt "#31569"
-msgid "Media listitem text color"
+msgid "Media listitem unfocused text color"
 msgstr ""
 
 msgctxt "#31570"
-msgid "Media listitem focus text color"
+msgid "Media listitem focused text color"
 msgstr ""
 
 msgctxt "#31571"
-msgid "Media listitem focus color"
+msgid "Media listitem focused panel color"
 msgstr ""
 
 msgctxt "#31572"
-msgid "Video info additional info text color"
+msgid "Additional info text color (video info dialog)"
 msgstr ""
 
 msgctxt "#31573"
@@ -2270,7 +2334,7 @@ msgid "Background color diffuse"
 msgstr ""
 
 msgctxt "#31575"
-msgid "Enable small PVR Channels OSD"
+msgid "Prefer mini TV channels list on fullscreen"
 msgstr ""
 
 msgctxt "#31576"
@@ -2278,277 +2342,9 @@ msgid "color for play icon"
 msgstr ""
 
 msgctxt "#31577"
-msgid "New Movies"
-msgstr ""
-
-msgctxt "#31578"
-msgid "There are no matches for your search."
-msgstr ""
-
-msgctxt "#31579"
-msgid "Only for episodes"
-msgstr ""
-
-msgctxt "#31580"
-msgid "Parents strongly cautioned panel color"
-msgstr ""
-
-msgctxt "#31581"
-msgid "OSD plot text color"
-msgstr ""
-
-msgctxt "#31582"
-msgid "OSD sublabel text color"
-msgstr ""
-
-msgctxt "#31583"
-msgid "Rating color in details row"
-msgstr ""
-
-msgctxt "#31584"
-msgid "TMDb Rating"
-msgstr ""
-
-msgctxt "#31585"
-msgid "Diffuse color for lyrics overlay"
-msgstr ""
-
-msgctxt "#31586"
-msgid "Because you watched"
-msgstr ""
-
-msgctxt "#31587"
-msgid "Show artist logo on fullscreen music playback"
-msgstr ""
-
-msgctxt "#31588"
-msgid "OSD info panel"
-msgstr ""
-
-msgctxt "#31589"
 msgid "Hardware decoding"
 msgstr ""
 
-msgctxt "#31590"
-msgid "Shows"
-msgstr ""
-
-msgctxt "#31591"
-msgid "TMDb People"
-msgstr ""
-
-msgctxt "#31592"
-msgid "Enable auto pause on OSD open"
-msgstr ""
-
-msgctxt "#31593"
-msgid "Global background"
-msgstr ""
-
-msgctxt "#31594"
-msgid "Enable ratings"
-msgstr ""
-
-msgctxt "#31595"
-msgid "Select which details to show in video info"
-msgstr ""
-
-msgctxt "#31596"
-msgid "Open information instead of playing/opening content (only applies to widgets)"
-msgstr ""
-
-msgctxt "#31597"
-msgid "Total duration"
-msgstr ""
-
-msgctxt "#31598"
-msgid "IMDB Rating"
-msgstr ""
-
-msgctxt "#31599"
-msgid "Show infopanel right"
-msgstr ""
-
-msgctxt "#31600"
-msgid "Align tags in center"
-msgstr ""
-
-msgctxt "#31601"
-msgid "Sideblade/options menu panel color"
-msgstr ""
-
-msgctxt "#31602"
-msgid "Menu color settings"
-msgstr ""
-
-msgctxt "#31603"
-msgid "Label overlays on posters and thumbs panel color"
-msgstr ""
-
-msgctxt "#31604"
-msgid "Label overlays on posters and thumbs text color"
-msgstr ""
-
-msgctxt "#31605"
-msgid "Border color for fixed MPAA panel"
-msgstr ""
-
-msgctxt "#31606"
-msgid "Metacritic Rating"
-msgstr ""
-
-msgctxt "#31607"
-msgid "Trakt Rating"
-msgstr ""
-
-msgctxt "#31608"
-msgid "Oscar"
-msgstr ""
-
-msgctxt "#31609"
-msgid "Show premiere date instead of year"
-msgstr ""
-
-msgctxt "#31610"
-msgid "IMDB Top 250"
-msgstr ""
-
-msgctxt "#31611"
-msgid "Enable indicator if item is playing or is recording/timer (PVR)"
-msgstr ""
-
-msgctxt "#31612"
-msgid "Rotten Tomatoes Audience Rating"
-msgstr ""
-
-msgctxt "#31613"
-msgid "Shows Hub"
-msgstr ""
-
-msgctxt "#31614"
-msgid "for You"
-msgstr ""
-
-msgctxt "#31615"
-msgid "Plot & critics"
-msgstr ""
-
-msgctxt "#31616"
-msgid "Enable mini guide on fullscreen live TV"
-msgstr ""
-
-msgctxt "#31617"
-msgid "Animate music background"
-msgstr ""
-
-msgctxt "#31618"
-msgid "Focused/active color for radiobuttons and spin controls"
-msgstr ""
-
-msgctxt "#31619"
-msgid "Home main menu line under icon"
-msgstr ""
-
-msgctxt "#31620"
-msgid "Random Movies"
-msgstr ""
-
-msgctxt "#31621"
-msgid "Plot text color"
-msgstr ""
-
-msgctxt "#31622"
-msgid "More like this"
-msgstr ""
-
-msgctxt "#31623"
-msgid "Select weather icons"
-msgstr ""
-
-msgctxt "#31624"
-msgid "Select weather fanart"
-msgstr ""
-
-msgctxt "#31625"
-msgid "New & Popular"
-msgstr ""
-
-msgctxt "#31626"
-msgid "Select movie genre icons"
-msgstr ""
-
-msgctxt "#31627"
-msgid "Disable clearlogo (text title instead)"
-msgstr ""
-
-msgctxt "#31628"
-msgid "Border size for focus frame"
-msgstr ""
-
-msgctxt "#31629"
-msgid "Exit Bingie"
-msgstr ""
-
-msgctxt "#31630"
-msgid "Play from beginning"
-msgstr ""
-
-msgctxt "#31631"
-msgid "Supported addons"
-msgstr ""
-
-msgctxt "#31632"
-msgid "Style for media/codec info"
-msgstr ""
-
-msgctxt "#31633"
-msgid "Last Releases TV Shows"
-msgstr ""
-
-msgctxt "#31634"
-msgid "Auto trailer interval"
-msgstr ""
-
-msgctxt "#31635"
-msgid "Horizontal navigation"
-msgstr ""
-
-msgctxt "#31636"
-msgid "Weather Alerts"
-msgstr ""
-
-msgctxt "#31637"
-msgid "No active weather alerts"
-msgstr ""
-
-msgctxt "#31638"
-msgid "Not rated panel color"
-msgstr ""
-
-msgctxt "#31639"
-msgid "MPAA font color"
-msgstr ""
-
-msgctxt "#31640"
-msgid "Surprise Me"
-msgstr ""
-
-msgctxt "#31641"
-msgid "In the Bingie skin, the content is organized into dedicated hubs. This layout makes it easy to navigate between categories and find what you’re looking for. Just like on the home screen, you have the ability to add new widgets, remove existing ones, and fully customize their appearance and behavior to suit your personal viewing preferences."
-msgstr ""
-
-msgctxt "#31642"
-msgid "For all content"
-msgstr ""
-
-msgctxt "#31643"
-msgid "Episode number"
-msgstr ""
-
-msgctxt "#31644"
-msgid "Total episodes"
-msgstr ""
-
-msgctxt "#31645"
-msgid "Trailer source"
+msgctxt "#31578"
+msgid "Widget"
 msgstr ""

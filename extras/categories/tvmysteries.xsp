@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- BINGIE -->
 <smartplaylist type="tvshows">
     <name>TV Mysteries</name>
     <match>all</match>
-    <rule field="genre" operator="is">
+    <rule field="genre" operator="contains">
         <value>Mystery</value>
     </rule>
-    <rule field="rating" operator="greaterthan">
-        <value>6.4</value>
+	<rule field="genre" operator="isnot">
+        <value>Animation</value>
     </rule>
-    <rule field="votes" operator="greaterthan">
-        <value>100</value>
-    </rule>
-    <order direction="descending">year</order>
+    <order direction="descending">dateadded</order>
 	<limit>200</limit>
 </smartplaylist>

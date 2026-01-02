@@ -24,25 +24,6 @@
             </control>
         </control>
 		
-		<!-- osd setings background -->
-		<control type="image">
-			<width>100%</width>
-			<height>100%</height>
-			<texture background="true">diffuse/panel2.png</texture>
-			<colordiffuse>b3000000</colordiffuse>
-			<visible>Window.IsActive(OSDAudioSettings)</visible>
-		</control>
-
-        <control type="group">
-            <include>HideOsdConditions</include>
-			<include condition="!Skin.HasSetting(UseBingieOSD)">OSDPanelModern</include>
-            <include condition="Skin.HasSetting(UseBingieOSD)">OSDPanelBingie</include>
-			<visible>Skin.HasSetting(AlwaysShowMusicInfo) | Window.IsActive(musicosd) | Player.Seeking | Player.DisplayAfterSeek | !String.IsEmpty(Player.SeekNumeric) | [Player.Paused + !Player.Caching + !Skin.HasSetting(UseBingieOSD)] | Player.Forwarding | Player.Rewinding</visible>
-			<animation effect="slide" start="0,400" end="0,0" tween="cubic" easing="out" delay="0" time="450" reversible="false" condition="!String.IsEqual(Window(Home).Property(VizSlide),hide)">Visible</animation>
-			<animation effect="slide" start="0,0" end="0,400" tween="cubic" easing="out" delay="0" time="450" reversible="false">Hidden</animation>
-			<animation effect="slide" start="0,400" end="0,0" tween="cubic" easing="out" delay="0" time="450" reversible="false">WindowOpen</animation>
-		</control>
-		
 		<!--clearlogo top right-->
 		<control type="image">
 			<right>40</right>
@@ -52,21 +33,21 @@
 			<fadetime>900</fadetime>
 			<aspectratio align="right" aligny="top">keep</aspectratio>
 			<texture background="true">$VAR[MusicPlayerClearLogo]</texture>
-            <visible>Skin.String(MusicArtistLogo,enabled) + !Skin.HasSetting(UseBingieOSD) | Skin.String(MusicArtistLogo,osd) + Window.IsActive(MusicOSD) + !Skin.HasSetting(UseBingieOSD) | !Window.IsActive(MusicOSD) + Skin.HasSetting(UseBingieOSD)</visible>
+            <visible>![Player.Paused + System.IdleTime(3)] + [Skin.String(MusicArtistLogo,enabled) + !Skin.HasSetting(UseBingieOSD) | Skin.String(MusicArtistLogo,osd) + Window.IsActive(MusicOSD) + !Skin.HasSetting(UseBingieOSD) | !Window.IsActive(MusicOSD) + Skin.HasSetting(UseBingieOSD)]</visible>
             <include>animation_fade_visible_hidden_delayed</include>
 		</control>      
 		
 		<!-- Scrolling Text -->
         <control type="group">
             <top>370</top>
-            <animation effect="fade" time="500">WindowOpen</animation>
-			<animation effect="fade" time="500">WindowClose</animation>
-			<animation effect="fade" time="500">Visible</animation>
-			<animation effect="fade" time="500">Hidden</animation>
-			<visible>Player.HasAudio + !Window.IsActive(script-cu-lrclyrics-main.xml)</visible>
+            <animation effect="fade" time="350">WindowOpen</animation>
+			<animation effect="fade" time="350">WindowClose</animation>
+			<animation effect="fade" time="350">Visible</animation>
+			<animation effect="fade" time="350">Hidden</animation>
+			<visible>Player.HasAudio + !Window.IsActive(script-cu-lrclyrics-main.xml) + ![Player.Paused + System.IdleTime(3)]</visible>
 			<visible>Skin.HasSetting(MusicOSDScrollingTitles)</visible>
-            <animation effect="slide" start="0" end="0,360" delay="0" time="300" condition="Skin.HasSetting(UseBingieOSD) + ![Skin.HasSetting(AlwaysShowMusicInfo) | Player.ShowInfo | Player.Forwarding | Player.Rewinding | Player.seeking | Window.IsActive(MusicOSD)]">Conditional</animation>
-			<animation effect="slide" start="0" end="0,360" delay="0" time="250" condition="!Skin.HasSetting(UseBingieOSD) + ![Skin.HasSetting(AlwaysShowMusicInfo) | Player.ShowInfo | Player.Forwarding | Player.Rewinding | Player.seeking | Window.IsActive(MusicOSD)]">Conditional</animation>	
+            <animation effect="slide" start="0" end="0,360" delay="0" time="300" condition="Skin.HasSetting(UseBingieOSD) + ![Skin.HasSetting(AlwaysShowMusicInfo) + !Skin.HasSetting(UseBingieOSD) | Player.ShowInfo | Player.Forwarding | Player.Rewinding | Player.seeking | Window.IsActive(MusicOSD)]">Conditional</animation>
+			<animation effect="slide" start="0" end="0,360" delay="0" time="250" condition="!Skin.HasSetting(UseBingieOSD) + ![Skin.HasSetting(AlwaysShowMusicInfo) + !Skin.HasSetting(UseBingieOSD) | Player.ShowInfo | Player.Forwarding | Player.Rewinding | Player.seeking | Window.IsActive(MusicOSD)]">Conditional</animation>	
             <control type="label">
                 <description>Now Playing</description>
                 <left>0</left>
@@ -114,6 +95,76 @@
                 <animation effect="fade" end="0" start="100" time="350">Hidden</animation>
             </control>
         </control>
+		
+			<!-- CLEAR LOGO or Clearart on PAUSE -->
+			<control type="group">
+				<top>0</top>
+				<left>0</left>
+				<height>100%</height>
+				<width>100%</width>				
+				<visible>Player.Paused + System.IdleTime(3)</visible>
+				<visible>![Control.IsVisible(552233) | Window.IsActive(OSDAudioSettings) | Window.IsActive(sliderdialog)]</visible>
+				<animation delay="1000" time="300" effect="fade">Visible</animation>
+				<animation delay="0" time="300" effect="fade">Hidden</animation>
+				<!-- background -->
+				<control type="image">
+					<width>100%</width>
+					<height>100%</height>
+					<texture background="true">diffuse/panel2.png</texture>
+					<colordiffuse>b3000000</colordiffuse>
+				</control>	
+				<control type="grouplist">
+					<top>345</top>
+					<left>130</left>
+					<height>530</height>
+					<width>70%</width>
+					<orientation>vertical</orientation>
+					<itemgap>10</itemgap>
+					<usecontrolcoords>true</usecontrolcoords>
+					<!-- ClearLogo on Pause -->
+					<control type="image" id="111">
+						<top>100</top>
+						<width>490</width>
+						<height>190</height>
+						<fadetime>200</fadetime>
+						<texture background="true">$VAR[MusicPlayerClearLogo]</texture>
+						<aspectratio align="left" aligny="center">keep</aspectratio>
+						<visible>!String.IsEmpty(Control.GetLabel(111))</visible>
+					</control>
+					<!-- Title -->
+					<control type="label">
+						<top>187</top>
+						<width>auto</width>
+						<height>70</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>Reg60</font>
+						<textcolor>$INFO[Skin.String(BingieOSDLabelTextColor)]</textcolor>
+						<label>[B]$VAR[OSDLabel4][/B]</label>
+						<scroll>false</scroll>
+						<wrapmultiline>true</wrapmultiline>
+						<visible>!Control.IsVisible(111)</visible>
+					</control>
+					<!-- Sublabel -->
+					<control type="label">
+						<width>auto</width>
+						<font>Reg32</font>
+						<textcolor>$INFO[Skin.String(BingieOSDSubLabelTextColor)]</textcolor>
+						<label>$VAR[OSDLabel5]</label>
+						<scroll>false</scroll>
+					</control>
+				</control>
+			</control>
+
+        <control type="group">
+            <include>HideOsdConditions</include>
+			<include condition="!Skin.HasSetting(UseBingieOSD)">OSDPanelModern</include>
+            <include condition="Skin.HasSetting(UseBingieOSD)">OSDPanelBingie</include>
+			<visible>Skin.HasSetting(AlwaysShowMusicInfo) + !Skin.HasSetting(UseBingieOSD) | Window.IsActive(musicosd) | Player.Seeking | Player.DisplayAfterSeek | !String.IsEmpty(Player.SeekNumeric) | [Player.Paused + !Player.Caching + !Skin.HasSetting(UseBingieOSD)] | Player.Forwarding | Player.Rewinding</visible>
+			<animation effect="slide" start="0,400" end="0,0" tween="cubic" easing="out" delay="0" time="450" reversible="false" condition="!String.IsEqual(Window(Home).Property(VizSlide),hide)">Visible</animation>
+			<animation effect="slide" start="0,0" end="0,400" tween="cubic" easing="out" delay="0" time="450" reversible="false">Hidden</animation>
+			<animation effect="slide" start="0,400" end="0,0" tween="cubic" easing="out" delay="0" time="450" reversible="false">WindowOpen</animation>
+		</control>
 
     </controls>
 </window>

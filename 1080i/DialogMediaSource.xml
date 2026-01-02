@@ -11,7 +11,7 @@
         <control type="group">
            <include>animation_window_open_close</include>
             <visible>!Window.IsVisible(virtualkeyboard) + !Window.IsVisible(filebrowser) + !Window.IsVisible(networksetup)</visible>
-
+			<top>-5</top>
 			<control type="image">
                 <!--Panel-->
                  <posx>445</posx>
@@ -19,8 +19,7 @@
                 <width>1030</width>
                 <height>531</height>
                 <texture border="15">diffuse/bgpanel.png</texture>
-				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
-				
+				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>				
             </control>
 			<control type="image">
                 <!--Panel-->
@@ -30,22 +29,19 @@
                 <height>531</height>
 				<texture border="15">diffuse/bgpanel.png</texture>
 				<bordersize>10</bordersize>
-				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
-				
-            </control>
-			
-			
+				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>				
+            </control>						
             <control type="image">
                 <posx>478</posx>
                 <posy>412</posy>
-                <width>692</width>
+                <width>690</width>
                 <height>183</height>
                 <texture border="5">dialogs/default/inner.png</texture>
             </control>
             <control type="image">
-                <posx>1182</posx>
+                <posx>1180</posx>
                 <posy>412</posy>
-                <width>260</width>
+                <width>262</width>
                 <height>183</height>
                 <texture border="5">dialogs/default/inner.png</texture>
             </control>
@@ -69,38 +65,37 @@
                     <height>30</height>
                     <align>left</align>
                     <textoffsetx>20</textoffsetx>
-                    <label>1021</label>
+                    <label>$LOCALIZE[1021]</label>
                     <include>DialogLabel</include>
                 </control>
                 <control type="list" id="10">
                     <posx>479</posx>
                     <posy>413</posy>
-                    <width>690</width>
+                    <width>688</width>
                     <height>180</height>
                     <onup>9001</onup>
                     <onleft>9004</onleft>
-                    <onright>60</onright>
+                    <onright>9004</onright>
                     <ondown>9003</ondown>
-                    <pagecontrol>60</pagecontrol>
                     <scrolltime tween="cubic" easing="out">500</scrolltime>
                     <itemlayout height="60">
                         <control type="image">
                             <posx>0</posx>
                             <posy>1</posy>
-                            <width>690</width>
+                            <width>688</width>
                             <height>60</height>
                             <texture>dialogs/default/separator.png</texture>
                         </control>
                         <control type="label">
                             <posx>20</posx>
-                            <width>596</width>
+                            <width>594</width>
                             <height>60</height>
                             <info>ListItem.Label</info>
                             <include>DialogListNF</include>
                             <scroll>false</scroll>
                         </control>
                         <control type="image">
-                            <posx>616</posx>
+                            <posx>625</posx>
                             <width>74</width>
                             <height>60</height>
                             <texture>dialogs/mediasource/rules-nf.png</texture>
@@ -113,20 +108,20 @@
                             <control type="image">
                                 <posx>0</posx>
                                 <posy>1</posy>
-                                <width>690</width>
+                                <width>688</width>
                                 <height>60</height>
                                 <texture>dialogs/default/separator.png</texture>
                             </control>
                             <control type="label">
                                 <posx>20</posx>
-                                <width>596</width>
+                                <width>594</width>
                                 <height>60</height>
                                 <info>ListItem.Label</info>
                                 <include>DialogListNF</include>
                                 <scroll>false</scroll>
                             </control>
                             <control type="image">
-                                <posx>616</posx>
+                                <posx>625</posx>
                                 <width>74</width>
                                 <height>60</height>
                                 <texture>dialogs/mediasource/rules-nf.png</texture>
@@ -137,21 +132,21 @@
                         <control type="group">
                             <visible>Control.HasFocus(10)</visible>
                             <control type="image">
-                                <width>690</width>
+                                <width>688</width>
                                 <height>60</height>
                                 <texture border="10">diffuse/panel.png</texture>
                                 <colordiffuse>$INFO[Skin.String(ButtonFocusColor)]</colordiffuse>
                             </control>
                             <control type="label">
                                 <posx>20</posx>
-                                <width>596</width>
+                                <width>594</width>
                                 <height>60</height>
                                 <info>ListItem.Label</info>
                                 <include>DialogListFO</include>
                                 <scroll>false</scroll>
                             </control>
                             <control type="image">
-                                <posx>616</posx>
+                                <posx>625</posx>
                                 <width>74</width>
                                 <height>60</height>
                                 <texture>dialogs/mediasource/rules-nf.png</texture>
@@ -160,7 +155,7 @@
                             </control>
                         </control>
                         <control type="image">
-                            <posx>633</posx>
+                            <posx>628</posx>
 							<posy>10</posy>
                             <width>40</width>
                             <height>40</height>
@@ -180,18 +175,8 @@
                     <animation effect="fade" start="100" end="0" time="0" delay="1000">Hidden</animation>
                     <visible>!Control.HasFocus(60) + [Container(10).Scrolling | Container(10).OnScrollNext | Container(10).OnScrollPrevious]</visible>
                 </control>
-                <control type="scrollbar" id="60">
-                    <posx>1155</posx>
-                    <posy>414</posy>
-                    <height>179</height>
-                    <onleft>10</onleft>
-                    <onright>9004</onright>
-                    <showonepage>false</showonepage>
-                    <orientation>vertical</orientation>
-                    <animation effect="fade" start="100" end="0" time="300" tween="sine" easing="inout" condition="!Control.IsVisible(61)">Conditional</animation>
-                </control>
                 <control type="group" id="9004">
-                    <posx>1183</posx>
+                    <posx>1181</posx>
                     <control type="button" id="11">
                         <description>Browse</description>
                         <posy>413</posy>
@@ -239,7 +224,7 @@
                     <height>30</height>
                     <align>left</align>
                     <textoffsetx>20</textoffsetx>
-                    <label>1022</label>
+                    <label>$LOCALIZE[1022]</label>
                 </control>
 				<control type="edit" id="12">
                     <description>Name Button</description>
@@ -256,13 +241,16 @@
                 </control>
             </control>
             <!--Buttons-->
-            <control type="group" id="9001">
+            <control type="grouplist" id="9001">
                 <posx>470</posx>
                 <posy>720</posy>
 				<width>980</width>
+				<orientation>horizontal</orientation>
+				<itemgap>15</itemgap>
                 <control type="button" id="18">
                     <description>OK</description>
-                    <label>186</label>
+                    <label>$LOCALIZE[186]</label>
+					<width>316</width>
                     <include>DialogButtonOther</include>
                     <onleft>19</onleft>
                     <onright>19</onright>
@@ -271,9 +259,9 @@
                     <animation effect="fade" start="100" end="75" time="0" condition="!Control.IsEnabled(18)">Conditional</animation>
                 </control>
                 <control type="button" id="19">
-                    <right>0</right>
                     <description>Close</description>
                     <label>$LOCALIZE[222]</label>
+					<width>316</width>
                     <include>DialogButtonOther</include>
                     <onleft>18</onleft>
                     <onright>18</onright>

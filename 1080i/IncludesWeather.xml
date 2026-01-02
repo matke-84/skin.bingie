@@ -80,26 +80,26 @@
 				</focusedlayout>
 				<content>
 					<item id="1">
-						<label>31285</label>
+						<label>$LOCALIZE[31285]</label>
 						<icon/>
 					</item>
 					<item id="2">
-						<label>31289</label>
+						<label>$LOCALIZE[31289]</label>
 						<icon/>
 						<visible>!String.IsEmpty(Window.Property(Daily.IsFetched))</visible>
 					</item>
 					<item id="3">
-						<label>31286</label>
+						<label>$LOCALIZE[31286]</label>
 						<icon/>
 						<visible>!String.IsEmpty(Window.Property(36Hour.IsFetched))</visible>
 					</item>
 					<item id="4">
-						<label>31288</label>
+						<label>$LOCALIZE[31288]</label>
 						<icon/>
 						<visible>!String.IsEmpty(Window.Property(Weekend.IsFetched))</visible>
 					</item>
 					<item id="5">
-						<label>31287</label>
+						<label>$LOCALIZE[31287]</label>
 						<icon/>
 						<visible>!String.IsEmpty(Window.Property(Hourly.IsFetched))</visible>
 					</item>
@@ -129,7 +129,7 @@
 						<visible>!String.IsEmpty(Window.Property(Map.5.Area)) + !String.IsEmpty(Window.Property(Map.IsFetched))</visible>
 					</item>
 					<item id="11">
-						<label>31636</label>
+						<label>$LOCALIZE[31536]</label>
 						<icon/>
 						<visible>!String.IsEmpty(Window.Property(Alerts.IsFetched))</visible>
 					</item>
@@ -1831,7 +1831,7 @@
 					<shadowcolor>ff4c2626</shadowcolor>
 					<align>center</align>
 					<aligny>top</aligny>
-					<label>31636</label>
+					<label>$LOCALIZE[31536]</label>
 				</control>
 					<control type="image">
 						<description>separator image</description>
@@ -1860,7 +1860,7 @@
 						<textcolor>white</textcolor>
 						<align>center</align>
 						<aligny>center</aligny>
-						<label>31637</label>
+						<label>$LOCALIZE[31164]</label>
 						<visible>String.IsEmpty(Window.Property(Alerts))</visible>
 					</control>
 					<control type="image">

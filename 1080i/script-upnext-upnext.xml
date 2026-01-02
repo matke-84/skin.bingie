@@ -48,7 +48,7 @@
                     <font>Reg30</font>
 					<textoffsetx>30</textoffsetx>
                     <focusedcolor>$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]</focusedcolor>
-                    <label>31021</label>
+                    <label>$LOCALIZE[31021]</label>
                     <texturefocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/default_button_focus.png</texturefocus>
 					<texturenofocus border="10" background="true" colordiffuse="$INFO[Skin.String(ViewDetailsBorderUnfocusColor)]">bingie/border/default_button_focus.png</texturenofocus>
                     <onclick>SendClick(3013)</onclick>
@@ -82,12 +82,12 @@
             <!-- Full Info Notification -->
             <control type="group">
                 <visible>Skin.HasSetting(NextUpNotificationSlim)</visible>
-                <!-- gradient overlay, cornered would be better -->
+                <!-- gradient overlay -->
                 <control type="image">
                     <bottom>0</bottom>
                     <width>100%</width>
                     <height>100%</height>
-                    <texture colordiffuse="$INFO[Skin.String(GeneralPanelsColor)]">diffuse/panel2.png</texture>
+                    <texture colordiffuse="b3000000">diffuse/panel2.png</texture>
                 </control>
                 <!-- NextUp Info -->
                 <control type="grouplist">

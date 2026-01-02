@@ -1431,11 +1431,10 @@
 					<width>1890</width>
 					<height>560</height>
 					<onup>9000</onup>
-					<ondown condition="Skin.HasSetting(EnableQuickJump)">7000</ondown>
-					<ondown condition="!Skin.HasSetting(EnableQuickJump)">60</ondown>
+					<ondown>60</ondown>
 					<onback>ClearProperty(ListAnimation,home)</onback>
 					<orientation>horizontal</orientation>
-					<viewtype label="31440">bigwrap</viewtype>
+					<viewtype label="31440">Poster Row</viewtype>
 					<include content="View_Forced">
 						<param name="viewtype" value="$LOCALIZE[31440]" />
 					</include>
@@ -1471,8 +1470,8 @@
                 <onleft>60</onleft>
                 <onright>60</onright>
                 <orientation>horizontal</orientation>
-                <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] + !Control.IsVisible(7002)">Conditional</animation>
-                <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Container.Scrolling | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] | Control.IsVisible(7002)">Conditional</animation>
+                <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] + !Control.IsVisible(7002)">Conditional</animation>
+                <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)] | Control.IsVisible(7002)">Conditional</animation>
             </control>
             
 		</control>

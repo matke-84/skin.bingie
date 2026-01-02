@@ -22,9 +22,9 @@
             <!--Grouplist 9000-->
             <control type="grouplist" id="9000">
                 <posx>21</posx>
-                <posy>185</posy>
+                <posy>180</posy>
                 <width>458</width>
-                <height>770</height>
+                <height>781</height>
                 <itemgap>3</itemgap>
                 <onleft>5000</onleft>
                 <onright>5000</onright>
@@ -39,15 +39,15 @@
                <control type="button" id="3">
 					<description>Sort by button</description>
 					<include>SideBladeMenuButton</include>
-					<label>103</label>
+					<label>$LOCALIZE[103]</label>
 				</control>
 				<control type="togglebutton" id="4">
 					<description>Sort asc</description>
 					<include>SideBladeMenuButton</include>
 					<alttexturefocus border="10" colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">diffuse/panel.png</alttexturefocus>
 					<alttexturenofocus/>
-					<label>585</label>
-					<altlabel>584</altlabel>
+					<label>$LOCALIZE[585]</label>
+					<altlabel>$LOCALIZE[584]</altlabel>
 					<usealttexture>Container.SortDirection(Ascending)</usealttexture>
 				</control>
 
@@ -58,13 +58,13 @@
 					<include>SideBladeMenuButton</include>
 					<textoffsetx>50</textoffsetx>
 					<textoffsety>13</textoffsety>
-					<label>587</label>
+					<label>$LOCALIZE[587]</label>
 				</control>
 				<control type="radiobutton" id="98">
 					<visible>Container.CanFilterAdvanced</visible>
 					<description>Filter</description>
 					<include>SideBladeMenuButton</include>
-					<label>587</label>
+					<label>$LOCALIZE[587]</label>
 					<selected>Container.Filtered</selected>
 					<onclick>right</onclick>
 					<onclick>Filter</onclick>

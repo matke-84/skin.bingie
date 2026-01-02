@@ -39,7 +39,6 @@
         
         <!-- Color picker panel -->
 		<control type="panel" id="3110">
-			<viewtype label="31438">icons</viewtype>
 			<posx>65</posx>
 			<posy>152</posy>
 			<width>1798</width>
@@ -153,7 +152,7 @@
 				<height>60</height>
 				<onup>3110</onup>
 				<onleft>3010</onleft>
-				<label>190</label>
+				<label>$LOCALIZE[190]</label>
 			</control>
 			
 			<!-- None -->

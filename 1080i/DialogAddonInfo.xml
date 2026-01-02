@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- BINGIE -->
 <window>
-    <defaultcontrol always="true">9000</defaultcontrol>
+    <defaultcontrol always="true">9900</defaultcontrol>
     <onunload>ClearProperty(showinfo,addoninformation)</onunload>
+	<onload>AlarmClock(SetAddonButtons,SetFocus(9900),00:00,silent)</onload>
     <controls>
         <!--Dialog Overlay-->
 		<control type="group">
-			<visible>!Window.IsVisible(AddonSettings) + !Window.IsActive(TextViewer)</visible>
 			<include>DialogOverlayExtra</include>
 			<animation effect="fade" time="250" start="0" end="100" reversible="false">WindowOpen</animation>
+			<animation effect="fade" time="250" start="100" end="0" reversible="false">WindowClose</animation>
         </control>
 		
         <!--Dialog PVR Guid Info-->
         <control type="group">
-            <visible>!Window.IsVisible(AddonSettings) + !Window.IsActive(TextViewer)</visible>
 			<animation type="WindowOpen">
 				<effect type="slide" start="1200" end="0" time="250" tween="cubic" easing="inout" />
 			</animation>
@@ -48,7 +48,7 @@
                 <textcolor>$INFO[Skin.String(HeaderTextColor)]</textcolor>
                 <align>left</align>
 				<height>100</height>
-				<label>24003</label>
+				<label>$LOCALIZE[24003]</label>
             </control>
 			<!-- title -->
 			<control type="label">
@@ -96,6 +96,19 @@
                     <enable>false</enable>
 					<disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
                 </control>
+				<control type="button">
+                    <!--Version-->
+                    <width>800</width>
+                    <height>60</height>
+                    <align>left</align>
+                    <textoffsetx>20</textoffsetx>
+                    <textwidth>540</textwidth>
+                    <texturenofocus>dialogs/default/separator.png</texturenofocus>
+                    <label>$LOCALIZE[24051]</label>
+                    <label2>$INFO[ListItem.AddonVersion]</label2>
+                    <enable>false</enable>
+					<disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
+                </control>
                 <control type="button">
                     <!--Author-->
                     <width>800</width>
@@ -110,27 +123,17 @@
 					<disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
                 </control>
                 <control type="button">
-                    <!--Version-->
+                    <!--Status-->
                     <width>800</width>
                     <height>60</height>
                     <align>left</align>
                     <textoffsetx>20</textoffsetx>
                     <textwidth>540</textwidth>
-                    <texturenofocus>dialogs/default/separator.png</texturenofocus>
-                    <label>$LOCALIZE[24051]</label>
-                    <label2>$INFO[ListItem.AddonVersion]</label2>
+                    <texturenofocus/>
+                    <label>$LOCALIZE[126]:</label>
+                    <label2>$INFO[ListItem.Property(Addon.Status)]</label2>
                     <enable>false</enable>
 					<disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
-                </control>
-                <control type="label">
-                    <!--Disclaimer-->
-                    <width>780</width>
-                    <height>60</height>
-                    <align>left</align>
-					<scroll>true</scroll>
-                    <label>   $INFO[ListItem.AddonDisclaimer]</label>
-					<textcolor>FFFF0000</textcolor>
-					<visible>!String.IsEmpty(ListItem.AddonDisclaimer)</visible>
                 </control>
             </control>
             <control type="image">
@@ -143,44 +146,44 @@
             <control type="textbox">
                 <description>Plot value</description>
                 <posx>695</posx>
-                <posy>506</posy>
+                <posy>500</posy>
                 <width>1160</width>
                 <height>400</height>
                 <align>justify</align>
                 <pagecontrol>60</pagecontrol>
-                <label fallback="19055">$INFO[ListItem.AddonSummary][CR]$INFO[ListItem.AddonDescription]</label>
+                <label fallback="19055">[B]$INFO[ListItem.AddonSummary][/B][CR]$INFO[ListItem.AddonDescription]</label>
                 <visible>String.IsEmpty(Window.Property(showinfo))</visible>
             </control>
             <control type="textbox">
                 <description>News value</description>
                 <posx>695</posx>
-                <posy>506</posy>
+                <posy>500</posy>
                 <width>1160</width>
                 <height>400</height>
                 <align>justify</align>
-                <pagecontrol>60</pagecontrol>
+                <pagecontrol>61</pagecontrol>
                 <label fallback="19055">$INFO[ListItem.AddonNews]</label>
                 <visible>String.IsEqual(Window.Property(showinfo),news)</visible>
             </control>
             
             <!-- screenshots -->
             <control type="panel" id="50">
-                <posx>676</posx>
-                <posy>520</posy>
-                <width>1200</width>
+                <posx>692</posx>
+                <posy>510</posy>
+                <width>1166</width>
                 <height>340</height>
                 <orientation>horizontal</orientation>
-                <onup>9000</onup>
-                <ondown>9000</ondown>
+                <onup>9900</onup>
+                <ondown>9900</ondown>
                 <preloaditems>4</preloaditems>
                 <visible>String.IsEqual(Window.Property(showinfo),screenshots)</visible>
-                <itemlayout height="340" width="599">
+                <itemlayout height="340" width="583">
                     <control type="image">
                         <bordersize>4</bordersize>
                         <texture background="true" diffuse="home/home_matte2.png">$INFO[ListItem.Icon]</texture>
                     </control>
                 </itemlayout>
-                <focusedlayout height="340" width="599">
+                <focusedlayout height="340" width="583">
                     <control type="image">
                         <!--focus image-->
                         <texture diffuse="home/home_matte2.png">diffuse/panel2.png</texture>
@@ -192,63 +195,89 @@
                     </control>
                 </focusedlayout>
             </control>
+			
+			  <control type="scrollbar" id="60">
+				<right>10</right>
+				<posy>488</posy>
+				<height>426</height>
+				<onup>60</onup>
+				<ondown>60</ondown>
+				<onleft>9900</onleft>
+				<onright>9900</onright>
+				<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+			  </control>
+			  
+			  <control type="scrollbar" id="61">
+				<right>10</right>
+				<posy>488</posy>
+				<height>426</height>
+				<onup>61</onup>
+				<ondown>61</ondown>
+				<onleft>9900</onleft>
+				<onright>9900</onright>
+				<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(61) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(61) | String.IsEqual(Skin.String(scrollbar_visibility),always_show)]">Conditional</animation>
+			  </control>
       
 			<!--Button Group-->
-            <control type="grouplist" id="9000">
-                <posx>675</posx>
+            <control type="grouplist" id="9900">
+                <posx>668</posx>
                 <posy>940</posy>
 				<orientation>horizontal</orientation>
-				<itemgap>5</itemgap>
-				<onup>50</onup>
-				<width>1200</width>
+				<itemgap>2</itemgap>
+				<onup condition="Control.IsVisible(50)">50</onup>
+				<onup condition="Control.IsVisible(60)">60</onup>
+				<onup condition="Control.IsVisible(61)">61</onup>
+				<width>1214</width>
 				
 				<control type="button" id="12">
                   <!--Launch Addon button-->
-                    <width>296</width>
+                    <width>302</width>
                     <height>80</height>
                     <align>center</align>
-                    <label>518</label>
+                    <label>$LOCALIZE[518]</label>
 					<include>DialogButtonOther</include>
 					<visible>Control.IsEnabled(12)</visible>
                 </control>
 				
 				<control type="button" id="9">
                    <!--Addon Settings-->
-                    <width>296</width>
+                    <width>302</width>
                     <height>80</height>
                     <align>center</align>
-                    <label>24020</label>
+                    <label>$LOCALIZE[24020]</label>
 					<include>DialogButtonOther</include>
 					<visible>Control.IsEnabled(9)</visible>
                 </control>
 				
 				<control type="button" id="10">
                     <!--Addon Dependencies-->
-                    <width>296</width>
+                    <width>302</width>
                     <height>80</height>
                     <align>center</align>
-                    <label>39024</label>
+                    <label>$LOCALIZE[39024]</label>
                     <include>DialogButtonOther</include>
                     <visible>Control.IsEnabled(10)</visible>
                 </control>
 				
 				<control type="button" id="14">
                     <!--version-->
-                    <width>296</width>
+                    <width>302</width>
                     <height>80</height>
                     <align>center</align>
-                    <label>24069</label>
+                    <label>$LOCALIZE[24069]</label>
                     <include>DialogButtonOther</include>
                     <visible>Control.IsEnabled(14)</visible>
                 </control>
 				
 				<control type="togglebutton" id="22112">
                     <!--news-->
-                    <width>296</width>
+                    <width>302</width>
                     <height>80</height>
                     <align>center</align>
-                    <label>29916</label>
-                    <altlabel>29915</altlabel>
+                    <label>$LOCALIZE[29916]</label>
+                    <altlabel>$LOCALIZE[29915]</altlabel>
 					<usealttexture>String.IsEqual(Window.Property(showinfo),news)</usealttexture>
                     <onclick condition="!String.IsEqual(Window.Property(showinfo),news)">SetProperty(showinfo,news)</onclick>
                     <onclick condition="String.IsEqual(Window.Property(showinfo),news)">ClearProperty(showinfo)</onclick>
@@ -257,11 +286,11 @@
 				
 				<control type="togglebutton" id="22111">
                     <!--screenshots-->
-                    <width>296</width>
+                    <width>302</width>
                     <height>80</height>
                     <align>center</align>
-                    <label>20008</label>
-                    <altlabel>29915</altlabel>
+                    <label>$LOCALIZE[20008]</label>
+                    <altlabel>$LOCALIZE[29915]</altlabel>
 					<usealttexture>String.IsEqual(Window.Property(showinfo),screenshots)</usealttexture>
 					<include>DialogButtonOther</include>
                     <onclick condition="!String.IsEqual(Window.Property(showinfo),screenshots)">SetProperty(showinfo,screenshots)</onclick>
@@ -271,22 +300,22 @@
 
 				<control type="button" id="8">
                   <!--Update Addon button-->
-                    <width>296</width>
+                    <width>302</width>
                     <height>80</height>
                     <align>center</align>
-                    <label>24069</label>
+                    <label>$LOCALIZE[24069]</label>
 					<include>DialogButtonOther</include>
 					<visible>Control.IsEnabled(8)</visible>
                 </control>
               
                 <control type="radiobutton" id="13">
                     <!--enable auto update-->
-                    <width>306</width>
-                    <textoffsetx>30</textoffsetx>
+                    <width>302</width>
+                    <textoffsetx>33</textoffsetx>
                     <height>80</height>
                     <align>left</align>
-					<radioposx>184</radioposx>
-                    <label>21340</label>
+					<radioposx>177</radioposx>
+                    <label>$LOCALIZE[21340]</label>
 					<textwidth>160</textwidth>
 					<include>DialogButtonOther</include>
                     <visible>Control.IsEnabled(13)</visible>
@@ -294,40 +323,28 @@
 
 				<control type="button" id="7">
                     <!--Enable/Disable Addon button-->
-                    <width>296</width>
+                    <width>302</width>
                     <height>80</height>
                     <align>center</align>
-                    <label>24021</label>
+                    <label>$LOCALIZE[24021]</label>
 					<include>DialogButtonOther</include>
 					<visible>Control.IsEnabled(7)</visible>
                 </control>				
 				
 				<control type="button" id="6">
                     <!--Install/Uninstall Addon button-->
-                    <width>296</width>
+                    <width>302</width>
                     <height>80</height>
                     <align>center</align>
-                    <label>24022</label>
+                    <label>$LOCALIZE[24022]</label>
 					<include>DialogButtonOther</include>
 					<visible>Control.IsEnabled(6)</visible>
-                </control>                           				
-				
-				<control type="button" id="11111">
-                    <!--Close-->
-                    <width>296</width>
-                    <height>80</height>
-                    <align>center</align>
-                    <label>222</label>
-					<include>DialogButtonOther</include>
-                    <onclick>Close</onclick>
-                    <visible>Control.IsEnabled(11111)</visible>
-                </control>
-                
+                </control>                           								               
             </control>
             <!--Arrows-->
             <control type="image">
                 <animation effect="fade" start="100" end="50" tween="sine" easing="inout" time="800" pulse="true" reversible="false" condition="true">Conditional</animation>
-                <right>15</right>
+                <right>14</right>
                 <bottom>70</bottom>
                 <posy>50</posy>
                 <width>20</width>
@@ -336,11 +353,11 @@
                 <texture>dialogs/videoinfo/arrow.png</texture>
                 <visible>!Control.HasFocus(51)</visible>
                 <colordiffuse>white</colordiffuse>
-                <visible>Container(9000).HasNext</visible>
+                <visible>Container(9900).HasNext</visible>
             </control>
             <control type="image">
                 <animation effect="fade" start="100" end="50" tween="sine" easing="inout" time="800" pulse="true" reversible="false" condition="true">Conditional</animation>
-                <right>1255</right>
+                <right>1256</right>
                 <bottom>70</bottom>
                 <posy>50</posy>
                 <width>20</width>
@@ -349,7 +366,7 @@
                 <texture flipx="true">dialogs/videoinfo/arrow.png</texture>
                 <visible>!Control.HasFocus(51)</visible>
                 <colordiffuse>white</colordiffuse>
-                <visible>Container(9000).HasPrevious</visible>
+                <visible>Container(9900).HasPrevious</visible>
             </control>
         </control>
     </controls>

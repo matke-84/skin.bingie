@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- BINGIE -->
 <window>
-    <zorder>2</zorder>
 	<onload>SetFocus(203)</onload>
     <onload condition="!Player.Paused + !VideoPlayer.Content(livetv) + Skin.HasSetting(EnableAutoPauseOnOSD) + !Skin.HasSetting(EnableOSDInfo)">Pause</onload>
 	<onload condition="Player.Forwarding | Player.Rewinding">Play</onload>
@@ -10,6 +9,7 @@
 	<onload>CancelAlarm(OpenMPAATopBar,silent)</onload>
 	<onunload>AlarmClock(OpenMPAATopBar,SetProperty(DialogMPAATopBar,1,home),00:00,silent)</onunload>
 	<onunload>AlarmClock(HideMPAATopBar,SetProperty(HideDialogMPAATopBar,1,home),00:00,silent)</onunload>
+	<onunload>AlarmClock(FocusPlayButton,SetProperty(OSDPlayButtonFocused,1,home),00:00,silent)</onunload>
 	<onload condition="Skin.HasSetting(OSDShowInfoOnPause) + !Skin.HasSetting(EnableOSDInfo)">Skin.ToggleSetting(EnableOSDInfo)</onload>
     <controls>		
         <control type="group">

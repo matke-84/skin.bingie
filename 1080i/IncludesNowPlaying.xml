@@ -4,8 +4,9 @@
  
     <include name="NowPlayingBackground">
         <control type="group">
-            <visible>Player.HasVideo</visible>
+            <visible>$EXP[IsPlayingRecognizedContent]</visible>
             <visible>![!String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia)) + Player.HasAudio]</visible>
+			 <visible>!Control.IsVisible(523) + !Control.IsVisible(526) + !Control.IsVisible(528)</visible>
 			<include condition="Player.HasVideo">NowPlayingVideoBackground</include>
             
             <!--Background Overlay-->
