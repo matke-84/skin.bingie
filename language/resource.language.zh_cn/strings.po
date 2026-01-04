@@ -94,7 +94,7 @@ msgstr "使用替代视频 OSD 布局"
 
 msgctxt "#31018"
 msgid "Bingie Landscape"
-msgstr "Bingie 场景贴画"
+msgstr "Bingie 横向布局"
 
 msgctxt "#31019"
 msgid "Progress bar color"
@@ -246,7 +246,7 @@ msgstr "调色板默认方案"
 
 msgctxt "#31056"
 msgid "Landscape"
-msgstr "场景贴图"
+msgstr "横向布局"
 
 msgctxt "#31057"
 msgid "OSD button color"
@@ -438,7 +438,7 @@ msgstr "OSD 标签文字颜色"
 
 msgctxt "#31104"
 msgid "Rotten Tomatoes Audience Rating"
-msgstr "烂番茄观众评分"
+msgstr "Rotten Tomatoes Audience 评分"
 
 msgctxt "#31105"
 msgid "color for indicator text"
@@ -486,7 +486,7 @@ msgstr "主屏幕布局"
 
 msgctxt "#31116"
 msgid "Rotten Tomatoes Rating"
-msgstr "烂番茄评分"
+msgstr "Rotten Tomatoes 评分"
 
 msgctxt "#31117"
 msgid "Delayed"
@@ -1746,11 +1746,11 @@ msgstr "海报展示"
 
 msgctxt "#31430"
 msgid "Big Landscape"
-msgstr "大型场景贴画展示"
+msgstr "大型横向布局"
 
 msgctxt "#31431"
 msgid "Landscape Single Row"
-msgstr "场景贴画单行布局"
+msgstr "横向单行布局"
 
 msgctxt "#31432"
 msgid "TMDb Trending Movies"
@@ -1782,7 +1782,7 @@ msgstr "若项目正在播放或正在录制/定时录制（PVR），则启用�
 
 msgctxt "#31439"
 msgid "Landscape Details"
-msgstr "场景贴画详细信息"
+msgstr "横向布局详细信息"
 
 msgctxt "#31440"
 msgid "Poster Row"
@@ -1814,7 +1814,7 @@ msgstr "奇幻"
 
 msgctxt "#31447"
 msgid "Bingie landscape tag sublabel"
-msgstr "Bingie 横版标签子标签"
+msgstr "Bingie 横向布局标签子标签"
 
 msgctxt "#31448"
 msgid "Crime"
