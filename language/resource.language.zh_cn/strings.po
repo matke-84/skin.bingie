@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KODI Skins\n"
 "Report-Msgid-Bugs-To: http://trac.kodi.tv/\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2026-01-03 20:45+0800\n"
+"PO-Revision-Date: 2026-01-04 10:38+0800\n"
 "Last-Translator: wabisabi926\n"
 "Language-Team: \n"
 "Language: zh\n"
@@ -34,11 +34,11 @@ msgstr "Ep"
 
 msgctxt "#31003"
 msgid "Header text color"
-msgstr "标题文字颜色"
+msgstr "标题栏文字颜色"
 
 msgctxt "#31004"
 msgid "Moving focus frame"
-msgstr "动态焦点框"
+msgstr "动态聚焦框"
 
 msgctxt "#31005"
 msgid "General skin settings"
@@ -62,7 +62,7 @@ msgstr "使用高级布局"
 
 msgctxt "#31010"
 msgid "Playback & OSD"
-msgstr "播放与 OSD"
+msgstr "播放与屏幕显示"
 
 msgctxt "#31011"
 msgid "Button focused text color (keyboard)"
@@ -86,15 +86,15 @@ msgstr "按钮文字颜色"
 
 msgctxt "#31016"
 msgid "Bingie playback & OSD"
-msgstr "Bingie 播放与 OSD"
+msgstr "Bingie 播放与屏幕显示"
 
 msgctxt "#31017"
 msgid "Use alternative video OSD layout"
-msgstr "使用替代视频 OSD 布局"
+msgstr "使用替代视频屏幕显示布局"
 
 msgctxt "#31018"
 msgid "Bingie Landscape"
-msgstr "Bingie 横向布局"
+msgstr "Bingie 横向布局视图"
 
 msgctxt "#31019"
 msgid "Progress bar color"
@@ -106,7 +106,7 @@ msgstr "进度条背景色"
 
 msgctxt "#31021"
 msgid "Watch credits"
-msgstr "观看制作名单"
+msgstr "观看片尾制作名单"
 
 msgctxt "#31022"
 msgid "Background settings"
@@ -114,7 +114,7 @@ msgstr "背景设置"
 
 msgctxt "#31023"
 msgid "Rated"
-msgstr "评分"
+msgstr "已评分"
 
 msgctxt "#31024"
 msgid "Force stop playback on fullscreen exit (except Live TV)"
@@ -126,11 +126,11 @@ msgstr "分类"
 
 msgctxt "#31026"
 msgid "MPAA color panel"
-msgstr "MPAA 颜色面板"
+msgstr "MPAA 分级颜色面板"
 
 msgctxt "#31027"
 msgid "Bingie Poster"
-msgstr "Bingie 海报"
+msgstr "Bingie 海报视图"
 
 msgctxt "#31028"
 msgid "Display tags on widgets"
@@ -142,7 +142,7 @@ msgstr "粉色"
 
 msgctxt "#31030"
 msgid "OSD plot text color"
-msgstr "OSD 绘图文本颜色"
+msgstr "屏幕显示剧情文字颜色"
 
 msgctxt "#31031"
 msgid "Set number of roles to show in cast info"
@@ -150,11 +150,11 @@ msgstr "设置演职员表显示角色数量"
 
 msgctxt "#31032"
 msgid "OSD progress bar background color"
-msgstr "OSD 进度条背景色"
+msgstr "屏幕显示进度条背景色"
 
 msgctxt "#31033"
 msgid "OSD progress bar color"
-msgstr "OSD 进度条颜色"
+msgstr "屏幕显示进度条颜色"
 
 msgctxt "#31034"
 msgid "Parents strongly cautioned panel color"
@@ -194,7 +194,7 @@ msgstr "启用制片厂徽标"
 
 msgctxt "#31043"
 msgid "OSD progress bar cache color"
-msgstr "OSD 进度条缓存颜色"
+msgstr "屏幕显示进度条缓存颜色"
 
 msgctxt "#31044"
 msgid "Video info dialog"
@@ -250,11 +250,11 @@ msgstr "横向布局"
 
 msgctxt "#31057"
 msgid "OSD button color"
-msgstr "OSD 按钮颜色"
+msgstr "屏幕显示按钮颜色"
 
 msgctxt "#31058"
 msgid "Customize shows hub"
-msgstr "自定义节目分类聚合中心"
+msgstr "自定义剧集分类聚合中心"
 
 msgctxt "#31059"
 msgid "remaining"
@@ -262,7 +262,7 @@ msgstr "剩余"
 
 msgctxt "#31060"
 msgid "Show/hide OSD buttons"
-msgstr "显示/隐藏 OSD 按钮"
+msgstr "显示/隐藏屏幕显示按钮"
 
 msgctxt "#31061"
 msgid "for"
@@ -294,7 +294,7 @@ msgstr "始终隐藏"
 
 msgctxt "#31068"
 msgid "Alternative playback & OSD"
-msgstr "替代 播放 与 OSD"
+msgstr "替代 播放与屏幕显示"
 
 msgctxt "#31069"
 msgid "Trailer source"
@@ -310,7 +310,7 @@ msgstr "设置级别"
 
 msgctxt "#31072"
 msgid "Enable autoclose video OSD"
-msgstr "启用视频 OSD 自动关闭"
+msgstr "启用视频屏幕显示自动关闭"
 
 msgctxt "#31073"
 msgid "Lock view"
@@ -342,11 +342,11 @@ msgstr "必看剧集"
 
 msgctxt "#31080"
 msgid "OSD sublabel text color"
-msgstr "OSD 子标签文本颜色"
+msgstr "屏幕显示子标签文本颜色"
 
 msgctxt "#31081"
 msgid "Restricted panel color"
-msgstr "受限内容面板颜色"
+msgstr "限制级内容面板颜色"
 
 msgctxt "#31082"
 msgid "Select which buttons to show in video info"
@@ -354,7 +354,7 @@ msgstr "选择视频信息显示按钮"
 
 msgctxt "#31083"
 msgid "Animate music background"
-msgstr "动画音乐背景"
+msgstr "音乐动画背景"
 
 msgctxt "#31084"
 msgid "Additional video info icon color"
@@ -362,7 +362,7 @@ msgstr "附加视频信息图标颜色"
 
 msgctxt "#31085"
 msgid "Flags text color"
-msgstr "标志文字颜色"
+msgstr "标识文字颜色"
 
 msgctxt "#31086"
 msgid "Add to My List"
@@ -370,7 +370,7 @@ msgstr "添加到我的列表"
 
 msgctxt "#31087"
 msgid "Autoclose OSD time"
-msgstr "OSD 自动关闭时间"
+msgstr "屏幕显示自动关闭时间"
 
 msgctxt "#31088"
 msgid "Live TV"
@@ -390,7 +390,7 @@ msgstr "从我的列表移除"
 
 msgctxt "#31092"
 msgid "Show OSD info panel on pause"
-msgstr "暂停时显示 OSD 信息面板"
+msgstr "暂停时显示屏幕显示信息面板"
 
 msgctxt "#31093"
 msgid "Progress bar text color"
@@ -402,15 +402,15 @@ msgstr "维基百科"
 
 msgctxt "#31095"
 msgid "Bingie Seasons"
-msgstr "Bingie 季"
+msgstr "Bingie 季视图"
 
 msgctxt "#31096"
 msgid "OSD primary text color"
-msgstr "OSD 主文字颜色"
+msgstr "屏幕显示主文字颜色"
 
 msgctxt "#31097"
 msgid "OSD details row text color"
-msgstr "OSD 详细信息行文字颜色"
+msgstr "屏幕显示详细信息行文字颜色"
 
 msgctxt "#31098"
 msgid "Not rated panel color"
@@ -418,7 +418,7 @@ msgstr "未分级面板颜色"
 
 msgctxt "#31099"
 msgid "Square"
-msgstr "方形布局"
+msgstr "方形视图"
 
 msgctxt "#31100"
 msgid "Starring"
@@ -434,7 +434,7 @@ msgstr "标签文字颜色"
 
 msgctxt "#31103"
 msgid "OSD label text color"
-msgstr "OSD 标签文字颜色"
+msgstr "屏幕显示标签文字颜色"
 
 msgctxt "#31104"
 msgid "Rotten Tomatoes Audience Rating"
@@ -462,7 +462,7 @@ msgstr "视频播放"
 
 msgctxt "#31110"
 msgid "TMDb Movies, TV Shows and People"
-msgstr "TMDb 电影、电视剧与人物"
+msgstr "TMDb 电影、电视节目与影人"
 
 msgctxt "#31111"
 msgid "Show premiere date instead of year"
@@ -542,7 +542,7 @@ msgstr "音量指示器样式"
 
 msgctxt "#31130"
 msgid "Show OSD buffering progress during video playback"
-msgstr "视频播放时显示 OSD 缓冲进度"
+msgstr "视频播放时显示屏幕显示缓冲进度"
 
 msgctxt "#31131"
 msgid "Recently Added Artists"
@@ -558,7 +558,7 @@ msgstr "跳转到特定时间"
 
 msgctxt "#31134"
 msgid "Panel"
-msgstr "面板布局"
+msgstr "面板"
 
 msgctxt "#31135"
 msgid "主页 main menu/submenu text color"
@@ -626,7 +626,7 @@ msgstr "和"
 
 msgctxt "#31151"
 msgid "Background overlay color"
-msgstr "背景叠加颜色"
+msgstr "背景叠加层颜色"
 
 msgctxt "#31152"
 msgid "Bingie animation"
@@ -642,7 +642,7 @@ msgstr "启动动画"
 
 msgctxt "#31155"
 msgid "Add/remove favorites"
-msgstr "添加/移除收藏夹"
+msgstr "添加/移除收藏"
 
 msgctxt "#31156"
 msgid "Ratings & studio logo"
@@ -886,11 +886,11 @@ msgstr "内容加载中"
 
 msgctxt "#31216"
 msgid "Only when OSD active"
-msgstr "仅 OSD 激活时"
+msgstr "仅屏幕显示激活时"
 
 msgctxt "#31217"
 msgid "Reboot to android"
-msgstr "重启到安卓系统"
+msgstr "重启至安卓系统"
 
 msgctxt "#31218"
 msgid "Show first unwatched/currently watching episode details in TV Shows info"
@@ -914,7 +914,7 @@ msgstr "媒体详细信息文字颜色"
 
 msgctxt "#31223"
 msgid "Are you sure you want to remove the rating for episode?"
-msgstr "确定要移除剧集评分？"
+msgstr "确定要移除该单集评分？"
 
 msgctxt "#31224"
 msgid "PVR guide unfocused item panel color"
@@ -1018,7 +1018,7 @@ msgstr "IMDb"
 
 msgctxt "#31249"
 msgid "Enable OSD seek/jump indicator"
-msgstr "启用 OSD 跳转指示器"
+msgstr "启用屏幕显示跳转指示器"
 
 msgctxt "#31250"
 msgid "Customize custom hub"
@@ -1142,7 +1142,7 @@ msgstr "深灰色"
 
 msgctxt "#31280"
 msgid "OSD buffering spinner color"
-msgstr "OSD 缓冲旋转颜色"
+msgstr "屏幕显示缓冲旋转颜色"
 
 msgctxt "#31281"
 msgid "Disable items progress bar below title/clearlogo (use default indicator)"
@@ -1246,7 +1246,7 @@ msgstr "解码器"
 
 msgctxt "#31306"
 msgid "UK MPAA (only for US and UK ratings)"
-msgstr "英国分级（仅限美英分级）"
+msgstr "英国分级（仅限美英分级体系）"
 
 msgctxt "#31307"
 msgid "Lyrics overlay color"
@@ -1262,11 +1262,11 @@ msgstr "MPAA 样式"
 
 msgctxt "#31310"
 msgid "Are you sure you want to remove the rating for movie?"
-msgstr "确定要移除电影评分？"
+msgstr "确定要移除该电影评分？"
 
 msgctxt "#31311"
 msgid "on IMDB Today"
-msgstr "今日 IMDB"
+msgstr "IMDb 今日热门"
 
 msgctxt "#31312"
 msgid "Channel logo/number visibility in TV guide"
@@ -1394,7 +1394,7 @@ msgstr "单集编号"
 
 msgctxt "#31343"
 msgid "Highest Revenue Movies"
-msgstr "最高收入电影"
+msgstr "最高票房电影"
 
 msgctxt "#31344"
 msgid "Scrollbar visibility"
@@ -1462,11 +1462,11 @@ msgstr "启用评分"
 
 msgctxt "#31361"
 msgid "Global background"
-msgstr "打开屏幕显示时启用自动暂停"
+msgstr "全局背景"
 
 msgctxt "#31362"
 msgid "Enable auto pause on OSD open"
-msgstr "打开 OSD 显示时启用自动暂停"
+msgstr "打开屏幕显示显示时启用自动暂停"
 
 msgctxt "#31363"
 msgid "TMDb People"
@@ -1518,7 +1518,7 @@ msgstr "战争政治剧集"
 
 msgctxt "#31375"
 msgid "OSD media/codec info color"
-msgstr "OSD 媒体/编解码器信息显示颜色"
+msgstr "屏幕显示媒体/编解码器信息显示颜色"
 
 msgctxt "#31376"
 msgid "TV Kids & Family"
@@ -1722,11 +1722,11 @@ msgstr "交换海报"
 
 msgctxt "#31424"
 msgid "Banner Details"
-msgstr "横幅详情"
+msgstr "横幅图详情"
 
 msgctxt "#31425"
 msgid "Banner"
-msgstr "横幅"
+msgstr "横幅图"
 
 msgctxt "#31426"
 msgid "Big Panel"
@@ -1918,7 +1918,7 @@ msgstr "自定义音乐分类聚合中心"
 
 msgctxt "#31473"
 msgid "OSD panel color"
-msgstr "OSD 面板颜色"
+msgstr "屏幕显示面板颜色"
 
 msgctxt "#31474"
 msgid "Amber"
@@ -1938,7 +1938,7 @@ msgstr "页脚文字阴影颜色"
 
 msgctxt "#31478"
 msgid "OSD text color"
-msgstr "OSD 文字颜色"
+msgstr "屏幕显示文字颜色"
 
 msgctxt "#31479"
 msgid "Similar"
@@ -2042,7 +2042,7 @@ msgstr "时钟"
 
 msgctxt "#31504"
 msgid "Default music background (if no artist fanart)"
-msgstr "默认音乐背景（若无艺术家粉丝艺术图）"
+msgstr "默认音乐背景（若无艺术家同人画）"
 
 msgctxt "#31505"
 msgid "Busy animation color"
@@ -2050,7 +2050,7 @@ msgstr "加载动画颜色"
 
 msgctxt "#31506"
 msgid "Customize new & popular hub"
-msgstr "自定新型且受欢迎的分类聚合中心"
+msgstr "自定新热推荐的分类聚合中心"
 
 msgctxt "#31507"
 msgid "Layout for widgets"
@@ -2214,7 +2214,7 @@ msgstr "相关剧集"
 
 msgctxt "#31547"
 msgid "OSD progress bar border color"
-msgstr "OSD 进度条边框颜色"
+msgstr "屏幕显示进度条边框颜色"
 
 msgctxt "#31548"
 msgid "Bingie Top 250 icon color"
@@ -2274,7 +2274,7 @@ msgstr "附加信息图标颜色"
 
 msgctxt "#31562"
 msgid "MPAA font color"
-msgstr "美国电影协会分级字体颜色"
+msgstr "MPAA 分级字体颜色"
 
 msgctxt "#31563"
 msgid "Popular"
@@ -2318,7 +2318,7 @@ msgstr "附加信息文字颜色（视频信息对话框）"
 
 msgctxt "#31573"
 msgid "OSD progress bar buffer cache color"
-msgstr "OSD 进度条缓冲颜色"
+msgstr "屏幕显示进度条缓冲颜色"
 
 msgctxt "#31574"
 msgid "Background color diffuse"
