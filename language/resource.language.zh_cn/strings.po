@@ -426,7 +426,7 @@ msgstr "主演"
 
 msgctxt "#31101"
 msgid "Recently added TV Shows"
-msgstr "最近添加的电视节目"
+msgstr "最近添加的剧集"
 
 msgctxt "#31102"
 msgid "Label text color"
@@ -462,7 +462,7 @@ msgstr "视频播放"
 
 msgctxt "#31110"
 msgid "TMDb Movies, TV Shows and People"
-msgstr "TMDb 电影、电视节目与影人"
+msgstr "TMDb 电影、剧集与影人"
 
 msgctxt "#31111"
 msgid "Show premiere date instead of year"
@@ -1190,7 +1190,7 @@ msgstr "正在获取预报信息..."
 
 msgctxt "#31292"
 msgid "TV Show status"
-msgstr "电视节目播出状态"
+msgstr "剧集播出状态"
 
 msgctxt "#31293"
 msgid "Only for music"
@@ -1574,7 +1574,7 @@ msgid ""
 "Flatten TV Shows seasons (show all episodes)[CR]    - Set media default action to 'Resume'[/COLOR][CR][CR]Note that this settings are global and will be valid for all installed skins.[CR]But no worries, all settings can be reverted in Kodi settings."
 msgstr ""
 "该皮肤旨在模拟 Netflix 的电视端用户体验。[CR]为确保所有功能正常运行，建议设置以下 Kodi 选项：[CR][CR][COLOR ff41b957]    - 禁用鼠标[CR]    - 隐藏父文件夹项目[CR]    - 自动聚焦首个未观看单集[CR]    - "
-"扁平化电视节目季（显示所有单集）[CR]    - 将媒体默认操作设置为「继续播放」[/COLOR][CR][CR]请注意，这些设置为全局设置，适用于所有已安装的皮肤。[CR]但无需担心，所有设置均可在 Kodi 设置中还原。"
+"扁平化剧集季（显示所有单集）[CR]    - 将媒体默认操作设置为「继续播放」[/COLOR][CR][CR]请注意，这些设置为全局设置，适用于所有已安装的皮肤。[CR]但无需担心，所有设置均可在 Kodi 设置中还原。"
 
 msgctxt "#31389"
 msgid "Set recommended options"
@@ -1606,7 +1606,7 @@ msgid ""
 "files to your video library yet, now is a good time.[CR]Otherwise, you will start with TMDb Bingie Helper widgets.[/COLOR][CR][CR][COLOR ff41b957]TMDb Bingie Helper doesn't play any content by itself. To watch movies or TV shows, you need a separate plugin for that. If you want, you can then configure "
 "TMDb Bingie Helper to use it for playing content:[CR]    - Skin settings -> Supported addons -> TMDb Bingie Helper -> Players[CR]You can always replace the default skin widgets with your own.[/COLOR]"
 msgstr ""
-"通过 Bingie，你可以将所有 Kodi 内容和媒体库资源集中在一处，借助小组件实现。[CR][CR]主界面小组件和分类聚合中心可通过以下路径配置：[CR][COLOR white]    - 皮肤设置 -> 配置快捷方式[CR][CR]该皮肤预装了电影和电视节目的专属小组件。[CR]若你尚未向视频媒体库添加文件，现在正是合适时机。[CR]否则，你将默认使用 TMDb Bingie Helper 小组件。[/COLOR][CR][CR][COLOR ff41b957]TMDb Bingie Helper 本身不直接播放任何内容。如需观看电影或电视节目，你需要安装独立的播放插件。如需关联播放功能，可按以下路径配置：[CR]    - 皮肤设置 -> 支持的插件 -> TMDb Bingie Helper -> 播放器[CR]你也可以随时将皮肤默认小组件替换为你自定义的小组件。[/COLOR]"
+"通过 Bingie，你可以将所有 Kodi 内容和媒体库资源集中在一处，借助小组件实现。[CR][CR]主界面小组件和分类聚合中心可通过以下路径配置：[CR][COLOR white]    - 皮肤设置 -> 配置快捷方式[CR][CR]该皮肤预装了电影和剧集的专属小组件。[CR]若你尚未向视频媒体库添加文件，现在正是合适时机。[CR]否则，你将默认使用 TMDb Bingie Helper 小组件。[/COLOR][CR][CR][COLOR ff41b957]TMDb Bingie Helper 本身不直接播放任何内容。如需观看电影或剧集，你需要安装独立的播放插件。如需关联播放功能，可按以下路径配置：[CR]    - 皮肤设置 -> 支持的插件 -> TMDb Bingie Helper -> 播放器[CR]你也可以随时将皮肤默认小组件替换为你自定义的小组件。[/COLOR]"
 
 msgctxt "#31396"
 msgid "Add videos to library"
@@ -2198,7 +2198,7 @@ msgstr "编剧"
 
 msgctxt "#31543"
 msgid "No items in My List.[CR]Start adding Movies & TV Shows you like, just press the 'Add/Remove Favorites' button from information page."
-msgstr "我的列表中目前没有任何项目。[CR]现在可以开始添加你喜欢的电影和电视节目，只需点击信息页面上的“添加/移除收藏夹”按钮即可。"
+msgstr "我的列表中目前没有任何项目。[CR]现在可以开始添加你喜欢的电影和剧集，只需点击信息页面上的“添加/移除收藏夹”按钮即可。"
 
 msgctxt "#31544"
 msgid "There are no comments for this content."
@@ -2250,7 +2250,7 @@ msgstr "音乐全屏播放时显示艺术家徽标"
 
 msgctxt "#31556"
 msgid "Watch It Again TV Shows"
-msgstr "再次观看电视节目"
+msgstr "再次观看剧集"
 
 msgctxt "#31557"
 msgid "Lyrics unfocused text color"
@@ -2290,7 +2290,7 @@ msgstr "屏幕显示信息面板"
 
 msgctxt "#31566"
 msgid "Shows"
-msgstr "电视节目"
+msgstr "剧集"
 
 msgctxt "#31567"
 msgid "Simple list (PVR)"
