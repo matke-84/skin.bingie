@@ -1,6 +1,6 @@
 <views>
     <view id="Simple list (PVR)" value="10" languageid="31567" type="tvchannels,tvrecordings" excludefromdisable="true"/>
-	<view id="List" value="50" languageid="535" type="all,!tvchannels,!tvrecordings" excludefromdisable="true"/>
+	<view id="List" value="50" languageid="31223" type="all,!tvchannels,!tvrecordings" excludefromdisable="true"/>
 	<view id="List Details" value="51" languageid="31444" type="all,!images,!favourites,!tvchannels,!tvrecordings" />
 	<view id="Bingie Poster" value="526" languageid="31027" type="movies,setmovies,tvshows,seasons,sets,actors" />
     <view id="Bingie Landscape" value="523" languageid="31018" type="movies,setmovies,tvshows,seasons,episodes,sets,musicvideos" />
@@ -23,5 +23,5 @@
 	<view id="Poster Shift" value="514" languageid="31441" type="movies,setmovies,tvshows,seasons,sets,actors" />
 	<view id="Poster Showcase" value="524" languageid="31429" type="movies,setmovies,tvshows,seasons,sets,actors" />
 	<view id="Clearlogo" value="503" languageid="31461" type="movies,tvshows,musicvideos" />
-	<view id="Fanart" value="507" languageid="20445" type="movies,setmovies,tvshows,seasons,sets,musicvideos,images" />
+	<view id="Fanart" value="507" languageid="31384" type="movies,setmovies,tvshows,seasons,sets,musicvideos,images" />
 </views>

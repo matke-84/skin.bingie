@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- BINGIE -->
-<addon id="skin.bingie" version="2.0.1" name="Bingie" provider-name="matke">
+<addon id="skin.bingie" version="2.0.2" name="Bingie" provider-name="matke">
 	<requires>
 		<import version="5.17.0" addon="xbmc.gui"/>
 		<import addon="script.bingie.helper" version="1.1.2"/>
@@ -17,14 +17,14 @@
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en_GB">Kodi skin with Netflix layout.</summary>
 		<summary lang="zh_CN">Netflix 布局 Kodi 皮肤。</summary>
-		<summary lang="es_MX">Kodi con diseño Netflix.</summary>
 		<summary lang="es_ES">Kodi con diseño Netflix.</summary>
 		<summary lang="es_AR">Kodi con diseño Netflix.</summary>
+		<summary lang="es_MX">Kodi con diseño Netflix.</summary>
 		<description lang="en_GB">Bingie – The home of your favorite movies and shows!</description>
 		<description lang="zh_CN">Bingie -你最喜欢的电影和节目的主界面！</description>
-		<description lang="es_MX">Bingie - tu hogar de películas y series favoritas!</description>
 		<description lang="es_ES">Bingie - tu hogar de películas y series favoritas!</description>
 		<description lang="es_AR">Bingie - tu hogar de películas y series favoritas!</description>
+		<description lang="es_MX">Bingie - tu hogar de películas y series favoritas!</description>
 		<platform>all</platform>
 		<license>GPL v2.0</license>
 		<forum></forum>

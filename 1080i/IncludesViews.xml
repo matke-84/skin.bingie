@@ -969,8 +969,7 @@
                 <description>Watched Overlay</description>
                 <visible>![!Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,0) + !Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,100)] + Integer.IsGreater(ListItem$PARAM[listitem].PlayCount,0) + Skin.HasSetting(WatchedIndicator.Watched) + !ListItem$PARAM[listitem].IsResumable</visible>
                 <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
-                <visible>![String.IsEqual(ListItem.DBTYPE, song) | String.IsEqual(ListItem.Property(DBTYPE), song) | Container.Content(songs)]</visible>
-                <visible>![String.IsEqual(ListItem.DBTYPE, album) | String.IsEqual(ListItem.Property(DBTYPE), album) | Container.Content(albums)]</visible>
+                <visible>$EXP[IsMovieDBType] | $EXP[IsTvShowDBType] | $EXP[IsSeasonDBType] | $EXP[IsEpisodeDBType]</visible>
 				<visible>![[!String.IsEmpty(ListItem$PARAM[listitem].Set) | ListItem$PARAM[listitem].IsCollection | String.Contains(ListItem$PARAM[listitem].Path,videodb://movies/sets/)] + Skin.HasSetting(WatchedIndicator.Sets)]</visible>
                 <control type="image">
                     <texture background="true">$PARAM[overlay_texture]</texture>
@@ -985,7 +984,8 @@
                 <description>Unwatched Overlay</description>
                 <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
                 <visible>String.IsEqual(ListItem$PARAM[listitem].Overlay,OverlayUnWatched.png) + Skin.HasSetting(WatchedIndicator.UnWatched) + !ListItem$PARAM[listitem].IsResumable</visible>
-                <visible>![String.IsEqual(ListItem.DBTYPE, song) | String.IsEqual(ListItem.Property(DBTYPE), song) | Container.Content(songs) | [$EXP[IsTvShowDBType] + Skin.HasSetting(WatchedIndicator.Episodes)]]</visible>
+				<visible>![!Integer.IsEqual(ListItem$PARAM[listitem].Property(UnWatchedEpisodes),0) + !Integer.IsEqual(ListItem$PARAM[listitem].Property(WatchedEpisodes),0)]</visible>
+                <visible>$EXP[IsMovieDBType] | $EXP[IsTvShowDBType] | $EXP[IsSeasonDBType] | $EXP[IsEpisodeDBType]</visible>
                 <control type="image">
                     <texture background="true">$PARAM[overlay_texture]</texture>
                     <colordiffuse>$INFO[Skin.String(WatchedIndicator.UnWatched.Color)]</colordiffuse>
@@ -1153,8 +1153,7 @@
                 <description>Watched Overlay</description>
                 <visible>![!Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,0) + !Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,100)] + Integer.IsGreater(ListItem$PARAM[listitem].PlayCount,0) + Skin.HasSetting(WatchedIndicator.Watched) + !ListItem$PARAM[listitem].IsResumable</visible>
                 <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
-                <visible>![String.IsEqual(ListItem.DBTYPE, song) | String.IsEqual(ListItem.Property(DBTYPE), song) | Container.Content(songs)]</visible>
-                <visible>![String.IsEqual(ListItem.DBTYPE, album) | String.IsEqual(ListItem.Property(DBTYPE), album) | Container.Content(albums)]</visible>
+                <visible>$EXP[IsMovieDBType] | $EXP[IsTvShowDBType] | $EXP[IsSeasonDBType] | $EXP[IsEpisodeDBType]</visible>
 				<visible>![[!String.IsEmpty(ListItem$PARAM[listitem].Set) | ListItem$PARAM[listitem].IsCollection | String.Contains(ListItem$PARAM[listitem].Path,videodb://movies/sets/)] + Skin.HasSetting(WatchedIndicator.Sets)]</visible>
                 <control type="image">
                     <texture background="true">$PARAM[overlay_texture]</texture>
@@ -1169,7 +1168,8 @@
                 <description>Unwatched Overlay</description>
                 <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
                 <visible>String.IsEqual(ListItem$PARAM[listitem].Overlay,OverlayUnWatched.png) + Skin.HasSetting(WatchedIndicator.UnWatched) + !ListItem$PARAM[listitem].IsResumable</visible>
-                <visible>![String.IsEqual(ListItem.DBTYPE, song) | String.IsEqual(ListItem.Property(DBTYPE), song) | Container.Content(songs) | [$EXP[IsTvShowDBType] + Skin.HasSetting(WatchedIndicator.Episodes)]]</visible>
+				<visible>![!Integer.IsEqual(ListItem$PARAM[listitem].Property(UnWatchedEpisodes),0) + !Integer.IsEqual(ListItem$PARAM[listitem].Property(WatchedEpisodes),0)]</visible>
+                <visible>$EXP[IsMovieDBType] | $EXP[IsTvShowDBType] | $EXP[IsSeasonDBType] | $EXP[IsEpisodeDBType]</visible>
                 <control type="image">
                     <texture background="true">$PARAM[overlay_texture]</texture>
                     <colordiffuse>$INFO[Skin.String(WatchedIndicator.UnWatched.Color)]</colordiffuse>

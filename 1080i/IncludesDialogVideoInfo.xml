@@ -1618,9 +1618,7 @@
 									<textureradioonnofocus colordiffuse="$INFO[Skin.String(BingieButtonTextColor)]">bingie/rate/thumbs_up.png</textureradioonnofocus>
 									<textureradiooffnofocus colordiffuse="$INFO[Skin.String(BingieButtonTextColor)]">bingie/rate/thumbs_up.png</textureradiooffnofocus>
 								    <onclick condition="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)">RunScript(plugin.video.tmdb.bingie.helper,sync_trakt,tmdb_id=$INFO[Container(17195).ListItem.Property(tmdb_id)],$VAR[Path_Param_Type],sync_type=like)</onclick>
-									<onclick condition="String.IsEqual(ListItem.DBType,episode)">RunScript(plugin.video.tmdb.bingie.helper,sync_trakt,tmdb_id=$INFO[Container(17195).ListItem.Property(tmdb_id)],type=tv,tmdb_id=$INFO[ListItem.UniqueID(tvshow.tmdb)],query=$INFO[ListItem.TVShowTitle],season=$INFO[ListItem.Season],episode=$INFO[ListItem.Episode],sync_type=like)</onclick>
-									<onup condition="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)">RunScript(script.bingie.toolbox,action=dialogyesno,header=$LOCALIZE[31554],message=$VAR[RemoveRatingLabel],yesaction=RunScript(plugin.video.tmdb.bingie.helper,sync_trakt,tmdb_id=$INFO[Container(17195).ListItem.Property(tmdb_id)],$VAR[Path_Param_Type],sync_type=reset),noaction=noop)</onup>
-									<onup condition="String.IsEqual(ListItem.DBType,episode)">RunScript(script.bingie.toolbox,action=dialogyesno,header=$LOCALIZE[31554],message=$VAR[RemoveRatingLabel],yesaction=RunScript(plugin.video.tmdb.bingie.helper,sync_trakt,tmdb_id=$INFO[Container(17195).ListItem.Property(tmdb_id)],type=tv,tmdb_id=$INFO[ListItem.UniqueID(tvshow.tmdb)],query=$INFO[ListItem.TVShowTitle],season=$INFO[ListItem.Season],episode=$INFO[ListItem.Episode],sync_type=reset),noaction=noop)</onup>
+									<onclick condition="String.IsEqual(ListItem.DBType,episode)">RunScript(plugin.video.tmdb.bingie.helper,sync_trakt,tmdb_id=$INFO[Container(17195).ListItem.Property(tmdb_id)],type=tv,tmdb_id=$INFO[ListItem.UniqueID(tvshow.tmdb)],query=$INFO[ListItem.TVShowTitle],season=$INFO[ListItem.Season],episode=$INFO[ListItem.Episode],sync_type=like)</onclick>									
 									<ondown>51</ondown>
 								</control>
 
@@ -1642,11 +1640,31 @@
 									<textureradioonnofocus flipy="true" colordiffuse="$INFO[Skin.String(BingieButtonTextColor)]">bingie/rate/thumbs_up.png</textureradioonnofocus>
 									<textureradiooffnofocus flipy="true" colordiffuse="$INFO[Skin.String(BingieButtonTextColor)]">bingie/rate/thumbs_up.png</textureradiooffnofocus>
 								    <onclick condition="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)">RunScript(plugin.video.tmdb.bingie.helper,sync_trakt,tmdb_id=$INFO[Container(17195).ListItem.Property(tmdb_id)],$VAR[Path_Param_Type],sync_type=dislike)</onclick>
-									<onclick condition="String.IsEqual(ListItem.DBType,episode)">RunScript(plugin.video.tmdb.bingie.helper,sync_trakt,tmdb_id=$INFO[Container(17195).ListItem.Property(tmdb_id)],type=tv,tmdb_id=$INFO[ListItem.UniqueID(tvshow.tmdb)],query=$INFO[ListItem.TVShowTitle],season=$INFO[ListItem.Season],episode=$INFO[ListItem.Episode],sync_type=dislike)</onclick>
-									<onup condition="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)">RunScript(script.bingie.toolbox,action=dialogyesno,header=$LOCALIZE[31554],message=$VAR[RemoveRatingLabel],yesaction=RunScript(plugin.video.tmdb.bingie.helper,sync_trakt,tmdb_id=$INFO[Container(17195).ListItem.Property(tmdb_id)],$VAR[Path_Param_Type],sync_type=reset),noaction=noop)</onup>
-									<onup condition="String.IsEqual(ListItem.DBType,episode)">RunScript(script.bingie.toolbox,action=dialogyesno,header=$LOCALIZE[31554],message=$VAR[RemoveRatingLabel],yesaction=RunScript(plugin.video.tmdb.bingie.helper,sync_trakt,tmdb_id=$INFO[Container(17195).ListItem.Property(tmdb_id)],type=tv,tmdb_id=$INFO[ListItem.UniqueID(tvshow.tmdb)],query=$INFO[ListItem.TVShowTitle],season=$INFO[ListItem.Season],episode=$INFO[ListItem.Episode],sync_type=reset),noaction=noop)</onup>
+									<onclick condition="String.IsEqual(ListItem.DBType,episode)">RunScript(plugin.video.tmdb.bingie.helper,sync_trakt,tmdb_id=$INFO[Container(17195).ListItem.Property(tmdb_id)],type=tv,tmdb_id=$INFO[ListItem.UniqueID(tvshow.tmdb)],query=$INFO[ListItem.TVShowTitle],season=$INFO[ListItem.Season],episode=$INFO[ListItem.Episode],sync_type=dislike)</onclick>									
 									<ondown>51</ondown>
-								</control>								
+								</control>
+
+								<control type="radiobutton" id="7055">
+									<left>30</left>
+									<width>64</width>
+									<height>64</height>
+									<font>Plots</font>
+									<texturefocus colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">bingie/border/circle_focus.png</texturefocus>
+									<texturenofocus>-</texturenofocus>
+									<alttexturefocus>-</alttexturefocus>
+									<alttexturenofocus>-</alttexturenofocus>
+									<radioposx>17</radioposx>
+									<radioposy>17</radioposy>
+									<radiowidth>30</radiowidth>
+									<radioheight>30</radioheight>
+									<textureradioonfocus colordiffuse="$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]">bingie/rate/remove.png</textureradioonfocus>
+									<textureradioofffocus colordiffuse="$INFO[Skin.String(BingieSecondaryButtonFocusTextColor)]">bingie/rate/remove.png</textureradioofffocus>
+									<textureradioonnofocus colordiffuse="$INFO[Skin.String(BingieButtonTextColor)]">bingie/rate/remove.png</textureradioonnofocus>
+									<textureradiooffnofocus colordiffuse="$INFO[Skin.String(BingieButtonTextColor)]">bingie/rate/remove.png</textureradiooffnofocus>								    
+									<onclick condition="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)">RunScript(plugin.video.tmdb.bingie.helper,sync_trakt,tmdb_id=$INFO[Container(17195).ListItem.Property(tmdb_id)],$VAR[Path_Param_Type],sync_type=reset)</onclick>
+									<onclick condition="String.IsEqual(ListItem.DBType,episode)">RunScript(plugin.video.tmdb.bingie.helper,sync_trakt,tmdb_id=$INFO[Container(17195).ListItem.Property(tmdb_id)],type=tv,tmdb_id=$INFO[ListItem.UniqueID(tvshow.tmdb)],query=$INFO[ListItem.TVShowTitle],season=$INFO[ListItem.Season],episode=$INFO[ListItem.Episode],sync_type=reset)</onclick>
+									<ondown>51</ondown>
+								</control>										
 								
 							</control>														
 							

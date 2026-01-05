@@ -93,6 +93,7 @@ msgctxt "#31017"
 msgid "Use alternative video OSD layout"
 msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31018"
 msgid "Bingie Landscape"
 msgstr ""
@@ -129,6 +130,7 @@ msgctxt "#31026"
 msgid "MPAA color panel"
 msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31027"
 msgid "Bingie Poster"
 msgstr ""
@@ -245,6 +247,7 @@ msgctxt "#31055"
 msgid "Default palette for color picker"
 msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31056"
 msgid "Landscape"
 msgstr ""
@@ -401,6 +404,7 @@ msgctxt "#31094"
 msgid "Wikipedia"
 msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31095"
 msgid "Bingie Seasons"
 msgstr ""
@@ -417,6 +421,7 @@ msgctxt "#31098"
 msgid "Not rated panel color"
 msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31099"
 msgid "Square"
 msgstr ""
@@ -509,6 +514,7 @@ msgctxt "#31121"
 msgid "for You"
 msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31122"
 msgid "Bingie Square"
 msgstr ""
@@ -557,6 +563,7 @@ msgctxt "#31133"
 msgid "Jump to a specific time"
 msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31134"
 msgid "Panel"
 msgstr ""
@@ -913,8 +920,9 @@ msgctxt "#31222"
 msgid "Media details text color"
 msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31223"
-msgid "Are you sure you want to remove the rating for episode?"
+msgid "List"
 msgstr ""
 
 msgctxt "#31224"
@@ -1262,7 +1270,7 @@ msgid "MPAA style"
 msgstr ""
 
 msgctxt "#31310"
-msgid "Are you sure you want to remove the rating for movie?"
+msgid "Hide header"
 msgstr ""
 
 msgctxt "#31311"
@@ -1293,6 +1301,7 @@ msgctxt "#31317"
 msgid "Disable collections"
 msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31318"
 msgid "Bingie Episodes"
 msgstr ""
@@ -1553,8 +1562,9 @@ msgctxt "#31383"
 msgid "Customize surprise me hub"
 msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31384"
-msgid "Are you sure you want to remove the rating for show?"
+msgid "Fanart"
 msgstr ""
 
 msgctxt "#31385"
@@ -1721,6 +1731,7 @@ msgctxt "#31421"
 msgid "[B]MANAGE YOUR KODI USER PROFILES[/B][CR][CR]Create new profiles or edit existing ones"
 msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31422"
 msgid "Panel Details"
 msgstr ""
@@ -1729,14 +1740,17 @@ msgctxt "#31423"
 msgid "Swap poster"
 msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31424"
 msgid "Banner Details"
 msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31425"
 msgid "Banner"
 msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31426"
 msgid "Big Panel"
 msgstr ""
@@ -1749,14 +1763,17 @@ msgctxt "#31428"
 msgid "Sci-Fi"
 msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31429"
 msgid "Poster Showcase"
 msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31430"
 msgid "Big Landscape"
 msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31431"
 msgid "Landscape Single Row"
 msgstr ""
@@ -1781,6 +1798,7 @@ msgctxt "#31436"
 msgid "Disable search suggestions"
 msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31437"
 msgid "Square Details"
 msgstr ""
@@ -1789,14 +1807,17 @@ msgctxt "#31438"
 msgid "Enable indicator if item is playing or is recording/timer (PVR)"
 msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31439"
 msgid "Landscape Details"
 msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31440"
 msgid "Poster Row"
 msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31441"
 msgid "Poster Shift"
 msgstr ""
@@ -1809,10 +1830,12 @@ msgctxt "#31443"
 msgid "IMDB Top 250 TV Shows"
 msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31444"
 msgid "List Details"
 msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31445"
 msgid "Panel Single Row"
 msgstr ""
@@ -1877,6 +1900,7 @@ msgctxt "#31460"
 msgid "Text color"
 msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31461"
 msgid "Clearlogo"
 msgstr ""
@@ -2250,7 +2274,7 @@ msgid "Disable extra fanart"
 msgstr ""
 
 msgctxt "#31554"
-msgid "Remove rating"
+msgid "Square"
 msgstr ""
 
 msgctxt "#31555"
@@ -2301,6 +2325,7 @@ msgctxt "#31566"
 msgid "Shows"
 msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31567"
 msgid "Simple list (PVR)"
 msgstr ""
@@ -2338,7 +2363,7 @@ msgid "Prefer mini TV channels list on fullscreen"
 msgstr ""
 
 msgctxt "#31576"
-msgid "color for play icon"
+msgid "Landscape"
 msgstr ""
 
 msgctxt "#31577"

@@ -51,7 +51,7 @@
                             <width>240</width>
                             <height>240</height>
                             <texture background="true" fallback="defaultactor.png">$INFO[Listitem.Icon]</texture>
-                            <aspectratio>keep</aspectratio>
+                            <aspectratio align="center" aligny="center" scalediffuse="true">scale</aspectratio>
                         </control>
                         <control type="label">
 							<animation effect="fade" start="100" end="50" time="0" condition="true">Conditional</animation> 
@@ -74,7 +74,7 @@
                                 <aligny>top</aligny>
                                 <width>248</width>
                                 <height>248</height>
-                                <aspectratio>keep</aspectratio>
+                                <aspectratio align="center" aligny="center" scalediffuse="true">scale</aspectratio>
                                 <bordertexture colordiffuse="$INFO[Skin.String(ViewDetailsBorderFocusColor)]">diffuse/panel2.png</bordertexture>
                                 <bordersize>4</bordersize>
                                 <texture background="true" fallback="defaultactor.png">$INFO[Listitem.Icon]</texture>
@@ -86,7 +86,7 @@
                                 <aligny>top</aligny>
                                 <width>248</width>
                                 <height>248</height>
-                                <aspectratio>keep</aspectratio>
+                                <aspectratio align="center" aligny="center" scalediffuse="true">scale</aspectratio>
                                 <bordersize>4</bordersize>
                                 <texture background="true" fallback="defaultactor.png">$INFO[Listitem.Icon]</texture>
                             </control>

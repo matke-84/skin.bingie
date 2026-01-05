@@ -2301,8 +2301,8 @@
             <param name="visible" value="Skin.HasSetting(WatchedIndicator.Playing)" />
         </include>
         <include content="SkinSettings_ColorButton">
-            <param name="id" value="31576" />
-            <param name="label" value="$LOCALIZE[31576]" />
+            <param name="id" value="315213" />
+            <param name="label" value="$LOCALIZE[31521]" />
             <param name="labelprefix" value="--- " />
             <param name="skinsetting" value="WatchedIndicator.Playing.TextColor" />
             <param name="visible" value="Skin.HasSetting(WatchedIndicator.Playing)" />

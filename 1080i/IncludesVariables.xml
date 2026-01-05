@@ -566,12 +566,6 @@
 		<value>$INFO[ListItem.Duration,$LOCALIZE[180]: ][CR]$VAR[VideoCodecVar,, ]$INFO[ListItem.VideoResolution,| , ]$VAR[VideoResolutionTypeVar,, ]$VAR[VideoHDRVar,| , ]$INFO[ListItem.VideoAspect,| ,:1 ]$VAR[AudioCodecVar,| , ]$VAR[AudioChannelsVar]</value>
 	</variable>
 	
-	<variable name="RemoveRatingLabel">
-		<value condition="$EXP[IsMovieDBType]">$LOCALIZE[31310]</value>
-		<value condition="$EXP[IsTvShowDBType]">$LOCALIZE[31384]</value>
-		<value condition="$EXP[IsEpisodeDBType]">$LOCALIZE[31223]</value>
-	</variable>
-	
 	<variable name="SettingsButton">
 		<value condition="ControlGroup(5).HasFocus() | ControlGroup(9000).HasFocus()">$INFO[Skin.String(ButtonTextColor)]</value>
 		<value condition="!ControlGroup(5).HasFocus() | ControlGroup(9000).HasFocus()">$INFO[Skin.String(ButtonFocusTextColor)]</value>

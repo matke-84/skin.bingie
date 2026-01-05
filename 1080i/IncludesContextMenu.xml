@@ -191,6 +191,7 @@
             <!--Lock/Unlock View-->
             <include>SideBladeMenuButton</include>
             <label>$LOCALIZE[31074]</label>
+			<textwidth>300</textwidth>
             <textureradioonfocus colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]">common/locked.png</textureradioonfocus>
             <textureradioofffocus colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]">common/locked.png</textureradioofffocus>
             <textureradioonnofocus colordiffuse="$INFO[Skin.String(ButtonTextColor)]">common/locked.png</textureradioonnofocus>
@@ -204,6 +205,7 @@
             <!--Lock/Unlock View-->
             <include>SideBladeMenuButton</include>
             <label>$LOCALIZE[31073]</label>
+			<textwidth>300</textwidth>
             <textureradioonfocus colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]">common/unlocked.png</textureradioonfocus>
             <textureradioofffocus colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]">common/unlocked.png</textureradioofffocus>
             <textureradioonnofocus colordiffuse="$INFO[Skin.String(ButtonTextColor)]">common/unlocked.png</textureradioonnofocus>
@@ -212,12 +214,29 @@
             <include>Items_LockView</include>
             <visible>Window.IsVisible(MyVideoNav.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(AddonBrowser.xml) | Window.IsVisible(MyPics.xml) | Window.IsVisible(MyPrograms.xml) | Window.IsVisible(MyGames.xml)</visible>
             <visible>!Control.IsVisible(31074)</visible>
-        </control>      
+        </control> 
+
+		<control type="radiobutton" id="31310">
+			<!--Disable header-->
+			<include>SideBladeMenuButton</include>
+			<label>$LOCALIZE[31310]</label>
+			<textwidth>300</textwidth>
+            <onclick condition="Control.IsVisible(523)">Skin.ToggleSetting(View523_HideHeader)</onclick>
+            <onclick condition="Control.IsVisible(526)">Skin.ToggleSetting(View526_HideHeader)</onclick>
+			<onclick condition="Control.IsVisible(528)">Skin.ToggleSetting(View528_HideHeader)</onclick>
+			<selected>
+            [Control.IsVisible(523) + Skin.HasSetting(View523_HideHeader)] | 
+            [Control.IsVisible(526) + Skin.HasSetting(View526_HideHeader)] |
+			[Control.IsVisible(528) + Skin.HasSetting(View528_HideHeader)]
+            </selected>
+			<visible>Control.IsVisible(523) | Control.IsVisible(526) | Control.IsVisible(528)</visible>
+		</control>		
 
         <control type="radiobutton" id="36427">
             <!--Show info-->
             <include>SideBladeMenuButton</include>
             <label>$LOCALIZE[36427]</label>
+			<textwidth>300</textwidth>
             <onclick>Skin.ToggleSetting(GuideShowInfo)</onclick>
             <selected>Skin.HasSetting(GuideShowInfo)</selected>
             <visible>Window.IsActive(tvguide)</visible>
@@ -227,6 +246,7 @@
 			<!--Show info-->
 			<include>SideBladeMenuButton</include>
 			<label>$LOCALIZE[36427]</label>
+			<textwidth>300</textwidth>
 			<onclick condition="Control.IsVisible(507)">Skin.ToggleSetting(FanArtViewShowInfo)</onclick>
             <onclick condition="Control.IsVisible(524)">Skin.ToggleSetting(ShowCaseViewShowInfo)</onclick>
             <onclick condition="Control.IsVisible(52)">Skin.ToggleSetting(PanelViewShowInfo)</onclick>
@@ -266,6 +286,7 @@
 			<!--show extended info-->
 			<include>SideBladeMenuButton</include>
 			<label>$LOCALIZE[31114]</label>
+			<textwidth>300</textwidth>
             <onclick condition="Control.IsVisible(512)">Skin.ToggleSetting(View512_DetailsShowInfo)</onclick>
             <onclick condition="Control.IsVisible(510)">Skin.ToggleSetting(View510_DetailsShowInfo)</onclick>
             <onclick condition="Control.IsVisible(55)">Skin.ToggleSetting(View55_DetailsShowInfo)</onclick>
@@ -299,6 +320,7 @@
 			<!--show fanart thumb in bingie seasons-->
 			<include>SideBladeMenuButton</include>
 			<label>$LOCALIZE[31119]</label>
+			<textwidth>300</textwidth>
 			<onclick condition="Control.IsVisible(525)">Skin.ToggleSetting(View525_DetailsShowFanart)</onclick>
 			<onclick condition="Control.IsVisible(527)">Skin.ToggleSetting(View527_DetailsShowFanart)</onclick>
 			<onclick>ReloadSkin()</onclick>
@@ -310,6 +332,7 @@
             <!--Enable Air Date-->
             <include>SideBladeMenuButton</include>
             <label>$LOCALIZE[31045]</label>
+			<textwidth>300</textwidth>
             <onclick condition="Control.IsVisible(525)">Skin.ToggleSetting(View525_EnableAirDate)</onclick>
 			<onclick condition="Control.IsVisible(527)">Skin.ToggleSetting(View527_EnableAirDate)</onclick>
             <selected>
@@ -324,6 +347,7 @@
             <visible>Container.Content(movies) | Container.Content(tvshows)</visible>
             <include>SideBladeMenuButton</include>
             <label>$LOCALIZE[31524]</label>
+			<textwidth>300</textwidth>
             <onclick>Skin.ToggleSetting(DetailsAutoTrailer)</onclick>
 			<onclick condition="Control.IsVisible(512)">Skin.ToggleSetting(View512_DetailsAutoTrailer)</onclick>
             <onclick condition="Control.IsVisible(510)">Skin.ToggleSetting(View510_DetailsAutoTrailer)</onclick>
@@ -367,6 +391,7 @@
             <radioposx>0</radioposx>
             <radioposy>12</radioposy>
             <label>$LOCALIZE[31163]</label>
+			<textwidth>300</textwidth>
             <visible>[Control.IsVisible(512) + Skin.HasSetting(View512_DetailsAutoTrailer)] |
             [Control.IsVisible(510) + Skin.HasSetting(View510_DetailsAutoTrailer)] |
             [Control.IsVisible(51) + Skin.HasSetting(View51_DetailsAutoTrailer)] |
@@ -378,10 +403,11 @@
             <onclick>RunScript(script.bingie.toolbox,action=setskinsetting,setting=details_auto_trailer_interval,header=$LOCALIZE[31163])</onclick>
         </control>
 	
-         <control type="radiobutton" id="31356">
+        <control type="radiobutton" id="31356">
 			<!--Show info right-->
 			<include>SideBladeMenuButton</include>
 			<label>$LOCALIZE[31356]</label>
+			<textwidth>300</textwidth>
 			<onclick condition="Control.IsVisible(512)">Skin.ToggleSetting(View512_ShowInfoRight)</onclick>
             <onclick condition="Control.IsVisible(510)">Skin.ToggleSetting(View510_ShowInfoRight)</onclick>
             <onclick condition="Control.IsVisible(55)">Skin.ToggleSetting(View55_ShowInfoRight)</onclick>
@@ -406,6 +432,7 @@
             <visible>Control.IsVisible(50)</visible>
 			<include>SideBladeMenuButton</include>
 			<label>$LOCALIZE[31423]</label>
+			<textwidth>300</textwidth>
 			<onclick condition="Control.IsVisible(50)">Skin.ToggleSetting(View50_SwapPoster)</onclick>
 			<selected>Control.IsVisible(50) + Skin.HasSetting(View50_SwapPoster)</selected>
         </control>
@@ -414,6 +441,7 @@
             <!--Disable Fixed Frame-->
             <include>SideBladeMenuButton</include>
             <label>$LOCALIZE[31004]</label>
+			<textwidth>300</textwidth>
             <onclick condition="Control.IsVisible(525)">Skin.ToggleSetting(View525_DisableFixedBingieFrame)</onclick>
 			<onclick condition="Control.IsVisible(527)">Skin.ToggleSetting(View527_DisableFixedBingieFrame)</onclick>
             <selected>
@@ -427,6 +455,7 @@
             <!-- enable zoom effect -->
             <include>SideBladeMenuButton</include>
             <label>$LOCALIZE[31136]</label>
+			<textwidth>300</textwidth>
 			<onclick condition="Control.IsVisible(52)">Skin.ToggleSetting(View52_EnableZoomEffect)</onclick>
 			<onclick condition="Control.IsVisible(502)">Skin.ToggleSetting(View502_EnableZoomEffect)</onclick>
 			<onclick>ReloadSkin()</onclick>
@@ -434,10 +463,11 @@
             <visible>Control.IsVisible(52) | Control.IsVisible(502)</visible>			
         </control>    
         
-         <control type="radiobutton" id="31200">
+        <control type="radiobutton" id="31200">
 			<!--Show discart-->
 			<include>SideBladeMenuButton</include>
 			<label>$LOCALIZE[31200]</label>
+			<textwidth>300</textwidth>
             <onclick condition="Control.IsVisible(513)">Skin.ToggleSetting(View513_ShowCDart)</onclick>
             <onclick condition="Control.IsVisible(514)">Skin.ToggleSetting(View514_ShowCDart)</onclick>
 			<onclick condition="Control.IsVisible(524)">Skin.ToggleSetting(View524_ShowCDart)</onclick>
@@ -458,6 +488,7 @@
 			<!--animate discart-->
 			<include>SideBladeMenuButton</include>
 			<label>$LOCALIZE[31201]</label>
+			<textwidth>300</textwidth>
 			<onclick>Skin.ToggleSetting(AnimateDiscArt)</onclick>
 			<selected>Skin.HasSetting(AnimateDiscArt)</selected>
 			<visible>
@@ -479,6 +510,7 @@
 			<!--Disable fanart-->
 			<include>SideBladeMenuButton</include>
 			<label>$LOCALIZE[31268]</label>
+			<textwidth>300</textwidth>
 			<onclick condition="Control.IsVisible(10)">Skin.ToggleSetting(View10_DisableFanArt)</onclick>
             <onclick condition="Control.IsVisible(50)">Skin.ToggleSetting(View50_DisableFanArt)</onclick>
 			<onclick condition="Control.IsVisible(51)">Skin.ToggleSetting(View51_DisableFanArt)</onclick>
@@ -548,6 +580,7 @@
 			<!--Disable extra fanart-->
 			<include>SideBladeMenuButton</include>
 			<label>$LOCALIZE[31553]</label>
+			<textwidth>300</textwidth>
             <onclick condition="Control.IsVisible(10)">Skin.ToggleSetting(View10_DisableExtraFanArt)</onclick>
             <onclick condition="Control.IsVisible(50)">Skin.ToggleSetting(View50_DisableExtraFanArt)</onclick>
 			<onclick condition="Control.IsVisible(51)">Skin.ToggleSetting(View51_DisableExtraFanArt)</onclick>
@@ -722,7 +755,7 @@
 					<description>Group recording items by folder structure</description>
 					<left>0</left>
 					<right>40</right>
-					<textwidth>400</textwidth>
+					<textwidth>300</textwidth>
 					<include>SideBladeMenuButton</include>
 					<label>$LOCALIZE[19270]</label>
 					<visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
@@ -747,18 +780,21 @@
 					<description>Show hidden channels</description>
 					<include>SideBladeMenuButton</include>
 					<label>$LOCALIZE[19051]</label>
+					<textwidth>300</textwidth>
 					<visible>Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)</visible>
 				</control>
 				<control type="radiobutton" id="7">
 					<description>Show deleted recordings</description>
 					<include>SideBladeMenuButton</include>
 					<label>$LOCALIZE[19184]</label>
+					<textwidth>300</textwidth>
 					<visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
 				</control>
                 <control type="radiobutton" id="8">  
                     <description>Hide disabled timers</description>  
                     <include>SideBladeMenuButton</include>  
-                    <label>$LOCALIZE[19077]</label>  
+                    <label>$LOCALIZE[19077]</label> 
+					<textwidth>300</textwidth>					
                     <visible>Window.IsActive(TVTimers) | Window.IsActive(RadioTimers) | Window.IsActive(TVTimerRules) | Window.IsActive(RadioTimerRules)</visible>  
                 </control>  
   
@@ -766,6 +802,7 @@
                     <!--filter-->
                     <include>SideBladeMenuButton</include>
                     <label>$LOCALIZE[587]</label>
+					<textwidth>300</textwidth>
 					<selected>Container.Filtered</selected>
 					<onclick>right</onclick>
 					<visible>Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)</visible>

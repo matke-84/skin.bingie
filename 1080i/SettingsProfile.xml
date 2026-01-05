@@ -55,25 +55,25 @@
                 <posx>600</posx>
                 <posy>95</posy>
                 <width>1230</width>
-                <height>80%</height>
+                <height>695</height>
                 <onright>40</onright>
                 <onup>4</onup>
 				<onleft>155</onleft>
                 <ondown>444</ondown>
                 <pagecontrol/>
                 <orientation>vertical</orientation>
-                <itemlayout height="82">
+                <itemlayout height="85">
 					<control type="image">
-                        <height>77</height>
+                        <height>80</height>
                         <width>1230</width>
                         <texture border="10" colordiffuse="$INFO[Skin.String(ButtonColor)]">diffuse/panel.png</texture>
                     </control>
                     <control type="image">
                         <posx>20</posx>
                         <posy>10</posy>
-                        <width>56</width>
-                        <height>56</height>
-                        <texture background="true" fallback="defaultactor.png">$INFO[ListItem.Icon]</texture>
+                        <width>60</width>
+                        <height>60</height>
+                        <texture background="true" fallback="defaultuser.png">$INFO[ListItem.Icon]</texture>
                         <visible>!String.IsEmpty(ListItem.Icon)</visible>
                     </control>
                     <control type="label">
@@ -86,7 +86,7 @@
                         <info>ListItem.Label</info>
                         <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
                         <font>Reg28</font>
-                        <animation effect="slide" start="0" end="75" time="0" condition="!String.IsEmpty(ListItem.Icon)">Conditional</animation>
+                        <animation effect="slide" start="0" end="79" time="0" condition="!String.IsEmpty(ListItem.Icon)">Conditional</animation>
                     </control>
                     <control type="label">
                         <right>20</right>
@@ -100,20 +100,20 @@
                         <font>Reg28</font>
                     </control>
                 </itemlayout>
-                <focusedlayout height="82">
+                <focusedlayout height="85">
                     <control type="group">
                         <visible>Control.HasFocus(2)</visible>
                         <control type="image">
-                            <height>77</height>
+                            <height>80</height>
                             <width>1230</width>
                             <texture border="10" colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">diffuse/panel.png</texture>
                         </control>
                         <control type="image">
                             <posx>20</posx>
                             <posy>10</posy>
-                            <width>56</width>
-                            <height>56</height>
-                            <texture background="true">$INFO[ListItem.Icon]</texture>
+                            <width>60</width>
+                            <height>60</height>
+                            <texture background="true" fallback="defaultuser.png">$INFO[ListItem.Icon]</texture>
                             <visible>!String.IsEmpty(ListItem.Icon)</visible>
                         </control>
                         <control type="label">
@@ -126,7 +126,7 @@
                             <info>ListItem.Label</info>
                             <textcolor>$INFO[Skin.String(ButtonFocusTextColor)]</textcolor>
                             <font>Reg28</font>
-                            <animation effect="slide" start="0" end="75" time="0" condition="!String.IsEmpty(ListItem.Icon)">Conditional</animation>
+                            <animation effect="slide" start="0" end="79" time="0" condition="!String.IsEmpty(ListItem.Icon)">Conditional</animation>
                         </control>
                         <control type="label">
                             <right>20</right>
@@ -143,16 +143,16 @@
                     <control type="group">
                         <visible>!Control.HasFocus(2)</visible>
 						<control type="image">
-							<height>77</height>
+							<height>80</height>
 							<width>1230</width>
 							<texture border="10" colordiffuse="$INFO[Skin.String(ButtonColor)]">diffuse/panel.png</texture>
 						</control>
                         <control type="image">
                             <posx>20</posx>
                             <posy>10</posy>
-                            <width>56</width>
-                            <height>56</height>
-                            <texture background="true" fallback="defaultactor.png">$INFO[ListItem.Icon]</texture>
+                            <width>60</width>
+                            <height>60</height>
+                            <texture background="true" fallback="defaultuser.png">$INFO[ListItem.Icon]</texture>
                             <visible>!String.IsEmpty(ListItem.Icon)</visible>
                         </control>
                         <control type="label">
@@ -165,7 +165,7 @@
                             <info>ListItem.Label</info>
                             <textcolor>$INFO[Skin.String(ButtonTextColor)]</textcolor>
                             <font>Reg28</font>
-                            <animation effect="slide" start="0" end="75" time="0" condition="!String.IsEmpty(ListItem.Icon)">Conditional</animation>
+                            <animation effect="slide" start="0" end="79" time="0" condition="!String.IsEmpty(ListItem.Icon)">Conditional</animation>
                         </control>
                         <control type="label">
                             <right>20</right>

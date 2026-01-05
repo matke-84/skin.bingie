@@ -2,13 +2,13 @@
     
 	<!-- widget style -->	
 	<setting id="$VAR[catnum]widgetstyle" value="poster" label="$LOCALIZE[20021]" icon="special://skin/extras/viewthumbs/widget_poster.jpg" condition="" description=""/>
-	<setting id="$VAR[catnum]widgetstyle" value="landscape" label="$LOCALIZE[31056]" condition="" icon="special://skin/extras/viewthumbs/widget_landscape.jpg" description=""/>
-	<setting id="$VAR[catnum]widgetstyle" value="square" label="$LOCALIZE[31099]" condition="" icon="special://skin/extras/viewthumbs/widget_square.jpg" description=""/>
+	<setting id="$VAR[catnum]widgetstyle" value="landscape" label="$LOCALIZE[31576]" condition="" icon="special://skin/extras/viewthumbs/widget_landscape.jpg" description=""/>
+	<setting id="$VAR[catnum]widgetstyle" value="square" label="$LOCALIZE[31554]" condition="" icon="special://skin/extras/viewthumbs/widget_square.jpg" description=""/>
 	
 	<!-- Search Widgets Layout-->
 	<setting id="layout" value="PosterPanelBingie" label="$LOCALIZE[20021]" condition="" icon="" description=""/>
-	<setting id="layout" value="ThumbsViewBingie" label="$LOCALIZE[31056]" condition="" icon="" description=""/>
-	<setting id="layout" value="SquarePosterPanelBingie" label="$LOCALIZE[31099]" condition="" icon="" description=""/>
+	<setting id="layout" value="ThumbsViewBingie" label="$LOCALIZE[31576]" condition="" icon="" description=""/>
+	<setting id="layout" value="SquarePosterPanelBingie" label="$LOCALIZE[31554]" condition="" icon="" description=""/>
 	
 	<!-- widgetsortby categories -->
     <setting id="$VAR[catnum]widgetsortby" value="default" label="$LOCALIZE[571]"/>

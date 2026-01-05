@@ -414,6 +414,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<font>Bold43</font> 
+				<textwidth>380</textwidth>
 				<textcolor>$INFO[Skin.String(BingiePrimaryTextColor)]</textcolor>
 				<label>$INFO[ListItem.Label]</label>
 				<visible>Window.IsActive(1116)</visible>
@@ -480,6 +481,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>Bold43</font> 
+					<textwidth>380</textwidth>
 					<textcolor>$INFO[Skin.String(BingiePrimaryTextColor)]</textcolor>
 					<label>$INFO[ListItem.Label]</label>
 					<visible>Window.IsActive(1116)</visible>
@@ -547,6 +549,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<font>Bold43</font> 
+				<textwidth>380</textwidth>
 				<textcolor>$INFO[Skin.String(BingiePrimaryTextColor)]</textcolor>
 				<label>$INFO[ListItem.Label]</label>
 				<visible>Window.IsActive(1116)</visible>

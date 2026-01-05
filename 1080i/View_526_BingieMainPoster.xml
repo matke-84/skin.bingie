@@ -20,7 +20,8 @@
                 <width>1660</width>
                 <!-- Content Header -->
                 <control type="label">
-                    <width>100%</width>
+                    <include condition="Skin.HasSetting(EnableRatings)">FooterON</include>
+					<include condition="!Skin.HasSetting(EnableRatings)">FooterOFF</include>
                     <height>40</height>
 					<posx>8</posx>
 					<top>-36</top>
@@ -30,6 +31,7 @@
                     <label>$VAR[BingieMainContentHeader]</label>
                     <visible>Integer.IsGreater(Container(526).NumItems,0)</visible>
 					<visible>!Container.Content(episodes) + !Container.Content(seasons)</visible>
+					<visible>!Skin.HasSetting(View526_HideHeader)</visible>
                 </control>				
 				<include content="Bingie_Main_Poster_View">
                     <param name="containerType" value="panel" />

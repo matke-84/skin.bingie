@@ -92,9 +92,10 @@ msgctxt "#31017"
 msgid "Use alternative video OSD layout"
 msgstr "使用替代视频屏幕显示布局"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31018"
 msgid "Bingie Landscape"
-msgstr "Bingie 横向布局视图"
+msgstr ""
 
 msgctxt "#31019"
 msgid "Progress bar color"
@@ -128,9 +129,10 @@ msgctxt "#31026"
 msgid "MPAA color panel"
 msgstr "MPAA 分级颜色面板"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31027"
 msgid "Bingie Poster"
-msgstr "Bingie 海报视图"
+msgstr ""
 
 msgctxt "#31028"
 msgid "Display tags on widgets"
@@ -244,9 +246,10 @@ msgctxt "#31055"
 msgid "Default palette for color picker"
 msgstr "调色板默认方案"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31056"
 msgid "Landscape"
-msgstr "横向布局"
+msgstr ""
 
 msgctxt "#31057"
 msgid "OSD button color"
@@ -400,9 +403,10 @@ msgctxt "#31094"
 msgid "Wikipedia"
 msgstr "维基百科"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31095"
 msgid "Bingie Seasons"
-msgstr "Bingie 季视图"
+msgstr ""
 
 msgctxt "#31096"
 msgid "OSD primary text color"
@@ -416,9 +420,10 @@ msgctxt "#31098"
 msgid "Not rated panel color"
 msgstr "未分级面板颜色"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31099"
 msgid "Square"
-msgstr "方形视图"
+msgstr ""
 
 msgctxt "#31100"
 msgid "Starring"
@@ -508,9 +513,10 @@ msgctxt "#31121"
 msgid "for You"
 msgstr "为你推荐"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31122"
 msgid "Bingie Square"
-msgstr "Bingie 方形视图"
+msgstr ""
 
 msgctxt "#31123"
 msgid "Enable moving focus frame in home & hubs"
@@ -549,19 +555,20 @@ msgid "Recently Added Artists"
 msgstr "最近添加的艺人"
 
 msgctxt "#31132"
-msgid "主页 main menu/submenu focused text color"
+msgid "Home main menu/submenu focused text color"
 msgstr "主界面主菜单/子菜单焦点文字颜色"
 
 msgctxt "#31133"
 msgid "Jump to a specific time"
 msgstr "跳转到特定时间"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31134"
 msgid "Panel"
-msgstr "面板"
+msgstr ""
 
 msgctxt "#31135"
-msgid "主页 main menu/submenu text color"
+msgid "Home main menu/submenu text color"
 msgstr "主界面主菜单/子菜单文字颜色"
 
 msgctxt "#31136"
@@ -912,9 +919,10 @@ msgctxt "#31222"
 msgid "Media details text color"
 msgstr "媒体详细信息文字颜色"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31223"
-msgid "Are you sure you want to remove the rating for episode?"
-msgstr "确定要移除该单集评分？"
+msgid "List"
+msgstr ""
 
 msgctxt "#31224"
 msgid "PVR guide unfocused item panel color"
@@ -1261,8 +1269,8 @@ msgid "MPAA style"
 msgstr "MPAA 样式"
 
 msgctxt "#31310"
-msgid "Are you sure you want to remove the rating for movie?"
-msgstr "确定要移除该电影评分？"
+msgid "Hide header"
+msgstr "隐藏标题"
 
 msgctxt "#31311"
 msgid "on IMDB Today"
@@ -1292,9 +1300,10 @@ msgctxt "#31317"
 msgid "Disable collections"
 msgstr "禁用合集"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31318"
 msgid "Bingie Episodes"
-msgstr "Bingie 剧集视图"
+msgstr ""
 
 msgctxt "#31319"
 msgid "Trakt Popular TV Shows"
@@ -1552,9 +1561,10 @@ msgctxt "#31383"
 msgid "Customize surprise me hub"
 msgstr "自定义惊喜分类聚合中心"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31384"
-msgid "Are you sure you want to remove the rating for show?"
-msgstr "确定要移除该剧集评分？"
+msgid "Fanart"
+msgstr ""
 
 msgctxt "#31385"
 msgid "Surprise Me"
@@ -1712,25 +1722,29 @@ msgctxt "#31421"
 msgid "[B]MANAGE YOUR KODI USER PROFILES[/B][CR][CR]Create new profiles or edit existing ones"
 msgstr "[B]管理你的 Kodi 用户配置文件[/B][CR][CR]创建新配置文件或编辑现有配置文件"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31422"
 msgid "Panel Details"
-msgstr "面板详情"
+msgstr ""
 
 msgctxt "#31423"
 msgid "Swap poster"
 msgstr "交换海报"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31424"
 msgid "Banner Details"
-msgstr "横幅图详情"
+msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31425"
 msgid "Banner"
-msgstr "横幅图"
+msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31426"
 msgid "Big Panel"
-msgstr "大面板"
+msgstr ""
 
 msgctxt "#31427"
 msgid "Romance"
@@ -1740,17 +1754,20 @@ msgctxt "#31428"
 msgid "Sci-Fi"
 msgstr "科幻"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31429"
 msgid "Poster Showcase"
-msgstr "海报展示"
+msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31430"
 msgid "Big Landscape"
-msgstr "大型横向布局"
+msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31431"
 msgid "Landscape Single Row"
-msgstr "横向单行布局"
+msgstr ""
 
 msgctxt "#31432"
 msgid "TMDb Trending Movies"
@@ -1772,25 +1789,29 @@ msgctxt "#31436"
 msgid "Disable search suggestions"
 msgstr "禁用搜索建议"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31437"
 msgid "Square Details"
-msgstr "方形详情"
+msgstr ""
 
 msgctxt "#31438"
 msgid "Enable indicator if item is playing or is recording/timer (PVR)"
 msgstr "若项目正在播放或正在录制/定时录制（PVR），则启用指示器"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31439"
 msgid "Landscape Details"
-msgstr "横向布局详细信息"
+msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31440"
 msgid "Poster Row"
-msgstr "海报行"
+msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31441"
 msgid "Poster Shift"
-msgstr "海报轮换"
+msgstr ""
 
 msgctxt "#31442"
 msgid "History & War"
@@ -1800,13 +1821,15 @@ msgctxt "#31443"
 msgid "IMDB Top 250 TV Shows"
 msgstr "IMDB Top 250 剧集"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31444"
 msgid "List Details"
-msgstr "列表详情"
+msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31445"
 msgid "Panel Single Row"
-msgstr "面板单行"
+msgstr ""
 
 msgctxt "#31446"
 msgid "Fantasy"
@@ -1868,9 +1891,10 @@ msgctxt "#31460"
 msgid "Text color"
 msgstr "文字颜色"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31461"
 msgid "Clearlogo"
-msgstr "透明徽标"
+msgstr ""
 
 msgctxt "#31462"
 msgid "Color themes"
@@ -2241,8 +2265,8 @@ msgid "Disable extra fanart"
 msgstr "禁用额外同人画"
 
 msgctxt "#31554"
-msgid "Remove rating"
-msgstr "移除评分"
+msgid "Square"
+msgstr "方形视图"
 
 msgctxt "#31555"
 msgid "Show artist logo on fullscreen music playback"
@@ -2292,9 +2316,10 @@ msgctxt "#31566"
 msgid "Shows"
 msgstr "剧集"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31567"
 msgid "Simple list (PVR)"
-msgstr "简单列表 (PVR)"
+msgstr ""
 
 msgctxt "#31568"
 msgid "Enable indicator for unwatched items"
@@ -2329,8 +2354,8 @@ msgid "Prefer mini TV channels list on fullscreen"
 msgstr "全屏模式下优先显示迷你电视频道列表"
 
 msgctxt "#31576"
-msgid "color for play icon"
-msgstr "播放图标颜色"
+msgid "Landscape"
+msgstr "横向布局"
 
 msgctxt "#31577"
 msgid "Hardware decoding"

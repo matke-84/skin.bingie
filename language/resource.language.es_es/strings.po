@@ -93,9 +93,10 @@ msgctxt "#31017"
 msgid "Use alternative video OSD layout"
 msgstr "Usar diseño alternativo de OSD de video"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31018"
 msgid "Bingie Landscape"
-msgstr "Bingie Paisaje"
+msgstr ""
 
 msgctxt "#31019"
 msgid "Progress bar color"
@@ -129,9 +130,10 @@ msgctxt "#31026"
 msgid "MPAA color panel"
 msgstr "Panel de color MPAA"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31027"
 msgid "Bingie Poster"
-msgstr "Bingie Póster"
+msgstr ""
 
 msgctxt "#31028"
 msgid "Display tags on widgets"
@@ -245,9 +247,10 @@ msgctxt "#31055"
 msgid "Default palette for color picker"
 msgstr "Paleta predeterminada para el selector de color"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31056"
 msgid "Landscape"
-msgstr "Paisaje"
+msgstr ""
 
 msgctxt "#31057"
 msgid "OSD button color"
@@ -401,9 +404,10 @@ msgctxt "#31094"
 msgid "Wikipedia"
 msgstr "Wikipedia"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31095"
 msgid "Bingie Seasons"
-msgstr "Temporadas de Bingie"
+msgstr ""
 
 msgctxt "#31096"
 msgid "OSD primary text color"
@@ -417,9 +421,10 @@ msgctxt "#31098"
 msgid "Not rated panel color"
 msgstr "Color del panel de no calificado"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31099"
 msgid "Square"
-msgstr "Cuadrado"
+msgstr ""
 
 msgctxt "#31100"
 msgid "Starring"
@@ -509,9 +514,10 @@ msgctxt "#31121"
 msgid "for You"
 msgstr "para ti"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31122"
 msgid "Bingie Square"
-msgstr "Bingie Cuadrado"
+msgstr ""
 
 msgctxt "#31123"
 msgid "Enable moving focus frame in home & hubs"
@@ -557,9 +563,10 @@ msgctxt "#31133"
 msgid "Jump to a specific time"
 msgstr "Saltar a un tiempo específico"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31134"
 msgid "Panel"
-msgstr "Panel"
+msgstr ""
 
 msgctxt "#31135"
 msgid "Home main menu/submenu text color"
@@ -694,7 +701,7 @@ msgid "Configure home screen & menus"
 msgstr "Configurar pantalla de inicio y menús"
 
 msgctxt "#31168"
-msgid "This skin is designed to give you maximum flexibility in how you arrange your home screen and menus. You can add or remove widgets, define menus and submenus, and more. Use the buttons below to start customizing the skinâ€™s menus and widgets."
+msgid "This skin is designed to give you maximum flexibility in how you arrange your home screen and menus. You can add or remove widgets, define menus and submenus, and more. Use the buttons below to start customizing the skin’s menus and widgets."
 msgstr "Esta apariencia está diseñada para darte la máxima flexibilidad en cómo organizas tu pantalla de inicio y menús. Puedes agregar o quitar widgets, definir menús y submenús, y más. Usa los botones a continuación para comenzar a personalizar los menús y widgets de la apariencia."
 
 msgctxt "#31169"
@@ -913,9 +920,10 @@ msgctxt "#31222"
 msgid "Media details text color"
 msgstr "Color de texto de detalles de medios"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31223"
-msgid "Are you sure you want to remove the rating for episode?"
-msgstr "¿Estás seguro de que quieres eliminar la calificación del episodio?"
+msgid "List"
+msgstr ""
 
 msgctxt "#31224"
 msgid "PVR guide unfocused item panel color"
@@ -1070,7 +1078,7 @@ msgid "There are no matches for your search."
 msgstr "No hay coincidencias para tu búsqueda."
 
 msgctxt "#31262"
-msgid "In the Bingie skin, the content is organized into dedicated hubs. This layout makes it easy to navigate between categories and find what youâ€™re looking for. Just like on the home screen, you have the ability to add new widgets, remove existing ones, and fully customize their appearance and behavior."
+msgid "In the Bingie skin, the content is organized into dedicated hubs. This layout makes it easy to navigate between categories and find what you’re looking for. Just like on the home screen, you have the ability to add new widgets, remove existing ones, and fully customize their appearance and behavior."
 msgstr "En la apariencia Bingie, el contenido se organiza en centros dedicados. Este diseño facilita la navegación entre categorías y encontrar lo que buscas. Al igual que en la pantalla de inicio, tienes la capacidad de agregar nuevos widgets, eliminar los existentes y personalizar completamente su apariencia y comportamiento."
 
 msgctxt "#31263"
@@ -1262,8 +1270,8 @@ msgid "MPAA style"
 msgstr "Estilo MPAA"
 
 msgctxt "#31310"
-msgid "Are you sure you want to remove the rating for movie?"
-msgstr "¿Estás seguro de que quieres eliminar la calificación de la película?"
+msgid "Hide header"
+msgstr "Ocultar encabezado"
 
 msgctxt "#31311"
 msgid "on IMDB Today"
@@ -1293,9 +1301,10 @@ msgctxt "#31317"
 msgid "Disable collections"
 msgstr "Desactivar colecciones"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31318"
 msgid "Bingie Episodes"
-msgstr "Episodios de Bingie"
+msgstr ""
 
 msgctxt "#31319"
 msgid "Trakt Popular TV Shows"
@@ -1553,9 +1562,10 @@ msgctxt "#31383"
 msgid "Customize surprise me hub"
 msgstr "Personalizar centro sorpréndeme"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31384"
-msgid "Are you sure you want to remove the rating for show?"
-msgstr "¿Estás seguro de que quieres eliminar la calificación del programa?"
+msgid "Fanart"
+msgstr ""
 
 msgctxt "#31385"
 msgid "Surprise Me"
@@ -1634,7 +1644,7 @@ msgid "Westerns"
 msgstr "Westerns"
 
 msgctxt "#31400"
-msgid "[B]CONFIGURE APPEARANCE SETTINGS[/B][CR][CR]Change skin Â· Configure language and region Â· Setup screensaver"
+msgid "[B]CONFIGURE APPEARANCE SETTINGS[/B][CR][CR]Change skin · Configure language and region · Setup screensaver"
 msgstr "[B]CONFIGURAR AJUSTES DE APARIENCIA[/B][CR][CR]Cambiar apariencia · Configurar idioma y región · Configurar protector de pantalla"
 
 msgctxt "#31401"
@@ -1642,7 +1652,7 @@ msgid "[B]CONFIGURE MEDIA SETTINGS[/B][CR][CR]Manage your video, music and pictu
 msgstr "[B]CONFIGURAR AJUSTES DE MEDIOS[/B][CR][CR]Gestionar tu biblioteca de videos, música e imágenes"
 
 msgctxt "#31402"
-msgid "[B]CONFIGURE PLAYER SETTINGS[/B][CR][CR]Configure playback options Â· Set subtitle style"
+msgid "[B]CONFIGURE PLAYER SETTINGS[/B][CR][CR]Configure playback options · Set subtitle style"
 msgstr "[B]CONFIGURAR AJUSTES DEL REPRODUCTOR[/B][CR][CR]Configurar opciones de reproducción · Establecer estilo de subtítulos"
 
 msgctxt "#31403"
@@ -1658,11 +1668,11 @@ msgid "[B]CONFIGURE NETWORK SETTINGS[/B][CR][CR]Configure file sharing and inter
 msgstr "[B]CONFIGURAR AJUSTES DE RED[/B][CR][CR]Configurar opciones de uso compartido de archivos y acceso a Internet"
 
 msgctxt "#31406"
-msgid "[B]CONFIGURE SYSTEM SETTINGS[/B][CR][CR]Configure display and audio Â· Enable debugging"
+msgid "[B]CONFIGURE SYSTEM SETTINGS[/B][CR][CR]Configure display and audio · Enable debugging"
 msgstr "[B]CONFIGURAR AJUSTES DEL SISTEMA[/B][CR][CR]Configurar pantalla y audio · Habilitar depuración"
 
 msgctxt "#31407"
-msgid "[B]CONFIGURE SKIN SETTINGS[/B][CR][CR]Setup Bingie Â· Configure home screen and hubs"
+msgid "[B]CONFIGURE SKIN SETTINGS[/B][CR][CR]Setup Bingie · Configure home screen and hubs"
 msgstr "[B]CONFIGURAR AJUSTES DE APARIENCIA[/B][CR][CR]Configurar Bingie · Configurar pantalla de inicio y centros"
 
 msgctxt "#31408"
@@ -1670,7 +1680,7 @@ msgid "[B]CONFIGURE ADD-ONS[/B][CR][CR]Browse, install and manage add-ons"
 msgstr "[B]CONFIGURAR COMPLEMENTOS[/B][CR][CR]Explorar, instalar y gestionar complementos"
 
 msgctxt "#31409"
-msgid "[B]SYSTEM INFO[/B][CR][CR]Summary Â· Storage Â· Network Â· Video Â· Hardware"
+msgid "[B]SYSTEM INFO[/B][CR][CR]Summary · Storage · Network · Video · Hardware"
 msgstr "[B]INFORMACIÓN DEL SISTEMA[/B][CR][CR]Resumen · Almacenamiento · Red · Video · Hardware"
 
 msgctxt "#31410"
@@ -1721,25 +1731,29 @@ msgctxt "#31421"
 msgid "[B]MANAGE YOUR KODI USER PROFILES[/B][CR][CR]Create new profiles or edit existing ones"
 msgstr "[B]GESTIONAR TUS PERFILES DE USUARIO KODI[/B][CR][CR]Crear nuevos perfiles o editar los existentes"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31422"
 msgid "Panel Details"
-msgstr "Detalles del panel"
+msgstr ""
 
 msgctxt "#31423"
 msgid "Swap poster"
 msgstr "Intercambiar póster"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31424"
 msgid "Banner Details"
-msgstr "Detalles del banner"
+msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31425"
 msgid "Banner"
-msgstr "Banner"
+msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31426"
 msgid "Big Panel"
-msgstr "Panel grande"
+msgstr ""
 
 msgctxt "#31427"
 msgid "Romance"
@@ -1749,17 +1763,20 @@ msgctxt "#31428"
 msgid "Sci-Fi"
 msgstr "Ciencia ficción"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31429"
 msgid "Poster Showcase"
-msgstr "Escaparate de pósters"
+msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31430"
 msgid "Big Landscape"
-msgstr "Paisaje grande"
+msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31431"
 msgid "Landscape Single Row"
-msgstr "Paisaje fila única"
+msgstr ""
 
 msgctxt "#31432"
 msgid "TMDb Trending Movies"
@@ -1781,25 +1798,29 @@ msgctxt "#31436"
 msgid "Disable search suggestions"
 msgstr "Desactivar sugerencias de búsqueda"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31437"
 msgid "Square Details"
-msgstr "Detalles cuadrados"
+msgstr ""
 
 msgctxt "#31438"
 msgid "Enable indicator if item is playing or is recording/timer (PVR)"
 msgstr "Habilitar indicador si el elemento se está reproduciendo o grabando/temporizador (PVR)"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31439"
 msgid "Landscape Details"
-msgstr "Detalles de paisaje"
+msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31440"
 msgid "Poster Row"
-msgstr "Fila de pósters"
+msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31441"
 msgid "Poster Shift"
-msgstr "Desplazamiento de póster"
+msgstr ""
 
 msgctxt "#31442"
 msgid "History & War"
@@ -1809,13 +1830,15 @@ msgctxt "#31443"
 msgid "IMDB Top 250 TV Shows"
 msgstr "Top 250 programas de TV de IMDB"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31444"
 msgid "List Details"
-msgstr "Detalles de lista"
+msgstr ""
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31445"
 msgid "Panel Single Row"
-msgstr "Panel fila única"
+msgstr ""
 
 msgctxt "#31446"
 msgid "Fantasy"
@@ -1877,9 +1900,10 @@ msgctxt "#31460"
 msgid "Text color"
 msgstr "Color de texto"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31461"
 msgid "Clearlogo"
-msgstr "Clearlogo"
+msgstr ""
 
 msgctxt "#31462"
 msgid "Color themes"
@@ -2250,8 +2274,8 @@ msgid "Disable extra fanart"
 msgstr "Desactivar fanart extra"
 
 msgctxt "#31554"
-msgid "Remove rating"
-msgstr "Eliminar calificación"
+msgid "Square"
+msgstr "Cuadrado"
 
 msgctxt "#31555"
 msgid "Show artist logo on fullscreen music playback"
@@ -2301,9 +2325,10 @@ msgctxt "#31566"
 msgid "Shows"
 msgstr "Programas"
 
+# DO NOT TRANSLATE THIS STRING!!!
 msgctxt "#31567"
 msgid "Simple list (PVR)"
-msgstr "Lista simple (PVR)"
+msgstr ""
 
 msgctxt "#31568"
 msgid "Enable indicator for unwatched items"
@@ -2338,8 +2363,8 @@ msgid "Prefer mini TV channels list on fullscreen"
 msgstr "Preferir lista de canales de TV mini en pantalla completa"
 
 msgctxt "#31576"
-msgid "color for play icon"
-msgstr "Color para icono de reproducción"
+msgid "Landscape"
+msgstr "Paisaje"
 
 msgctxt "#31577"
 msgid "Hardware decoding"
