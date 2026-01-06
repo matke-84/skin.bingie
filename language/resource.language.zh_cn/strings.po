@@ -2364,3 +2364,7 @@ msgstr "硬件解码"
 msgctxt "#31578"
 msgid "Widget"
 msgstr "小组件"
+
+msgctxt "#31579"
+msgid "color for play icon"
+msgstr "播放图标颜色"

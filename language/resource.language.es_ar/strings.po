@@ -2373,3 +2373,7 @@ msgstr "Decodificación por hardware"
 msgctxt "#31578"
 msgid "Widget"
 msgstr "Widget"
+
+msgctxt "#31579"
+msgid "color for play icon"
+msgstr "Color para icono de reproducción"
