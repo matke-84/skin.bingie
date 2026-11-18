@@ -2368,3 +2368,7 @@ msgstr "小组件"
 msgctxt "#31579"
 msgid "color for play icon"
 msgstr "播放图标颜色"
+
+msgctxt "#31580"
+msgid "Show watched indicator on files and add-on items"
+msgstr "在文件和插件项目上显示已观看指示器"

@@ -2207,6 +2207,13 @@
             <param name="skinsetting" value="WatchedIndicator.Watched.TextColor" />
             <param name="visible" value="Skin.HasSetting(WatchedIndicator.Watched)" />
         </include>
+        <control type="radiobutton" id="31580">
+            <include>SkinSettings_Button</include>
+            <label>--- $LOCALIZE[31580]</label>
+            <onclick>Skin.ToggleSetting(WatchedIndicator.AllItems)</onclick>
+            <selected>Skin.HasSetting(WatchedIndicator.AllItems)</selected>
+            <visible>Skin.HasSetting(WatchedIndicator.Watched)</visible>
+        </control>
         <control type="radiobutton" id="31514">
             <include>SkinSettings_Button</include>
             <label>$LOCALIZE[31514]</label>

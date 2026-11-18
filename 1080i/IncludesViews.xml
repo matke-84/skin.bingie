@@ -969,7 +969,7 @@
                 <description>Watched Overlay</description>
                 <visible>![!Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,0) + !Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,100)] + Integer.IsGreater(ListItem$PARAM[listitem].PlayCount,0) + Skin.HasSetting(WatchedIndicator.Watched) + !ListItem$PARAM[listitem].IsResumable</visible>
                 <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
-                <visible>$EXP[IsMovieDBType] | $EXP[IsTvShowDBType] | $EXP[IsSeasonDBType] | $EXP[IsEpisodeDBType]</visible>
+                <visible>$EXP[IsMovieDBType] | $EXP[IsTvShowDBType] | $EXP[IsSeasonDBType] | $EXP[IsEpisodeDBType] | [Skin.HasSetting(WatchedIndicator.AllItems) + !ListItem$PARAM[listitem].IsFolder]</visible>
 				<visible>![[!String.IsEmpty(ListItem$PARAM[listitem].Set) | ListItem$PARAM[listitem].IsCollection | String.Contains(ListItem$PARAM[listitem].Path,videodb://movies/sets/)] + Skin.HasSetting(WatchedIndicator.Sets)]</visible>
                 <control type="image">
                     <texture background="true">$PARAM[overlay_texture]</texture>
@@ -1153,7 +1153,7 @@
                 <description>Watched Overlay</description>
                 <visible>![!Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,0) + !Integer.IsEqual(ListItem$PARAM[listitem].PercentPlayed,100)] + Integer.IsGreater(ListItem$PARAM[listitem].PlayCount,0) + Skin.HasSetting(WatchedIndicator.Watched) + !ListItem$PARAM[listitem].IsResumable</visible>
                 <visible>!ListItem$PARAM[listitem].IsPlaying + !ListItem$PARAM[listitem].IsRecording</visible>
-                <visible>$EXP[IsMovieDBType] | $EXP[IsTvShowDBType] | $EXP[IsSeasonDBType] | $EXP[IsEpisodeDBType]</visible>
+                <visible>$EXP[IsMovieDBType] | $EXP[IsTvShowDBType] | $EXP[IsSeasonDBType] | $EXP[IsEpisodeDBType] | [Skin.HasSetting(WatchedIndicator.AllItems) + !ListItem$PARAM[listitem].IsFolder]</visible>
 				<visible>![[!String.IsEmpty(ListItem$PARAM[listitem].Set) | ListItem$PARAM[listitem].IsCollection | String.Contains(ListItem$PARAM[listitem].Path,videodb://movies/sets/)] + Skin.HasSetting(WatchedIndicator.Sets)]</visible>
                 <control type="image">
                     <texture background="true">$PARAM[overlay_texture]</texture>
