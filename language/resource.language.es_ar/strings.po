@@ -2377,3 +2377,7 @@ msgstr "Widget"
 msgctxt "#31579"
 msgid "color for play icon"
 msgstr "Color para icono de reproducción"
+
+msgctxt "#31580"
+msgid "Show watched indicator on files and add-on items"
+msgstr "Mostrar indicador de vistos en archivos y elementos de add-ons"
